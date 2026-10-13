@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Themes\Installer;
+namespace Sylius\Starter\Themes\Installer;
 
-use SyliusStarter\Core\Component\InstallerInterface;
-use SyliusStarter\Themes\Attribute\AsThemeInstaller;
+use Sylius\Starter\Core\Component\InstallerInterface;
+use Sylius\Starter\Themes\Attribute\AsThemeInstaller;
 
 final readonly class ThemeInstallerDescriptor
 {

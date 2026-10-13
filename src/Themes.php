@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Themes;
+namespace Sylius\Starter\Themes;
 
-use SyliusStarter\Core\Component\InstallerInterface;
-use SyliusStarter\Core\Component\RemoverInterface;
+use Sylius\Starter\Core\Component\InstallerInterface;
+use Sylius\Starter\Core\Component\RemoverInterface;
 
 final class Themes
 {

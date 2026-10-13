@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Themes\Remover;
+namespace Sylius\Starter\Themes\Remover;
 
-use SyliusStarter\Core\Component\RemoverInterface;
-use SyliusStarter\Themes\Attribute\AsThemeRemover;
+use Sylius\Starter\Core\Component\RemoverInterface;
+use Sylius\Starter\Themes\Attribute\AsThemeRemover;
 
 final readonly class ThemeRemoverDescriptor
 {

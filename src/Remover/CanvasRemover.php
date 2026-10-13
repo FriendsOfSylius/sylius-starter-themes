@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Themes\Remover;
+namespace Sylius\Starter\Themes\Remover;
 
-use SyliusStarter\Core\App;
-use SyliusStarter\Core\Component\InstallerInterface;
-use SyliusStarter\Core\Component\RemoverInterface;
-use SyliusStarter\Core\Util\Javascript;
+use Sylius\Starter\Core\App;
+use Sylius\Starter\Core\Component\InstallerInterface;
+use Sylius\Starter\Core\Component\RemoverInterface;
+use Sylius\Starter\Core\Util\Javascript;
 
 use function Castor\finder;
 use function Castor\fs;

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Themes\Tasks;
+namespace Sylius\Starter\Themes\Tasks;
 
 use Castor\Attribute\AsArgument;
 use Castor\Attribute\AsTask;
-use SyliusStarter\Core\App;
-use SyliusStarter\Core\Component\ComponentChoices;
-use SyliusStarter\Core\Util\Assets;
-use SyliusStarter\Themes\Themes;
+use Sylius\Starter\Core\App;
+use Sylius\Starter\Core\Component\ComponentChoices;
+use Sylius\Starter\Core\Util\Assets;
+use Sylius\Starter\Themes\Themes;
 
 use function Castor\io;
 

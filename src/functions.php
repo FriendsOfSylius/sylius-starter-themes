@@ -2,37 +2,37 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Themes;
+namespace Sylius\Starter\Themes;
 
 use Castor\Attribute\AsListener;
 use Castor\Event\AfterBootEvent;
-use SyliusStarter\Core\App;
-use SyliusStarter\Core\Component\CallableInstaller;
-use SyliusStarter\Core\Component\CallableRemover;
-use SyliusStarter\Core\Component\ComponentResolver;
-use SyliusStarter\Core\Installer\SyliusInstallerExtensions;
-use SyliusStarter\Core\Service\SyliusService;
-use SyliusStarter\Core\Task\TaskProviderRegistry;
-use SyliusStarter\Themes\Attribute\AsThemeInstaller;
-use SyliusStarter\Themes\Attribute\AsThemeRemover;
-use SyliusStarter\Themes\Installer\AuroraInstaller;
-use SyliusStarter\Themes\Installer\BlushInstaller;
-use SyliusStarter\Themes\Installer\CanvasInstaller;
-use SyliusStarter\Themes\Installer\LagoonInstaller;
-use SyliusStarter\Themes\Installer\PromptDarkThemeInstaller;
-use SyliusStarter\Themes\Installer\PromptLightThemeInstaller;
-use SyliusStarter\Themes\Installer\ThemeInstallerDescriptor;
-use SyliusStarter\Themes\Installer\ThemesSyliusInstallerExtension;
-use SyliusStarter\Themes\Installer\VoltInstaller;
-use SyliusStarter\Themes\Remover\AuroraRemover;
-use SyliusStarter\Themes\Remover\BlushRemover;
-use SyliusStarter\Themes\Remover\CanvasRemover;
-use SyliusStarter\Themes\Remover\LagoonRemover;
-use SyliusStarter\Themes\Remover\PromptDarkThemeRemover;
-use SyliusStarter\Themes\Remover\PromptLightThemeRemover;
-use SyliusStarter\Themes\Remover\ThemeRemoverDescriptor;
-use SyliusStarter\Themes\Remover\VoltRemover;
-use SyliusStarter\Themes\Tasks\ThemeTasks;
+use Sylius\Starter\Core\App;
+use Sylius\Starter\Core\Component\CallableInstaller;
+use Sylius\Starter\Core\Component\CallableRemover;
+use Sylius\Starter\Core\Component\ComponentResolver;
+use Sylius\Starter\Core\Installer\SyliusInstallerExtensions;
+use Sylius\Starter\Core\Service\SyliusService;
+use Sylius\Starter\Core\Task\TaskProviderRegistry;
+use Sylius\Starter\Themes\Attribute\AsThemeInstaller;
+use Sylius\Starter\Themes\Attribute\AsThemeRemover;
+use Sylius\Starter\Themes\Installer\AuroraInstaller;
+use Sylius\Starter\Themes\Installer\BlushInstaller;
+use Sylius\Starter\Themes\Installer\CanvasInstaller;
+use Sylius\Starter\Themes\Installer\LagoonInstaller;
+use Sylius\Starter\Themes\Installer\PromptDarkThemeInstaller;
+use Sylius\Starter\Themes\Installer\PromptLightThemeInstaller;
+use Sylius\Starter\Themes\Installer\ThemeInstallerDescriptor;
+use Sylius\Starter\Themes\Installer\ThemesSyliusInstallerExtension;
+use Sylius\Starter\Themes\Installer\VoltInstaller;
+use Sylius\Starter\Themes\Remover\AuroraRemover;
+use Sylius\Starter\Themes\Remover\BlushRemover;
+use Sylius\Starter\Themes\Remover\CanvasRemover;
+use Sylius\Starter\Themes\Remover\LagoonRemover;
+use Sylius\Starter\Themes\Remover\PromptDarkThemeRemover;
+use Sylius\Starter\Themes\Remover\PromptLightThemeRemover;
+use Sylius\Starter\Themes\Remover\ThemeRemoverDescriptor;
+use Sylius\Starter\Themes\Remover\VoltRemover;
+use Sylius\Starter\Themes\Tasks\ThemeTasks;
 
 TaskProviderRegistry::register(
     'themes',
