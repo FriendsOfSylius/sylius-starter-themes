@@ -24,7 +24,7 @@ final class BlushInstaller implements InstallerInterface
 
     public function description(): ?string
     {
-        return 'https://github.com/Sylius/Starter/blob/main/docs/themes/blush.md';
+        return 'https://github.com/sylius-starter/sylius-starter/blob/main/docs/themes/blush.md';
     }
 
     public function __invoke(App $app): void

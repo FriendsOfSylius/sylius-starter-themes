@@ -24,7 +24,7 @@ final class PromptLightThemeInstaller implements InstallerInterface
 
     public function description(): ?string
     {
-        return 'https://github.com/Sylius/Starter/blob/main/docs/themes/prompt_light.md';
+        return 'https://github.com/sylius-starter/sylius-starter/blob/main/docs/themes/prompt_light.md';
     }
 
     public function __invoke(App $app): void
