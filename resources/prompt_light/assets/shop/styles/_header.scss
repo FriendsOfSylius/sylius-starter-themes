@@ -213,3 +213,13 @@ header .navbar-brand {
     justify-content: space-between;
   }
 }
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.prompt-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.5rem;
+  object-fit: contain;
+}

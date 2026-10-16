@@ -1,2 +1,7 @@
-<span class="lagoon-logo__name">Lagoon</span>
-<span class="lagoon-logo__dot" aria-hidden="true"></span>
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="lagoon-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    <span class="lagoon-logo__name">Lagoon</span>
+    <span class="lagoon-logo__dot" aria-hidden="true"></span>
+{% endif %}

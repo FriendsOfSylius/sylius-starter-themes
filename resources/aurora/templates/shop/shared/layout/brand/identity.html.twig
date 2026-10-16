@@ -1,2 +1,7 @@
-<span class="aurora-logo__name">Aurora</span>
-<span class="aurora-logo__dot" aria-hidden="true"></span>
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="aurora-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    <span class="aurora-logo__name">Aurora</span>
+    <span class="aurora-logo__dot" aria-hidden="true"></span>
+{% endif %}

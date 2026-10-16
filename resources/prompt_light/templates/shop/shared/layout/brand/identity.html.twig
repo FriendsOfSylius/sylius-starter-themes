@@ -1,5 +1,10 @@
-<span class="prompt-logo__mark" aria-hidden="true">&gt;_</span>
-<span>
-    <span class="prompt-logo__name">PROMPT</span>
-    <span class="prompt-logo__tagline">everyday, thoughtfully</span>
-</span>
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="prompt-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    <span class="prompt-logo__mark" aria-hidden="true">&gt;_</span>
+    <span>
+        <span class="prompt-logo__name">PROMPT</span>
+        <span class="prompt-logo__tagline">everyday, thoughtfully</span>
+    </span>
+{% endif %}

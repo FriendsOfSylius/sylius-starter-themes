@@ -6,6 +6,7 @@ namespace Sylius\Starter\Themes\Installer;
 
 use Sylius\Starter\Core\App;
 use Sylius\Starter\Core\Component\InstallerInterface;
+use Sylius\Starter\Core\Storefront\Brand;
 use Sylius\Starter\Core\Storefront\Hero;
 use Sylius\Starter\Core\Util\Assets;
 use Sylius\Starter\Core\Util\Javascript;
@@ -31,6 +32,7 @@ final class PromptLightThemeInstaller implements InstallerInterface
     {
         Yaml::import($app, 'config/packages/_sylius.yaml', '../sylius/twig_hooks/**/**.php');
         Hero::install($app);
+        Brand::install($app);
 
         $resourcesDir = \dirname(__DIR__, 2) . '/resources/prompt_light';
 

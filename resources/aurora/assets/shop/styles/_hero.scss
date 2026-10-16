@@ -163,6 +163,11 @@
   height: 0.35rem;
 }
 
+.aurora-logo--mini .aurora-logo__image {
+  max-width: 6rem;
+  max-height: 1.25rem;
+}
+
 .aurora-showcase__nav {
   display: flex;
   gap: 0.4rem;

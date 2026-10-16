@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="prompt-footer__brand">
-            <a href="{{ path('sylius_shop_homepage') }}" class="prompt-logo" aria-label="Prompt — {{ 'sylius.ui.home'|trans }}">
+            <a href="{{ path('sylius_shop_homepage') }}" class="prompt-logo" aria-label="{{ storefront_brand().name ?? 'Prompt' }} — {{ 'sylius.ui.home'|trans }}">
                 {% include 'shop/shared/layout/brand/identity.html.twig' %}
             </a>
         </div>

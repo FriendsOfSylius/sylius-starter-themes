@@ -1,5 +1,5 @@
 <div class="col col-lg-auto">
-    <a href="{{ path('sylius_shop_homepage') }}" class="d-inline-flex py-lg-2 blush-logo" aria-label="Blush — {{ 'sylius.ui.home'|trans }}">
+    <a href="{{ path('sylius_shop_homepage') }}" class="d-inline-flex py-lg-2 blush-logo" aria-label="{{ storefront_brand().name ?? 'Blush' }} — {{ 'sylius.ui.home'|trans }}">
         {% include 'shop/shared/layout/brand/identity.html.twig' %}
     </a>
 </div>

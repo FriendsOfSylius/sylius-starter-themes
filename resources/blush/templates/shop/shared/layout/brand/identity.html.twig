@@ -1,5 +1,10 @@
-<span class="blush-logo__mark" aria-hidden="true">B</span>
-<span class="blush-logo__wording">
-    <span class="blush-logo__name">BLUSH</span>
-    <span class="blush-logo__tagline">BELLES CHOSES, BELLES HISTOIRES</span>
-</span>
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="blush-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    <span class="blush-logo__mark" aria-hidden="true">B</span>
+    <span class="blush-logo__wording">
+        <span class="blush-logo__name">BLUSH</span>
+        <span class="blush-logo__tagline">BELLES CHOSES, BELLES HISTOIRES</span>
+    </span>
+{% endif %}
