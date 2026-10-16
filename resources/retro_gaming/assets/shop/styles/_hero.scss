@@ -1,0 +1,584 @@
+// Hero: a title screen. HUD on top, the copy on the left and a CRT monitor running a
+// "select your loot" screen on the right, over a starfield and a neon grid floor.
+
+.rg-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: $deep;
+  color: $text;
+
+  // Starfield and neon haze.
+  &::before {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    background:
+      radial-gradient(1px 1px at 12% 18%, rgba($white, 0.9) 50%, transparent 51%),
+      radial-gradient(1px 1px at 27% 62%, rgba($white, 0.6) 50%, transparent 51%),
+      radial-gradient(2px 2px at 41% 28%, rgba($cyan, 0.9) 50%, transparent 51%),
+      radial-gradient(1px 1px at 58% 12%, rgba($white, 0.8) 50%, transparent 51%),
+      radial-gradient(2px 2px at 73% 44%, rgba($magenta, 0.9) 50%, transparent 51%),
+      radial-gradient(1px 1px at 86% 22%, rgba($white, 0.7) 50%, transparent 51%),
+      radial-gradient(1px 1px at 93% 68%, rgba($white, 0.6) 50%, transparent 51%),
+      radial-gradient(1px 1px at 6% 78%, rgba($white, 0.5) 50%, transparent 51%),
+      radial-gradient(2px 2px at 50% 80%, rgba($gold, 0.7) 50%, transparent 51%),
+      radial-gradient(60rem 30rem at 85% 30%, rgba($magenta, 0.16), transparent 70%),
+      radial-gradient(50rem 30rem at 10% 90%, rgba($cyan, 0.12), transparent 70%);
+    content: "";
+  }
+
+  // Grid floor fading into the horizon.
+  &::after {
+    position: absolute;
+    z-index: -1;
+    right: -25%;
+    bottom: 0;
+    left: -25%;
+    height: 45%;
+    background-image:
+      linear-gradient(rgba($magenta, 0.35) 2px, transparent 2px),
+      linear-gradient(90deg, rgba($magenta, 0.35) 2px, transparent 2px);
+    background-size: 64px 48px;
+    content: "";
+    mask-image: linear-gradient(to top, #000 0%, transparent 85%);
+    transform: perspective(420px) rotateX(58deg);
+    transform-origin: bottom center;
+  }
+}
+
+// HUD
+
+.rg-hud {
+  border-bottom: 2px solid $line-soft;
+  background-color: rgba($deep, 0.7);
+  font-family: $font-family-pixel;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.rg-hud__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-block: 0.7rem;
+  color: $white;
+}
+
+.rg-hud__label {
+  margin-right: 0.4rem;
+  color: $magenta;
+}
+
+.rg-hud__item--hi .rg-hud__label {
+  color: $cyan;
+}
+
+.rg-hud__item--credits .rg-hud__label {
+  color: $gold;
+}
+
+.rg-hud__lives {
+  display: inline-flex;
+  gap: 0.35rem;
+
+  svg {
+    width: 1.1rem;
+    height: auto;
+    fill: $magenta;
+    filter: drop-shadow(0 0 4px rgba($magenta, 0.7));
+  }
+}
+
+// Copy
+
+.rg-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  padding-block: clamp(3rem, 6vw, 5.5rem) clamp(3.5rem, 7vw, 6rem);
+}
+
+.rg-hero__kicker {
+  @include pixel-label;
+
+  display: inline-block;
+  margin: $pixel $pixel 1.75rem;
+  padding: 0.55rem 0.8rem;
+  background-color: $panel;
+  color: $gold;
+  font-size: 0.875rem;
+
+  @include pixel-frame($line, 3px);
+}
+
+.rg-hero h1 {
+  max-width: 15ch;
+  margin: 0 0 1.5rem;
+  color: $white;
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+  line-height: 1.12;
+  text-shadow:
+    3px 3px 0 rgba($cyan, 0.35),
+    -3px -1px 0 rgba($magenta, 0.35);
+
+  em {
+    color: $magenta;
+    font-style: normal;
+    text-shadow:
+      0 0 18px rgba($magenta, 0.6),
+      3px 3px 0 rgba($cyan, 0.4);
+  }
+}
+
+.rg-hero__lead {
+  max-width: 34rem;
+  margin: 0 0 2.25rem;
+  color: $text-muted;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
+
+  strong {
+    color: $white;
+  }
+}
+
+.rg-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  margin-bottom: 2.75rem;
+
+  .btn {
+    padding: 1.05rem 1.75rem 1.15rem;
+    font-size: 1.0625rem;
+  }
+}
+
+.rg-hero__link {
+  @include pixel-label;
+
+  color: $cyan;
+  font-size: 0.875rem;
+  text-decoration: none;
+
+  &::after {
+    margin-left: 0.5rem;
+    content: "→";
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.rg-powerups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    color: $text-muted;
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    flex: 0 0 auto;
+    fill: $lime;
+  }
+
+  li:nth-child(2) svg {
+    fill: $cyan;
+  }
+
+  li:nth-child(3) svg {
+    fill: $gold;
+  }
+
+  strong {
+    display: block;
+    color: $white;
+    font-size: 0.92rem;
+  }
+}
+
+// CRT monitor
+
+.rg-hero__visual {
+  position: relative;
+}
+
+.rg-screen {
+  margin: $pixel;
+  padding: 1rem 1rem 0;
+  background-color: #191D3F;
+  box-shadow:
+    0 (-$pixel) 0 0 #191D3F,
+    0 $pixel 0 0 #191D3F,
+    (-$pixel) 0 0 0 #191D3F,
+    $pixel 0 0 0 #191D3F,
+    0 30px 80px rgba(#000, 0.55),
+    0 0 90px rgba($magenta, 0.18);
+}
+
+.rg-screen__glass {
+  position: relative;
+  overflow: hidden;
+  background-color: $void;
+  box-shadow: inset 0 0 0 3px #090A18;
+
+  // Scanlines and a soft vignette over the screen.
+  &::after {
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, rgba(#000, 0.18) 0 1px, transparent 1px 3px),
+      radial-gradient(ellipse at center, transparent 55%, rgba(#000, 0.45) 100%);
+    content: "";
+    pointer-events: none;
+  }
+}
+
+.rg-screen__base {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 0.25rem 0.9rem;
+  color: $text-muted;
+  font-family: $font-family-pixel;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.rg-screen__led {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: $lime;
+  box-shadow: 0 0 8px $lime;
+  animation: rg-blink 2.4s steps(1, end) infinite;
+}
+
+.rg-screen__vents {
+  display: inline-flex;
+  gap: 0.3rem;
+  margin-left: auto;
+
+  span {
+    width: 1.5rem;
+    height: 0.25rem;
+    background-color: $line;
+  }
+}
+
+.rg-hero__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+// "Select your loot" screen
+
+.rg-select {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+}
+
+.rg-select__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: $gold;
+  font-family: $font-family-pixel;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+}
+
+.rg-select__player {
+  padding: 0.3rem 0.45rem;
+  background-color: $magenta;
+  color: $ink;
+  font-size: 0.75rem;
+}
+
+.rg-select__pick {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.1rem;
+  color: $text;
+  text-decoration: none;
+
+  &:hover {
+    color: $text;
+  }
+}
+
+.rg-select__media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1;
+  margin: 3px;
+  background-color: $panel-raised;
+
+  @include pixel-frame($magenta, 3px);
+
+  img {
+    transition: transform 500ms $ease;
+  }
+}
+
+.rg-select__pick:hover .rg-select__media img {
+  transform: scale(1.05);
+}
+
+.rg-select__info {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rg-select__label {
+  color: $lime;
+  font-family: $font-family-pixel;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.rg-select__name {
+  overflow: hidden;
+  color: $white;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+}
+
+.rg-select__price {
+  color: $gold;
+  font-family: $font-family-pixel;
+  font-size: 1.375rem;
+}
+
+.rg-select__stats {
+  display: grid;
+  gap: 0.4rem;
+  margin-block: 0.35rem 0.5rem;
+}
+
+.rg-select__stat {
+  display: grid;
+  grid-template-columns: 4.75rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rg-select__stat-name {
+  overflow: hidden;
+  color: $text-muted;
+  font-family: $font-family-pixel;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.rg-select__stat-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+
+  span {
+    height: 0.5rem;
+    background-color: $cyan;
+  }
+}
+
+.rg-select__stat-bar--returns span {
+  background-color: $lime;
+}
+
+.rg-select__stat-bar--fees span {
+  background-color: $gold;
+}
+
+.rg-select__cta {
+  margin-top: auto;
+  color: $cyan;
+  font-family: $font-family-pixel;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+
+  &::before {
+    margin-right: 0.4rem;
+    color: $magenta;
+    content: "▶";
+    animation: rg-blink 1.1s steps(1, end) infinite;
+  }
+}
+
+.rg-select__slots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 1.1rem 3px 3px;
+  padding: 0;
+  list-style: none;
+}
+
+.rg-select__slot {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: $panel-raised;
+  opacity: 0.6;
+
+  @include pixel-frame($line, 3px);
+
+  &.is-active {
+    opacity: 1;
+
+    @include pixel-frame($magenta, 3px);
+  }
+}
+
+.rg-select__empty {
+  display: grid;
+  min-height: 18rem;
+  place-items: center;
+}
+
+.rg-select__insert {
+  color: $gold;
+  font-family: $font-family-pixel;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  animation: rg-blink 1.1s steps(1, end) infinite;
+}
+
+// Achievements strip
+
+.rg-achievements {
+  position: relative;
+  border-top: 2px solid $line-soft;
+  background-color: rgba($deep, 0.82);
+  backdrop-filter: blur(4px);
+}
+
+.rg-achievements .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2.5rem;
+  padding-block: 1.6rem;
+}
+
+.rg-achievements__label {
+  @include pixel-label;
+
+  margin: 0;
+  color: $text-muted;
+  font-size: 0.8125rem;
+}
+
+.rg-achievements__items {
+  display: grid;
+  flex: 1 1 36rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.75rem;
+  }
+}
+
+.rg-achievements__badge {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  grid-row: span 2;
+  place-items: center;
+  background-color: $panel;
+  color: $gold;
+  font-family: $font-family-pixel;
+  font-size: 1rem;
+
+  @include pixel-frame($line, 2px);
+}
+
+.rg-achievements__value {
+  color: $white;
+  font-family: $font-family-pixel;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+
+.rg-achievements__text {
+  color: $text-muted;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 1199.98px) {
+  .rg-powerups {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .rg-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rg-hero h1 {
+    max-width: 18ch;
+  }
+
+  .rg-powerups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .rg-achievements__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .rg-hud__item--hi {
+    display: none;
+  }
+
+  .rg-powerups {
+    grid-template-columns: 1fr;
+  }
+
+  .rg-select__pick {
+    grid-template-columns: 1fr;
+  }
+
+  .rg-achievements__items {
+    grid-template-columns: 1fr;
+  }
+}

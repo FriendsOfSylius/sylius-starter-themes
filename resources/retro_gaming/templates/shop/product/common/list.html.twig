@@ -1,0 +1,21 @@
+{% set rg_list_key = hookable_metadata.configuration['test_attribute']|default('latest-products') %}
+{% set rg_eyebrows = {'latest-products': 'retro_gaming.products.eyebrow.latest'} %}
+
+<section id="rg-{{ rg_list_key }}" class="rg-products rg-products--{{ rg_list_key }}">
+    <div class="container" role="region" aria-labelledby="{{ rg_list_key ~ '-heading' }}">
+        <div class="rg-section-head">
+            {% if rg_eyebrows[rg_list_key] is defined %}
+                <p class="rg-eyebrow">{{ rg_eyebrows[rg_list_key]|trans({}, 'retro_gaming') }}</p>
+            {% endif %}
+            <h2 id="{{ rg_list_key ~ '-heading' }}">{{ hookable_metadata.configuration.title|default('sylius.ui.latest_products')|trans }}</h2>
+        </div>
+
+        <div {{ sylius_test_html_attribute(hookable_metadata.configuration.test_attribute|default('latest-products')) }}>
+            <div class="products-grid">
+                {% for product in latest_products %}
+                    <div>{{ component('sylius_shop:product:card', {product: product, template: hookable_metadata.configuration.product_template|default('@SyliusShop/product/common/card.html.twig'), hookableMetadata: hookable_metadata}) }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

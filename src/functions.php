@@ -21,6 +21,7 @@ use SyliusStarter\Themes\Installer\CanvasInstaller;
 use SyliusStarter\Themes\Installer\LagoonInstaller;
 use SyliusStarter\Themes\Installer\PromptDarkThemeInstaller;
 use SyliusStarter\Themes\Installer\PromptLightThemeInstaller;
+use SyliusStarter\Themes\Installer\RetroGamingInstaller;
 use SyliusStarter\Themes\Installer\TechInstaller;
 use SyliusStarter\Themes\Installer\ThemeInstallerDescriptor;
 use SyliusStarter\Themes\Installer\ThemesSyliusInstallerExtension;
@@ -31,6 +32,7 @@ use SyliusStarter\Themes\Remover\CanvasRemover;
 use SyliusStarter\Themes\Remover\LagoonRemover;
 use SyliusStarter\Themes\Remover\PromptDarkThemeRemover;
 use SyliusStarter\Themes\Remover\PromptLightThemeRemover;
+use SyliusStarter\Themes\Remover\RetroGamingRemover;
 use SyliusStarter\Themes\Remover\TechRemover;
 use SyliusStarter\Themes\Remover\ThemeRemoverDescriptor;
 use SyliusStarter\Themes\Remover\VoltRemover;
@@ -54,6 +56,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addInstaller(new LagoonInstaller());
     Themes::addInstaller(new AuroraInstaller());
     Themes::addInstaller(new TechInstaller());
+    Themes::addInstaller(new RetroGamingInstaller());
 
     Themes::addRemover(new CanvasRemover());
     Themes::addRemover(new PromptDarkThemeRemover());
@@ -63,6 +66,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addRemover(new LagoonRemover());
     Themes::addRemover(new AuroraRemover());
     Themes::addRemover(new TechRemover());
+    Themes::addRemover(new RetroGamingRemover());
 
     foreach (ComponentResolver::candidates() as $reflection) {
         $descriptor = resolve_theme_installer($reflection);

@@ -1,0 +1,158 @@
+.card {
+  --bs-card-bg: #{$panel};
+  --bs-card-color: #{$text};
+  --bs-card-border-color: #{$line};
+  --bs-card-cap-color: #{$white};
+
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background-color: $panel;
+
+  @include pixel-frame($line, 3px);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-header {
+  border-bottom-color: $line !important;
+  color: $white;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  color: $white;
+}
+
+.card-text {
+  color: $text-muted;
+}
+
+.card-footer {
+  border-top-color: $line;
+  background-color: $panel;
+}
+
+// Product cards: a cartridge-like panel with a pixel frame that lights up in cyan on hover.
+// The card root is the element holding the details link: it is a direct grid item on
+// category pages and wrapped in a <div> in the homepage / association lists.
+
+.products-grid {
+  row-gap: 2.5rem;
+}
+
+.products-grid div:has(> a.link-reset) {
+  position: relative;
+  display: flex;
+  height: calc(100% - #{$pixel * 2});
+  flex-direction: column;
+  margin: $pixel;
+  background-color: $panel;
+  transition:
+    box-shadow 160ms ease,
+    transform 160ms $ease-step,
+    filter 160ms ease;
+
+  @include pixel-frame($line);
+
+  &:hover,
+  &:focus-within {
+    filter: drop-shadow(0 0 14px rgba($cyan, 0.35));
+    transform: translateY(-4px);
+
+    @include pixel-frame($cyan);
+  }
+
+  > a.link-reset {
+    display: block;
+    color: $white;
+    text-decoration: none;
+
+    // Stretched link: the price below is part of the clickable card too.
+    &::after {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      content: "";
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  &:has(> a.link-reset:focus-visible) {
+    outline: 3px solid $magenta;
+    outline-offset: 6px;
+  }
+
+  .mb-4 {
+    margin-bottom: 0 !important;
+  }
+
+  .rounded-3 {
+    position: relative;
+    margin: 0.75rem 0.75rem 0;
+    border-radius: 0 !important;
+    background-color: $panel-raised !important;
+
+    img {
+      transition: transform 500ms $ease;
+    }
+
+    // Scanlines over the picture, as on a CRT.
+    &::after {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, rgba(#000, 0.12) 0 1px, transparent 1px 3px);
+      content: "";
+      pointer-events: none;
+    }
+  }
+
+  &:hover .rounded-3 img {
+    transform: scale(1.05);
+  }
+
+  .h6 {
+    margin: 0;
+    padding: 1rem 1.25rem 0.4rem;
+    color: $white;
+    font-family: $font-family-base;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    text-transform: none;
+    transition: color 120ms ease;
+  }
+
+  &:hover .h6 {
+    color: $cyan;
+  }
+
+  // Prices, in coin gold.
+  > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+    align-items: baseline;
+    margin-top: auto;
+    padding: 0 1.25rem 1.25rem;
+    color: $gold;
+    font-family: $font-family-pixel;
+    font-size: 1.125rem;
+
+    > * {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    del {
+      color: $text-muted;
+      font-size: 0.875rem;
+    }
+  }
+}

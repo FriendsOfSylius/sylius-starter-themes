@@ -1,0 +1,36 @@
+{% set rg_services = [
+    {key: 'shipping', url: path('sylius_shop_homepage') ~ '#rg-latest-products', class: 'btn-primary'},
+    {key: 'returns', url: path('sylius_shop_account_dashboard'), class: 'btn-secondary'},
+    {key: 'support', url: path('sylius_shop_contact_request'), class: 'btn-secondary'},
+] %}
+
+<footer class="rg-footer">
+    <div id="rg-services" class="rg-services">
+        <div class="container">
+            <p class="rg-eyebrow">{{ 'retro_gaming.footer.services.eyebrow'|trans({}, 'retro_gaming') }}</p>
+            <p class="rg-services__title">{{ 'retro_gaming.footer.services.title'|trans({}, 'retro_gaming') }}</p>
+
+            <ul class="rg-services__slots" role="list">
+                {% for service in rg_services %}
+                    <li class="rg-panel rg-services__slot">
+                        <p class="rg-services__index">{{ 'retro_gaming.footer.services.slot'|trans({'%number%': loop.index}, 'retro_gaming') }}</p>
+                        <p class="rg-services__name">{{ ('retro_gaming.footer.services.' ~ service.key ~ '.title')|trans({}, 'retro_gaming') }}</p>
+                        <p class="rg-services__tag">{{ ('retro_gaming.footer.services.' ~ service.key ~ '.tag')|trans({}, 'retro_gaming') }}</p>
+                        <p class="rg-services__text">{{ ('retro_gaming.footer.services.' ~ service.key ~ '.text')|trans({}, 'retro_gaming') }}</p>
+                        <a class="btn {{ service.class }}" href="{{ service.url }}">{{ ('retro_gaming.footer.services.' ~ service.key ~ '.cta')|trans({}, 'retro_gaming') }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container rg-footer__main">
+        <div class="rg-footer__brand">
+            {% include 'shop/shared/layout/brand/logo.html.twig' with {variant: 'footer'} %}
+            <p>{{ 'retro_gaming.footer.tagline'|trans({}, 'retro_gaming') }}</p>
+            <p class="rg-footer__continue" aria-hidden="true">{{ 'retro_gaming.footer.continue'|trans({}, 'retro_gaming') }}</p>
+        </div>
+        <div class="row">
+            {% hook 'content' %}
+        </div>
+    </div>
+</footer>

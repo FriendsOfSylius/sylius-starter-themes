@@ -1,0 +1,70 @@
+#sylius_shop_cart {
+  .table thead th {
+    padding-bottom: 0.8rem;
+    color: $text-muted;
+  }
+
+  .table tbody td {
+    border-bottom-color: $line;
+    vertical-align: middle;
+  }
+
+  .table .link-reset {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $cyan;
+    }
+  }
+
+  .table .btn-transparent {
+    color: $text-muted;
+
+    &:hover,
+    &:focus-visible {
+      color: $red;
+    }
+  }
+
+  .table .form-control {
+    min-width: 4.5rem;
+    text-align: center;
+  }
+}
+
+#offcanvasCart {
+  --bs-offcanvas-width: min(34rem, 100vw);
+
+  border-left: 3px solid $line;
+  box-shadow: $shadow-deep;
+}
+
+#offcanvasCart .offcanvas-header {
+  padding: 1.35rem 1.5rem;
+  background-color: $deep;
+}
+
+#offcanvasCart .offcanvas-title::before {
+  margin-right: 0.6rem;
+  color: $gold;
+  content: "★";
+}
+
+#offcanvasCart .offcanvas-body .link-reset {
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    color: $cyan;
+  }
+}
+
+#offcanvasCart .offcanvas-footer .h5.text-end {
+  color: $gold;
+  font-family: $font-family-pixel;
+}
+
+#offcanvasCart .offcanvas-footer .btn {
+  width: 100%;
+}

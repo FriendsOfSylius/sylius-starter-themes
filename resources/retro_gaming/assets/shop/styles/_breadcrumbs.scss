@@ -1,0 +1,31 @@
+.breadcrumb {
+  --bs-breadcrumb-divider: "▶";
+  --bs-breadcrumb-divider-color: #{$magenta};
+  --bs-breadcrumb-margin-bottom: 1.5rem;
+  --bs-breadcrumb-item-padding-x: 0.65rem;
+
+  padding: 0;
+  background: none;
+  color: $text-muted;
+  font-family: $font-family-pixel;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+
+  .breadcrumb-item::before {
+    font-size: 0.625rem;
+    line-height: 1.6;
+  }
+
+  .breadcrumb-item a {
+    color: $text-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: $cyan;
+    }
+  }
+
+  .breadcrumb-item.active {
+    color: $white;
+  }
+}

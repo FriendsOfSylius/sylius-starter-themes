@@ -1,0 +1,99 @@
+// Product page, cart and checkout refinements.
+
+.product h1,
+.product .h1 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  text-shadow: 0 0 18px rgba($magenta, 0.35);
+}
+
+.product .text-bg-light,
+.product .bg-light {
+  background-color: $panel !important;
+}
+
+.offcanvas {
+  --bs-offcanvas-bg: #{$void};
+  --bs-offcanvas-color: #{$text};
+  --bs-offcanvas-border-color: #{$line};
+}
+
+.offcanvas-header {
+  border-bottom: 3px solid $line;
+}
+
+.offcanvas-title {
+  @include pixel-label;
+
+  color: $cyan;
+}
+
+.table {
+  --bs-table-color: #{$text};
+  --bs-table-bg: transparent;
+  --bs-table-border-color: #{$line};
+  --bs-table-striped-color: #{$text};
+  --bs-table-hover-color: #{$white};
+  --bs-table-hover-bg: #{$panel};
+
+  color: $text;
+
+  th {
+    color: $text-muted;
+  }
+}
+
+.table thead th {
+  @include pixel-label;
+
+  font-size: 0.8125rem;
+}
+
+// Checkout: steps as a level map, sidebar as a console panel.
+
+.steps .steps-item {
+  @include pixel-label;
+
+  font-size: 0.875rem;
+
+  &:not(:last-child)::after {
+    color: $magenta !important;
+  }
+
+  &-active a::before {
+    height: 4px !important;
+    border-radius: 0 !important;
+    background-color: $magenta !important;
+    box-shadow: 0 0 10px rgba($magenta, 0.7);
+  }
+
+  &-active a,
+  &-completed a {
+    color: $white;
+  }
+
+  &-disabled,
+  &-disabled a {
+    color: rgba($text-muted, 0.65) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .checkout-sidebar::before {
+    background: $panel !important;
+  }
+}
+
+.checkout-sidebar {
+  color: $text;
+}
+
+// Price on the product page, in coin gold.
+.sticky-top .fs-3 {
+  color: $gold;
+  font-family: $font-family-pixel;
+  text-shadow: 0 0 14px rgba($gold, 0.35);
+}
+
+.sylius-rating {
+  color: $gold;
+}

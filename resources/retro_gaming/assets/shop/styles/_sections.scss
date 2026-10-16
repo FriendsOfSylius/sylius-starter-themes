@@ -1,0 +1,212 @@
+// Latest products
+
+.rg-products {
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+// Promise: the main quest.
+
+.rg-promise {
+  position: relative;
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+  border-block: 2px solid $line-soft;
+  background-color: $deep;
+  background-image:
+    linear-gradient(rgba($line-soft, 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($line-soft, 0.55) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.rg-quest {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.rg-perks {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: $text-muted;
+    line-height: 1.55;
+  }
+
+  strong {
+    display: block;
+    color: $white;
+  }
+}
+
+// Gamepad face buttons.
+.rg-perks__key {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 auto;
+  place-items: center;
+  margin: 3px;
+  background-color: $lime;
+  color: $ink;
+  font-family: $font-family-pixel;
+  font-size: 1rem;
+
+  @include pixel-frame($lime, 3px);
+}
+
+.rg-perks li:nth-child(2) .rg-perks__key {
+  background-color: $red;
+
+  @include pixel-frame($red, 3px);
+}
+
+.rg-perks li:nth-child(3) .rg-perks__key {
+  background-color: $cyan;
+
+  @include pixel-frame($cyan, 3px);
+}
+
+.rg-perks li:nth-child(4) .rg-perks__key {
+  background-color: $gold;
+
+  @include pixel-frame($gold, 3px);
+}
+
+// Quest log
+
+.rg-panel--log {
+  background-color: $void;
+
+  @include pixel-frame($magenta);
+}
+
+.rg-levels {
+  position: relative;
+  display: grid;
+  gap: 1.35rem;
+  margin: 0 0 1.75rem;
+  padding: 0 0 0 2rem;
+  list-style: none;
+
+  &::before {
+    position: absolute;
+    top: 0.35rem;
+    bottom: 0.35rem;
+    left: 0.45rem;
+    width: 4px;
+    background: repeating-linear-gradient(180deg, $line 0 8px, transparent 8px 12px);
+    content: "";
+  }
+}
+
+.rg-levels__step {
+  position: relative;
+  display: grid;
+  gap: 0.15rem;
+
+  &::before {
+    position: absolute;
+    top: 0.2rem;
+    left: -2rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    background-color: $lime;
+    box-shadow: 0 0 0 3px $void;
+    content: "";
+  }
+
+  &.is-next::before {
+    background-color: $magenta;
+    box-shadow:
+      0 0 0 3px $void,
+      0 0 14px $magenta;
+    animation: rg-blink 1.2s steps(1, end) infinite;
+  }
+}
+
+.rg-levels__level {
+  color: $magenta;
+  font-family: $font-family-pixel;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.rg-levels__step.is-done .rg-levels__level {
+  color: $lime;
+}
+
+.rg-levels__label {
+  color: $white;
+  font-weight: 700;
+}
+
+.rg-levels__detail {
+  color: $text-muted;
+  font-size: 0.875rem;
+}
+
+.rg-xp {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: $font-family-pixel;
+  font-size: 0.8125rem;
+}
+
+.rg-xp__label {
+  color: $gold;
+}
+
+.rg-xp__value {
+  color: $white;
+}
+
+.rg-xp__bar {
+  height: 1rem;
+  padding: 3px;
+  background-color: $panel;
+  box-shadow: inset 0 0 0 2px $line;
+
+  span {
+    display: block;
+    width: 75%;
+    height: 100%;
+    background: repeating-linear-gradient(90deg, $gold 0 10px, transparent 10px 12px);
+  }
+}
+
+.rg-promise__outro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+
+  p {
+    @include pixel-label;
+
+    margin: 0;
+    color: $white;
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+  }
+}
+
+.rg-promise__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+@media (max-width: 991.98px) {
+  .rg-quest {
+    grid-template-columns: 1fr;
+  }
+}

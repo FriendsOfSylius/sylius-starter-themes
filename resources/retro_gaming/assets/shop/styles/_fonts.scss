@@ -1,0 +1,9 @@
+// Pixel Quest: an original 5x7 bitmap display font drawn for this theme (uppercase, digits,
+// French accents). Body copy stays in InterVariable, already shipped by the Sylius shop.
+@font-face {
+  font-family: "Pixel Quest";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/pixel-quest.woff") format("woff");
+}

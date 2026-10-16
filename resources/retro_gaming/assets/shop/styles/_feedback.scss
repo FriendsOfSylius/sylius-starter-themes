@@ -1,0 +1,62 @@
+:root {
+  --bs-success: #{$lime};
+  --bs-success-rgb: 140, 242, 107;
+  --bs-success-text-emphasis: #{$lime};
+  --bs-success-bg-subtle: #16301F;
+  --bs-success-border-subtle: #2F6B3A;
+
+  --bs-info: #{$cyan};
+  --bs-info-rgb: 59, 226, 240;
+  --bs-info-text-emphasis: #{$cyan};
+  --bs-info-bg-subtle: #0F2A3A;
+  --bs-info-border-subtle: #1E5566;
+
+  --bs-warning-text-emphasis: #{$gold};
+  --bs-warning-bg-subtle: #33280E;
+  --bs-warning-border-subtle: #6B5418;
+
+  --bs-danger: #{$red};
+  --bs-danger-rgb: 255, 107, 107;
+  --bs-danger-text-emphasis: #FF9A9A;
+  --bs-danger-bg-subtle: #3A1420;
+  --bs-danger-border-subtle: #7A2A3C;
+}
+
+.alert {
+  border-width: 2px;
+  border-radius: 0;
+}
+
+@each $variant in success, info, warning, danger {
+  .alert-#{$variant} {
+    --bs-alert-color: var(--bs-#{$variant}-text-emphasis);
+    --bs-alert-bg: var(--bs-#{$variant}-bg-subtle);
+    --bs-alert-border-color: var(--bs-#{$variant}-border-subtle);
+    --bs-alert-link-color: var(--bs-#{$variant}-text-emphasis);
+  }
+}
+
+.badge {
+  border-radius: 0;
+  font-family: $font-family-pixel;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.badge.bg-primary,
+.badge.text-bg-primary {
+  background-color: $magenta !important;
+  color: $ink !important;
+}
+
+.badge.bg-success,
+.badge.text-bg-success {
+  background-color: $lime !important;
+  color: $ink !important;
+}
+
+.badge.bg-danger,
+.badge.text-bg-danger {
+  background-color: $red !important;
+  color: $ink !important;
+}

@@ -1,0 +1,142 @@
+// Arcade buttons: square, stepped corners, a darker bottom edge that is pushed in on click.
+.btn {
+  @include pixel-label;
+
+  position: relative;
+  min-height: 2.875rem;
+  padding: 0.85rem 1.5rem 0.95rem;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.9375rem;
+  line-height: 1;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease,
+    color 120ms ease,
+    transform 80ms ease;
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+@mixin rg-button($bg, $color, $hover-bg, $edge) {
+  --bs-btn-color: #{$color};
+  --bs-btn-bg: #{$bg};
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: #{$color};
+  --bs-btn-hover-bg: #{$hover-bg};
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: #{$color};
+  --bs-btn-active-bg: #{$hover-bg};
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-disabled-color: #{$color};
+  --bs-btn-disabled-bg: #{$bg};
+  --bs-btn-disabled-border-color: transparent;
+
+  box-shadow:
+    inset 0 (-$pixel) 0 0 $edge,
+    0 (-$pixel) 0 0 var(--bs-btn-bg),
+    0 $pixel 0 0 var(--bs-btn-bg),
+    (-$pixel) 0 0 0 var(--bs-btn-bg),
+    $pixel 0 0 0 var(--bs-btn-bg);
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    box-shadow:
+      inset 0 (-$pixel) 0 0 $edge,
+      0 (-$pixel) 0 0 $hover-bg,
+      0 $pixel 0 0 $hover-bg,
+      (-$pixel) 0 0 0 $hover-bg,
+      $pixel 0 0 0 $hover-bg;
+  }
+
+  &:active {
+    box-shadow:
+      inset 0 ($pixel * 0.5) 0 0 $edge,
+      0 (-$pixel) 0 0 $hover-bg,
+      0 $pixel 0 0 $hover-bg,
+      (-$pixel) 0 0 0 $hover-bg,
+      $pixel 0 0 0 $hover-bg;
+  }
+}
+
+.btn-primary,
+#add-to-cart-button {
+  @include rg-button($magenta, $ink, $magenta-soft, $magenta-dark);
+
+  &:hover {
+    filter: drop-shadow(0 0 12px rgba($magenta, 0.55));
+  }
+}
+
+.btn-secondary,
+.btn-outline-primary,
+.btn-outline-gray,
+.btn-light,
+.btn-outline-secondary {
+  @include rg-button($panel-raised, $white, $line, $line-soft);
+
+  &:hover {
+    color: $cyan;
+  }
+}
+
+.btn-success {
+  @include rg-button($lime, $ink, #B2FA97, #5FC342);
+}
+
+.btn-danger,
+.btn-outline-danger {
+  @include rg-button($red, $ink, #FF9494, #D94545);
+}
+
+.btn-link,
+.btn-transparent {
+  margin: 0;
+  box-shadow: none;
+  color: $cyan;
+
+  &:hover {
+    color: $magenta-soft;
+  }
+}
+
+.btn-sm {
+  min-height: 2.25rem;
+  padding: 0.6rem 1rem 0.7rem;
+  font-size: 0.8125rem;
+}
+
+.btn-icon {
+  font-family: $font-family-base;
+  text-transform: none;
+}
+
+// "Press start": a blinking play arrow, as on a title screen.
+.rg-btn-start::after {
+  display: inline-block;
+  margin-inline-start: 0.65rem;
+  content: "▶";
+  animation: rg-blink 1.1s steps(1, end) infinite;
+}
+
+@keyframes rg-blink {
+  50% {
+    opacity: 0.15;
+  }
+}
+
+#add-to-cart-button {
+  width: 100%;
+  min-height: 3.5rem;
+  font-size: 1.0625rem;
+}
+
+// Inside input groups, the stepped frame would overlap the field: keep the bevel only.
+.input-group > .btn,
+.input-group > .btn:hover,
+.input-group > .btn:active {
+  box-shadow: inset 0 (-$pixel) 0 0 rgba(#000, 0.3);
+}

@@ -1,0 +1,353 @@
+// The Sylius shop is compiled in light mode: remap Bootstrap's runtime variables to the
+// console palette, so that every native component (tables, dropdowns, offcanvas...) turns dark.
+:root {
+  --bs-body-bg: #{$void};
+  --bs-body-bg-rgb: 11, 13, 28;
+  --bs-body-color: #{$text};
+  --bs-body-color-rgb: 216, 219, 244;
+  --bs-emphasis-color: #{$white};
+  --bs-emphasis-color-rgb: 247, 248, 255;
+  --bs-heading-color: #{$white};
+  --bs-secondary-color: #{$text-muted};
+  --bs-secondary-color-rgb: 160, 166, 207;
+  --bs-secondary-bg: #{$panel};
+  --bs-secondary-bg-rgb: 20, 24, 51;
+  --bs-tertiary-color: #{$text-muted};
+  --bs-tertiary-color-rgb: 160, 166, 207;
+  --bs-tertiary-bg: #{$panel};
+  --bs-tertiary-bg-rgb: 20, 24, 51;
+  --bs-border-color: #{$line};
+  --bs-border-color-translucent: #{rgba($line, 0.8)};
+  --bs-link-color: #{$cyan};
+  --bs-link-color-rgb: 59, 226, 240;
+  --bs-link-hover-color: #{$magenta-soft};
+  --bs-link-hover-color-rgb: 255, 141, 187;
+  --bs-primary: #{$magenta};
+  --bs-primary-rgb: 255, 61, 139;
+  --bs-light: #{$panel};
+  --bs-light-rgb: 20, 24, 51;
+  --bs-dark: #{$white};
+  --bs-dark-rgb: 247, 248, 255;
+  --bs-gray-500: #{$text-muted};
+  --bs-code-color: #{$magenta-soft};
+  --bs-highlight-bg: #{rgba($gold, 0.3)};
+  --bs-highlight-color: #{$white};
+
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $void;
+  color: $text;
+  font-family: $font-family-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $cyan;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+  transition: color 160ms ease;
+
+  &:hover {
+    color: $magenta-soft;
+  }
+
+  &.link-reset:hover {
+    color: $cyan;
+  }
+}
+
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  color: $white;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+h1,
+.h1 {
+  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+}
+
+h2,
+.h2 {
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+}
+
+h3,
+.h3 {
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  color: $white;
+  font-family: $font-family-base;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background-color: $magenta;
+  color: $ink;
+}
+
+:focus-visible {
+  outline: 3px solid $cyan;
+  outline-offset: 3px;
+}
+
+hr {
+  border-color: $line;
+  opacity: 1;
+}
+
+// Light utilities used by Sylius templates, turned into console panels.
+
+.bg-white,
+.bg-light,
+.bg-body,
+.bg-body-tertiary,
+.text-bg-light {
+  background-color: $panel !important;
+  color: $text !important;
+}
+
+.text-black,
+.text-dark,
+.text-body,
+.text-black-50 {
+  color: $text !important;
+}
+
+.text-muted,
+.text-body-secondary,
+.text-body-tertiary,
+.text-secondary {
+  color: $text-muted !important;
+}
+
+.text-primary {
+  color: $magenta !important;
+}
+
+.text-success {
+  color: $lime !important;
+}
+
+.text-danger,
+.invalid-feedback {
+  color: $red !important;
+}
+
+.border,
+.border-top,
+.border-bottom,
+.border-start,
+.border-end {
+  border-color: $line !important;
+}
+
+// Square corners everywhere: this is a pixel world.
+.rounded,
+.rounded-1,
+.rounded-2,
+.rounded-3,
+.rounded-4 {
+  border-radius: 0 !important;
+}
+
+.btn-close {
+  filter: invert(1) grayscale(1) brightness(2);
+  opacity: 0.75;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.nav-link {
+  --bs-nav-link-color: #{$text};
+  --bs-nav-link-hover-color: #{$cyan};
+  --bs-navbar-color: #{$text};
+  --bs-navbar-hover-color: #{$cyan};
+  --bs-navbar-active-color: #{$cyan};
+
+  color: $text;
+
+  &:hover,
+  &:focus {
+    color: $cyan;
+  }
+}
+
+.navbar {
+  --bs-navbar-color: #{$text};
+  --bs-navbar-hover-color: #{$cyan};
+  --bs-navbar-active-color: #{$cyan};
+  --bs-navbar-brand-color: #{$white};
+}
+
+.dropdown-menu {
+  --bs-dropdown-bg: #{$panel};
+  --bs-dropdown-color: #{$text};
+  --bs-dropdown-border-color: #{$line};
+  --bs-dropdown-link-color: #{$text};
+  --bs-dropdown-link-hover-color: #{$white};
+  --bs-dropdown-link-hover-bg: #{$panel-raised};
+  --bs-dropdown-link-active-color: #{$ink};
+  --bs-dropdown-link-active-bg: #{$cyan};
+  --bs-dropdown-divider-bg: #{$line};
+}
+
+.pagination {
+  --bs-pagination-color: #{$text};
+  --bs-pagination-bg: transparent;
+  --bs-pagination-hover-color: #{$cyan};
+  --bs-pagination-hover-bg: #{$panel};
+  --bs-pagination-focus-color: #{$cyan};
+  --bs-pagination-focus-bg: #{$panel};
+  --bs-pagination-active-color: #{$ink};
+  --bs-pagination-active-bg: #{$cyan};
+  --bs-pagination-active-border-color: #{$cyan};
+  --bs-pagination-disabled-color: #{$line};
+  --bs-pagination-disabled-bg: transparent;
+
+  font-family: $font-family-pixel;
+}
+
+.list-group {
+  --bs-list-group-bg: #{$panel};
+  --bs-list-group-color: #{$text};
+  --bs-list-group-border-color: #{$line};
+  --bs-list-group-action-hover-bg: #{$panel-raised};
+  --bs-list-group-action-hover-color: #{$white};
+  --bs-list-group-active-bg: #{$magenta};
+  --bs-list-group-active-border-color: #{$magenta};
+  --bs-list-group-active-color: #{$ink};
+}
+
+.modal {
+  --bs-modal-bg: #{$panel};
+  --bs-modal-color: #{$text};
+  --bs-modal-border-color: #{$line};
+  --bs-modal-header-border-color: #{$line};
+  --bs-modal-footer-border-color: #{$line};
+}
+
+// Shared helpers
+
+.rg-eyebrow {
+  @include pixel-label;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  color: $cyan;
+  font-size: 0.9375rem;
+
+  &::before {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $magenta;
+    box-shadow: 0 0 10px rgba($magenta, 0.8);
+    content: "";
+  }
+}
+
+.rg-section-head {
+  max-width: 46rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.rg-section-head--wide {
+  max-width: 52rem;
+}
+
+.rg-section-head__lead {
+  margin: 1.25rem 0 0;
+  color: $text-muted;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+
+  strong {
+    color: $white;
+  }
+}
+
+// Console panel with a stepped pixel border.
+.rg-panel {
+  position: relative;
+  margin: $pixel;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background-color: $panel;
+  color: $text;
+  outline: 0;
+
+  @include pixel-frame($line);
+}
+
+.rg-panel__title {
+  @include pixel-label;
+
+  margin: 0 0 1.5rem;
+  color: $gold;
+  font-size: 1rem;
+}
+
+[id^="rg-"] {
+  scroll-margin-top: 1.5rem;
+}
+
+.rg-checkout-brand,
+.rg-checkout-account {
+  color: $text;
+}
+
+.rg-checkout-account a,
+.rg-checkout-account .btn {
+  color: $cyan;
+}
+
+.rg-checkout-account a:hover,
+.rg-checkout-account .btn:hover {
+  color: $magenta-soft;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,66 @@
+// Retro Gaming — a night arcade: neon magenta (player 1) and cyan (player 2) on a deep console
+// blue, with coin gold for prices and health-bar lime for good news.
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-family-pixel: "Pixel Quest", ui-monospace, "SFMono-Regular", "Menlo", monospace;
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: $font-family-pixel;
+$headings-font-weight: 400;
+
+$deep: #070814;
+$void: #0B0D1C;
+$panel: #141833;
+$panel-raised: #1D2248;
+$line: #2E3570;
+$line-soft: #232A57;
+$magenta: #FF3D8B;
+$magenta-dark: #E4206F;
+$magenta-soft: #FF8DBB;
+$cyan: #3BE2F0;
+$cyan-dark: #17B8C8;
+$gold: #FFC93C;
+$lime: #8CF26B;
+$red: #FF6B6B;
+$white: #F7F8FF;
+$ink: #0B0D1C;
+$text: #D8DBF4;
+$text-muted: #A0A6CF;
+
+$body-bg: $void;
+$body-color: $text;
+
+$primary: $magenta;
+$secondary: $panel-raised;
+$success: $lime;
+$info: $cyan;
+$danger: $red;
+
+$link-color: $cyan;
+$link-hover-color: $magenta-soft;
+$border-color: $line;
+
+// One "pixel" of the frames drawn around buttons, panels and cards.
+$pixel: 4px;
+
+$glow-magenta: 0 0 24px rgba($magenta, 0.45);
+$glow-cyan: 0 0 24px rgba($cyan, 0.4);
+$shadow-deep: 0 24px 60px rgba(#000, 0.45);
+
+$ease-step: steps(4, end);
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+// Stepped "pixel" frame: four hard shadows leave the corners empty, like a sprite border.
+@mixin pixel-frame($color, $size: $pixel) {
+  box-shadow:
+    0 (-$size) 0 0 $color,
+    0 $size 0 0 $color,
+    (-$size) 0 0 0 $color,
+    $size 0 0 0 $color;
+}
+
+@mixin pixel-label {
+  font-family: $font-family-pixel;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,50 @@
+{# Retro Gaming promise: the power-ups every order gets, and the order as a quest log, level by level. #}
+<section id="rg-promise" class="rg-promise" aria-labelledby="rg-promise-title">
+    <div class="container">
+        <div class="rg-section-head rg-section-head--wide">
+            <p class="rg-eyebrow">{{ 'retro_gaming.promise.eyebrow'|trans({}, 'retro_gaming') }}</p>
+            <h2 id="rg-promise-title">{{ 'retro_gaming.promise.title'|trans({}, 'retro_gaming') }}</h2>
+            <p class="rg-section-head__lead">{{ 'retro_gaming.promise.lead'|trans({}, 'retro_gaming')|raw }}</p>
+        </div>
+
+        <div class="rg-quest">
+            <div class="rg-panel rg-quest__perks">
+                <p class="rg-panel__title">{{ 'retro_gaming.promise.perks.title'|trans({}, 'retro_gaming') }}</p>
+                <ol class="rg-perks" role="list">
+                    {% for item in 1..4 %}
+                        <li>
+                            <span class="rg-perks__key" aria-hidden="true">{{ ['A', 'B', 'X', 'Y'][loop.index0] }}</span>
+                            <span><strong>{{ ('retro_gaming.promise.item_' ~ item ~ '.title')|trans({}, 'retro_gaming') }}</strong> {{ ('retro_gaming.promise.item_' ~ item ~ '.text')|trans({}, 'retro_gaming') }}</span>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            <div class="rg-panel rg-panel--log rg-quest__log">
+                <p class="rg-panel__title">{{ 'retro_gaming.promise.log.title'|trans({}, 'retro_gaming') }}</p>
+                <ol class="rg-levels" role="list">
+                    {% for event in 1..4 %}
+                        <li class="rg-levels__step{{ loop.last ? ' is-next' : ' is-done' }}">
+                            <span class="rg-levels__level">{{ ('retro_gaming.promise.log.event_' ~ event ~ '.level')|trans({}, 'retro_gaming') }}</span>
+                            <span class="rg-levels__label">{{ ('retro_gaming.promise.log.event_' ~ event ~ '.label')|trans({}, 'retro_gaming') }}</span>
+                            <span class="rg-levels__detail">{{ ('retro_gaming.promise.log.event_' ~ event ~ '.detail')|trans({}, 'retro_gaming') }}</span>
+                        </li>
+                    {% endfor %}
+                </ol>
+                <div class="rg-xp" aria-hidden="true">
+                    <span class="rg-xp__label">XP</span>
+                    <span class="rg-xp__bar"><span></span></span>
+                    <span class="rg-xp__value">75%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="rg-promise__outro">
+            <p>{{ 'retro_gaming.promise.footer'|trans({}, 'retro_gaming') }}</p>
+            <div class="rg-promise__actions">
+                <a class="btn btn-primary rg-btn-start" href="#rg-latest-products">{{ 'retro_gaming.promise.cta'|trans({}, 'retro_gaming') }}</a>
+                <a class="btn btn-secondary" href="#rg-services">{{ 'retro_gaming.promise.secondary_cta'|trans({}, 'retro_gaming') }}</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,108 @@
+retro_gaming:
+    hud:
+        hi_score: 'Record'
+        credits: 'Crédits'
+    hero:
+        kicker: 'Niveau 01 · Nouvelle saison'
+        title: 'Appuyez sur start pour <em>votre prochaine aventure.</em>'
+        lead: 'Jeux, consoles et accessoires choisis par des joueurs, expédiés en 48 heures. Des prix justes, <strong>aucun frais caché</strong> et une équipe qui répond quand vous avez besoin de renfort.'
+        cta: 'Appuyez sur start'
+        secondary_cta: 'Voir la quête principale'
+        screen: 'Joueur 1 prêt'
+        select:
+            title: 'Choisissez votre butin'
+            label: 'Nouveauté'
+            cta: 'Voir l’article'
+            empty: 'Insérez une pièce'
+            stat:
+                shipping: 'Livraison'
+                returns: 'Retours'
+                fees: 'Frais'
+    usp:
+        shipping:
+            title: 'Expédié en 48 h'
+            text: 'Suivi jusqu’à votre porte'
+        returns:
+            title: 'Retours gratuits'
+            text: '30 jours pour réapparaître'
+        payment:
+            title: 'Paiement sécurisé'
+            text: 'Carte, PayPal et plus'
+    achievements:
+        label: 'Succès débloqués'
+        item_1:
+            value: '48 h'
+            text: 'pour expédier votre commande'
+        item_2:
+            value: '30 jours'
+            text: 'pour changer d’avis'
+        item_3:
+            value: '0 €'
+            text: 'de livraison, retours compris'
+        item_4:
+            value: '7j/7'
+            text: 'un vrai joueur vous répond'
+    products:
+        eyebrow:
+            latest: 'Nouvelles sorties'
+    promise:
+        eyebrow: 'Quête principale'
+        title: 'Du clic à votre porte, sans boss final.'
+        lead: 'Nous jouons les niveaux difficiles à votre place : du clic à votre porte, chaque étape est <strong>visible, rapide et gratuite</strong>.'
+        perks:
+            title: 'Bonus sur chaque commande'
+        item_1:
+            title: 'Un clic, une commande.'
+            text: 'Aucun compte requis, votre panier est gardé pour vous.'
+        item_2:
+            title: 'Expédiée sous 48 heures.'
+            text: 'Vous suivez votre colis à chaque étape.'
+        item_3:
+            title: 'Des retours qui ne coûtent rien.'
+            text: '30 jours pour changer d’avis, étiquette incluse.'
+        item_4:
+            title: 'De vrais joueurs derrière l’écran.'
+            text: 'Notre équipe vous répond, sept jours sur sept.'
+        log:
+            title: 'Journal de quête · commande #P1-2048'
+            event_1:
+                level: 'Niveau 1'
+                label: 'Commande confirmée'
+                detail: 'paiement accepté · e-mail de confirmation envoyé'
+            event_2:
+                level: 'Niveau 2'
+                label: 'Préparée avec soin'
+                detail: 'qualité vérifiée · emballage recyclable'
+            event_3:
+                level: 'Niveau 3'
+                label: 'Expédiée'
+                detail: 'numéro de suivi envoyé par e-mail'
+            event_4:
+                level: 'Niveau final'
+                label: 'Livrée à votre porte'
+                detail: 'ou au point relais de votre choix'
+        footer: 'Votre prochaine commande est à un clic.'
+        cta: 'Voir les nouvelles sorties'
+        secondary_cta: 'Nos services'
+    footer:
+        tagline: 'La boutique de jeux tenue par des joueurs, pour des joueurs. Livrée vite, retournée gratuitement.'
+        continue: 'Continuer ? ▶ Oui'
+        services:
+            eyebrow: 'Équipe de soutien'
+            title: 'Besoin de renfort ? On vous couvre.'
+            slot: 'Emplacement %number%'
+            shipping:
+                title: 'Livraison rapide'
+                tag: 'Offerte dès le premier article'
+                text: 'Votre commande quitte notre entrepôt sous 48 heures et vous la suivez jusqu’à votre porte ou votre point relais.'
+                cta: 'Commencer mes achats'
+            returns:
+                title: 'Retours faciles'
+                tag: '30 jours'
+                text: 'Vous avez changé d’avis ? Lancez un retour depuis votre compte, imprimez l’étiquette et déposez le colis : nous vous remboursons dès sa réception.'
+                cta: 'Mon compte'
+            support:
+                title: 'Service client'
+                tag: '7 jours sur 7'
+                text: 'Une question sur une sortie, une commande ou une livraison ? Écrivez-nous, un membre de l’équipe vous répond personnellement.'
+                cta: 'Nous contacter'

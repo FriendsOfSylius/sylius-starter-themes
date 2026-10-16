@@ -1,0 +1,48 @@
+{% import '@SyliusShop/shared/macro/money.html.twig' as money %}
+{% set product = latest_products|first %}
+
+{# A character select screen: the latest products are the slots, the newest one is picked by player 1. #}
+<div class="rg-select">
+    <div class="rg-select__bar" aria-hidden="true">
+        <span>{{ 'retro_gaming.hero.select.title'|trans({}, 'retro_gaming') }}</span>
+        <span class="rg-select__player">P1</span>
+    </div>
+
+    {% if product %}
+        <div class="rg-select__body">
+            <a class="rg-select__pick" href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
+                <span class="rg-select__media">
+                    {{ component('sylius_shop:main_image', {product: product, class: 'w-100 h-100 object-fit-cover'}) }}
+                </span>
+                <span class="rg-select__info">
+                    <span class="rg-select__label">{{ 'retro_gaming.hero.select.label'|trans({}, 'retro_gaming') }}</span>
+                    <span class="rg-select__name">{{ product.name }}</span>
+                    {% if not product.enabledVariants.empty() %}
+                        <span class="rg-select__price">{{ money.calculatePrice(product.enabledVariants.first) }}</span>
+                    {% endif %}
+                    <span class="rg-select__stats" aria-hidden="true">
+                        {% for stat in ['shipping', 'returns', 'fees'] %}
+                            <span class="rg-select__stat">
+                                <span class="rg-select__stat-name">{{ ('retro_gaming.hero.select.stat.' ~ stat)|trans({}, 'retro_gaming') }}</span>
+                                <span class="rg-select__stat-bar rg-select__stat-bar--{{ stat }}"><span></span><span></span><span></span><span></span><span></span></span>
+                            </span>
+                        {% endfor %}
+                    </span>
+                    <span class="rg-select__cta">{{ 'retro_gaming.hero.select.cta'|trans({}, 'retro_gaming') }}</span>
+                </span>
+            </a>
+
+            <ul class="rg-select__slots" role="list" aria-hidden="true">
+                {% for slot in latest_products %}
+                    <li class="rg-select__slot{{ loop.first ? ' is-active' }}">
+                        {{ component('sylius_shop:main_image', {product: slot, class: 'w-100 h-100 object-fit-cover'}) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <div class="rg-select__empty" aria-hidden="true">
+            <span class="rg-select__insert">{{ 'retro_gaming.hero.select.empty'|trans({}, 'retro_gaming') }}</span>
+        </div>
+    {% endif %}
+</div>

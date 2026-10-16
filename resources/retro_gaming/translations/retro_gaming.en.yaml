@@ -1,0 +1,108 @@
+retro_gaming:
+    hud:
+        hi_score: 'Hi-score'
+        credits: 'Credits'
+    hero:
+        kicker: 'Level 01 · New season'
+        title: 'Press start on <em>your next adventure.</em>'
+        lead: 'Games, consoles and gear picked by players, shipped in 48 hours. Fair prices, <strong>no hidden fees</strong> and a crew that answers when you need backup.'
+        cta: 'Press start'
+        secondary_cta: 'See the main quest'
+        screen: 'Player 1 ready'
+        select:
+            title: 'Select your loot'
+            label: 'New release'
+            cta: 'View the item'
+            empty: 'Insert coin'
+            stat:
+                shipping: 'Shipping'
+                returns: 'Returns'
+                fees: 'Fees'
+    usp:
+        shipping:
+            title: 'Shipped in 48 h'
+            text: 'Tracked to your door'
+        returns:
+            title: 'Free returns'
+            text: '30 days to respawn'
+        payment:
+            title: 'Secure payment'
+            text: 'Card, PayPal and more'
+    achievements:
+        label: 'Achievements unlocked'
+        item_1:
+            value: '48 h'
+            text: 'to ship your order'
+        item_2:
+            value: '30 days'
+            text: 'to change your mind'
+        item_3:
+            value: '0 €'
+            text: 'shipping, returns included'
+        item_4:
+            value: '7/7'
+            text: 'a real player answers you'
+    products:
+        eyebrow:
+            latest: 'New releases'
+    promise:
+        eyebrow: 'Main quest'
+        title: 'From click to doorstep, no boss fight.'
+        lead: 'We play the hard levels for you: from the click to your doorstep, every step is <strong>visible, fast and free</strong>.'
+        perks:
+            title: 'Power-ups on every order'
+        item_1:
+            title: 'One click, one order.'
+            text: 'No account required, your cart is saved for you.'
+        item_2:
+            title: 'Shipped within 48 hours.'
+            text: 'You follow your parcel at every step.'
+        item_3:
+            title: 'Returns that cost nothing.'
+            text: '30 days to change your mind, label included.'
+        item_4:
+            title: 'Real players behind the screen.'
+            text: 'Our crew answers you, seven days a week.'
+        log:
+            title: 'Quest log · order #P1-2048'
+            event_1:
+                level: 'Level 1'
+                label: 'Order confirmed'
+                detail: 'payment accepted · confirmation e-mail sent'
+            event_2:
+                level: 'Level 2'
+                label: 'Packed with care'
+                detail: 'quality checked · recyclable packaging'
+            event_3:
+                level: 'Level 3'
+                label: 'Shipped'
+                detail: 'tracking number sent by e-mail'
+            event_4:
+                level: 'Final level'
+                label: 'Delivered to your door'
+                detail: 'or at the pickup point of your choice'
+        footer: 'Your next order is one click away.'
+        cta: 'Browse new releases'
+        secondary_cta: 'Our services'
+    footer:
+        tagline: 'The game store run by players, for players. Delivered fast, returned for free.'
+        continue: 'Continue? ▶ Yes'
+        services:
+            eyebrow: 'Support crew'
+            title: 'Need backup? We have your back.'
+            slot: 'Slot %number%'
+            shipping:
+                title: 'Fast delivery'
+                tag: 'Free, from the first item'
+                text: 'Your order leaves our warehouse within 48 hours and you follow it until it reaches your door or your pickup point.'
+                cta: 'Start shopping'
+            returns:
+                title: 'Easy returns'
+                tag: '30 days'
+                text: 'Changed your mind? Start a return from your account, print the label and drop the parcel off: we refund you as soon as it arrives.'
+                cta: 'My account'
+            support:
+                title: 'Customer service'
+                tag: '7 days a week'
+                text: 'A question about a release, an order or a delivery? Write to us, a member of the crew answers you personally.'
+                cta: 'Contact us'

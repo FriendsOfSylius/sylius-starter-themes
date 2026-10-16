@@ -1,0 +1,79 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="rg-hero" aria-labelledby="rg-hero-title">
+    <div class="rg-hud" aria-hidden="true">
+        <div class="container rg-hud__inner">
+            <span class="rg-hud__item"><span class="rg-hud__label">1UP</span> 004200</span>
+            <span class="rg-hud__item rg-hud__item--hi"><span class="rg-hud__label">{{ 'retro_gaming.hud.hi_score'|trans({}, 'retro_gaming') }}</span> 999990</span>
+            <span class="rg-hud__item rg-hud__item--credits"><span class="rg-hud__label">{{ 'retro_gaming.hud.credits'|trans({}, 'retro_gaming') }}</span> 03</span>
+            <span class="rg-hud__lives">
+                {% for life in 1..3 %}
+                    <svg viewBox="0 0 7 6" shape-rendering="crispEdges"><path d="M1 0h2v1h1v-1h2v1h1v2h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h-1v-2h1z"/></svg>
+                {% endfor %}
+            </span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="rg-hero__grid">
+            <div class="rg-hero__copy">
+                <p class="rg-hero__kicker">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'retro_gaming.hero.kicker'|trans({}, 'retro_gaming') }}{% endif %}</p>
+                <h1 id="rg-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'retro_gaming.hero.title'|trans({}, 'retro_gaming')|raw }}{% endif %}</h1>
+                <p class="rg-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'retro_gaming.hero.lead'|trans({}, 'retro_gaming')|raw }}{% endif %}</p>
+
+                <div class="rg-hero__actions">
+                    <a class="btn btn-primary rg-btn-start" href="{{ hero.ctaUrl ?? '#rg-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'retro_gaming.hero.cta'|trans({}, 'retro_gaming') }}{% endif %}
+                    </a>
+                    <a class="rg-hero__link" href="#rg-promise">{{ 'retro_gaming.hero.secondary_cta'|trans({}, 'retro_gaming') }}</a>
+                </div>
+
+                <ul class="rg-powerups" role="list">
+                    <li>
+                        <svg viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path d="M6 0h2v1h-1v3h3v1h-1v1h-1v1h-1v1h-1v1h-1v1h-2v-1h1v-3h-3v-1h1v-1h1v-1h1v-1h1v-1h1z"/></svg>
+                        <span><strong>{{ 'retro_gaming.usp.shipping.title'|trans({}, 'retro_gaming') }}</strong>{{ 'retro_gaming.usp.shipping.text'|trans({}, 'retro_gaming') }}</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path d="M3 0h4v1h2v2h1v4h-1v2h-2v1h-4v-1h-2v-2h-1v-4h1v-2h2zM2 4v2h1v1h1v1h2v-1h1v-1h1v-2h-1v-1h-1v-1h-2v1h-1v1z"/><path d="M0 1h1v1h1v1h1v1h-3z"/></svg>
+                        <span><strong>{{ 'retro_gaming.usp.returns.title'|trans({}, 'retro_gaming') }}</strong>{{ 'retro_gaming.usp.returns.text'|trans({}, 'retro_gaming') }}</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path d="M1 0h8v1h1v4h-1v2h-1v1h-1v1h-1v1h-2v-1h-1v-1h-1v-1h-1v-2h-1v-4h1zM2 2v3h1v2h1v1h2v-1h1v-2h1v-3z"/><path d="M4 3h2v3h-2z"/></svg>
+                        <span><strong>{{ 'retro_gaming.usp.payment.title'|trans({}, 'retro_gaming') }}</strong>{{ 'retro_gaming.usp.payment.text'|trans({}, 'retro_gaming') }}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="rg-hero__visual">
+                <div class="rg-screen">
+                    <div class="rg-screen__glass">
+                        {% if hero.image %}
+                            <img class="rg-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                        {% else %}
+                            {{ component('sylius_shop:product:list', {limit: 3, template: 'shop/homepage/hero/select.html.twig'}) }}
+                        {% endif %}
+                    </div>
+                    <div class="rg-screen__base" aria-hidden="true">
+                        <span class="rg-screen__led"></span>
+                        <span class="rg-screen__brand">{{ 'retro_gaming.hero.screen'|trans({}, 'retro_gaming') }}</span>
+                        <span class="rg-screen__vents"><span></span><span></span><span></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rg-achievements">
+        <div class="container">
+            <p class="rg-achievements__label">{{ 'retro_gaming.achievements.label'|trans({}, 'retro_gaming') }}</p>
+            <ul class="rg-achievements__items" role="list">
+                {% for item in 1..4 %}
+                    <li>
+                        <span class="rg-achievements__badge" aria-hidden="true">★</span>
+                        <span class="rg-achievements__value">{{ ('retro_gaming.achievements.item_' ~ item ~ '.value')|trans({}, 'retro_gaming') }}</span>
+                        <span class="rg-achievements__text">{{ ('retro_gaming.achievements.item_' ~ item ~ '.text')|trans({}, 'retro_gaming') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
