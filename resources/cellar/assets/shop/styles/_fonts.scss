@@ -1,0 +1,16 @@
+// Bodoni Moda (SIL Open Font License 1.1), variable weight 400–900, latin subset.
+@font-face {
+  font-family: "Bodoni Moda";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("../fonts/bodoni-moda-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("../fonts/bodoni-moda-italic.woff2") format("woff2");
+}

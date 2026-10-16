@@ -1,0 +1,44 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="cellar-hero" aria-labelledby="cellar-hero-title">
+    <div class="container">
+        <div class="cellar-hero__grid">
+            <div class="cellar-hero__copy">
+                <p class="cellar-eyebrow cellar-eyebrow--light">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'cellar.hero.eyebrow'|trans({}, 'cellar') }}{% endif %}</p>
+                <h1 id="cellar-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'cellar.hero.title'|trans({}, 'cellar')|raw }}{% endif %}</h1>
+                <p class="cellar-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'cellar.hero.lead'|trans({}, 'cellar')|raw }}{% endif %}</p>
+
+                <div class="cellar-hero__actions">
+                    <a class="btn btn-primary cellar-btn-gold" href="{{ hero.ctaUrl ?? '#cellar-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'cellar.hero.cta'|trans({}, 'cellar') }}{% endif %}
+                    </a>
+                    <a class="cellar-link-arrow cellar-link-arrow--light" href="#cellar-promise">
+                        {{ 'cellar.hero.secondary_cta'|trans({}, 'cellar') }}
+                    </a>
+                </div>
+
+                <p class="cellar-hero__signature">{{ 'cellar.hero.signature'|trans({}, 'cellar') }}</p>
+            </div>
+
+            <div class="cellar-hero__visual">
+                {% if hero.image %}
+                    <img class="cellar-hero__arch cellar-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                {% else %}
+                    {% include 'shop/homepage/hero/window.html.twig' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="cellar-figures">
+        <div class="container">
+            <ul class="cellar-figures__items" role="list">
+                {% for item in 1..4 %}
+                    <li>
+                        <span class="cellar-figures__value">{{ ('cellar.figures.item_' ~ item ~ '.value')|trans({}, 'cellar') }}</span>
+                        <span class="cellar-figures__text">{{ ('cellar.figures.item_' ~ item ~ '.text')|trans({}, 'cellar') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,389 @@
+// Top bar: a thin night-bordeaux band with the delivery promise and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.cellar-topbar) {
+  background-color: $wine-night !important;
+  color: $text-on-dark;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+
+  a {
+    color: $gold-light;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$border-dark};
+    --bs-btn-color: #{$gold-light};
+    --bs-btn-hover-bg: #{$wine-deep};
+    --bs-btn-hover-border-color: #{$gold};
+    --bs-btn-hover-color: #{$ivory};
+    --bs-btn-active-bg: #{$wine-deep};
+    --bs-btn-active-border-color: #{$gold};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.68rem;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$wine-deep};
+    --bs-dropdown-link-hover-bg: #{$wine};
+    --bs-dropdown-border-color: #{$border-dark};
+  }
+}
+
+.cellar-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.cellar-topbar__item + .cellar-topbar__item::before {
+  margin-right: 1.5rem;
+  color: $gold;
+  content: "◆";
+  font-size: 0.5rem;
+  vertical-align: 0.15em;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $paper;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $border !important;
+}
+
+header .container {
+  padding-block: 0.25rem;
+}
+
+header a {
+  color: $ink;
+
+  &:hover {
+    color: $wine;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: a fine-line grape seal and a Didone name over a spaced tagline.
+
+.cellar-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.75rem;
+  color: $wine;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $wine;
+    text-decoration: none;
+  }
+}
+
+.cellar-logo__seal {
+  width: 2.6rem;
+  height: 2.6rem;
+  flex: 0 0 auto;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cellar-logo__ring {
+  stroke: $gold;
+  stroke-width: 1;
+}
+
+.cellar-logo__stem {
+  stroke: $gold;
+  stroke-width: 1.2;
+}
+
+.cellar-logo__grapes circle {
+  fill: currentColor;
+  transition: fill 220ms ease;
+}
+
+.cellar-logo:hover .cellar-logo__grapes circle {
+  fill: $claret;
+}
+
+.cellar-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  line-height: 1;
+}
+
+.cellar-logo__name {
+  color: $ink;
+  font-family: $font-family-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.cellar-logo__tagline {
+  color: $gold-dark;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+// Category navigation: spaced small capitals underlined in gold.
+
+.cellar-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.cellar-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.cellar-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  overflow: visible;
+}
+
+.cellar-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.cellar-category-nav__links > .nav-link,
+.cellar-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.6rem 0.35rem !important;
+  color: $ink;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  &::before {
+    position: absolute;
+    right: 0.35rem;
+    bottom: 0.3rem;
+    left: 0.35rem;
+    height: 1px;
+    background-color: $gold;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 240ms $ease;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $wine;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.cellar-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $border;
+  border-top: 2px solid $gold;
+  border-radius: 0 0 $radius $radius;
+  background-color: $ivory;
+  box-shadow: $shadow-float;
+}
+
+.cellar-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $parchment;
+    color: $wine;
+  }
+}
+
+// Cart: an outlined label with a bordeaux counter.
+
+.cellar-cart__button {
+  --bs-btn-color: #{$ink};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$border-strong};
+  --bs-btn-hover-color: #{$wine};
+  --bs-btn-hover-bg: #{$ivory};
+  --bs-btn-hover-border-color: #{$wine};
+  --bs-btn-active-color: #{$wine};
+  --bs-btn-active-bg: #{$ivory};
+  --bs-btn-active-border-color: #{$wine};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.cellar-cart__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.cellar-cart__count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $paper;
+  border-radius: 999px;
+  background-color: $wine;
+  color: $ivory;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $ivory;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $ink;
+
+  &:hover,
+  &:focus {
+    background-color: $parchment;
+    color: $wine;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+@media (min-width: 992px) {
+  .cellar-category-nav__menu {
+    width: 100%;
+  }
+
+  .cellar-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cellar-category-nav__menu {
+    position: fixed;
+    background-color: $paper;
+  }
+
+  .cellar-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $border;
+  }
+
+  .cellar-category-nav__menu .offcanvas-title {
+    font-family: $font-family-serif;
+    font-size: 1.4rem !important;
+    font-weight: 500;
+  }
+
+  .cellar-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .cellar-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .cellar-category-nav__links > .nav-link,
+  .cellar-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $border;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .cellar-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $parchment;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .cellar-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cellar-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .cellar-logo__seal {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .cellar-logo__name {
+    font-size: 1.45rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.cellar-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}

@@ -1,0 +1,80 @@
+cellar:
+    brand:
+        tagline: 'Vins fins'
+    top_bar:
+        delivery: 'Livraison offerte dès 6 bouteilles · expédition en caisse protégée'
+        cellar: 'Conservés dans notre cave à 12 °C jusqu’à l’expédition'
+    hero:
+        eyebrow: 'Caviste · de la vigne à votre cave'
+        title: 'Des vins de garde, <em>choisis à la vigne.</em>'
+        lead: 'Des vins de domaine dégustés sur place, conservés à 12 °C constants et expédiés avec le soin qu’exige une grande bouteille. Chaque bouteille est accompagnée de la <strong>note de dégustation de notre sommelier</strong>.'
+        cta: 'Découvrir la sélection'
+        secondary_cta: 'Notre métier'
+        signature: 'Sélectionnés bouteille par bouteille, en petites quantités.'
+        illustration: 'Une fenêtre voûtée de cave ouverte sur un vignoble au crépuscule, une bouteille et un verre de vin rouge sur le rebord.'
+        label: 'Grand vin'
+    figures:
+        item_1:
+            value: '300+'
+            text: 'vins de domaines familiaux'
+        item_2:
+            value: '12 °C'
+            text: 'en cave, 75 % d’hygrométrie'
+        item_3:
+            value: '48 h'
+            text: 'pour expédier, casse assurée'
+        item_4:
+            value: '1 à 1'
+            text: 'conseil de notre sommelier'
+    products:
+        eyebrow:
+            latest: 'Nouveaux millésimes'
+    promise:
+        eyebrow: 'Notre métier'
+        title: 'Caviste, <em>à l’ancienne.</em>'
+        lead: 'Nous parcourons les vignobles, dégustons avec les vignerons et ne gardons que ce que nous ouvririons volontiers à notre propre table.'
+        step_1:
+            title: 'Sélectionner'
+            text: 'Chaque vin est dégusté au domaine, puis à l’aveugle dans notre cave. Moins d’un sur dix entre dans la sélection.'
+        step_2:
+            title: 'Conserver'
+            text: 'Les bouteilles reposent couchées, à l’abri de la lumière et des vibrations, à 12 °C et 75 % d’hygrométrie jusqu’à leur départ.'
+        step_3:
+            title: 'Livrer'
+            text: 'Emballées à la main en caisse protégée, expédiées sous 48 heures et assurées contre la casse.'
+        tasting:
+            kicker: 'Note de dégustation'
+            title: 'Vin rouge de garde'
+            vintage: 'Sélection millésimée'
+            robe:
+                label: 'Robe'
+                value: 'Grenat profond, reflets pourpres'
+            nose:
+                label: 'Nez'
+                value: 'Fruits noirs, cèdre, sous-bois'
+            palate:
+                label: 'Bouche'
+                value: 'Ample, tanins soyeux'
+            cellaring:
+                label: 'Garde'
+                value: '8 à 15 ans'
+            quote: '« Un grand vin ne se boit pas seulement, il se raconte. »'
+            author: 'Le sommelier de la maison'
+    footer:
+        tagline: 'Des vins de domaine, conservés avec soin et livrés chez vous.'
+        notice: 'L’abus d’alcool est dangereux pour la santé, à consommer avec modération. La vente d’alcool est interdite aux mineurs.'
+        services:
+            eyebrow: 'À votre service'
+            title: 'De notre cave <em>à la vôtre.</em>'
+            advice:
+                title: 'Conseil du sommelier'
+                text: 'Un dîner à accorder, une cave à constituer, un cadeau à choisir : notre sommelier vous répond personnellement.'
+                cta: 'Demander conseil'
+            delivery:
+                title: 'Livraison soignée'
+                text: 'Caisses protégées, expédition sous 48 heures et assurance casse sur chaque commande.'
+                cta: 'Suivre ma commande'
+            cellar:
+                title: 'Votre cave'
+                text: 'Retrouvez vos commandes et vos vins préférés dans votre compte, et commandez à nouveau en quelques clics.'
+                cta: 'Mon compte'

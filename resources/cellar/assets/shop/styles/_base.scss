@@ -1,0 +1,181 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $paper;
+  color: $text;
+  font-family: $font-family-base;
+  font-size: 0.97rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $wine;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: color 160ms ease;
+
+  &:hover {
+    color: $claret;
+  }
+
+  &.link-reset:hover {
+    color: inherit;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4 {
+  color: $ink;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  text-wrap: balance;
+
+  em {
+    font-style: italic;
+    font-weight: 400;
+  }
+}
+
+h1,
+.h1 {
+  font-size: clamp(2.3rem, 4.4vw, 3.6rem);
+}
+
+h2,
+.h2 {
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+}
+
+h3,
+.h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+}
+
+// Small titles (cart, account, checkout steps) stay in the text face.
+h5,
+h6,
+.h5,
+.h6 {
+  font-family: $font-family-base;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+::selection {
+  background-color: $wine;
+  color: $ivory;
+}
+
+:focus-visible {
+  outline: 2px solid $gold;
+  outline-offset: 3px;
+}
+
+// Shared helpers: small-capital eyebrows ruled in gold, as on a wine label.
+
+.cellar-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+  color: $gold-dark;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  &::before {
+    width: 2.25rem;
+    height: 1px;
+    background-color: currentColor;
+    content: "";
+  }
+}
+
+.cellar-eyebrow--light {
+  color: $gold-light;
+}
+
+.cellar-section-head {
+  max-width: 42rem;
+  margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
+
+  h2 {
+    margin: 0;
+  }
+
+  h2 em {
+    color: $wine;
+  }
+}
+
+.cellar-section-head--center {
+  margin-inline: auto;
+  text-align: center;
+
+  .cellar-eyebrow::after {
+    width: 2.25rem;
+    height: 1px;
+    background-color: currentColor;
+    content: "";
+  }
+}
+
+.cellar-section-head__lead {
+  margin: 1.35rem 0 0;
+  color: $text-muted;
+  font-size: clamp(1.02rem, 1.4vw, 1.12rem);
+  line-height: 1.75;
+
+  strong {
+    color: $ink;
+    font-weight: 600;
+  }
+}
+
+[id^="cellar-"] {
+  scroll-margin-top: 1.5rem;
+}
+
+.cellar-checkout-brand,
+.cellar-checkout-account {
+  color: $ink;
+}
+
+.cellar-checkout-account a,
+.cellar-checkout-account .btn {
+  color: $wine;
+}
+
+.cellar-checkout-account a:hover,
+.cellar-checkout-account .btn:hover {
+  color: $claret;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+}

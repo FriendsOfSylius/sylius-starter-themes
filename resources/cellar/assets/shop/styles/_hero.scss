@@ -1,0 +1,183 @@
+// Night-bordeaux hero: a Didone headline with a gilded italic, and the view through a vaulted cellar window
+// on a vineyard at dusk. A band of house figures closes it.
+
+.cellar-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(3.5rem, 7vw, 6rem);
+  background-color: $wine-night;
+  background-image:
+    radial-gradient(ellipse 55% 70% at 78% 40%, rgba($claret, 0.45), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 10% 100%, rgba($wine, 0.5), transparent 70%);
+  color: $text-on-dark;
+}
+
+.cellar-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: end;
+}
+
+.cellar-hero__copy {
+  max-width: 38rem;
+  padding-bottom: clamp(3rem, 6vw, 5.5rem);
+}
+
+.cellar-hero h1 {
+  margin: 0 0 1.75rem;
+  color: $ivory;
+  font-size: clamp(2.75rem, 5.6vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.04;
+
+  em {
+    display: block;
+    color: $gold-light;
+  }
+}
+
+.cellar-hero__lead {
+  max-width: 33rem;
+  margin-bottom: 2.5rem;
+  font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+
+  strong {
+    color: $ivory;
+    font-weight: 500;
+  }
+}
+
+.cellar-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+}
+
+.cellar-hero__signature {
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border-dark;
+  color: rgba($text-on-dark, 0.8);
+  font-family: $font-family-serif;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+// The arch rises from the bottom of the hero, so the figures band reads as its stone sill.
+.cellar-hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.cellar-hero__arch {
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
+  aspect-ratio: 400 / 520;
+}
+
+.cellar-hero__image {
+  border-radius: 50% 50% 0 0 / 38.5% 38.5% 0 0;
+  box-shadow: inset 0 0 0 1px $gold;
+  object-fit: cover;
+}
+
+.cellar-window__label-name {
+  fill: $wine;
+  font-family: $font-family-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.cellar-window__label-text {
+  fill: $ink;
+  font-family: $font-family-serif;
+  font-size: 7.5px;
+  font-style: italic;
+}
+
+.cellar-window__label-year {
+  fill: $gold-dark;
+  font-family: $font-family-sans-serif;
+  font-size: 5.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+// House figures
+
+.cellar-figures {
+  position: relative;
+  border-top: 1px solid $gold;
+  background-color: $wine-deep;
+}
+
+.cellar-figures__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: clamp(1.4rem, 2.5vw, 2rem) clamp(1rem, 2vw, 1.75rem);
+    text-align: center;
+
+    + li {
+      border-left: 1px solid $border-dark;
+    }
+  }
+}
+
+.cellar-figures__value {
+  color: $gold-light;
+  font-family: $font-family-serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.cellar-figures__text {
+  color: $text-on-dark;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .cellar-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .cellar-hero__copy {
+    max-width: none;
+    padding-bottom: 3rem;
+  }
+
+  .cellar-hero__arch {
+    max-width: 19rem;
+  }
+
+  .cellar-figures__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    li:nth-child(3) {
+      border-left: 0;
+    }
+
+    li:nth-child(n + 3) {
+      border-top: 1px solid $border-dark;
+    }
+  }
+}

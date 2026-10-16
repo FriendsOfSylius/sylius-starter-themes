@@ -1,0 +1,147 @@
+.card {
+  overflow: hidden;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $ivory;
+  box-shadow: $shadow-soft;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  color: $ink;
+  font-family: $font-family-serif;
+  font-weight: 500;
+}
+
+.card-text {
+  color: $text-muted;
+}
+
+.card-footer {
+  border-top-color: $border;
+  background-color: $ivory;
+}
+
+// Product cards, presented like bottles on a shelf: the picture stands whole (never cropped or
+// stretched) on a parchment niche, the name below in Didone, the price in spaced figures.
+// The card root is the element holding the details link: it is a direct grid item on category
+// pages and wrapped in a <div> in the homepage / association lists.
+
+.products-grid {
+  column-gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  row-gap: clamp(2rem, 3.5vw, 3rem);
+}
+
+.products-grid div:has(> a.link-reset) {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+
+  > a.link-reset {
+    display: block;
+    color: $ink;
+    text-decoration: none;
+
+    // Stretched link: the price below is part of the clickable card too.
+    &::after {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      content: "";
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  &:has(> a.link-reset:focus-visible) {
+    outline: 2px solid $gold;
+    outline-offset: 6px;
+  }
+
+  .mb-4 {
+    margin-bottom: 0 !important;
+  }
+
+  // The picture tray keeps the 3:4 portrait ratio; the image is contained, so a tall bottle stays whole.
+  .rounded-3 {
+    position: relative;
+    margin: 0;
+    border-radius: 0 !important;
+    background-color: $parchment !important;
+    box-shadow: inset 0 0 0 1px rgba($gold, 0.18);
+
+    img {
+      object-fit: contain !important;
+      transition: transform 700ms $ease;
+    }
+
+    // Gilded fillet drawn inside the niche on hover.
+    &::after {
+      position: absolute;
+      inset: 0.6rem;
+      border: 1px solid rgba($gold, 0);
+      content: "";
+      pointer-events: none;
+      transition: border-color 300ms ease;
+    }
+  }
+
+  &:hover .rounded-3 img {
+    transform: translateY(-4px);
+  }
+
+  &:hover .rounded-3::after {
+    border-color: rgba($gold, 0.75);
+  }
+
+  .h6 {
+    margin: 0;
+    padding: 1.15rem 0.5rem 0.4rem;
+    color: $ink;
+    font-family: $font-family-serif;
+    font-size: 1.12rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.3;
+    transition: color 200ms ease;
+  }
+
+  &:hover .h6 {
+    color: $wine;
+  }
+
+  // Prices
+  > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+    align-items: baseline;
+    justify-content: center;
+    margin-top: auto;
+    padding: 0 0.5rem;
+    color: $gold-dark;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.08em;
+
+    > * {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    del {
+      color: $text-muted;
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+  }
+}

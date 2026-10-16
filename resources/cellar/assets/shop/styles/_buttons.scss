@@ -1,0 +1,115 @@
+.btn {
+  min-height: 2.875rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: $radius-sm;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    color 200ms ease;
+}
+
+.btn-sm {
+  min-height: 2.25rem;
+  padding: 0.45rem 1rem;
+  letter-spacing: 0.1em;
+}
+
+// Bordeaux call to action.
+.btn-primary {
+  --bs-btn-color: #{$ivory};
+  --bs-btn-bg: #{$wine};
+  --bs-btn-border-color: #{$wine};
+  --bs-btn-hover-color: #{$ivory};
+  --bs-btn-hover-bg: #{$wine-deep};
+  --bs-btn-hover-border-color: #{$wine-deep};
+  --bs-btn-active-color: #{$ivory};
+  --bs-btn-active-bg: #{$wine-deep};
+  --bs-btn-active-border-color: #{$wine-deep};
+  --bs-btn-disabled-color: #{$ivory};
+  --bs-btn-disabled-bg: #{$wine};
+  --bs-btn-disabled-border-color: #{$wine};
+}
+
+// Outlined in ink, for secondary actions.
+.btn-secondary,
+.btn-light,
+.btn-outline-primary,
+.btn-outline-gray {
+  --bs-btn-color: #{$ink};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$border-strong};
+  --bs-btn-hover-color: #{$wine};
+  --bs-btn-hover-bg: #{$ivory};
+  --bs-btn-hover-border-color: #{$wine};
+  --bs-btn-active-color: #{$wine};
+  --bs-btn-active-bg: #{$ivory};
+  --bs-btn-active-border-color: #{$wine};
+}
+
+.btn-link {
+  color: $wine;
+  letter-spacing: 0.04em;
+  text-transform: none;
+
+  &:hover {
+    color: $claret;
+  }
+}
+
+// Gold leaf button on the night-bordeaux panels.
+.cellar-btn-gold {
+  --bs-btn-color: #{$wine-night};
+  --bs-btn-bg: #{$gold-light};
+  --bs-btn-border-color: #{$gold-light};
+  --bs-btn-hover-color: #{$wine-night};
+  --bs-btn-hover-bg: #{$ivory};
+  --bs-btn-hover-border-color: #{$ivory};
+  --bs-btn-active-color: #{$wine-night};
+  --bs-btn-active-bg: #{$ivory};
+  --bs-btn-active-border-color: #{$ivory};
+}
+
+// Text link closed by a fine arrow.
+.cellar-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: $wine;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &::after {
+    width: 1.75rem;
+    height: 1px;
+    background-color: currentColor;
+    content: "";
+    transition: width 220ms $ease;
+  }
+
+  &:hover {
+    color: $claret;
+
+    &::after {
+      width: 2.5rem;
+    }
+  }
+}
+
+.cellar-link-arrow--light,
+.cellar-link-arrow--light:hover {
+  color: $gold-light;
+}
+
+#add-to-cart-button {
+  width: 100%;
+  min-height: 3.25rem;
+  font-size: 0.78rem;
+}

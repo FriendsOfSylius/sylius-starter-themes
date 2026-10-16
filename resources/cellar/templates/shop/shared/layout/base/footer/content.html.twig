@@ -1,0 +1,37 @@
+{% set cellar_services = [
+    {key: 'advice', url: path('sylius_shop_contact_request'), icon: 'M8 3h8M9 3v5.5a5 5 0 0 1-2 4V21h10v-8.5a5 5 0 0 1-2-4V3M7 15h10'},
+    {key: 'delivery', url: path('sylius_shop_account_dashboard'), icon: 'M3 8l9-5 9 5v8l-9 5-9-5zM3 8l9 5 9-5M12 13v8'},
+    {key: 'cellar', url: path('sylius_shop_account_dashboard'), icon: 'M4 21V10a8 8 0 0 1 16 0v11M4 21h16M8 21v-6a4 4 0 0 1 8 0v6'},
+] %}
+
+<footer class="cellar-footer">
+    <div id="cellar-services" class="cellar-services">
+        <div class="container">
+            <div class="cellar-services__head">
+                <p class="cellar-eyebrow cellar-eyebrow--light">{{ 'cellar.footer.services.eyebrow'|trans({}, 'cellar') }}</p>
+                <p class="cellar-services__title">{{ 'cellar.footer.services.title'|trans({}, 'cellar')|raw }}</p>
+            </div>
+
+            <ul class="cellar-services__items" role="list">
+                {% for service in cellar_services %}
+                    <li class="cellar-services__item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ service.icon }}"/></svg>
+                        <p class="cellar-services__name">{{ ('cellar.footer.services.' ~ service.key ~ '.title')|trans({}, 'cellar') }}</p>
+                        <p class="cellar-services__text">{{ ('cellar.footer.services.' ~ service.key ~ '.text')|trans({}, 'cellar') }}</p>
+                        <a class="cellar-link-arrow cellar-link-arrow--light" href="{{ service.url }}">{{ ('cellar.footer.services.' ~ service.key ~ '.cta')|trans({}, 'cellar') }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container cellar-footer__main">
+        <div class="cellar-footer__brand">
+            {% include 'shop/shared/layout/brand/logo.html.twig' with {variant: 'footer'} %}
+            <p>{{ 'cellar.footer.tagline'|trans({}, 'cellar') }}</p>
+        </div>
+        <div class="row">
+            {% hook 'content' %}
+        </div>
+        <p class="cellar-footer__notice">{{ 'cellar.footer.notice'|trans({}, 'cellar') }}</p>
+    </div>
+</footer>

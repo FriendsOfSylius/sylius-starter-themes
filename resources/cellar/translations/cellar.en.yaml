@@ -1,0 +1,80 @@
+cellar:
+    brand:
+        tagline: 'Fine wines'
+    top_bar:
+        delivery: 'Free delivery from 6 bottles · shipped in protective cases'
+        cellar: 'Stored in our cellar at 12 °C until dispatch'
+    hero:
+        eyebrow: 'Wine merchant · from the vine to your cellar'
+        title: 'Wines worth keeping, <em>chosen at the vineyard.</em>'
+        lead: 'Estate wines tasted on site, cellared at a steady 12 °C and sent to you with the care a great bottle deserves. Every bottle comes with a <strong>sommelier’s tasting note</strong>.'
+        cta: 'Discover the selection'
+        secondary_cta: 'Our craft'
+        signature: 'Selected bottle by bottle, in small lots.'
+        illustration: 'A vaulted cellar window opening on a vineyard at dusk, a bottle and a glass of red wine on the sill.'
+        label: 'Grand vin'
+    figures:
+        item_1:
+            value: '300+'
+            text: 'wines from family estates'
+        item_2:
+            value: '12 °C'
+            text: 'cellar, 75 % humidity'
+        item_3:
+            value: '48 h'
+            text: 'dispatch, breakage insured'
+        item_4:
+            value: '1 to 1'
+            text: 'advice from our sommelier'
+    products:
+        eyebrow:
+            latest: 'New vintages'
+    promise:
+        eyebrow: 'Our craft'
+        title: 'A wine merchant, <em>the old-fashioned way.</em>'
+        lead: 'We travel the vineyards, taste with the winemakers and only keep what we would gladly open at our own table.'
+        step_1:
+            title: 'Select'
+            text: 'Every wine is tasted at the estate, then again blind in our cellar. Fewer than one in ten makes the list.'
+        step_2:
+            title: 'Keep'
+            text: 'Bottles rest lying down, away from light and vibration, at 12 °C and 75 % humidity until they leave us.'
+        step_3:
+            title: 'Deliver'
+            text: 'Wrapped by hand in protective cases, shipped within 48 hours and insured against breakage.'
+        tasting:
+            kicker: 'Tasting note'
+            title: 'Red wine to keep'
+            vintage: 'Vintage selection'
+            robe:
+                label: 'Colour'
+                value: 'Deep garnet, purple rim'
+            nose:
+                label: 'Nose'
+                value: 'Black fruit, cedar, undergrowth'
+            palate:
+                label: 'Palate'
+                value: 'Generous, silky tannins'
+            cellaring:
+                label: 'Cellaring'
+                value: '8 to 15 years'
+            quote: '“A great wine is not only drunk, it is told.”'
+            author: 'Our house sommelier'
+    footer:
+        tagline: 'Estate wines, carefully cellared and delivered to your door.'
+        notice: 'Alcohol abuse is dangerous for your health, drink responsibly. The sale of alcohol to minors is prohibited.'
+        services:
+            eyebrow: 'At your service'
+            title: 'From our cellar <em>to yours.</em>'
+            advice:
+                title: 'Sommelier advice'
+                text: 'A dinner to pair, a cellar to build, a gift to choose: our sommelier answers you personally.'
+                cta: 'Ask our sommelier'
+            delivery:
+                title: 'Careful delivery'
+                text: 'Protective cases, dispatch within 48 hours and insurance against breakage on every order.'
+                cta: 'Follow my order'
+            cellar:
+                title: 'Your own cellar'
+                text: 'Find your orders and your favourite wines in your account, and reorder in a few clicks.'
+                cta: 'My account'

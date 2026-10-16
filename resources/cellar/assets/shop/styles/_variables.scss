@@ -1,0 +1,48 @@
+// Cellar — deep bordeaux and cream paper, gilded with an antique gold fillet.
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-family-serif: "Bodoni Moda", "Didot", "Bodoni 72", "Libre Bodoni", Georgia, serif;
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 500;
+
+$wine-night: #22080F;
+$wine-deep: #3A0D19;
+$wine: #5E1626;
+$claret: #7A1C30;
+$gold: #B08D57;
+$gold-light: #D8C08F;
+$gold-dark: #7D5E2E;
+$paper: #F7F2E9;
+$parchment: #EFE7D8;
+$ivory: #FFFCF6;
+$ink: #24161A;
+$white: #FFF;
+$text: #4A3C3C;
+$text-muted: #77675F;
+$text-on-dark: #CDBDB2;
+$border: #E3D8C6;
+$border-strong: #CDBFA6;
+$border-dark: rgba($gold, 0.28);
+
+$body-bg: $paper;
+$body-color: $text;
+
+$primary: $wine;
+$secondary: $parchment;
+$success: #3F6B3A;
+$info: #3C5A7A;
+
+$link-color: $wine;
+$link-hover-color: $claret;
+$border-color: $border;
+
+// Barely softened corners, like a printed label.
+$radius-sm: 2px;
+$radius: 3px;
+$radius-lg: 4px;
+
+$shadow-soft: 0 1px 2px rgba($wine-night, 0.05);
+$shadow-float: 0 22px 48px -18px rgba($wine-night, 0.28);
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);

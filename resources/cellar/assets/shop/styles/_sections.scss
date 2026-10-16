@@ -1,0 +1,219 @@
+// Homepage sections: the product shelf and the promise (the merchant's craft and a tasting card).
+
+.cellar-products {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.cellar-promise {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+  border-block: 1px solid $border;
+  background-color: $ivory;
+}
+
+.cellar-promise__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+// Three steps numbered in roman capitals.
+
+.cellar-steps {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cellar-steps__item {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding-block: 1.6rem;
+  border-top: 1px solid $border;
+
+  &:last-child {
+    border-bottom: 1px solid $border;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.cellar-steps__numeral {
+  color: $gold;
+  font-family: $font-family-serif;
+  font-size: 2rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.cellar-steps__title {
+  margin-bottom: 0.4rem !important;
+  color: $ink;
+  font-family: $font-family-serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.cellar-steps__text {
+  max-width: 34rem;
+  color: $text-muted;
+  line-height: 1.7;
+}
+
+// Tasting card: a cream label with a double gold fillet, on a bordeaux board.
+
+.cellar-tasting {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  background-color: $wine;
+  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba($claret, 0.9), transparent 75%);
+  box-shadow: $shadow-float;
+}
+
+.cellar-tasting__label {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border: 1px solid $gold;
+  outline: 1px solid rgba($gold, 0.55);
+  outline-offset: -6px;
+  background-color: $paper;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.cellar-tasting__kicker {
+  color: $gold-dark;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.cellar-tasting__title {
+  margin-top: 0.85rem !important;
+  color: $wine;
+  font-family: $font-family-serif;
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.cellar-tasting__vintage {
+  margin-top: 0.5rem !important;
+  color: $text-muted;
+  font-family: $font-family-serif;
+  font-style: italic;
+
+  &::after {
+    display: block;
+    width: 3rem;
+    height: 1px;
+    margin: 1.25rem auto 0;
+    background-color: $gold;
+    content: "";
+  }
+}
+
+.cellar-tasting__notes {
+  margin: 1.5rem 0 0;
+  text-align: left;
+
+  div {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 0.7rem;
+    border-bottom: 1px dotted $border-strong;
+  }
+
+  dt {
+    color: $gold-dark;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1.9;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: $ink;
+    font-size: 0.93rem;
+  }
+}
+
+.cellar-tasting__quote {
+  margin: 1.75rem 0 0;
+
+  p {
+    color: $wine;
+    font-family: $font-family-serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.45;
+  }
+
+  footer {
+    margin-top: 0.6rem;
+    color: $text-muted;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cellar-promise__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cellar-steps__item {
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .cellar-tasting__notes div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+// Category roundels rendered after the hero (import collections): gilded medallions with a Didone initial.
+.cellar-hero ~ .container .rounded-circle.bg-light {
+  border: 1px solid $gold;
+  outline: 1px solid rgba($gold, 0.4);
+  outline-offset: 4px;
+  background-color: $ivory !important;
+  color: $wine !important;
+  font-family: $font-family-serif;
+  font-size: 1.6rem;
+  font-weight: 500 !important;
+  transition: background-color 200ms ease;
+}
+
+.cellar-hero ~ .container a:hover .rounded-circle.bg-light {
+  background-color: $parchment !important;
+}
+
+.cellar-hero + .container {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.cellar-hero ~ .container a:has(> .rounded-circle) span {
+  margin-top: 0.9rem !important;
+  color: $ink;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,48 @@
+{# Cellar promise: the merchant's craft in three numbered steps, next to a tasting card printed like a wine label. #}
+<section id="cellar-promise" class="cellar-promise" aria-labelledby="cellar-promise-title">
+    <div class="container">
+        <div class="cellar-promise__grid">
+            <div class="cellar-promise__craft">
+                <div class="cellar-section-head">
+                    <p class="cellar-eyebrow">{{ 'cellar.promise.eyebrow'|trans({}, 'cellar') }}</p>
+                    <h2 id="cellar-promise-title">{{ 'cellar.promise.title'|trans({}, 'cellar')|raw }}</h2>
+                    <p class="cellar-section-head__lead">{{ 'cellar.promise.lead'|trans({}, 'cellar')|raw }}</p>
+                </div>
+
+                <ol class="cellar-steps" role="list">
+                    {% for step in [{key: 1, numeral: 'I'}, {key: 2, numeral: 'II'}, {key: 3, numeral: 'III'}] %}
+                        <li class="cellar-steps__item">
+                            <span class="cellar-steps__numeral" aria-hidden="true">{{ step.numeral }}</span>
+                            <div>
+                                <p class="cellar-steps__title">{{ ('cellar.promise.step_' ~ step.key ~ '.title')|trans({}, 'cellar') }}</p>
+                                <p class="cellar-steps__text">{{ ('cellar.promise.step_' ~ step.key ~ '.text')|trans({}, 'cellar') }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            <aside class="cellar-tasting" aria-labelledby="cellar-tasting-title">
+                <div class="cellar-tasting__label">
+                    <p class="cellar-tasting__kicker">{{ 'cellar.promise.tasting.kicker'|trans({}, 'cellar') }}</p>
+                    <p id="cellar-tasting-title" class="cellar-tasting__title">{{ 'cellar.promise.tasting.title'|trans({}, 'cellar') }}</p>
+                    <p class="cellar-tasting__vintage">{{ 'cellar.promise.tasting.vintage'|trans({}, 'cellar') }}</p>
+
+                    <dl class="cellar-tasting__notes">
+                        {% for note in ['robe', 'nose', 'palate', 'cellaring'] %}
+                            <div>
+                                <dt>{{ ('cellar.promise.tasting.' ~ note ~ '.label')|trans({}, 'cellar') }}</dt>
+                                <dd>{{ ('cellar.promise.tasting.' ~ note ~ '.value')|trans({}, 'cellar') }}</dd>
+                            </div>
+                        {% endfor %}
+                    </dl>
+
+                    <blockquote class="cellar-tasting__quote">
+                        <p>{{ 'cellar.promise.tasting.quote'|trans({}, 'cellar') }}</p>
+                        <footer>{{ 'cellar.promise.tasting.author'|trans({}, 'cellar') }}</footer>
+                    </blockquote>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

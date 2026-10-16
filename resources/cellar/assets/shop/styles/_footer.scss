@@ -1,0 +1,196 @@
+// Night-bordeaux footer: three house services, then the store links and the legal notice.
+
+footer.cellar-footer {
+  margin-top: auto;
+  padding: 0;
+  border-top: 0;
+  background-color: $wine-night;
+  color: $text-on-dark;
+  font-size: 0.9rem;
+}
+
+.cellar-services {
+  padding-block: clamp(4rem, 7vw, 6rem);
+  border-bottom: 1px solid $border-dark;
+  scroll-margin-top: 1.5rem;
+}
+
+.cellar-services__head {
+  max-width: 40rem;
+  margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
+  text-align: center;
+
+  .cellar-eyebrow::after {
+    width: 2.25rem;
+    height: 1px;
+    background-color: currentColor;
+    content: "";
+  }
+}
+
+.cellar-services__title {
+  margin: 0;
+  color: $ivory;
+  font-family: $font-family-serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.12;
+  text-wrap: balance;
+
+  em {
+    color: $gold-light;
+    font-weight: 400;
+  }
+}
+
+.cellar-services__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cellar-services__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem clamp(1.25rem, 3vw, 2.75rem);
+  text-align: center;
+
+  + .cellar-services__item {
+    border-left: 1px solid $border-dark;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 1.4rem;
+    fill: none;
+    stroke: $gold;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.1;
+  }
+}
+
+.cellar-services__name {
+  color: $ivory;
+  font-family: $font-family-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.cellar-services__text {
+  max-width: 21rem;
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.7;
+}
+
+.cellar-services__item .cellar-link-arrow {
+  margin-top: auto;
+}
+
+.cellar-footer__main {
+  padding-top: clamp(3rem, 5vw, 4rem);
+  padding-bottom: 1.5rem;
+
+  > .row {
+    padding-top: 2.5rem;
+  }
+
+  a,
+  .nav-link {
+    color: $text-on-dark;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $gold-light;
+    }
+  }
+
+  .fw-medium,
+  h2,
+  h3,
+  h4 {
+    color: $gold-light;
+    font-family: $font-family-base;
+    font-size: 0.7rem;
+    font-weight: 600 !important;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
+
+.cellar-footer__brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid $border-dark;
+
+  p {
+    max-width: 26rem;
+    margin: 0;
+    color: rgba($text-on-dark, 0.85);
+    font-family: $font-family-serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .cellar-logo,
+  .cellar-logo:hover {
+    color: $gold-light;
+  }
+
+  .cellar-logo__name {
+    color: $ivory;
+  }
+
+  .cellar-logo__tagline {
+    color: $gold-light;
+  }
+}
+
+// Payment partner logos keep their brand colours on light chips (Mollie's is black).
+.cellar-footer__main .ratio.border {
+  border-color: $ivory !important;
+  background-color: $ivory;
+}
+
+.cellar-footer__copy a {
+  color: $gold-light !important;
+  text-decoration: underline !important;
+}
+
+.cellar-footer__notice {
+  margin: 1rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border-dark;
+  color: rgba($text-on-dark, 0.75);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .cellar-services__items {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .cellar-services__item + .cellar-services__item {
+    padding-top: 2.5rem;
+    border-top: 1px solid $border-dark;
+    border-left: 0;
+  }
+}
