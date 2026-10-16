@@ -1,0 +1,106 @@
+// Product page: the info column becomes a white "shelf label" panel next to the gallery.
+
+.product h1,
+.product .h1 {
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+}
+
+.product .text-bg-light,
+.product .bg-light {
+  background-color: $white !important;
+}
+
+.offcanvas {
+  --bs-offcanvas-border-color: #{$border};
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid $border;
+}
+
+.table {
+  --bs-table-border-color: #{$border};
+}
+
+// Pick-up promise under the add-to-cart button.
+.drive-pickup {
+  display: grid;
+  gap: 0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $white;
+  list-style: none;
+}
+
+.drive-pickup__item {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.6rem;
+  padding: 0.8rem 1rem 0.8rem 3.25rem;
+  border-top: 1px solid $border;
+  font-size: 0.9rem;
+
+  &:first-child {
+    border-top: 0;
+    background-color: $mint;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $basil;
+    content: "";
+    transform: translateY(-50%);
+    mask: var(--drive-icon) no-repeat center / contain;
+    -webkit-mask: var(--drive-icon) no-repeat center / contain;
+  }
+
+  strong {
+    color: $ink;
+    font-weight: 800;
+  }
+
+  span {
+    color: $text-muted;
+  }
+}
+
+.drive-pickup__item--pickup {
+  --drive-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 13.5 5 8a2 2 0 0 1 1.9-1.3h10.2A2 2 0 0 1 19 8l2 5.5V18a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1h-11v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1ZM3 13.5h18'/%3E%3C/svg%3E");
+}
+
+.drive-pickup__item--delivery {
+  --drive-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12 12 4l9 8M5 10v10h14V10M10 20v-6h4v6'/%3E%3C/svg%3E");
+}
+
+.drive-pickup__item--fresh {
+  --drive-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6zM9 12l2 2 4-4'/%3E%3C/svg%3E");
+}
+
+// Price as a lemon shelf label.
+.product .d-flex.gap-3.align-items-center > .fs-3 {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border-radius: $radius-sm;
+  background-color: $lemon;
+  box-shadow: 4px 4px 0 rgba($ink, 0.12);
+  color: $ink;
+  font-size: clamp(1.6rem, 2.2vw, 2rem) !important;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  transform: rotate(-1.5deg);
+}
+
+.product .d-flex.gap-3.align-items-center del {
+  color: $tomato-dark;
+  font-weight: 600;
+}

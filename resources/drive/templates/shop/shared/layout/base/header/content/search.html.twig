@@ -1,0 +1,26 @@
+{# Header search: Sylius searches inside one category, so the visitor picks the aisle (current category by default). #}
+{% set drive_current_slug = app.request.attributes.get('_route') == 'sylius_shop_product_index' ? app.request.attributes.get('slug') : null %}
+{% set drive_query = drive_current_slug is not null ? app.request.query.all('criteria')['search']['value']|default('') : '' %}
+
+{% if taxons|length > 0 %}
+    {% set drive_default = taxons|first %}
+    {% for taxon in taxons %}
+        {% if taxon.slug == drive_current_slug %}{% set drive_default = taxon %}{% endif %}
+    {% endfor %}
+
+    <div class="col-12 col-lg drive-search order-last order-lg-0">
+        <form class="drive-search__form" method="get" role="search" action="{{ path('sylius_shop_product_index', {'slug': drive_default.slug, '_locale': drive_default.translation.locale}) }}">
+            <label class="visually-hidden" for="drive-search-aisle">{{ 'drive.search.aisle'|trans({}, 'drive') }}</label>
+            <select id="drive-search-aisle" class="drive-search__aisle" onchange="this.form.action = this.value">
+                {% for taxon in taxons %}
+                    <option value="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" {% if taxon == drive_default %}selected{% endif %}>{{ taxon.name }}</option>
+                {% endfor %}
+            </select>
+            <label class="visually-hidden" for="drive-search-query">{{ 'drive.search.label'|trans({}, 'drive') }}</label>
+            <input id="drive-search-query" class="drive-search__input" type="search" name="criteria[search][value]" value="{{ drive_query }}" placeholder="{{ 'drive.search.placeholder'|trans({}, 'drive') }}" autocomplete="off">
+            <button class="drive-search__submit" type="submit" aria-label="{{ 'drive.search.submit'|trans({}, 'drive') }}">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+            </button>
+        </form>
+    </div>
+{% endif %}

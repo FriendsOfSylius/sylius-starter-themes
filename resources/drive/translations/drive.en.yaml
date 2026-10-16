@@ -1,0 +1,110 @@
+drive:
+    topbar:
+        pickup: '<strong>Free pick-up</strong> at the drive, ready in 2 h'
+        fresh: 'Fresh products <strong>guaranteed or refunded</strong>'
+        prices: 'Same prices as in store'
+    search:
+        aisle: 'Aisle to search in'
+        label: 'Search for a product'
+        placeholder: 'Search a product, a brand…'
+        submit: 'Search'
+    slot:
+        label: 'Next pick-up slot'
+        value: 'Today · 18:00'
+    cart:
+        label: 'My basket'
+    aisles:
+        title: 'All aisles'
+        promo: 'Weekly offers'
+    hero:
+        kicker: 'Click & collect · slots available today'
+        title: 'Your groceries ready in <mark>2 hours</mark>, collected in 5 minutes.'
+        lead: 'Fill your basket online, pick a slot, and we load everything into your boot. <strong>Free pick-up</strong>, no minimum order.'
+        cta: 'Start shopping'
+        secondary_cta: 'How it works'
+        slots:
+            title: 'Next free slots'
+            today: 'Today'
+            tomorrow: 'Tomorrow'
+            after: 'In 2 days'
+            full: 'full'
+        deal:
+            ribbon: 'New this week'
+            cta: 'See the product'
+            price_label: 'Only'
+        tiles:
+            prices:
+                tag: 'Low prices'
+                title: 'Same prices<br>as in store'
+                text: 'No drive surcharge, ever.'
+            fresh:
+                tag: 'Freshness'
+                title: 'Fresh or<br>refunded'
+                text: 'Picked on the day of your slot.'
+    products:
+        eyebrow:
+            latest: 'Just in the aisles'
+        count: '{0}No product|{1}1 product|]1,Inf[%count% products'
+    promise:
+        eyebrow: 'How the drive works'
+        title: 'Three steps, zero queue.'
+        step_1:
+            title: 'Fill your basket'
+            text: 'Browse the aisles and add your products, on the web or on the go.'
+        step_2:
+            title: 'Pick your slot'
+            text: 'Choose a one-hour pick-up slot, as soon as 2 hours after your order.'
+        step_3:
+            title: 'Collect at the drive'
+            text: 'Park, scan your code: we load your bags into your boot in 5 minutes.'
+        commitments:
+            title: 'Our drive commitments'
+            item_1:
+                title: 'Free pick-up'
+                text: 'No minimum order, no fee.'
+            item_2:
+                title: 'Store prices'
+                text: 'The same prices and offers as in the aisles.'
+            item_3:
+                title: 'Freshness guaranteed'
+                text: 'Fresh products picked on the day, refunded if not perfect.'
+            item_4:
+                title: 'Substitutions with your OK'
+                text: 'A product is missing? We only replace it if you agree.'
+        cta: 'Fill my basket'
+    product:
+        pickup:
+            title: 'Drive pick-up'
+            text: 'Free, ready in 2 h'
+        delivery:
+            title: 'Home delivery'
+            text: 'On the slot of your choice'
+        fresh:
+            title: 'Satisfied or refunded'
+            text: 'Refund at the counter, no questions'
+    footer:
+        tagline: 'Your groceries online, collected at the drive or delivered to your door.'
+        services:
+            pickup:
+                title: 'Drive pick-up'
+                text: 'Order before noon, collect from 2 pm. Free, without leaving your car.'
+                cta: 'How it works'
+            account:
+                title: 'My shopping lists'
+                text: 'Find your past orders and refill your usual basket in one click.'
+                cta: 'My account'
+            help:
+                title: 'Customer service'
+                text: 'A missing product or a question about your order? We answer you.'
+                cta: 'Contact us'
+        hours:
+            title: 'Drive opening hours'
+            row_1:
+                days: 'Mon – Fri'
+                time: '8:00 – 21:00'
+            row_2:
+                days: 'Saturday'
+                time: '8:00 – 20:00'
+            row_3:
+                days: 'Sunday'
+                time: '9:00 – 12:30'

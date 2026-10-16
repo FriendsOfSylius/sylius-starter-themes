@@ -1,0 +1,110 @@
+drive:
+    topbar:
+        pickup: '<strong>Retrait gratuit</strong> au drive, prêt en 2 h'
+        fresh: 'Produits frais <strong>garantis ou remboursés</strong>'
+        prices: 'Les mêmes prix qu’en magasin'
+    search:
+        aisle: 'Rayon dans lequel chercher'
+        label: 'Rechercher un produit'
+        placeholder: 'Rechercher un produit, une marque…'
+        submit: 'Rechercher'
+    slot:
+        label: 'Prochain créneau de retrait'
+        value: 'Aujourd’hui · 18:00'
+    cart:
+        label: 'Mon panier'
+    aisles:
+        title: 'Tous les rayons'
+        promo: 'Offres de la semaine'
+    hero:
+        kicker: 'Drive · créneaux disponibles aujourd’hui'
+        title: 'Vos courses prêtes en <mark>2 heures</mark>, retirées en 5 minutes.'
+        lead: 'Remplissez votre panier en ligne, choisissez un créneau, nous chargeons tout dans votre coffre. <strong>Retrait gratuit</strong>, sans minimum d’achat.'
+        cta: 'Faire mes courses'
+        secondary_cta: 'Comment ça marche'
+        slots:
+            title: 'Prochains créneaux libres'
+            today: 'Aujourd’hui'
+            tomorrow: 'Demain'
+            after: 'Dans 2 jours'
+            full: 'complet'
+        deal:
+            ribbon: 'Nouveauté de la semaine'
+            cta: 'Voir le produit'
+            price_label: 'Seulement'
+        tiles:
+            prices:
+                tag: 'Petits prix'
+                title: 'Les prix<br>du magasin'
+                text: 'Aucun supplément drive, jamais.'
+            fresh:
+                tag: 'Fraîcheur'
+                title: 'Frais ou<br>remboursé'
+                text: 'Préparé le jour de votre créneau.'
+    products:
+        eyebrow:
+            latest: 'Tout juste en rayon'
+        count: '{0}Aucun produit|{1}1 produit|]1,Inf[%count% produits'
+    promise:
+        eyebrow: 'Le drive, comment ça marche'
+        title: 'Trois étapes, zéro file d’attente.'
+        step_1:
+            title: 'Je remplis mon panier'
+            text: 'Parcourez les rayons et ajoutez vos produits, sur le web ou en déplacement.'
+        step_2:
+            title: 'Je choisis mon créneau'
+            text: 'Un créneau d’une heure, dès 2 heures après votre commande.'
+        step_3:
+            title: 'Je retire au drive'
+            text: 'Garez-vous, scannez votre code : vos sacs sont dans le coffre en 5 minutes.'
+        commitments:
+            title: 'Nos engagements drive'
+            item_1:
+                title: 'Retrait gratuit'
+                text: 'Sans minimum d’achat, sans frais.'
+            item_2:
+                title: 'Les prix du magasin'
+                text: 'Les mêmes prix et promotions qu’en rayon.'
+            item_3:
+                title: 'Fraîcheur garantie'
+                text: 'Produits frais préparés le jour même, remboursés s’ils ne sont pas parfaits.'
+            item_4:
+                title: 'Remplacements avec votre accord'
+                text: 'Un produit manque ? Nous ne le remplaçons que si vous êtes d’accord.'
+        cta: 'Remplir mon panier'
+    product:
+        pickup:
+            title: 'Retrait au drive'
+            text: 'Gratuit, prêt en 2 h'
+        delivery:
+            title: 'Livraison à domicile'
+            text: 'Sur le créneau de votre choix'
+        fresh:
+            title: 'Satisfait ou remboursé'
+            text: 'Remboursement à l’accueil, sans justification'
+    footer:
+        tagline: 'Vos courses en ligne, retirées au drive ou livrées chez vous.'
+        services:
+            pickup:
+                title: 'Retrait au drive'
+                text: 'Commandez avant midi, retirez dès 14 h. Gratuit, sans sortir de votre voiture.'
+                cta: 'Comment ça marche'
+            account:
+                title: 'Mes listes de courses'
+                text: 'Retrouvez vos commandes passées et reprenez votre panier habituel en un clic.'
+                cta: 'Mon compte'
+            help:
+                title: 'Service client'
+                text: 'Un produit manquant ou une question sur votre commande ? Nous vous répondons.'
+                cta: 'Nous contacter'
+        hours:
+            title: 'Horaires du drive'
+            row_1:
+                days: 'Lun – Ven'
+                time: '8 h – 21 h'
+            row_2:
+                days: 'Samedi'
+                time: '8 h – 20 h'
+            row_3:
+                days: 'Dimanche'
+                time: '9 h – 12 h 30'

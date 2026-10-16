@@ -1,0 +1,700 @@
+header {
+  position: relative;
+  z-index: 3;
+  background-color: $white;
+  box-shadow: 0 1px 0 $border;
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Service strip
+
+.drive-topbar {
+  background-color: $forest;
+  color: $text-on-dark;
+  font-size: 0.82rem;
+
+  .container {
+    padding-block: 0.4rem;
+  }
+
+  strong {
+    color: $white;
+    font-weight: 700;
+  }
+
+  .btn {
+    min-height: 0;
+    padding: 0.2rem 0.65rem;
+    border: 1px solid rgba($white, 0.2);
+    border-radius: $radius-pill;
+    background: transparent;
+    color: $white;
+    font-size: 0.8rem;
+
+    &:hover,
+    &:focus {
+      border-color: $lemon;
+      background-color: rgba($white, 0.08);
+    }
+  }
+}
+
+.drive-topbar__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.drive-topbar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::before {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 auto;
+    background-color: $lemon;
+    content: "";
+    mask: var(--drive-icon) no-repeat center / contain;
+    -webkit-mask: var(--drive-icon) no-repeat center / contain;
+  }
+}
+
+.drive-topbar__item--pickup {
+  --drive-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 13.5 5 8a2 2 0 0 1 1.9-1.3h10.2A2 2 0 0 1 19 8l2 5.5V18a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1h-11v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1ZM3 13.5h18'/%3E%3C/svg%3E");
+}
+
+.drive-topbar__item--fresh {
+  --drive-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 19c0-8 5-13 15-14-1 10-6 15-14 15M5 19l7-7'/%3E%3C/svg%3E");
+}
+
+.drive-topbar__item--prices {
+  --drive-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9zM8 8h.01'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 767.98px) {
+  .drive-topbar__item:not(.drive-topbar__item--pickup) {
+    display: none;
+  }
+}
+
+// Main header row
+
+.drive-header {
+  .container {
+    padding-block: 0.75rem;
+  }
+
+  a:not(.btn) {
+    color: $ink;
+
+    &:hover {
+      color: $basil;
+    }
+  }
+
+  .btn-transparent,
+  .btn-icon {
+    color: $ink;
+    font-weight: 600;
+
+    &:hover {
+      color: $basil;
+    }
+  }
+}
+
+.drive-header__row {
+  flex-wrap: wrap;
+}
+
+// Wordmark: a basket with a sprouting leaf on a basil tile, and a lowercase heavy name.
+
+.drive-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.55rem;
+  color: $ink;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $ink;
+    text-decoration: none;
+  }
+}
+
+.drive-logo__mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  transition: transform 220ms $ease;
+}
+
+.drive-logo:hover .drive-logo__mark {
+  transform: rotate(-6deg) scale(1.04);
+}
+
+.drive-logo__tile {
+  fill: $basil;
+}
+
+.drive-logo__leaf {
+  fill: $lemon;
+}
+
+.drive-logo__stem,
+.drive-logo__weave {
+  fill: none;
+  stroke: $basil;
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.drive-logo__stem {
+  stroke: $lemon;
+}
+
+.drive-logo__basket {
+  fill: $white;
+}
+
+.drive-logo__name {
+  font-size: 1.7rem;
+  font-weight: 850;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.drive-logo__dot {
+  color: $basil;
+}
+
+.drive-logo--footer {
+  color: $white;
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+
+  .drive-logo__dot {
+    color: $lemon;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.drive-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+
+// Search: aisle selector, query and a round submit button inside one pill.
+
+.drive-search__form {
+  display: flex;
+  overflow: hidden;
+  min-height: 3rem;
+  align-items: stretch;
+  border: 2px solid $basil;
+  border-radius: $radius-pill;
+  background-color: $white;
+  transition: box-shadow 160ms ease;
+
+  &:focus-within {
+    box-shadow: 0 0 0 4px rgba($basil, 0.18);
+  }
+}
+
+.drive-search__aisle {
+  max-width: 11rem;
+  flex: 0 0 auto;
+  padding: 0 2rem 0 1.15rem;
+  border: 0;
+  border-right: 1px solid $border;
+  background: $mint url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%230A5F2C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='m4 6 4 4 4-4'/%3E%3C/svg%3E") no-repeat right 0.75rem center / 0.8rem;
+  color: $basil-dark;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+    background-color: $mint-strong;
+  }
+}
+
+.drive-search__input {
+  min-width: 0;
+  flex: 1 1 auto;
+  padding: 0 1rem;
+  border: 0;
+  background: transparent;
+  color: $ink;
+  font-size: 0.95rem;
+
+  &::placeholder {
+    color: $text-muted;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.drive-search__submit {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  align-self: center;
+  place-items: center;
+  margin-right: 0.2rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: $basil;
+  color: $white;
+  transition: background-color 140ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $basil-dark;
+  }
+
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 2.4;
+  }
+}
+
+// Pick-up slot chip
+
+.drive-slot__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1rem 0.4rem 0.45rem;
+  border: 1px dashed $border-strong;
+  border-radius: $radius-pill;
+  text-decoration: none;
+  transition:
+    border-color 140ms ease,
+    background-color 140ms ease;
+
+  &:hover {
+    border-color: $basil;
+    background-color: $mint;
+  }
+}
+
+.drive-slot__icon {
+  display: block;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0.4rem;
+  border-radius: 50%;
+  background-color: $lemon;
+  fill: none;
+  stroke: $ink;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.drive-slot__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.drive-slot__label {
+  color: $text-muted;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.drive-slot__value {
+  color: $ink;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+// Basket button: basil pill with a lemon counter and the basket total.
+
+.drive-cart__button {
+  --bs-btn-color: #{$white};
+  --bs-btn-bg: #{$basil};
+  --bs-btn-border-color: #{$basil};
+  --bs-btn-hover-color: #{$white};
+  --bs-btn-hover-bg: #{$basil-dark};
+  --bs-btn-hover-border-color: #{$basil-dark};
+  --bs-btn-active-color: #{$white};
+  --bs-btn-active-bg: #{$basil-dark};
+  --bs-btn-active-border-color: #{$basil-dark};
+
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.35rem 1.1rem 0.35rem 0.4rem;
+  border-radius: $radius-pill;
+  text-align: left;
+
+  &:hover {
+    box-shadow: $shadow-basil;
+  }
+}
+
+.drive-cart__icon-wrap {
+  position: relative;
+  display: grid;
+  width: 2.3rem;
+  height: 2.3rem;
+  place-items: center;
+  border-radius: 50%;
+  background-color: rgba($white, 0.16);
+}
+
+.drive-cart__icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.drive-cart__count {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.45rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $basil;
+  border-radius: $radius-pill;
+  background-color: $lemon;
+  color: $ink;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.drive-cart__summary {
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.drive-cart__label {
+  color: rgba($white, 0.78);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.drive-cart__total {
+  font-size: 1rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+header .dropdown-menu {
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $white;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  border-radius: $radius-sm;
+  color: $ink;
+
+  &:hover,
+  &:focus {
+    background-color: $mint;
+    color: $ink;
+  }
+}
+
+header .navbar-toggler {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: 50%;
+  background-color: $mint;
+  color: $basil-dark;
+}
+
+// Aisles bar: a basil band under the header, the full width of the screen.
+
+.drive-aisles {
+  background-color: $basil;
+}
+
+.drive-aisles__inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.drive-aisles__label {
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  padding: 0.45rem 0.95rem;
+  border-radius: $radius-pill;
+  background-color: $basil-dark;
+  color: $white;
+  font-size: 0.88rem;
+  font-weight: 800;
+
+  svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: none;
+    stroke: $lemon;
+    stroke-linecap: round;
+    stroke-width: 2.4;
+  }
+}
+
+.drive-aisles__links {
+  flex: 1 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.drive-aisles__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.drive-aisles__links > .nav-link,
+.drive-aisles__links > .nav-item > .nav-link {
+  padding: 0.85rem 0.9rem !important;
+  color: $white;
+  font-size: 0.93rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: inset 0 -3px 0 transparent;
+  transition:
+    background-color 140ms ease,
+    box-shadow 140ms ease;
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    background-color: $basil-dark;
+    color: $white;
+    box-shadow: inset 0 -3px 0 $lemon;
+  }
+}
+
+.drive-aisles__promo {
+  align-items: center;
+  gap: 0.4rem;
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0.45rem 1rem;
+  border-radius: $radius-pill;
+  background-color: $lemon;
+  color: $ink;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+  transform: rotate(-1.5deg);
+  transition: transform 160ms $ease;
+
+  &::before {
+    content: "%";
+    font-weight: 900;
+  }
+
+  &:hover {
+    color: $ink;
+    transform: rotate(0deg) scale(1.03);
+  }
+}
+
+.drive-aisles__menu .dropdown-menu,
+.drive-checkout-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  margin-top: 0;
+  padding: 0.4rem;
+  border: 0;
+  border-radius: 0 0 $radius $radius;
+  background-color: $white;
+  box-shadow: $shadow-float;
+}
+
+.drive-aisles__menu .dropdown-menu .nav-link,
+.drive-checkout-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  border-radius: $radius-sm;
+  color: $ink;
+  font-size: 0.92rem;
+  font-weight: 600;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $mint;
+    color: $basil-dark;
+  }
+}
+
+// Checkout header: a compact link list next to the logo.
+
+.drive-checkout-nav__links {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.15rem;
+}
+
+.drive-checkout-nav__links > .nav-link,
+.drive-checkout-nav__links > .nav-item > .nav-link {
+  padding: 0.5rem 0.85rem !important;
+  border-radius: $radius-pill;
+  color: $ink;
+  font-weight: 600;
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    background-color: $mint;
+    color: $basil-dark;
+  }
+}
+
+.drive-checkout-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .drive-checkout-nav__menu {
+    width: 100%;
+  }
+
+  .drive-checkout-nav__menu .offcanvas-body {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .drive-aisles {
+    height: 4px;
+  }
+
+  .drive-aisles__menu,
+  .drive-checkout-nav__menu {
+    position: fixed;
+    background-color: $white;
+  }
+
+  .drive-aisles__menu .offcanvas-header,
+  .drive-checkout-nav__menu .offcanvas-header {
+    background-color: $basil;
+    color: $white;
+
+    .offcanvas-title {
+      color: $white;
+      font-weight: 800;
+    }
+
+    .btn-close {
+      filter: invert(1) grayscale(1) brightness(2);
+    }
+  }
+
+  .drive-aisles__menu .offcanvas-body,
+  .drive-checkout-nav__menu .offcanvas-body {
+    padding: 0.75rem 0 !important;
+  }
+
+  .drive-aisles__inner {
+    display: block;
+    padding-inline: 0.75rem;
+  }
+
+  .drive-aisles__links,
+  .drive-checkout-nav__links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.15rem;
+  }
+
+  .drive-aisles__links > .nav-link,
+  .drive-aisles__links > .nav-item > .nav-link,
+  .drive-checkout-nav__links > .nav-link,
+  .drive-checkout-nav__links > .nav-item > .nav-link {
+    justify-content: space-between;
+    padding: 0.8rem 0.9rem !important;
+    border-radius: $radius-sm;
+    color: $ink;
+    white-space: normal;
+    box-shadow: none;
+
+    &:hover,
+    &:focus,
+    &[aria-expanded="true"] {
+      background-color: $mint;
+      color: $basil-dark;
+      box-shadow: none;
+    }
+  }
+
+  .drive-aisles__menu .dropdown-menu,
+  .drive-checkout-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin-top: 0.15rem;
+    border-radius: $radius-sm;
+    background: $shelf;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .drive-aisles__menu .dropdown-menu .nav-link,
+  .drive-checkout-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.4rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .drive-logo__mark {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .drive-logo__name {
+    font-size: 1.45rem;
+  }
+
+  .drive-cart__button {
+    padding-right: 0.4rem;
+  }
+
+  .drive-search__aisle {
+    max-width: 7.5rem;
+    padding-left: 0.85rem;
+  }
+}

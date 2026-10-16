@@ -1,0 +1,20 @@
+@import "variables";
+
+// Bootstrap / Sylius theme styles are loaded by the parent theme.
+// This file contains only the Drive customizations.
+// Typography relies on InterVariable, already shipped by the Sylius shop, set heavy for a grocery-flyer feel.
+
+@import "base";
+@import "layout";
+@import "accordions";
+@import "breadcrumbs";
+@import "buttons";
+@import "cards";
+@import "feedback";
+@import "forms";
+@import "header";
+@import "footer";
+@import "hero";
+@import "sections";
+@import "product";
+@import "cart";

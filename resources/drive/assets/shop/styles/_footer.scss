@@ -1,0 +1,245 @@
+// Footer: a white band of drive services (with the opening hours), then a forest footer.
+
+.drive-footer {
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+  background-color: $forest;
+  color: $text-on-dark;
+}
+
+.drive-services {
+  background-color: $white;
+  box-shadow: 0 -1px 0 $border;
+  color: $text;
+}
+
+.drive-services__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.drive-services__item {
+  display: flex;
+  gap: 1rem;
+  padding: clamp(1.5rem, 2.4vw, 2.25rem) clamp(1rem, 2vw, 2rem);
+  border-left: 1px solid $border;
+
+  &:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+.drive-services__icon {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background-color: $mint;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: none;
+    stroke: $basil;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+}
+
+.drive-services__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.drive-services__name {
+  color: $ink;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.drive-services__text {
+  color: $text-muted;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.drive-services__link {
+  margin-top: 0.25rem;
+  color: $basil !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  &::after {
+    display: inline-block;
+    margin-inline-start: 0.35rem;
+    content: "→";
+    transition: transform 160ms $ease;
+  }
+
+  &:hover::after {
+    transform: translateX(3px);
+  }
+}
+
+.drive-services__item--hours {
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1rem 0;
+  padding-block: 1rem;
+  border-left: 0;
+  border-radius: $radius-lg;
+  background-color: $lemon-soft;
+}
+
+.drive-hours {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  font-size: 0.9rem;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px dashed rgba($ink, 0.15);
+  }
+
+  > div:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  dt {
+    color: $text;
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+    color: $ink;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.drive-footer__main {
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: 1.5rem;
+
+  > .row {
+    padding-top: 2rem;
+  }
+
+  a,
+  .nav-link {
+    color: $text-on-dark;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $lemon;
+    }
+  }
+
+  .fw-medium,
+  h2,
+  h3,
+  h4 {
+    color: $white;
+    font-size: 0.95rem;
+    font-weight: 800 !important;
+  }
+}
+
+.drive-footer__brand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba($white, 0.12);
+
+  p {
+    max-width: 30rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .drive-logo__tile {
+    fill: $lemon;
+  }
+
+  .drive-logo__leaf,
+  .drive-logo__stem {
+    fill: $basil;
+    stroke: $basil;
+  }
+
+  .drive-logo__stem {
+    fill: none;
+  }
+
+  .drive-logo__weave {
+    stroke: $lemon;
+  }
+}
+
+// Payment partner logos keep their brand colours on light chips (Mollie's is black).
+.drive-footer__main .ratio.border {
+  border-color: $white !important;
+  border-radius: $radius-sm;
+  background-color: $white;
+}
+
+.drive-footer__copy a {
+  color: $white !important;
+  text-decoration: underline !important;
+}
+
+@media (max-width: 1199.98px) {
+  .drive-services__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .drive-services__item:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .drive-services__item--hours {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .drive-services__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .drive-services__item {
+    padding-inline: 0;
+    border-top: 1px solid $border;
+    border-left: 0;
+  }
+
+  .drive-services__item:first-child {
+    border-top: 0;
+  }
+
+  .drive-services__item--hours {
+    padding-inline: 1.25rem;
+    border-top: 0;
+  }
+}

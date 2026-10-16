@@ -1,0 +1,421 @@
+// Homepage hero: a basil panel with the slot board, the weekly flyer product and two promo tiles,
+// side by side across the whole screen, then the round aisle tiles.
+
+.drive-hero {
+  padding-block: clamp(1rem, 1.8vw, 1.75rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.drive-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(0.75rem, 1.2vw, 1.25rem);
+}
+
+@media (min-width: 768px) {
+  .drive-hero__grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  }
+
+  .drive-hero__main {
+    grid-row: span 2;
+  }
+}
+
+@media (min-width: 1400px) {
+  .drive-hero__grid {
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 0.72fr);
+  }
+
+  .drive-hero__main {
+    grid-row: auto;
+  }
+}
+
+.drive-hero__main {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border-radius: $radius-lg;
+  background-color: $basil;
+  // Faint dotted pattern, like a paper bag.
+  background-image:
+    radial-gradient(circle at 92% 8%, rgba($lemon, 0.28) 0, rgba($lemon, 0) 34%),
+    radial-gradient(rgba($white, 0.09) 1.2px, transparent 1.4px);
+  background-size: auto, 18px 18px;
+  color: $mint;
+
+  h1 {
+    max-width: 18ch;
+    margin: 0 0 1rem;
+    color: $white;
+    font-size: clamp(2.1rem, 3.6vw, 3.6rem);
+    font-weight: 850;
+    letter-spacing: -0.04em;
+    line-height: 1.02;
+  }
+
+  h1 mark {
+    display: inline-block;
+    padding: 0 0.25em;
+    border-radius: 0.2em;
+    background-color: $lemon;
+    color: $ink;
+    transform: rotate(-2deg);
+  }
+}
+
+.drive-hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.75rem;
+  border-radius: $radius-pill;
+  background-color: rgba($forest, 0.35);
+  color: $white;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.drive-hero__lead {
+  max-width: 46ch;
+  margin-bottom: 1.6rem;
+  color: rgba($white, 0.86);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.55;
+
+  strong {
+    color: $lemon;
+    font-weight: 700;
+  }
+}
+
+.drive-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.drive-hero__main .btn-primary {
+  --bs-btn-color: #{$ink};
+  --bs-btn-bg: #{$lemon};
+  --bs-btn-border-color: #{$lemon};
+  --bs-btn-hover-color: #{$ink};
+  --bs-btn-hover-bg: #{$white};
+  --bs-btn-hover-border-color: #{$white};
+  --bs-btn-active-color: #{$ink};
+  --bs-btn-active-bg: #{$white};
+  --bs-btn-active-border-color: #{$white};
+
+  &:hover {
+    box-shadow: 0 10px 24px rgba($forest, 0.35);
+  }
+}
+
+// Slot board
+
+.drive-slots {
+  margin-top: clamp(1.5rem, 2.5vw, 2.25rem);
+  padding: 1rem 1.1rem 1.1rem;
+  border-radius: $radius;
+  background-color: rgba($forest, 0.3);
+}
+
+.drive-slots__title {
+  margin: 0 0 0.75rem;
+  color: $white;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.drive-slots__days {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.drive-slots__day {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+// One row per day once there is room: the day on the left, its slots on the right.
+@media (min-width: 768px) {
+  .drive-slots__day {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .drive-slots__name {
+    min-width: 6.5rem;
+  }
+}
+
+.drive-slots__name {
+  color: $mint-strong;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.drive-slots__times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.drive-slots__time {
+  padding: 0.3rem 0.6rem;
+  border-radius: $radius-sm;
+  background-color: $white;
+  color: $basil-dark;
+  font-size: 0.82rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.drive-slots__time--full {
+  background-color: rgba($white, 0.12);
+  color: rgba($white, 0.5);
+  text-decoration: line-through;
+}
+
+// Weekly flyer product
+
+.drive-hero__deal {
+  min-width: 0;
+}
+
+.drive-hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 20rem;
+  border-radius: $radius-lg;
+  object-fit: cover;
+}
+
+.drive-deal {
+  position: relative;
+  height: 100%;
+  border-radius: $radius-lg;
+  background-color: $white;
+  box-shadow: $shadow-soft;
+}
+
+.drive-deal__ribbon {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 1rem;
+  margin: 0;
+  padding: 0.35rem 0.85rem;
+  border-radius: $radius-pill;
+  background-color: $tomato;
+  color: $white;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.drive-deal__product {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  color: $ink;
+  text-decoration: none;
+
+  &:hover {
+    color: $ink;
+  }
+}
+
+.drive-deal__media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  flex: 1 1 auto;
+  min-height: 16rem;
+  margin: 0.6rem 0.6rem 0;
+  border-radius: calc(#{$radius-lg} - 0.4rem);
+  background-color: $shelf;
+
+  img {
+    position: absolute;
+    inset: 0;
+    transition: transform 600ms $ease;
+  }
+}
+
+.drive-deal__product:hover .drive-deal__media img {
+  transform: scale(1.04);
+}
+
+.drive-deal__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.25rem 1.2rem;
+}
+
+.drive-deal__name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.drive-deal__cta {
+  color: $basil;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  &::after {
+    margin-left: 0.35rem;
+    content: "→";
+  }
+}
+
+// Price sticker: a lemon disc, slightly turned, as on a shelf label.
+.drive-deal__sticker {
+  position: absolute;
+  z-index: 2;
+  top: 0.9rem;
+  right: 0.9rem;
+  display: flex;
+  width: 6.5rem;
+  height: 6.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $lemon;
+  box-shadow: 0 8px 18px rgba($ink, 0.18);
+  color: $ink;
+  text-align: center;
+  transform: rotate(8deg);
+}
+
+.drive-deal__sticker-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.drive-deal__price {
+  padding-inline: 0.4rem;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+
+.drive-deal__empty {
+  min-height: 20rem;
+}
+
+// Promo tiles
+
+.drive-hero__tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: inherit;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 1400px) {
+  .drive-hero__tiles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.drive-tile {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  min-height: 11rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: $radius-lg;
+
+  // A big circle as a background motif.
+  &::before {
+    position: absolute;
+    top: -2.5rem;
+    right: -2.5rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    content: "";
+  }
+}
+
+.drive-tile--prices {
+  background-color: $tomato;
+  color: $white;
+
+  &::before {
+    background-color: rgba($white, 0.14);
+  }
+}
+
+.drive-tile--fresh {
+  background-color: $lemon;
+  color: $ink;
+
+  &::before {
+    background-color: rgba($basil, 0.16);
+  }
+}
+
+.drive-tile__tag {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: $radius-pill;
+  background-color: rgba($ink, 0.14);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.drive-tile__title {
+  position: relative;
+  font-size: clamp(1.35rem, 1.7vw, 1.7rem);
+  font-weight: 850;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.drive-tile__text {
+  position: relative;
+  font-size: 0.88rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+@media (max-width: 767.98px) {
+
+  .drive-deal__sticker {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .drive-deal__price {
+    font-size: 1.1rem;
+  }
+}

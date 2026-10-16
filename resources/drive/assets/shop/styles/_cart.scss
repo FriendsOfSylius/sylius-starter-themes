@@ -1,0 +1,75 @@
+// Cart page and side basket.
+
+#sylius_shop_cart {
+  .table thead th {
+    padding-bottom: 0.8rem;
+    color: $text-muted;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .table tbody td {
+    vertical-align: middle;
+  }
+
+  .table .link-reset {
+    color: $ink;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: $basil;
+    }
+  }
+
+  .table .btn-transparent {
+    color: $text-muted;
+
+    &:hover,
+    &:focus-visible {
+      color: $tomato;
+    }
+  }
+
+  .table .form-control {
+    min-width: 4.5rem;
+    border-radius: $radius-pill;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+#offcanvasCart {
+  --bs-offcanvas-width: min(32rem, 100vw);
+}
+
+#offcanvasCart .offcanvas-header {
+  padding: 1.1rem 1.5rem;
+  background-color: $basil;
+  color: $white;
+
+  .offcanvas-title {
+    color: $white;
+    font-weight: 800;
+  }
+
+  .btn-close {
+    filter: invert(1) grayscale(1) brightness(2);
+  }
+}
+
+#offcanvasCart .offcanvas-body .link-reset {
+  color: $ink;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    color: $basil;
+  }
+}
+
+#offcanvasCart .offcanvas-footer .btn {
+  width: 100%;
+}

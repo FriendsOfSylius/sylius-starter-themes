@@ -1,0 +1,31 @@
+{% import "@SyliusShop/shared/macro/money.html.twig" as money %}
+
+<div class="col-auto position-relative drive-cart" {{ attributes }}>
+    <div data-loading>
+        <div class="sylius-shop-loader">
+            <img src="{{ asset('build/shop/images/loader.gif', 'shop') }}" alt="{{ 'sylius.ui.loading'|trans }}" loading="lazy"/>
+        </div>
+    </div>
+    <div {{ sylius_test_html_attribute('cart-button') }}>
+        <button class="btn drive-cart__button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-label="{{ 'sylius.ui.cart'|trans }}">
+            <span class="drive-cart__icon-wrap">
+                <svg class="drive-cart__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.5L21 8H6.2"/>
+                    <circle cx="10" cy="20" r="1.3"/>
+                    <circle cx="17" cy="20" r="1.3"/>
+                </svg>
+                {% if cart.totalQuantity > 0 %}
+                    <span class="drive-cart__count" {{ sylius_test_html_attribute('cart-quantity', cart.totalQuantity) }}>
+                        {{ cart.totalQuantity }}
+                    </span>
+                {% endif %}
+            </span>
+            <span class="drive-cart__summary d-none d-sm-flex">
+                <span class="drive-cart__label">{{ 'drive.cart.label'|trans({}, 'drive') }}</span>
+                <strong class="drive-cart__total" {{ sylius_test_html_attribute('cart-total') }}>
+                    {{- money.convertAndFormat(cart.itemsTotal) -}}
+                </strong>
+            </span>
+        </button>
+    </div>
+</div>

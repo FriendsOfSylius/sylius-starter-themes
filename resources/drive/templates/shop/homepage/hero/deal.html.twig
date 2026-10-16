@@ -1,0 +1,26 @@
+{% import '@SyliusShop/shared/macro/money.html.twig' as money %}
+{% set product = latest_products|first %}
+
+{# The weekly flyer: the newest product of the channel, with a price sticker. #}
+<div class="drive-deal">
+    <p class="drive-deal__ribbon">{{ 'drive.hero.deal.ribbon'|trans({}, 'drive') }}</p>
+    {% if product %}
+        <a class="drive-deal__product" href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
+            <span class="drive-deal__media">
+                {{ component('sylius_shop:main_image', {product: product, class: 'w-100 h-100 object-fit-cover'}) }}
+            </span>
+            <span class="drive-deal__info">
+                <span class="drive-deal__name">{{ product.name }}</span>
+                <span class="drive-deal__cta">{{ 'drive.hero.deal.cta'|trans({}, 'drive') }}</span>
+            </span>
+            {% if not product.enabledVariants.empty() %}
+                <span class="drive-deal__sticker">
+                    <span class="drive-deal__sticker-label">{{ 'drive.hero.deal.price_label'|trans({}, 'drive') }}</span>
+                    <span class="drive-deal__price">{{ money.calculatePrice(product.enabledVariants.first) }}</span>
+                </span>
+            {% endif %}
+        </a>
+    {% else %}
+        <div class="drive-deal__empty" aria-hidden="true"></div>
+    {% endif %}
+</div>

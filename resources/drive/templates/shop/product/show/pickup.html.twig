@@ -1,0 +1,9 @@
+{# Pick-up promise under the add-to-cart button: when and how the order can be collected. #}
+<ul class="drive-pickup" role="list">
+    {% for item in ['pickup', 'delivery', 'fresh'] %}
+        <li class="drive-pickup__item drive-pickup__item--{{ item }}">
+            <strong>{{ ('drive.product.' ~ item ~ '.title')|trans({}, 'drive') }}</strong>
+            <span>{{ ('drive.product.' ~ item ~ '.text')|trans({}, 'drive') }}</span>
+        </li>
+    {% endfor %}
+</ul>

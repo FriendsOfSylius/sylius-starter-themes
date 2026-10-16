@@ -1,0 +1,64 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="drive-hero" aria-labelledby="drive-hero-title">
+    <div class="container">
+        <div class="drive-hero__grid">
+            <div class="drive-hero__main">
+                <p class="drive-hero__kicker">
+                    <span class="drive-pulse" aria-hidden="true"></span>
+                    {% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'drive.hero.kicker'|trans({}, 'drive') }}{% endif %}
+                </p>
+                <h1 id="drive-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'drive.hero.title'|trans({}, 'drive')|raw }}{% endif %}</h1>
+                <p class="drive-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'drive.hero.lead'|trans({}, 'drive')|raw }}{% endif %}</p>
+
+                <div class="drive-hero__actions">
+                    <a class="btn btn-primary drive-btn-cta" href="{{ hero.ctaUrl ?? '#drive-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'drive.hero.cta'|trans({}, 'drive') }}{% endif %}
+                    </a>
+                    <a class="btn drive-btn-ghost" href="#drive-how">{{ 'drive.hero.secondary_cta'|trans({}, 'drive') }}</a>
+                </div>
+
+                {# The slot board: the next pick-up slots, the way a drive shows them. Illustrative, not a booking form. #}
+                <div class="drive-slots">
+                    <p class="drive-slots__title">{{ 'drive.hero.slots.title'|trans({}, 'drive') }}</p>
+                    <ul class="drive-slots__days" role="list">
+                        {% for day in [
+                            {key: 'today', slots: [{time: '17:00', state: 'full'}, {time: '18:00', state: 'free'}, {time: '19:00', state: 'free'}]},
+                            {key: 'tomorrow', slots: [{time: '09:00', state: 'free'}, {time: '12:30', state: 'free'}, {time: '18:30', state: 'full'}]},
+                            {key: 'after', slots: [{time: '10:00', state: 'free'}, {time: '14:00', state: 'free'}, {time: '17:30', state: 'free'}]},
+                        ] %}
+                            <li class="drive-slots__day">
+                                <span class="drive-slots__name">{{ ('drive.hero.slots.' ~ day.key)|trans({}, 'drive') }}</span>
+                                <span class="drive-slots__times">
+                                    {% for slot in day.slots %}
+                                        <span class="drive-slots__time drive-slots__time--{{ slot.state }}">
+                                            {{ slot.time }}
+                                            {% if slot.state == 'full' %}<span class="visually-hidden">({{ 'drive.hero.slots.full'|trans({}, 'drive') }})</span>{% endif %}
+                                        </span>
+                                    {% endfor %}
+                                </span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="drive-hero__deal">
+                {% if hero.image %}
+                    <img class="drive-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                {% else %}
+                    {{ component('sylius_shop:product:list', {limit: 1, template: 'shop/homepage/hero/deal.html.twig'}) }}
+                {% endif %}
+            </div>
+
+            <ul class="drive-hero__tiles" role="list">
+                {% for tile in ['prices', 'fresh'] %}
+                    <li class="drive-tile drive-tile--{{ tile }}">
+                        <span class="drive-tile__tag">{{ ('drive.hero.tiles.' ~ tile ~ '.tag')|trans({}, 'drive') }}</span>
+                        <span class="drive-tile__title">{{ ('drive.hero.tiles.' ~ tile ~ '.title')|trans({}, 'drive')|raw }}</span>
+                        <span class="drive-tile__text">{{ ('drive.hero.tiles.' ~ tile ~ '.text')|trans({}, 'drive') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

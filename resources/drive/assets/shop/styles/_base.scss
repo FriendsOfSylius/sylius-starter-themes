@@ -1,0 +1,191 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $shelf;
+  color: $text;
+  font-family: $font-family-base;
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $basil-dark;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 140ms ease;
+
+  &:hover,
+  &.link-reset:hover {
+    color: $basil;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3 {
+  color: $ink;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+h1,
+.h1 {
+  font-size: clamp(2.1rem, 3.8vw, 3.4rem);
+}
+
+h2,
+.h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+}
+
+h3,
+.h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+::selection {
+  background-color: $lemon;
+  color: $ink;
+}
+
+:focus-visible {
+  outline: 3px solid $lemon-dark;
+  outline-offset: 2px;
+}
+
+// Shared helpers.
+
+.drive-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.6rem;
+  color: $basil;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  &::before {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background-color: $lemon;
+    box-shadow: 0 0 0 3px rgba($lemon, 0.35);
+    content: "";
+  }
+}
+
+.drive-pulse {
+  position: relative;
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background-color: $lemon;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-color: $lemon;
+    content: "";
+    animation: drive-pulse 2s ease-out infinite;
+  }
+}
+
+@keyframes drive-pulse {
+  from {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(2.6);
+  }
+}
+
+.drive-section-head {
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.drive-section-head--row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.5rem 1.5rem;
+}
+
+.drive-section-head__count {
+  margin: 0;
+  padding: 0.35rem 0.85rem;
+  border-radius: $radius-pill;
+  background-color: $mint;
+  color: $basil-dark;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+[id^="drive-"] {
+  scroll-margin-top: 1rem;
+}
+
+.drive-checkout-brand,
+.drive-checkout-account {
+  color: $ink;
+}
+
+.drive-checkout-account a,
+.drive-checkout-account .btn {
+  color: $basil-dark;
+  font-weight: 600;
+}
+
+.drive-checkout-account a:hover,
+.drive-checkout-account .btn:hover {
+  color: $basil;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

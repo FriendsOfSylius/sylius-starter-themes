@@ -1,0 +1,15 @@
+{# Service strip: the drive promises, then the native locale / currency switchers. #}
+<div class="drive-topbar">
+    <div class="container">
+        <div class="row g-2 align-items-center">
+            <div class="col drive-topbar__promises">
+                <ul class="drive-topbar__list" role="list">
+                    {% for item in ['pickup', 'fresh', 'prices'] %}
+                        <li class="drive-topbar__item drive-topbar__item--{{ item }}">{{ ('drive.topbar.' ~ item)|trans({}, 'drive')|raw }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% hook 'top_bar' %}
+        </div>
+    </div>
+</div>

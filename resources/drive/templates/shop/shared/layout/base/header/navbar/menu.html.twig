@@ -1,0 +1,23 @@
+{# The aisles bar: full-width category navigation under the header, an offcanvas panel on mobile. #}
+<div class="drive-aisles">
+    {% if taxons|length > 0 %}
+        <nav class="navbar offcanvas-lg offcanvas-start offcanvas-wide p-0 drive-aisles__menu" id="navbarNav" aria-label="{{ 'sylius.ui.taxon_navigation_desktop'|trans }}">
+            <div class="offcanvas-header w-full">
+                <h2 class="offcanvas-title fs-5">{{ 'drive.aisles.title'|trans({}, 'drive') }}</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarNav" aria-label="{{ 'sylius.ui.close'|trans }}"></button>
+            </div>
+            <div class="offcanvas-body w-full py-0">
+                <div class="container drive-aisles__inner">
+                    <span class="drive-aisles__label d-none d-lg-inline-flex" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+                        {{ 'drive.aisles.title'|trans({}, 'drive') }}
+                    </span>
+                    <div class="navbar-nav drive-aisles__links" {{ sylius_test_html_attribute('menu') }}>
+                        {% hook 'menu' with { taxons } %}
+                    </div>
+                    <a class="drive-aisles__promo d-none d-lg-inline-flex" href="{{ path('sylius_shop_homepage') }}#drive-latest-products">{{ 'drive.aisles.promo'|trans({}, 'drive') }}</a>
+                </div>
+            </div>
+        </nav>
+    {% endif %}
+</div>

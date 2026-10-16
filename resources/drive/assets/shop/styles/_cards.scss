@@ -1,0 +1,187 @@
+.card {
+  overflow: hidden;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $white;
+  box-shadow: $shadow-soft;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  color: $ink;
+  font-weight: 800;
+}
+
+.card-text {
+  color: $text-muted;
+}
+
+.card-footer {
+  border-top-color: $border;
+  background-color: $white;
+}
+
+// Product tiles: dense grocery tiles on the shelf grey, square image, big price and a round
+// basil basket button. The card root is the element holding the details link: it is a direct
+// grid item on category pages and wrapped in a <div> in the homepage / association lists.
+
+.products-grid {
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+  gap: clamp(0.6rem, 1vw, 1rem);
+}
+
+.products-grid div:has(> a.link-reset) {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  flex-direction: column;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $white;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms $ease;
+
+  &:hover,
+  &:focus-within {
+    border-color: $basil;
+    box-shadow: $shadow-float;
+    transform: translateY(-2px);
+  }
+
+  > a.link-reset {
+    display: block;
+    color: $ink;
+    text-decoration: none;
+
+    // Stretched link: the price and basket button below are part of the clickable tile too.
+    &::after {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      content: "";
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  &:has(> a.link-reset:focus-visible) {
+    outline: 3px solid $lemon-dark;
+    outline-offset: 2px;
+  }
+
+  .mb-4 {
+    margin-bottom: 0 !important;
+  }
+
+  .rounded-3 {
+    margin: 0.5rem 0.5rem 0;
+    border-radius: calc(#{$radius} - 0.35rem) !important;
+    background-color: $shelf !important;
+    aspect-ratio: 1 / 1 !important;
+
+    img {
+      transition: transform 500ms $ease;
+    }
+  }
+
+  &:hover .rounded-3 img {
+    transform: scale(1.04);
+  }
+
+  .h6 {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 0;
+    padding: 0.75rem 0.9rem 0.35rem;
+    color: $ink;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  // Prices, with the basket button on the right.
+  > div:last-child {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 0.5rem;
+    align-items: baseline;
+    min-height: 3.6rem;
+    margin-top: auto;
+    padding: 0.35rem 3.6rem 0.9rem 0.9rem;
+    color: $ink;
+    font-size: 1.3rem;
+    font-weight: 850;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+
+    > * {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    del {
+      color: $text-muted;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0.7rem;
+      bottom: 0.7rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: $basil url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M12 6v12M6 12h12'/%3E%3C/svg%3E") no-repeat center / 1.15rem;
+      box-shadow: $shadow-basil;
+      content: "";
+      transition:
+        background-color 140ms ease,
+        transform 160ms $ease;
+    }
+  }
+
+  &:hover > div:last-child::after {
+    background-color: $basil-dark;
+    transform: scale(1.08) rotate(90deg);
+  }
+
+  // Discounted product: a tomato "promo" sticker on the image and a red price.
+  &:has(del) {
+    &::before {
+      position: absolute;
+      z-index: 2;
+      top: 0.9rem;
+      left: 0.9rem;
+      display: grid;
+      width: 2.6rem;
+      height: 2.6rem;
+      place-items: center;
+      border-radius: 50%;
+      background-color: $tomato;
+      color: $white;
+      content: "%";
+      font-size: 1.1rem;
+      font-weight: 900;
+      transform: rotate(-10deg);
+    }
+
+    > div:last-child {
+      color: $tomato-dark;
+    }
+  }
+}

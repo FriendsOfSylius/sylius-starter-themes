@@ -1,0 +1,10 @@
+{# Pick-up slot reminder: the next free slot of the drive, as on a grocery click-and-collect site. #}
+<div class="col-auto d-none d-xl-block drive-slot">
+    <a class="drive-slot__chip" href="{{ path('sylius_shop_homepage') }}#drive-how">
+        <svg class="drive-slot__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13.5 5 8a2 2 0 0 1 1.9-1.3h10.2A2 2 0 0 1 19 8l2 5.5V18a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1h-11v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/><path d="M3 13.5h18M7 16h.01M17 16h.01"/></svg>
+        <span class="drive-slot__text">
+            <span class="drive-slot__label">{{ 'drive.slot.label'|trans({}, 'drive') }}</span>
+            <strong class="drive-slot__value">{{ 'drive.slot.value'|trans({}, 'drive') }}</strong>
+        </span>
+    </a>
+</div>

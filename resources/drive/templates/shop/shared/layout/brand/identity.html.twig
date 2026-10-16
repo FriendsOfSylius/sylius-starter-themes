@@ -1,0 +1,14 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="drive-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# A shopping basket with a sprouting leaf, set in a rounded square. #}
+    <svg class="drive-logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <rect class="drive-logo__tile" width="40" height="40" rx="11"/>
+        <path class="drive-logo__leaf" d="M21 13.5c0-4.6 3.2-7.5 8-7.5 0 4.7-3.2 7.5-8 7.5Z"/>
+        <path class="drive-logo__stem" d="M20 15.5c0-2 .3-3.4 1.2-4.6"/>
+        <path class="drive-logo__basket" d="M9 17h22l-2.4 12.2A3 3 0 0 1 25.7 32H14.3a3 3 0 0 1-2.9-2.8Z"/>
+        <path class="drive-logo__weave" d="M16 21v6.5M20 21v6.5M24 21v6.5"/>
+    </svg>
+    <span class="drive-logo__name">drive<span class="drive-logo__dot" aria-hidden="true">.</span></span>
+{% endif %}

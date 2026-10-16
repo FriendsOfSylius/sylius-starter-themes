@@ -1,0 +1,24 @@
+// Full-screen layout: every container spans the viewport, like a grocery drive back office
+// where the shelves use the whole screen. A fluid gutter keeps the edges breathing.
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  max-width: none;
+  padding-inline: $gutter;
+}
+
+// Pages built of white "shelves" on the shelf-grey background.
+main,
+#main {
+  background-color: $shelf;
+}
+
+// Light Bootstrap panels (cart summary, coupon, checkout boxes) become white shelves on the grey background.
+.bg-body-tertiary,
+.bg-light:not(.rounded-3):not(.rounded-circle) {
+  background-color: $white !important;
+}

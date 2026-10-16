@@ -1,0 +1,35 @@
+{# Drive promise: how click-and-collect works in three steps, next to the store's commitments. #}
+<section id="drive-how" class="drive-promise" aria-labelledby="drive-promise-title">
+    <div class="container">
+        <div class="drive-promise__grid">
+            <div class="drive-promise__steps">
+                <div class="drive-section-head">
+                    <p class="drive-eyebrow">{{ 'drive.promise.eyebrow'|trans({}, 'drive') }}</p>
+                    <h2 id="drive-promise-title">{{ 'drive.promise.title'|trans({}, 'drive') }}</h2>
+                </div>
+                <ol class="drive-steps" role="list">
+                    {% for step in 1..3 %}
+                        <li class="drive-steps__item">
+                            <span class="drive-steps__number" aria-hidden="true">{{ step }}</span>
+                            <span class="drive-steps__title">{{ ('drive.promise.step_' ~ step ~ '.title')|trans({}, 'drive') }}</span>
+                            <span class="drive-steps__text">{{ ('drive.promise.step_' ~ step ~ '.text')|trans({}, 'drive') }}</span>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            <div class="drive-promise__card">
+                <p class="drive-promise__card-title">{{ 'drive.promise.commitments.title'|trans({}, 'drive') }}</p>
+                <ul class="drive-checks" role="list">
+                    {% for item in 1..4 %}
+                        <li>
+                            <strong>{{ ('drive.promise.commitments.item_' ~ item ~ '.title')|trans({}, 'drive') }}</strong>
+                            <span>{{ ('drive.promise.commitments.item_' ~ item ~ '.text')|trans({}, 'drive') }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a class="btn btn-primary drive-btn-cta" href="#drive-latest-products">{{ 'drive.promise.cta'|trans({}, 'drive') }}</a>
+            </div>
+        </div>
+    </div>
+</section>
