@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Themes\Installer;
+namespace SyliusStarter\Themes\Installer;
 
 use Castor\Docker\Installer\Input;
 use Castor\Docker\Installer\InputType;
-use Sylius\Starter\Core\App;
-use Sylius\Starter\Core\Installer\SyliusInstallerExtensionInterface;
-use Sylius\Starter\Themes\Themes;
+use SyliusStarter\Core\App;
+use SyliusStarter\Core\Installer\SyliusInstallerExtensionInterface;
+use SyliusStarter\Themes\Themes;
 
 use function Castor\run;
 

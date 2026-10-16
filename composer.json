@@ -1,5 +1,5 @@
 {
-    "name": "sylius/starter-themes",
+    "name": "sylius-starter/themes",
     "description": "Ready-to-use Sylius storefront themes (Canvas, Blush, Prompt, Volt, Lagoon, Aurora) installable with Castor",
     "type": "library",
     "license": "MIT",
@@ -17,12 +17,12 @@
     ],
     "require": {
         "php": ">=8.3",
-        "sylius/starter-core": "self.version",
+        "sylius-starter/core": "self.version",
         "castor-php/docker": "^0.6.0"
     },
     "autoload": {
         "psr-4": {
-            "Sylius\\Starter\\Themes\\": "src/"
+            "SyliusStarter\\Themes\\": "src/"
         },
         "files": [
             "src/functions.php"
@@ -30,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Sylius\\Starter\\Themes\\Tests\\": "tests/"
+            "SyliusStarter\\Themes\\Tests\\": "tests/"
         }
     },
     "extra": {

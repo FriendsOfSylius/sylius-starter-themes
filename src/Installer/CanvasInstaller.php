@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Themes\Installer;
+namespace SyliusStarter\Themes\Installer;
 
-use Sylius\Starter\Core\App;
-use Sylius\Starter\Core\Component\InstallerInterface;
-use Sylius\Starter\Core\Storefront\Brand;
-use Sylius\Starter\Core\Storefront\Hero;
-use Sylius\Starter\Core\Util\Assets;
-use Sylius\Starter\Core\Util\Docker;
-use Sylius\Starter\Core\Util\Javascript;
-use Sylius\Starter\Core\Util\Symfony;
-use Sylius\Starter\Core\Util\Yaml;
+use SyliusStarter\Core\App;
+use SyliusStarter\Core\Component\InstallerInterface;
+use SyliusStarter\Core\Storefront\Brand;
+use SyliusStarter\Core\Storefront\Hero;
+use SyliusStarter\Core\Util\Assets;
+use SyliusStarter\Core\Util\Docker;
+use SyliusStarter\Core\Util\Javascript;
+use SyliusStarter\Core\Util\Symfony;
+use SyliusStarter\Core\Util\Yaml;
 
 use function Castor\finder;
 use function Castor\fs;
