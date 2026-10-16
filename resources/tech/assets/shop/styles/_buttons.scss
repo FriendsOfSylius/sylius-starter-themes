@@ -1,0 +1,99 @@
+.btn {
+  min-height: 2.75rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: $radius-sm;
+  font-size: 0.93rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    color 160ms ease;
+}
+
+// Signal-orange call to action.
+.btn-primary {
+  --bs-btn-color: #{$white};
+  --bs-btn-bg: #{$signal};
+  --bs-btn-border-color: #{$signal};
+  --bs-btn-hover-color: #{$white};
+  --bs-btn-hover-bg: #{$signal-dark};
+  --bs-btn-hover-border-color: #{$signal-dark};
+  --bs-btn-active-color: #{$white};
+  --bs-btn-active-bg: #{$signal-dark};
+  --bs-btn-active-border-color: #{$signal-dark};
+  --bs-btn-disabled-bg: #{$signal};
+  --bs-btn-disabled-border-color: #{$signal};
+
+  &:hover {
+    box-shadow: $shadow-signal;
+  }
+}
+
+// Outlined carbon button for secondary actions.
+.btn-secondary,
+.btn-outline-primary,
+.btn-outline-gray {
+  --bs-btn-color: #{$ink};
+  --bs-btn-bg: #{$white};
+  --bs-btn-border-color: #{$aluminium-strong};
+  --bs-btn-hover-color: #{$ink};
+  --bs-btn-hover-bg: #{$aluminium};
+  --bs-btn-hover-border-color: #{$ink};
+  --bs-btn-active-color: #{$ink};
+  --bs-btn-active-bg: #{$aluminium};
+  --bs-btn-active-border-color: #{$ink};
+}
+
+.btn-link {
+  color: $ink;
+
+  &:hover {
+    color: $signal-dark;
+  }
+}
+
+// Outlined button used on the carbon panels.
+.tech-btn-ghost {
+  --bs-btn-color: #{$white};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$border-dark};
+  --bs-btn-hover-color: #{$white};
+  --bs-btn-hover-bg: #{$steel};
+  --bs-btn-hover-border-color: #{$text-muted};
+  --bs-btn-active-color: #{$white};
+  --bs-btn-active-bg: #{$steel};
+  --bs-btn-active-border-color: #{$text-muted};
+}
+
+.tech-btn-arrow::after {
+  display: inline-block;
+  margin-inline-start: 0.55rem;
+  content: "→";
+  transition: transform 160ms $ease;
+}
+
+.tech-btn-arrow:hover::after {
+  transform: translateX(3px);
+}
+
+#add-to-cart-button {
+  --bs-btn-color: #{$white};
+  --bs-btn-bg: #{$signal};
+  --bs-btn-border-color: #{$signal};
+  --bs-btn-hover-color: #{$white};
+  --bs-btn-hover-bg: #{$signal-dark};
+  --bs-btn-hover-border-color: #{$signal-dark};
+  --bs-btn-active-color: #{$white};
+  --bs-btn-active-bg: #{$signal-dark};
+  --bs-btn-active-border-color: #{$signal-dark};
+
+  width: 100%;
+  min-height: 3.25rem;
+  font-size: 1rem;
+
+  &:hover {
+    box-shadow: $shadow-signal;
+  }
+}

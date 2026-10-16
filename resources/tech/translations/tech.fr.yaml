@@ -1,0 +1,103 @@
+tech:
+    hero:
+        kicker: 'Nouveautés en stock · expédiées sous 24 h'
+        title: 'Le matériel nouvelle génération, <em>prêt à partir.</em>'
+        lead: 'Des appareils et accessoires sélectionnés et testés avant d’arriver en rayon. Des fiches techniques claires, des prix justes et une <strong>garantie de 2 ans</strong> sur tout ce que nous vendons.'
+        cta: 'Voir les nouveautés'
+        secondary_cta: 'Nos engagements'
+        spotlight: 'Tout juste arrivé'
+        discover: 'Voir la fiche'
+        bench:
+            model: 'RÉF. NEW-01'
+            status: 'En stock'
+            spec_1:
+                label: 'Expédition'
+                value: '< 24 h'
+            spec_2:
+                label: 'Garantie'
+                value: '2 ans'
+            spec_3:
+                label: 'Retours'
+                value: '30 jours'
+    specs:
+        item_1:
+            label: 'Expédition'
+            value: '24 h'
+            text: 'commandes avant 15 h'
+        item_2:
+            label: 'Garantie'
+            value: '2 ans'
+            text: 'pièces et main-d’œuvre'
+        item_3:
+            label: 'Retours'
+            value: '30 j'
+            text: 'gratuits, étiquette fournie'
+        item_4:
+            label: 'Support'
+            value: '7j/7'
+            text: 'de vrais techniciens'
+    products:
+        eyebrow:
+            latest: 'Dernières sorties'
+    promise:
+        eyebrow: 'Fiche technique du service'
+        title: 'Conçu comme le matériel que nous vendons.'
+        lead: '<strong>Tech</strong> fonctionne sur des promesses mesurables : chaque commande est suivie, chaque appareil est couvert, chaque question arrive à quelqu’un qui connaît le produit.'
+        sheet:
+            title: 'Fiche technique · service'
+            item_1:
+                label: 'Expédition'
+                value: 'Le jour même'
+                text: 'pour toute commande passée avant 15 h'
+            item_2:
+                label: 'Garantie'
+                value: '2 ans'
+                text: 'pièces et main-d’œuvre, sur chaque appareil'
+            item_3:
+                label: 'Retours'
+                value: '30 jours'
+                text: 'gratuits, étiquette prépayée fournie'
+            item_4:
+                label: 'Support'
+                value: '7 jours sur 7'
+                text: 'assuré par nos techniciens'
+            item_5:
+                label: 'Paiement'
+                value: 'Sécurisé'
+                text: 'carte, PayPal et paiement en plusieurs fois'
+        benchmark:
+            title: 'Benchmark · 12 derniers mois'
+            item_1:
+                label: 'Commandes expédiées à l’heure'
+                value: '98 %'
+            item_2:
+                label: 'Clients prêts à racheter'
+                value: '96 %'
+            item_3:
+                label: 'Problèmes résolus au premier contact'
+                value: '92 %'
+            item_4:
+                label: 'Appareils sans défaut'
+                value: '99 %'
+            note: 'Mesuré sur nos propres commandes, mis à jour chaque mois.'
+        cta: 'Voir les dernières sorties'
+    footer:
+        tagline: 'Des appareils et accessoires testés, garantis et expédiés vite.'
+        services:
+            eyebrow: 'Assistance'
+            title: 'Couvert du déballage à la mise à niveau.'
+            support:
+                tag: '7j/7 · experts'
+                title: 'Support technique'
+                text: 'Installation, compatibilité ou appareil capricieux ? Nos techniciens vous répondent sept jours sur sept.'
+                cta: 'Contacter le support'
+            warranty:
+                tag: '2 ans'
+                title: 'Garantie'
+                text: 'Chaque appareil est couvert deux ans, pièces et main-d’œuvre. Ouvrez une demande depuis votre compte en quelques clics.'
+                cta: 'Mon compte'
+            returns:
+                tag: '30 jours'
+                title: 'Retours gratuits'
+                text: 'Pas adapté à votre configuration ? Renvoyez-le sous 30 jours avec l’étiquette prépayée.'
+                cta: 'Faire un retour'

@@ -1,0 +1,284 @@
+header {
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid $border;
+  background-color: rgba($white, 0.94);
+  backdrop-filter: saturate(1.4) blur(10px);
+}
+
+header .container {
+  padding-block: 0.35rem;
+}
+
+header a {
+  color: $ink;
+
+  &:hover {
+    color: $signal-dark;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: a chip glyph whose core lights up in signal orange, and a tight Inter name.
+
+.tech-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.55rem;
+  color: $ink;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $ink;
+    text-decoration: none;
+  }
+}
+
+.tech-logo__chip {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: 0 0 auto;
+}
+
+.tech-logo__pins {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.tech-logo__die {
+  fill: currentColor;
+}
+
+.tech-logo__core {
+  fill: $signal;
+  transition: fill 200ms ease;
+}
+
+.tech-logo:hover .tech-logo__core {
+  fill: $white;
+}
+
+.tech-logo__name {
+  font-size: 1.4rem;
+  font-weight: 750;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+// Category navigation
+
+.tech-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.tech-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.tech-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.15rem;
+  overflow: visible;
+}
+
+.tech-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.tech-category-nav__links > .nav-link,
+.tech-category-nav__links > .nav-item > .nav-link {
+  flex: 0 0 auto;
+  padding: 0.5rem 0.8rem !important;
+  border-radius: $radius-sm;
+  color: $text;
+  font-size: 0.93rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    background-color: $aluminium;
+    color: $ink;
+  }
+}
+
+.tech-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 13rem;
+  padding: 0.4rem;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $white;
+  box-shadow: $shadow-float;
+}
+
+.tech-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.5rem 0.75rem !important;
+  border-radius: $radius-sm;
+  color: $text;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $aluminium;
+    color: $ink;
+  }
+}
+
+// Cart: a carbon button with a signal-orange counter.
+
+.tech-cart__button {
+  --bs-btn-color: #{$white};
+  --bs-btn-bg: #{$carbon};
+  --bs-btn-border-color: #{$carbon};
+  --bs-btn-hover-color: #{$white};
+  --bs-btn-hover-bg: #{$steel};
+  --bs-btn-hover-border-color: #{$steel};
+  --bs-btn-active-color: #{$white};
+  --bs-btn-active-bg: #{$steel};
+  --bs-btn-active-border-color: #{$steel};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tech-cart__icon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.tech-cart__count {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  display: grid;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $white;
+  border-radius: $radius-sm;
+  background-color: $signal;
+  color: $white;
+  font-family: $font-family-monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $white;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  border-radius: $radius-sm;
+  color: $ink;
+
+  &:hover,
+  &:focus {
+    background-color: $aluminium;
+    color: $ink;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+@media (min-width: 992px) {
+  .tech-category-nav__menu {
+    width: 100%;
+  }
+
+  .tech-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tech-category-nav__menu {
+    position: fixed;
+  }
+
+  .tech-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $border;
+  }
+
+  .tech-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .tech-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0.15rem;
+  }
+
+  .tech-category-nav__links > .nav-link,
+  .tech-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    white-space: normal;
+    justify-content: space-between;
+    padding: 0.75rem 0.85rem !important;
+    color: $ink;
+  }
+
+  .tech-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin-top: 0.25rem;
+    border: 0;
+    background: $aluminium;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .tech-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tech-cart__button {
+    padding-inline: 0.75rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.tech-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.5rem;
+  object-fit: contain;
+}

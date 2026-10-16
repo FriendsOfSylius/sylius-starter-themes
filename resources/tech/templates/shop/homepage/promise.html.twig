@@ -1,0 +1,42 @@
+{# Tech promise: the shop's service as a spec sheet, next to a benchmark of measured figures. #}
+<section id="tech-promise" class="tech-promise" aria-labelledby="tech-promise-title">
+    <div class="container">
+        <div class="tech-section-head tech-section-head--wide">
+            <p class="tech-eyebrow">{{ 'tech.promise.eyebrow'|trans({}, 'tech') }}</p>
+            <h2 id="tech-promise-title">{{ 'tech.promise.title'|trans({}, 'tech') }}</h2>
+            <p class="tech-section-head__lead">{{ 'tech.promise.lead'|trans({}, 'tech')|raw }}</p>
+        </div>
+
+        <div class="tech-promise__grid">
+            <div class="tech-sheet">
+                <p class="tech-sheet__title">{{ 'tech.promise.sheet.title'|trans({}, 'tech') }}</p>
+                <dl class="tech-sheet__rows">
+                    {% for item in 1..5 %}
+                        <div class="tech-sheet__row">
+                            <dt>{{ ('tech.promise.sheet.item_' ~ item ~ '.label')|trans({}, 'tech') }}</dt>
+                            <dd>
+                                <strong>{{ ('tech.promise.sheet.item_' ~ item ~ '.value')|trans({}, 'tech') }}</strong>
+                                <span>{{ ('tech.promise.sheet.item_' ~ item ~ '.text')|trans({}, 'tech') }}</span>
+                            </dd>
+                        </div>
+                    {% endfor %}
+                </dl>
+            </div>
+
+            <div class="tech-bench-scores">
+                <p class="tech-sheet__title">{{ 'tech.promise.benchmark.title'|trans({}, 'tech') }}</p>
+                <ul class="tech-scores" role="list">
+                    {% for score in [{key: 1, value: 98}, {key: 2, value: 96}, {key: 3, value: 92}, {key: 4, value: 99}] %}
+                        <li class="tech-scores__item">
+                            <span class="tech-scores__label">{{ ('tech.promise.benchmark.item_' ~ score.key ~ '.label')|trans({}, 'tech') }}</span>
+                            <span class="tech-scores__value">{{ ('tech.promise.benchmark.item_' ~ score.key ~ '.value')|trans({}, 'tech') }}</span>
+                            <span class="tech-scores__bar" aria-hidden="true"><span style="width: {{ score.value }}%"></span></span>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <p class="tech-scores__note">{{ 'tech.promise.benchmark.note'|trans({}, 'tech') }}</p>
+                <a class="btn btn-primary tech-btn-arrow" href="#tech-latest-products">{{ 'tech.promise.cta'|trans({}, 'tech') }}</a>
+            </div>
+        </div>
+    </div>
+</section>

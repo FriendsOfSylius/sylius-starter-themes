@@ -1,0 +1,41 @@
+{% import '@SyliusShop/shared/macro/money.html.twig' as money %}
+{% set product = latest_products|first %}
+
+{# A product on a measuring bench: crosshair corners, a dimension rule and spec callouts around the newest product. #}
+<div class="tech-bench">
+    <div class="tech-bench__head" aria-hidden="true">
+        <span>{{ 'tech.hero.bench.model'|trans({}, 'tech') }}</span>
+        <span class="tech-bench__status"><span class="tech-led"></span>{{ 'tech.hero.bench.status'|trans({}, 'tech') }}</span>
+    </div>
+
+    {% if product %}
+        <a class="tech-bench__product" href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
+            <span class="tech-bench__media">
+                <span class="tech-bench__corner tech-bench__corner--tl" aria-hidden="true"></span>
+                <span class="tech-bench__corner tech-bench__corner--tr" aria-hidden="true"></span>
+                <span class="tech-bench__corner tech-bench__corner--bl" aria-hidden="true"></span>
+                <span class="tech-bench__corner tech-bench__corner--br" aria-hidden="true"></span>
+                {{ component('sylius_shop:main_image', {product: product, class: 'w-100 h-100 object-fit-cover'}) }}
+            </span>
+            <span class="tech-bench__info">
+                <span class="tech-bench__label">{{ 'tech.hero.spotlight'|trans({}, 'tech') }}</span>
+                <span class="tech-bench__name">{{ product.name }}</span>
+                {% if not product.enabledVariants.empty() %}
+                    <span class="tech-bench__price">{{ money.calculatePrice(product.enabledVariants.first) }}</span>
+                {% endif %}
+                <span class="tech-bench__cta">{{ 'tech.hero.discover'|trans({}, 'tech') }}</span>
+            </span>
+        </a>
+    {% else %}
+        <div class="tech-bench__empty" aria-hidden="true"><span></span></div>
+    {% endif %}
+
+    <dl class="tech-bench__specs" aria-hidden="true">
+        {% for spec in 1..3 %}
+            <div>
+                <dt>{{ ('tech.hero.bench.spec_' ~ spec ~ '.label')|trans({}, 'tech') }}</dt>
+                <dd>{{ ('tech.hero.bench.spec_' ~ spec ~ '.value')|trans({}, 'tech') }}</dd>
+            </div>
+        {% endfor %}
+    </dl>
+</div>

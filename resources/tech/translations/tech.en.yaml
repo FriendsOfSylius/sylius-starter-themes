@@ -1,0 +1,103 @@
+tech:
+    hero:
+        kicker: 'New gear in stock · ships within 24 h'
+        title: 'Next-gen gear, <em>ready to ship.</em>'
+        lead: 'Hand-picked devices and accessories, tested before they reach the shelf. Clear specs, fair prices and a <strong>2-year warranty</strong> on everything we sell.'
+        cta: 'Shop the latest'
+        secondary_cta: 'Our service specs'
+        spotlight: 'Just landed'
+        discover: 'See the specs'
+        bench:
+            model: 'REF. NEW-01'
+            status: 'In stock'
+            spec_1:
+                label: 'Dispatch'
+                value: '< 24 h'
+            spec_2:
+                label: 'Warranty'
+                value: '2 years'
+            spec_3:
+                label: 'Returns'
+                value: '30 days'
+    specs:
+        item_1:
+            label: 'Dispatch'
+            value: '24 h'
+            text: 'orders before 3 pm'
+        item_2:
+            label: 'Warranty'
+            value: '2 yrs'
+            text: 'parts and labour'
+        item_3:
+            label: 'Returns'
+            value: '30 d'
+            text: 'free, label included'
+        item_4:
+            label: 'Support'
+            value: '7/7'
+            text: 'real technicians'
+    products:
+        eyebrow:
+            latest: 'New releases'
+    promise:
+        eyebrow: 'Service specs'
+        title: 'Built like the gear we sell.'
+        lead: '<strong>Tech</strong> runs on measurable promises: every order is tracked, every device is covered, every question reaches someone who knows the product.'
+        sheet:
+            title: 'Spec sheet · service'
+            item_1:
+                label: 'Dispatch'
+                value: 'Same day'
+                text: 'for orders placed before 3 pm'
+            item_2:
+                label: 'Warranty'
+                value: '2 years'
+                text: 'parts and labour, on every device'
+            item_3:
+                label: 'Returns'
+                value: '30 days'
+                text: 'free, prepaid label included'
+            item_4:
+                label: 'Support'
+                value: '7 days a week'
+                text: 'answered by in-house technicians'
+            item_5:
+                label: 'Payment'
+                value: 'Secure'
+                text: 'card, PayPal and instalments'
+        benchmark:
+            title: 'Benchmark · last 12 months'
+            item_1:
+                label: 'Orders shipped on time'
+                value: '98 %'
+            item_2:
+                label: 'Customers who would buy again'
+                value: '96 %'
+            item_3:
+                label: 'Issues solved on first contact'
+                value: '92 %'
+            item_4:
+                label: 'Devices free of defects'
+                value: '99 %'
+            note: 'Measured on our own orders, refreshed every month.'
+        cta: 'Shop the new releases'
+    footer:
+        tagline: 'Devices and accessories, tested, covered and shipped fast.'
+        services:
+            eyebrow: 'Support'
+            title: 'Covered from unboxing to upgrade.'
+            support:
+                tag: '7/7 · experts'
+                title: 'Tech support'
+                text: 'Set-up, compatibility or a device acting up? Our technicians answer you, seven days a week.'
+                cta: 'Contact support'
+            warranty:
+                tag: '2 years'
+                title: 'Warranty'
+                text: 'Every device is covered for two years, parts and labour. Open a claim from your account in a few clicks.'
+                cta: 'My account'
+            returns:
+                tag: '30 days'
+                title: 'Free returns'
+                text: 'Not the right fit for your setup? Send it back within 30 days with the prepaid label.'
+                cta: 'Start a return'

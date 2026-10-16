@@ -1,0 +1,165 @@
+// Homepage sections: product rail and the promise (service spec sheet and benchmark).
+
+.tech-products {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+.tech-promise {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  border-top: 1px solid $border;
+  background-color: $aluminium;
+}
+
+.tech-promise__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.tech-sheet__title {
+  margin: 0 0 1.5rem;
+  color: $text-muted;
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// Spec sheet: label / value rows on white, as in a product datasheet.
+
+.tech-sheet {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  background-color: $white;
+}
+
+.tech-sheet__rows {
+  margin: 0;
+}
+
+.tech-sheet__row {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 1rem;
+  border-top: 1px solid $border;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  dt {
+    color: $text-muted;
+    font-family: $font-family-monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.6rem;
+    align-items: baseline;
+    margin: 0;
+    color: $text-muted;
+  }
+
+  strong {
+    color: $ink;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+// Benchmark: measured figures as signal-orange gauges on carbon.
+
+.tech-bench-scores {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: $radius-lg;
+  background-color: $carbon;
+  // Fine engineering grid.
+  background-image:
+    linear-gradient(rgba($white, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($white, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: $text-on-dark;
+
+  .tech-sheet__title {
+    color: $text-on-dark;
+  }
+
+  .btn {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+}
+
+.tech-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tech-scores__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+}
+
+.tech-scores__label {
+  color: $white;
+  font-size: 0.95rem;
+}
+
+.tech-scores__value {
+  color: $white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.tech-scores__bar {
+  overflow: hidden;
+  height: 0.375rem;
+  grid-column: 1 / -1;
+  border-radius: 1px;
+  background-color: $steel;
+
+  span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, rgba($signal, 0.55), $signal);
+  }
+}
+
+.tech-scores__note {
+  margin: 1.5rem 0 2rem;
+  color: $text-on-dark;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 991.98px) {
+  .tech-promise__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tech-sheet__row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}

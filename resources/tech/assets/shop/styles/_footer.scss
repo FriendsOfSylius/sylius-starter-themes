@@ -1,0 +1,191 @@
+// Carbon footer: three support modules, then the store links on graphite.
+
+footer.tech-footer {
+  margin-top: auto;
+  padding: 0;
+  border-top: 0;
+  background-color: $carbon;
+  color: $text-on-dark;
+  font-size: 0.92rem;
+}
+
+.tech-services {
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+  border-bottom: 1px solid $border-dark;
+  scroll-margin-top: 1.5rem;
+
+  .tech-eyebrow {
+    color: $text-on-dark;
+  }
+}
+
+.tech-services__head {
+  max-width: 40rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.tech-services__title {
+  margin: 0;
+  color: $white;
+  font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.tech-services__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 1px solid $border-dark;
+  border-radius: $radius-lg;
+  // The 1px gap draws the separators between the modules.
+  background-color: $border-dark;
+  list-style: none;
+}
+
+.tech-services__card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background-color: $graphite;
+  transition: background-color 180ms ease;
+
+  &:hover {
+    background-color: $steel;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 1.75rem;
+    fill: none;
+    stroke: $signal;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+  }
+}
+
+.tech-services__tag {
+  margin-bottom: 0.5rem !important;
+  color: $signal;
+  font-family: $font-family-monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tech-services__name {
+  color: $white;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.tech-services__text {
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.6;
+}
+
+.tech-services__link {
+  margin-top: auto;
+  color: $white !important;
+  font-weight: 600;
+  text-decoration: none;
+
+  &::after {
+    display: inline-block;
+    margin-inline-start: 0.5rem;
+    color: $signal;
+    content: "→";
+    transition: transform 160ms $ease;
+  }
+
+  &:hover::after {
+    transform: translateX(3px);
+  }
+}
+
+.tech-footer__main {
+  padding-top: clamp(3rem, 5vw, 4rem);
+  padding-bottom: 1.5rem;
+
+  > .row {
+    padding-top: 2.5rem;
+  }
+
+  a,
+  .nav-link {
+    color: $text-on-dark;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+
+  .fw-medium,
+  h2,
+  h3,
+  h4 {
+    color: $white;
+    font-family: $font-family-monospace;
+    font-size: 0.75rem;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+.tech-footer__brand {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid $border-dark;
+
+  p {
+    max-width: 24rem;
+    margin: 1rem 0 0;
+    line-height: 1.6;
+  }
+
+  .tech-logo,
+  .tech-logo:hover {
+    color: $white;
+  }
+
+  .tech-logo__core {
+    fill: $signal;
+  }
+
+  .tech-logo__die {
+    fill: $white;
+  }
+}
+
+// Payment partner logos keep their brand colours on light chips (Mollie's is black).
+.tech-footer__main .ratio.border {
+  border-color: $white !important;
+  background-color: $white;
+}
+
+.tech-footer__copy a {
+  color: $white !important;
+  text-decoration: underline !important;
+}
+
+@media (max-width: 991.98px) {
+  .tech-services__cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,43 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="tech-hero" aria-labelledby="tech-hero-title">
+    <div class="container">
+        <div class="tech-hero__grid">
+            <div class="tech-hero__copy">
+                <p class="tech-hero__kicker"><span class="tech-led" aria-hidden="true"></span>{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'tech.hero.kicker'|trans({}, 'tech') }}{% endif %}</p>
+                <h1 id="tech-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'tech.hero.title'|trans({}, 'tech')|raw }}{% endif %}</h1>
+                <p class="tech-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'tech.hero.lead'|trans({}, 'tech')|raw }}{% endif %}</p>
+
+                <div class="tech-hero__actions">
+                    <a class="btn btn-primary tech-btn-arrow" href="{{ hero.ctaUrl ?? '#tech-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'tech.hero.cta'|trans({}, 'tech') }}{% endif %}
+                    </a>
+                    <a class="btn tech-btn-ghost" href="#tech-promise">
+                        {{ 'tech.hero.secondary_cta'|trans({}, 'tech') }}
+                    </a>
+                </div>
+            </div>
+
+            <div class="tech-hero__visual">
+                {% if hero.image %}
+                    <img class="tech-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                {% else %}
+                    {{ component('sylius_shop:product:list', {limit: 1, template: 'shop/homepage/hero/spotlight.html.twig'}) }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="tech-specbar">
+        <div class="container">
+            <ul class="tech-specbar__items" role="list">
+                {% for item in 1..4 %}
+                    <li>
+                        <span class="tech-specbar__label">{{ ('tech.specs.item_' ~ item ~ '.label')|trans({}, 'tech') }}</span>
+                        <span class="tech-specbar__value">{{ ('tech.specs.item_' ~ item ~ '.value')|trans({}, 'tech') }}</span>
+                        <span class="tech-specbar__text">{{ ('tech.specs.item_' ~ item ~ '.text')|trans({}, 'tech') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

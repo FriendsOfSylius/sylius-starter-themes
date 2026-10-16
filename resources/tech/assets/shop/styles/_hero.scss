@@ -1,0 +1,386 @@
+// Carbon hero: a white headline over a fine engineering grid, the newest product on a measuring bench,
+// then a spec bar of key figures.
+
+.tech-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(3rem, 7vw, 5.5rem);
+  background-color: $carbon;
+  background-image:
+    radial-gradient(ellipse 50% 60% at 80% 35%, rgba($signal, 0.16), transparent 70%),
+    linear-gradient(rgba($white, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($white, 0.045) 1px, transparent 1px);
+  background-size: auto, 32px 32px, 32px 32px;
+  color: $text-on-dark;
+}
+
+.tech-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.tech-hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid $border-dark;
+  border-radius: $radius-sm;
+  background-color: rgba($graphite, 0.8);
+  color: $white;
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tech-hero h1 {
+  margin: 0 0 1.5rem;
+  color: $white;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-wrap: balance;
+
+  em {
+    color: $signal;
+    font-style: normal;
+  }
+}
+
+.tech-hero__lead {
+  max-width: 34rem;
+  margin-bottom: 2.25rem;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+
+  strong {
+    color: $white;
+    font-weight: 600;
+  }
+}
+
+.tech-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+
+  .btn {
+    min-height: 3.25rem;
+    padding-inline: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+// Measuring bench
+
+.tech-hero__visual {
+  position: relative;
+}
+
+.tech-bench {
+  position: relative;
+  border: 1px solid $border-dark;
+  border-radius: $radius-lg;
+  background-color: rgba($graphite, 0.92);
+  box-shadow: 0 40px 80px rgba(#000, 0.45);
+}
+
+.tech-bench__head {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid $border-dark;
+  color: $text-on-dark;
+  font-family: $font-family-monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tech-bench__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $led;
+}
+
+.tech-bench__product {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.25rem;
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.tech-bench__media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: $radius;
+  background-color: $aluminium;
+
+  img {
+    transition: transform 700ms $ease;
+  }
+}
+
+.tech-bench__product:hover .tech-bench__media img {
+  transform: scale(1.04);
+}
+
+// Crosshair corners, as on a camera viewfinder.
+.tech-bench__corner {
+  position: absolute;
+  z-index: 1;
+  width: 1rem;
+  height: 1rem;
+  border: 0 solid $signal;
+
+  &--tl {
+    top: 0.6rem;
+    left: 0.6rem;
+    border-top-width: 2px;
+    border-left-width: 2px;
+  }
+
+  &--tr {
+    top: 0.6rem;
+    right: 0.6rem;
+    border-top-width: 2px;
+    border-right-width: 2px;
+  }
+
+  &--bl {
+    bottom: 0.6rem;
+    left: 0.6rem;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+  }
+
+  &--br {
+    right: 0.6rem;
+    bottom: 0.6rem;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+  }
+}
+
+.tech-bench__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 0.25rem;
+}
+
+.tech-bench__label {
+  color: $signal;
+  font-family: $font-family-monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tech-bench__name {
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.tech-bench__price {
+  color: $white;
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.tech-bench__cta {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: auto;
+  padding: 0.5rem 0.85rem;
+  border-radius: $radius-sm;
+  background-color: $signal;
+  color: $white;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  &::after {
+    margin-inline-start: 0.45rem;
+    content: "→";
+    transition: transform 160ms $ease;
+  }
+}
+
+.tech-bench__product:hover .tech-bench__cta {
+  background-color: $signal-dark;
+
+  &::after {
+    transform: translateX(3px);
+  }
+}
+
+.tech-bench__empty {
+  padding: 1.25rem;
+
+  span {
+    display: block;
+    aspect-ratio: 16 / 10;
+    border-radius: $radius;
+    background: linear-gradient(135deg, $steel, $graphite);
+  }
+}
+
+.tech-bench__specs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid $border-dark;
+
+  > div {
+    padding: 0.85rem 1.1rem;
+
+    + div {
+      border-left: 1px solid $border-dark;
+    }
+  }
+
+  dt {
+    color: $text-on-dark;
+    font-family: $font-family-monospace;
+    font-size: 0.66rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0.2rem 0 0;
+    color: $white;
+    font-weight: 600;
+  }
+}
+
+// Spec bar under the hero.
+
+.tech-specbar {
+  border-top: 1px solid $border-dark;
+  background-color: rgba($graphite, 0.7);
+}
+
+.tech-specbar__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.1rem 0.85rem;
+    align-items: baseline;
+    padding: 1.4rem 1.25rem;
+
+    + li {
+      border-left: 1px solid $border-dark;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
+.tech-specbar__label {
+  grid-column: 1 / -1;
+  color: $text-on-dark;
+  font-family: $font-family-monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tech-specbar__value {
+  color: $white;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.tech-specbar__text {
+  color: $text-on-dark;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 991.98px) {
+  .tech-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-specbar__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    li:nth-child(odd) {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    li:nth-child(n + 3) {
+      border-top: 1px solid $border-dark;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tech-bench__product {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-bench__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .tech-bench__specs dd {
+    font-size: 0.9rem;
+  }
+
+  .tech-specbar__items li {
+    padding-inline: 0 0.75rem;
+  }
+
+  .tech-specbar__items li + li {
+    padding-left: 0.75rem;
+  }
+
+  .tech-specbar__value {
+    font-size: 1.35rem;
+  }
+}
+
+// Image contributed to the hero slot (e.g. by the import), replaces the bench.
+.tech-hero__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: $radius-lg;
+}

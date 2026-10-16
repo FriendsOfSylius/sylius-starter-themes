@@ -1,0 +1,177 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $white;
+  color: $text;
+  font-family: $font-family-base;
+  font-feature-settings: "cv05", "cv08";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $ink;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: color 140ms ease;
+
+  &:hover,
+  &.link-reset:hover {
+    color: $signal-dark;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3 {
+  color: $ink;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+h1,
+.h1 {
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+}
+
+h2,
+.h2 {
+  font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+}
+
+h3,
+.h3 {
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background-color: $signal;
+  color: $white;
+}
+
+:focus-visible {
+  outline: 2px solid $signal;
+  outline-offset: 3px;
+}
+
+// Shared helpers: monospace spec labels, as printed on a datasheet.
+
+.tech-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  color: $text-muted;
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  &::before {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $signal;
+    content: "";
+  }
+}
+
+.tech-led {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background-color: $led;
+  box-shadow: 0 0 0 0.2rem rgba($led, 0.2);
+  animation: tech-blink 2.4s ease-in-out infinite;
+}
+
+@keyframes tech-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.tech-section-head {
+  max-width: 44rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.tech-section-head--wide {
+  max-width: 50rem;
+}
+
+.tech-section-head__lead {
+  margin: 1.25rem 0 0;
+  color: $text-muted;
+  font-size: clamp(1.05rem, 1.5vw, 1.15rem);
+  line-height: 1.6;
+
+  strong {
+    color: $ink;
+    font-weight: 600;
+  }
+}
+
+[id^="tech-"] {
+  scroll-margin-top: 1.5rem;
+}
+
+.tech-checkout-brand,
+.tech-checkout-account {
+  color: $ink;
+}
+
+.tech-checkout-account a,
+.tech-checkout-account .btn {
+  color: $signal-dark;
+}
+
+.tech-checkout-account a:hover,
+.tech-checkout-account .btn:hover {
+  color: $ink;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+}

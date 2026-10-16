@@ -1,0 +1,148 @@
+.card {
+  overflow: hidden;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $white;
+  box-shadow: $shadow-soft;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  color: $ink;
+  font-weight: 700;
+}
+
+.card-text {
+  color: $text-muted;
+}
+
+.card-footer {
+  border-top-color: $border;
+  background-color: $white;
+}
+
+// Product cards: a product on an aluminium tray, crisp border that turns carbon on hover,
+// the whole card is the link. The card root is the element holding the details link: it is
+// a direct grid item on category pages and wrapped in a <div> in the homepage / association lists.
+
+.products-grid {
+  row-gap: 1.5rem;
+}
+
+.products-grid div:has(> a.link-reset) {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  flex-direction: column;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background-color: $white;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+
+  // Signal tick in the top-left corner, revealed on hover.
+  &::before {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: $signal;
+    content: "";
+    transition: width 260ms $ease;
+  }
+
+  &:hover,
+  &:focus-within {
+    border-color: $ink;
+    box-shadow: $shadow-float;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  > a.link-reset {
+    display: block;
+    color: $ink;
+    text-decoration: none;
+
+    // Stretched link: the price below is part of the clickable card too.
+    &::after {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      content: "";
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  &:has(> a.link-reset:focus-visible) {
+    outline: 2px solid $signal;
+    outline-offset: 3px;
+  }
+
+  .mb-4 {
+    margin-bottom: 0 !important;
+  }
+
+  .rounded-3 {
+    margin: 0;
+    border-bottom: 1px solid $border;
+    border-radius: 0 !important;
+    background-color: $aluminium !important;
+
+    img {
+      transition: transform 500ms $ease;
+    }
+  }
+
+  &:hover .rounded-3 img {
+    transform: scale(1.03);
+  }
+
+  .h6 {
+    margin: 0;
+    padding: 1rem 1.15rem 0.4rem;
+    color: $ink;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+  }
+
+  // Prices
+  > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+    align-items: baseline;
+    margin-top: auto;
+    padding: 0 1.15rem 1.1rem;
+    color: $ink;
+    font-size: 1rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+
+    > * {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    del {
+      color: $text-muted;
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+  }
+}

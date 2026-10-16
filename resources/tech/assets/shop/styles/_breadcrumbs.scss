@@ -1,0 +1,30 @@
+.breadcrumb {
+  --bs-breadcrumb-divider: "›";
+  --bs-breadcrumb-divider-color: #{$text-muted};
+  --bs-breadcrumb-margin-bottom: 1.5rem;
+  --bs-breadcrumb-item-padding-x: 0.6rem;
+
+  padding: 0;
+  background: none;
+  color: $text-muted;
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  .breadcrumb-item a {
+    color: $text-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: $signal-dark;
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumb-item.active {
+    color: $ink;
+    font-weight: 600;
+  }
+}
