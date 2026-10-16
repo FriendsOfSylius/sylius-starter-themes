@@ -236,10 +236,6 @@ main > .container.mb-6[role="navigation"],
   }
 }
 
-// Lists rendered inside a page container (product associations) do not add a second gutter.
-.container .drive-products > .container {
-  padding-inline: 0;
-}
 
 .container .drive-products {
   padding-bottom: 0;

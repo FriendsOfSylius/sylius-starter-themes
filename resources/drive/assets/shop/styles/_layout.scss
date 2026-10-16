@@ -11,6 +11,11 @@
   padding-inline: $gutter;
 }
 
+// Blocks rendered inside a page container (product associations, latest products) do not add a second gutter.
+.container .container {
+  padding-inline: 0;
+}
+
 // Pages built of white "shelves" on the shelf-grey background.
 main,
 #main {
