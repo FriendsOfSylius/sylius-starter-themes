@@ -1,0 +1,359 @@
+// Homepage hero: full-bleed key art, the headline on the left, the newest product as a featured release
+// on a glass card, then a band of store figures.
+
+.arena-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: $page;
+}
+
+.arena-hero__art {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  // Reading shade on the copy side and fade into the page below.
+  &::after {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba($page, 0.92) 0%, rgba($page, 0.7) 32%, rgba($page, 0.05) 62%, rgba($page, 0.35) 100%),
+      linear-gradient(180deg, rgba($page, 0) 55%, $page 100%);
+    content: "";
+  }
+}
+
+.arena-keyart,
+.arena-hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arena-keyart__beam {
+  animation: arena-beam 6s ease-in-out infinite alternate;
+}
+
+.arena-keyart__embers {
+  animation: arena-embers 9s ease-in-out infinite alternate;
+}
+
+@keyframes arena-beam {
+  from {
+    opacity: 0.55;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes arena-embers {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-36px);
+  }
+}
+
+.arena-hero__inner {
+  display: flex;
+  min-height: clamp(34rem, 70vh, 46rem);
+  align-items: center;
+  padding-block: clamp(3.5rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem);
+}
+
+.arena-hero__grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 19rem);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.arena-hero__copy {
+  max-width: 41rem;
+
+  .arena-chips {
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 5.4vw, 4.6rem);
+    line-height: 0.98;
+    text-shadow: 0 4px 30px rgba($page, 0.6);
+  }
+}
+
+.arena-hero__lead {
+  max-width: 34rem;
+  margin: 1.5rem 0 0;
+  color: $text;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.65;
+
+  strong {
+    color: $heading;
+    font-weight: 600;
+  }
+}
+
+.arena-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2.1rem;
+}
+
+.arena-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.6rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  color: $text-muted;
+  font-size: 0.9rem;
+  list-style: none;
+
+  strong {
+    color: $heading;
+    font-family: $font-family-display;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  li {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+}
+
+.arena-hero__star {
+  color: $accent-text;
+}
+
+// Featured release: a frosted glass card holding the newest product's cover.
+
+.arena-featured {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  border: 1px solid $glass-border;
+  border-radius: $radius-lg;
+  background-color: $glass-bg;
+  box-shadow: $shadow-float;
+  color: $heading;
+  text-decoration: none;
+  backdrop-filter: blur(18px) saturate(140%);
+  transition:
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    transform 240ms $ease;
+
+  &:hover {
+    border-color: rgba($accent-text, 0.6);
+    box-shadow: $shadow-float, $glow-lime;
+    color: $heading;
+    transform: translateY(-4px);
+  }
+}
+
+.arena-featured__cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: $radius;
+  background-color: $surface;
+
+  img {
+    display: block;
+    transition: transform 600ms $ease;
+  }
+}
+
+.arena-featured:hover .arena-featured__cover img {
+  transform: scale(1.04);
+}
+
+.arena-featured__flag {
+  @include display-label;
+
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  background-color: $lime;
+  color: $on-accent;
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  @include chamfer(6px);
+}
+
+.arena-featured__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.9rem 0.35rem 0.25rem;
+}
+
+.arena-featured__label {
+  @include display-label;
+
+  color: $accent-text;
+  font-size: 0.72rem;
+}
+
+.arena-featured__name {
+  font-family: $font-family-display;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.arena-featured__editions {
+  display: flex;
+  gap: 0.4rem;
+
+  span {
+    padding: 0.1rem 0.5rem;
+    border: 1px solid $glass-border;
+    border-radius: 4px;
+    color: $text;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+}
+
+.arena-featured__buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.4rem;
+}
+
+.arena-featured__price {
+  font-family: $font-family-display;
+  font-size: 1.45rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.arena-featured__cta {
+  @include display-label;
+
+  padding: 0.45rem 1rem;
+  background-color: $lime;
+  color: $on-accent;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  @include chamfer(7px);
+}
+
+// Store figures on a glass band at the foot of the hero.
+
+.arena-stats {
+  border-top: 1px solid $line-soft;
+  background-color: rgba($page-alt, 0.7);
+  backdrop-filter: blur(14px);
+}
+
+.arena-stats__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1.4rem 1.5rem;
+
+    + li {
+      border-left: 1px solid $line-soft;
+    }
+  }
+}
+
+.arena-stats__value {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-stretch: 112%;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.arena-stats__text {
+  color: $text-muted;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 991.98px) {
+  .arena-hero__art::after {
+    background:
+      linear-gradient(180deg, rgba($page, 0.35) 0%, rgba($page, 0.75) 45%, $page 100%);
+  }
+
+  .arena-hero__inner {
+    min-height: 0;
+  }
+
+  .arena-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  // The featured card turns horizontal: small cover on the left, details on the right.
+  .arena-featured {
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 34rem;
+  }
+
+  .arena-featured__cover {
+    width: 7.5rem;
+    flex: 0 0 auto;
+  }
+
+  .arena-featured__body {
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 0.25rem 0.25rem 0.25rem 0;
+  }
+
+  .arena-stats__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    li:nth-child(3) {
+      border-left: 0;
+    }
+
+    li:nth-child(n + 3) {
+      border-top: 1px solid $line-soft;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .arena-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .arena-stats__items li {
+    padding: 1.1rem 0.75rem;
+  }
+}

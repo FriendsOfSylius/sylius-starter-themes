@@ -1,0 +1,93 @@
+arena:
+    brand:
+        tagline: 'Game store'
+    top_bar:
+        keys: 'Digital keys delivered instantly, 24/7'
+        preorder: 'Pre-order bonuses on every launch'
+    hero:
+        eyebrow: 'New releases'
+        platforms:
+            pc: 'PC'
+            console: 'Console'
+            cloud: 'Cloud'
+        title: 'Play the biggest launches <em>on day one.</em>'
+        lead: 'Blockbusters, bold indies and deluxe editions: pre-order once, get your key the second the servers open and <strong>keep every launch bonus</strong>.'
+        cta: 'Shop new releases'
+        secondary_cta: 'Why Arena'
+        illustration: 'Key art: a lone wanderer with a staff stands on a rocky spur, facing a pale ringed planet above a hazy mountain range at sunrise.'
+        meta:
+            rating:
+                value: '4.8/5'
+                text: 'player rating'
+            players:
+                value: '2M+'
+                text: 'players'
+            keys:
+                value: '60 s'
+                text: 'to get your key'
+        featured:
+            flag: 'Featured'
+            label: 'Just landed'
+            digital: 'Digital'
+            boxed: 'Boxed'
+            cta: 'View'
+    stats:
+        item_1:
+            value: '4,200+'
+            text: 'games and editions'
+        item_2:
+            value: 'Day 1'
+            text: 'launches, unlocked at midnight'
+        item_3:
+            value: '14 days'
+            text: 'price-drop guarantee'
+        item_4:
+            value: '24/7'
+            text: 'player support'
+    products:
+        eyebrow:
+            latest: 'Fresh drops'
+    promise:
+        eyebrow: 'Why Arena'
+        title: 'Built for players, <em>not for queues.</em>'
+        lead: 'From pre-order to first boot, everything is designed so that you spend your evening playing, not waiting.'
+        keys:
+            title: 'Instant keys'
+            text: 'Your key lands in your library seconds after payment, day and night.'
+        launch:
+            title: 'Day-one launches'
+            text: 'Pre-order once and play the minute a game unlocks, bonuses included.'
+        price:
+            title: 'Price-drop guarantee'
+            text: 'If the price falls within 14 days of your order, we refund the difference.'
+        boxed:
+            title: 'Boxed editions'
+            text: 'Collector’s and physical editions shipped in protective cases on launch day.'
+        pass:
+            kicker: 'Arena Pass'
+            tier: 'Free'
+            title: 'Level up with every game'
+            level: 'Level 27'
+            xp: '7,200 / 10,000 XP'
+            perk_1: '5 % back in store credit on every order'
+            perk_2: 'Early access to limited pre-orders'
+            perk_3: 'Free shipping on boxed editions'
+            cta: 'Join for free'
+    footer:
+        tagline: 'New releases, pre-orders and deluxe editions, delivered at game speed.'
+        services:
+            support:
+                title: 'Player support 24/7'
+                text: 'A key that won’t activate, a download stuck at 99 %: our team answers day and night.'
+                cta: 'Contact support'
+            refunds:
+                title: 'Easy refunds'
+                text: 'Unused key or unopened box: ask for a refund from your account within 14 days.'
+                cta: 'My orders'
+            library:
+                title: 'Your library'
+                text: 'Every key and invoice in one place, ready to download again at any time.'
+                cta: 'My account'
+        ratings:
+            label: 'Age ratings'
+            text: 'Check the age rating of each game before buying: it tells you the minimum recommended age of its players.'

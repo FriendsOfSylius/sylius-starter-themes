@@ -1,0 +1,59 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="arena-hero" aria-labelledby="arena-hero-title">
+    <div class="arena-hero__art">
+        {% if hero.image %}
+            <img class="arena-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+        {% else %}
+            {% include 'shop/homepage/hero/keyart.html.twig' %}
+        {% endif %}
+    </div>
+
+    <div class="container arena-hero__inner">
+        <div class="arena-hero__grid">
+            <div class="arena-hero__copy">
+                <ul class="arena-chips" role="list">
+                    <li class="arena-chip arena-chip--accent">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'arena.hero.eyebrow'|trans({}, 'arena') }}{% endif %}</li>
+                    {% for platform in ['pc', 'console', 'cloud'] %}
+                        <li class="arena-chip">{{ ('arena.hero.platforms.' ~ platform)|trans({}, 'arena') }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h1 id="arena-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'arena.hero.title'|trans({}, 'arena')|raw }}{% endif %}</h1>
+                <p class="arena-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'arena.hero.lead'|trans({}, 'arena')|raw }}{% endif %}</p>
+
+                <div class="arena-hero__actions">
+                    <a class="btn btn-primary arena-btn-lg" href="{{ hero.ctaUrl ?? '#arena-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'arena.hero.cta'|trans({}, 'arena') }}{% endif %}
+                    </a>
+                    <a class="btn arena-btn-glass arena-btn-lg" href="#arena-promise">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+                        {{ 'arena.hero.secondary_cta'|trans({}, 'arena') }}
+                    </a>
+                </div>
+
+                <ul class="arena-hero__meta" role="list">
+                    <li><span class="arena-hero__star" aria-hidden="true">★</span><strong>{{ 'arena.hero.meta.rating.value'|trans({}, 'arena') }}</strong> {{ 'arena.hero.meta.rating.text'|trans({}, 'arena') }}</li>
+                    <li><strong>{{ 'arena.hero.meta.players.value'|trans({}, 'arena') }}</strong> {{ 'arena.hero.meta.players.text'|trans({}, 'arena') }}</li>
+                    <li><strong>{{ 'arena.hero.meta.keys.value'|trans({}, 'arena') }}</strong> {{ 'arena.hero.meta.keys.text'|trans({}, 'arena') }}</li>
+                </ul>
+            </div>
+
+            <div class="arena-hero__featured">
+                {{ component('sylius_shop:product:list', {limit: 1, template: 'shop/homepage/hero/featured.html.twig'}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="arena-stats">
+        <div class="container">
+            <ul class="arena-stats__items" role="list">
+                {% for item in 1..4 %}
+                    <li>
+                        <span class="arena-stats__value">{{ ('arena.stats.item_' ~ item ~ '.value')|trans({}, 'arena') }}</span>
+                        <span class="arena-stats__text">{{ ('arena.stats.item_' ~ item ~ '.text')|trans({}, 'arena') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

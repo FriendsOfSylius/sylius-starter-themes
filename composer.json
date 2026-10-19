@@ -1,6 +1,6 @@
 {
     "name": "sylius-starter/themes",
-    "description": "Ready-to-use Sylius storefront themes (Canvas, Blush, Prompt, Volt, Lagoon, Aurora, Tech, Retro Gaming, Drive, Cellar) installable with Castor",
+    "description": "Ready-to-use Sylius storefront themes (Canvas, Blush, Prompt, Volt, Lagoon, Aurora, Tech, Retro Gaming, Drive, Cellar, Arena) installable with Castor",
     "type": "library",
     "license": "MIT",
     "keywords": [

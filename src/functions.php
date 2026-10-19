@@ -15,6 +15,8 @@ use SyliusStarter\Core\Service\SyliusService;
 use SyliusStarter\Core\Task\TaskProviderRegistry;
 use SyliusStarter\Themes\Attribute\AsThemeInstaller;
 use SyliusStarter\Themes\Attribute\AsThemeRemover;
+use SyliusStarter\Themes\Installer\ArenaDarkThemeInstaller;
+use SyliusStarter\Themes\Installer\ArenaLightThemeInstaller;
 use SyliusStarter\Themes\Installer\AuroraInstaller;
 use SyliusStarter\Themes\Installer\BlushInstaller;
 use SyliusStarter\Themes\Installer\CanvasInstaller;
@@ -28,6 +30,8 @@ use SyliusStarter\Themes\Installer\TechInstaller;
 use SyliusStarter\Themes\Installer\ThemeInstallerDescriptor;
 use SyliusStarter\Themes\Installer\ThemesSyliusInstallerExtension;
 use SyliusStarter\Themes\Installer\VoltInstaller;
+use SyliusStarter\Themes\Remover\ArenaDarkThemeRemover;
+use SyliusStarter\Themes\Remover\ArenaLightThemeRemover;
 use SyliusStarter\Themes\Remover\AuroraRemover;
 use SyliusStarter\Themes\Remover\BlushRemover;
 use SyliusStarter\Themes\Remover\CanvasRemover;
@@ -63,6 +67,8 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addInstaller(new RetroGamingInstaller());
     Themes::addInstaller(new DriveInstaller());
     Themes::addInstaller(new CellarInstaller());
+    Themes::addInstaller(new ArenaDarkThemeInstaller());
+    Themes::addInstaller(new ArenaLightThemeInstaller());
 
     Themes::addRemover(new CanvasRemover());
     Themes::addRemover(new PromptDarkThemeRemover());
@@ -75,6 +81,8 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addRemover(new RetroGamingRemover());
     Themes::addRemover(new DriveRemover());
     Themes::addRemover(new CellarRemover());
+    Themes::addRemover(new ArenaDarkThemeRemover());
+    Themes::addRemover(new ArenaLightThemeRemover());
 
     foreach (ComponentResolver::candidates() as $reflection) {
         $descriptor = resolve_theme_installer($reflection);

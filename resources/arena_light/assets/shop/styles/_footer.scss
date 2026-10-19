@@ -1,0 +1,197 @@
+// Light footer: three player services on white tiles, the store links, then the age-rating guide.
+
+footer.arena-footer {
+  margin-top: auto;
+  padding: 0;
+  border-top: 1px solid $line;
+  background-color: $surface-raised;
+  color: $text-muted;
+  font-size: 0.9rem;
+}
+
+.arena-services {
+  padding-block: clamp(2.5rem, 5vw, 3.75rem);
+  border-bottom: 1px solid $line-soft;
+  background: linear-gradient(180deg, $page, $surface-raised);
+}
+
+.arena-services__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arena-services__item {
+  display: flex;
+  gap: 1.1rem;
+  padding: 1.5rem;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  transition: border-color 200ms ease;
+
+  &:hover {
+    border-color: rgba($accent-text, 0.5);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  svg {
+    width: 2.6rem;
+    height: 2.6rem;
+    flex: 0 0 auto;
+    padding: 0.55rem;
+    border-radius: $radius-sm;
+    background-color: rgba($lime, 0.35);
+    fill: none;
+    stroke: $accent-text;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+  }
+}
+
+.arena-services__name {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.arena-services__text {
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.9rem !important;
+  line-height: 1.6;
+}
+
+.arena-footer__main {
+  padding-top: clamp(2.5rem, 4vw, 3.5rem);
+  padding-bottom: 1.5rem;
+
+  > .row {
+    padding-top: 2.5rem;
+  }
+
+  a,
+  .nav-link {
+    color: $text-muted;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $accent-text;
+    }
+  }
+
+  .fw-medium,
+  h2,
+  h3,
+  h4 {
+    color: $heading;
+    font-family: $font-family-display;
+    font-size: 0.85rem;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+}
+
+.arena-footer__brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid $line-soft;
+
+  p {
+    max-width: 28rem;
+    margin: 0;
+    color: $text;
+    line-height: 1.6;
+  }
+
+  .arena-logo,
+  .arena-logo:hover {
+    color: $heading;
+  }
+}
+
+// Payment partner logos keep their brand colours on light chips (Mollie's is black).
+.arena-footer__main .ratio.border {
+  border-color: $line !important;
+  background-color: #FFF;
+}
+
+.arena-footer__copy a {
+  color: $accent-text !important;
+  text-decoration: underline !important;
+}
+
+// Age-rating guide: original square badges, green to red.
+
+.arena-ratings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $line-soft;
+
+  p {
+    max-width: 40rem;
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+}
+
+.arena-ratings__badges {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arena-age {
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  place-items: center;
+  border-radius: 4px;
+  color: $on-accent;
+  font-family: $font-family-display;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.arena-age--3,
+.arena-age--7 {
+  background-color: #7BD86A;
+}
+
+.arena-age--12,
+.arena-age--16 {
+  background-color: $amber;
+}
+
+.arena-age--18 {
+  background-color: #FF6B78;
+}
+
+@media (max-width: 991.98px) {
+  .arena-services__items {
+    grid-template-columns: 1fr;
+  }
+}

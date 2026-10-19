@@ -1,0 +1,433 @@
+// Top bar: a black band with a live status dot, the key-delivery promise and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.arena-topbar) {
+  border-bottom: 1px solid $line-soft;
+  background-color: #000 !important;
+  color: $text-muted;
+  font-size: 0.75rem;
+
+  a {
+    color: $heading;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$line};
+    --bs-btn-color: #{$text};
+    --bs-btn-hover-bg: #{$surface};
+    --bs-btn-hover-border-color: #{$line-strong};
+    --bs-btn-hover-color: #{$heading};
+    --bs-btn-active-bg: #{$surface};
+    --bs-btn-active-border-color: #{$lime};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-family: $font-family-base;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$surface};
+    --bs-dropdown-link-hover-bg: #{$surface-raised};
+    --bs-dropdown-border-color: #{$line};
+  }
+}
+
+.arena-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.arena-topbar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.arena-topbar__item + .arena-topbar__item::before {
+  width: 1px;
+  height: 0.8rem;
+  margin-right: 0.95rem;
+  background-color: $line-strong;
+  content: "";
+}
+
+.arena-topbar__live {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background-color: $lime;
+  box-shadow: 0 0 0 0 rgba($lime, 0.6);
+  animation: arena-pulse 2.4s ease-out infinite;
+}
+
+@keyframes arena-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($lime, 0.6);
+  }
+
+  70%,
+  100% {
+    box-shadow: 0 0 0 7px rgba($lime, 0);
+  }
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid $line-soft;
+  background-color: $page-alt;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $line-soft !important;
+}
+
+header .container {
+  padding-block: 0.35rem;
+}
+
+header a {
+  color: $text;
+
+  &:hover {
+    color: $heading;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+header .btn-transparent,
+header .btn-icon {
+  color: $text;
+
+  &:hover {
+    color: $heading;
+  }
+}
+
+// Wordmark: a faceted crest in lime and the name in wide Saira.
+
+.arena-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.7rem;
+  color: $heading;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $heading;
+    text-decoration: none;
+  }
+}
+
+.arena-logo__mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 0 10px rgba($lime, 0.35));
+  transition: filter 240ms ease;
+}
+
+.arena-logo__shield {
+  fill: $surface-raised;
+  stroke: $accent-text;
+  stroke-width: 1.4;
+}
+
+.arena-logo__blade {
+  fill: $lime;
+}
+
+.arena-logo__core {
+  fill: $heading;
+}
+
+.arena-logo:hover .arena-logo__mark {
+  filter: drop-shadow(0 0 16px rgba($lime, 0.7));
+}
+
+.arena-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  line-height: 1;
+}
+
+.arena-logo__name {
+  font-family: $font-family-display;
+  font-size: 1.55rem;
+  font-stretch: 125%;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.arena-logo__tagline {
+  color: $accent-text;
+  font-family: $font-family-display;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+// Category navigation: display capitals with a glowing lime bar on hover.
+
+.arena-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.arena-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.arena-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  overflow: visible;
+}
+
+.arena-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.arena-category-nav__links > .nav-link,
+.arena-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.7rem 0.6rem !important;
+  color: $text;
+  font-family: $font-family-display;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  &::before {
+    position: absolute;
+    right: 0.6rem;
+    bottom: 0.2rem;
+    left: 0.6rem;
+    height: 2px;
+    background-color: $lime;
+    box-shadow: 0 0 10px rgba($lime, 0.8);
+    content: "";
+    transform: scaleX(0);
+    transition: transform 220ms $ease;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $heading;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.arena-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.arena-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  border-radius: $radius-sm;
+  color: $text;
+  font-size: 0.92rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $heading;
+  }
+}
+
+// Cart: a glass pill with a lime counter.
+
+.arena-cart__button {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: #{$surface};
+  --bs-btn-border-color: #{$line};
+  --bs-btn-hover-color: #{$heading};
+  --bs-btn-hover-bg: #{$surface-raised};
+  --bs-btn-hover-border-color: #{$lime};
+  --bs-btn-active-color: #{$heading};
+  --bs-btn-active-bg: #{$surface-raised};
+  --bs-btn-active-border-color: #{$lime};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.arena-cart__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.arena-cart__count {
+  position: absolute;
+  top: -0.45rem;
+  right: -0.45rem;
+  display: grid;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $page-alt;
+  border-radius: 999px;
+  background-color: $lime;
+  color: $on-accent;
+  font-family: $font-family-base;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $text;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $heading;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+@media (min-width: 992px) {
+  .arena-category-nav__menu {
+    width: 100%;
+  }
+
+  .arena-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .arena-category-nav__menu {
+    position: fixed;
+    background-color: $page-alt;
+  }
+
+  .arena-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $line;
+  }
+
+  .arena-category-nav__menu .offcanvas-title {
+    @include display-label;
+
+    color: $heading;
+    font-size: 1.2rem !important;
+  }
+
+  .arena-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .arena-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .arena-category-nav__links > .nav-link,
+  .arena-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .arena-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .arena-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .arena-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .arena-logo__mark {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+
+  .arena-logo__name {
+    font-size: 1.3rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.arena-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}

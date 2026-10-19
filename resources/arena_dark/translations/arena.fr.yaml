@@ -1,0 +1,93 @@
+arena:
+    brand:
+        tagline: 'Jeux vidéo'
+    top_bar:
+        keys: 'Clés numériques livrées instantanément, 24 h/24'
+        preorder: 'Bonus de précommande sur chaque sortie'
+    hero:
+        eyebrow: 'Nouveautés'
+        platforms:
+            pc: 'PC'
+            console: 'Console'
+            cloud: 'Cloud'
+        title: 'Les plus grosses sorties, <em>dès le premier jour.</em>'
+        lead: 'Blockbusters, indés ambitieux et éditions deluxe : précommandez une fois, recevez votre clé à l’ouverture des serveurs et <strong>gardez tous les bonus de lancement</strong>.'
+        cta: 'Voir les nouveautés'
+        secondary_cta: 'Pourquoi Arena'
+        illustration: 'Illustration : un voyageur solitaire armé d’un bâton se tient sur un éperon rocheux, face à une planète à anneaux éclipsée, au-dessus d’une chaîne de montagnes brumeuse au crépuscule.'
+        meta:
+            rating:
+                value: '4,8/5'
+                text: 'note des joueurs'
+            players:
+                value: '2 M+'
+                text: 'joueurs'
+            keys:
+                value: '60 s'
+                text: 'pour recevoir votre clé'
+        featured:
+            flag: 'À la une'
+            label: 'Tout juste sorti'
+            digital: 'Numérique'
+            boxed: 'Boîte'
+            cta: 'Voir'
+    stats:
+        item_1:
+            value: '4 200+'
+            text: 'jeux et éditions'
+        item_2:
+            value: 'Jour J'
+            text: 'sorties débloquées à minuit'
+        item_3:
+            value: '14 jours'
+            text: 'garantie baisse de prix'
+        item_4:
+            value: '24/7'
+            text: 'support joueurs'
+    products:
+        eyebrow:
+            latest: 'Nouveautés'
+    promise:
+        eyebrow: 'Pourquoi Arena'
+        title: 'Pensé pour jouer, <em>pas pour attendre.</em>'
+        lead: 'De la précommande au premier lancement, tout est fait pour que vous passiez la soirée à jouer, pas à patienter.'
+        keys:
+            title: 'Clés instantanées'
+            text: 'Votre clé arrive dans votre bibliothèque quelques secondes après le paiement, jour et nuit.'
+        launch:
+            title: 'Sorties au jour J'
+            text: 'Précommandez une fois et jouez dès le déblocage du jeu, bonus compris.'
+        price:
+            title: 'Garantie baisse de prix'
+            text: 'Si le prix baisse dans les 14 jours suivant votre commande, nous vous remboursons la différence.'
+        boxed:
+            title: 'Éditions physiques'
+            text: 'Éditions collector et physiques expédiées en emballage protégé le jour de la sortie.'
+        pass:
+            kicker: 'Arena Pass'
+            tier: 'Gratuit'
+            title: 'Montez de niveau à chaque jeu'
+            level: 'Niveau 27'
+            xp: '7 200 / 10 000 XP'
+            perk_1: '5 % reversés en crédit boutique sur chaque commande'
+            perk_2: 'Accès anticipé aux précommandes limitées'
+            perk_3: 'Livraison offerte sur les éditions physiques'
+            cta: 'Rejoindre gratuitement'
+    footer:
+        tagline: 'Nouveautés, précommandes et éditions deluxe, livrées à la vitesse du jeu.'
+        services:
+            support:
+                title: 'Support joueurs 24/7'
+                text: 'Une clé qui ne s’active pas, un téléchargement bloqué à 99 % : notre équipe répond jour et nuit.'
+                cta: 'Contacter le support'
+            refunds:
+                title: 'Remboursement facile'
+                text: 'Clé non utilisée ou boîte non ouverte : demandez un remboursement depuis votre compte sous 14 jours.'
+                cta: 'Mes commandes'
+            library:
+                title: 'Votre bibliothèque'
+                text: 'Toutes vos clés et factures au même endroit, à télécharger de nouveau à tout moment.'
+                cta: 'Mon compte'
+        ratings:
+            label: 'Classifications par âge'
+            text: 'Vérifiez la classification par âge de chaque jeu avant l’achat : elle indique l’âge minimum recommandé de ses joueurs.'

@@ -1,0 +1,21 @@
+{% set arena_list_key = hookable_metadata.configuration['test_attribute']|default('latest-products') %}
+{% set arena_eyebrows = {'latest-products': 'arena.products.eyebrow.latest'} %}
+
+<section id="arena-{{ arena_list_key }}" class="arena-products arena-products--{{ arena_list_key }}">
+    <div class="container" role="region" aria-labelledby="{{ arena_list_key ~ '-heading' }}">
+        <div class="arena-section-head">
+            {% if arena_eyebrows[arena_list_key] is defined %}
+                <p class="arena-eyebrow">{{ arena_eyebrows[arena_list_key]|trans({}, 'arena') }}</p>
+            {% endif %}
+            <h2 id="{{ arena_list_key ~ '-heading' }}">{{ hookable_metadata.configuration.title|default('sylius.ui.latest_products')|trans }}</h2>
+        </div>
+
+        <div {{ sylius_test_html_attribute(hookable_metadata.configuration.test_attribute|default('latest-products')) }}>
+            <div class="products-grid">
+                {% for product in latest_products %}
+                    <div>{{ component('sylius_shop:product:card', {product: product, template: hookable_metadata.configuration.product_template|default('@SyliusShop/product/common/card.html.twig'), hookableMetadata: hookable_metadata}) }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

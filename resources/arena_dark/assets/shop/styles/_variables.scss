@@ -1,0 +1,70 @@
+// Arena Dark — a night launcher: blue-black glass panels, white display type and one acid-lime signal.
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-family-display: "Saira", "Bahnschrift", "DIN Alternate", "Arial Narrow", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: $font-family-display;
+$headings-font-weight: 700;
+
+$page: #07080D;
+$page-alt: #0B0E16;
+$surface: #11151F;
+$surface-raised: #181D2A;
+$line: #242B3B;
+$line-strong: #35405A;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #66728C;
+$line-soft: rgba(#FFF, 0.08);
+$heading: #F5F7FB;
+$text: #C3CAD9;
+$text-muted: #8C96AB;
+$on-accent: #07080D;
+
+$lime: #C6F432;
+$lime-soft: #DBFF73;
+$lime-dark: #9CC41A;
+// Accent used as text, outline or stroke on the page (the lime itself is bright enough on the dark variant).
+$accent-text: $lime;
+$accent-text-hover: $lime-soft;
+$violet: #7C5CFF;
+$ember: #FF8A4C;
+$red: #FF5C6C;
+$amber: #FFB547;
+
+$body-bg: $page;
+$body-color: $text;
+
+$primary: $lime;
+$secondary: $surface-raised;
+$success: $lime;
+$info: #5AA9FF;
+
+$link-color: $lime;
+$link-hover-color: $lime-soft;
+$border-color: $line;
+
+$radius-sm: 6px;
+$radius: 10px;
+$radius-lg: 16px;
+
+// Chamfered corners for calls to action, like a launcher's angular UI.
+$chamfer: 10px;
+
+$shadow-float: 0 24px 60px -24px rgba(#000, 0.75);
+$glow-lime: 0 0 0 1px rgba($lime, 0.55), 0 12px 40px -12px rgba($lime, 0.45);
+
+$glass-bg: rgba($surface, 0.55);
+$glass-border: rgba(#FFF, 0.12);
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+@mixin chamfer($size: $chamfer) {
+  clip-path: polygon($size 0, 100% 0, 100% calc(100% - #{$size}), calc(100% - #{$size}) 100%, 0 100%, 0 $size);
+}
+
+@mixin display-label {
+  font-family: $font-family-display;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}

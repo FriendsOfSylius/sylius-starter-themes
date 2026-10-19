@@ -1,0 +1,26 @@
+{% import '@SyliusShop/shared/macro/money.html.twig' as money %}
+{% set product = latest_products|first %}
+
+{# The newest product, presented like a featured release on a game launcher: cover art, edition chips and price. #}
+{% if product %}
+    <a class="arena-featured" href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
+        <span class="arena-featured__cover">
+            {{ component('sylius_shop:main_image', {product: product, class: 'w-100 h-100 object-fit-cover'}) }}
+            <span class="arena-featured__flag">{{ 'arena.hero.featured.flag'|trans({}, 'arena') }}</span>
+        </span>
+        <span class="arena-featured__body">
+            <span class="arena-featured__label">{{ 'arena.hero.featured.label'|trans({}, 'arena') }}</span>
+            <span class="arena-featured__name">{{ product.name }}</span>
+            <span class="arena-featured__editions" aria-hidden="true">
+                <span>{{ 'arena.hero.featured.digital'|trans({}, 'arena') }}</span>
+                <span>{{ 'arena.hero.featured.boxed'|trans({}, 'arena') }}</span>
+            </span>
+            <span class="arena-featured__buy">
+                {% if not product.enabledVariants.empty() %}
+                    <span class="arena-featured__price">{{ money.calculatePrice(product.enabledVariants.first) }}</span>
+                {% endif %}
+                <span class="arena-featured__cta">{{ 'arena.hero.featured.cta'|trans({}, 'arena') }}</span>
+            </span>
+        </span>
+    </a>
+{% endif %}

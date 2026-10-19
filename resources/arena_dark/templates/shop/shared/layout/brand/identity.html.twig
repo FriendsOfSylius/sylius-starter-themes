@@ -1,0 +1,15 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="arena-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# A faceted crest: two blades forming an "A" over a glowing core, next to a wide wordmark. #}
+    <svg class="arena-logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <path class="arena-logo__shield" d="M20 2 36 10v20L20 38 4 30V10z"/>
+        <path class="arena-logo__blade" d="M20 8 30 31h-5.2L20 19.6 15.2 31H10z"/>
+        <path class="arena-logo__core" d="M20 23.5 22.6 29h-5.2z"/>
+    </svg>
+    <span class="arena-logo__text">
+        <span class="arena-logo__name">Arena</span>
+        <span class="arena-logo__tagline">{{ 'arena.brand.tagline'|trans({}, 'arena') }}</span>
+    </span>
+{% endif %}

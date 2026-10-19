@@ -1,0 +1,57 @@
+:root {
+  --bs-success: #{$lime};
+  --bs-success-rgb: 198, 244, 50;
+  --bs-success-text-emphasis: #{$lime-soft};
+  --bs-success-bg-subtle: #1A240C;
+  --bs-success-border-subtle: #3D5214;
+
+  --bs-info: #{$info};
+  --bs-info-rgb: 90, 169, 255;
+  --bs-info-text-emphasis: #9CCBFF;
+  --bs-info-bg-subtle: #0F1C2E;
+  --bs-info-border-subtle: #22406A;
+
+  --bs-warning-text-emphasis: #{$amber};
+  --bs-warning-bg-subtle: #2A200C;
+  --bs-warning-border-subtle: #5C4416;
+
+  --bs-danger: #{$red};
+  --bs-danger-rgb: 255, 92, 108;
+  --bs-danger-text-emphasis: #FF9AA4;
+  --bs-danger-bg-subtle: #2E1218;
+  --bs-danger-border-subtle: #6A2633;
+}
+
+.alert {
+  border-radius: $radius;
+}
+
+@each $variant in success, info, warning, danger {
+  .alert-#{$variant} {
+    --bs-alert-color: var(--bs-#{$variant}-text-emphasis);
+    --bs-alert-bg: var(--bs-#{$variant}-bg-subtle);
+    --bs-alert-border-color: var(--bs-#{$variant}-border-subtle);
+    --bs-alert-link-color: var(--bs-#{$variant}-text-emphasis);
+  }
+}
+
+.badge {
+  font-family: $font-family-display;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge.bg-primary,
+.badge.text-bg-primary,
+.badge.bg-success,
+.badge.text-bg-success {
+  background-color: $lime !important;
+  color: $on-accent !important;
+}
+
+.badge.bg-danger,
+.badge.text-bg-danger {
+  background-color: $red !important;
+  color: $on-accent !important;
+}
