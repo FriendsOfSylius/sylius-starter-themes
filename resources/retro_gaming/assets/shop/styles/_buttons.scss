@@ -64,6 +64,9 @@
 
 .btn-primary,
 #add-to-cart-button {
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
   @include rg-button($magenta, $ink, $magenta-soft, $magenta-dark);
 
   &:hover {

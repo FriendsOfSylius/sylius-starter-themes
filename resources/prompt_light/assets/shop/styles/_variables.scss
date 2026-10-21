@@ -17,6 +17,9 @@ $light-link: #234C2B;
 $text: #1B2A22;
 $text-muted: #5C6E63;
 $border: #D8E3D9;
+// The footer stays dark: it needs the light text and link colors of Prompt Dark.
+$footer-text: #96A493;
+$footer-link: #A4E879;
 $danger: #C76059;
 
 $body-bg: $background;
@@ -25,6 +28,7 @@ $primary: $green;
 $secondary: $surface-raised;
 $success: $green;
 $info: #7FAFB8;
+$info-text: #537278;
 $danger: $danger;
 $dark: $black;
 $link-color: $green;

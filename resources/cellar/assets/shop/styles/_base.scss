@@ -2,6 +2,17 @@ html {
   scroll-behavior: smooth;
 }
 
+// WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
+// shipping and payment descriptions) with these Bootstrap utilities, too light by default.
+:root {
+  --bs-secondary-color: #{$text-muted};
+  --bs-tertiary-color: #{$text-muted};
+}
+
+.text-black-50 {
+  color: $text-muted !important;
+}
+
 body {
   min-height: 100vh;
   background-color: $paper;

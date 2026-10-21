@@ -2,6 +2,17 @@ html {
   scroll-behavior: smooth;
 }
 
+// WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
+// shipping and payment descriptions) with these Bootstrap utilities, too light by default.
+:root {
+  --bs-secondary-color: #{$text-muted};
+  --bs-tertiary-color: #{$text-muted};
+}
+
+.text-black-50 {
+  color: $text-muted !important;
+}
+
 body {
   min-height: 100vh;
   background-color: $background;
@@ -55,6 +66,19 @@ h2 {
 .text-muted,
 .text-body-secondary {
   color: $text-muted !important;
+}
+
+// Dark utilities of the Sylius and import templates (homepage collections), unreadable on the dark background.
+.text-black:not(:is(.bg-light, .bg-white) *),
+.text-dark:not(:is(.bg-light, .bg-white) *) {
+  color: $text !important;
+}
+
+// Sort and limit toggles of the product lists, which keep the light-mode button color.
+.btn-sm.dropdown-toggle {
+  --bs-btn-color: #{$text};
+  --bs-btn-hover-color: #{$white};
+  --bs-btn-active-color: #{$white};
 }
 
 .bg-light {

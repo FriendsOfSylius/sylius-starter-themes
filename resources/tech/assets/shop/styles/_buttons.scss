@@ -14,15 +14,20 @@
 
 // Signal-orange call to action.
 .btn-primary {
-  --bs-btn-color: #{$white};
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
+  // Carbon on signal orange (6.2:1); white would only reach 3.1:1. Hover turns it into an orange-lit carbon key.
+  --bs-btn-color: #{$carbon};
   --bs-btn-bg: #{$signal};
   --bs-btn-border-color: #{$signal};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$signal-dark};
-  --bs-btn-hover-border-color: #{$signal-dark};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$signal-dark};
-  --bs-btn-active-border-color: #{$signal-dark};
+  --bs-btn-hover-color: #{$signal};
+  --bs-btn-hover-bg: #{$carbon};
+  --bs-btn-hover-border-color: #{$signal};
+  --bs-btn-active-color: #{$signal};
+  --bs-btn-active-bg: #{$carbon};
+  --bs-btn-active-border-color: #{$signal};
+  --bs-btn-disabled-color: #{$carbon};
   --bs-btn-disabled-bg: #{$signal};
   --bs-btn-disabled-border-color: #{$signal};
 
@@ -79,15 +84,16 @@
 }
 
 #add-to-cart-button {
-  --bs-btn-color: #{$white};
+  // Carbon on signal orange (6.2:1); white would only reach 3.1:1. Hover turns it into an orange-lit carbon key.
+  --bs-btn-color: #{$carbon};
   --bs-btn-bg: #{$signal};
   --bs-btn-border-color: #{$signal};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$signal-dark};
-  --bs-btn-hover-border-color: #{$signal-dark};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$signal-dark};
-  --bs-btn-active-border-color: #{$signal-dark};
+  --bs-btn-hover-color: #{$signal};
+  --bs-btn-hover-bg: #{$carbon};
+  --bs-btn-hover-border-color: #{$signal};
+  --bs-btn-active-color: #{$signal};
+  --bs-btn-active-bg: #{$carbon};
+  --bs-btn-active-border-color: #{$signal};
 
   width: 100%;
   min-height: 3.25rem;

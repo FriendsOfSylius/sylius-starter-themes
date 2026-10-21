@@ -16,6 +16,9 @@
 }
 
 .btn-primary {
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
   --bs-btn-color: #{$white};
   --bs-btn-bg: #{$pink};
   --bs-btn-border-color: #{$pink};

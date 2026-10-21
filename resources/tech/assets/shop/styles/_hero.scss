@@ -217,8 +217,9 @@
   margin-top: auto;
   padding: 0.5rem 0.85rem;
   border-radius: $radius-sm;
+  border: 1px solid $signal;
   background-color: $signal;
-  color: $white;
+  color: $carbon;
   font-size: 0.8rem;
   font-weight: 600;
 
@@ -230,7 +231,8 @@
 }
 
 .tech-bench__product:hover .tech-bench__cta {
-  background-color: $signal-dark;
+  background-color: $carbon;
+  color: $signal;
 
   &::after {
     transform: translateX(3px);

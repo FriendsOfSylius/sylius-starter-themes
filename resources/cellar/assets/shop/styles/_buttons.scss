@@ -21,6 +21,9 @@
 
 // Bordeaux call to action.
 .btn-primary {
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
   --bs-btn-color: #{$ivory};
   --bs-btn-bg: #{$wine};
   --bs-btn-border-color: #{$wine};

@@ -3,15 +3,15 @@ footer {
   padding-block: $spacing-12 $spacing-6;
   border-top: 1px solid $border;
   background-color: $black;
-  color: $text-muted;
+  color: $footer-text;
 
-  --bs-body-color: #{$text-muted};
+  --bs-body-color: #{$footer-text};
   --bs-body-color-rgb: 150, 164, 147;
   --bs-emphasis-color: #{$white};
   --bs-emphasis-color-rgb: 240, 244, 236;
-  --bs-secondary-color: #{$text-muted};
-  --bs-tertiary-color: #{$text-muted};
-  --bs-link-color: #{$green};
+  --bs-secondary-color: #{$footer-text};
+  --bs-tertiary-color: #{$footer-text};
+  --bs-link-color: #{$footer-link};
   --bs-link-color-rgb: 164, 232, 121;
   --bs-link-hover-color: #{$white};
   --bs-link-hover-color-rgb: 240, 244, 236;
@@ -36,11 +36,15 @@ footer .prompt-logo__name {
   color: $white;
 }
 
+footer .prompt-logo__tagline {
+  color: $footer-text;
+}
+
 footer a,
 footer a:visited,
 footer a:focus,
 footer a:active {
-  color: $green !important;
+  color: $footer-link !important;
   text-decoration: none;
 }
 

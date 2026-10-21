@@ -36,7 +36,8 @@
   overflow: hidden;
   padding: clamp(1.5rem, 3vw, 3rem);
   border-radius: $radius-lg;
-  background-color: $basil;
+  // Darker basil, so that the white lead and the lemon highlights stay readable (WCAG AA).
+  background-color: $basil-dark;
   // Faint dotted pattern, like a paper bag.
   background-image:
     radial-gradient(circle at 92% 8%, rgba($lemon, 0.28) 0, rgba($lemon, 0) 34%),
@@ -182,7 +183,7 @@
 
 .drive-slots__time--full {
   background-color: rgba($white, 0.12);
-  color: rgba($white, 0.5);
+  color: rgba($white, 0.8);
   text-decoration: line-through;
 }
 
@@ -217,7 +218,7 @@
   margin: 0;
   padding: 0.35rem 0.85rem;
   border-radius: $radius-pill;
-  background-color: $tomato;
+  background-color: $tomato-dark;
   color: $white;
   font-size: 0.78rem;
   font-weight: 800;
@@ -363,7 +364,7 @@
 }
 
 .drive-tile--prices {
-  background-color: $tomato;
+  background-color: $tomato-dark;
   color: $white;
 
   &::before {

@@ -19,6 +19,9 @@
 
 .btn-primary,
 .btn-success {
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
   --bs-btn-color: #{$black};
   --bs-btn-bg: #{$green};
   --bs-btn-border-color: #{$green};
