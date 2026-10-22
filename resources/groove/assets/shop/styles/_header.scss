@@ -1,0 +1,430 @@
+// Top bar: a black band with the shipping promise, the Friday release day and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.groove-topbar) {
+  background-color: $vinyl !important;
+  color: $text-on-dark;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  @if $dark {
+    border-bottom: 1px solid $border-dark;
+  }
+
+  a {
+    color: $snow;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$border-dark};
+    --bs-btn-color: #{$snow};
+    --bs-btn-hover-bg: #{$vinyl-raised};
+    --bs-btn-hover-border-color: #{$hot};
+    --bs-btn-hover-color: #{$snow};
+    --bs-btn-active-bg: #{$vinyl-raised};
+    --bs-btn-active-border-color: #{$hot};
+    --bs-btn-active-color: #{$snow};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-family: $font-family-sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$vinyl-deep};
+    --bs-dropdown-link-hover-bg: #{$vinyl-raised};
+    --bs-dropdown-border-color: #{$border-dark};
+  }
+
+  :focus-visible {
+    outline-color: $acid;
+  }
+}
+
+.groove-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.groove-topbar__item + .groove-topbar__item::before {
+  margin-right: 1.25rem;
+  color: $hot;
+  content: "●";
+  font-size: 0.6rem;
+  vertical-align: 0.15em;
+}
+
+.groove-topbar__item strong {
+  color: $acid;
+  font-weight: 700;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $page;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom: 2px solid $heading !important;
+}
+
+header .container {
+  padding-block: 0.25rem;
+}
+
+header a {
+  color: $heading;
+
+  &:hover {
+    color: $accent-text;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: a record with a hot pink label, next to the squeezed name over a spaced tagline.
+
+.groove-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.7rem;
+  color: $heading;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $heading;
+    text-decoration: none;
+  }
+}
+
+.groove-logo__seal {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  transition: transform 600ms $ease;
+}
+
+.groove-logo__disc {
+  fill: $heading;
+}
+
+.groove-logo__grooves {
+  fill: none;
+  stroke: $page;
+  stroke-opacity: 0.28;
+}
+
+.groove-logo__label {
+  fill: $hot;
+}
+
+.groove-logo__hole {
+  fill: $page;
+}
+
+.groove-logo:hover .groove-logo__seal {
+  transform: rotate(180deg);
+}
+
+.groove-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  line-height: 1;
+}
+
+.groove-logo__name {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 2.1rem;
+  font-stretch: 75%;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.85;
+}
+
+.groove-logo__tagline {
+  color: $accent-text;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+// Category navigation: bold display links, highlighted in acid yellow like a marker on a record sleeve.
+
+.groove-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.groove-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.groove-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  overflow: visible;
+}
+
+.groove-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.groove-category-nav__links > .nav-link,
+.groove-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  z-index: 0;
+  flex: 0 0 auto;
+  padding: 0.55rem 0.6rem !important;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.12rem;
+  font-stretch: 85%;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  // The marker stroke, behind the link text: ink stays on it in both schemes.
+  &::before {
+    position: absolute;
+    z-index: -1;
+    right: 0.2rem;
+    bottom: 0.45rem;
+    left: 0.2rem;
+    height: 0.55em;
+    background-color: $acid;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 240ms $ease;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $heading;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  @if $dark {
+    &:hover,
+    &:focus,
+    &[aria-expanded="true"] {
+      color: $acid;
+
+      &::before {
+        height: 3px;
+        bottom: 0.2rem;
+        background-color: $hot;
+      }
+    }
+  }
+}
+
+.groove-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 2px solid $heading;
+  border-radius: $radius-sm;
+  background-color: $surface;
+  box-shadow: $shadow-hard;
+}
+
+.groove-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Cart: an ink pill with a hot pink counter.
+
+.groove-cart__button {
+  --bs-btn-color: #{$page};
+  --bs-btn-bg: #{$heading};
+  --bs-btn-border-color: #{$heading};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$accent};
+  --bs-btn-hover-border-color: #{$accent};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$accent};
+  --bs-btn-active-border-color: #{$accent};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1.1rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.groove-cart__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.groove-cart__count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.4rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $page;
+  border-radius: 999px;
+  background-color: $acid;
+  color: $vinyl;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 2px solid $heading;
+  border-radius: $radius-sm;
+  background-color: $surface;
+  box-shadow: $shadow-hard;
+}
+
+header .dropdown-item {
+  color: $heading;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+@media (min-width: 992px) {
+  .groove-category-nav__menu {
+    width: 100%;
+  }
+
+  .groove-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .groove-category-nav__menu {
+    position: fixed;
+    background-color: $page;
+  }
+
+  .groove-category-nav__menu .offcanvas-header {
+    border-bottom: 2px solid $heading;
+  }
+
+  .groove-category-nav__menu .offcanvas-title {
+    font-family: $font-family-display;
+    font-size: 1.8rem !important;
+    font-stretch: 78%;
+    font-weight: 800;
+  }
+
+  .groove-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .groove-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .groove-category-nav__links > .nav-link,
+  .groove-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    font-size: 1.3rem;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .groove-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface-raised;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .groove-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .groove-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .groove-logo__seal {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .groove-logo__name {
+    font-size: 1.75rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.groove-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}

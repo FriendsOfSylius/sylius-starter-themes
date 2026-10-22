@@ -1,0 +1,21 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="groove-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# A record with its hot pink label, next to a squeezed wordmark. #}
+    <svg class="groove-logo__seal" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <circle class="groove-logo__disc" cx="20" cy="20" r="20"/>
+        <g class="groove-logo__grooves">
+            <circle cx="20" cy="20" r="17"/>
+            <circle cx="20" cy="20" r="14.5"/>
+            <circle cx="20" cy="20" r="12"/>
+        </g>
+        <path class="groove-logo__label" d="M20 11.5a8.5 8.5 0 1 1 0 17 8.5 8.5 0 0 1 0-17z"/>
+        <circle class="groove-logo__hole" cx="20" cy="20" r="1.6"/>
+        <path class="groove-logo__hole" d="M20 13.2a6.8 6.8 0 0 1 6.8 6.8h-1.6a5.2 5.2 0 0 0-5.2-5.2z"/>
+    </svg>
+    <span class="groove-logo__text">
+        <span class="groove-logo__name">Groove</span>
+        <span class="groove-logo__tagline">{{ 'groove.brand.tagline'|trans({}, 'groove') }}</span>
+    </span>
+{% endif %}

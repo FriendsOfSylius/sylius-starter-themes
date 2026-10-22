@@ -1,0 +1,200 @@
+// Black footer cut with record grooves: three shop services, then the store links and the notice.
+
+footer.groove-footer {
+  margin-top: auto;
+  padding: 0;
+  border-top: 4px solid $hot;
+  background-color: $vinyl;
+  background-image: repeating-radial-gradient(circle at 100% 0%, transparent 0 26px, rgba(#FFF, 0.045) 26px 27px);
+  color: $text-on-dark;
+  font-size: 0.9rem;
+}
+
+.groove-services {
+  padding-block: clamp(4rem, 7vw, 6rem);
+  border-bottom: 1px solid $border-dark;
+  scroll-margin-top: 1.5rem;
+}
+
+.groove-services__head {
+  max-width: 40rem;
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.groove-services__title {
+  margin: 0;
+  color: $snow;
+  font-family: $font-family-display;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-stretch: 75%;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  text-wrap: balance;
+
+  em {
+    color: $hot;
+    font-style: normal;
+  }
+}
+
+.groove-services__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.groove-services__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border: 1px solid $border-dark;
+  border-radius: $radius;
+  background-color: rgba(#FFF, 0.03);
+
+  p {
+    margin: 0;
+  }
+
+  svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-bottom: 1.25rem;
+    fill: none;
+    stroke: $acid;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+  }
+}
+
+.groove-services__name {
+  color: $snow;
+  font-family: $font-family-display;
+  font-size: 1.6rem;
+  font-stretch: 78%;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.groove-services__text {
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.7;
+}
+
+.groove-services__item .groove-link-arrow {
+  margin-top: auto;
+}
+
+.groove-footer__main {
+  padding-top: clamp(3rem, 5vw, 4rem);
+  padding-bottom: 1.5rem;
+
+  > .row {
+    padding-top: 2.5rem;
+  }
+
+  a,
+  .nav-link {
+    color: $text-on-dark;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $acid;
+    }
+  }
+
+  .fw-medium,
+  h2,
+  h3,
+  h4 {
+    color: $hot-light;
+    font-family: $font-family-base;
+    font-size: 0.7rem;
+    font-stretch: 100%;
+    font-weight: 600 !important;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  :focus-visible {
+    outline-color: $acid;
+  }
+}
+
+.groove-footer__brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid $border-dark;
+
+  p {
+    max-width: 28rem;
+    margin: 0;
+    color: rgba($text-on-dark, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .groove-logo,
+  .groove-logo:hover {
+    color: $snow;
+  }
+
+  .groove-logo__name {
+    color: $snow;
+  }
+
+  .groove-logo__tagline {
+    color: $hot-light;
+  }
+
+  .groove-logo__disc {
+    fill: $snow;
+  }
+
+  .groove-logo__grooves {
+    stroke: $vinyl;
+  }
+
+  .groove-logo__hole {
+    fill: $vinyl;
+  }
+}
+
+// Payment partner logos keep their brand colours on light chips (Mollie's is black).
+.groove-footer__main .ratio.border {
+  border-color: $snow !important;
+  background-color: $snow;
+}
+
+.groove-footer__copy a {
+  color: $acid !important;
+  text-decoration: underline !important;
+}
+
+.groove-footer__notice {
+  margin: 1rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border-dark;
+  color: rgba($text-on-dark, 0.8);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .groove-services__items {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,146 @@
+groove:
+    brand:
+        tagline: 'Disquaire'
+    top_bar:
+        delivery: 'Livraison offerte dès 60 € · expédié à plat en carton rigide'
+        fridays: 'Nouveautés <strong>tous les vendredis</strong>'
+    hero:
+        eyebrow: 'Disquaire indépendant'
+        title: 'La musique, <em>en grand format.</em>'
+        lead: 'Nouveautés chaque vendredi, rééditions, pressages rares et les platines pour les écouter, choisis par des diggers et expédiés en carton rigide.'
+        cta: 'Fouiller les nouveautés'
+        secondary_cta: 'Éditions limitées'
+        illustration: 'Une pochette graphique bleu électrique, rose vif et jaune acide, son disque noir à moitié sorti, avec un sticker « édition limitée ».'
+        sticker: '<strong>500</strong> exemplaires'
+        ticker:
+            fridays: 'Nouveautés chaque vendredi'
+            reissues: 'Rééditions'
+            rare: 'Pressages rares'
+            turntables: 'Platines'
+            accessories: 'Accessoires'
+    genres:
+        eyebrow: 'Fouiller les bacs'
+        title: 'Par <em>genre</em>'
+        cta: 'Toutes les nouveautés'
+        jazz:
+            name: 'Jazz'
+            styles: 'Bebop · modal · spiritual'
+        soul:
+            name: 'Soul & funk'
+            styles: 'Northern · disco · boogie'
+        rock:
+            name: 'Rock'
+            styles: 'Punk · indé · krautrock'
+        electronic:
+            name: 'Électro'
+            styles: 'House · techno · ambient'
+        hiphop:
+            name: 'Hip-hop'
+            styles: 'Boom bap · jazz rap · beats'
+        world:
+            name: 'Musiques du monde'
+            styles: 'Afrobeat · tropical · bossa'
+    products:
+        eyebrow: 'Les sorties du vendredi'
+        title: 'Tout juste <em>pressés</em>'
+        lead: 'Les disques arrivés en boutique cette semaine, des premiers pressages aux rééditions tant attendues.'
+        cta: 'Éditions limitées'
+    promise:
+        title: 'Notre promesse'
+        checked:
+            title: 'Chaque disque contrôlé'
+            text: 'Voile, rayure : chaque exemplaire est inspecté avant de quitter la boutique.'
+        mailers:
+            title: 'Carton rigide'
+            text: 'Expédié à plat, coins protégés, offert dès 60 €.'
+        fridays:
+            title: 'Sorties du vendredi'
+            text: 'Les nouveautés arrivent dans les bacs chaque vendredi matin.'
+        preorders:
+            title: 'Précommandes sans frais'
+            text: 'Réservez les éditions limitées, payez à l’expédition.'
+    release:
+        eyebrow: 'Édition limitée'
+        title: 'Neon Tides, <em>Night Swim</em>'
+        lead: 'Chaque fiche disque indique l’artiste, le label, le pressage et la tracklist, une déclinaison par couleur de vinyle et le matériel qui le sublime.'
+        illustration: 'La pochette de Night Swim mandarine et rose vif, son vinyle rouge translucide à moitié sorti, avec un sticker numéroté.'
+        number: '<strong>137</strong>/500'
+        runout: 'Matrice : LTR-042-A · gravé à demi-vitesse'
+        specs:
+            artist:
+                label: 'Artiste'
+                value: 'Neon Tides'
+            label:
+                label: 'Label'
+                value: 'Lowtide Records'
+            catalogue:
+                label: 'Réf.'
+                value: 'LTR-042'
+            format:
+                label: 'Format'
+                value: '2 × LP, 180 g, pochette ouvrante'
+            pressing:
+                label: 'Pressage'
+                value: '500 exemplaires numérotés, sortie vendredi'
+        side_a: 'Face A'
+        side_b: 'Face B'
+        tracks:
+            a1:
+                title: 'Low Tide'
+                time: '4:12'
+            a2:
+                title: 'Chlorine Dreams'
+                time: '5:03'
+            a3:
+                title: 'Lifeguard Off Duty'
+                time: '3:47'
+            a4:
+                title: 'Deep End'
+                time: '6:20'
+            b1:
+                title: 'Night Swim'
+                time: '4:58'
+            b2:
+                title: 'Neon Lido'
+                time: '3:31'
+            b3:
+                title: 'Undertow'
+                time: '5:44'
+            b4:
+                title: 'Dawn, Wet Hair'
+                time: '7:02'
+        colours: 'Couleur du vinyle'
+        colour:
+            black: 'Noir 180 g'
+            red: 'Rouge translucide'
+            splatter: 'Splatter'
+        pairs: 'À écouter avec'
+        pair:
+            turntable:
+                name: 'Platine à courroie'
+                meta: 'Préampli phono intégré'
+            cartridge:
+                name: 'Cellule à aimant mobile'
+                meta: 'Diamant elliptique'
+            sleeves:
+                name: 'Sous-pochettes antistatiques'
+                meta: 'Lot de 50'
+        cta: 'Précommander'
+    footer:
+        tagline: 'Disquaire indépendant : nouveautés, rééditions, pressages rares et le matériel pour les écouter.'
+        notice: 'Prix TTC. Les disques sont expédiés à plat en carton rigide, et les précommandes ne sont débitées qu’à l’expédition.'
+        services:
+            eyebrow: 'À la boutique'
+            title: 'Venu pour un disque, <em>reparti avec trois.</em>'
+            booth:
+                title: 'Cabine d’écoute'
+                text: 'Écoutez avant d’acheter : deux platines et un casque vous attendent au comptoir.'
+                cta: 'Trouver la boutique'
+            finder:
+                title: 'Recherche de disques'
+                text: 'Un premier pressage, un 45 tours introuvable ? Envoyez votre liste, nos diggers le dénichent.'
+                cta: 'Envoyer ma liste'
+            buyback:
+                title: 'Rachat de collections'
+                text: 'Déménagement, grenier, tri : nous estimons et rachetons les collections de disques.'
+                cta: 'Demander une estimation'

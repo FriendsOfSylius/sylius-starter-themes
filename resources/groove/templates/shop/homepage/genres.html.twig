@@ -1,0 +1,27 @@
+{# Groove crates: shop by genre, six sleeves with flat cover art (drawn by _sections.scss) and a record tucked behind
+   each one — the taxons a record store sorts its catalogue by. #}
+<section id="groove-genres" class="groove-genres" aria-labelledby="groove-genres-title">
+    <div class="container">
+        <div class="groove-section-head groove-section-head--split">
+            <div>
+                <p class="groove-eyebrow">{{ 'groove.genres.eyebrow'|trans({}, 'groove') }}</p>
+                <h2 id="groove-genres-title">{{ 'groove.genres.title'|trans({}, 'groove')|raw }}</h2>
+            </div>
+            <a class="groove-link-arrow" href="#groove-latest-products">{{ 'groove.genres.cta'|trans({}, 'groove') }}</a>
+        </div>
+
+        <ul class="groove-crates" role="list">
+            {% for genre in ['jazz', 'soul', 'rock', 'electronic', 'hiphop', 'world'] %}
+                <li class="groove-crate groove-crate--{{ genre }}">
+                    <a class="groove-crate__link" href="#groove-latest-products">
+                        <span class="groove-crate__sleeve" aria-hidden="true">
+                            <span class="groove-crate__art"></span>
+                        </span>
+                        <span class="groove-crate__name">{{ ('groove.genres.' ~ genre ~ '.name')|trans({}, 'groove') }}</span>
+                        <span class="groove-crate__styles">{{ ('groove.genres.' ~ genre ~ '.styles')|trans({}, 'groove') }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

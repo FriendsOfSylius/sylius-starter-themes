@@ -1,0 +1,40 @@
+// Groove — an independent record store: black, saturated sleeve colours and expressive type.
+// Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
+$dark: $color-mode == dark;
+
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+// The display face: Bricolage Grotesque, narrowed and heavy for the headings, like the type of a sleeve.
+$font-family-display: "Bricolage Grotesque", "Helvetica Neue", "Arial", sans-serif;
+$font-family-serif: $font-family-display;
+$font-family-base: $font-family-sans-serif;
+// Catalogue numbers, matrix runouts and track timings.
+$font-family-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
+
+$headings-font-family: $font-family-display;
+$headings-font-weight: 800;
+
+$body-bg: $page;
+$body-color: $text;
+
+$primary: $accent;
+$secondary: $surface-raised;
+
+$link-color: $accent-text;
+$link-hover-color: $accent-text-hover;
+$border-color: $line;
+
+// Square sleeves and round records: sharp tiles, pill buttons.
+$radius-sm: 3px;
+$radius: 4px;
+$radius-lg: 8px;
+$radius-pill: 999px;
+
+// Poster shadow: a hard offset, like a sleeve pinned on the shop wall.
+$shadow-hard: 6px 6px 0 $shadow-ink;
+
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+// "r, g, b" channels of a color, for Bootstrap's --bs-*-rgb variables.
+@function channels($color) {
+  @return red($color), green($color), blue($color);
+}

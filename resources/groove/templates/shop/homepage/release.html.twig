@@ -1,0 +1,84 @@
+{# Groove limited edition: a numbered pressing with its sleeve, the release sheet (artist, label, catalogue number,
+   format), the tracklist, the vinyl colours and what to play it on — what a Sylius product page carries through
+   attributes, variants and associations. #}
+<section id="groove-release" class="groove-release" aria-labelledby="groove-release-title">
+    <div class="container">
+        <div class="groove-release__grid">
+            <figure class="groove-release__visual">
+                <div class="groove-release__stage" role="img" aria-label="{{ 'groove.release.illustration'|trans({}, 'groove') }}">
+                    <div class="groove-release__record"></div>
+                    <svg class="groove-release__sleeve groove-cover" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+                        <rect class="groove-cover__tangerine" width="400" height="400"/>
+                        {% for r in [190, 150, 110, 70] %}
+                            <circle class="{{ loop.index is odd ? 'groove-cover__hot' : 'groove-cover__tangerine' }}" cx="200" cy="400" r="{{ r * 1.6 }}"/>
+                        {% endfor %}
+                        <circle class="groove-cover__acid" cx="200" cy="400" r="62"/>
+                        <rect class="groove-cover__ink" x="0" y="0" width="400" height="104"/>
+                        <text class="groove-cover__title groove-cover__title--paper" x="26" y="66">NIGHT SWIM</text>
+                        <text class="groove-cover__subtitle groove-cover__subtitle--paper" x="28" y="90">NEON TIDES · LTR-042</text>
+                    </svg>
+                    <span class="groove-release__number">{{ 'groove.release.number'|trans({}, 'groove')|raw }}</span>
+                </div>
+                <figcaption class="groove-release__runout">{{ 'groove.release.runout'|trans({}, 'groove') }}</figcaption>
+            </figure>
+
+            <div class="groove-release__sheet">
+                <p class="groove-eyebrow">{{ 'groove.release.eyebrow'|trans({}, 'groove') }}</p>
+                <h2 id="groove-release-title">{{ 'groove.release.title'|trans({}, 'groove')|raw }}</h2>
+                <p class="groove-release__lead">{{ 'groove.release.lead'|trans({}, 'groove') }}</p>
+
+                <dl class="groove-specs">
+                    {% for spec in ['artist', 'label', 'catalogue', 'format', 'pressing'] %}
+                        <div>
+                            <dt>{{ ('groove.release.specs.' ~ spec ~ '.label')|trans({}, 'groove') }}</dt>
+                            <dd>{{ ('groove.release.specs.' ~ spec ~ '.value')|trans({}, 'groove') }}</dd>
+                        </div>
+                    {% endfor %}
+                </dl>
+
+                <div class="groove-tracklist">
+                    {% for side, tracks in {a: 4, b: 4} %}
+                        <div>
+                            <p class="groove-variants__label">{{ ('groove.release.side_' ~ side)|trans({}, 'groove') }}</p>
+                            <ol role="list">
+                                {% for n in 1..tracks %}
+                                    <li>
+                                        <span class="groove-tracklist__position">{{ side|upper }}{{ n }}</span>
+                                        <span class="groove-tracklist__title">{{ ('groove.release.tracks.' ~ side ~ n ~ '.title')|trans({}, 'groove') }}</span>
+                                        <span class="groove-tracklist__time">{{ ('groove.release.tracks.' ~ side ~ n ~ '.time')|trans({}, 'groove') }}</span>
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="groove-variants">
+                    <p class="groove-variants__label">{{ 'groove.release.colours'|trans({}, 'groove') }}</p>
+                    <ul class="groove-pressings" role="list">
+                        {% for colour in ['black', 'red', 'splatter'] %}
+                            <li class="groove-pressing groove-pressing--{{ colour }}{{ colour == 'red' ? ' is-selected' : '' }}">
+                                <span class="groove-pressing__disc" aria-hidden="true"></span>
+                                {{ ('groove.release.colour.' ~ colour)|trans({}, 'groove') }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="groove-pairs">
+                    <p class="groove-variants__label">{{ 'groove.release.pairs'|trans({}, 'groove') }}</p>
+                    <ul role="list">
+                        {% for item in ['turntable', 'cartridge', 'sleeves'] %}
+                            <li>
+                                <span class="groove-pairs__name">{{ ('groove.release.pair.' ~ item ~ '.name')|trans({}, 'groove') }}</span>
+                                <span class="groove-pairs__meta">{{ ('groove.release.pair.' ~ item ~ '.meta')|trans({}, 'groove') }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <a class="btn btn-primary groove-btn-arrow" href="#groove-latest-products">{{ 'groove.release.cta'|trans({}, 'groove') }}</a>
+            </div>
+        </div>
+    </div>
+</section>

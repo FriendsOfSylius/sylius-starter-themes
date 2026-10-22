@@ -1,0 +1,23 @@
+{% set groove_list_key = hookable_metadata.configuration['test_attribute']|default('latest-products') %}
+
+{# The latest products are the Friday drops: a crate divider head over a wall of sleeves. #}
+<section id="groove-{{ groove_list_key }}" class="groove-products groove-products--{{ groove_list_key }}">
+    <div class="container" role="region" aria-labelledby="{{ groove_list_key ~ '-heading' }}">
+        <div class="groove-section-head groove-section-head--split">
+            <div>
+                <p class="groove-eyebrow">{{ 'groove.products.eyebrow'|trans({}, 'groove') }}</p>
+                <h2 id="{{ groove_list_key ~ '-heading' }}">{{ 'groove.products.title'|trans({}, 'groove')|raw }}</h2>
+                <p class="groove-section-head__lead">{{ 'groove.products.lead'|trans({}, 'groove') }}</p>
+            </div>
+            <a class="groove-link-arrow" href="#groove-release">{{ 'groove.products.cta'|trans({}, 'groove') }}</a>
+        </div>
+
+        <div {{ sylius_test_html_attribute(hookable_metadata.configuration.test_attribute|default('latest-products')) }}>
+            <div class="products-grid">
+                {% for product in latest_products %}
+                    <div>{{ component('sylius_shop:product:card', {product: product, template: hookable_metadata.configuration.product_template|default('@SyliusShop/product/common/card.html.twig'), hookableMetadata: hookable_metadata}) }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

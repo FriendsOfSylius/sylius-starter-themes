@@ -1,0 +1,146 @@
+groove:
+    brand:
+        tagline: 'Record store'
+    top_bar:
+        delivery: 'Free shipping from €60 · shipped flat in rigid mailers'
+        fridays: 'New releases <strong>every Friday</strong>'
+    hero:
+        eyebrow: 'Independent record store'
+        title: 'Music you can <em>hold.</em>'
+        lead: 'New releases every Friday, reissues, rare pressings and the turntables to play them — picked by diggers, shipped in rigid mailers.'
+        cta: 'Dig the new releases'
+        secondary_cta: 'Limited editions'
+        illustration: 'A graphic record sleeve in electric blue, hot pink and acid yellow, its black record pulled out, with a “limited edition” sticker.'
+        sticker: '<strong>500</strong> copies only'
+        ticker:
+            fridays: 'New releases every Friday'
+            reissues: 'Reissues'
+            rare: 'Rare pressings'
+            turntables: 'Turntables'
+            accessories: 'Accessories'
+    genres:
+        eyebrow: 'Dig the crates'
+        title: 'Shop by <em>genre</em>'
+        cta: 'All the new releases'
+        jazz:
+            name: 'Jazz'
+            styles: 'Bebop · modal · spiritual'
+        soul:
+            name: 'Soul & funk'
+            styles: 'Northern · disco · boogie'
+        rock:
+            name: 'Rock'
+            styles: 'Punk · indie · krautrock'
+        electronic:
+            name: 'Electronic'
+            styles: 'House · techno · ambient'
+        hiphop:
+            name: 'Hip-hop'
+            styles: 'Boom bap · jazz rap · beats'
+        world:
+            name: 'World'
+            styles: 'Afrobeat · tropical · bossa'
+    products:
+        eyebrow: 'Friday drops'
+        title: 'Fresh <em>off the press</em>'
+        lead: 'The records that landed in the shop this week, from first pressings to long-awaited reissues.'
+        cta: 'Limited editions'
+    promise:
+        title: 'Our promise'
+        checked:
+            title: 'Every record checked'
+            text: 'Each copy is inspected for warps and scuffs before it leaves the shop.'
+        mailers:
+            title: 'Rigid mailers'
+            text: 'Shipped flat, corners protected, free from €60.'
+        fridays:
+            title: 'Friday releases'
+            text: 'New records hit the crates every Friday morning.'
+        preorders:
+            title: 'Fair pre-orders'
+            text: 'Reserve limited editions, pay only when they ship.'
+    release:
+        eyebrow: 'Limited edition'
+        title: 'Neon Tides, <em>Night Swim</em>'
+        lead: 'Every record page carries the artist, the label, the pressing and the tracklist, a variant for each vinyl colour and the gear that plays it best.'
+        illustration: 'The Night Swim sleeve in tangerine and hot pink, its translucent red record pulled out, with a numbered sticker.'
+        number: '<strong>137</strong>/500'
+        runout: 'Matrix runout: LTR-042-A · cut at half speed'
+        specs:
+            artist:
+                label: 'Artist'
+                value: 'Neon Tides'
+            label:
+                label: 'Label'
+                value: 'Lowtide Records'
+            catalogue:
+                label: 'Cat. no.'
+                value: 'LTR-042'
+            format:
+                label: 'Format'
+                value: '2 × LP, 180 g, gatefold sleeve'
+            pressing:
+                label: 'Pressing'
+                value: '500 numbered copies, out Friday'
+        side_a: 'Side A'
+        side_b: 'Side B'
+        tracks:
+            a1:
+                title: 'Low Tide'
+                time: '4:12'
+            a2:
+                title: 'Chlorine Dreams'
+                time: '5:03'
+            a3:
+                title: 'Lifeguard Off Duty'
+                time: '3:47'
+            a4:
+                title: 'Deep End'
+                time: '6:20'
+            b1:
+                title: 'Night Swim'
+                time: '4:58'
+            b2:
+                title: 'Neon Lido'
+                time: '3:31'
+            b3:
+                title: 'Undertow'
+                time: '5:44'
+            b4:
+                title: 'Dawn, Wet Hair'
+                time: '7:02'
+        colours: 'Vinyl colour'
+        colour:
+            black: 'Black 180 g'
+            red: 'Translucent red'
+            splatter: 'Splatter'
+        pairs: 'Plays best with'
+        pair:
+            turntable:
+                name: 'Belt-drive turntable'
+                meta: 'Built-in phono preamp'
+            cartridge:
+                name: 'Moving magnet cartridge'
+                meta: 'Elliptical stylus'
+            sleeves:
+                name: 'Anti-static inner sleeves'
+                meta: 'Pack of 50'
+        cta: 'Pre-order'
+    footer:
+        tagline: 'Independent record store: new releases, reissues, rare pressings and the gear to play them.'
+        notice: 'Prices include VAT. Records ship flat in rigid mailers, and pre-orders are charged only when they ship.'
+        services:
+            eyebrow: 'At the shop'
+            title: 'Come for one record, <em>leave with three.</em>'
+            booth:
+                title: 'Listening booth'
+                text: 'Listen before you buy: two turntables and headphones wait for you at the counter.'
+                cta: 'Find the shop'
+            finder:
+                title: 'Record finder'
+                text: 'Hunting for a first pressing or a lost single? Send us your want list and our diggers track it down.'
+                cta: 'Send a want list'
+            buyback:
+                title: 'Collection buy-back'
+                text: 'Moving, downsizing or clearing an attic: we value and buy whole record collections.'
+                cta: 'Get a quote'

@@ -1,0 +1,157 @@
+.card {
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-soft;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  color: $heading;
+  font-family: $font-family-display;
+  font-stretch: 78%;
+  font-weight: 800;
+}
+
+.card-text {
+  color: $text-muted;
+}
+
+.card-footer {
+  border-top-color: $line;
+  background-color: $surface;
+}
+
+// Product cards, built like records in a crate: a square sleeve with a black record tucked behind it, which slides
+// out of the top and turns on hover while the sleeve takes a hard poster shadow; the title below, the price in bold.
+// The card root is the element holding the details link: it is a direct grid item on category
+// pages and wrapped in a <div> in the homepage / association lists.
+
+.products-grid {
+  column-gap: clamp(1rem, 2vw, 1.75rem);
+  row-gap: clamp(2.25rem, 4vw, 3.25rem);
+}
+
+.products-grid div:has(> a.link-reset) {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  > a.link-reset {
+    display: block;
+    color: $heading;
+    text-decoration: none;
+
+    // Stretched link: the price below is part of the clickable card too.
+    &::after {
+      position: absolute;
+      z-index: 3;
+      inset: 0;
+      content: "";
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  &:has(> a.link-reset:focus-visible) {
+    outline: 2px solid $focus;
+    outline-offset: 4px;
+  }
+
+  // The sleeve and its record.
+  .mb-4 {
+    position: relative;
+    isolation: isolate;
+    margin-bottom: 0 !important;
+
+    &::before {
+      position: absolute;
+      z-index: -1;
+      top: 3%;
+      left: 3%;
+      width: 94%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, $page 0 2%, $hot 2.5% 15%, $vinyl 15.5% 17%, transparent 17.5%),
+        repeating-radial-gradient(circle, $vinyl 0 3px, #2B2B32 3px 4px),
+        $vinyl;
+      content: "";
+      transition: transform 500ms $ease;
+    }
+  }
+
+  .rounded-3 {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    border-radius: $radius-sm !important;
+    background-color: $surface-raised !important;
+    // Record sleeves are square.
+    aspect-ratio: 1 / 1 !important;
+    box-shadow: 0 0 0 1px rgba($vinyl, if($dark, 0, 0.08));
+    transition: box-shadow 220ms ease, transform 220ms $ease;
+
+    img {
+      object-fit: cover !important;
+    }
+  }
+
+  &:hover .mb-4::before {
+    transform: translateY(-14%) rotate(160deg);
+  }
+
+  &:hover .rounded-3 {
+    box-shadow: $shadow-hard;
+    transform: translate(-3px, -3px);
+  }
+
+  .h6 {
+    margin: 0;
+    padding: 1rem 0 0.35rem;
+    color: $heading;
+    font-family: $font-family-display;
+    font-size: 1.28rem;
+    font-stretch: 85%;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    transition: color 200ms ease;
+  }
+
+  &:hover .h6 {
+    color: $accent-text;
+  }
+
+  // Prices
+  > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+    align-items: baseline;
+    margin-top: auto;
+    color: $heading;
+    font-size: 1rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+
+    > * {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    del {
+      color: $text-muted;
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+  }
+}

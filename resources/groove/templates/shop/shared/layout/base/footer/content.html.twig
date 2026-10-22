@@ -1,0 +1,37 @@
+{% set groove_services = [
+    {key: 'booth', url: path('sylius_shop_contact_request'), icon: 'M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a1 1 0 0 1-1-1zM20 14h-3v6h2a1 1 0 0 0 1-1z'},
+    {key: 'finder', url: path('sylius_shop_contact_request'), icon: 'M10.5 4a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM10.5 9a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM15.5 15.5L20 20'},
+    {key: 'buyback', url: path('sylius_shop_contact_request'), icon: 'M3 7h18v13H3zM3 7l3-4h12l3 4M8 11h8M12 11v6'},
+] %}
+
+<footer class="groove-footer">
+    <div id="groove-services" class="groove-services">
+        <div class="container">
+            <div class="groove-services__head">
+                <p class="groove-eyebrow groove-eyebrow--light">{{ 'groove.footer.services.eyebrow'|trans({}, 'groove') }}</p>
+                <p class="groove-services__title">{{ 'groove.footer.services.title'|trans({}, 'groove')|raw }}</p>
+            </div>
+
+            <ul class="groove-services__items" role="list">
+                {% for service in groove_services %}
+                    <li class="groove-services__item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ service.icon }}"/></svg>
+                        <p class="groove-services__name">{{ ('groove.footer.services.' ~ service.key ~ '.title')|trans({}, 'groove') }}</p>
+                        <p class="groove-services__text">{{ ('groove.footer.services.' ~ service.key ~ '.text')|trans({}, 'groove') }}</p>
+                        <a class="groove-link-arrow groove-link-arrow--light" href="{{ service.url }}">{{ ('groove.footer.services.' ~ service.key ~ '.cta')|trans({}, 'groove') }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container groove-footer__main">
+        <div class="groove-footer__brand">
+            {% include 'shop/shared/layout/brand/logo.html.twig' with {variant: 'footer'} %}
+            <p>{{ 'groove.footer.tagline'|trans({}, 'groove') }}</p>
+        </div>
+        <div class="row">
+            {% hook 'content' %}
+        </div>
+        <p class="groove-footer__notice">{{ 'groove.footer.notice'|trans({}, 'groove') }}</p>
+    </div>
+</footer>

@@ -1,0 +1,45 @@
+// Groove, light scheme — poster paper and ink, with the saturated colours of the sleeves.
+$color-mode: light;
+
+// House colours: the black bands (top bar, hero, footer) and the sleeve colours keep them in both schemes.
+$vinyl: #0B0B0D;
+$vinyl-deep: #141418;
+$vinyl-raised: #1F1F25;
+$hot: #FF2E7E;
+$hot-light: #FF6FAE;
+$acid: #FFE14D;
+$electric: #3D5AFE;
+$tangerine: #FF6B1A;
+$mint: #18D6A0;
+$snow: #FFFFFF;
+$text-on-dark: #D9D6CE;
+$border-dark: rgba(#FFF, 0.16);
+
+// Poster paper.
+$page: #F4F1E9;
+$surface: #FFFFFF;
+$surface-raised: #E8E4D9;
+$line: #D9D4C6;
+$line-strong: #B4AE9F;
+$field-border: #7B7770;
+$heading: #0B0B0D;
+$text: #29282C;
+$text-muted: #5C5A60;
+
+// Hot pink fills the calls to action, with ink on it (5.6:1), and turns acid yellow on hover; as text, the accent
+// darkens to a deep magenta, and the second accent to an electric blue.
+$accent: $hot;
+$accent-hover: $acid;
+$on-accent: #0B0B0D;
+$accent-text: #C1005E;
+$accent-text-hover: #8A0043;
+$pop-text: #2B3FD4;
+$focus: #C1005E;
+$focus-ring: rgba($hot, 0.32);
+$shadow-ink: #0B0B0D;
+
+$success: #127A55;
+$info: #2B3FD4;
+
+$shadow-soft: 0 1px 2px rgba($vinyl, 0.08);
+$shadow-float: 0 22px 44px -20px rgba($vinyl, 0.45);
