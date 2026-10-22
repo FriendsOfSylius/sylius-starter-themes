@@ -1,0 +1,44 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="roastery-hero" aria-labelledby="roastery-hero-title">
+    <div class="container">
+        <div class="roastery-hero__grid">
+            <div class="roastery-hero__copy">
+                <p class="roastery-eyebrow roastery-eyebrow--light">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'roastery.hero.eyebrow'|trans({}, 'roastery') }}{% endif %}</p>
+                <h1 id="roastery-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'roastery.hero.title'|trans({}, 'roastery')|raw }}{% endif %}</h1>
+                <p class="roastery-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'roastery.hero.lead'|trans({}, 'roastery')|raw }}{% endif %}</p>
+
+                <div class="roastery-hero__actions">
+                    <a class="btn btn-primary roastery-btn-copper" href="{{ hero.ctaUrl ?? '#roastery-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'roastery.hero.cta'|trans({}, 'roastery') }}{% endif %}
+                    </a>
+                    <a class="roastery-link-arrow roastery-link-arrow--light" href="#roastery-promise">
+                        {{ 'roastery.hero.secondary_cta'|trans({}, 'roastery') }}
+                    </a>
+                </div>
+
+                <p class="roastery-hero__signature">{{ 'roastery.hero.signature'|trans({}, 'roastery') }}</p>
+            </div>
+
+            <div class="roastery-hero__visual">
+                {% if hero.image %}
+                    <img class="roastery-hero__panel roastery-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                {% else %}
+                    {% include 'shop/homepage/hero/roaster.html.twig' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="roastery-figures">
+        <div class="container">
+            <ul class="roastery-figures__items" role="list">
+                {% for item in 1..4 %}
+                    <li>
+                        <span class="roastery-figures__value">{{ ('roastery.figures.item_' ~ item ~ '.value')|trans({}, 'roastery') }}</span>
+                        <span class="roastery-figures__text">{{ ('roastery.figures.item_' ~ item ~ '.text')|trans({}, 'roastery') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

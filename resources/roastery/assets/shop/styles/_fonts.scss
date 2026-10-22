@@ -1,0 +1,17 @@
+// Fraunces (SIL Open Font License 1.1, see ../fonts/Fraunces-OFL.txt), variable weight 100–900 and optical size
+// 9–144, latin subset: soft editorial serifs that grow sharper and more contrasted at display sizes.
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/fraunces-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/fraunces-italic.woff2") format("woff2");
+}

@@ -1,0 +1,37 @@
+{% set roastery_services = [
+    {key: 'advice', url: path('sylius_shop_contact_request'), icon: 'M4 9h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6zM17 11h1.5a2.5 2.5 0 0 1 0 5H16M8 2.5c-1 1.2 1 2.3 0 3.5M12 2.5c-1 1.2 1 2.3 0 3.5'},
+    {key: 'delivery', url: path('sylius_shop_account_dashboard'), icon: 'M3 8l9-5 9 5v8l-9 5-9-5zM3 8l9 5 9-5M12 13v8'},
+    {key: 'subscription', url: path('sylius_shop_account_dashboard'), icon: 'M20 11a8 8 0 0 0-14.6-4.5M4 4v3.5h3.5M4 13a8 8 0 0 0 14.6 4.5M20 20v-3.5h-3.5'},
+] %}
+
+<footer class="roastery-footer">
+    <div id="roastery-services" class="roastery-services">
+        <div class="container">
+            <div class="roastery-services__head">
+                <p class="roastery-eyebrow roastery-eyebrow--light">{{ 'roastery.footer.services.eyebrow'|trans({}, 'roastery') }}</p>
+                <p class="roastery-services__title">{{ 'roastery.footer.services.title'|trans({}, 'roastery')|raw }}</p>
+            </div>
+
+            <ul class="roastery-services__items" role="list">
+                {% for service in roastery_services %}
+                    <li class="roastery-services__item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ service.icon }}"/></svg>
+                        <p class="roastery-services__name">{{ ('roastery.footer.services.' ~ service.key ~ '.title')|trans({}, 'roastery') }}</p>
+                        <p class="roastery-services__text">{{ ('roastery.footer.services.' ~ service.key ~ '.text')|trans({}, 'roastery') }}</p>
+                        <a class="roastery-link-arrow roastery-link-arrow--light" href="{{ service.url }}">{{ ('roastery.footer.services.' ~ service.key ~ '.cta')|trans({}, 'roastery') }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container roastery-footer__main">
+        <div class="roastery-footer__brand">
+            {% include 'shop/shared/layout/brand/logo.html.twig' with {variant: 'footer'} %}
+            <p>{{ 'roastery.footer.tagline'|trans({}, 'roastery') }}</p>
+        </div>
+        <div class="row">
+            {% hook 'content' %}
+        </div>
+        <p class="roastery-footer__notice">{{ 'roastery.footer.notice'|trans({}, 'roastery') }}</p>
+    </div>
+</footer>

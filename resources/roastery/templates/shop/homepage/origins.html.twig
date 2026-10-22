@@ -1,0 +1,21 @@
+{# Roastery origins: four single origins on a coffee map, each with its altitude, its cup and its roast level. #}
+<section id="roastery-origins" class="roastery-origins" aria-labelledby="roastery-origins-title">
+    <div class="container">
+        <div class="roastery-section-head roastery-section-head--center">
+            <p class="roastery-eyebrow">{{ 'roastery.origins.eyebrow'|trans({}, 'roastery') }}</p>
+            <h2 id="roastery-origins-title">{{ 'roastery.origins.title'|trans({}, 'roastery')|raw }}</h2>
+        </div>
+
+        <ul class="roastery-origins__items" role="list">
+            {% for origin in [{key: 'ethiopia', level: 1}, {key: 'colombia', level: 2}, {key: 'guatemala', level: 3}, {key: 'brazil', level: 4}] %}
+                <li class="roastery-origin">
+                    <p class="roastery-origin__region">{{ ('roastery.origins.' ~ origin.key ~ '.region')|trans({}, 'roastery') }}</p>
+                    <p class="roastery-origin__name">{{ ('roastery.origins.' ~ origin.key ~ '.name')|trans({}, 'roastery') }}</p>
+                    <p class="roastery-origin__altitude">{{ ('roastery.origins.' ~ origin.key ~ '.altitude')|trans({}, 'roastery') }}</p>
+                    <p class="roastery-origin__cup">{{ ('roastery.origins.' ~ origin.key ~ '.cup')|trans({}, 'roastery') }}</p>
+                    {% include 'shop/homepage/roast_scale.html.twig' with {level: origin.level} %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

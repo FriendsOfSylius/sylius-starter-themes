@@ -1,0 +1,32 @@
+// Roastery — espresso brown and cream paper, struck with a copper fillet.
+// Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
+$dark: $color-mode == dark;
+
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-family-serif: "Fraunces", "Iowan Old Style", "Palatino", Georgia, serif;
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 500;
+
+$body-bg: $page;
+$body-color: $text;
+
+$primary: $accent;
+$secondary: $surface-raised;
+
+$link-color: $accent-text;
+$link-hover-color: $accent-text-hover;
+$border-color: $line;
+
+// Softened corners, like a stamped kraft bag label.
+$radius-sm: 3px;
+$radius: 4px;
+$radius-lg: 8px;
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+// "r, g, b" channels of a color, for Bootstrap's --bs-*-rgb variables.
+@function channels($color) {
+  @return red($color), green($color), blue($color);
+}

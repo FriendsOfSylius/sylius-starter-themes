@@ -1,0 +1,112 @@
+roastery:
+    brand:
+        tagline: 'Torréfacteurs'
+    top_bar:
+        delivery: 'Livraison offerte dès 2 sachets · torréfié à la commande'
+        fresh: 'Torréfié chaque lundi et jeudi, date de torréfaction sur chaque sachet'
+    hero:
+        eyebrow: 'Torréfacteur de spécialité · de la ferme à la tasse'
+        title: 'Des cafés torréfiés lentement, <em>choisis à l’origine.</em>'
+        lead: 'Origines et assemblages achetés aux fermes, torréfiés en petits lots dans notre tambour de cuivre et expédiés dans la semaine. Chaque sachet est accompagné de son <strong>profil de torréfaction et de son guide d’extraction</strong>.'
+        cta: 'Découvrir les cafés'
+        secondary_cta: 'Notre torréfaction'
+        signature: 'Torréfié lot par lot, quinze kilos à la fois.'
+        illustration: 'Un torréfacteur à tambour en cuivre verse des grains fraîchement torréfiés dans son bac de refroidissement, à côté d’un sachet kraft de café d’origine.'
+        label: 'Pure origine'
+        label_origin: 'Éthiopie · Guji'
+    figures:
+        item_1:
+            value: '24'
+            text: 'fermes partenaires en direct'
+        item_2:
+            value: '15 kg'
+            text: 'par lot, torréfié à la main'
+        item_3:
+            value: '72 h'
+            text: 'du torréfacteur à votre porte'
+        item_4:
+            value: '86+'
+            text: 'en note de dégustation'
+    products:
+        eyebrow:
+            latest: 'Tout juste torréfiés'
+    roast:
+        label: 'Torréfaction'
+        level: 'Torréfaction %level% sur 5 : %name%'
+        level_1: 'Claire'
+        level_2: 'Médium claire'
+        level_3: 'Médium'
+        level_4: 'Médium foncée'
+        level_5: 'Foncée'
+    promise:
+        eyebrow: 'Notre torréfaction'
+        title: 'Un métier de torréfacteur, <em>lot après lot.</em>'
+        lead: 'Nous goûtons à l’origine, torréfions chaque café selon son propre profil et le laissons reposer avant de l’expédier, pour qu’il vous arrive à son meilleur.'
+        step_1:
+            title: 'Sélectionner'
+            text: 'Café vert acheté aux producteurs, à un prix juste, après dégustation de chaque lot. Moins d’un sur dix entre à la carte.'
+        step_2:
+            title: 'Torréfier'
+            text: 'Chaque origine a son profil, suivi degré par degré dans notre torréfacteur à tambour de cuivre et consigné lot après lot.'
+        step_3:
+            title: 'Reposer et expédier'
+            text: 'Les grains dégazent 48 heures, puis partent en sachets kraft à valve, en grains ou moulus selon votre méthode.'
+        profile:
+            kicker: 'Profil de torréfaction'
+            title: 'Éthiopie Guji'
+            lot: 'Lot nº 27 · procédé nature'
+            curve: 'Courbe de torréfaction : la température du grain baisse quand le café vert entre dans le tambour, puis remonte régulièrement jusqu’au premier crack, vers la dixième minute, et se stabilise jusqu’à la fin de la torréfaction à douze minutes.'
+            first_crack: 'Premier crack'
+            origin:
+                label: 'Ferme'
+                value: 'Hambela, station de lavage villageoise'
+            altitude:
+                label: 'Altitude'
+                value: '2 100 à 2 300 m'
+            process:
+                label: 'Extraction'
+                value: 'Filtre, V60, Aeropress'
+            notes:
+                label: 'En tasse'
+                value: 'Myrtille, jasmin, grué de cacao'
+    origins:
+        eyebrow: 'Nos origines'
+        title: 'Quatre pays, <em>quatre tasses.</em>'
+        ethiopia:
+            region: 'Éthiopie · Yirgacheffe'
+            name: 'Kochere'
+            altitude: '1 950 m · lavé'
+            cup: 'Bergamote, pêche blanche et thé noir, avec une acidité vive et citronnée.'
+        colombia:
+            region: 'Colombie · Huila'
+            name: 'La Plata'
+            altitude: '1 750 m · lavé'
+            cup: 'Pomme rouge, panela et chocolat au lait, rond et équilibré.'
+        guatemala:
+            region: 'Guatemala · Antigua'
+            name: 'Finca El Pilar'
+            altitude: '1 600 m · lavé'
+            cup: 'Chocolat noir, noisette torréfiée et une pointe d’épices.'
+        brazil:
+            region: 'Brésil · Cerrado'
+            name: 'Fazenda Rainha'
+            altitude: '1 150 m · nature'
+            cup: 'Caramel, amande et cacao, la base de notre assemblage espresso.'
+    footer:
+        tagline: 'Cafés de spécialité, torréfiés en petits lots et livrés chez vous.'
+        notice: 'Torréfié à la commande chaque lundi et jeudi. La date de torréfaction figure sur chaque sachet : à savourer dans les six semaines.'
+        services:
+            eyebrow: 'À votre service'
+            title: 'De notre torréfacteur <em>à votre tasse.</em>'
+            advice:
+                title: 'Conseil barista'
+                text: 'Une mouture à régler, une machine à configurer, un café à choisir : nos baristas vous répondent personnellement.'
+                cta: 'Demander à un barista'
+            delivery:
+                title: 'Livraison fraîcheur'
+                text: 'Sachets à valve, expédition sous 72 heures après torréfaction et livraison offerte dès deux sachets.'
+                cta: 'Suivre ma commande'
+            subscription:
+                title: 'Votre café, à la demande'
+                text: 'Retrouvez vos commandes et vos cafés préférés dans votre compte, et recommandez en quelques clics.'
+                cta: 'Mon compte'

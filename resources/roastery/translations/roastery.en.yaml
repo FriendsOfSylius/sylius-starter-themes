@@ -1,0 +1,112 @@
+roastery:
+    brand:
+        tagline: 'Coffee roasters'
+    top_bar:
+        delivery: 'Free delivery from 2 bags · roasted to order'
+        fresh: 'Roasted every Monday and Thursday, roast date on every bag'
+    hero:
+        eyebrow: 'Specialty roaster · from the farm to your cup'
+        title: 'Coffee roasted slowly, <em>sourced at origin.</em>'
+        lead: 'Single origins and house blends bought from the farms, roasted in small batches in our copper drum and sent to you within the week. Every bag comes with its <strong>roast profile and brewing guide</strong>.'
+        cta: 'Discover the coffees'
+        secondary_cta: 'Our roast'
+        signature: 'Roasted batch by batch, fifteen kilos at a time.'
+        illustration: 'A copper drum roaster pours freshly roasted beans into its cooling tray, next to a kraft bag of single origin coffee.'
+        label: 'Single origin'
+        label_origin: 'Ethiopia · Guji'
+    figures:
+        item_1:
+            value: '24'
+            text: 'farms we buy from directly'
+        item_2:
+            value: '15 kg'
+            text: 'per batch, roasted by hand'
+        item_3:
+            value: '72 h'
+            text: 'from the roaster to your door'
+        item_4:
+            value: '86+'
+            text: 'cup score of every coffee'
+    products:
+        eyebrow:
+            latest: 'Fresh from the roaster'
+    roast:
+        label: 'Roast'
+        level: 'Roast level %level% out of 5: %name%'
+        level_1: 'Light'
+        level_2: 'Medium light'
+        level_3: 'Medium'
+        level_4: 'Medium dark'
+        level_5: 'Dark'
+    promise:
+        eyebrow: 'Our roast'
+        title: 'A roaster’s craft, <em>one batch at a time.</em>'
+        lead: 'We cup at origin, roast every coffee to its own profile and let it rest before it leaves us, so it reaches you at its best.'
+        step_1:
+            title: 'Source'
+            text: 'Green coffee bought from the producers, at a fair price, after cupping every lot. Fewer than one in ten makes the list.'
+        step_2:
+            title: 'Roast'
+            text: 'Each origin has its profile, followed degree by degree in our copper drum roaster and logged batch after batch.'
+        step_3:
+            title: 'Rest & ship'
+            text: 'Beans rest 48 hours to degas, then leave in valve-sealed kraft bags, whole bean or ground to your brewing method.'
+        profile:
+            kicker: 'Roast profile'
+            title: 'Ethiopia Guji'
+            lot: 'Lot nº 27 · natural process'
+            curve: 'Roast curve: the bean temperature drops as the green coffee enters the drum, then climbs steadily to the first crack, near the tenth minute, and levels off until the end of the roast at twelve minutes.'
+            first_crack: 'First crack'
+            origin:
+                label: 'Farm'
+                value: 'Hambela, smallholder washing station'
+            altitude:
+                label: 'Altitude'
+                value: '2,100 to 2,300 m'
+            process:
+                label: 'Brewing'
+                value: 'Filter, pour over, Aeropress'
+            notes:
+                label: 'In the cup'
+                value: 'Blueberry, jasmine, cocoa nib'
+    origins:
+        eyebrow: 'Our origins'
+        title: 'Four countries, <em>four cups.</em>'
+        ethiopia:
+            region: 'Ethiopia · Yirgacheffe'
+            name: 'Kochere'
+            altitude: '1,950 m · washed'
+            cup: 'Bergamot, white peach and black tea, with a lively, citrus acidity.'
+        colombia:
+            region: 'Colombia · Huila'
+            name: 'La Plata'
+            altitude: '1,750 m · washed'
+            cup: 'Red apple, panela and milk chocolate, round and balanced.'
+        guatemala:
+            region: 'Guatemala · Antigua'
+            name: 'Finca El Pilar'
+            altitude: '1,600 m · washed'
+            cup: 'Dark chocolate, roasted hazelnut and a hint of spice.'
+        brazil:
+            region: 'Brazil · Cerrado'
+            name: 'Fazenda Rainha'
+            altitude: '1,150 m · natural'
+            cup: 'Caramel, almond and cocoa, the base of our espresso blend.'
+    footer:
+        tagline: 'Specialty coffee, roasted in small batches and delivered to your door.'
+        notice: 'Roasted to order every Monday and Thursday. The roast date is printed on every bag: enjoy it within six weeks.'
+        services:
+            eyebrow: 'At your service'
+            title: 'From our roaster <em>to your cup.</em>'
+            advice:
+                title: 'Barista advice'
+                text: 'A grind to adjust, a machine to set up, a coffee to pick: our baristas answer you personally.'
+                cta: 'Ask a barista'
+            delivery:
+                title: 'Fresh delivery'
+                text: 'Valve-sealed bags, dispatch within 72 hours of roasting and free delivery from two bags.'
+                cta: 'Follow my order'
+            subscription:
+                title: 'Your coffee, on repeat'
+                text: 'Find your orders and your favourite coffees in your account, and reorder in a few clicks.'
+                cta: 'My account'

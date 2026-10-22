@@ -1,0 +1,44 @@
+// Roastery, light scheme — espresso brown and cream paper, struck with a copper fillet.
+$color-mode: light;
+
+// House colours: the espresso bands (top bar, hero, footer) and the copper keep them in both schemes.
+$roast-night: #1A0F0A;
+$roast-deep: #2A1911;
+$roast: #4A2C1D;
+$mocha: #6E4330;
+$copper: #B87333;
+$copper-light: #E3AA72;
+$ivory: #FFF9F0;
+$text-on-dark: #D9C8B6;
+$border-dark: rgba($copper, 0.32);
+
+// Kraft paper, cream and ink.
+$page: #F5EEE3;
+$surface: #FFFAF2;
+$surface-raised: #ECE1D1;
+$line: #E2D5C2;
+$line-strong: #C9B59B;
+$field-border: #9C8670;
+$heading: #22150E;
+$text: #47372D;
+$text-muted: #72614F;
+
+// Espresso fills the calls to action; as text, the accent is a burnt sienna.
+$accent: $roast;
+$accent-hover: $roast-night;
+$on-accent: $ivory;
+$accent-text: #8A4219;
+$accent-text-hover: #5E2B0E;
+$copper-text: #84501F;
+$focus-ring: rgba($copper, 0.22);
+
+$success: #3F6B3A;
+$info: #3C5A7A;
+
+// The bag label of the hero illustration is printed on kraft paper in every scheme.
+$label-ink: $heading;
+$label-roast: $roast;
+$label-copper: $copper-text;
+
+$shadow-soft: 0 1px 2px rgba($roast-night, 0.06);
+$shadow-float: 0 24px 50px -20px rgba($roast-night, 0.32);

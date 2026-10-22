@@ -1,0 +1,62 @@
+{# Roastery promise: the craft in three numbered steps, next to a roast profile card printed like a bag label. #}
+<section id="roastery-promise" class="roastery-promise" aria-labelledby="roastery-promise-title">
+    <div class="container">
+        <div class="roastery-promise__grid">
+            <div class="roastery-promise__craft">
+                <div class="roastery-section-head">
+                    <p class="roastery-eyebrow">{{ 'roastery.promise.eyebrow'|trans({}, 'roastery') }}</p>
+                    <h2 id="roastery-promise-title">{{ 'roastery.promise.title'|trans({}, 'roastery')|raw }}</h2>
+                    <p class="roastery-section-head__lead">{{ 'roastery.promise.lead'|trans({}, 'roastery')|raw }}</p>
+                </div>
+
+                <ol class="roastery-steps" role="list">
+                    {% for step in 1..3 %}
+                        <li class="roastery-steps__item">
+                            <span class="roastery-steps__numeral" aria-hidden="true">{{ '%02d'|format(step) }}</span>
+                            <div>
+                                <p class="roastery-steps__title">{{ ('roastery.promise.step_' ~ step ~ '.title')|trans({}, 'roastery') }}</p>
+                                <p class="roastery-steps__text">{{ ('roastery.promise.step_' ~ step ~ '.text')|trans({}, 'roastery') }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            <aside class="roastery-profile" aria-labelledby="roastery-profile-title">
+                <div class="roastery-profile__label">
+                    <p class="roastery-profile__kicker">{{ 'roastery.promise.profile.kicker'|trans({}, 'roastery') }}</p>
+                    <p id="roastery-profile-title" class="roastery-profile__title">{{ 'roastery.promise.profile.title'|trans({}, 'roastery') }}</p>
+                    <p class="roastery-profile__lot">{{ 'roastery.promise.profile.lot'|trans({}, 'roastery') }}</p>
+
+                    {# Roast curve: bean temperature over twelve minutes, with the first crack marked. #}
+                    <figure class="roastery-curve">
+                        <svg viewBox="0 0 280 110" role="img" aria-labelledby="roastery-curve-title" focusable="false">
+                            <title id="roastery-curve-title">{{ 'roastery.promise.profile.curve'|trans({}, 'roastery') }}</title>
+                            <g class="roastery-curve__grid">
+                                <path d="M20 20h250M20 50h250M20 80h250"/>
+                            </g>
+                            <path class="roastery-curve__axis" d="M20 8v84h252"/>
+                            <path class="roastery-curve__line" d="M20 30C34 74 46 84 64 84S108 66 140 52 200 34 236 28 262 25 268 24"/>
+                            <path class="roastery-curve__crack" d="M200 14v78"/>
+                            <circle class="roastery-curve__dot" cx="200" cy="34" r="3.5"/>
+                            <text class="roastery-curve__note" x="196" y="12" text-anchor="end">{{ 'roastery.promise.profile.first_crack'|trans({}, 'roastery') }}</text>
+                            <text class="roastery-curve__note" x="20" y="106">0′</text>
+                            <text class="roastery-curve__note" x="272" y="106" text-anchor="end">12′</text>
+                        </svg>
+                    </figure>
+
+                    <dl class="roastery-profile__notes">
+                        {% for note in ['origin', 'altitude', 'process', 'notes'] %}
+                            <div>
+                                <dt>{{ ('roastery.promise.profile.' ~ note ~ '.label')|trans({}, 'roastery') }}</dt>
+                                <dd>{{ ('roastery.promise.profile.' ~ note ~ '.value')|trans({}, 'roastery') }}</dd>
+                            </div>
+                        {% endfor %}
+                    </dl>
+
+                    {% include 'shop/homepage/roast_scale.html.twig' with {level: 2} %}
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

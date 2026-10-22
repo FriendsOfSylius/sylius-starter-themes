@@ -1,0 +1,46 @@
+// Roastery, dark scheme — the roasting room after hours: charred-oak black, cream type and glowing copper.
+$color-mode: dark;
+
+// House colours. The espresso bands are a shade warmer than the page, and ruled in copper, to stand out from it.
+$roast-night: #20140E;
+$roast-deep: #2E1D14;
+$roast: #4A2C1D;
+$mocha: #6E4330;
+// Brighter copper: fillets and focus outlines keep more than 5:1 on every dark surface.
+$copper: #D08A4C;
+$copper-light: #E9B37F;
+$ivory: #FFF9F0;
+$text-on-dark: #D9C8B6;
+$border-dark: rgba($copper, 0.3);
+
+// Charred oak, crema and embers.
+$page: #120D0A;
+$surface: #1B1410;
+$surface-raised: #271D17;
+$line: #3A2C23;
+$line-strong: #5A4639;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #8E7663;
+$heading: #F6ECDF;
+$text: #DDCEBE;
+$text-muted: #B3A190;
+
+// A roasted copper fills the calls to action (cream on it: above 6:1); as text, copper turns to a pale caramel.
+$accent: #85461F;
+$accent-hover: #9C5426;
+$on-accent: $ivory;
+$accent-text: #EBB27D;
+$accent-text-hover: #F5CFA8;
+$copper-text: #DFA673;
+$focus-ring: rgba($accent-text, 0.25);
+
+$success: #8FC086;
+$info: #93B3D8;
+
+// The bag label of the hero illustration is printed on kraft paper in every scheme.
+$label-ink: #22150E;
+$label-roast: #4A2C1D;
+$label-copper: #84501F;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 24px 50px -20px rgba(#000, 0.75);

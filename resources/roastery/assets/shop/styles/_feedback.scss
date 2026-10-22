@@ -1,0 +1,38 @@
+@include scheme-root {
+  --bs-primary: #{$accent};
+  --bs-primary-rgb: #{channels($accent)};
+  --bs-link-color: #{$accent-text};
+  --bs-link-color-rgb: #{channels($accent-text)};
+  --bs-link-hover-color: #{$accent-text-hover};
+  --bs-link-hover-color-rgb: #{channels($accent-text-hover)};
+
+  --bs-success: #{$success};
+  --bs-success-rgb: #{channels($success)};
+  --bs-success-text-emphasis: #{if($dark, #BCDAB2, #2F5129)};
+  --bs-success-bg-subtle: #{if($dark, #18241A, #EDF1E6)};
+  --bs-success-border-subtle: #{if($dark, #34502F, #C9D6BC)};
+
+  --bs-info: #{$info};
+  --bs-info-rgb: #{channels($info)};
+  --bs-info-text-emphasis: #{if($dark, #BCD0E8, #2D4560)};
+  --bs-info-bg-subtle: #{if($dark, #131C27, #ECF0F4)};
+  --bs-info-border-subtle: #{if($dark, #2E4562, #C7D2DD)};
+}
+
+.alert {
+  border-radius: $radius-sm;
+}
+
+.alert-success {
+  --bs-alert-color: var(--bs-success-text-emphasis);
+  --bs-alert-bg: var(--bs-success-bg-subtle);
+  --bs-alert-border-color: var(--bs-success-border-subtle);
+  --bs-alert-link-color: var(--bs-success-text-emphasis);
+}
+
+.alert-info {
+  --bs-alert-color: var(--bs-info-text-emphasis);
+  --bs-alert-bg: var(--bs-info-bg-subtle);
+  --bs-alert-border-color: var(--bs-info-border-subtle);
+  --bs-alert-link-color: var(--bs-info-text-emphasis);
+}

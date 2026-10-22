@@ -1,0 +1,17 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="roastery-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# A coffee bean seal, drawn in fine lines, next to a Fraunces wordmark. #}
+    <svg class="roastery-logo__seal" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <circle class="roastery-logo__ring" cx="20" cy="20" r="18.5"/>
+        <g class="roastery-logo__bean" transform="rotate(-32 20 20)">
+            <ellipse cx="20" cy="20" rx="7.4" ry="10.6"/>
+            <path d="M20 9.6c-3.4 3.6 3.4 7.2 0 10.4s3.4 6.8 0 10.4"/>
+        </g>
+    </svg>
+    <span class="roastery-logo__text">
+        <span class="roastery-logo__name">Roastery</span>
+        <span class="roastery-logo__tagline">{{ 'roastery.brand.tagline'|trans({}, 'roastery') }}</span>
+    </span>
+{% endif %}

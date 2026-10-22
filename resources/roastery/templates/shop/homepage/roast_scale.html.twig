@@ -1,0 +1,13 @@
+{# Roast level from 1 (light) to 5 (dark), drawn as five beans darkening along the scale. #}
+<div class="roastery-scale">
+    <span class="roastery-scale__label">{{ 'roastery.roast.label'|trans({}, 'roastery') }}</span>
+    <span class="roastery-scale__beans" role="img" aria-label="{{ 'roastery.roast.level'|trans({'%level%': level, '%name%': ('roastery.roast.level_' ~ level)|trans({}, 'roastery')}, 'roastery') }}">
+        {% for step in 1..5 %}
+            <svg class="roastery-scale__bean roastery-scale__bean--{{ step }}{{ step <= level ? ' is-on' : '' }}" viewBox="0 0 14 10" aria-hidden="true" focusable="false">
+                <ellipse cx="7" cy="5" rx="6.2" ry="4.3"/>
+                <path d="M1.8 5.8C4.4 3.4 7.6 6.9 12.2 4.2"/>
+            </svg>
+        {% endfor %}
+    </span>
+    <span class="roastery-scale__name">{{ ('roastery.roast.level_' ~ level)|trans({}, 'roastery') }}</span>
+</div>

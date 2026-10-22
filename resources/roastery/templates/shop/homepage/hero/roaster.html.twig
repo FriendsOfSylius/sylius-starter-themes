@@ -1,0 +1,364 @@
+{# The roasting room: a copper drum roaster pours fresh beans into its cooling tray, next to a kraft bag of single origin. #}
+<svg class="roastery-hero__panel roastery-roaster" viewBox="0 0 420 520" role="img" aria-labelledby="roastery-roaster-title" focusable="false">
+    <title id="roastery-roaster-title">{{ 'roastery.hero.illustration'|trans({}, 'roastery') }}</title>
+    <defs>
+        <clipPath id="roastery-roaster-frame"><rect width="420" height="520" rx="10"/></clipPath>
+        <linearGradient id="roastery-roaster-wall" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#24150E"/>
+            <stop offset="1" stop-color="#110906"/>
+        </linearGradient>
+        <radialGradient id="roastery-roaster-ember" cx="0.3" cy="0.92" r="0.6">
+            <stop offset="0" stop-color="#E8873A" stop-opacity="0.42"/>
+            <stop offset="1" stop-color="#E8873A" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="roastery-roaster-copper" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#7A3F18"/>
+            <stop offset="0.35" stop-color="#E3A56A"/>
+            <stop offset="0.55" stop-color="#C47A3A"/>
+            <stop offset="1" stop-color="#6A3512"/>
+        </linearGradient>
+        <linearGradient id="roastery-roaster-enamel" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4A2C1D"/>
+            <stop offset="1" stop-color="#2A1810"/>
+        </linearGradient>
+        <radialGradient id="roastery-roaster-glass" cx="0.4" cy="0.35" r="0.7">
+            <stop offset="0" stop-color="#5A2E14"/>
+            <stop offset="1" stop-color="#120804"/>
+        </radialGradient>
+        <linearGradient id="roastery-roaster-kraft" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#A97A4C"/>
+            <stop offset="0.45" stop-color="#C89B69"/>
+            <stop offset="1" stop-color="#8E6238"/>
+        </linearGradient>
+        <clipPath id="roastery-roaster-sight"><circle cx="186" cy="250" r="46"/></clipPath>
+        <clipPath id="roastery-roaster-tray"><ellipse cx="196" cy="432" rx="136" ry="27"/></clipPath>
+        <symbol id="roastery-bean" viewBox="-7 -5 14 10" width="14" height="10" overflow="visible">
+            <ellipse rx="6.4" ry="4.4"/>
+            <path d="M-5.2 0.8C-2.6-1.6 0.6 1.9 5.2-0.8" fill="none" stroke="#120804" stroke-width="1.1" stroke-linecap="round"/>
+            <ellipse cx="-1.6" cy="-2.2" rx="2.6" ry="0.9" fill="#F3D9B8" fill-opacity="0.16"/>
+        </symbol>
+    </defs>
+
+    <g clip-path="url(#roastery-roaster-frame)">
+        <rect width="420" height="520" fill="url(#roastery-roaster-wall)"/>
+        <rect width="420" height="520" fill="url(#roastery-roaster-ember)"/>
+        <g stroke="#E3AA72" stroke-opacity="0.06">
+            <path d="M0 40h420"/>
+            <path d="M0 76h420"/>
+            <path d="M0 112h420"/>
+            <path d="M0 148h420"/>
+            <path d="M0 184h420"/>
+            <path d="M0 220h420"/>
+            <path d="M0 256h420"/>
+            <path d="M0 292h420"/>
+            <path d="M0 328h420"/>
+        </g>
+
+        {# Chimney, hopper and drum. #}
+        <rect x="262" y="-10" width="24" height="182" fill="url(#roastery-roaster-copper)"/>
+        <rect x="258" y="40" width="32" height="7" rx="2" fill="#8A4A1E"/>
+        <rect x="258" y="120" width="32" height="7" rx="2" fill="#8A4A1E"/>
+        <path d="M140 96h92l-26 56h-40z" fill="url(#roastery-roaster-copper)"/>
+        <path d="M140 96h92" stroke="#F0C48F" stroke-width="2"/>
+        <rect x="174" y="150" width="24" height="24" fill="#6A3512"/>
+        <use href="#roastery-bean" transform="translate(171.9 90.9) rotate(117) scale(0.85)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(211.7 91.6) rotate(105) scale(0.85)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(149.0 91.0) rotate(13) scale(0.85)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(190.1 91.5) rotate(102) scale(0.85)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(196.5 87.4) rotate(11) scale(0.85)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(150.0 91.4) rotate(100) scale(0.85)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(169.2 91.1) rotate(21) scale(0.85)" fill="#2B170C"/>
+        <use href="#roastery-bean" transform="translate(190.8 85.9) rotate(19) scale(0.85)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(175.8 87.7) rotate(11) scale(0.85)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(195.5 88.0) rotate(96) scale(0.85)" fill="#2B170C"/>
+        <use href="#roastery-bean" transform="translate(183.2 83.3) rotate(65) scale(0.85)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(209.6 88.4) rotate(44) scale(0.85)" fill="#2B170C"/>
+        <use href="#roastery-bean" transform="translate(188.0 83.6) rotate(131) scale(0.85)" fill="#2B170C"/>
+        <use href="#roastery-bean" transform="translate(194.7 91.4) rotate(92) scale(0.85)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(206.6 91.1) rotate(88) scale(0.85)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(223.0 91.8) rotate(100) scale(0.85)" fill="#2B170C"/>
+        <use href="#roastery-bean" transform="translate(173.2 89.4) rotate(89) scale(0.85)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(151.5 91.7) rotate(49) scale(0.85)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(150.9 90.1) rotate(116) scale(0.85)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(168.8 89.5) rotate(120) scale(0.85)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(221.3 91.1) rotate(110) scale(0.85)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(150.7 90.0) rotate(23) scale(0.85)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(177.8 84.4) rotate(89) scale(0.85)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(181.9 87.0) rotate(159) scale(0.85)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(215.1 90.9) rotate(75) scale(0.85)" fill="#2B170C"/>
+        <use href="#roastery-bean" transform="translate(200.6 89.4) rotate(42) scale(0.85)" fill="#3A2113"/>
+        <rect x="96" y="172" width="230" height="166" rx="16" fill="url(#roastery-roaster-enamel)"/>
+        <path d="M110 176h202" stroke="#F0C48F" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="186" cy="250" r="66" fill="url(#roastery-roaster-copper)"/>
+        <circle cx="186" cy="250" r="54" fill="#2A1810"/>
+        <circle cx="186" cy="250" r="46" fill="url(#roastery-roaster-glass)"/>
+        <circle cx="246.0" cy="250.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="238.0" cy="280.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="216.0" cy="302.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="186.0" cy="310.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="156.0" cy="302.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="134.0" cy="280.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="126.0" cy="250.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="134.0" cy="220.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="156.0" cy="198.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="186.0" cy="190.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="216.0" cy="198.0" r="2.2" fill="#5A2C10"/>
+        <circle cx="238.0" cy="220.0" r="2.2" fill="#5A2C10"/>
+        <g clip-path="url(#roastery-roaster-sight)">
+            <use href="#roastery-bean" transform="translate(196.5 265.1) rotate(42) scale(1.00)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(170.3 255.2) rotate(51) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(184.1 273.2) rotate(102) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(164.5 268.8) rotate(111) scale(1.00)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(178.3 290.6) rotate(171) scale(1.00)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(185.5 274.2) rotate(87) scale(1.00)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(196.0 257.4) rotate(38) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(208.6 272.1) rotate(18) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(168.2 290.4) rotate(110) scale(1.00)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(154.5 256.4) rotate(27) scale(1.00)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(154.3 249.0) rotate(85) scale(1.00)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(141.9 262.3) rotate(84) scale(1.00)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(189.4 264.8) rotate(135) scale(1.00)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(177.4 283.8) rotate(93) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(157.0 249.5) rotate(26) scale(1.00)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(168.1 260.5) rotate(116) scale(1.00)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(171.2 262.6) rotate(66) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(187.8 267.9) rotate(97) scale(1.00)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(165.4 274.6) rotate(142) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(149.5 265.1) rotate(133) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(200.3 273.8) rotate(132) scale(1.00)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(161.5 261.4) rotate(35) scale(1.00)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(179.0 293.2) rotate(178) scale(1.00)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(196.5 258.7) rotate(85) scale(1.00)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(202.3 278.1) rotate(162) scale(1.00)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(177.6 282.4) rotate(144) scale(1.00)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(172.4 254.4) rotate(70) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(182.0 265.9) rotate(142) scale(1.00)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(219.4 278.7) rotate(130) scale(1.00)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(184.6 294.1) rotate(130) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(175.1 248.5) rotate(106) scale(1.00)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(171.9 255.8) rotate(149) scale(1.00)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(170.5 266.4) rotate(99) scale(1.00)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(219.6 269.4) rotate(131) scale(1.00)" fill="#3A2113"/>
+            <path d="M150 226a46 46 0 0 1 40-22" fill="none" stroke="#FFF9F0" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        {# Door handle, thermometer and trier. #}
+        <path d="M244 250h34" stroke="url(#roastery-roaster-copper)" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="282" cy="250" r="6" fill="#E3A56A"/>
+        <circle cx="290" cy="204" r="19" fill="#F3E6D2" stroke="#C47A3A" stroke-width="3"/>
+        <path d="M278.7 210.5L276.1 212.0" stroke="#4A2C1D" stroke-width="1"/>
+        <path d="M277.0 204.0L274.0 204.0" stroke="#4A2C1D" stroke-width="1"/>
+        <path d="M278.7 197.5L276.1 196.0" stroke="#4A2C1D" stroke-width="1"/>
+        <path d="M283.5 192.7L282.0 190.1" stroke="#4A2C1D" stroke-width="1"/>
+        <path d="M290.0 191.0L290.0 188.0" stroke="#4A2C1D" stroke-width="1"/>
+        <path d="M296.5 192.7L298.0 190.1" stroke="#4A2C1D" stroke-width="1"/>
+        <path d="M301.3 197.5L303.9 196.0" stroke="#4A2C1D" stroke-width="1"/>
+        <path d="M303.0 204.0L306.0 204.0" stroke="#4A2C1D" stroke-width="1"/>
+        <path d="M301.3 210.5L303.9 212.0" stroke="#4A2C1D" stroke-width="1"/>
+        <path d="M290 204l9-8" stroke="#A3341C" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="290" cy="204" r="2" fill="#2A1810"/>
+        <rect x="114" y="300" width="22" height="8" rx="3" fill="#C47A3A"/>
+        <rect x="104" y="336" width="214" height="12" rx="3" fill="#1C0F09"/>
+        <path d="M122 348v52M300 348v52" stroke="#2E1A10" stroke-width="10"/>
+
+        {# Chute pouring into the cooling tray. #}
+        <path d="M120 302l-28 10 22 88h28z" fill="url(#roastery-roaster-copper)" opacity="0.92"/>
+        <use href="#roastery-bean" transform="translate(118.4 330.0) rotate(168) scale(0.80)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(125.8 339.0) rotate(35) scale(0.80)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(110.4 348.0) rotate(38) scale(0.80)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(122.2 357.0) rotate(59) scale(0.80)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(123.3 366.0) rotate(11) scale(0.80)" fill="#2B170C"/>
+        <use href="#roastery-bean" transform="translate(124.4 375.0) rotate(119) scale(0.80)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(123.2 384.0) rotate(158) scale(0.80)" fill="#4C2B17"/>
+        <use href="#roastery-bean" transform="translate(118.5 393.0) rotate(94) scale(0.80)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(124.0 402.0) rotate(140) scale(0.80)" fill="#3A2113"/>
+
+        {# Cooling tray, its stirring arms and the steam of fresh roast. #}
+        <ellipse cx="196" cy="440" rx="152" ry="36" fill="#1A0D07"/>
+        <ellipse cx="196" cy="432" rx="148" ry="33" fill="url(#roastery-roaster-copper)"/>
+        <ellipse cx="196" cy="432" rx="136" ry="27" fill="#2A1508"/>
+        <g clip-path="url(#roastery-roaster-tray)">
+            <use href="#roastery-bean" transform="translate(204.3 422.1) rotate(25) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(125.3 426.8) rotate(93) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(205.2 423.7) rotate(101) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(205.8 437.0) rotate(18) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(89.5 423.4) rotate(164) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(136.4 454.8) rotate(109) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(164.7 415.6) rotate(96) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(130.4 431.4) rotate(94) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(306.3 420.5) rotate(36) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(226.0 438.9) rotate(80) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(154.9 417.0) rotate(38) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(222.5 407.9) rotate(28) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(273.3 451.1) rotate(174) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(195.2 424.0) rotate(159) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(316.2 430.5) rotate(29) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(279.8 431.4) rotate(76) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(149.2 452.1) rotate(4) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(179.5 433.3) rotate(60) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(162.6 431.5) rotate(177) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(238.1 430.5) rotate(48) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(242.7 425.8) rotate(136) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(259.6 414.7) rotate(170) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(270.8 452.1) rotate(103) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(222.8 435.3) rotate(124) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(250.2 423.8) rotate(3) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(208.2 424.9) rotate(154) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(191.8 441.0) rotate(2) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(257.2 426.0) rotate(23) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(316.3 422.3) rotate(47) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(218.0 445.9) rotate(55) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(172.8 449.8) rotate(32) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(239.6 407.5) rotate(7) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(185.6 412.8) rotate(34) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(198.4 449.4) rotate(118) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(141.9 416.0) rotate(160) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(146.1 408.2) rotate(62) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(131.7 440.6) rotate(10) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(300.0 433.8) rotate(158) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(215.9 438.5) rotate(151) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(106.6 419.4) rotate(8) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(244.4 446.5) rotate(47) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(292.2 428.7) rotate(44) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(207.3 442.9) rotate(60) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(103.6 434.9) rotate(36) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(296.4 444.7) rotate(26) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(139.2 440.8) rotate(113) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(113.5 422.3) rotate(135) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(206.1 410.0) rotate(89) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(178.9 411.4) rotate(8) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(184.0 408.7) rotate(25) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(242.6 414.4) rotate(161) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(219.2 434.7) rotate(115) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(132.7 444.2) rotate(9) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(119.6 416.7) rotate(88) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(162.3 433.8) rotate(168) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(177.7 426.4) rotate(133) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(240.1 409.7) rotate(42) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(208.8 452.8) rotate(83) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(307.6 443.5) rotate(52) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(117.5 418.0) rotate(14) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(143.6 450.3) rotate(125) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(228.4 432.5) rotate(48) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(157.4 412.0) rotate(52) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(108.1 435.9) rotate(21) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(181.4 439.1) rotate(85) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(80.4 438.0) rotate(174) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(278.0 431.4) rotate(165) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(231.4 435.5) rotate(135) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(242.0 429.2) rotate(148) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(279.9 417.8) rotate(42) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(154.6 438.4) rotate(171) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(102.7 444.4) rotate(75) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(147.2 453.8) rotate(0) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(220.3 424.4) rotate(167) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(253.9 423.9) rotate(67) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(101.1 447.4) rotate(14) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(200.3 408.0) rotate(51) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(231.8 420.0) rotate(168) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(281.7 428.9) rotate(57) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(214.9 415.4) rotate(5) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(305.5 418.9) rotate(99) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(303.5 438.8) rotate(81) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(152.5 421.0) rotate(9) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(236.6 446.7) rotate(51) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(187.0 406.4) rotate(47) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(165.1 450.4) rotate(71) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(173.5 426.4) rotate(90) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(111.6 426.6) rotate(60) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(108.3 440.5) rotate(44) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(174.2 438.6) rotate(43) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(217.6 421.1) rotate(4) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(111.5 447.1) rotate(38) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(178.7 437.5) rotate(50) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(261.9 445.1) rotate(113) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(300.4 445.5) rotate(69) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(128.9 438.0) rotate(147) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(256.0 444.2) rotate(137) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(286.6 428.4) rotate(13) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(260.8 429.8) rotate(20) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(271.1 452.9) rotate(20) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(296.1 443.7) rotate(0) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(209.8 456.8) rotate(116) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(297.6 427.2) rotate(95) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(182.0 423.7) rotate(13) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(148.4 440.0) rotate(108) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(67.9 425.9) rotate(50) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(119.7 412.7) rotate(86) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(174.4 430.7) rotate(74) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(250.7 435.9) rotate(159) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(251.0 438.1) rotate(76) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(199.5 436.8) rotate(61) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(142.1 444.5) rotate(1) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(189.6 413.6) rotate(37) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(150.8 453.8) rotate(42) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(184.3 456.4) rotate(20) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(99.7 416.3) rotate(87) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(243.9 428.9) rotate(71) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(296.8 435.0) rotate(75) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(231.6 448.0) rotate(128) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(181.7 406.2) rotate(168) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(234.8 451.6) rotate(94) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(301.4 436.2) rotate(68) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(283.4 430.4) rotate(20) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(181.4 447.1) rotate(172) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(89.4 423.5) rotate(68) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(233.9 416.6) rotate(9) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(228.5 450.0) rotate(80) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(113.8 450.5) rotate(5) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(197.3 452.6) rotate(73) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(228.2 433.4) rotate(166) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(207.2 438.1) rotate(109) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(177.9 457.2) rotate(111) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(193.5 410.4) rotate(166) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(310.7 432.5) rotate(165) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(259.1 433.9) rotate(86) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(274.6 427.4) rotate(45) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(215.0 423.3) rotate(89) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(232.8 410.9) rotate(148) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(136.9 422.7) rotate(58) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(217.5 412.4) rotate(92) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(197.2 419.1) rotate(12) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(99.2 434.2) rotate(29) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(293.6 414.7) rotate(48) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(218.2 448.3) rotate(178) scale(0.82)" fill="#5A341C"/>
+            <use href="#roastery-bean" transform="translate(218.3 440.4) rotate(83) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(194.5 408.1) rotate(120) scale(0.82)" fill="#3A2113"/>
+            <use href="#roastery-bean" transform="translate(209.3 418.1) rotate(50) scale(0.82)" fill="#2B170C"/>
+            <use href="#roastery-bean" transform="translate(116.8 448.0) rotate(36) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(221.2 443.6) rotate(51) scale(0.82)" fill="#4C2B17"/>
+            <use href="#roastery-bean" transform="translate(157.7 446.5) rotate(179) scale(0.82)" fill="#4C2B17"/>
+            <path d="M196 432l-118 10M196 432l96 -18M196 432l40 24" stroke="#C47A3A" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <circle cx="196" cy="432" r="6" fill="#E3A56A"/>
+        <g fill="none" stroke="#FFF1DF" stroke-linecap="round" stroke-width="2.4">
+            <path d="M150 404c-10-18 12-26 2-46s8-30 0-44" opacity="0.14"/>
+            <path d="M206 398c-8-20 14-28 4-50s10-30 2-48" opacity="0.1"/>
+            <path d="M252 404c-10-16 10-24 2-42" opacity="0.12"/>
+        </g>
+
+        {# Kraft bag of single origin, sealed with a copper clip. #}
+        <g class="roastery-roaster__bag">
+            <path d="M330 382l6-28h66l6 28v118h-78z" fill="url(#roastery-roaster-kraft)"/>
+            <rect x="334" y="348" width="70" height="9" rx="1.5" fill="#B87333"/>
+            <path d="M330 382h78" stroke="#7A5230" stroke-opacity="0.5"/>
+            <rect x="338" y="404" width="62" height="70" fill="#F3EADB"/>
+            <rect x="341" y="407" width="56" height="64" fill="none" stroke="#B87333" stroke-width="0.6"/>
+            <text x="369" y="426" text-anchor="middle" class="roastery-roaster__label-name">Roastery</text>
+            <path d="M356 432h26" stroke="#B87333" stroke-width="0.6"/>
+            <text x="369" y="445" text-anchor="middle" class="roastery-roaster__label-text">{{ 'roastery.hero.label'|trans({}, 'roastery') }}</text>
+            <text x="369" y="460" text-anchor="middle" class="roastery-roaster__label-origin">{{ 'roastery.hero.label_origin'|trans({}, 'roastery') }}</text>
+        </g>
+        <use href="#roastery-bean" transform="translate(318.0 506.0) rotate(30) scale(1.00)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(300.0 511.0) rotate(110) scale(1.00)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(412.0 508.0) rotate(70) scale(1.00)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(322.0 497.0) rotate(160) scale(1.00)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(60.0 508.0) rotate(20) scale(1.00)" fill="#3A2113"/>
+        <use href="#roastery-bean" transform="translate(44.0 512.0) rotate(140) scale(1.00)" fill="#5A341C"/>
+        <use href="#roastery-bean" transform="translate(78.0 511.0) rotate(80) scale(1.00)" fill="#4C2B17"/>
+        <path d="M0 500h420" stroke="#B87333" stroke-opacity="0.5"/>
+    </g>
+
+    {# Copper double fillet around the panel. #}
+    <rect x="1" y="1" width="418" height="518" rx="10" fill="none" stroke="#B87333" stroke-width="1.5"/>
+    <rect x="11" y="11" width="398" height="498" rx="5" fill="none" stroke="#B87333" stroke-opacity="0.45" stroke-width="0.8"/>
+</svg>
