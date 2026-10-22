@@ -26,8 +26,8 @@
   background-color: $surface;
 }
 
-// Product cards, presented like bottles on a shelf: the picture stands whole (never cropped or
-// stretched) on a parchment niche, the name below in Fraunces, the price in spaced figures.
+// Product cards, presented like bags on a shop shelf: the picture stands whole (never cropped or
+// stretched) on a cream niche, the name below in Fraunces, the price in spaced figures.
 // The card root is the element holding the details link: it is a direct grid item on category
 // pages and wrapped in a <div> in the homepage / association lists.
 
@@ -70,7 +70,7 @@
     margin-bottom: 0 !important;
   }
 
-  // The picture tray keeps the 3:4 portrait ratio; the image is contained, so a tall bottle stays whole.
+  // The picture tray keeps the 3:4 portrait ratio; the image is contained, so a tall bag stays whole.
   .rounded-3 {
     position: relative;
     margin: 0;

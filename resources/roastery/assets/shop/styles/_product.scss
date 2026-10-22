@@ -10,8 +10,8 @@
   background-color: $surface-raised !important;
 }
 
-// The main picture stands whole on a parchment niche, at a height that fits the screen:
-// a tall bottle is never cropped, stretched or blown up on wide screens.
+// The main picture stands whole on a cream niche, at a height that fits the screen:
+// a tall bag is never cropped, stretched or blown up on wide screens.
 a:has(> #main-image) {
   display: flex !important;
   justify-content: center;
