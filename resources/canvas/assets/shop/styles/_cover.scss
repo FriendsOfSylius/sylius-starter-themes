@@ -40,7 +40,7 @@
   text-wrap: balance;
 
   em {
-    color: $terracotta;
+    color: $accent-text;
     font-style: italic;
     font-weight: 400;
   }
@@ -155,7 +155,7 @@
 }
 
 .canvas-collage__number {
-  color: $terracotta;
+  color: $accent-text;
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -229,7 +229,7 @@
 
 .canvas-values__index {
   flex: 0 0 2.4rem;
-  color: $terracotta;
+  color: $accent-text;
   font-family: $headings-font-family;
   font-size: 1.6rem;
   font-style: italic;

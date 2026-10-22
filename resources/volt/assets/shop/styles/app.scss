@@ -1,17 +1,17 @@
 @import "fonts";
-@import "variables";
+@import "color-scheme";
 
 // Bootstrap / Sylius theme styles are loaded by the parent theme.
 // This file contains only the Volt customizations.
 
-@import "base";
-@import "accordions";
-@import "breadcrumbs";
-@import "buttons";
-@import "cards";
-@import "feedback";
-@import "forms";
-@import "header";
-@import "footer";
-@import "home";
-@import "promise";
+// The theme is compiled once per color scheme, scoped on the <html data-bs-theme> attribute set by the
+// color scheme switcher. Light is also the scheme without JavaScript.
+:where(:root:not([data-bs-theme="dark"])) {
+  @import "palette-light";
+  @import "theme";
+}
+
+:where(:root[data-bs-theme="dark"]) {
+  @import "palette-dark";
+  @import "theme";
+}

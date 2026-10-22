@@ -18,13 +18,13 @@
     text-decoration: none;
 
     &:hover {
-      color: $signal-dark;
+      color: $accent-text;
       text-decoration: underline;
     }
   }
 
   .breadcrumb-item.active {
-    color: $ink;
+    color: $heading;
     font-weight: 600;
   }
 }

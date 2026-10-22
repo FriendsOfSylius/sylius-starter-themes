@@ -13,7 +13,7 @@
           color 150ms ease;
 
   &:focus-visible {
-    box-shadow: 0 0 0 3px rgba($black, 0.15);
+    box-shadow: 0 0 0 3px $focus-ring;
   }
 }
 
@@ -21,44 +21,104 @@
   // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
   color: var(--bs-btn-color);
 
-  --bs-btn-color: #{$white};
-  --bs-btn-bg: #B75D17;
-  --bs-btn-border-color: #B75D17;
+  --bs-btn-color: #{$on-accent};
+  --bs-btn-bg: #{$terracotta};
+  --bs-btn-border-color: #{$terracotta};
 
-  --bs-btn-hover-color: #B75D17;
-  --bs-btn-hover-bg: #{$white};
-  --bs-btn-hover-border-color: #B75D17;
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
 
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #B75D17;
-  --bs-btn-active-border-color: #B75D17;
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$terracotta};
+  --bs-btn-active-border-color: #{$terracotta};
 }
 
 .btn-secondary {
-  --bs-btn-color: #{$black};
+  --bs-btn-color: #{$ink};
   --bs-btn-bg: #{$surface-soft};
   --bs-btn-border-color: #{$surface-soft};
 
-  --bs-btn-hover-color: #{$black};
+  --bs-btn-hover-color: #{$ink};
   --bs-btn-hover-bg: #{$border};
   --bs-btn-hover-border-color: #{$border};
 }
 
 .btn-outline-primary {
-  --bs-btn-color: #{$black};
+  --bs-btn-color: #{$ink};
   --bs-btn-bg: transparent;
-  --bs-btn-border-color: #{$black};
+  --bs-btn-border-color: #{$ink};
 
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$black};
-  --bs-btn-hover-border-color: #{$black};
+  --bs-btn-hover-color: #{$on-ink};
+  --bs-btn-hover-bg: #{$ink};
+  --bs-btn-hover-border-color: #{$ink};
 }
 
 .btn-link {
   color: $text;
 
   &:hover {
-    color: $black-hover;
+    color: $ink-hover;
+  }
+}
+
+// The Sylius light, transparent (header icons), dark and gray outline buttons have fixed light-mode colors.
+@if $dark {
+  .btn-light {
+    --bs-btn-color: #{$ink};
+    --bs-btn-bg: #{$surface-soft};
+    --bs-btn-border-color: #{$surface-soft};
+    --bs-btn-hover-color: #{$ink};
+    --bs-btn-hover-bg: #{$border};
+    --bs-btn-hover-border-color: #{$border};
+    --bs-btn-active-color: #{$ink};
+    --bs-btn-active-bg: #{$border};
+    --bs-btn-active-border-color: #{$border};
+    --bs-btn-disabled-color: #{$text-muted};
+    --bs-btn-disabled-bg: #{$surface-soft};
+    --bs-btn-disabled-border-color: #{$surface-soft};
+  }
+
+  .btn-transparent {
+    --bs-btn-color: #{$text};
+    --bs-btn-hover-color: #{$ink};
+    --bs-btn-active-color: #{$ink};
+
+    color: $text;
+
+    &:hover {
+      background-color: $surface-soft;
+      color: $ink;
+    }
+
+    &:active {
+      background-color: $border !important;
+    }
+  }
+
+  .btn-dark {
+    --bs-btn-color: #{$on-ink};
+    --bs-btn-bg: #{$ink};
+    --bs-btn-border-color: #{$ink};
+    --bs-btn-hover-color: #{$on-ink};
+    --bs-btn-hover-bg: #{$ink-hover};
+    --bs-btn-hover-border-color: #{$ink-hover};
+    --bs-btn-active-color: #{$on-ink};
+    --bs-btn-active-bg: #{$ink-hover};
+    --bs-btn-active-border-color: #{$ink-hover};
+  }
+
+  .btn-outline-dark,
+  .btn-outline-gray,
+  .btn-outline-secondary {
+    --bs-btn-color: #{$ink};
+    --bs-btn-border-color: #{$field-border};
+    --bs-btn-hover-color: #{$on-ink};
+    --bs-btn-hover-bg: #{$ink};
+    --bs-btn-hover-border-color: #{$ink};
+    --bs-btn-active-color: #{$on-ink};
+    --bs-btn-active-bg: #{$ink};
+    --bs-btn-active-border-color: #{$ink};
   }
 }
 

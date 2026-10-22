@@ -1,0 +1,36 @@
+// Canvas, light scheme — an editorial paper look: warm ivory neutrals, charcoal ink and a terracotta accent.
+$color-mode: light;
+
+// Charcoal ink: headings, logo, outlines and fills of the secondary actions.
+$ink: #211D1B;
+$ink-hover: #38322F;
+$on-ink: #FFF;
+
+$background: #F7F6F3;
+$off-white: #FAF8F6;
+$surface: #FFF;
+$surface-soft: #EFEEEB;
+$card-bg: #FFF;
+
+$text: #211D1B;
+$text-muted: #716C68;
+
+$border: #DDD9D4;
+$field-bg: #FFF;
+$field-border: $border;
+
+// Terracotta: the primary button fill (white on terracotta: 4.6:1) and the editorial accents.
+$terracotta: #B75D17;
+$accent-text: $terracotta;
+$on-accent: #FFF;
+
+// The footer is a charcoal band under the paper page.
+$inverse-bg: #211D1B;
+$inverse-text: #FFF;
+
+// Payment logos keep a white tile whatever the scheme.
+$logo-tile: #FFF;
+
+$shadow-color: rgba(#211D1B, 0.08);
+$focus-ring: rgba(#211D1B, 0.15);
+$field-focus-ring: rgba(#211D1B, 0.08);

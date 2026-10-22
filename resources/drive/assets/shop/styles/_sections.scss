@@ -23,7 +23,7 @@
 }
 
 .drive-promise__steps {
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-soft;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .drive-steps__title {
-  color: $ink;
+  color: $heading;
   font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: -0.015em;
@@ -138,7 +138,7 @@
       width: 1.4rem;
       height: 1.4rem;
       border-radius: 50%;
-      background: $lemon url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%2313241A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' d='m4 8.5 2.5 2.5L12 5.5'/%3E%3C/svg%3E") no-repeat center / 0.85rem;
+      background: $lemon url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23#{str-slice(inspect($ink), 2)}' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' d='m4 8.5 2.5 2.5L12 5.5'/%3E%3C/svg%3E") no-repeat center / 0.85rem;
       content: "";
     }
   }
@@ -175,7 +175,7 @@ main > .container.mb-6[role="navigation"],
     gap: 0.5rem !important;
     padding: 1rem clamp(1rem, 2vw, 1.75rem) !important;
     border-radius: $radius-lg;
-    background-color: $white;
+    background-color: $surface;
     box-shadow: $shadow-soft;
     scrollbar-width: thin;
   }
@@ -185,12 +185,12 @@ main > .container.mb-6[role="navigation"],
     flex: 0 0 auto !important;
     padding: 0.5rem;
     border-radius: $radius;
-    color: $ink !important;
+    color: $heading !important;
     transition: background-color 140ms ease;
 
     &:hover {
       background-color: $shelf;
-      color: $basil-dark !important;
+      color: $accent-text-strong !important;
     }
   }
 
@@ -208,27 +208,27 @@ main > .container.mb-6[role="navigation"],
 
   a:nth-child(5n + 1) .rounded-circle.bg-light {
     background-color: $mint !important;
-    color: $basil-dark !important;
+    color: $accent-text-strong !important;
   }
 
   a:nth-child(5n + 2) .rounded-circle.bg-light {
     background-color: $lemon-soft !important;
-    color: #8A6500 !important;
+    color: $lemon-text !important;
   }
 
   a:nth-child(5n + 3) .rounded-circle.bg-light {
     background-color: $tomato-soft !important;
-    color: $tomato-dark !important;
+    color: $tomato-text !important;
   }
 
   a:nth-child(5n + 4) .rounded-circle.bg-light {
     background-color: $sky-soft !important;
-    color: #1D5B9E !important;
+    color: $sky-text !important;
   }
 
   a:nth-child(5n + 5) .rounded-circle.bg-light {
     background-color: $sand-soft !important;
-    color: #7A5A2A !important;
+    color: $sand-text !important;
   }
 
   .small {
@@ -247,14 +247,14 @@ main > .container.mb-6[role="navigation"],
   margin-bottom: 1.5rem;
   padding: 1.1rem;
   border-radius: $radius-lg;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-soft;
 }
 
 .drive-subaisles__title {
   margin: 0 0 0.6rem;
   padding: 0 0.6rem;
-  color: $ink;
+  color: $heading;
   font-size: 1.05rem;
   font-weight: 850;
 }
@@ -271,12 +271,12 @@ main > .container.mb-6[role="navigation"],
   align-items: center;
   padding: 0.6rem 0.75rem;
   border-radius: $radius-sm;
-  color: $ink;
+  color: $heading;
   font-weight: 600;
   text-decoration: none;
 
   &::after {
-    color: $basil;
+    color: $accent-text;
     content: "›";
     font-size: 1.2rem;
     line-height: 1;
@@ -284,7 +284,7 @@ main > .container.mb-6[role="navigation"],
 
   &:hover {
     background-color: $mint;
-    color: $basil-dark;
+    color: $accent-text-strong;
   }
 }
 

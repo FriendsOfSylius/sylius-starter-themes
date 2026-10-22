@@ -2,7 +2,7 @@ footer.lagoon-footer {
   margin-top: auto;
   padding: 0;
   border-top: 0;
-  background-color: $white;
+  background-color: $page;
   color: $text-muted;
   font-size: 0.92rem;
 }
@@ -13,8 +13,13 @@ footer.lagoon-footer {
   padding-block: clamp(3rem, 6vw, 4.5rem);
   background:
     radial-gradient(circle at 92% -20%, rgba($aqua, 0.18), transparent 40%),
-    $abyss;
-  color: rgba($white, 0.78);
+    $deep;
+  color: rgba($on-deep, 0.78);
+
+  // On the night page, a thin aqua waterline sets the band apart.
+  @if $dark {
+    border-block: 1px solid rgba($aqua, 0.16);
+  }
 
   .lagoon-eyebrow {
     color: $aqua;
@@ -30,7 +35,7 @@ footer.lagoon-footer {
 
 .lagoon-footer__band-title {
   margin: 0;
-  color: $white;
+  color: $on-deep;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.045em;
@@ -53,7 +58,7 @@ footer.lagoon-footer {
   }
 
   strong {
-    color: $white;
+    color: $on-deep;
     font-weight: 600;
   }
 }
@@ -83,7 +88,7 @@ footer.lagoon-footer {
 
     &:hover,
     &:focus {
-      color: $teal;
+      color: $accent-text;
     }
   }
 
@@ -91,7 +96,7 @@ footer.lagoon-footer {
   h2,
   h3,
   h4 {
-    color: $teal;
+    color: $accent-text;
     font-size: 0.72rem;
     font-weight: 600 !important;
     letter-spacing: 0.2em;
@@ -101,7 +106,7 @@ footer.lagoon-footer {
 
 .lagoon-footer__brand {
   padding-bottom: 2.5rem;
-  border-bottom: 1px solid $border;
+  border-bottom: 1px solid $line;
 
   p {
     max-width: 24rem;
@@ -111,12 +116,12 @@ footer.lagoon-footer {
 
   .lagoon-logo,
   .lagoon-logo:hover {
-    color: $ink;
+    color: $heading;
   }
 }
 
 .lagoon-footer__copy a {
-  color: $teal !important;
+  color: $accent-text !important;
   text-decoration: underline !important;
 }
 

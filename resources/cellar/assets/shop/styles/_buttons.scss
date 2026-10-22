@@ -24,18 +24,18 @@
   // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
   color: var(--bs-btn-color);
 
-  --bs-btn-color: #{$ivory};
-  --bs-btn-bg: #{$wine};
-  --bs-btn-border-color: #{$wine};
-  --bs-btn-hover-color: #{$ivory};
-  --bs-btn-hover-bg: #{$wine-deep};
-  --bs-btn-hover-border-color: #{$wine-deep};
-  --bs-btn-active-color: #{$ivory};
-  --bs-btn-active-bg: #{$wine-deep};
-  --bs-btn-active-border-color: #{$wine-deep};
-  --bs-btn-disabled-color: #{$ivory};
-  --bs-btn-disabled-bg: #{$wine};
-  --bs-btn-disabled-border-color: #{$wine};
+  --bs-btn-color: #{$on-accent};
+  --bs-btn-bg: #{$accent};
+  --bs-btn-border-color: #{$accent};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$accent-hover};
+  --bs-btn-hover-border-color: #{$accent-hover};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$accent-hover};
+  --bs-btn-active-border-color: #{$accent-hover};
+  --bs-btn-disabled-color: #{$on-accent};
+  --bs-btn-disabled-bg: #{$accent};
+  --bs-btn-disabled-border-color: #{$accent};
 }
 
 // Outlined in ink, for secondary actions.
@@ -43,24 +43,24 @@
 .btn-light,
 .btn-outline-primary,
 .btn-outline-gray {
-  --bs-btn-color: #{$ink};
+  --bs-btn-color: #{$heading};
   --bs-btn-bg: transparent;
-  --bs-btn-border-color: #{$border-strong};
-  --bs-btn-hover-color: #{$wine};
-  --bs-btn-hover-bg: #{$ivory};
-  --bs-btn-hover-border-color: #{$wine};
-  --bs-btn-active-color: #{$wine};
-  --bs-btn-active-bg: #{$ivory};
-  --bs-btn-active-border-color: #{$wine};
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
 }
 
 .btn-link {
-  color: $wine;
+  color: $accent-text;
   letter-spacing: 0.04em;
   text-transform: none;
 
   &:hover {
-    color: $claret;
+    color: $accent-text-hover;
   }
 }
 
@@ -82,7 +82,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: $wine;
+  color: $accent-text;
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -98,7 +98,7 @@
   }
 
   &:hover {
-    color: $claret;
+    color: $accent-text-hover;
 
     &::after {
       width: 2.5rem;

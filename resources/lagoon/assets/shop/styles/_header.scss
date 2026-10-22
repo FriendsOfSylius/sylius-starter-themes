@@ -1,8 +1,8 @@
 header {
   position: relative;
   z-index: 2;
-  border-bottom: 1px solid $border;
-  background-color: rgba($white, 0.92);
+  border-bottom: 1px solid $line;
+  background-color: rgba($page, 0.92);
   backdrop-filter: saturate(1.4) blur(10px);
 }
 
@@ -11,10 +11,10 @@ header .container {
 }
 
 header a {
-  color: $ink;
+  color: $heading;
 
   &:hover {
-    color: $teal;
+    color: $accent-text;
   }
 }
 
@@ -29,12 +29,12 @@ header .navbar {
   width: fit-content;
   align-items: center;
   gap: 0.55rem;
-  color: $ink;
+  color: $heading;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $ink;
+    color: $heading;
     text-decoration: none;
   }
 }
@@ -103,11 +103,11 @@ header .navbar {
   &:hover,
   &:focus,
   &[aria-expanded="true"] {
-    color: $ink;
+    color: $heading;
   }
 
   &[aria-expanded="true"] {
-    background-color: $foam;
+    background-color: $tint;
   }
 }
 
@@ -115,9 +115,9 @@ header .navbar {
   z-index: 1060;
   min-width: 13rem;
   padding: 0.5rem;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius-sm;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
@@ -131,23 +131,23 @@ header .navbar {
 
   &:hover,
   &:focus {
-    background-color: $foam;
-    color: $abyss;
+    background-color: $tint;
+    color: $accent-text-hover;
   }
 }
 
 // Cart: the teal pill of the mockup's main call to action.
 
 .lagoon-cart__button {
-  --bs-btn-color: #{$white};
-  --bs-btn-bg: #{$teal};
-  --bs-btn-border-color: #{$teal};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$abyss};
-  --bs-btn-hover-border-color: #{$abyss};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$abyss};
-  --bs-btn-active-border-color: #{$abyss};
+  --bs-btn-color: #{$on-primary};
+  --bs-btn-bg: #{$primary-bg};
+  --bs-btn-border-color: #{$primary-bg};
+  --bs-btn-hover-color: #{$on-primary-hover};
+  --bs-btn-hover-bg: #{$primary-hover-bg};
+  --bs-btn-hover-border-color: #{$primary-hover-bg};
+  --bs-btn-active-color: #{$on-primary-hover};
+  --bs-btn-active-bg: #{$primary-hover-bg};
+  --bs-btn-active-border-color: #{$primary-hover-bg};
 
   position: relative;
   display: inline-flex;
@@ -172,7 +172,7 @@ header .navbar {
   height: 1.35rem;
   place-items: center;
   padding: 0 0.3rem;
-  border: 2px solid $white;
+  border: 2px solid $page;
   border-radius: 50rem;
   background-color: $aqua;
   color: $ink;
@@ -182,20 +182,20 @@ header .navbar {
 }
 
 header .dropdown-menu {
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius-sm;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
 header .dropdown-item {
   border-radius: 0.5rem;
-  color: $ink;
+  color: $heading;
 
   &:hover,
   &:focus {
-    background-color: $foam;
-    color: $abyss;
+    background-color: $tint;
+    color: $accent-text-hover;
   }
 }
 
@@ -218,7 +218,7 @@ header .dropdown-item {
   }
 
   .lagoon-category-nav__menu .offcanvas-header {
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $line;
   }
 
   .lagoon-category-nav__menu .offcanvas-body {
@@ -240,7 +240,7 @@ header .dropdown-item {
     justify-content: space-between;
     padding: 0.75rem 0.85rem !important;
     border-radius: $radius-sm;
-    color: $ink;
+    color: $heading;
   }
 
   .lagoon-category-nav__menu .dropdown-menu {
@@ -248,7 +248,7 @@ header .dropdown-item {
     width: 100%;
     margin-top: 0.25rem;
     border: 0;
-    background: $foam;
+    background: $tint;
     box-shadow: none;
     transform: none !important;
   }

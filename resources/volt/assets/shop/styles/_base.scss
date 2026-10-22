@@ -1,12 +1,51 @@
-html {
+// scheme-root targets the <html> element of the active color scheme, with the weight of ":root" (see app.scss).
+@include scheme-root {
   scroll-behavior: smooth;
 }
 
 // WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
 // shipping and payment descriptions) with these Bootstrap utilities, too light by default.
-:root {
+@include scheme-root {
   --bs-secondary-color: #{$text-muted};
   --bs-tertiary-color: #{$text-muted};
+}
+
+// The Sylius shop is compiled in light mode: in the dark scheme, remap Bootstrap's runtime variables to the
+// Volt palette, so that every native component (tables, dropdowns, offcanvas, modals...) follows it.
+@if $dark {
+  @include scheme-root {
+    --bs-body-bg: #{$page};
+    --bs-body-bg-rgb: #{channels($page)};
+    --bs-body-color: #{$text};
+    --bs-body-color-rgb: #{channels($text)};
+    --bs-emphasis-color: #{$heading};
+    --bs-emphasis-color-rgb: #{channels($heading)};
+    --bs-heading-color: #{$heading};
+    --bs-secondary-color-rgb: #{channels($text-muted)};
+    --bs-secondary-bg: #{$surface-hover};
+    --bs-secondary-bg-rgb: #{channels($surface-hover)};
+    --bs-tertiary-color-rgb: #{channels($text-muted)};
+    --bs-tertiary-bg: #{$surface};
+    --bs-tertiary-bg-rgb: #{channels($surface)};
+    --bs-border-color: #{$border};
+    --bs-border-color-translucent: #{$card-border};
+    --bs-link-color: #{$accent-text};
+    --bs-link-color-rgb: #{channels($accent-text)};
+    --bs-link-hover-color: #{$accent-text};
+    --bs-link-hover-color-rgb: #{channels($accent-text)};
+    --bs-primary: #{$accent};
+    --bs-primary-rgb: #{channels($accent)};
+    --bs-light: #{$surface-hover};
+    --bs-light-rgb: #{channels($surface-hover)};
+    --bs-dark: #{$heading};
+    --bs-dark-rgb: #{channels($heading)};
+    --bs-gray-500: #{$text-muted};
+    --bs-code-color: #{$accent-text};
+    --bs-highlight-bg: #{$soft};
+    --bs-highlight-color: #{$heading};
+
+    color-scheme: $color-mode;
+  }
 }
 
 .text-black-50 {
@@ -15,7 +54,7 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: $paper;
+  background-color: $page;
   color: $text;
   font-family: $font-family-base;
   -webkit-font-smoothing: antialiased;
@@ -23,14 +62,14 @@ body {
 }
 
 a {
-  color: $electric;
+  color: $accent-text;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
   transition: color 160ms ease;
 
   &:hover,
   &.link-reset:hover {
-    color: $electric !important;
+    color: $accent-text !important;
   }
 }
 
@@ -40,7 +79,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $ink;
+  color: $heading;
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   letter-spacing: -0.04em;
@@ -61,28 +100,142 @@ h3 {
 }
 
 ::selection {
-  background-color: $lavender;
-  color: $ink;
+  background-color: $soft;
+  color: $on-soft;
 }
 
 :focus-visible {
-  outline: 3px solid $electric;
+  outline: 3px solid $accent-text;
   outline-offset: 3px;
 }
 
 .volt-checkout-brand,
 .volt-checkout-account {
-  color: $ink;
+  color: $heading;
 }
 
 .volt-checkout-brand a,
 .volt-checkout-account a,
 .volt-checkout-account .btn {
-  color: $electric;
+  color: $accent-text;
 }
 
 .volt-checkout-brand a:hover,
 .volt-checkout-account a:hover,
 .volt-checkout-account .btn:hover {
-  color: $ink;
+  color: $heading;
+}
+
+// Dark scheme: the light utilities and components printed by Sylius templates follow the Volt surfaces.
+@if $dark {
+  .bg-white,
+  .bg-body {
+    background-color: $surface !important;
+    color: $text !important;
+  }
+
+  .bg-light,
+  .text-bg-light {
+    background-color: $surface-hover !important;
+    color: $text !important;
+  }
+
+  .text-black,
+  .text-dark,
+  .text-body {
+    color: $text !important;
+  }
+
+  .text-muted {
+    color: $text-muted !important;
+  }
+
+  hr {
+    border-color: $border;
+    opacity: 1;
+  }
+
+  .table-success {
+    --bs-table-color: #{$text};
+    --bs-table-bg: var(--bs-success-bg-subtle);
+    --bs-table-border-color: var(--bs-success-border-subtle);
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{$surface};
+    --bs-dropdown-color: #{$text};
+    --bs-dropdown-border-color: #{$border};
+    --bs-dropdown-link-color: #{$text};
+    --bs-dropdown-link-hover-color: #{$accent-text};
+    --bs-dropdown-link-hover-bg: #{$surface-hover};
+    --bs-dropdown-link-active-color: #{$on-accent};
+    --bs-dropdown-link-active-bg: #{$accent};
+    --bs-dropdown-divider-bg: #{$border};
+  }
+
+  .pagination {
+    --bs-pagination-color: #{$accent-text};
+    --bs-pagination-bg: #{$surface};
+    --bs-pagination-border-color: #{$border};
+    --bs-pagination-hover-color: #{$accent-text};
+    --bs-pagination-hover-bg: #{$surface-hover};
+    --bs-pagination-hover-border-color: #{$border};
+    --bs-pagination-focus-color: #{$accent-text};
+    --bs-pagination-focus-bg: #{$surface-hover};
+    --bs-pagination-active-color: #{$on-accent};
+    --bs-pagination-active-bg: #{$accent};
+    --bs-pagination-active-border-color: #{$accent};
+    --bs-pagination-disabled-color: #{$text-muted};
+    --bs-pagination-disabled-bg: #{$surface};
+    --bs-pagination-disabled-border-color: #{$border};
+  }
+
+  .list-group {
+    --bs-list-group-bg: #{$surface};
+    --bs-list-group-color: #{$text};
+    --bs-list-group-border-color: #{$border};
+    --bs-list-group-action-hover-bg: #{$surface-hover};
+    --bs-list-group-action-hover-color: #{$heading};
+    --bs-list-group-active-bg: #{$accent};
+    --bs-list-group-active-border-color: #{$accent};
+    --bs-list-group-active-color: #{$on-accent};
+  }
+
+  .modal {
+    --bs-modal-bg: #{$surface};
+    --bs-modal-color: #{$text};
+    --bs-modal-border-color: #{$border};
+    --bs-modal-header-border-color: #{$border};
+    --bs-modal-footer-border-color: #{$border};
+  }
+
+  .offcanvas {
+    --bs-offcanvas-bg: #{$surface};
+    --bs-offcanvas-color: #{$text};
+    --bs-offcanvas-border-color: #{$border};
+  }
+
+  // Sylius compiles these buttons with black text (header icons and cart total, coupon button).
+  .btn-transparent {
+    --bs-btn-color: #{$heading};
+    --bs-btn-hover-color: #{$heading};
+    --bs-btn-hover-bg: #{$surface-hover};
+    --bs-btn-hover-border-color: #{$surface-hover};
+    --bs-btn-active-color: #{$heading};
+    --bs-btn-active-bg: #{$surface-hover};
+    --bs-btn-active-border-color: #{$surface-hover};
+  }
+
+  .btn-outline-gray {
+    --bs-btn-color: #{$text};
+    --bs-btn-border-color: #{$field-border};
+    --bs-btn-hover-color: #{$page};
+    --bs-btn-hover-bg: #{$heading};
+    --bs-btn-hover-border-color: #{$heading};
+    --bs-btn-active-color: #{$page};
+    --bs-btn-active-bg: #{$heading};
+    --bs-btn-active-border-color: #{$heading};
+    --bs-btn-disabled-color: #{$text-muted};
+    --bs-btn-disabled-border-color: #{$border};
+  }
 }

@@ -1,0 +1,39 @@
+// Prompt — a terminal storefront: monospace type, green prompts and terminal cards.
+// Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
+$dark: $color-mode == dark;
+
+$font-family-sans-serif: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+$headings-font-family: $font-family-sans-serif;
+$headings-font-weight: 700;
+
+$body-bg: $background;
+$body-color: $text;
+$primary: $green;
+$secondary: $surface-raised;
+$success: $green;
+$link-color: $green;
+$link-hover-color: $link-hover;
+$border-color: $border;
+
+$border-radius: 0.35rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.5rem;
+$btn-border-radius: 0.35rem;
+$btn-border-radius-sm: 0.25rem;
+$btn-border-radius-lg: 0.5rem;
+$input-border-color: $border;
+$input-focus-border-color: $green;
+$input-border-radius: 0.35rem;
+$input-border-radius-sm: 0.25rem;
+$input-border-radius-lg: 0.5rem;
+$card-border-radius: 0.5rem;
+$card-border-color: $border;
+
+$spacing-6: 1.5rem;
+$spacing-12: 3rem;
+
+// "r, g, b" channels of a color, for Bootstrap's --bs-*-rgb variables.
+@function channels($color) {
+  @return red($color), green($color), blue($color);
+}

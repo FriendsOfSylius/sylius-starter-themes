@@ -7,22 +7,22 @@
   display: inline-flex;
   padding: 0.4rem 1rem;
   border-radius: $radius-pill;
-  background-color: $white;
+  background-color: $surface;
   color: $text-muted;
   font-size: 0.85rem;
   font-weight: 600;
 
   .breadcrumb-item a {
-    color: $basil-dark;
+    color: $link;
     text-decoration: none;
 
     &:hover {
-      color: $basil;
+      color: $link-hover;
       text-decoration: underline;
     }
   }
 
   .breadcrumb-item.active {
-    color: $ink;
+    color: $heading;
   }
 }

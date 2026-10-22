@@ -2,7 +2,7 @@
   border-radius: 0;
   border-color: $border;
 
-  background-color: $white;
+  background-color: $card-bg;
   box-shadow: none;
 }
 
@@ -23,7 +23,7 @@
 
 .card-footer {
   border-top-color: $border;
-  background-color: $white;
+  background-color: $card-bg;
 }
 
 // Product cards: editorial: square corners, hairline border, no shadow, slow zoom.
@@ -43,7 +43,7 @@
   flex-direction: column;
   border: 1px solid $border;
   border-radius: 0;
-  background-color: $white;
+  background-color: $card-bg;
   transition:
     border-color 220ms ease,
     box-shadow 220ms ease,
@@ -51,7 +51,7 @@
 
   &:hover,
   &:focus-within {
-    border-color: $black;
+    border-color: $ink;
   }
 
   > a.link-reset {
@@ -73,7 +73,7 @@
   }
 
   &:has(> a.link-reset:focus-visible) {
-    outline: 3px solid $black;
+    outline: 3px solid $ink;
     outline-offset: 3px;
   }
 
@@ -107,7 +107,7 @@
   }
 
   &:hover .h6 {
-    color: $terracotta;
+    color: $accent-text;
   }
 
   // Prices

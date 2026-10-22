@@ -21,40 +21,41 @@
   // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
   color: var(--bs-btn-color);
 
-  --bs-btn-color: #{$white};
-  --bs-btn-bg: #{$electric};
-  --bs-btn-border-color: #{$electric};
+  --bs-btn-color: #{$on-accent};
+  --bs-btn-bg: #{$accent};
+  --bs-btn-border-color: #{$accent};
+  // Hover flips to the brand lavender in both schemes.
   --bs-btn-hover-color: #{$ink};
   --bs-btn-hover-bg: #{$lavender};
   --bs-btn-hover-border-color: #{$lavender};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$electric};
-  --bs-btn-active-border-color: #{$electric};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$accent};
+  --bs-btn-active-border-color: #{$accent};
 }
 
 .btn-secondary {
-  --bs-btn-color: #{$ink};
-  --bs-btn-bg: #{$lavender};
-  --bs-btn-border-color: #{$lavender};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$electric};
-  --bs-btn-hover-border-color: #{$electric};
+  --bs-btn-color: #{$on-soft};
+  --bs-btn-bg: #{$soft};
+  --bs-btn-border-color: #{$soft};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$accent};
+  --bs-btn-hover-border-color: #{$accent};
 }
 
 .btn-outline-primary {
-  --bs-btn-color: #{$electric};
+  --bs-btn-color: #{$accent-text};
   --bs-btn-bg: transparent;
-  --bs-btn-border-color: #{$electric};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$electric};
-  --bs-btn-hover-border-color: #{$electric};
+  --bs-btn-border-color: #{$accent-text};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$accent};
+  --bs-btn-hover-border-color: #{$accent};
 }
 
 .btn-link {
-  color: $electric;
+  color: $accent-text;
 
   &:hover {
-    color: $electric;
+    color: $accent-text;
   }
 }
 

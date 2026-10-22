@@ -40,7 +40,7 @@
 
   strong {
     display: block;
-    color: $white;
+    color: $heading;
   }
 }
 
@@ -116,7 +116,7 @@
     left: -2rem;
     width: 1.15rem;
     height: 1.15rem;
-    background-color: $lime;
+    background-color: $lime-text;
     box-shadow: 0 0 0 3px $void;
     content: "";
   }
@@ -131,18 +131,18 @@
 }
 
 .rg-levels__level {
-  color: $magenta;
+  color: $magenta-text;
   font-family: $font-family-pixel;
   font-size: 0.75rem;
   text-transform: uppercase;
 }
 
 .rg-levels__step.is-done .rg-levels__level {
-  color: $lime;
+  color: $lime-text;
 }
 
 .rg-levels__label {
-  color: $white;
+  color: $heading;
   font-weight: 700;
 }
 
@@ -161,11 +161,11 @@
 }
 
 .rg-xp__label {
-  color: $gold;
+  color: $gold-text;
 }
 
 .rg-xp__value {
-  color: $white;
+  color: $heading;
 }
 
 .rg-xp__bar {
@@ -178,7 +178,7 @@
     display: block;
     width: 75%;
     height: 100%;
-    background: repeating-linear-gradient(90deg, $gold 0 10px, transparent 10px 12px);
+    background: repeating-linear-gradient(90deg, if($dark, $gold, $gold-dark) 0 10px, transparent 10px 12px);
   }
 }
 
@@ -194,7 +194,7 @@
     @include pixel-label;
 
     margin: 0;
-    color: $white;
+    color: $heading;
     font-size: clamp(1rem, 1.6vw, 1.25rem);
   }
 }

@@ -1,32 +1,12 @@
 // Drive — a grocery click-and-collect: basil green aisles, lemon price stickers and tomato promos on a light shelf grey.
+// Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
+$dark: $color-mode == dark;
+
 $font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
 $font-family-base: $font-family-sans-serif;
 
 $headings-font-family: $font-family-sans-serif;
 $headings-font-weight: 800;
-
-$basil: #0E7C3A;
-$basil-dark: #0A5F2C;
-$basil-light: #2FA35A;
-$forest: #083A22;
-$mint: #E5F4E9;
-$mint-strong: #C9E8D2;
-$lemon: #FFD43B;
-$lemon-dark: #F2BE00;
-$lemon-soft: #FFF5C7;
-$tomato: #E23B2E;
-$tomato-dark: #C02A1F;
-$tomato-soft: #FFE4DF;
-$sky-soft: #DDEFFB;
-$sand-soft: #F4ECDD;
-$shelf: #F2F4F1;
-$ink: #13241A;
-$white: #FFF;
-$text: #34443A;
-$text-muted: #616F66;
-$text-on-dark: #B9CDBF;
-$border: #DCE3DD;
-$border-strong: #C5CFC7;
 
 $body-bg: $shelf;
 $body-color: $text;
@@ -34,10 +14,9 @@ $body-color: $text;
 $primary: $basil;
 $secondary: $mint;
 $success: $basil;
-$info: #2369C4;
 
-$link-color: $basil-dark;
-$link-hover-color: $basil;
+$link-color: $link;
+$link-hover-color: $link-hover;
 $border-color: $border;
 
 // Friendly rounded corners, pill buttons.
@@ -49,8 +28,9 @@ $radius-pill: 999px;
 // Full-screen layout: content spans the viewport with a fluid gutter.
 $gutter: clamp(1rem, 2.4vw, 3rem);
 
-$shadow-soft: 0 1px 2px rgba($ink, 0.06), 0 1px 1px rgba($ink, 0.03);
-$shadow-float: 0 14px 34px rgba($ink, 0.12);
-$shadow-basil: 0 8px 20px rgba($basil, 0.28);
-
 $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+// "r, g, b" channels of a color, for Bootstrap's --bs-*-rgb variables.
+@function channels($color) {
+  @return red($color), green($color), blue($color);
+}

@@ -37,23 +37,23 @@
 .btn-secondary,
 .btn-outline-primary,
 .btn-outline-gray {
-  --bs-btn-color: #{$basil-dark};
-  --bs-btn-bg: #{$white};
+  --bs-btn-color: #{$accent-text-strong};
+  --bs-btn-bg: #{$surface};
   --bs-btn-border-color: #{$border-strong};
-  --bs-btn-hover-color: #{$basil-dark};
+  --bs-btn-hover-color: #{$accent-text-strong};
   --bs-btn-hover-bg: #{$mint};
-  --bs-btn-hover-border-color: #{$basil};
-  --bs-btn-active-color: #{$basil-dark};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text-strong};
   --bs-btn-active-bg: #{$mint};
-  --bs-btn-active-border-color: #{$basil};
+  --bs-btn-active-border-color: #{$accent-text};
 }
 
 .btn-link {
-  color: $basil-dark;
+  color: $link;
   font-weight: 600;
 
   &:hover {
-    color: $basil;
+    color: $link-hover;
   }
 }
 

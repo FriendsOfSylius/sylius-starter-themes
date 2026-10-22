@@ -2,7 +2,7 @@
   --bs-card-bg: #{$panel};
   --bs-card-color: #{$text};
   --bs-card-border-color: #{$line};
-  --bs-card-cap-color: #{$white};
+  --bs-card-cap-color: #{$heading};
 
   overflow: hidden;
   border: 0;
@@ -18,12 +18,12 @@
 
 .card-header {
   border-bottom-color: $line !important;
-  color: $white;
+  color: $heading;
 }
 
 .card-title {
   margin-bottom: 0.5rem;
-  color: $white;
+  color: $heading;
 }
 
 .card-text {
@@ -67,7 +67,7 @@
 
   > a.link-reset {
     display: block;
-    color: $white;
+    color: $heading;
     text-decoration: none;
 
     // Stretched link: the price below is part of the clickable card too.
@@ -84,7 +84,7 @@
   }
 
   &:has(> a.link-reset:focus-visible) {
-    outline: 3px solid $magenta;
+    outline: 3px solid $magenta-text;
     outline-offset: 6px;
   }
 
@@ -119,7 +119,7 @@
   .h6 {
     margin: 0;
     padding: 1rem 1.25rem 0.4rem;
-    color: $white;
+    color: $heading;
     font-family: $font-family-base;
     font-size: 1rem;
     font-weight: 700;
@@ -130,7 +130,7 @@
   }
 
   &:hover .h6 {
-    color: $cyan;
+    color: $cyan-text;
   }
 
   // Prices, in coin gold.
@@ -141,7 +141,7 @@
     align-items: baseline;
     margin-top: auto;
     padding: 0 1.25rem 1.25rem;
-    color: $gold;
+    color: $gold-text;
     font-family: $font-family-pixel;
     font-size: 1.125rem;
 

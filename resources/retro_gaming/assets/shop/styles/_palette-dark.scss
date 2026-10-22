@@ -1,0 +1,65 @@
+// Retro Gaming, dark scheme — a night arcade: neon magenta (player 1) and cyan (player 2) on a deep console
+// blue, with coin gold for prices and health-bar lime for good news.
+$color-mode: dark;
+
+$deep: #070814;
+$void: #0B0D1C;
+$panel: #141833;
+$panel-raised: #1D2248;
+$line: #2E3570;
+$line-soft: #232A57;
+$field-bg: $deep;
+$field-border: $line;
+$heading: #F7F8FF;
+$text: #D8DBF4;
+$text-muted: #A0A6CF;
+$ink: #0B0D1C;
+
+// Neon fills (buttons, badges, keys, bars), always under ink text.
+$magenta: #FF3D8B;
+$magenta-dark: #E4206F;
+$magenta-soft: #FF8DBB;
+$cyan: #3BE2F0;
+$cyan-dark: #17B8C8;
+$gold: #FFC93C;
+$gold-soft: #FFD86B;
+$gold-dark: #D69E12;
+$lime: #8CF26B;
+$lime-soft: #B2FA97;
+$lime-dark: #5FC342;
+$red: #FF6B6B;
+$red-soft: #FF9494;
+$red-dark: #D94545;
+
+// Accents used as text, icon or outline on the page (the neon itself is bright enough on the night page).
+$magenta-text: $magenta;
+$cyan-text: $cyan;
+$gold-text: $gold;
+$lime-text: $lime;
+$red-text: $red;
+$link-hover: $magenta-soft;
+
+$success-bg: #16301F;
+$success-border: #2F6B3A;
+$info-bg: #0F2A3A;
+$info-border: #1E5566;
+$warning-bg: #33280E;
+$warning-border: #6B5418;
+$danger-bg: #3A1420;
+$danger-border: #7A2A3C;
+$danger-text: #FF9A9A;
+
+$hero-star: $heading;
+$shadow-deep: 0 24px 60px rgba(#000, 0.45);
+
+// CRT monitor of the hero: the bezel, and the screen that stays dark in every scheme.
+$screen-bezel: #191D3F;
+$screen-edge: #090A18;
+$screen-shadow: rgba(#000, 0.55);
+$screen-vent: $line;
+$crt-glass: $void;
+$crt-panel: $panel-raised;
+$crt-line: $line;
+$crt-heading: $heading;
+$crt-text: $text;
+$crt-muted: $text-muted;

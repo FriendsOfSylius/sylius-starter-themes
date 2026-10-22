@@ -1,0 +1,6 @@
+color_scheme:
+    label: 'Color scheme'
+    mode:
+        auto: 'Auto (system)'
+        light: 'Light'
+        dark: 'Dark'

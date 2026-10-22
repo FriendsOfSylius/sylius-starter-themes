@@ -1,12 +1,49 @@
-html {
-  scroll-behavior: smooth;
-}
+// scheme-root targets the <html> element of the active color scheme, with the weight of ":root" (see app.scss).
+@include scheme-root {
+  // The Sylius shop is compiled in light mode: in the dark scheme, remap Bootstrap's runtime variables to the
+  // palette, so that every native component (tables, dropdowns, offcanvas, modals...) follows it.
+  @if $dark {
+    --bs-body-bg: #{$page};
+    --bs-body-bg-rgb: #{channels($page)};
+    --bs-body-color: #{$text};
+    --bs-body-color-rgb: #{channels($text)};
+    --bs-emphasis-color: #{$heading};
+    --bs-emphasis-color-rgb: #{channels($heading)};
+    --bs-heading-color: #{$heading};
+    --bs-secondary-color-rgb: #{channels($text-muted)};
+    --bs-secondary-bg: #{$surface};
+    --bs-secondary-bg-rgb: #{channels($surface)};
+    --bs-tertiary-color-rgb: #{channels($text-muted)};
+    --bs-tertiary-bg: #{$tint};
+    --bs-tertiary-bg-rgb: #{channels($tint)};
+    --bs-border-color: #{$line};
+    --bs-border-color-translucent: #{rgba($white, 0.1)};
+    --bs-link-color: #{$heading};
+    --bs-link-color-rgb: #{channels($heading)};
+    --bs-link-hover-color: #{$accent-text};
+    --bs-link-hover-color-rgb: #{channels($accent-text)};
+    --bs-primary: #{$signal};
+    --bs-primary-rgb: #{channels($signal)};
+    --bs-light: #{$tint};
+    --bs-light-rgb: #{channels($tint)};
+    --bs-dark: #{$heading};
+    --bs-dark-rgb: #{channels($heading)};
+    --bs-gray-500: #{$text-muted};
+    --bs-code-color: #{$accent-text};
+    --bs-highlight-bg: #{rgba($signal, 0.3)};
+    --bs-highlight-color: #{$heading};
+    --bs-form-invalid-color: #{$danger};
+    --bs-form-invalid-border-color: #{$danger};
 
-// WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
-// shipping and payment descriptions) with these Bootstrap utilities, too light by default.
-:root {
+    color-scheme: $color-mode;
+  }
+
+  // WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
+  // shipping and payment descriptions) with these Bootstrap utilities, too light by default.
   --bs-secondary-color: #{$text-muted};
   --bs-tertiary-color: #{$text-muted};
+
+  scroll-behavior: smooth;
 }
 
 .text-black-50 {
@@ -15,7 +52,7 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: $white;
+  background-color: $page;
   color: $text;
   font-family: $font-family-base;
   font-feature-settings: "cv05", "cv08";
@@ -24,14 +61,14 @@ body {
 }
 
 a {
-  color: $ink;
+  color: $heading;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
   transition: color 140ms ease;
 
   &:hover,
   &.link-reset:hover {
-    color: $signal-dark;
+    color: $accent-text;
   }
 }
 
@@ -44,7 +81,7 @@ h6,
 .h1,
 .h2,
 .h3 {
-  color: $ink;
+  color: $heading;
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   letter-spacing: -0.04em;
@@ -84,6 +121,142 @@ h6,
 :focus-visible {
   outline: 2px solid $signal;
   outline-offset: 3px;
+}
+
+// Dark scheme: the light utilities printed by the Sylius templates (cart and checkout summaries, account pages)
+// take the gunmetal surfaces instead of white boxes.
+@if $dark {
+  .bg-white,
+  .bg-body {
+    background-color: $surface !important;
+    color: $text !important;
+  }
+
+  .bg-light,
+  .bg-body-tertiary,
+  .bg-body-secondary,
+  .text-bg-light {
+    background-color: $tint !important;
+    color: $text !important;
+  }
+
+  .text-black,
+  .text-dark,
+  .text-body {
+    color: $text !important;
+  }
+
+  .text-muted,
+  .text-body-secondary,
+  .text-body-tertiary,
+  .text-secondary {
+    color: $text-muted !important;
+  }
+
+  .text-primary {
+    color: $accent-text !important;
+  }
+
+  .text-success {
+    color: $success !important;
+  }
+
+  .text-danger,
+  .invalid-feedback {
+    color: $danger !important;
+  }
+
+  .border,
+  .border-top,
+  .border-bottom,
+  .border-start,
+  .border-end {
+    border-color: $line !important;
+  }
+
+  .btn-close {
+    filter: invert(1) grayscale(1) brightness(2);
+  }
+
+  .nav-link {
+    --bs-nav-link-color: #{$text};
+    --bs-nav-link-hover-color: #{$heading};
+  }
+
+  .navbar {
+    --bs-navbar-color: #{$text};
+    --bs-navbar-hover-color: #{$heading};
+    --bs-navbar-active-color: #{$heading};
+    --bs-navbar-brand-color: #{$heading};
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{$surface};
+    --bs-dropdown-color: #{$text};
+    --bs-dropdown-border-color: #{$line};
+    --bs-dropdown-link-color: #{$text};
+    --bs-dropdown-link-hover-color: #{$heading};
+    --bs-dropdown-link-hover-bg: #{$tint};
+    --bs-dropdown-link-active-color: #{$on-signal};
+    --bs-dropdown-link-active-bg: #{$signal};
+    --bs-dropdown-divider-bg: #{$line};
+  }
+
+  .pagination {
+    --bs-pagination-color: #{$text};
+    --bs-pagination-bg: #{$surface};
+    --bs-pagination-border-color: #{$line};
+    --bs-pagination-hover-color: #{$heading};
+    --bs-pagination-hover-bg: #{$tint};
+    --bs-pagination-hover-border-color: #{$line-strong};
+    --bs-pagination-focus-color: #{$heading};
+    --bs-pagination-focus-bg: #{$tint};
+    --bs-pagination-active-color: #{$on-signal};
+    --bs-pagination-active-bg: #{$signal};
+    --bs-pagination-active-border-color: #{$signal};
+    --bs-pagination-disabled-color: #{$text-muted};
+    --bs-pagination-disabled-bg: #{$page};
+    --bs-pagination-disabled-border-color: #{$line};
+  }
+
+  .list-group {
+    --bs-list-group-bg: #{$surface};
+    --bs-list-group-color: #{$text};
+    --bs-list-group-border-color: #{$line};
+    --bs-list-group-action-color: #{$text};
+    --bs-list-group-action-hover-bg: #{$tint};
+    --bs-list-group-action-hover-color: #{$heading};
+    --bs-list-group-active-bg: #{$signal};
+    --bs-list-group-active-border-color: #{$signal};
+    --bs-list-group-active-color: #{$on-signal};
+  }
+
+  .modal {
+    --bs-modal-bg: #{$surface};
+    --bs-modal-color: #{$text};
+    --bs-modal-border-color: #{$line};
+    --bs-modal-header-border-color: #{$line};
+    --bs-modal-footer-border-color: #{$line};
+  }
+
+  .offcanvas {
+    --bs-offcanvas-bg: #{$surface};
+    --bs-offcanvas-color: #{$text};
+  }
+
+  .table {
+    --bs-table-color: #{$text};
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: #{$tint};
+    --bs-table-striped-color: #{$text};
+    --bs-table-hover-bg: #{$tint};
+    --bs-table-hover-color: #{$heading};
+  }
+
+  hr {
+    border-color: $line;
+    opacity: 1;
+  }
 }
 
 // Shared helpers: monospace spec labels, as printed on a datasheet.
@@ -150,7 +323,7 @@ h6,
   line-height: 1.6;
 
   strong {
-    color: $ink;
+    color: $heading;
     font-weight: 600;
   }
 }
@@ -161,21 +334,21 @@ h6,
 
 .tech-checkout-brand,
 .tech-checkout-account {
-  color: $ink;
+  color: $heading;
 }
 
 .tech-checkout-account a,
 .tech-checkout-account .btn {
-  color: $signal-dark;
+  color: $accent-text;
 }
 
 .tech-checkout-account a:hover,
 .tech-checkout-account .btn:hover {
-  color: $ink;
+  color: $heading;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  @include scheme-root {
     scroll-behavior: auto;
   }
 

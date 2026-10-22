@@ -1,6 +1,6 @@
 .breadcrumb {
   --bs-breadcrumb-divider: "/";
-  --bs-breadcrumb-divider-color: #{$foam-strong};
+  --bs-breadcrumb-divider-color: #{$tint-strong};
   --bs-breadcrumb-margin-bottom: 1.5rem;
   --bs-breadcrumb-item-padding-x: 0.6rem;
 
@@ -15,13 +15,13 @@
     text-decoration: none;
 
     &:hover {
-      color: $teal;
+      color: $accent-text;
       text-decoration: underline;
     }
   }
 
   .breadcrumb-item.active {
-    color: $ink;
+    color: $heading;
     font-weight: 600;
   }
 }

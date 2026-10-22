@@ -1,0 +1,63 @@
+// Aurora, light scheme — electric blue rising into violet over a midnight sky, on lavender light.
+$color-mode: light;
+
+$page: #FFF;
+$surface: #FFF;
+// Lavender bands (promise, services); $tint is the lavender of hovers, open items and image wells.
+$band: #F4F2FD;
+$tint: #F4F2FD;
+$tint-strong: #E3DDFA;
+$line: #ECE8F3;
+$field-bg: #FFF;
+$field-border: #ECE8F3;
+$check-border: #E3DDFA;
+$heading: #18141F;
+$emphasis: #1A1830;
+$text: #3A3546;
+$text-muted: #716B79;
+$on-accent: #FFF;
+$on-dark: #FFF;
+
+$electric: #2F55E8;
+$violet: #6D35D6;
+$violet-hover: #5626B3;
+$violet-soft: #A98BF0;
+// Violet and blue used as text, outline or icon on the page: the brand colors themselves on white.
+$violet-text: #6D35D6;
+$violet-text-hover: #5626B3;
+$link: #2F55E8;
+$focus: #2F55E8;
+$gradient-text-from: #2F55E8;
+$gradient-text-to: #6D35D6;
+
+// The midnight panel of the order journey.
+$night: #1A1830;
+
+$success: #23946B;
+$success-text: #17654A;
+$success-bg: #E8F6F0;
+$success-border: #B8E3D2;
+$info-text: #2241BD;
+$info-bg: #F4F2FD;
+$info-border: #E3DDFA;
+// Warning and danger: Bootstrap's own light colors (only the dark scheme overrides them).
+$warning-text: #664D03;
+$warning-bg: #FFF3CD;
+$warning-border: #FFE69C;
+$danger: #DC3545;
+$danger-text: #58151C;
+$danger-bg: #F8D7DA;
+$danger-border: #F1AEB5;
+
+$selection-bg: #E3DDFA;
+$selection-color: #1A1830;
+
+$shadow-soft: 0 10px 30px rgba(#1A1830, 0.05);
+$shadow-float: 0 24px 60px rgba(#1A1830, 0.12);
+$shadow-split: 0 30px 70px rgba(#1A1830, 0.1);
+
+$hero-glow:
+  radial-gradient(circle at 100% 0%, rgba(#B3A6FF, 0.95), transparent 45%),
+  radial-gradient(circle at 0% 100%, rgba(#2F55E8, 0.12), transparent 45%),
+  linear-gradient(165deg, #DCD8FF 0%, #F3F1FF 55%, #FBFAFF 100%);
+$showcase-border: rgba(#FFF, 0.8);

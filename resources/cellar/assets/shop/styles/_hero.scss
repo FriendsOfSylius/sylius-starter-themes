@@ -81,6 +81,11 @@
   aspect-ratio: 400 / 520;
 }
 
+// The window has a dusk cut and a moonlight cut (hero/window/*.html.twig): show the one of the scheme.
+.cellar-window--#{if($dark, light, dark)} {
+  display: none !important;
+}
+
 .cellar-hero__image {
   border-radius: 50% 50% 0 0 / 38.5% 38.5% 0 0;
   box-shadow: inset 0 0 0 1px $gold;
@@ -88,7 +93,7 @@
 }
 
 .cellar-window__label-name {
-  fill: $wine;
+  fill: $label-wine;
   font-family: $font-family-serif;
   font-size: 10.5px;
   font-weight: 600;
@@ -96,14 +101,14 @@
 }
 
 .cellar-window__label-text {
-  fill: $ink;
+  fill: $label-ink;
   font-family: $font-family-serif;
   font-size: 7.5px;
   font-style: italic;
 }
 
 .cellar-window__label-year {
-  fill: $gold-dark;
+  fill: $label-gold;
   font-family: $font-family-sans-serif;
   font-size: 5.5px;
   font-weight: 600;

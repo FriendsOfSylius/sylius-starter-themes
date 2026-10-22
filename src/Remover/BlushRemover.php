@@ -7,6 +7,7 @@ namespace SyliusStarter\Themes\Remover;
 use SyliusStarter\Core\App;
 use SyliusStarter\Core\Component\RemoverInterface;
 use SyliusStarter\Core\Util\Javascript;
+use SyliusStarter\Themes\ColorScheme;
 
 use function Castor\finder;
 use function Castor\fs;
@@ -32,5 +33,6 @@ final class BlushRemover implements RemoverInterface
         }
 
         Javascript::removeImport($app, 'assets/shop/entrypoint.js', './styles/app.scss');
+        ColorScheme::remove($app);
     }
 }

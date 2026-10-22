@@ -22,37 +22,108 @@
   --bs-btn-color: #{$white};
   --bs-btn-bg: #{$pink};
   --bs-btn-border-color: #{$pink};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$plum};
-  --bs-btn-hover-border-color: #{$plum};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$plum};
-  --bs-btn-active-border-color: #{$plum};
+  --bs-btn-hover-color: #{$btn-hover-color};
+  --bs-btn-hover-bg: #{$btn-hover-bg};
+  --bs-btn-hover-border-color: #{$btn-hover-bg};
+  --bs-btn-active-color: #{$btn-hover-color};
+  --bs-btn-active-bg: #{$btn-hover-bg};
+  --bs-btn-active-border-color: #{$btn-hover-bg};
+
+  @if $dark {
+    --bs-btn-disabled-color: #{$white};
+    --bs-btn-disabled-bg: #{$pink};
+    --bs-btn-disabled-border-color: #{$pink};
+
+    // Bootstrap paints these states with the hover background: keep the plum text on it.
+    &:hover,
+    &:focus-visible,
+    &:active,
+    &.active {
+      color: var(--bs-btn-hover-color);
+    }
+  }
 }
 
 .btn-secondary {
   --bs-btn-color: #{$ink};
   --bs-btn-bg: #{$rose-soft};
   --bs-btn-border-color: #{$rose-soft};
-  --bs-btn-hover-color: #{$plum};
+  --bs-btn-hover-color: #{$accent-text-hover};
   --bs-btn-hover-bg: #{$rose};
   --bs-btn-hover-border-color: #{$rose};
 }
 
 .btn-outline-primary {
-  --bs-btn-color: #{$pink};
+  --bs-btn-color: #{$accent-text};
   --bs-btn-bg: transparent;
-  --bs-btn-border-color: #{$pink};
+  --bs-btn-border-color: #{$accent-text};
   --bs-btn-hover-color: #{$white};
   --bs-btn-hover-bg: #{$pink};
   --bs-btn-hover-border-color: #{$pink};
 }
 
+// Sylius' light and gray buttons (cart, pagination, account) keep Bootstrap's light colors:
+// in the dark scheme, they take the rose secondary look.
+@if $dark {
+  .btn-light,
+  .btn-outline-gray,
+  .btn-outline-secondary {
+    --bs-btn-color: #{$ink};
+    --bs-btn-bg: #{$rose-soft};
+    --bs-btn-border-color: #{$border};
+    --bs-btn-hover-color: #{$accent-text-hover};
+    --bs-btn-hover-bg: #{$rose};
+    --bs-btn-hover-border-color: #{$field-border};
+    --bs-btn-active-color: #{$accent-text-hover};
+    --bs-btn-active-bg: #{$rose};
+    --bs-btn-active-border-color: #{$field-border};
+    --bs-btn-disabled-color: #{$muted};
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #{$border};
+
+    color: var(--bs-btn-color);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--bs-btn-hover-color);
+    }
+  }
+
+  .btn-transparent {
+    color: $ink;
+
+    &:hover,
+    &:focus-visible {
+      color: $accent-text;
+    }
+  }
+
+  .btn-danger,
+  .btn-outline-danger {
+    --bs-btn-color: #{$danger-text};
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$danger-text};
+    --bs-btn-hover-color: #{$plum};
+    --bs-btn-hover-bg: #{$danger-text};
+    --bs-btn-hover-border-color: #{$danger-text};
+    --bs-btn-active-color: #{$plum};
+    --bs-btn-active-bg: #{$danger-text};
+    --bs-btn-active-border-color: #{$danger-text};
+
+    color: var(--bs-btn-color);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--bs-btn-hover-color);
+    }
+  }
+}
+
 .btn-link {
-  color: $pink;
+  color: $accent-text;
 
   &:hover {
-    color: $plum;
+    color: $accent-text-hover;
   }
 }
 

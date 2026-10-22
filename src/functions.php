@@ -15,31 +15,27 @@ use SyliusStarter\Core\Service\SyliusService;
 use SyliusStarter\Core\Task\TaskProviderRegistry;
 use SyliusStarter\Themes\Attribute\AsThemeInstaller;
 use SyliusStarter\Themes\Attribute\AsThemeRemover;
-use SyliusStarter\Themes\Installer\ArenaDarkThemeInstaller;
-use SyliusStarter\Themes\Installer\ArenaLightThemeInstaller;
+use SyliusStarter\Themes\Installer\ArenaInstaller;
 use SyliusStarter\Themes\Installer\AuroraInstaller;
 use SyliusStarter\Themes\Installer\BlushInstaller;
 use SyliusStarter\Themes\Installer\CanvasInstaller;
 use SyliusStarter\Themes\Installer\CellarInstaller;
 use SyliusStarter\Themes\Installer\DriveInstaller;
 use SyliusStarter\Themes\Installer\LagoonInstaller;
-use SyliusStarter\Themes\Installer\PromptDarkThemeInstaller;
-use SyliusStarter\Themes\Installer\PromptLightThemeInstaller;
+use SyliusStarter\Themes\Installer\PromptInstaller;
 use SyliusStarter\Themes\Installer\RetroGamingInstaller;
 use SyliusStarter\Themes\Installer\TechInstaller;
 use SyliusStarter\Themes\Installer\ThemeInstallerDescriptor;
 use SyliusStarter\Themes\Installer\ThemesSyliusInstallerExtension;
 use SyliusStarter\Themes\Installer\VoltInstaller;
-use SyliusStarter\Themes\Remover\ArenaDarkThemeRemover;
-use SyliusStarter\Themes\Remover\ArenaLightThemeRemover;
+use SyliusStarter\Themes\Remover\ArenaRemover;
 use SyliusStarter\Themes\Remover\AuroraRemover;
 use SyliusStarter\Themes\Remover\BlushRemover;
 use SyliusStarter\Themes\Remover\CanvasRemover;
 use SyliusStarter\Themes\Remover\CellarRemover;
 use SyliusStarter\Themes\Remover\DriveRemover;
 use SyliusStarter\Themes\Remover\LagoonRemover;
-use SyliusStarter\Themes\Remover\PromptDarkThemeRemover;
-use SyliusStarter\Themes\Remover\PromptLightThemeRemover;
+use SyliusStarter\Themes\Remover\PromptRemover;
 use SyliusStarter\Themes\Remover\RetroGamingRemover;
 use SyliusStarter\Themes\Remover\TechRemover;
 use SyliusStarter\Themes\Remover\ThemeRemoverDescriptor;
@@ -57,8 +53,7 @@ SyliusInstallerExtensions::register('themes', new ThemesSyliusInstallerExtension
 function initialize(AfterBootEvent $afterBootEvent): void
 {
     Themes::addInstaller(new CanvasInstaller());
-    Themes::addInstaller(new PromptDarkThemeInstaller());
-    Themes::addInstaller(new PromptLightThemeInstaller());
+    Themes::addInstaller(new PromptInstaller());
     Themes::addInstaller(new BlushInstaller());
     Themes::addInstaller(new VoltInstaller());
     Themes::addInstaller(new LagoonInstaller());
@@ -67,12 +62,10 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addInstaller(new RetroGamingInstaller());
     Themes::addInstaller(new DriveInstaller());
     Themes::addInstaller(new CellarInstaller());
-    Themes::addInstaller(new ArenaDarkThemeInstaller());
-    Themes::addInstaller(new ArenaLightThemeInstaller());
+    Themes::addInstaller(new ArenaInstaller());
 
     Themes::addRemover(new CanvasRemover());
-    Themes::addRemover(new PromptDarkThemeRemover());
-    Themes::addRemover(new PromptLightThemeRemover());
+    Themes::addRemover(new PromptRemover());
     Themes::addRemover(new BlushRemover());
     Themes::addRemover(new VoltRemover());
     Themes::addRemover(new LagoonRemover());
@@ -81,8 +74,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addRemover(new RetroGamingRemover());
     Themes::addRemover(new DriveRemover());
     Themes::addRemover(new CellarRemover());
-    Themes::addRemover(new ArenaDarkThemeRemover());
-    Themes::addRemover(new ArenaLightThemeRemover());
+    Themes::addRemover(new ArenaRemover());
 
     foreach (ComponentResolver::candidates() as $reflection) {
         $descriptor = resolve_theme_installer($reflection);

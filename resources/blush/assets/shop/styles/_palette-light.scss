@@ -1,0 +1,33 @@
+// Blush, light scheme — a sunny boutique: white paper, rose panels, raspberry accents and a plum footer.
+$color-mode: light;
+
+$white: #FFFFFF;
+$paper: #FFFFFF;
+$surface: #FFFFFF;
+$rose: #FBF6F8;
+$rose-soft: #F7EEF2;
+$border: #E9DDE2;
+$field-border: $border;
+$ink: #2A2024;
+$muted: #6B6166;
+$plum: #2D141F;
+
+$pink: #B54878;
+$pink-bright: #DE5894;
+$accent-text: $pink;
+$accent-text-hover: $plum;
+$focus-border: $pink;
+$btn-hover-bg: $plum;
+$btn-hover-color: $white;
+
+$coral: #E7695B;
+$gold: #E9B44C;
+$green: #5BC98A;
+$info: #8ABCD0;
+// Status text: Bootstrap's own colors, only remapped by the dark scheme.
+$success-text: #198754;
+$danger-text: #DC3545;
+
+$footer-bg: $plum;
+$footer-link-hover: $pink-bright;
+$shadow-color: $plum;

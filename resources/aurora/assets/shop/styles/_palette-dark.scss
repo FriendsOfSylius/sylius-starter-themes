@@ -1,0 +1,65 @@
+// Aurora, dark scheme — the aurora at night: indigo-black sky, lilac type and the same blue-to-violet glow.
+$color-mode: dark;
+
+$page: #0E0C1A;
+$surface: #1A1730;
+// Bands sit between the page and the cards; $tint lights hovers, open items and image wells.
+$band: #15122A;
+$tint: #262144;
+$tint-strong: #3A3466;
+$line: #2A2547;
+$field-bg: #110F21;
+// Form field outlines: at least 3:1 against the field and every dark surface (WCAG 1.4.11).
+$field-border: #7A7398;
+$check-border: #7A7398;
+$heading: #F4F1FF;
+$emphasis: #FFF;
+$text: #D0CAE2;
+$text-muted: #A49DBB;
+$on-accent: #FFF;
+$on-dark: #FFF;
+
+// Fills keep the brand colors (white on violet: 6.7:1); hover lightens instead of darkening on the night page.
+$electric: #2F55E8;
+$violet: #6D35D6;
+$violet-hover: #7D47E6;
+$violet-soft: #A98BF0;
+// Violet and blue used as text, outline or icon: lilac and periwinkle tints of the brand hues (8:1 and more).
+$violet-text: #BAA4FF;
+$violet-text-hover: #D5C8FF;
+$link: #93A9FF;
+$focus: #8FA6FF;
+// Headline gradient lifted to stay bright on the night page (7:1 at both ends).
+$gradient-text-from: #7F98FF;
+$gradient-text-to: #B58DFF;
+
+// The journey panel goes darker than the page, so it still reads as the midnight side of the card.
+$night: #0A0815;
+
+$success: #34C08C;
+$success-text: #7FDDB5;
+$success-bg: #0F2A22;
+$success-border: #1E5A45;
+$info-text: #AEBDFF;
+$info-bg: #1C1A3D;
+$info-border: #34306A;
+$warning-text: #FFD48A;
+$warning-bg: #2A210E;
+$warning-border: #5C4718;
+$danger: #FF6B7D;
+$danger-text: #FFA3AE;
+$danger-bg: #2E1220;
+$danger-border: #6A2640;
+
+$selection-bg: #4A3A8F;
+$selection-color: #FFF;
+
+$shadow-soft: 0 10px 30px rgba(#000, 0.35);
+$shadow-float: 0 24px 60px rgba(#000, 0.55);
+$shadow-split: 0 30px 70px rgba(#000, 0.5);
+
+$hero-glow:
+  radial-gradient(circle at 100% 0%, rgba(#6D35D6, 0.6), transparent 45%),
+  radial-gradient(circle at 0% 100%, rgba(#2F55E8, 0.28), transparent 45%),
+  linear-gradient(165deg, #251F4D 0%, #191538 55%, #120F27 100%);
+$showcase-border: rgba(#FFF, 0.08);

@@ -1,40 +1,17 @@
 @import "fonts";
-@import "variables";
+@import "color-scheme";
 
 // Bootstrap / Sylius theme styles are loaded by the parent theme.
 // This file only contains the Naïs customizations.
 
-@import "base";
-@import "breadcrumbs";
-@import "buttons";
-@import "forms";
-@import "cards";
-@import "header";
-@import "footer";
-@import "cover";
-@import "promise";
-
-.bg-canvas {
-  background-color: $black !important;
-  color: $white !important;
+// The theme is compiled once per color scheme, scoped on the <html data-bs-theme> attribute set by the
+// color scheme switcher. Light is also the scheme without JavaScript.
+:where(:root:not([data-bs-theme="dark"])) {
+  @import "palette-light";
+  @import "theme";
 }
 
-.bg-canvas-soft {
-  background-color: $surface-soft !important;
-}
-
-.bg-ivory {
-  background-color: $background !important;
-}
-
-.bg-off-white {
-  background-color: $off-white !important;
-}
-
-.text-canvas {
-  color: $black !important;
-}
-
-.text-canvas-muted {
-  color: $text-muted !important;
+:where(:root[data-bs-theme="dark"]) {
+  @import "palette-dark";
+  @import "theme";
 }

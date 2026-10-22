@@ -1,20 +1,20 @@
 .form-label {
   margin-bottom: 0.5rem;
-  color: $ink;
+  color: $heading;
   font-weight: 700;
 }
 
 .form-control,
 .form-select {
   min-height: 2.875rem;
-  border: 1px solid $border;
+  border: 1px solid $field-border;
   border-radius: 0.75rem;
-  background-color: $white;
+  background-color: $surface;
   color: $text;
 
   &:focus {
-    border-color: $electric;
-    box-shadow: 0 0 0 3px rgba($electric, 0.14);
+    border-color: $accent-text;
+    box-shadow: 0 0 0 3px rgba($accent-text, 0.14);
   }
 
   &::placeholder {
@@ -24,15 +24,67 @@
 }
 
 .form-check-input {
-  border-color: $border;
+  border-color: $field-border;
 
   &:checked {
-    border-color: $electric;
-    background-color: $electric;
+    border-color: $accent;
+    background-color: $accent;
   }
 
   &:focus {
-    border-color: $electric;
-    box-shadow: 0 0 0 3px rgba($electric, 0.14);
+    border-color: $accent-text;
+    box-shadow: 0 0 0 3px rgba($accent-text, 0.14);
+  }
+}
+
+@if $dark {
+  .form-control,
+  .form-select {
+    &:focus {
+      background-color: $surface;
+      color: $heading;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: $surface-hover;
+      color: $text-muted;
+    }
+  }
+
+  // The chevron takes the accent: "#" escaped as "%23" in the data URI.
+  .form-select {
+    --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23#{str-slice(inspect($accent-text), 2)}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+
+    option {
+      background-color: $surface;
+      color: $heading;
+    }
+  }
+
+  .form-check-input {
+    background-color: $surface;
+  }
+
+  .input-group-text {
+    border-color: $field-border;
+    background-color: $surface-hover;
+    color: $text;
+  }
+
+  .ts-wrapper .ts-control,
+  .ts-dropdown {
+    border-color: $field-border !important;
+    background-color: $surface !important;
+    color: $heading !important;
+
+    input {
+      color: $heading !important;
+    }
+  }
+
+  .ts-dropdown .active {
+    background-color: $surface-hover !important;
+    color: $accent-text !important;
   }
 }

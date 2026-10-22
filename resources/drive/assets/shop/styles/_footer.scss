@@ -7,7 +7,7 @@
 }
 
 .drive-services {
-  background-color: $white;
+  background-color: $surface;
   box-shadow: 0 -1px 0 $border;
   color: $text;
 }
@@ -46,7 +46,7 @@
     width: 1.5rem;
     height: 1.5rem;
     fill: none;
-    stroke: $basil;
+    stroke: $accent-text;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 2;
@@ -60,7 +60,7 @@
 }
 
 .drive-services__name {
-  color: $ink;
+  color: $heading;
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: -0.015em;
@@ -74,7 +74,7 @@
 
 .drive-services__link {
   margin-top: 0.25rem;
-  color: $basil !important;
+  color: $accent-text !important;
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
@@ -112,7 +112,7 @@
     justify-content: space-between;
     gap: 1rem;
     padding-bottom: 0.3rem;
-    border-bottom: 1px dashed rgba($ink, 0.15);
+    border-bottom: 1px dashed rgba($heading, 0.15);
   }
 
   > div:last-child {
@@ -127,7 +127,7 @@
 
   dd {
     margin: 0;
-    color: $ink;
+    color: $heading;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
   }

@@ -1,0 +1,37 @@
+// Blush, dark scheme — the boutique after hours: plum-black velvet, rose-tinted panels, glowing raspberry accents.
+$color-mode: dark;
+
+$white: #FFFFFF;
+$paper: #1A1216;
+$surface: #251A21;
+$rose: #2A1D25;
+$rose-soft: #35252F;
+$border: #43313B;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #8C7783;
+$ink: #F7ECF1;
+$muted: #BFAEB8;
+$plum: #2D141F;
+
+// The raspberry stays the fill of buttons and badges (white on raspberry: 5:1).
+$pink: #B54878;
+$pink-bright: #DE5894;
+// Accent used as text on the dark page: a light raspberry of the same hue (7:1 on the rose panels).
+$accent-text: #F28DB9;
+$accent-text-hover: #FFC4DC;
+$focus-border: $pink-bright;
+// Hover lights the button up instead of darkening it: plum on bright raspberry (4.8:1).
+$btn-hover-bg: $pink-bright;
+$btn-hover-color: $plum;
+
+$coral: #E7695B;
+$gold: #E9B44C;
+$green: #5BC98A;
+$info: #8ABCD0;
+$success-text: $green;
+$danger-text: #FF8F82;
+
+// A wine plum, lighter and warmer than the page, with a hairline on top so the footer still stands apart.
+$footer-bg: #3A1829;
+$footer-link-hover: $accent-text;
+$shadow-color: #000000;

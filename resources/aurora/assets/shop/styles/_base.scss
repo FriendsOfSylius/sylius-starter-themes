@@ -1,12 +1,55 @@
-html {
+// scheme-root targets the <html> element of the active color scheme, with the weight of ":root" (see app.scss).
+@include scheme-root {
   scroll-behavior: smooth;
 }
 
 // WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
 // shipping and payment descriptions) with these Bootstrap utilities, too light by default.
-:root {
+@include scheme-root {
   --bs-secondary-color: #{$text-muted};
   --bs-tertiary-color: #{$text-muted};
+}
+
+// The light scheme keeps Bootstrap's light defaults. The dark one remaps Bootstrap's runtime variables to the
+// night palette, so that every native component (tables, dropdowns, offcanvas, modals...) follows it.
+@if $dark {
+  @include scheme-root {
+    --bs-body-bg: #{$page};
+    --bs-body-bg-rgb: #{channels($page)};
+    --bs-body-color: #{$text};
+    --bs-body-color-rgb: #{channels($text)};
+    --bs-emphasis-color: #{$heading};
+    --bs-emphasis-color-rgb: #{channels($heading)};
+    --bs-heading-color: #{$heading};
+    --bs-secondary-color-rgb: #{channels($text-muted)};
+    --bs-secondary-bg: #{$surface};
+    --bs-secondary-bg-rgb: #{channels($surface)};
+    --bs-tertiary-color-rgb: #{channels($text-muted)};
+    --bs-tertiary-bg: #{$tint};
+    --bs-tertiary-bg-rgb: #{channels($tint)};
+    --bs-border-color: #{$line};
+    --bs-border-color-translucent: #{rgba($heading, 0.1)};
+    --bs-link-color: #{$link};
+    --bs-link-color-rgb: #{channels($link)};
+    --bs-link-hover-color: #{$violet-text};
+    --bs-link-hover-color-rgb: #{channels($violet-text)};
+    --bs-primary: #{$violet};
+    --bs-primary-rgb: #{channels($violet)};
+    --bs-primary-text-emphasis: #{$violet-text};
+    --bs-primary-bg-subtle: #{$tint};
+    --bs-primary-border-subtle: #{$tint-strong};
+    --bs-light: #{$tint};
+    --bs-light-rgb: #{channels($tint)};
+    --bs-dark: #{$heading};
+    --bs-dark-rgb: #{channels($heading)};
+    --bs-code-color: #{$violet-text};
+    --bs-highlight-bg: #{rgba($violet, 0.35)};
+    --bs-highlight-color: #{$heading};
+    --bs-form-valid-color: #{$success-text};
+    --bs-form-valid-border-color: #{$success};
+
+    color-scheme: $color-mode;
+  }
 }
 
 .text-black-50 {
@@ -15,7 +58,7 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: $white;
+  background-color: $page;
   color: $text;
   font-family: $font-family-base;
   font-feature-settings: "cv03", "cv04", "cv11", "ss01";
@@ -24,14 +67,14 @@ body {
 }
 
 a {
-  color: $electric;
+  color: $link;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
   transition: color 160ms ease;
 
   &:hover,
   &.link-reset:hover {
-    color: $violet;
+    color: $violet-text;
   }
 }
 
@@ -44,7 +87,7 @@ h6,
 .h1,
 .h2,
 .h3 {
-  color: $ink;
+  color: $heading;
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   letter-spacing: -0.045em;
@@ -77,20 +120,114 @@ h6,
 }
 
 ::selection {
-  background-color: $lavender-strong;
-  color: $midnight;
+  background-color: $selection-bg;
+  color: $selection-color;
 }
 
 :focus-visible {
-  outline: 3px solid $electric;
+  outline: 3px solid $focus;
   outline-offset: 3px;
+}
+
+// Light utilities printed by Sylius templates (cart and checkout summaries, account pages) and native
+// components, aligned on the night surfaces in the dark scheme.
+@if $dark {
+  .bg-white,
+  .bg-body {
+    background-color: $surface !important;
+    color: $text !important;
+  }
+
+  .bg-light,
+  .bg-body-tertiary,
+  .text-bg-light {
+    background-color: $tint !important;
+    color: $text !important;
+  }
+
+  .text-black,
+  .text-dark,
+  .text-body {
+    color: $text !important;
+  }
+
+  .border,
+  .border-top,
+  .border-bottom,
+  .border-start,
+  .border-end {
+    border-color: $line !important;
+  }
+
+  .btn-close {
+    filter: invert(1) grayscale(1) brightness(2);
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{$surface};
+    --bs-dropdown-color: #{$text};
+    --bs-dropdown-border-color: #{$line};
+    --bs-dropdown-link-color: #{$text};
+    --bs-dropdown-link-hover-color: #{$heading};
+    --bs-dropdown-link-hover-bg: #{$tint};
+    --bs-dropdown-link-active-color: #{$on-accent};
+    --bs-dropdown-link-active-bg: #{$violet};
+    --bs-dropdown-divider-bg: #{$line};
+  }
+
+  .pagination {
+    --bs-pagination-color: #{$link};
+    --bs-pagination-bg: #{$surface};
+    --bs-pagination-border-color: #{$line};
+    --bs-pagination-hover-color: #{$violet-text-hover};
+    --bs-pagination-hover-bg: #{$tint};
+    --bs-pagination-hover-border-color: #{$tint-strong};
+    --bs-pagination-focus-color: #{$violet-text-hover};
+    --bs-pagination-focus-bg: #{$tint};
+    --bs-pagination-active-color: #{$on-accent};
+    --bs-pagination-active-bg: #{$violet};
+    --bs-pagination-active-border-color: #{$violet};
+    --bs-pagination-disabled-color: #{$text-muted};
+    --bs-pagination-disabled-bg: #{$surface};
+    --bs-pagination-disabled-border-color: #{$line};
+  }
+
+  .list-group {
+    --bs-list-group-bg: #{$surface};
+    --bs-list-group-color: #{$text};
+    --bs-list-group-border-color: #{$line};
+    --bs-list-group-action-hover-bg: #{$tint};
+    --bs-list-group-action-hover-color: #{$heading};
+    --bs-list-group-active-bg: #{$violet};
+    --bs-list-group-active-border-color: #{$violet};
+    --bs-list-group-active-color: #{$on-accent};
+  }
+
+  .modal {
+    --bs-modal-bg: #{$surface};
+    --bs-modal-color: #{$text};
+    --bs-modal-border-color: #{$line};
+    --bs-modal-header-border-color: #{$line};
+    --bs-modal-footer-border-color: #{$line};
+  }
+
+  .offcanvas,
+  .offcanvas-lg {
+    --bs-offcanvas-bg: #{$surface};
+    --bs-offcanvas-color: #{$text};
+  }
+
+  .table {
+    --bs-table-color: #{$text};
+    --bs-table-bg: transparent;
+  }
 }
 
 // Shared editorial helpers
 
 .aurora-eyebrow {
   margin-bottom: 0.9rem;
-  color: $violet;
+  color: $violet-text;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -123,21 +260,21 @@ h6,
 
 .aurora-checkout-brand,
 .aurora-checkout-account {
-  color: $ink;
+  color: $heading;
 }
 
 .aurora-checkout-account a,
 .aurora-checkout-account .btn {
-  color: $violet;
+  color: $violet-text;
 }
 
 .aurora-checkout-account a:hover,
 .aurora-checkout-account .btn:hover {
-  color: $midnight;
+  color: $emphasis;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  @include scheme-root {
     scroll-behavior: auto;
   }
 

@@ -1,20 +1,17 @@
-@import "variables";
-
 // Bootstrap / Sylius theme styles are loaded by the parent theme.
 // This file contains only the Drive customizations.
 // Typography relies on InterVariable, already shipped by the Sylius shop, set heavy for a grocery-flyer feel.
 
-@import "base";
-@import "layout";
-@import "accordions";
-@import "breadcrumbs";
-@import "buttons";
-@import "cards";
-@import "feedback";
-@import "forms";
-@import "header";
-@import "footer";
-@import "hero";
-@import "sections";
-@import "product";
-@import "cart";
+@import "color-scheme";
+
+// The theme is compiled once per color scheme, scoped on the <html data-bs-theme> attribute set by the
+// color scheme switcher. Light is also the scheme without JavaScript.
+:where(:root:not([data-bs-theme="dark"])) {
+  @import "palette-light";
+  @import "theme";
+}
+
+:where(:root[data-bs-theme="dark"]) {
+  @import "palette-dark";
+  @import "theme";
+}

@@ -1,6 +1,6 @@
 .form-label {
   margin-bottom: 0.45rem;
-  color: $ink;
+  color: $heading;
   font-size: 0.86rem;
   font-weight: 600;
 }
@@ -8,10 +8,10 @@
 .form-control,
 .form-select {
   min-height: 2.875rem;
-  border: 1px solid $border-strong;
+  border: 1px solid $field-border;
   border-radius: $radius-sm;
-  background-color: $ivory;
-  color: $ink;
+  background-color: $surface;
+  color: $heading;
   transition:
     border-color 160ms ease,
     box-shadow 160ms ease;
@@ -21,9 +21,9 @@
   }
 
   &:focus {
-    border-color: $wine;
-    background-color: $ivory;
-    box-shadow: 0 0 0 3px rgba($wine, 0.14);
+    border-color: $accent-text;
+    background-color: $surface;
+    box-shadow: 0 0 0 3px $focus-ring;
   }
 
   &::placeholder {
@@ -33,17 +33,17 @@
 }
 
 .form-check-input {
-  border-color: $border-strong;
-  background-color: $ivory;
+  border-color: $field-border;
+  background-color: $surface;
 
   &:checked {
-    border-color: $wine;
-    background-color: $wine;
+    border-color: $accent;
+    background-color: $accent;
   }
 
   &:focus {
-    border-color: $wine;
-    box-shadow: 0 0 0 3px rgba($wine, 0.14);
+    border-color: $accent-text;
+    box-shadow: 0 0 0 3px $focus-ring;
   }
 }
 

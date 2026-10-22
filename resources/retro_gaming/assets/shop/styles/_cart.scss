@@ -10,11 +10,11 @@
   }
 
   .table .link-reset {
-    color: $white;
+    color: $heading;
     text-decoration: none;
 
     &:hover {
-      color: $cyan;
+      color: $cyan-text;
     }
   }
 
@@ -23,7 +23,7 @@
 
     &:hover,
     &:focus-visible {
-      color: $red;
+      color: $red-text;
     }
   }
 
@@ -47,21 +47,21 @@
 
 #offcanvasCart .offcanvas-title::before {
   margin-right: 0.6rem;
-  color: $gold;
+  color: $gold-text;
   content: "★";
 }
 
 #offcanvasCart .offcanvas-body .link-reset {
-  color: $white;
+  color: $heading;
   text-decoration: none;
 
   &:hover {
-    color: $cyan;
+    color: $cyan-text;
   }
 }
 
 #offcanvasCart .offcanvas-footer .h5.text-end {
-  color: $gold;
+  color: $gold-text;
   font-family: $font-family-pixel;
 }
 

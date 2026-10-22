@@ -1,8 +1,8 @@
 header {
   position: relative;
   z-index: 2;
-  border-bottom: 1px solid $border;
-  background-color: rgba($white, 0.94);
+  border-bottom: 1px solid $line;
+  background-color: $header-bg;
   backdrop-filter: saturate(1.4) blur(10px);
 }
 
@@ -11,10 +11,10 @@ header .container {
 }
 
 header a {
-  color: $ink;
+  color: $heading;
 
   &:hover {
-    color: $signal-dark;
+    color: $accent-text;
   }
 }
 
@@ -29,12 +29,12 @@ header .navbar {
   width: fit-content;
   align-items: center;
   gap: 0.55rem;
-  color: $ink;
+  color: $heading;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $ink;
+    color: $heading;
     text-decoration: none;
   }
 }
@@ -62,7 +62,7 @@ header .navbar {
 }
 
 .tech-logo:hover .tech-logo__core {
-  fill: $white;
+  fill: $page;
 }
 
 .tech-logo__name {
@@ -114,8 +114,8 @@ header .navbar {
   &:hover,
   &:focus,
   &[aria-expanded="true"] {
-    background-color: $aluminium;
-    color: $ink;
+    background-color: $tint;
+    color: $heading;
   }
 }
 
@@ -123,9 +123,9 @@ header .navbar {
   z-index: 1060;
   min-width: 13rem;
   padding: 0.4rem;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
@@ -139,8 +139,8 @@ header .navbar {
 
   &:hover,
   &:focus {
-    background-color: $aluminium;
-    color: $ink;
+    background-color: $tint;
+    color: $heading;
   }
 }
 
@@ -148,14 +148,14 @@ header .navbar {
 
 .tech-cart__button {
   --bs-btn-color: #{$white};
-  --bs-btn-bg: #{$carbon};
-  --bs-btn-border-color: #{$carbon};
+  --bs-btn-bg: #{$cart-bg};
+  --bs-btn-border-color: #{$cart-border};
   --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$steel};
-  --bs-btn-hover-border-color: #{$steel};
+  --bs-btn-hover-bg: #{$cart-hover-bg};
+  --bs-btn-hover-border-color: #{$cart-hover-bg};
   --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$steel};
-  --bs-btn-active-border-color: #{$steel};
+  --bs-btn-active-bg: #{$cart-hover-bg};
+  --bs-btn-active-border-color: #{$cart-hover-bg};
 
   position: relative;
   display: inline-flex;
@@ -181,10 +181,10 @@ header .navbar {
   height: 1.3rem;
   place-items: center;
   padding: 0 0.3rem;
-  border: 2px solid $white;
+  border: 2px solid $page;
   border-radius: $radius-sm;
   background-color: $signal;
-  color: $carbon;
+  color: $on-signal;
   font-family: $font-family-monospace;
   font-size: 0.68rem;
   font-weight: 700;
@@ -192,20 +192,20 @@ header .navbar {
 }
 
 header .dropdown-menu {
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
 header .dropdown-item {
   border-radius: $radius-sm;
-  color: $ink;
+  color: $heading;
 
   &:hover,
   &:focus {
-    background-color: $aluminium;
-    color: $ink;
+    background-color: $tint;
+    color: $heading;
   }
 }
 
@@ -228,7 +228,7 @@ header .dropdown-item {
   }
 
   .tech-category-nav__menu .offcanvas-header {
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $line;
   }
 
   .tech-category-nav__menu .offcanvas-body {
@@ -249,7 +249,7 @@ header .dropdown-item {
     white-space: normal;
     justify-content: space-between;
     padding: 0.75rem 0.85rem !important;
-    color: $ink;
+    color: $heading;
   }
 
   .tech-category-nav__menu .dropdown-menu {
@@ -257,7 +257,7 @@ header .dropdown-item {
     width: 100%;
     margin-top: 0.25rem;
     border: 0;
-    background: $aluminium;
+    background: $tint;
     box-shadow: none;
     transform: none !important;
   }

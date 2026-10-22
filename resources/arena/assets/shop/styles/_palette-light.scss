@@ -1,0 +1,37 @@
+// Arena, light scheme — a daylight launcher: frost-white glass panels, ink display type and the same acid-lime signal.
+$color-mode: light;
+
+$page: #F2F4F8;
+$page-alt: #FFF;
+$surface: #FFF;
+$surface-raised: #E6EAF1;
+$line: #DCE1EA;
+$line-strong: #C3CAD6;
+// Form field outlines: at least 3:1 against every light surface (WCAG 1.4.11).
+$field-border: #737D90;
+$line-soft: rgba(#0B0E16, 0.08);
+$heading: #0B0E16;
+$text: #3A4255;
+$text-muted: #586174;
+$on-accent: #0B0E16;
+
+// The acid lime stays the signature fill (ink on lime: 15:1); on the light page it never carries text.
+$lime: #C6F432;
+$lime-soft: #DBFF73;
+$lime-dark: #9CC41A;
+// Accent used as text, outline or stroke on the page: a deep olive of the same hue (5.7:1 on the page).
+$accent-text: #3F6B00;
+$accent-text-hover: #2D4E00;
+$violet: #7C5CFF;
+$ember: #FF8A4C;
+$red: #C42B3B;
+$amber: #FFB547;
+$amber-text: #8A5A00;
+$info: #1F64C8;
+
+$shadow-float: 0 24px 60px -28px rgba(#1B2440, 0.35);
+$glow-lime: 0 0 0 2px $lime-dark, 0 14px 36px -14px rgba(#5F8A00, 0.45);
+
+// Opaque enough that olive and muted text keep 4.5:1 even over the darkest part of the key art.
+$glass-bg: rgba(#FFF, 0.88);
+$glass-border: rgba(#0B0E16, 0.1);

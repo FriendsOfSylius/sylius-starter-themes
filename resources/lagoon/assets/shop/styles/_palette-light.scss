@@ -1,0 +1,71 @@
+// Lagoon, light scheme — deep-water teal, aqua shallows, mint foam and a touch of iris on white sand.
+$color-mode: light;
+
+// Brand hues, shared by both schemes.
+$abyss: #0A3A3E;
+$abyss-deep: #072B2E;
+$teal: #0E7C86;
+$teal-dark: #0A5F67;
+$aqua: #14DFE6;
+$aqua-soft: #9BF0F3;
+$iris: #6B3FE0;
+$sky: #3E93C1;
+$ink: #0B1416;
+$white: #FFF;
+
+// Surfaces and lines.
+$page: $white;
+$surface: $white;
+$tint: #E7F9F9;
+$tint-strong: #CDEFF0;
+$line: #D7EEEF;
+$field-border: $line;
+$field-border-hover: $tint-strong;
+$iris-soft: #EEE8FD;
+
+// Dark "deep water" sections (footer band, comparison), dark in both schemes.
+$deep: $abyss;
+$on-deep: $white;
+
+// Type.
+$heading: $ink;
+$text: #2F3D40;
+$text-muted: #617174;
+$accent-text: $teal;
+$accent-text-hover: $abyss;
+$iris-text: $iris;
+
+// Teal pill calls to action, darkening to the abyss on hover.
+$primary-bg: $teal;
+$on-primary: $white;
+$primary-hover-bg: $abyss;
+$on-primary-hover: $white;
+
+// Feedback.
+$success: #1F8A6A;
+$success-text: #135C47;
+$success-bg: #E6F6F0;
+$success-border: #B5E2D3;
+$info: $teal;
+$info-text: $abyss;
+$info-bg: $tint;
+$info-border: $tint-strong;
+// Danger and warning keep Bootstrap's light defaults (only remapped in the dark scheme).
+$red: #DC3545;
+$red-text: #58151C;
+$red-bg: #F8D7DA;
+$red-border: #F1AEB5;
+$amber-text: #664D03;
+$amber-bg: #FFF3CD;
+$amber-border: #FFE69C;
+
+$shadow-soft: 0 10px 30px rgba($abyss, 0.06);
+$shadow-float: 0 24px 60px rgba($abyss, 0.12);
+$shadow-compare: 0 30px 70px rgba($abyss, 0.1);
+
+// Hero visual: iris and aqua glows over a morning-sky wash.
+$hero-visual-bg:
+  radial-gradient(circle at 105% -5%, rgba(#8F8CFF, 0.9), transparent 42%),
+  radial-gradient(circle at -10% 110%, rgba($aqua, 0.35), transparent 45%),
+  linear-gradient(160deg, #C7E4F6 0%, #F6F8FD 55%, #E3F8F9 100%);
+$window-border: rgba($white, 0.8);

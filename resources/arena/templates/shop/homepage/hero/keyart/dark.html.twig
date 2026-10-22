@@ -1,0 +1,130 @@
+{# Original key art: a lone wanderer on a rocky spur, facing an eclipsed ringed giant over a hazy alien range at dusk. #}
+<svg class="arena-keyart arena-keyart--dark" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="arena-keyart-dark-title" focusable="false">
+    <title id="arena-keyart-dark-title">{{ 'arena.hero.illustration'|trans({}, 'arena') }}</title>
+    <defs>
+        <linearGradient id="arena-keyart-dark-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#05060B"/>
+            <stop offset="0.38" stop-color="#151036"/>
+            <stop offset="0.58" stop-color="#3B1A4E"/>
+            <stop offset="0.7" stop-color="#9A3B45"/>
+            <stop offset="0.76" stop-color="#F0803E"/>
+            <stop offset="0.82" stop-color="#3A1626"/>
+        </linearGradient>
+        <radialGradient id="arena-keyart-dark-planet" cx="0.38" cy="0.3" r="0.8">
+            <stop offset="0" stop-color="#231D4D"/>
+            <stop offset="0.55" stop-color="#120F2A"/>
+            <stop offset="1" stop-color="#06050F"/>
+        </radialGradient>
+        <radialGradient id="arena-keyart-dark-glow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0.6" stop-color="#C6F432" stop-opacity="0.32"/>
+            <stop offset="0.78" stop-color="#7C5CFF" stop-opacity="0.18"/>
+            <stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="arena-keyart-dark-beam" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E9FFB0" stop-opacity="0.32"/>
+            <stop offset="1" stop-color="#E9FFB0" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="arena-keyart-dark-haze" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FF8A4C" stop-opacity="0"/>
+            <stop offset="0.5" stop-color="#FF8A4C" stop-opacity="0.28"/>
+            <stop offset="1" stop-color="#FF8A4C" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="arena-keyart-dark-fade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#07080D" stop-opacity="0"/>
+            <stop offset="1" stop-color="#07080D"/>
+        </linearGradient>
+        <filter id="arena-keyart-dark-blur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="40"/>
+        </filter>
+        <clipPath id="arena-keyart-dark-disc">
+            <circle cx="900" cy="300" r="186"/>
+        </clipPath>
+        <radialGradient id="arena-keyart-dark-crescent" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#9C8CFF" stop-opacity="0.38"/>
+            <stop offset="1" stop-color="#9C8CFF" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="arena-keyart-dark-backlight" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#FFC08A" stop-opacity="0.85"/>
+            <stop offset="0.45" stop-color="#FF8A4C" stop-opacity="0.35"/>
+            <stop offset="1" stop-color="#FF8A4C" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="arena-keyart-dark-haze-blur" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="14"/>
+        </filter>
+        <filter id="arena-keyart-dark-soft" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6"/>
+        </filter>
+    </defs>
+
+    <rect width="1600" height="900" fill="url(#arena-keyart-dark-sky)"/>
+
+    {# Nebula clouds. #}
+    <g filter="url(#arena-keyart-dark-blur)">
+        <ellipse cx="420" cy="180" rx="360" ry="120" fill="#7C5CFF" opacity="0.28"/>
+        <ellipse cx="1320" cy="260" rx="300" ry="140" fill="#3D7BFF" opacity="0.2"/>
+        <ellipse cx="900" cy="560" rx="520" ry="90" fill="#FF7A3D" opacity="0.35"/>
+    </g>
+
+    {# Star field. #}
+    <g fill="#F5F7FB">
+        {% for i in 0..89 %}
+            <circle cx="{{ (i * 233 + 41) % 1600 }}" cy="{{ (i * 97 + 13) % 470 }}" r="{{ 0.6 + (i % 3) * 0.45 }}" opacity="{{ 0.25 + (i % 5) * 0.13 }}"/>
+        {% endfor %}
+    </g>
+
+    {# The eclipsed ringed giant: dark disc lit on its upper rim, banded surface, ring passing in front. #}
+    <g transform="rotate(-14 900 300)">
+        <ellipse cx="900" cy="300" rx="330" ry="56" fill="none" stroke="#F5F7FB" stroke-opacity="0.14" stroke-width="12"/>
+        <ellipse cx="900" cy="300" rx="372" ry="64" fill="none" stroke="#C6F432" stroke-opacity="0.1" stroke-width="2"/>
+    </g>
+    <circle cx="900" cy="300" r="250" fill="url(#arena-keyart-dark-glow)"/>
+    <circle cx="900" cy="300" r="186" fill="url(#arena-keyart-dark-planet)"/>
+    <g clip-path="url(#arena-keyart-dark-disc)" fill="none" stroke-linecap="round">
+        <ellipse cx="900" cy="250" rx="240" ry="26" stroke="#7C5CFF" stroke-opacity="0.18" stroke-width="14" transform="rotate(-14 900 300)"/>
+        <ellipse cx="900" cy="315" rx="240" ry="30" stroke="#3D7BFF" stroke-opacity="0.12" stroke-width="22" transform="rotate(-14 900 300)"/>
+        <ellipse cx="900" cy="372" rx="240" ry="28" stroke="#7C5CFF" stroke-opacity="0.1" stroke-width="10" transform="rotate(-14 900 300)"/>
+        <circle cx="1010" cy="180" r="190" fill="url(#arena-keyart-dark-crescent)" stroke="none"/>
+    </g>
+    <path d="M760 176a186 186 0 0 1 320 86" fill="none" stroke="#E9FFB0" stroke-width="7" stroke-linecap="round" opacity="0.7" filter="url(#arena-keyart-dark-soft)"/>
+    <path d="M760 176a186 186 0 0 1 320 86" fill="none" stroke="#F5F7FB" stroke-width="1.6" stroke-linecap="round"/>
+    <g transform="rotate(-14 900 300)">
+        <path d="M570 300a330 56 0 0 0 660 0" fill="none" stroke="#F5F7FB" stroke-opacity="0.3" stroke-width="12"/>
+        <path d="M528 300a372 64 0 0 0 744 0" fill="none" stroke="#C6F432" stroke-opacity="0.32" stroke-width="2"/>
+    </g>
+
+    {# A soft shaft of light falling on the spur. #}
+    <path class="arena-keyart__beam" d="M872 470h56l90 180H782z" fill="url(#arena-keyart-dark-beam)" filter="url(#arena-keyart-dark-haze-blur)"/>
+
+    {# Mountain ranges, from the farthest to the closest. #}
+    <path d="M0 600l90-50 70 22 110-80 90 60 80-34 120 70 110-58 100 46 130-92 120 84 90-30 140 70 110-46 120 52 120-30v388H0z" fill="#4A2350" opacity="0.75"/>
+    <rect y="540" width="1600" height="120" fill="url(#arena-keyart-dark-haze)"/>
+    <path d="M0 660l130-46 100 30 140-64 120 56 150-30 110 40 150-62 130 48 120-24 150 52 130-40 140 46 80-12v346H0z" fill="#25153A"/>
+    <path d="M0 735l170-40 160 28 190-52 150 40 210-30 170 34 190-46 180 40 180-22v253H0z" fill="#130D24"/>
+
+    <ellipse cx="886" cy="600" rx="150" ry="95" fill="url(#arena-keyart-dark-backlight)"/>
+
+    {# Rocky spur under the wanderer, and the cliff on the right. #}
+    <path d="M640 900l70-150 60-64 52-22h110l60 34 70 80 70 122z" fill="#0B0915"/>
+    <path d="M822 664h110l14 8H812z" fill="#C6F432" opacity="0.35"/>
+    <path d="M1250 900l40-170 70-110 90-60 80-90 70-30v460z" fill="#08070F"/>
+    <path d="M1360 620l90-60 80-90 70-30" fill="none" stroke="#FF8A4C" stroke-opacity="0.35" stroke-width="2"/>
+
+    {# The wanderer, cape in the wind, rim-lit by the eclipse. #}
+    <g class="arena-keyart__hero" transform="translate(880 664) scale(1.7) translate(-880 -664)">
+        <path d="M902 612C918 620 936 638 952 662L908 664z" fill="#05040A"/>
+        <path d="M885 586c5.5 0 9 5 9 12l1 9c5 2 8 7 9 13l5 44h-48l5-44c1-6 4-11 9-13l1-9c0-7 3.5-12 9-12z" fill="#05040A"/>
+        <path d="M876 598c0-7 3.5-12 9-12M866 620c1-6 4-11 9-13" fill="none" stroke="#FFD2A8" stroke-width="1.1" stroke-linecap="round" opacity="0.9"/>
+        <path d="M862 572l-4 92" stroke="#05040A" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="862" cy="566" r="11" fill="#C6F432" opacity="0.22"/>
+        <path d="M862 559l3.5 7-3.5 7-3.5-7z" fill="#E9FFB0"/>
+    </g>
+
+    {# Drifting embers. #}
+    <g class="arena-keyart__embers" fill="#FFB27A">
+        {% for i in 0..17 %}
+            <circle cx="{{ 600 + (i * 157) % 700 }}" cy="{{ 520 + (i * 61) % 300 }}" r="{{ 1 + (i % 3) * 0.6 }}" opacity="{{ 0.35 + (i % 4) * 0.15 }}"/>
+        {% endfor %}
+    </g>
+
+    <rect y="600" width="1600" height="300" fill="url(#arena-keyart-dark-fade)"/>
+</svg>

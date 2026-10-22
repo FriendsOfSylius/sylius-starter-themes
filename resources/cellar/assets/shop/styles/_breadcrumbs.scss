@@ -17,11 +17,11 @@
     text-decoration: none;
 
     &:hover {
-      color: $wine;
+      color: $accent-text;
     }
   }
 
   .breadcrumb-item.active {
-    color: $ink;
+    color: $heading;
   }
 }

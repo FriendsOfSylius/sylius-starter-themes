@@ -14,14 +14,14 @@
     z-index: -2;
     inset: 0;
     background:
-      radial-gradient(1px 1px at 12% 18%, rgba($white, 0.9) 50%, transparent 51%),
-      radial-gradient(1px 1px at 27% 62%, rgba($white, 0.6) 50%, transparent 51%),
+      radial-gradient(1px 1px at 12% 18%, rgba($hero-star, 0.9) 50%, transparent 51%),
+      radial-gradient(1px 1px at 27% 62%, rgba($hero-star, 0.6) 50%, transparent 51%),
       radial-gradient(2px 2px at 41% 28%, rgba($cyan, 0.9) 50%, transparent 51%),
-      radial-gradient(1px 1px at 58% 12%, rgba($white, 0.8) 50%, transparent 51%),
+      radial-gradient(1px 1px at 58% 12%, rgba($hero-star, 0.8) 50%, transparent 51%),
       radial-gradient(2px 2px at 73% 44%, rgba($magenta, 0.9) 50%, transparent 51%),
-      radial-gradient(1px 1px at 86% 22%, rgba($white, 0.7) 50%, transparent 51%),
-      radial-gradient(1px 1px at 93% 68%, rgba($white, 0.6) 50%, transparent 51%),
-      radial-gradient(1px 1px at 6% 78%, rgba($white, 0.5) 50%, transparent 51%),
+      radial-gradient(1px 1px at 86% 22%, rgba($hero-star, 0.7) 50%, transparent 51%),
+      radial-gradient(1px 1px at 93% 68%, rgba($hero-star, 0.6) 50%, transparent 51%),
+      radial-gradient(1px 1px at 6% 78%, rgba($hero-star, 0.5) 50%, transparent 51%),
       radial-gradient(2px 2px at 50% 80%, rgba($gold, 0.7) 50%, transparent 51%),
       radial-gradient(60rem 30rem at 85% 30%, rgba($magenta, 0.16), transparent 70%),
       radial-gradient(50rem 30rem at 10% 90%, rgba($cyan, 0.12), transparent 70%);
@@ -64,20 +64,20 @@
   justify-content: space-between;
   gap: 0.5rem 1.5rem;
   padding-block: 0.7rem;
-  color: $white;
+  color: $heading;
 }
 
 .rg-hud__label {
   margin-right: 0.4rem;
-  color: $magenta;
+  color: $magenta-text;
 }
 
 .rg-hud__item--hi .rg-hud__label {
-  color: $cyan;
+  color: $cyan-text;
 }
 
 .rg-hud__item--credits .rg-hud__label {
-  color: $gold;
+  color: $gold-text;
 }
 
 .rg-hud__lives {
@@ -109,7 +109,7 @@
   margin: $pixel $pixel 1.75rem;
   padding: 0.55rem 0.8rem;
   background-color: $panel;
-  color: $gold;
+  color: $gold-text;
   font-size: 0.875rem;
 
   @include pixel-frame($line, 3px);
@@ -118,7 +118,7 @@
 .rg-hero h1 {
   max-width: 15ch;
   margin: 0 0 1.5rem;
-  color: $white;
+  color: $heading;
   font-size: clamp(2rem, 4.4vw, 3.5rem);
   line-height: 1.12;
   text-shadow:
@@ -126,7 +126,7 @@
     -3px -1px 0 rgba($magenta, 0.35);
 
   em {
-    color: $magenta;
+    color: $magenta-text;
     font-style: normal;
     text-shadow:
       0 0 18px rgba($magenta, 0.6),
@@ -142,7 +142,7 @@
   line-height: 1.65;
 
   strong {
-    color: $white;
+    color: $heading;
   }
 }
 
@@ -162,7 +162,7 @@
 .rg-hero__link {
   @include pixel-label;
 
-  color: $cyan;
+  color: $cyan-text;
   font-size: 0.875rem;
   text-decoration: none;
 
@@ -172,7 +172,7 @@
   }
 
   &:hover {
-    color: $white;
+    color: $heading;
   }
 }
 
@@ -197,20 +197,20 @@
     width: 1.6rem;
     height: 1.6rem;
     flex: 0 0 auto;
-    fill: $lime;
+    fill: $lime-text;
   }
 
   li:nth-child(2) svg {
-    fill: $cyan;
+    fill: $cyan-text;
   }
 
   li:nth-child(3) svg {
-    fill: $gold;
+    fill: $gold-text;
   }
 
   strong {
     display: block;
-    color: $white;
+    color: $heading;
     font-size: 0.92rem;
   }
 }
@@ -221,24 +221,25 @@
   position: relative;
 }
 
+// The screen stays dark in every scheme: its content uses the $crt-* colors.
 .rg-screen {
   margin: $pixel;
   padding: 1rem 1rem 0;
-  background-color: #191D3F;
+  background-color: $screen-bezel;
   box-shadow:
-    0 (-$pixel) 0 0 #191D3F,
-    0 $pixel 0 0 #191D3F,
-    (-$pixel) 0 0 0 #191D3F,
-    $pixel 0 0 0 #191D3F,
-    0 30px 80px rgba(#000, 0.55),
+    0 (-$pixel) 0 0 $screen-bezel,
+    0 $pixel 0 0 $screen-bezel,
+    (-$pixel) 0 0 0 $screen-bezel,
+    $pixel 0 0 0 $screen-bezel,
+    0 30px 80px $screen-shadow,
     0 0 90px rgba($magenta, 0.18);
 }
 
 .rg-screen__glass {
   position: relative;
   overflow: hidden;
-  background-color: $void;
-  box-shadow: inset 0 0 0 3px #090A18;
+  background-color: $crt-glass;
+  box-shadow: inset 0 0 0 3px $screen-edge;
 
   // Scanlines and a soft vignette over the screen.
   &::after {
@@ -280,7 +281,7 @@
   span {
     width: 1.5rem;
     height: 0.25rem;
-    background-color: $line;
+    background-color: $screen-vent;
   }
 }
 
@@ -321,11 +322,11 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1.1rem;
-  color: $text;
+  color: $crt-text;
   text-decoration: none;
 
   &:hover {
-    color: $text;
+    color: $crt-text;
   }
 }
 
@@ -335,7 +336,7 @@
   overflow: hidden;
   aspect-ratio: 1;
   margin: 3px;
-  background-color: $panel-raised;
+  background-color: $crt-panel;
 
   @include pixel-frame($magenta, 3px);
 
@@ -364,7 +365,7 @@
 
 .rg-select__name {
   overflow: hidden;
-  color: $white;
+  color: $crt-heading;
   font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.3;
@@ -392,7 +393,7 @@
 
 .rg-select__stat-name {
   overflow: hidden;
-  color: $text-muted;
+  color: $crt-muted;
   font-family: $font-family-pixel;
   font-size: 0.625rem;
   text-transform: uppercase;
@@ -446,10 +447,10 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: 4 / 3;
-  background-color: $panel-raised;
+  background-color: $crt-panel;
   opacity: 0.6;
 
-  @include pixel-frame($line, 3px);
+  @include pixel-frame($crt-line, 3px);
 
   &.is-active {
     opacity: 1;
@@ -521,7 +522,7 @@
   grid-row: span 2;
   place-items: center;
   background-color: $panel;
-  color: $gold;
+  color: $gold-text;
   font-family: $font-family-pixel;
   font-size: 1rem;
 
@@ -529,7 +530,7 @@
 }
 
 .rg-achievements__value {
-  color: $white;
+  color: $heading;
   font-family: $font-family-pixel;
   font-size: 1.125rem;
   text-transform: uppercase;

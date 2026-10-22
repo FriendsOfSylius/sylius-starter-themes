@@ -26,7 +26,7 @@
   overflow: hidden;
   border: 1px solid $border;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   list-style: none;
 }
 
@@ -51,7 +51,7 @@
     left: 1rem;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: $basil;
+    background-color: $accent-text;
     content: "";
     transform: translateY(-50%);
     mask: var(--drive-icon) no-repeat center / contain;
@@ -59,7 +59,7 @@
   }
 
   strong {
-    color: $ink;
+    color: $heading;
     font-weight: 800;
   }
 
@@ -86,7 +86,7 @@
   padding: 0.3rem 0.9rem;
   border-radius: $radius-sm;
   background-color: $lemon;
-  box-shadow: 4px 4px 0 rgba($ink, 0.12);
+  box-shadow: $shadow-label;
   color: $ink;
   font-size: clamp(1.6rem, 2.2vw, 2rem) !important;
   font-weight: 900;
@@ -96,7 +96,7 @@
 }
 
 .sticky-top .d-flex.gap-3.align-items-center del {
-  color: $tomato-dark;
+  color: $tomato-text;
   font-weight: 600;
 }
 

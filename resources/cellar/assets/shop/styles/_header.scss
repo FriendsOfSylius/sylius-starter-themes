@@ -7,6 +7,11 @@
   font-size: 0.72rem;
   letter-spacing: 0.08em;
 
+  // Dark scheme: a gold hairline parts the night-bordeaux band from the header.
+  @if $dark {
+    border-bottom: 1px solid $border-dark;
+  }
+
   a {
     color: $gold-light;
   }
@@ -50,12 +55,12 @@
 header {
   position: relative;
   z-index: 2;
-  background-color: $paper;
+  background-color: $page;
 }
 
 header > .border-bottom,
 header .border-bottom {
-  border-bottom-color: $border !important;
+  border-bottom-color: $line !important;
 }
 
 header .container {
@@ -63,10 +68,10 @@ header .container {
 }
 
 header a {
-  color: $ink;
+  color: $heading;
 
   &:hover {
-    color: $wine;
+    color: $accent-text;
   }
 }
 
@@ -81,12 +86,12 @@ header .navbar {
   width: fit-content;
   align-items: center;
   gap: 0.75rem;
-  color: $wine;
+  color: $accent-text;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $wine;
+    color: $accent-text;
     text-decoration: none;
   }
 }
@@ -116,7 +121,7 @@ header .navbar {
 }
 
 .cellar-logo:hover .cellar-logo__grapes circle {
-  fill: $claret;
+  fill: $accent-text-hover;
 }
 
 .cellar-logo__text {
@@ -127,7 +132,7 @@ header .navbar {
 }
 
 .cellar-logo__name {
-  color: $ink;
+  color: $heading;
   font-family: $font-family-serif;
   font-size: 1.7rem;
   font-weight: 500;
@@ -135,7 +140,7 @@ header .navbar {
 }
 
 .cellar-logo__tagline {
-  color: $gold-dark;
+  color: $gold-text;
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.32em;
@@ -174,7 +179,7 @@ header .navbar {
   position: relative;
   flex: 0 0 auto;
   padding: 0.6rem 0.35rem !important;
-  color: $ink;
+  color: $heading;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -197,7 +202,7 @@ header .navbar {
   &:hover,
   &:focus,
   &[aria-expanded="true"] {
-    color: $wine;
+    color: $accent-text;
 
     &::before {
       transform: scaleX(1);
@@ -209,10 +214,10 @@ header .navbar {
   z-index: 1060;
   min-width: 14rem;
   padding: 0.5rem;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-top: 2px solid $gold;
   border-radius: 0 0 $radius $radius;
-  background-color: $ivory;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
@@ -224,23 +229,23 @@ header .navbar {
 
   &:hover,
   &:focus {
-    background-color: $parchment;
-    color: $wine;
+    background-color: $surface-raised;
+    color: $accent-text;
   }
 }
 
 // Cart: an outlined label with a bordeaux counter.
 
 .cellar-cart__button {
-  --bs-btn-color: #{$ink};
+  --bs-btn-color: #{$heading};
   --bs-btn-bg: transparent;
-  --bs-btn-border-color: #{$border-strong};
-  --bs-btn-hover-color: #{$wine};
-  --bs-btn-hover-bg: #{$ivory};
-  --bs-btn-hover-border-color: #{$wine};
-  --bs-btn-active-color: #{$wine};
-  --bs-btn-active-bg: #{$ivory};
-  --bs-btn-active-border-color: #{$wine};
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
 
   position: relative;
   display: inline-flex;
@@ -268,29 +273,29 @@ header .navbar {
   height: 1.35rem;
   place-items: center;
   padding: 0 0.3rem;
-  border: 2px solid $paper;
+  border: 2px solid $page;
   border-radius: 999px;
-  background-color: $wine;
-  color: $ivory;
+  background-color: $accent;
+  color: $on-accent;
   font-size: 0.66rem;
   font-weight: 700;
   line-height: 1;
 }
 
 header .dropdown-menu {
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius;
-  background-color: $ivory;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
 header .dropdown-item {
-  color: $ink;
+  color: $heading;
 
   &:hover,
   &:focus {
-    background-color: $parchment;
-    color: $wine;
+    background-color: $surface-raised;
+    color: $accent-text;
   }
 }
 
@@ -310,11 +315,11 @@ header .dropdown-item {
 @media (max-width: 991.98px) {
   .cellar-category-nav__menu {
     position: fixed;
-    background-color: $paper;
+    background-color: $page;
   }
 
   .cellar-category-nav__menu .offcanvas-header {
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $line;
   }
 
   .cellar-category-nav__menu .offcanvas-title {
@@ -340,7 +345,7 @@ header .dropdown-item {
     width: 100%;
     justify-content: space-between;
     padding: 0.95rem 0.5rem !important;
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $line;
     white-space: normal;
 
     &::before {
@@ -353,7 +358,7 @@ header .dropdown-item {
     width: 100%;
     margin: 0.25rem 0 0.5rem;
     border: 0;
-    background: $parchment;
+    background: $surface-raised;
     box-shadow: none;
     transform: none !important;
   }

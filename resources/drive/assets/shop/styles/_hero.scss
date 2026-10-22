@@ -37,13 +37,13 @@
   padding: clamp(1.5rem, 3vw, 3rem);
   border-radius: $radius-lg;
   // Darker basil, so that the white lead and the lemon highlights stay readable (WCAG AA).
-  background-color: $basil-dark;
+  background-color: $hero-bg;
   // Faint dotted pattern, like a paper bag.
   background-image:
     radial-gradient(circle at 92% 8%, rgba($lemon, 0.28) 0, rgba($lemon, 0) 34%),
     radial-gradient(rgba($white, 0.09) 1.2px, transparent 1.4px);
   background-size: auto, 18px 18px;
-  color: $mint;
+  color: $hero-text;
 
   h1 {
     max-width: 18ch;
@@ -160,7 +160,7 @@
 }
 
 .drive-slots__name {
-  color: $mint-strong;
+  color: $hero-muted;
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -206,7 +206,7 @@
   position: relative;
   height: 100%;
   border-radius: $radius-lg;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-soft;
 }
 
@@ -230,11 +230,11 @@
   display: flex;
   height: 100%;
   flex-direction: column;
-  color: $ink;
+  color: $heading;
   text-decoration: none;
 
   &:hover {
-    color: $ink;
+    color: $heading;
   }
 }
 
@@ -274,7 +274,7 @@
 }
 
 .drive-deal__cta {
-  color: $basil;
+  color: $accent-text;
   font-size: 0.9rem;
   font-weight: 700;
 
@@ -298,7 +298,7 @@
   align-items: center;
   border-radius: 50%;
   background-color: $lemon;
-  box-shadow: 0 8px 18px rgba($ink, 0.18);
+  box-shadow: $shadow-sticker;
   color: $ink;
   text-align: center;
   transform: rotate(8deg);

@@ -1,7 +1,7 @@
 header {
   position: relative;
   z-index: 3;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: 0 1px 0 $border;
 }
 
@@ -93,20 +93,20 @@ header .navbar {
   }
 
   a:not(.btn) {
-    color: $ink;
+    color: $heading;
 
     &:hover {
-      color: $basil;
+      color: $accent-text;
     }
   }
 
   .btn-transparent,
   .btn-icon {
-    color: $ink;
+    color: $heading;
     font-weight: 600;
 
     &:hover {
-      color: $basil;
+      color: $accent-text;
     }
   }
 }
@@ -122,12 +122,12 @@ header .navbar {
   width: fit-content;
   align-items: center;
   gap: 0.55rem;
-  color: $ink;
+  color: $heading;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $ink;
+    color: $heading;
     text-decoration: none;
   }
 }
@@ -175,7 +175,7 @@ header .navbar {
 }
 
 .drive-logo__dot {
-  color: $basil;
+  color: $accent-text;
 }
 
 .drive-logo--footer {
@@ -208,13 +208,13 @@ header .navbar {
   overflow: hidden;
   min-height: 3rem;
   align-items: stretch;
-  border: 2px solid $basil;
+  border: 2px solid $accent-text;
   border-radius: $radius-pill;
-  background-color: $white;
+  background-color: $field-bg;
   transition: box-shadow 160ms ease;
 
   &:focus-within {
-    box-shadow: 0 0 0 4px rgba($basil, 0.18);
+    box-shadow: 0 0 0 4px $focus-ring;
   }
 }
 
@@ -224,8 +224,9 @@ header .navbar {
   padding: 0 2rem 0 1.15rem;
   border: 0;
   border-right: 1px solid $border;
-  background: $mint url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%230A5F2C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='m4 6 4 4 4-4'/%3E%3C/svg%3E") no-repeat right 0.75rem center / 0.8rem;
-  color: $basil-dark;
+  // The chevron takes the aisle text color: "#" escaped as "%23" in the data URI.
+  background: $mint url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23#{str-slice(inspect($accent-text-strong), 2)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='m4 6 4 4 4-4'/%3E%3C/svg%3E") no-repeat right 0.75rem center / 0.8rem;
+  color: $accent-text-strong;
   font-size: 0.88rem;
   font-weight: 700;
   text-overflow: ellipsis;
@@ -244,7 +245,7 @@ header .navbar {
   padding: 0 1rem;
   border: 0;
   background: transparent;
-  color: $ink;
+  color: $heading;
   font-size: 0.95rem;
 
   &::placeholder {
@@ -300,7 +301,7 @@ header .navbar {
     background-color 140ms ease;
 
   &:hover {
-    border-color: $basil;
+    border-color: $accent-text;
     background-color: $mint;
   }
 }
@@ -332,7 +333,7 @@ header .navbar {
 }
 
 .drive-slot__value {
-  color: $ink;
+  color: $heading;
   font-size: 0.9rem;
   font-weight: 800;
 }
@@ -416,18 +417,18 @@ header .navbar {
 header .dropdown-menu {
   border: 1px solid $border;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
 header .dropdown-item {
   border-radius: $radius-sm;
-  color: $ink;
+  color: $heading;
 
   &:hover,
   &:focus {
     background-color: $mint;
-    color: $ink;
+    color: $heading;
   }
 }
 
@@ -438,7 +439,7 @@ header .navbar-toggler {
   place-items: center;
   border-radius: 50%;
   background-color: $mint;
-  color: $basil-dark;
+  color: $accent-text-strong;
 }
 
 // Aisles bar: a basil band under the header, the full width of the screen.
@@ -541,7 +542,7 @@ header .navbar-toggler {
   padding: 0.4rem;
   border: 0;
   border-radius: 0 0 $radius $radius;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
@@ -549,7 +550,7 @@ header .navbar-toggler {
 .drive-checkout-nav__menu .dropdown-menu .nav-link {
   padding: 0.55rem 0.8rem !important;
   border-radius: $radius-sm;
-  color: $ink;
+  color: $heading;
   font-size: 0.92rem;
   font-weight: 600;
   white-space: normal;
@@ -557,7 +558,7 @@ header .navbar-toggler {
   &:hover,
   &:focus {
     background-color: $mint;
-    color: $basil-dark;
+    color: $accent-text-strong;
   }
 }
 
@@ -574,14 +575,14 @@ header .navbar-toggler {
 .drive-checkout-nav__links > .nav-item > .nav-link {
   padding: 0.5rem 0.85rem !important;
   border-radius: $radius-pill;
-  color: $ink;
+  color: $heading;
   font-weight: 600;
 
   &:hover,
   &:focus,
   &[aria-expanded="true"] {
     background-color: $mint;
-    color: $basil-dark;
+    color: $accent-text-strong;
   }
 }
 
@@ -607,7 +608,7 @@ header .navbar-toggler {
   .drive-aisles__menu,
   .drive-checkout-nav__menu {
     position: fixed;
-    background-color: $white;
+    background-color: $surface;
   }
 
   .drive-aisles__menu .offcanvas-header,
@@ -649,7 +650,7 @@ header .navbar-toggler {
     justify-content: space-between;
     padding: 0.8rem 0.9rem !important;
     border-radius: $radius-sm;
-    color: $ink;
+    color: $heading;
     white-space: normal;
     box-shadow: none;
 
@@ -657,7 +658,7 @@ header .navbar-toggler {
     &:focus,
     &[aria-expanded="true"] {
       background-color: $mint;
-      color: $basil-dark;
+      color: $accent-text-strong;
       box-shadow: none;
     }
   }

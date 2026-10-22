@@ -1,0 +1,45 @@
+// Tech, dark scheme — an anodised graphite chassis: gunmetal modules, cool white type and the same signal-orange LED.
+$color-mode: dark;
+
+$page: #111318;
+$surface: #171A1F;
+$tint: #22262D;
+// Section bands sit just below the page, so the datasheet cards on them keep their lift.
+$band: #14161B;
+$tray: #1D2026;
+$header-bg: rgba(#111318, 0.94);
+$line: #2A2F37;
+$line-strong: #3A404A;
+$field-bg: #0E1014;
+// Form field outlines: at least 3:1 against the field, the page and the cards (WCAG 1.4.11).
+$field-border: #6B7380;
+$field-border-hover: #8A919C;
+$heading: #F3F4F6;
+$text: #C3C8D0;
+$text-muted: #959CA7;
+
+$signal: #FF5B14;
+// Signal used as text on the page: a lighter orange, 7.2:1 on the page (the deep orange of the light scheme drops to 4.35:1).
+$accent-text: #FF7A3D;
+$on-signal: #0D0F12;
+$led: #2ED47A;
+$success: #3DCB82;
+$info: #6E9BF5;
+// Bootstrap's red only reaches 4.1:1 on the page: a lighter coral.
+$danger: #FF6B6B;
+
+// Carbon panels (hero, benchmark, footer) go one step below the page and take a hairline edge to stand apart.
+$carbon: #0A0B0D;
+$graphite: #171A1F;
+$steel: #262B33;
+$border-dark: #2C323B;
+$text-on-dark: #A9AFB9;
+$white: #FFF;
+
+// Header cart: a gunmetal key, a carbon one would vanish into the dark header.
+$cart-bg: #262B33;
+$cart-border: #3A404A;
+$cart-hover-bg: #323842;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 18px 40px rgba(#000, 0.55);

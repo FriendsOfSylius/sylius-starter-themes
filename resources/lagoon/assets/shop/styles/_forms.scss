@@ -1,6 +1,6 @@
 .form-label {
   margin-bottom: 0.45rem;
-  color: $ink;
+  color: $heading;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -8,20 +8,20 @@
 .form-control,
 .form-select {
   min-height: 2.875rem;
-  border: 1px solid $border;
+  border: 1px solid $field-border;
   border-radius: $radius-sm;
-  background-color: $white;
+  background-color: $surface;
   color: $text;
   transition:
     border-color 160ms ease,
     box-shadow 160ms ease;
 
   &:hover {
-    border-color: $foam-strong;
+    border-color: $field-border-hover;
   }
 
   &:focus {
-    border-color: $teal;
+    border-color: $accent-text;
     box-shadow: 0 0 0 4px rgba($aqua, 0.22);
   }
 
@@ -29,18 +29,74 @@
     color: $text-muted;
     opacity: 1;
   }
+
+  @if $dark {
+    &:focus {
+      background-color: $surface;
+      color: $heading;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: $tint;
+      color: $text-muted;
+    }
+  }
+}
+
+@if $dark {
+  // The chevron takes the muted text color: "#" escaped as "%23" in the data URI.
+  .form-select {
+    --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23#{str-slice(inspect($text), 2)}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+
+    option {
+      background-color: $surface;
+      color: $heading;
+    }
+  }
+
+  .form-control.is-invalid,
+  .form-select.is-invalid {
+    border-color: $red;
+  }
+
+  .input-group-text {
+    border-color: $field-border;
+    background-color: $tint;
+    color: $text;
+  }
+
+  .ts-wrapper .ts-control,
+  .ts-dropdown {
+    border-color: $field-border !important;
+    background-color: $surface !important;
+    color: $heading !important;
+
+    input {
+      color: $heading !important;
+    }
+  }
+
+  .ts-dropdown .active {
+    background-color: $tint !important;
+    color: $accent-text !important;
+  }
 }
 
 .form-check-input {
-  border-color: $foam-strong;
+  border-color: if($dark, $field-border, $tint-strong);
+
+  @if $dark {
+    background-color: $surface;
+  }
 
   &:checked {
-    border-color: $teal;
-    background-color: $teal;
+    border-color: $primary-bg;
+    background-color: $primary-bg;
   }
 
   &:focus {
-    border-color: $teal;
+    border-color: $accent-text;
     box-shadow: 0 0 0 4px rgba($aqua, 0.22);
   }
 }

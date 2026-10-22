@@ -1,8 +1,8 @@
 .card {
   overflow: hidden;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius;
-  background-color: $ivory;
+  background-color: $surface;
   box-shadow: $shadow-soft;
 }
 
@@ -12,7 +12,7 @@
 
 .card-title {
   margin-bottom: 0.5rem;
-  color: $ink;
+  color: $heading;
   font-family: $font-family-serif;
   font-weight: 500;
 }
@@ -22,8 +22,8 @@
 }
 
 .card-footer {
-  border-top-color: $border;
-  background-color: $ivory;
+  border-top-color: $line;
+  background-color: $surface;
 }
 
 // Product cards, presented like bottles on a shelf: the picture stands whole (never cropped or
@@ -45,7 +45,7 @@
 
   > a.link-reset {
     display: block;
-    color: $ink;
+    color: $heading;
     text-decoration: none;
 
     // Stretched link: the price below is part of the clickable card too.
@@ -75,7 +75,7 @@
     position: relative;
     margin: 0;
     border-radius: 0 !important;
-    background-color: $parchment !important;
+    background-color: $surface-raised !important;
     box-shadow: inset 0 0 0 1px rgba($gold, 0.18);
 
     img {
@@ -105,7 +105,7 @@
   .h6 {
     margin: 0;
     padding: 1.15rem 0.5rem 0.4rem;
-    color: $ink;
+    color: $heading;
     font-family: $font-family-serif;
     font-size: 1.12rem;
     font-weight: 500;
@@ -115,7 +115,7 @@
   }
 
   &:hover .h6 {
-    color: $wine;
+    color: $accent-text;
   }
 
   // Prices
@@ -127,7 +127,7 @@
     justify-content: center;
     margin-top: auto;
     padding: 0 0.5rem;
-    color: $gold-dark;
+    color: $gold-text;
     font-size: 0.88rem;
     font-weight: 600;
     font-variant-numeric: tabular-nums;

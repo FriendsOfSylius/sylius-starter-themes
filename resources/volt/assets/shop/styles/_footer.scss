@@ -2,19 +2,20 @@ footer {
   margin-top: auto;
   padding-top: $spacing-12;
   padding-bottom: $spacing-6;
-  border-top: 0;
-  background-color: $ink;
-  color: $white;
-  --bs-body-color: #{$white};
-  --bs-body-color-rgb: 255, 255, 255;
-  --bs-emphasis-color: #{$white};
-  --bs-emphasis-color-rgb: 255, 255, 255;
-  --bs-secondary-color: #{$white};
-  --bs-tertiary-color: #{$white};
-  --bs-link-color: #{$white};
-  --bs-link-color-rgb: 255, 255, 255;
+  // Dark scheme: the ink footer is barely lighter than the page, a hairline marks where it starts.
+  border-top: if($dark, 1px solid $border, 0);
+  background-color: $night;
+  color: $on-night;
+  --bs-body-color: #{$on-night};
+  --bs-body-color-rgb: #{channels($on-night)};
+  --bs-emphasis-color: #{$on-night};
+  --bs-emphasis-color-rgb: #{channels($on-night)};
+  --bs-secondary-color: #{$on-night};
+  --bs-tertiary-color: #{$on-night};
+  --bs-link-color: #{$on-night};
+  --bs-link-color-rgb: #{channels($on-night)};
   --bs-link-hover-color: #{$lavender};
-  --bs-link-hover-color-rgb: 233, 229, 244;
+  --bs-link-hover-color-rgb: #{channels($lavender)};
 
   p,
   span,
@@ -30,14 +31,14 @@ footer {
   .text-tertiary,
   .link-dark,
   .link-secondary {
-    color: $white !important;
+    color: $on-night !important;
   }
 
   a,
   a:visited,
   a:focus,
   a:active {
-    color: $white !important;
+    color: $on-night !important;
     text-decoration: none;
   }
 
@@ -53,23 +54,24 @@ footer {
   h4,
   h5,
   h6 {
-    color: $white !important;
+    color: $on-night !important;
   }
 }
 
 footer .row.g-2.mb-4 > div > a {
-  border-color: rgba($white, 0.35) !important;
+  border-color: rgba($on-night, 0.35) !important;
+  // Payment logos sit on white plates in both schemes.
   background-color: $white;
 }
 
 .volt-footer__brand {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba($white, 0.18);
+  border-bottom: 1px solid rgba($on-night, 0.18);
 }
 
 footer .volt-logo {
-  color: $white;
+  color: $on-night;
 }
 
 footer .volt-logo:hover,
@@ -86,11 +88,11 @@ footer .volt-logo__bolt {
 }
 
 footer .volt-logo__name {
-  color: $white !important;
+  color: $on-night !important;
 }
 
 footer .volt-logo__tagline {
-  color: $white !important;
+  color: $on-night !important;
 }
 
 .volt-footer__copy a {

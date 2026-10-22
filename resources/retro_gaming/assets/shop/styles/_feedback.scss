@@ -1,25 +1,25 @@
-:root {
+@include scheme-root {
   --bs-success: #{$lime};
-  --bs-success-rgb: 140, 242, 107;
-  --bs-success-text-emphasis: #{$lime};
-  --bs-success-bg-subtle: #16301F;
-  --bs-success-border-subtle: #2F6B3A;
+  --bs-success-rgb: #{channels($lime)};
+  --bs-success-text-emphasis: #{$lime-text};
+  --bs-success-bg-subtle: #{$success-bg};
+  --bs-success-border-subtle: #{$success-border};
 
   --bs-info: #{$cyan};
-  --bs-info-rgb: 59, 226, 240;
-  --bs-info-text-emphasis: #{$cyan};
-  --bs-info-bg-subtle: #0F2A3A;
-  --bs-info-border-subtle: #1E5566;
+  --bs-info-rgb: #{channels($cyan)};
+  --bs-info-text-emphasis: #{$cyan-text};
+  --bs-info-bg-subtle: #{$info-bg};
+  --bs-info-border-subtle: #{$info-border};
 
-  --bs-warning-text-emphasis: #{$gold};
-  --bs-warning-bg-subtle: #33280E;
-  --bs-warning-border-subtle: #6B5418;
+  --bs-warning-text-emphasis: #{$gold-text};
+  --bs-warning-bg-subtle: #{$warning-bg};
+  --bs-warning-border-subtle: #{$warning-border};
 
   --bs-danger: #{$red};
-  --bs-danger-rgb: 255, 107, 107;
-  --bs-danger-text-emphasis: #FF9A9A;
-  --bs-danger-bg-subtle: #3A1420;
-  --bs-danger-border-subtle: #7A2A3C;
+  --bs-danger-rgb: #{channels($red)};
+  --bs-danger-text-emphasis: #{$danger-text};
+  --bs-danger-bg-subtle: #{$danger-bg};
+  --bs-danger-border-subtle: #{$danger-border};
 }
 
 .alert {

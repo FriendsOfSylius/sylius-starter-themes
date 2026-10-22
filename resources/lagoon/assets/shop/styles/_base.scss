@@ -1,12 +1,55 @@
-html {
+// scheme-root targets the <html> element of the active color scheme, with the weight of ":root" (see app.scss).
+// WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
+// shipping and payment descriptions) with these Bootstrap utilities, too light by default.
+@include scheme-root {
+  --bs-secondary-color: #{$text-muted};
+  --bs-tertiary-color: #{$text-muted};
+
   scroll-behavior: smooth;
 }
 
-// WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
-// shipping and payment descriptions) with these Bootstrap utilities, too light by default.
-:root {
-  --bs-secondary-color: #{$text-muted};
-  --bs-tertiary-color: #{$text-muted};
+// The light scheme keeps Bootstrap's light defaults. In the dark one, remap Bootstrap's runtime variables to the
+// deep-water palette, so that every native component (tables, dropdowns, offcanvas, form controls...) follows it.
+@if $dark {
+  @include scheme-root {
+    --bs-body-bg: #{$page};
+    --bs-body-bg-rgb: #{channels($page)};
+    --bs-body-color: #{$text};
+    --bs-body-color-rgb: #{channels($text)};
+    --bs-emphasis-color: #{$heading};
+    --bs-emphasis-color-rgb: #{channels($heading)};
+    --bs-heading-color: #{$heading};
+    --bs-secondary-color-rgb: #{channels($text-muted)};
+    --bs-secondary-bg: #{$tint};
+    --bs-secondary-bg-rgb: #{channels($tint)};
+    --bs-tertiary-color-rgb: #{channels($text-muted)};
+    --bs-tertiary-bg: #{$surface};
+    --bs-tertiary-bg-rgb: #{channels($surface)};
+    --bs-border-color: #{$line};
+    --bs-border-color-translucent: #{rgba($white, 0.1)};
+    --bs-link-color: #{$accent-text};
+    --bs-link-color-rgb: #{channels($accent-text)};
+    --bs-link-hover-color: #{$accent-text-hover};
+    --bs-link-hover-color-rgb: #{channels($accent-text-hover)};
+    --bs-light: #{$tint};
+    --bs-light-rgb: #{channels($tint)};
+    --bs-dark: #{$heading};
+    --bs-dark-rgb: #{channels($heading)};
+    --bs-gray-500: #{$text-muted};
+    --bs-code-color: #{$accent-text};
+    --bs-highlight-bg: #{rgba($aqua, 0.25)};
+    --bs-highlight-color: #{$heading};
+    --bs-danger: #{$red};
+    --bs-danger-rgb: #{channels($red)};
+    --bs-danger-text-emphasis: #{$red-text};
+    --bs-danger-bg-subtle: #{$red-bg};
+    --bs-danger-border-subtle: #{$red-border};
+    --bs-warning-text-emphasis: #{$amber-text};
+    --bs-warning-bg-subtle: #{$amber-bg};
+    --bs-warning-border-subtle: #{$amber-border};
+
+    color-scheme: $color-mode;
+  }
 }
 
 .text-black-50 {
@@ -15,7 +58,7 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: $white;
+  background-color: $page;
   color: $text;
   font-family: $font-family-base;
   font-feature-settings: "cv03", "cv04", "cv11", "ss01";
@@ -24,14 +67,14 @@ body {
 }
 
 a {
-  color: $teal;
+  color: $accent-text;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
   transition: color 160ms ease;
 
   &:hover,
   &.link-reset:hover {
-    color: $abyss;
+    color: $accent-text-hover;
   }
 }
 
@@ -44,7 +87,7 @@ h6,
 .h1,
 .h2,
 .h3 {
-  color: $ink;
+  color: $heading;
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   letter-spacing: -0.045em;
@@ -86,11 +129,106 @@ h6,
   outline-offset: 3px;
 }
 
+// Light utilities printed by Sylius templates (cart and checkout summaries, product details), moved onto the
+// deep-water surfaces in the dark scheme.
+@if $dark {
+  hr {
+    border-color: $line;
+    opacity: 1;
+  }
+
+  .bg-white,
+  .bg-body {
+    background-color: $surface !important;
+    color: $text !important;
+  }
+
+  .bg-light,
+  .text-bg-light {
+    background-color: $tint !important;
+    color: $text !important;
+  }
+
+  .text-black,
+  .text-dark {
+    color: $heading !important;
+  }
+
+  .text-primary {
+    color: $accent-text !important;
+  }
+
+  .text-success {
+    color: $success-text !important;
+  }
+
+  .border,
+  .border-top,
+  .border-bottom,
+  .border-start,
+  .border-end {
+    border-color: $line !important;
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{$surface};
+    --bs-dropdown-color: #{$text};
+    --bs-dropdown-border-color: #{$line};
+    --bs-dropdown-link-color: #{$text};
+    --bs-dropdown-link-hover-color: #{$heading};
+    --bs-dropdown-link-hover-bg: #{$tint};
+    --bs-dropdown-link-active-color: #{$ink};
+    --bs-dropdown-link-active-bg: #{$aqua};
+    --bs-dropdown-divider-bg: #{$line};
+  }
+
+  .pagination {
+    --bs-pagination-color: #{$accent-text};
+    --bs-pagination-bg: #{$surface};
+    --bs-pagination-border-color: #{$line};
+    --bs-pagination-hover-color: #{$accent-text-hover};
+    --bs-pagination-hover-bg: #{$tint};
+    --bs-pagination-hover-border-color: #{$tint-strong};
+    --bs-pagination-focus-color: #{$accent-text-hover};
+    --bs-pagination-focus-bg: #{$tint};
+    --bs-pagination-active-color: #{$on-primary};
+    --bs-pagination-active-bg: #{$primary-bg};
+    --bs-pagination-active-border-color: #{$primary-bg};
+    --bs-pagination-disabled-color: #{$text-muted};
+    --bs-pagination-disabled-bg: #{$surface};
+    --bs-pagination-disabled-border-color: #{$line};
+  }
+
+  .list-group {
+    --bs-list-group-bg: #{$surface};
+    --bs-list-group-color: #{$text};
+    --bs-list-group-border-color: #{$line};
+    --bs-list-group-action-hover-bg: #{$tint};
+    --bs-list-group-action-hover-color: #{$heading};
+    --bs-list-group-active-bg: #{$primary-bg};
+    --bs-list-group-active-border-color: #{$primary-bg};
+    --bs-list-group-active-color: #{$on-primary};
+  }
+
+  .modal {
+    --bs-modal-bg: #{$surface};
+    --bs-modal-color: #{$text};
+    --bs-modal-border-color: #{$line};
+    --bs-modal-header-border-color: #{$line};
+    --bs-modal-footer-border-color: #{$line};
+  }
+
+  .offcanvas {
+    --bs-offcanvas-bg: #{$surface};
+    --bs-offcanvas-color: #{$text};
+  }
+}
+
 // Shared editorial helpers
 
 .lagoon-eyebrow {
   margin-bottom: 0.9rem;
-  color: $teal;
+  color: $accent-text;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -123,21 +261,21 @@ h6,
 
 .lagoon-checkout-brand,
 .lagoon-checkout-account {
-  color: $ink;
+  color: $heading;
 }
 
 .lagoon-checkout-account a,
 .lagoon-checkout-account .btn {
-  color: $teal;
+  color: $accent-text;
 }
 
 .lagoon-checkout-account a:hover,
 .lagoon-checkout-account .btn:hover {
-  color: $abyss;
+  color: $accent-text-hover;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  @include scheme-root {
     scroll-behavior: auto;
   }
 

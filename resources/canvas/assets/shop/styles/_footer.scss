@@ -3,28 +3,29 @@ footer {
   padding-top: $spacing-12;
   padding-bottom: $spacing-6;
 
-  background-color: $black;
-  color: $white;
+  background-color: $inverse-bg;
+  color: $inverse-text;
 
-  border-top: 0;
+  // Dark scheme: the charcoal band is lighter than the page, a hairline marks where it starts.
+  border-top: if($dark, 1px solid $border, 0);
 
-  --bs-body-color: #{$white};
-  --bs-body-color-rgb: 255, 255, 255;
+  --bs-body-color: #{$inverse-text};
+  --bs-body-color-rgb: #{channels($inverse-text)};
 
-  --bs-emphasis-color: #{$white};
-  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-emphasis-color: #{$inverse-text};
+  --bs-emphasis-color-rgb: #{channels($inverse-text)};
 
-  --bs-secondary-color: #{$white};
-  --bs-secondary-color-rgb: 255, 255, 255;
+  --bs-secondary-color: #{$inverse-text};
+  --bs-secondary-color-rgb: #{channels($inverse-text)};
 
-  --bs-tertiary-color: #{$white};
-  --bs-tertiary-color-rgb: 255, 255, 255;
+  --bs-tertiary-color: #{$inverse-text};
+  --bs-tertiary-color-rgb: #{channels($inverse-text)};
 
-  --bs-link-color: #{$white};
-  --bs-link-color-rgb: 255, 255, 255;
+  --bs-link-color: #{$inverse-text};
+  --bs-link-color-rgb: #{channels($inverse-text)};
 
-  --bs-link-hover-color: #{$white};
-  --bs-link-hover-color-rgb: 255, 255, 255;
+  --bs-link-hover-color: #{$inverse-text};
+  --bs-link-hover-color-rgb: #{channels($inverse-text)};
 
   p,
   span,
@@ -32,19 +33,19 @@ footer {
   strong,
   label,
   li {
-    color: $white !important;
+    color: $inverse-text !important;
   }
 
   a,
   a:visited,
   a:focus,
   a:active {
-    color: $white !important;
+    color: $inverse-text !important;
     text-decoration: none;
   }
 
   a:hover {
-    color: $white !important;
+    color: $inverse-text !important;
     text-decoration: underline;
     text-underline-offset: 0.2em;
     text-decoration-thickness: 1px;
@@ -58,7 +59,7 @@ footer {
   .text-tertiary,
   .link-dark,
   .link-secondary {
-    color: $white !important;
+    color: $inverse-text !important;
   }
 
   h1,
@@ -67,17 +68,17 @@ footer {
   h4,
   h5,
   h6 {
-    color: $white !important;
+    color: $inverse-text !important;
   }
 }
 
 footer .row.g-2.mb-4 > div > a {
-  border-color: rgba($white, 0.35) !important;
-  background-color: $white;
+  border-color: rgba($inverse-text, 0.35) !important;
+  background-color: $logo-tile;
 }
 
 .canvas-footer__copy a {
-  color: $white !important;
+  color: $inverse-text !important;
   text-decoration: underline !important;
   text-underline-offset: 0.2em;
 }

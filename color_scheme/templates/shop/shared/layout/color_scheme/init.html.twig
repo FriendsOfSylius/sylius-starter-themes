@@ -1,0 +1,64 @@
+{#
+    Applies the visitor's color scheme before the page is painted.
+    The mode ("auto", "light" or "dark") is stored in localStorage, "auto" follows the operating system.
+    <html data-bs-theme> holds the resolved scheme: themes scope their light and dark styles on it,
+    and Bootstrap switches its own components with it.
+#}
+<script>
+    (() => {
+        const storageKey = 'sylius-starter-color-scheme';
+        const root = document.documentElement;
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        const readMode = () => {
+            try {
+                return window.localStorage.getItem(storageKey);
+            } catch (error) {
+                return null;
+            }
+        };
+
+        const apply = (requestedMode) => {
+            const mode = 'light' === requestedMode || 'dark' === requestedMode ? requestedMode : 'auto';
+
+            root.dataset.colorSchemeMode = mode;
+            root.dataset.bsTheme = 'auto' === mode ? (media.matches ? 'dark' : 'light') : mode;
+
+            document.querySelectorAll('[data-color-scheme-option]').forEach((option) => {
+                option.setAttribute('aria-checked', String(option.dataset.colorSchemeOption === mode));
+            });
+        };
+
+        apply(readMode());
+
+        media.addEventListener('change', () => apply(root.dataset.colorSchemeMode));
+        document.addEventListener('DOMContentLoaded', () => apply(root.dataset.colorSchemeMode));
+        window.addEventListener('storage', (event) => {
+            if (storageKey === event.key) {
+                apply(event.newValue);
+            }
+        });
+
+        document.addEventListener('click', (event) => {
+            const option = event.target.closest('[data-color-scheme-option]');
+
+            if (null === option) {
+                return;
+            }
+
+            const mode = option.dataset.colorSchemeOption;
+
+            try {
+                if ('auto' === mode) {
+                    window.localStorage.removeItem(storageKey);
+                } else {
+                    window.localStorage.setItem(storageKey, mode);
+                }
+            } catch (error) {
+                // Private browsing: the choice only lasts for this page.
+            }
+
+            apply(mode);
+        });
+    })();
+</script>

@@ -1,0 +1,64 @@
+// Drive, dark scheme — the drive after closing time: green-black shelves under night lights, the same basil aisles,
+// lemon price stickers and tomato promos.
+$color-mode: dark;
+
+// Brand fills, the same in both schemes.
+$basil: #0E7C3A;
+$basil-dark: #0A5F2C;
+$basil-light: #2FA35A;
+$forest: #083A22;
+$lemon: #FFD43B;
+$lemon-dark: #F2BE00;
+$tomato: #E23B2E;
+$tomato-dark: #C02A1F;
+$info: #2369C4;
+$white: #FFF;
+// Dark ink, also the text on lemon stickers in both schemes.
+$ink: #13241A;
+
+// Surfaces: a green-tinted night grey, shelves one step lighter, tints turned into deep washes of the same hues.
+$shelf: #0E1511;
+$surface: #16201A;
+$field-bg: #101914;
+$mint: #173324;
+$mint-strong: #21452F;
+$lemon-soft: #2A2612;
+$tomato-soft: #3A1C18;
+$sky-soft: #142A3D;
+$sand-soft: #2E2719;
+$info-soft: #13263B;
+$info-border: #26486B;
+
+// Text.
+$heading: #F1F7F2;
+$text: #C3D0C7;
+$text-muted: #93A59A;
+$text-on-dark: #B9CDBF;
+// Basil is too dark to read on the night shelves: green text takes a lighter leaf of the same hue (7:1 and more).
+$link: #7FD9A3;
+$link-hover: #A8E8C0;
+$accent-text: #5DC98A;
+$accent-text-strong: #7FD9A3;
+$tomato-text: #FF7B6E;
+$lemon-text: $lemon;
+$sky-text: #86BEF2;
+$sand-text: #DDBB86;
+$info-text: #8CC0F5;
+
+// Lines.
+$border: #2A3A30;
+$border-strong: #3E5245;
+// Form field outlines: at least 3:1 against the page, the shelves and the field background (WCAG 1.4.11).
+$field-border: #6E8577;
+
+// Basil hero, a shade deeper at night so that it glows without glaring.
+$hero-bg: #0A5228;
+$hero-text: #E5F4E9;
+$hero-muted: #C9E8D2;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.35), 0 1px 1px rgba(#000, 0.2);
+$shadow-float: 0 14px 34px rgba(#000, 0.5);
+$shadow-basil: 0 8px 20px rgba($basil, 0.4);
+$shadow-sticker: 0 8px 18px rgba(#000, 0.4);
+$shadow-label: 4px 4px 0 rgba(#000, 0.35);
+$focus-ring: rgba($accent-text, 0.3);

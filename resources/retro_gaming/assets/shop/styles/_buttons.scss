@@ -79,30 +79,31 @@
 .btn-outline-gray,
 .btn-light,
 .btn-outline-secondary {
-  @include rg-button($panel-raised, $white, $line, $line-soft);
+  // Light scheme: the hover face stays pale enough for the deep cyan label (4.6:1).
+  @include rg-button($panel-raised, $heading, if($dark, $line, $line-soft), if($dark, $line-soft, $line));
 
   &:hover {
-    color: $cyan;
+    color: $cyan-text;
   }
 }
 
 .btn-success {
-  @include rg-button($lime, $ink, #B2FA97, #5FC342);
+  @include rg-button($lime, $ink, $lime-soft, $lime-dark);
 }
 
 .btn-danger,
 .btn-outline-danger {
-  @include rg-button($red, $ink, #FF9494, #D94545);
+  @include rg-button($red, $ink, $red-soft, $red-dark);
 }
 
 .btn-link,
 .btn-transparent {
   margin: 0;
   box-shadow: none;
-  color: $cyan;
+  color: $cyan-text;
 
   &:hover {
-    color: $magenta-soft;
+    color: $link-hover;
   }
 }
 

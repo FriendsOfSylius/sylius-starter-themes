@@ -1,0 +1,73 @@
+// Lagoon, dark scheme — the lagoon at night: deep-water surfaces, glowing aqua shallows and the same touch of iris.
+$color-mode: dark;
+
+// Brand hues, shared by both schemes.
+$abyss: #0A3A3E;
+$abyss-deep: #072B2E;
+$teal: #0E7C86;
+$teal-dark: #0A5F67;
+$aqua: #14DFE6;
+$aqua-soft: #9BF0F3;
+$iris: #6B3FE0;
+$sky: #3E93C1;
+$ink: #0B1416;
+$white: #FFF;
+
+// Surfaces and lines: blue-green blacks, a step lighter for each layer.
+$page: #061A1D;
+$surface: #0B2427;
+$tint: #0E2E32;
+$tint-strong: #1F4A4F;
+$line: #183B3F;
+// Form field outlines: at least 3:1 against the page and the surfaces (WCAG 1.4.11).
+$field-border: #55878C;
+$field-border-hover: #78A9AE;
+$iris-soft: #241C4A;
+
+// Deep-water sections stay a lit teal, a step above the page so they still read as a band (1.5:1 against it).
+$deep: #0C3D42;
+$on-deep: $white;
+
+// Type.
+$heading: #EAF8F8;
+$text: #BCD0D2;
+$text-muted: #8DA8AB;
+// The aqua itself carries links and labels on the dark water (8.7:1 on the tint, 10.9:1 on the page).
+$accent-text: $aqua;
+$accent-text-hover: $aqua-soft;
+// Iris lifted to a lavender for text and strokes (6:1 on the surfaces); fills keep the brand iris.
+$iris-text: #A88CFF;
+
+// Teal pill calls to action (white on teal: 4.9:1) that light up to aqua on hover.
+$primary-bg: $teal;
+$on-primary: $white;
+$primary-hover-bg: $aqua;
+$on-primary-hover: $ink;
+
+// Feedback.
+$success: #2FB58C;
+$success-text: #7EE2C0;
+$success-bg: #0B2C25;
+$success-border: #1D5546;
+$info: $aqua;
+$info-text: $aqua-soft;
+$info-bg: $tint;
+$info-border: $tint-strong;
+$red: #FF6B78;
+$red-text: #FF9AA3;
+$red-bg: #2E1418;
+$red-border: #6B2A32;
+$amber-text: #FFD27A;
+$amber-bg: #2D2410;
+$amber-border: #6A5220;
+
+$shadow-soft: 0 10px 30px rgba(#000, 0.3);
+$shadow-float: 0 24px 60px rgba(#000, 0.5);
+$shadow-compare: 0 30px 70px rgba(#000, 0.45);
+
+// Hero visual: the same iris and aqua glows over a night-sea wash.
+$hero-visual-bg:
+  radial-gradient(circle at 105% -5%, rgba($iris, 0.55), transparent 42%),
+  radial-gradient(circle at -10% 110%, rgba($aqua, 0.22), transparent 45%),
+  linear-gradient(160deg, #10324A 0%, #0A1F2A 55%, #0A2D31 100%);
+$window-border: rgba($white, 0.08);

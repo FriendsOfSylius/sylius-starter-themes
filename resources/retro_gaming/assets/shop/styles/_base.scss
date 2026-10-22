@@ -1,42 +1,40 @@
 // The Sylius shop is compiled in light mode: remap Bootstrap's runtime variables to the
-// console palette, so that every native component (tables, dropdowns, offcanvas...) turns dark.
-:root {
+// console palette, so that every native component (tables, dropdowns, offcanvas...) follows it.
+// scheme-root targets the <html> element of the active color scheme, with the weight of ":root" (see app.scss).
+@include scheme-root {
   --bs-body-bg: #{$void};
-  --bs-body-bg-rgb: 11, 13, 28;
+  --bs-body-bg-rgb: #{channels($void)};
   --bs-body-color: #{$text};
-  --bs-body-color-rgb: 216, 219, 244;
-  --bs-emphasis-color: #{$white};
-  --bs-emphasis-color-rgb: 247, 248, 255;
-  --bs-heading-color: #{$white};
+  --bs-body-color-rgb: #{channels($text)};
+  --bs-emphasis-color: #{$heading};
+  --bs-emphasis-color-rgb: #{channels($heading)};
+  --bs-heading-color: #{$heading};
   --bs-secondary-color: #{$text-muted};
-  --bs-secondary-color-rgb: 160, 166, 207;
+  --bs-secondary-color-rgb: #{channels($text-muted)};
   --bs-secondary-bg: #{$panel};
-  --bs-secondary-bg-rgb: 20, 24, 51;
+  --bs-secondary-bg-rgb: #{channels($panel)};
   --bs-tertiary-color: #{$text-muted};
-  --bs-tertiary-color-rgb: 160, 166, 207;
+  --bs-tertiary-color-rgb: #{channels($text-muted)};
   --bs-tertiary-bg: #{$panel};
-  --bs-tertiary-bg-rgb: 20, 24, 51;
+  --bs-tertiary-bg-rgb: #{channels($panel)};
   --bs-border-color: #{$line};
   --bs-border-color-translucent: #{rgba($line, 0.8)};
-  --bs-link-color: #{$cyan};
-  --bs-link-color-rgb: 59, 226, 240;
-  --bs-link-hover-color: #{$magenta-soft};
-  --bs-link-hover-color-rgb: 255, 141, 187;
+  --bs-link-color: #{$cyan-text};
+  --bs-link-color-rgb: #{channels($cyan-text)};
+  --bs-link-hover-color: #{$link-hover};
+  --bs-link-hover-color-rgb: #{channels($link-hover)};
   --bs-primary: #{$magenta};
-  --bs-primary-rgb: 255, 61, 139;
+  --bs-primary-rgb: #{channels($magenta)};
   --bs-light: #{$panel};
-  --bs-light-rgb: 20, 24, 51;
-  --bs-dark: #{$white};
-  --bs-dark-rgb: 247, 248, 255;
+  --bs-light-rgb: #{channels($panel)};
+  --bs-dark: #{$heading};
+  --bs-dark-rgb: #{channels($heading)};
   --bs-gray-500: #{$text-muted};
-  --bs-code-color: #{$magenta-soft};
+  --bs-code-color: #{$link-hover};
   --bs-highlight-bg: #{rgba($gold, 0.3)};
-  --bs-highlight-color: #{$white};
+  --bs-highlight-color: #{$heading};
 
-  color-scheme: dark;
-}
-
-html {
+  color-scheme: $color-mode;
   scroll-behavior: smooth;
 }
 
@@ -50,17 +48,17 @@ body {
 }
 
 a {
-  color: $cyan;
+  color: $cyan-text;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.22em;
   transition: color 160ms ease;
 
   &:hover {
-    color: $magenta-soft;
+    color: $link-hover;
   }
 
   &.link-reset:hover {
-    color: $cyan;
+    color: $cyan-text;
   }
 }
 
@@ -70,7 +68,7 @@ h3,
 .h1,
 .h2,
 .h3 {
-  color: $white;
+  color: $heading;
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   letter-spacing: 0.02em;
@@ -100,7 +98,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  color: $white;
+  color: $heading;
   font-family: $font-family-base;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -112,7 +110,7 @@ h6,
 }
 
 :focus-visible {
-  outline: 3px solid $cyan;
+  outline: 3px solid $cyan-text;
   outline-offset: 3px;
 }
 
@@ -147,16 +145,16 @@ hr {
 }
 
 .text-primary {
-  color: $magenta !important;
+  color: $magenta-text !important;
 }
 
 .text-success {
-  color: $lime !important;
+  color: $lime-text !important;
 }
 
 .text-danger,
 .invalid-feedback {
-  color: $red !important;
+  color: $red-text !important;
 }
 
 .border,
@@ -177,7 +175,10 @@ hr {
 }
 
 .btn-close {
-  filter: invert(1) grayscale(1) brightness(2);
+  @if $dark {
+    filter: invert(1) grayscale(1) brightness(2);
+  }
+
   opacity: 0.75;
 
   &:hover {
@@ -187,24 +188,24 @@ hr {
 
 .nav-link {
   --bs-nav-link-color: #{$text};
-  --bs-nav-link-hover-color: #{$cyan};
+  --bs-nav-link-hover-color: #{$cyan-text};
   --bs-navbar-color: #{$text};
-  --bs-navbar-hover-color: #{$cyan};
-  --bs-navbar-active-color: #{$cyan};
+  --bs-navbar-hover-color: #{$cyan-text};
+  --bs-navbar-active-color: #{$cyan-text};
 
   color: $text;
 
   &:hover,
   &:focus {
-    color: $cyan;
+    color: $cyan-text;
   }
 }
 
 .navbar {
   --bs-navbar-color: #{$text};
-  --bs-navbar-hover-color: #{$cyan};
-  --bs-navbar-active-color: #{$cyan};
-  --bs-navbar-brand-color: #{$white};
+  --bs-navbar-hover-color: #{$cyan-text};
+  --bs-navbar-active-color: #{$cyan-text};
+  --bs-navbar-brand-color: #{$heading};
 }
 
 .dropdown-menu {
@@ -212,7 +213,7 @@ hr {
   --bs-dropdown-color: #{$text};
   --bs-dropdown-border-color: #{$line};
   --bs-dropdown-link-color: #{$text};
-  --bs-dropdown-link-hover-color: #{$white};
+  --bs-dropdown-link-hover-color: #{$heading};
   --bs-dropdown-link-hover-bg: #{$panel-raised};
   --bs-dropdown-link-active-color: #{$ink};
   --bs-dropdown-link-active-bg: #{$cyan};
@@ -222,9 +223,9 @@ hr {
 .pagination {
   --bs-pagination-color: #{$text};
   --bs-pagination-bg: transparent;
-  --bs-pagination-hover-color: #{$cyan};
+  --bs-pagination-hover-color: #{$cyan-text};
   --bs-pagination-hover-bg: #{$panel};
-  --bs-pagination-focus-color: #{$cyan};
+  --bs-pagination-focus-color: #{$cyan-text};
   --bs-pagination-focus-bg: #{$panel};
   --bs-pagination-active-color: #{$ink};
   --bs-pagination-active-bg: #{$cyan};
@@ -240,7 +241,7 @@ hr {
   --bs-list-group-color: #{$text};
   --bs-list-group-border-color: #{$line};
   --bs-list-group-action-hover-bg: #{$panel-raised};
-  --bs-list-group-action-hover-color: #{$white};
+  --bs-list-group-action-hover-color: #{$heading};
   --bs-list-group-active-bg: #{$magenta};
   --bs-list-group-active-border-color: #{$magenta};
   --bs-list-group-active-color: #{$ink};
@@ -263,7 +264,7 @@ hr {
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 1rem;
-  color: $cyan;
+  color: $cyan-text;
   font-size: 0.9375rem;
 
   &::before {
@@ -295,7 +296,7 @@ hr {
   line-height: 1.6;
 
   strong {
-    color: $white;
+    color: $heading;
   }
 }
 
@@ -315,7 +316,7 @@ hr {
   @include pixel-label;
 
   margin: 0 0 1.5rem;
-  color: $gold;
+  color: $gold-text;
   font-size: 1rem;
 }
 
@@ -330,16 +331,16 @@ hr {
 
 .rg-checkout-account a,
 .rg-checkout-account .btn {
-  color: $cyan;
+  color: $cyan-text;
 }
 
 .rg-checkout-account a:hover,
 .rg-checkout-account .btn:hover {
-  color: $magenta-soft;
+  color: $link-hover;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  @include scheme-root {
     scroll-behavior: auto;
   }
 

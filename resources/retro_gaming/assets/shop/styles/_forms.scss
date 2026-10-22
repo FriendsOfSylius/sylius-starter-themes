@@ -1,7 +1,7 @@
 .form-label,
 .col-form-label {
   margin-bottom: 0.45rem;
-  color: $white;
+  color: $heading;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -9,23 +9,23 @@
 .form-control,
 .form-select {
   min-height: 2.875rem;
-  border: 2px solid $line;
+  border: 2px solid $field-border;
   border-radius: 0;
-  background-color: $deep;
-  color: $white;
+  background-color: $field-bg;
+  color: $heading;
   transition:
     border-color 120ms ease,
     box-shadow 120ms ease;
 
   &:hover {
-    border-color: $line;
-    background-color: $deep;
+    border-color: $field-border;
+    background-color: $field-bg;
   }
 
   &:focus {
-    border-color: $cyan;
-    background-color: $deep;
-    color: $white;
+    border-color: $cyan-text;
+    background-color: $field-bg;
+    color: $heading;
     box-shadow: 0 0 0 3px rgba($cyan, 0.25);
   }
 
@@ -36,30 +36,31 @@
 
   &:disabled,
   &[readonly] {
-    background-color: $panel;
+    background-color: if($dark, $panel, $panel-raised);
     color: $text-muted;
   }
 }
 
 .form-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' shape-rendering='crispEdges'%3E%3Cpath fill='%233BE2F0' d='M0 0h10v2h-2v2h-2v2h-2v-2h-2v-2h-2z'/%3E%3C/svg%3E");
+  // The pixel chevron takes the link accent: "#" escaped as "%23" in the data URI.
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' shape-rendering='crispEdges'%3E%3Cpath fill='%23#{str-slice(inspect($cyan-text), 2)}' d='M0 0h10v2h-2v2h-2v2h-2v-2h-2v-2h-2z'/%3E%3C/svg%3E");
   background-size: 0.75rem auto;
 
   option {
     background-color: $panel;
-    color: $white;
+    color: $heading;
   }
 }
 
 .form-control.is-invalid,
 .form-select.is-invalid {
-  border-color: $red;
+  border-color: $red-text;
 }
 
 .form-check-input {
-  border: 2px solid $line;
+  border: 2px solid $field-border;
   border-radius: 0;
-  background-color: $deep;
+  background-color: $field-bg;
 
   &[type="radio"] {
     border-radius: 0;
@@ -71,31 +72,31 @@
   }
 
   &:focus {
-    border-color: $cyan;
+    border-color: $cyan-text;
     box-shadow: 0 0 0 3px rgba($cyan, 0.25);
   }
 }
 
 .input-group-text {
-  border: 2px solid $line;
+  border: 2px solid $field-border;
   border-radius: 0;
-  background-color: $panel;
+  background-color: if($dark, $panel, $panel-raised);
   color: $text;
 }
 
 .ts-wrapper .ts-control,
 .ts-dropdown {
-  border-color: $line !important;
+  border-color: $field-border !important;
   border-radius: 0 !important;
-  background-color: $deep !important;
-  color: $white !important;
+  background-color: $field-bg !important;
+  color: $heading !important;
 
   input {
-    color: $white !important;
+    color: $heading !important;
   }
 }
 
 .ts-dropdown .active {
   background-color: $panel-raised !important;
-  color: $cyan !important;
+  color: $cyan-text !important;
 }

@@ -1,8 +1,8 @@
 .card {
   overflow: hidden;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-soft;
 }
 
@@ -12,7 +12,7 @@
 
 .card-title {
   margin-bottom: 0.5rem;
-  color: $ink;
+  color: $heading;
   font-weight: 700;
 }
 
@@ -21,8 +21,8 @@
 }
 
 .card-footer {
-  border-top-color: $border;
-  background-color: $white;
+  border-top-color: $line;
+  background-color: $surface;
 }
 
 // Product cards: mint image well, teal accents.
@@ -40,9 +40,9 @@
   overflow: hidden;
   height: 100%;
   flex-direction: column;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   transition:
     border-color 220ms ease,
     box-shadow 220ms ease,
@@ -50,14 +50,14 @@
 
   &:hover,
   &:focus-within {
-    border-color: $foam-strong;
+    border-color: $tint-strong;
     box-shadow: $shadow-float;
     transform: translateY(-3px);
   }
 
   > a.link-reset {
     display: block;
-    color: $ink;
+    color: $heading;
     text-decoration: none;
 
     // Stretched link: the price below is part of the clickable card too.
@@ -85,7 +85,7 @@
   .rounded-3 {
     margin: 0;
     border-radius: 0 !important;
-    background-color: $foam !important;
+    background-color: $tint !important;
 
     img {
       transition: transform 600ms $ease;
@@ -99,7 +99,7 @@
   .h6 {
     margin: 0;
     padding: 1.25rem 1.25rem 0.35rem;
-    color: $ink;
+    color: $heading;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: -0.015em;
@@ -108,7 +108,7 @@
   }
 
   &:hover .h6 {
-    color: $teal;
+    color: $accent-text;
   }
 
   // Prices

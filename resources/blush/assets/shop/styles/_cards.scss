@@ -2,14 +2,14 @@
   overflow: hidden;
   border: 1px solid $border;
   border-radius: 0.875rem;
-  background-color: $white;
-  box-shadow: 0 0.5rem 1.5rem rgba($plum, 0.035);
+  background-color: $surface;
+  box-shadow: 0 0.5rem 1.5rem rgba($shadow-color, if($dark, 0.2, 0.035));
   transition:
     box-shadow 180ms ease,
     transform 180ms ease;
 
   &:hover {
-    box-shadow: 0 1rem 2rem rgba($plum, 0.09);
+    box-shadow: 0 1rem 2rem rgba($shadow-color, if($dark, 0.4, 0.09));
     transform: translateY(-3px);
   }
 }
@@ -30,7 +30,7 @@
 
 .card-footer {
   border-top-color: $border;
-  background-color: $white;
+  background-color: $surface;
 }
 
 // Product cards: soft rose card, plum shadow, pink accents.
@@ -50,8 +50,8 @@
   flex-direction: column;
   border: 1px solid $border;
   border-radius: 0.875rem;
-  background-color: $white;
-  box-shadow: 0 0.5rem 1.5rem rgba($plum, 0.035);
+  background-color: $surface;
+  box-shadow: 0 0.5rem 1.5rem rgba($shadow-color, if($dark, 0.2, 0.035));
   transition:
     border-color 220ms ease,
     box-shadow 220ms ease,
@@ -59,8 +59,8 @@
 
   &:hover,
   &:focus-within {
-    border-color: $border;
-    box-shadow: 0 1rem 2rem rgba($plum, 0.09);
+    border-color: if($dark, rgba($pink-bright, 0.45), $border);
+    box-shadow: 0 1rem 2rem rgba($shadow-color, if($dark, 0.4, 0.09));
     transform: translateY(-3px);
   }
 
@@ -83,7 +83,7 @@
   }
 
   &:has(> a.link-reset:focus-visible) {
-    outline: 3px solid $pink;
+    outline: 3px solid $focus-border;
     outline-offset: 3px;
   }
 
@@ -118,7 +118,7 @@
   }
 
   &:hover .h6 {
-    color: $pink;
+    color: $accent-text;
   }
 
   // Prices
@@ -129,7 +129,7 @@
     align-items: baseline;
     margin-top: auto;
     padding: 0 1.15rem 1.15rem;
-    color: $pink;
+    color: $accent-text;
     font-size: 0.95rem;
     font-weight: 600;
 

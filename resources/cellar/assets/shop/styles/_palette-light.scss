@@ -1,0 +1,44 @@
+// Cellar, light scheme — deep bordeaux and cream paper, gilded with an antique gold fillet.
+$color-mode: light;
+
+// House colours: the night-bordeaux bands (top bar, hero, footer) and the gold leaf keep them in both schemes.
+$wine-night: #22080F;
+$wine-deep: #3A0D19;
+$wine: #5E1626;
+$claret: #7A1C30;
+$gold: #B08D57;
+$gold-light: #D8C08F;
+$ivory: #FFFCF6;
+$text-on-dark: #CDBDB2;
+$border-dark: rgba($gold, 0.28);
+
+// Paper, label and ink.
+$page: #F7F2E9;
+$surface: #FFFCF6;
+$surface-raised: #EFE7D8;
+$line: #E3D8C6;
+$line-strong: #CDBFA6;
+$field-border: $line-strong;
+$heading: #24161A;
+$text: #4A3C3C;
+$text-muted: #77675F;
+
+// Bordeaux fills the calls to action; as text, it is the same bordeaux.
+$accent: $wine;
+$accent-hover: $wine-deep;
+$on-accent: $ivory;
+$accent-text: $wine;
+$accent-text-hover: $claret;
+$gold-text: #7D5E2E;
+$focus-ring: rgba($wine, 0.14);
+
+$success: #3F6B3A;
+$info: #3C5A7A;
+
+// The bottle label of the hero illustration is printed on cream paper in every scheme.
+$label-ink: $heading;
+$label-wine: $wine;
+$label-gold: $gold-text;
+
+$shadow-soft: 0 1px 2px rgba($wine-night, 0.05);
+$shadow-float: 0 22px 48px -18px rgba($wine-night, 0.28);

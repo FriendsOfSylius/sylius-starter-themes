@@ -1,8 +1,8 @@
 .card {
   overflow: hidden;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-soft;
 }
 
@@ -12,7 +12,7 @@
 
 .card-title {
   margin-bottom: 0.5rem;
-  color: $ink;
+  color: $heading;
   font-weight: 700;
 }
 
@@ -21,8 +21,8 @@
 }
 
 .card-footer {
-  border-top-color: $border;
-  background-color: $white;
+  border-top-color: $line;
+  background-color: $surface;
 }
 
 // Product cards: a product on an aluminium tray, crisp border that turns carbon on hover,
@@ -39,9 +39,9 @@
   overflow: hidden;
   height: 100%;
   flex-direction: column;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   transition:
     border-color 180ms ease,
     box-shadow 180ms ease;
@@ -61,7 +61,8 @@
 
   &:hover,
   &:focus-within {
-    border-color: $ink;
+    // Light: the border turns carbon. Dark: a white edge would glare, it turns brushed steel.
+    border-color: if($dark, $text-muted, $heading);
     box-shadow: $shadow-float;
 
     &::before {
@@ -71,7 +72,7 @@
 
   > a.link-reset {
     display: block;
-    color: $ink;
+    color: $heading;
     text-decoration: none;
 
     // Stretched link: the price below is part of the clickable card too.
@@ -98,9 +99,9 @@
 
   .rounded-3 {
     margin: 0;
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $line;
     border-radius: 0 !important;
-    background-color: $aluminium !important;
+    background-color: $tray !important;
 
     img {
       transition: transform 500ms $ease;
@@ -114,7 +115,7 @@
   .h6 {
     margin: 0;
     padding: 1rem 1.15rem 0.4rem;
-    color: $ink;
+    color: $heading;
     font-size: 0.98rem;
     font-weight: 600;
     letter-spacing: -0.015em;
@@ -129,7 +130,7 @@
     align-items: baseline;
     margin-top: auto;
     padding: 0 1.15rem 1.1rem;
-    color: $ink;
+    color: $heading;
     font-size: 1rem;
     font-weight: 700;
     font-variant-numeric: tabular-nums;

@@ -14,9 +14,9 @@
   border-radius: 2rem;
   background:
     radial-gradient(circle at 75% 50%, rgba($electric, 0.95) 0 16%, transparent 16.2%),
-    radial-gradient(circle at 75% 50%, $lavender 0 25%, transparent 25.2%),
-    $ink;
-  color: $white;
+    radial-gradient(circle at 75% 50%, $hero-ring 0 25%, transparent 25.2%),
+    $night;
+  color: $on-night;
   isolation: isolate;
 
   &::after {
@@ -26,12 +26,12 @@
     bottom: -35%;
     width: 48%;
     aspect-ratio: 1;
-    border: 1px solid rgba($white, 0.22);
+    border: 1px solid rgba($on-night, 0.22);
     border-radius: 50%;
     content: "";
     box-shadow:
-      0 0 0 2rem rgba($white, 0.035),
-      0 0 0 4rem rgba($white, 0.025);
+      0 0 0 2rem rgba($on-night, 0.035),
+      0 0 0 4rem rgba($on-night, 0.025);
     pointer-events: none;
   }
 }
@@ -58,7 +58,7 @@
 
 .volt-hero h1 {
   margin: 0 0 1.25rem;
-  color: $white;
+  color: $on-night;
   font-size: clamp(3.5rem, 8.5vw, 7rem);
   font-weight: 800;
   letter-spacing: -0.06em;
@@ -76,7 +76,7 @@
 .volt-hero__lead {
   max-width: 26rem;
   margin: 1.75rem 0 2rem;
-  color: rgba($white, 0.78);
+  color: rgba($on-night, 0.78);
   font-size: clamp(1rem, 1.6vw, 1.2rem);
   line-height: 1.6;
 }
@@ -140,13 +140,13 @@
   width: 68%;
   aspect-ratio: 1;
   place-items: center;
-  border: 1px solid rgba($white, 0.3);
+  border: 1px solid rgba($on-night, 0.3);
   border-radius: 50%;
-  background: linear-gradient(145deg, #686BFF, $electric 65%, #292CC5);
+  background: $disc-gradient;
   box-shadow:
-    0 1.5rem 3rem rgba($ink, 0.28),
-    inset 0 0 0 0.7rem rgba($white, 0.06);
-  color: $white;
+    0 1.5rem 3rem rgba($shadow-color, 0.28),
+    inset 0 0 0 0.7rem rgba($on-night, 0.06);
+  color: $on-night;
   font-size: clamp(4rem, 11vw, 9rem);
   font-weight: 900;
   letter-spacing: -0.12em;
@@ -158,10 +158,10 @@
   right: 0;
   bottom: 12%;
   padding: 0.55rem 0.85rem;
-  border: 1px solid rgba($white, 0.3);
+  border: 1px solid rgba($on-night, 0.3);
   border-radius: 50rem;
-  background-color: $ink;
-  color: $white;
+  background-color: $night;
+  color: $on-night;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -185,7 +185,7 @@
     padding: 1.1rem 1.25rem;
     border: 1px solid $border;
     border-radius: 1.25rem;
-    background-color: $white;
+    background-color: $surface;
   }
 
   span:not(.volt-perks__icon) {
@@ -197,7 +197,7 @@
   }
 
   strong {
-    color: $ink;
+    color: $heading;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: -0.01em;
@@ -211,13 +211,13 @@
   flex: 0 0 auto;
   place-items: center;
   border-radius: 0.9rem;
-  background-color: $lavender;
+  background-color: $soft;
 
   svg {
     width: 1.3rem;
     height: 1.3rem;
     fill: none;
-    stroke: $electric;
+    stroke: $accent-text;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 2;
@@ -236,7 +236,7 @@
 
   .volt-pill {
     margin-bottom: 1rem;
-    background-color: $ink;
+    background-color: $night;
     color: $lavender;
   }
 
@@ -265,8 +265,8 @@
     padding: 2rem 1.75rem;
     background:
       radial-gradient(circle at 82% 86%, rgba($electric, 0.95) 0 16%, transparent 16.2%),
-      radial-gradient(circle at 82% 86%, $lavender 0 25%, transparent 25.2%),
-      $ink;
+      radial-gradient(circle at 82% 86%, $hero-ring 0 25%, transparent 25.2%),
+      $night;
   }
 
   .volt-hero__orbit {

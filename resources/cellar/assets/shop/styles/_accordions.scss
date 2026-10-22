@@ -5,9 +5,9 @@
   .accordion-item {
     overflow: hidden;
     margin-bottom: 0.75rem;
-    border: 1px solid $border;
+    border: 1px solid $line;
     border-radius: $radius-sm;
-    background-color: $ivory;
+    background-color: $surface;
   }
 
   .accordion-header {
@@ -17,8 +17,8 @@
   .accordion-item .accordion-button {
     gap: 1rem;
     padding: 0.85rem 1.25rem;
-    background-color: $ivory;
-    color: $ink;
+    background-color: $surface;
+    color: $heading;
     font-family: $font-family-base;
     font-size: 1rem;
     font-weight: 500;
@@ -29,7 +29,7 @@
       color 160ms ease;
 
     &:hover {
-      background-color: $parchment;
+      background-color: $surface-raised;
     }
 
     &:focus {
@@ -44,8 +44,8 @@
     }
 
     &:not(.collapsed) {
-      background-color: $parchment;
-      color: $wine;
+      background-color: $surface-raised;
+      color: $accent-text;
       box-shadow: none;
     }
 
@@ -73,7 +73,7 @@
 
   .accordion-item .accordion-body {
     padding: 1.25rem 1.5rem 1.5rem;
-    border-top: 1px solid $border;
+    border-top: 1px solid $line;
     color: $text;
     line-height: 1.7;
   }

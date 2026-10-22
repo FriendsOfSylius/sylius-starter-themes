@@ -20,7 +20,7 @@
   padding: clamp(1.5rem, 3vw, 2.25rem);
   border: 1px solid $border;
   border-radius: 2rem;
-  background-color: $white;
+  background-color: $surface;
 }
 
 .volt-promise__card--main {
@@ -28,8 +28,8 @@
   justify-content: flex-start;
   gap: 0;
   border: 0;
-  background-color: $ink;
-  color: $white;
+  background-color: $night;
+  color: $on-night;
 
   .volt-pill {
     align-self: flex-start;
@@ -37,7 +37,7 @@
 
   h2 {
     margin: 0 0 1.25rem;
-    color: $white;
+    color: $on-night;
     font-size: clamp(2.5rem, 5vw, 4.2rem);
     font-weight: 800;
     letter-spacing: -0.05em;
@@ -59,29 +59,29 @@
 .volt-promise__lead {
   max-width: 24rem;
   margin-bottom: 2rem;
-  color: rgba($white, 0.78);
+  color: rgba($on-night, 0.78);
   font-size: clamp(1rem, 1.4vw, 1.1rem);
   line-height: 1.6;
 }
 
 .volt-promise__card--drops {
   border: 0;
-  background-color: $electric;
-  color: $white;
+  background-color: $accent;
+  color: $on-accent;
 
   .volt-promise__value,
   .volt-promise__label {
-    color: $white;
+    color: $on-accent;
   }
 
   .volt-promise__text {
-    color: rgba($white, 0.82);
+    color: rgba($on-accent, 0.82);
   }
 }
 
 .volt-promise__card--tested {
   border: 0;
-  background-color: $lavender;
+  background-color: $soft;
 }
 
 .volt-promise__card--repair {
@@ -102,7 +102,7 @@
 }
 
 .volt-promise__value {
-  color: $ink;
+  color: $heading;
   font-size: clamp(3rem, 6vw, 4.75rem);
   font-weight: 800;
   letter-spacing: -0.06em;
@@ -110,7 +110,7 @@
 }
 
 .volt-promise__label {
-  color: $electric;
+  color: $accent-text;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -133,7 +133,7 @@
 }
 
 .volt-hero__link {
-  color: $white;
+  color: $on-night;
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.06em;
