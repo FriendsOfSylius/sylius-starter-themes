@@ -1,0 +1,9 @@
+# Cellar demo catalog: the wine regions the bottles are sorted by (see products.yaml).
+collections:
+    -   name: Bordeaux
+    -   name: Burgundy
+    -   name: Champagne
+    -   name: Rhône Valley
+    -   name: Loire Valley
+    -   name: Alsace
+    -   name: Provence

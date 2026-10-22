@@ -1,0 +1,91 @@
+# Cellar demo catalog: seventeen wines from fictional estates, for the import package (castor sylius:import:fixtures:*).
+# The bottles are shipped in media/ under the code of each product; the image URLs below are placeholders that the
+# import never downloads, since a bottle with that code is already there. See docs/themes/cellar.md.
+mode: ai
+name: Cellar Wine Merchant
+products:
+    -   title: 'Château des Aulnes — Saint-Émilion Grand Cru 2019'
+        collection_name: Bordeaux
+        price_eur: 34.9
+        image: 'https://example.com/cellar/chateau-des-aulnes-saint-emilion-grand-cru-2019.webp'
+        description: 'Merlot and cabernet franc from limestone slopes. Black cherry, cedar and forest floor, silky tannins and a long, fresh finish. Aged 16 months in oak. Drink now to 2034, decant one hour.'
+    -   title: 'Château Lamothe-Vernay — Margaux 2016'
+        collection_name: Bordeaux
+        price_eur: 62
+        image: 'https://example.com/cellar/chateau-lamothe-vernay-margaux-2016.webp'
+        description: 'A great Margaux vintage now opening up: cassis, violet and graphite, with a fine-grained frame. Cabernet sauvignon led, 18 months in barrels, a third new. Drink 2025 to 2040.'
+    -   title: 'Clos de la Rivière — Pessac-Léognan Blanc 2021'
+        collection_name: Bordeaux
+        price_eur: 38
+        image: 'https://example.com/cellar/clos-de-la-riviere-pessac-leognan-blanc-2021.webp'
+        description: 'Sauvignon blanc and sémillon fermented in barrels: grapefruit, white peach and a smoky, mineral edge. Serve at 11 °C with fish or poultry. Drink to 2030.'
+    -   title: 'Domaine Morel-Fontaine — Gevrey-Chambertin 2020'
+        collection_name: Burgundy
+        price_eur: 68
+        image: 'https://example.com/cellar/domaine-morel-fontaine-gevrey-chambertin-2020.webp'
+        description: 'Pinot noir from old vines on the Côte de Nuits. Wild strawberry, liquorice and spice, firm and deep. Organic farming, whole-bunch fermentation. Drink 2026 to 2038.'
+    -   title: 'Domaine des Perrières — Meursault 1er Cru 2021'
+        collection_name: Burgundy
+        price_eur: 79
+        image: 'https://example.com/cellar/domaine-des-perrieres-meursault-1er-cru-2021.webp'
+        description: 'Chardonnay of great tension: hazelnut, lemon zest and flint over a creamy texture. Twelve months on the lees. Serve at 12 °C, with a lobster or a comté. Drink to 2033.'
+    -   title: 'Maison Lacombe — Bourgogne Pinot Noir 2022'
+        collection_name: Burgundy
+        price_eur: 24.5
+        image: 'https://example.com/cellar/maison-lacombe-bourgogne-pinot-noir-2022.webp'
+        description: 'A bright, juicy pinot noir for every day: raspberry, rose petal and a touch of earth. Serve slightly cool, at 15 °C. Drink now to 2027.'
+    -   title: 'Champagne Aubriot-Lenoir — Brut Réserve'
+        collection_name: Champagne
+        price_eur: 42
+        image: 'https://example.com/cellar/champagne-aubriot-lenoir-brut-reserve.webp'
+        description: 'The house blend of a family grower: pinot noir, chardonnay and meunier, 30 % reserve wines, three years on the lees. Brioche, apple and a fine, lively mousse.'
+    -   title: 'Champagne Aubriot-Lenoir — Blanc de Blancs Grand Cru 2015'
+        collection_name: Champagne
+        price_eur: 89
+        image: 'https://example.com/cellar/champagne-aubriot-lenoir-blanc-de-blancs-grand-cru-2015.webp'
+        description: 'Vintage chardonnay from the Côte des Blancs, eight years on the lees, disgorged in 2024. Lemon curd, chalk and toasted almond, an extra brut dosage. Numbered bottles.'
+    -   title: 'Gaston Vallier — Rosé Brut'
+        collection_name: Champagne
+        price_eur: 49
+        image: 'https://example.com/cellar/gaston-vallier-rose-brut.webp'
+        description: 'A rosé champagne made by blending, with 12 % of still pinot noir. Wild strawberry, blood orange and a creamy mousse, for the aperitif or a red berry dessert.'
+    -   title: 'Domaine du Vieux Mas — Châteauneuf-du-Pape 2019'
+        collection_name: Rhône Valley
+        price_eur: 46
+        image: 'https://example.com/cellar/domaine-du-vieux-mas-chateauneuf-du-pape-2019.webp'
+        description: 'Grenache, syrah and mourvèdre on rolled pebbles. Kirsch, garrigue and black olive, generous and warm. Estate bottled. Drink to 2036, with lamb or game.'
+    -   title: 'Cave des Coteaux — Crozes-Hermitage 2021'
+        collection_name: Rhône Valley
+        price_eur: 21.9
+        image: 'https://example.com/cellar/cave-des-coteaux-crozes-hermitage-2021.webp'
+        description: 'Pure syrah from the northern Rhône: blackberry, black pepper and violet, supple and fresh. Serve at 16 °C. Drink now to 2029.'
+    -   title: 'Domaine de la Saulaie — Sancerre 2023'
+        collection_name: Loire Valley
+        price_eur: 26
+        image: 'https://example.com/cellar/domaine-de-la-saulaie-sancerre-2023.webp'
+        description: 'Sauvignon blanc from flinty soils: lime, blackcurrant leaf and a saline finish. Serve at 10 °C with goat cheese or oysters. Drink now to 2028.'
+    -   title: 'Clos des Tuffeaux — Chinon Vieilles Vignes 2020'
+        collection_name: Loire Valley
+        price_eur: 19.5
+        image: 'https://example.com/cellar/clos-des-tuffeaux-chinon-vieilles-vignes-2020.webp'
+        description: 'Cabernet franc from vines over sixty years old, aged in tuffeau cellars. Raspberry, pencil shavings and a light herbal touch. Drink now to 2030.'
+    -   title: 'Domaine Hartmann-Weiss — Riesling Grand Cru 2021'
+        collection_name: Alsace
+        price_eur: 29
+        image: 'https://example.com/cellar/domaine-hartmann-weiss-riesling-grand-cru-2021.webp'
+        description: 'Dry riesling from a granite grand cru: white flowers, lemon and a steely minerality. Biodynamic farming. Drink now to 2035.'
+    -   title: 'Domaine Hartmann-Weiss — Gewurztraminer Vendanges Tardives 2018'
+        collection_name: Alsace
+        price_eur: 45
+        image: 'https://example.com/cellar/domaine-hartmann-weiss-gewurztraminer-vendanges-tardives-2018.webp'
+        description: 'Late-harvest gewurztraminer, picked berry by berry: lychee, rose, candied ginger and honey, balanced by a fresh acidity. 50 cl. For foie gras or a blue cheese.'
+    -   title: 'Domaine des Calanques — Côtes de Provence Rosé 2024'
+        collection_name: Provence
+        price_eur: 18.5
+        image: 'https://example.com/cellar/domaine-des-calanques-cotes-de-provence-rose-2024.webp'
+        description: 'Pale salmon rosé of grenache and cinsault: white peach, redcurrant and a saline freshness. Serve at 9 °C, on the terrace. Drink this summer.'
+    -   title: 'Bastide des Oliviers — Bandol Rosé 2023'
+        collection_name: Provence
+        price_eur: 27
+        image: 'https://example.com/cellar/bastide-des-oliviers-bandol-rose-2023.webp'
+        description: 'A gastronomic rosé led by mourvèdre: blood orange, spice and garrigue, with real depth. Serve at 11 °C with bouillabaisse or grilled fish. Drink to 2027.'
