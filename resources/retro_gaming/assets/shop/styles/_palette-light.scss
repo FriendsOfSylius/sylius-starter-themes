@@ -1,0 +1,67 @@
+// Retro Gaming, light scheme — a daylight arcade: lilac handheld-console plastic, white cartridge panels, navy ink
+// type and the same neon player colors, kept for fills while deep shades of the same hues carry the text.
+$color-mode: light;
+
+$deep: #E9E6F5;
+$void: #F5F4FB;
+$panel: #FFF;
+$panel-raised: #ECE9F7;
+$line: #B9B3DD;
+$line-soft: #D6D2EA;
+$field-bg: #FFF;
+// Form field outlines: at least 3:1 against every light surface (WCAG 1.4.11).
+$field-border: #6E679E;
+$heading: #17193D;
+$text: #33365C;
+$text-muted: #585C84;
+$ink: #0B0D1C;
+
+// Neon fills (buttons, badges, keys, bars), always under ink text (ink on magenta: 5.8:1).
+$magenta: #FF3D8B;
+$magenta-dark: #E4206F;
+$magenta-soft: #FF8DBB;
+$cyan: #3BE2F0;
+$cyan-dark: #17B8C8;
+$gold: #FFC93C;
+$gold-soft: #FFD86B;
+$gold-dark: #D69E12;
+$lime: #8CF26B;
+$lime-soft: #B2FA97;
+$lime-dark: #5FC342;
+$red: #FF6B6B;
+$red-soft: #FF9494;
+$red-dark: #D94545;
+
+// Accents used as text, icon or outline on the page: deep shades of the neon hues (4.6:1 or more on every surface).
+$magenta-text: #C0135C;
+$cyan-text: #006570;
+$gold-text: #8A5C00;
+$lime-text: #2C7712;
+$red-text: #C2272D;
+$link-hover: $magenta-text;
+
+$success-bg: #E3F7DA;
+$success-border: #8FD27A;
+$info-bg: #DDF6F8;
+$info-border: #7FD3DB;
+$warning-bg: #FFF3D1;
+$warning-border: #E8BE55;
+$danger-bg: #FDE3E6;
+$danger-border: #EC8E97;
+$danger-text: #A31D27;
+
+// Stars of the title screen, drawn in console lilac over the daylight sky.
+$hero-star: #8E86C2;
+$shadow-deep: 0 24px 60px rgba(#1B1D4A, 0.2);
+
+// CRT monitor of the hero: a light handheld bezel around a screen that stays dark, like a console in daylight.
+$screen-bezel: #E0DDF0;
+$screen-edge: #090A18;
+$screen-shadow: rgba(#1B1D4A, 0.28);
+$screen-vent: $field-border;
+$crt-glass: #0B0D1C;
+$crt-panel: #1D2248;
+$crt-line: #2E3570;
+$crt-heading: #F7F8FF;
+$crt-text: #D8DBF4;
+$crt-muted: #A0A6CF;

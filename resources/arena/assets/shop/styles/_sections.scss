@@ -1,0 +1,300 @@
+// Homepage sections: the new releases shelf and the promise (player services and the Arena Pass card).
+
+.arena-products {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+.arena-promise {
+  position: relative;
+  padding-block: clamp(4rem, 8vw, 7rem);
+  border-top: 1px solid $line-soft;
+  background:
+    radial-gradient(60rem 30rem at 85% 20%, rgba($violet, if($dark, 0.16, 0.1)), transparent 70%),
+    radial-gradient(40rem 24rem at 10% 90%, rgba($lime, if($dark, 0.06, 0.18)), transparent 70%),
+    $page-alt;
+}
+
+.arena-promise__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.arena-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arena-features__item {
+  padding: 1.5rem;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: rgba($surface, 0.75);
+  transition:
+    border-color 200ms ease,
+    transform 200ms $ease;
+
+  &:hover {
+    border-color: rgba($accent-text, 0.5);
+    transform: translateY(-3px);
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.arena-features__icon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  margin-bottom: 1.1rem;
+  background-color: $lime;
+
+  @include chamfer(8px);
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: $on-accent;
+    fill-rule: evenodd;
+  }
+}
+
+.arena-features__title {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.arena-features__text {
+  margin-top: 0.45rem !important;
+  color: $text-muted;
+  line-height: 1.6;
+}
+
+// Arena Pass: a membership card in glass, with a level badge, an XP bar and perks.
+
+.arena-pass {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid $glass-border;
+  border-radius: $radius-lg;
+  background:
+    linear-gradient(150deg, rgba($violet, if($dark, 0.35, 0.22)), rgba($surface, 0.2) 45%),
+    $glass-bg;
+  box-shadow: $shadow-float;
+  backdrop-filter: blur(16px);
+
+  &::before {
+    position: absolute;
+    top: -6rem;
+    right: -6rem;
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba($lime, 0.35), transparent 70%);
+    content: "";
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+  }
+}
+
+.arena-pass__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.arena-pass__kicker {
+  @include display-label;
+
+  margin: 0;
+  color: $accent-text;
+  font-size: 0.85rem;
+}
+
+.arena-pass__tier {
+  @include display-label;
+
+  padding: 0.15rem 0.6rem;
+  border: 1px solid rgba($accent-text, 0.6);
+  border-radius: 999px;
+  color: $accent-text;
+  font-size: 0.68rem;
+}
+
+.arena-pass__title {
+  margin: 0.75rem 0 1.5rem;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  font-stretch: 112%;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.arena-pass__level {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid $line-soft;
+  border-radius: $radius;
+  background-color: if($dark, rgba($page, 0.45), rgba($surface, 0.7));
+}
+
+.arena-pass__badge {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 auto;
+  place-items: center;
+  background: linear-gradient(140deg, $lime, $lime-dark);
+  color: $on-accent;
+  font-family: $font-family-display;
+  font-size: 1.35rem;
+  font-weight: 800;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+.arena-pass__progress {
+  flex: 1 1 auto;
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 0 0 0.5rem;
+    color: $text-muted;
+    font-size: 0.8rem;
+
+    span:first-child {
+      color: $heading;
+      font-weight: 600;
+    }
+  }
+}
+
+.arena-pass__bar {
+  display: block;
+  height: 0.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: $line;
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, $lime-dark, $lime);
+    box-shadow: 0 0 12px rgba($lime, 0.7);
+  }
+}
+
+.arena-pass__perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  color: $text;
+  list-style: none;
+
+  li {
+    display: flex;
+    gap: 0.7rem;
+    line-height: 1.5;
+
+    &::before {
+      flex: 0 0 auto;
+      color: $accent-text;
+      content: "✦";
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .arena-promise__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .arena-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Category links rendered after the hero (import collections): launcher-style genre tiles.
+.arena-hero + .container {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.arena-hero ~ .container > .d-flex:has(> a > .rounded-circle) {
+  gap: 0.75rem !important;
+}
+
+.arena-hero ~ .container a:has(> .rounded-circle) {
+  display: flex;
+  min-width: 11rem;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.7rem 1rem 0.7rem 0.7rem;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: linear-gradient(135deg, $surface-raised, $surface);
+  text-align: left !important;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms $ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: rgba($accent-text, 0.6);
+    box-shadow: 0 10px 30px -14px rgba($lime, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .rounded-circle {
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    flex: 0 0 auto;
+    margin: 0 !important;
+    border-radius: $radius-sm !important;
+  }
+
+  .rounded-circle.bg-light {
+    background: rgba($lime, if($dark, 0.12, 0.35)) !important;
+    color: $accent-text !important;
+    font-family: $font-family-display;
+    font-size: 1.25rem;
+    font-weight: 800 !important;
+  }
+
+  span {
+    margin: 0 !important;
+    color: $heading;
+    font-family: $font-family-display;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}

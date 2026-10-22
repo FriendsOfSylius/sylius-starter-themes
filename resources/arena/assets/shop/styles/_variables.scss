@@ -1,0 +1,46 @@
+// Arena — a game launcher: glass panels, display type and one acid-lime signal.
+// Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
+$dark: $color-mode == dark;
+
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-family-display: "Saira", "Bahnschrift", "DIN Alternate", "Arial Narrow", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: $font-family-display;
+$headings-font-weight: 700;
+
+$body-bg: $page;
+$body-color: $text;
+
+$primary: $lime;
+$secondary: $surface-raised;
+$success: $lime;
+
+$link-color: $accent-text;
+$link-hover-color: $accent-text-hover;
+$border-color: $line;
+
+$radius-sm: 6px;
+$radius: 10px;
+$radius-lg: 16px;
+
+// Chamfered corners for calls to action, like a launcher's angular UI.
+$chamfer: 10px;
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+// "r, g, b" channels of a color, for Bootstrap's --bs-*-rgb variables.
+@function channels($color) {
+  @return red($color), green($color), blue($color);
+}
+
+@mixin chamfer($size: $chamfer) {
+  clip-path: polygon($size 0, 100% 0, 100% calc(100% - #{$size}), calc(100% - #{$size}) 100%, 0 100%, 0 $size);
+}
+
+@mixin display-label {
+  font-family: $font-family-display;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}

@@ -3,7 +3,8 @@
 footer.tech-footer {
   margin-top: auto;
   padding: 0;
-  border-top: 0;
+  // Dark scheme: the carbon footer sits just below the page, a hairline marks its edge.
+  border-top: if($dark, 1px solid $border-dark, 0);
   background-color: $carbon;
   color: $text-on-dark;
   font-size: 0.92rem;

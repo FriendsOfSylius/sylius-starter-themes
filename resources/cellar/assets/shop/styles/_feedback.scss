@@ -1,22 +1,22 @@
-:root {
-  --bs-primary: #{$wine};
-  --bs-primary-rgb: 94, 22, 38;
-  --bs-link-color: #{$wine};
-  --bs-link-color-rgb: 94, 22, 38;
-  --bs-link-hover-color: #{$claret};
-  --bs-link-hover-color-rgb: 122, 28, 48;
+@include scheme-root {
+  --bs-primary: #{$accent};
+  --bs-primary-rgb: #{channels($accent)};
+  --bs-link-color: #{$accent-text};
+  --bs-link-color-rgb: #{channels($accent-text)};
+  --bs-link-hover-color: #{$accent-text-hover};
+  --bs-link-hover-color-rgb: #{channels($accent-text-hover)};
 
   --bs-success: #{$success};
-  --bs-success-rgb: 63, 107, 58;
-  --bs-success-text-emphasis: #2F5129;
-  --bs-success-bg-subtle: #EDF1E6;
-  --bs-success-border-subtle: #C9D6BC;
+  --bs-success-rgb: #{channels($success)};
+  --bs-success-text-emphasis: #{if($dark, #BCDAB2, #2F5129)};
+  --bs-success-bg-subtle: #{if($dark, #18241A, #EDF1E6)};
+  --bs-success-border-subtle: #{if($dark, #34502F, #C9D6BC)};
 
   --bs-info: #{$info};
-  --bs-info-rgb: 60, 90, 122;
-  --bs-info-text-emphasis: #2D4560;
-  --bs-info-bg-subtle: #ECF0F4;
-  --bs-info-border-subtle: #C7D2DD;
+  --bs-info-rgb: #{channels($info)};
+  --bs-info-text-emphasis: #{if($dark, #BCD0E8, #2D4560)};
+  --bs-info-bg-subtle: #{if($dark, #131C27, #ECF0F4)};
+  --bs-info-border-subtle: #{if($dark, #2E4562, #C7D2DD)};
 }
 
 .alert {

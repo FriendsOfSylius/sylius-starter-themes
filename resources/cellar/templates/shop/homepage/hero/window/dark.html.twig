@@ -1,0 +1,89 @@
+{# The view from the cellar window by moonlight: the night cut of the dusk view (window/light.html.twig). #}
+<svg class="cellar-hero__arch cellar-window cellar-window--dark" viewBox="0 0 400 520" role="img" aria-labelledby="cellar-window-dark-title" focusable="false">
+    <title id="cellar-window-dark-title">{{ 'cellar.hero.illustration'|trans({}, 'cellar') }}</title>
+    <defs>
+        <clipPath id="cellar-window-dark-arch">
+            <path d="M0 520V200a200 200 0 0 1 400 0v320z"/>
+        </clipPath>
+        <linearGradient id="cellar-window-dark-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0A0306"/>
+            <stop offset="0.45" stop-color="#1D0812"/>
+            <stop offset="0.68" stop-color="#3F1626"/>
+            <stop offset="0.76" stop-color="#6A3542"/>
+        </linearGradient>
+        <radialGradient id="cellar-window-dark-halo" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#F6EBD3" stop-opacity="0.5"/>
+            <stop offset="1" stop-color="#F6EBD3" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="cellar-window-dark-glass" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#2E0F19"/>
+            <stop offset="0.35" stop-color="#14060A"/>
+            <stop offset="1" stop-color="#0B0306"/>
+        </linearGradient>
+        <clipPath id="cellar-window-dark-field">
+            <path d="M0 520V352c70-22 140-30 210-26 70 4 130 16 190 34v160z"/>
+        </clipPath>
+    </defs>
+
+    <g clip-path="url(#cellar-window-dark-arch)">
+        <rect width="400" height="520" fill="url(#cellar-window-dark-sky)"/>
+
+        <g fill="#F3E3BF">
+            <circle cx="64" cy="96" r="1.1" opacity="0.7"/>
+            <circle cx="118" cy="58" r="0.9" opacity="0.5"/>
+            <circle cx="170" cy="112" r="0.8" opacity="0.6"/>
+            <circle cx="232" cy="46" r="1" opacity="0.55"/>
+            <circle cx="338" cy="92" r="0.9" opacity="0.5"/>
+            <circle cx="96" cy="168" r="0.8" opacity="0.4"/>
+            <circle cx="40" cy="220" r="0.9" opacity="0.5"/>
+            <circle cx="200" cy="180" r="1" opacity="0.6"/>
+            <circle cx="366" cy="200" r="0.8" opacity="0.45"/>
+            <circle cx="150" cy="240" r="0.7" opacity="0.4"/>
+            <circle cx="270" cy="70" r="1.1" opacity="0.7"/>
+        </g>
+        <circle cx="286" cy="150" r="70" fill="url(#cellar-window-dark-halo)"/>
+        <circle cx="286" cy="150" r="24" fill="#F6EBD3"/>
+        <circle cx="296" cy="144" r="21" fill="#D9C7A6" opacity="0.3"/>
+
+        {# Far hills, then the vineyard slope whose rows run to the horizon. #}
+        <path d="M0 330c48-26 96-38 150-34 52 4 82 20 132 14 46-6 82-22 118-18v228H0z" fill="#3E1520" opacity="0.9"/>
+        <path d="M0 346c60-14 112-16 168-8 50 7 98 4 150-6 30-6 58-6 82-2v190H0z" fill="#2B0C15"/>
+        <path d="M0 520V352c70-22 140-30 210-26 70 4 130 16 190 34v160z" fill="#1C070D"/>
+        <g clip-path="url(#cellar-window-dark-field)" fill="none" stroke="#C8A46A" stroke-linecap="round">
+            {% for x in [-520, -380, -250, -130, -20, 80, 170, 250, 330, 420, 520, 640, 780, 930] %}
+                <path d="M{{ x }} 540L{{ 200 + (x - 200) * 0.06 }} 326" stroke-width="1.1" stroke-dasharray="1.5 5" opacity="0.55"/>
+            {% endfor %}
+        </g>
+
+        {# Stone sill. #}
+        <rect y="496" width="400" height="24" fill="#100408"/>
+        <path d="M0 496h400" stroke="#B08D57" stroke-opacity="0.55"/>
+
+        {# Bottle. #}
+        <g class="cellar-window__bottle">
+            <rect x="120" y="262" width="20" height="38" rx="2" fill="#5E1A2A"/>
+            <path d="M120 270h20" stroke="#B08D57" stroke-opacity="0.8"/>
+            <path d="M121 300v30c0 16-23 20-23 38v123a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5V368c0-18-23-22-23-38v-30z" fill="url(#cellar-window-dark-glass)"/>
+            <path d="M104 378v108" stroke="#F3E3BF" stroke-opacity="0.18" stroke-width="3" stroke-linecap="round"/>
+            <rect x="104" y="404" width="52" height="64" fill="#F3EBDC"/>
+            <rect x="107" y="407" width="46" height="58" fill="none" stroke="#B08D57" stroke-width="0.6"/>
+            <text x="130" y="425" text-anchor="middle" class="cellar-window__label-name">Cellar</text>
+            <path d="M118 431h24" stroke="#B08D57" stroke-width="0.6"/>
+            <text x="130" y="443" text-anchor="middle" class="cellar-window__label-text">{{ 'cellar.hero.label'|trans({}, 'cellar') }}</text>
+            <text x="130" y="456" text-anchor="middle" class="cellar-window__label-year">MMXXII</text>
+        </g>
+
+        {# Glass of red. #}
+        <g class="cellar-window__glass">
+            <path d="M222 418c-1 28 10 44 22 44s23-16 22-44z" fill="#F3E3BF" fill-opacity="0.06" stroke="#E3CC9C" stroke-opacity="0.7" stroke-width="1"/>
+            <path d="M223.6 436c1.6 16 10 24 20.4 24s18.8-8 20.4-24z" fill="#7A1C30"/>
+            <path d="M223.6 436h40.8" stroke="#A8384D" stroke-width="0.8"/>
+            <path d="M244 462v32" stroke="#E3CC9C" stroke-opacity="0.7" stroke-width="1.2"/>
+            <ellipse cx="244" cy="495" rx="15" ry="2.4" fill="#E3CC9C" fill-opacity="0.6"/>
+        </g>
+    </g>
+
+    {# Gilded double fillet around the vault. #}
+    <path d="M1 520V200a199 199 0 0 1 398 0v320" fill="none" stroke="#B08D57" stroke-width="1.5"/>
+    <path d="M12 520V200a188 188 0 0 1 376 0v320" fill="none" stroke="#B08D57" stroke-opacity="0.45" stroke-width="0.8"/>
+</svg>

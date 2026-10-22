@@ -12,6 +12,11 @@
     linear-gradient(90deg, rgba($white, 0.045) 1px, transparent 1px);
   background-size: auto, 32px 32px, 32px 32px;
   color: $text-on-dark;
+
+  // Dark scheme: the carbon hero sits just below the page, a hairline closes it under the spec bar.
+  @if $dark {
+    border-bottom: 1px solid $border-dark;
+  }
 }
 
 .tech-hero__grid {
@@ -133,7 +138,7 @@
   overflow: hidden;
   aspect-ratio: 1;
   border-radius: $radius;
-  background-color: $aluminium;
+  background-color: $tray;
 
   img {
     transition: transform 700ms $ease;

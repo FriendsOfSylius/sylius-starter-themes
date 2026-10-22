@@ -14,7 +14,7 @@
 
 .blush-promise__eyebrow {
   margin-bottom: 0.75rem;
-  color: $pink;
+  color: $accent-text;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -90,8 +90,13 @@
   background-color: $coral;
 }
 
+// The plum badge would vanish on the dark rose card: it turns blush white with plum ink.
 .blush-promise__card--care .blush-promise__badge {
-  background-color: $plum;
+  background-color: if($dark, $ink, $plum);
+
+  @if $dark {
+    color: $plum;
+  }
 }
 
 // Secondary link next to the hero call to action.
@@ -103,16 +108,16 @@
 }
 
 .blush-hero__link {
-  color: $plum;
+  color: if($dark, $ink, $plum);
   font-size: 0.86rem;
   font-weight: 700;
   text-decoration: underline;
-  text-decoration-color: rgba($pink, 0.45);
+  text-decoration-color: rgba(if($dark, $pink-bright, $pink), if($dark, 0.7, 0.45));
   text-decoration-thickness: 2px;
   text-underline-offset: 0.3em;
 
   &:hover {
-    color: $pink;
+    color: $accent-text;
   }
 }
 

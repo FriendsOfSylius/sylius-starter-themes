@@ -1,0 +1,62 @@
+// Drive, light scheme — a daylight grocery drive: white shelves on a light shelf grey, basil aisles, lemon price
+// stickers and tomato promos.
+$color-mode: light;
+
+// Brand fills, the same in both schemes.
+$basil: #0E7C3A;
+$basil-dark: #0A5F2C;
+$basil-light: #2FA35A;
+$forest: #083A22;
+$lemon: #FFD43B;
+$lemon-dark: #F2BE00;
+$tomato: #E23B2E;
+$tomato-dark: #C02A1F;
+$info: #2369C4;
+$white: #FFF;
+// Dark ink, also the text on lemon stickers in both schemes.
+$ink: #13241A;
+
+// Surfaces.
+$shelf: #F2F4F1;
+$surface: $white;
+$field-bg: $white;
+$mint: #E5F4E9;
+$mint-strong: #C9E8D2;
+$lemon-soft: #FFF5C7;
+$tomato-soft: #FFE4DF;
+$sky-soft: #DDEFFB;
+$sand-soft: #F4ECDD;
+$info-soft: #EAF3FC;
+$info-border: #C6DDF4;
+
+// Text.
+$heading: $ink;
+$text: #34443A;
+$text-muted: #616F66;
+$text-on-dark: #B9CDBF;
+$link: $basil-dark;
+$link-hover: $basil;
+$accent-text: $basil;
+$accent-text-strong: $basil-dark;
+$tomato-text: $tomato-dark;
+$lemon-text: #8A6500;
+$sky-text: #1D5B9E;
+$sand-text: #7A5A2A;
+$info-text: #1A4F94;
+
+// Lines.
+$border: #DCE3DD;
+$border-strong: #C5CFC7;
+$field-border: $border-strong;
+
+// Basil hero, the same panel in both schemes.
+$hero-bg: $basil-dark;
+$hero-text: $mint;
+$hero-muted: $mint-strong;
+
+$shadow-soft: 0 1px 2px rgba($ink, 0.06), 0 1px 1px rgba($ink, 0.03);
+$shadow-float: 0 14px 34px rgba($ink, 0.12);
+$shadow-basil: 0 8px 20px rgba($basil, 0.28);
+$shadow-sticker: 0 8px 18px rgba($ink, 0.18);
+$shadow-label: 4px 4px 0 rgba($ink, 0.12);
+$focus-ring: rgba($basil, 0.18);

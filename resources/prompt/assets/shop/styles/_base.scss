@@ -1,0 +1,181 @@
+@include scheme-root {
+  scroll-behavior: smooth;
+}
+
+// WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
+// shipping and payment descriptions) with these Bootstrap utilities, too light by default.
+@include scheme-root {
+  --bs-secondary-color: #{$text-muted};
+  --bs-tertiary-color: #{$text-muted};
+}
+
+.text-black-50 {
+  color: $text-muted !important;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $background;
+  color: $text;
+  font-family: $font-family-base;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $green;
+  text-underline-offset: 0.2em;
+  transition: color 160ms ease;
+
+  &:hover,
+  &.link-reset:hover {
+    color: $link-hover !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-strong;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  letter-spacing: -0.06em;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+}
+
+::selection {
+  background-color: $green;
+  color: $black;
+}
+
+:focus-visible {
+  outline: 2px solid $green;
+  outline-offset: 3px;
+}
+
+.text-muted,
+.text-body-secondary {
+  color: $text-muted !important;
+}
+
+@if $dark {
+  // Dark utilities of the Sylius and import templates (homepage collections), unreadable on the dark background.
+  .text-black:not(:is(.bg-light, .bg-white) *),
+  .text-dark:not(:is(.bg-light, .bg-white) *) {
+    color: $text !important;
+  }
+
+  // Sort and limit toggles of the product lists, which keep the light-mode button color.
+  .btn-sm.dropdown-toggle {
+    --bs-btn-color: #{$text};
+    --bs-btn-hover-color: #{$white};
+    --bs-btn-active-color: #{$white};
+  }
+}
+
+.bg-light {
+  --bs-body-color: #{$light-text};
+  --bs-body-color-rgb: #{channels($light-text)};
+  --bs-emphasis-color: #{$light-text};
+  --bs-emphasis-color-rgb: #{channels($light-text)};
+  background-color: $light !important;
+  color: $light-text !important;
+}
+
+.bg-light :is(h1, h2, h3, h4, h5, h6, .text-muted, .text-body-secondary, .text-light, .text-white) {
+  color: $light-muted !important;
+}
+
+.bg-light a,
+.bg-light a:visited {
+  color: $light-link !important;
+}
+
+.bg-light a:hover,
+.bg-light a:focus-visible {
+  color: $light-text !important;
+}
+
+.bg-white {
+  --bs-body-color: #{$light-text};
+  --bs-body-color-rgb: #{channels($light-text)};
+  --bs-emphasis-color: #{$light-text};
+  --bs-emphasis-color-rgb: #{channels($light-text)};
+  color: $light-text !important;
+}
+
+.bg-white :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+  color: $light-text !important;
+}
+
+.bg-white :is(.text-muted, .text-body-secondary, .text-light, .text-white) {
+  color: $light-muted !important;
+}
+
+.bg-white a,
+.bg-white a:visited {
+  color: $light-link !important;
+}
+
+.bg-white a:hover,
+.bg-white a:focus-visible {
+  color: $light-text !important;
+}
+
+.bg-white.border-bottom {
+  --bs-body-color: #{$text};
+  background-color: $background !important;
+  color: $text;
+}
+
+.prompt-checkout-brand,
+.prompt-checkout-account {
+  color: $text;
+}
+
+.prompt-checkout-brand a,
+.prompt-checkout-account a,
+.prompt-checkout-account .btn {
+  color: $green !important;
+}
+
+.prompt-checkout-brand a:hover,
+.prompt-checkout-account a:hover,
+.prompt-checkout-account .btn:hover {
+  color: $text-strong !important;
+}
+
+.prompt-checkout-brand .prompt-logo__name {
+  color: $text-strong;
+}
+
+.prompt-checkout-brand .prompt-logo__tagline {
+  color: $text-muted;
+}
+
+@media (min-width: 992px) {
+  .checkout-sidebar {
+    --bs-body-color: #{$light-text};
+    --bs-emphasis-color: #{$light-text};
+    --bs-table-color: #{$light-text};
+    color: $light-text;
+  }
+
+  .checkout-sidebar :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+    color: $light-text !important;
+  }
+
+  .checkout-sidebar .text-body-tertiary {
+    color: $light-muted !important;
+  }
+}

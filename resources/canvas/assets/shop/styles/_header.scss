@@ -1,5 +1,5 @@
 header {
-  background-color: $white;
+  background-color: $surface;
   border-bottom: 1px solid $border;
 }
 
@@ -7,16 +7,16 @@ header a {
   color: $text;
 
   &:hover {
-    color: $black-hover;
+    color: $ink-hover;
   }
 }
 
 header .navbar {
-  background-color: $white;
+  background-color: $surface;
 }
 
 header .navbar-brand {
-  color: $black;
+  color: $ink;
   font-weight: 500;
 }
 
@@ -25,12 +25,12 @@ header .navbar-brand {
   width: fit-content;
   align-items: center;
   gap: 0.7rem;
-  color: $black;
+  color: $ink;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $black-hover;
+    color: $ink-hover;
     text-decoration: none;
   }
 }
@@ -47,12 +47,12 @@ header .navbar-brand {
 }
 
 .canvas-logo__mark-bg {
-  fill: $black;
+  fill: $ink;
 }
 
 .canvas-logo__mark-letter {
   fill: none;
-  stroke: $white;
+  stroke: $on-ink;
   stroke-linecap: square;
   stroke-width: 3;
 }
@@ -71,7 +71,7 @@ header .nav-link {
 
   &:hover,
   &:focus {
-    color: $black;
+    color: $ink;
   }
 }
 
@@ -109,7 +109,7 @@ header .nav-link {
 
   &:hover,
   &:focus-visible {
-    color: $black-hover;
+    color: $ink-hover;
   }
 }
 
@@ -118,15 +118,15 @@ header .nav-link {
 
   &:hover,
   &:focus {
-    color: $black;
+    color: $ink;
   }
 }
 
 .canvas-checkout-nav .dropdown-menu {
   border-radius: 0;
   border-color: $border;
-  background-color: $white;
-  box-shadow: 0 8px 24px rgba($black, 0.08);
+  background-color: $surface;
+  box-shadow: 0 8px 24px $shadow-color;
 }
 
 .canvas-checkout-nav .dropdown-item {
@@ -135,15 +135,15 @@ header .nav-link {
   &:hover,
   &:focus {
     background-color: $surface-soft;
-    color: $black;
+    color: $ink;
   }
 }
 
 header .dropdown-menu {
   border-radius: 0;
   border-color: $border;
-  background-color: $white;
-  box-shadow: 0 8px 24px rgba($black, 0.08);
+  background-color: $surface;
+  box-shadow: 0 8px 24px $shadow-color;
 }
 
 header .dropdown-item {
@@ -152,7 +152,7 @@ header .dropdown-item {
   &:hover,
   &:focus {
     background-color: $surface-soft;
-    color: $black;
+    color: $ink;
   }
 }
 

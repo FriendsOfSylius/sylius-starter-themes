@@ -1,0 +1,57 @@
+@include scheme-root {
+  --bs-success: #{$accent-text};
+  --bs-success-rgb: #{channels($accent-text)};
+  --bs-success-text-emphasis: #{if($dark, $lime-soft, #2D4E00)};
+  --bs-success-bg-subtle: #{if($dark, #1A240C, #EEF9CC)};
+  --bs-success-border-subtle: #{if($dark, #3D5214, #C9E57A)};
+
+  --bs-info: #{$info};
+  --bs-info-rgb: #{channels($info)};
+  --bs-info-text-emphasis: #{if($dark, #9CCBFF, #174C99)};
+  --bs-info-bg-subtle: #{if($dark, #0F1C2E, #E6F0FC)};
+  --bs-info-border-subtle: #{if($dark, #22406A, #B5D0F4)};
+
+  --bs-warning-text-emphasis: #{$amber-text};
+  --bs-warning-bg-subtle: #{if($dark, #2A200C, #FFF4DC)};
+  --bs-warning-border-subtle: #{if($dark, #5C4416, #F3D08A)};
+
+  --bs-danger: #{$red};
+  --bs-danger-rgb: #{channels($red)};
+  --bs-danger-text-emphasis: #{if($dark, #FF9AA4, #9E1F2D)};
+  --bs-danger-bg-subtle: #{if($dark, #2E1218, #FDE8EA)};
+  --bs-danger-border-subtle: #{if($dark, #6A2633, #F2B6BD)};
+}
+
+.alert {
+  border-radius: $radius;
+}
+
+@each $variant in success, info, warning, danger {
+  .alert-#{$variant} {
+    --bs-alert-color: var(--bs-#{$variant}-text-emphasis);
+    --bs-alert-bg: var(--bs-#{$variant}-bg-subtle);
+    --bs-alert-border-color: var(--bs-#{$variant}-border-subtle);
+    --bs-alert-link-color: var(--bs-#{$variant}-text-emphasis);
+  }
+}
+
+.badge {
+  font-family: $font-family-display;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge.bg-primary,
+.badge.text-bg-primary,
+.badge.bg-success,
+.badge.text-bg-success {
+  background-color: $lime !important;
+  color: $on-accent !important;
+}
+
+.badge.bg-danger,
+.badge.text-bg-danger {
+  background-color: $red !important;
+  color: if($dark, $on-accent, #FFF) !important;
+}

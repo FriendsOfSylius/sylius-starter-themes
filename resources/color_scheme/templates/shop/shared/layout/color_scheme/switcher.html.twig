@@ -1,0 +1,28 @@
+{# Light / dark / auto switcher, driven by the script of init.html.twig. #}
+{% set icons = {
+    auto: '<path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z" /><path d="M7 20h10" /><path d="M9 16v4" /><path d="M15 16v4" />',
+    light: '<path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />',
+    dark: '<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />',
+} %}
+
+{% macro icon(paths, class) %}
+    <svg class="{{ class }}" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ paths|raw }}</svg>
+{% endmacro %}
+
+<div class="col-auto dropdown color-scheme-switcher">
+    <button type="button" class="btn btn-icon btn-transparent px-0 color-scheme-switcher__toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{{ 'color_scheme.label'|trans({}, 'themes_color_scheme') }}" title="{{ 'color_scheme.label'|trans({}, 'themes_color_scheme') }}">
+        {% for mode, paths in icons %}
+            {{ _self.icon(paths, 'color-scheme-switcher__icon color-scheme-switcher__icon--' ~ mode) }}
+        {% endfor %}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end color-scheme-switcher__menu" role="menu">
+        {% for mode, paths in icons %}
+            <li role="none">
+                <button type="button" class="dropdown-item d-flex align-items-center gap-2" role="menuitemradio" aria-checked="false" data-color-scheme-option="{{ mode }}">
+                    {{ _self.icon(paths, 'color-scheme-switcher__option-icon') }}
+                    {{ ('color_scheme.mode.' ~ mode)|trans({}, 'themes_color_scheme') }}
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

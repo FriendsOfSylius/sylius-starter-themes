@@ -1,6 +1,6 @@
 .form-label {
   margin-bottom: 0.45rem;
-  color: $ink;
+  color: $heading;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -8,39 +8,86 @@
 .form-control,
 .form-select {
   min-height: 2.875rem;
-  border: 1px solid $border;
+  border: 1px solid $field-border;
   border-radius: $radius-sm;
-  background-color: $white;
+  background-color: $field-bg;
   color: $text;
   transition:
     border-color 160ms ease,
     box-shadow 160ms ease;
 
   &:hover {
-    border-color: $lavender-strong;
+    border-color: if($dark, $text-muted, $tint-strong);
   }
 
   &:focus {
-    border-color: $violet;
-    box-shadow: 0 0 0 4px rgba($electric, 0.22);
+    border-color: $violet-text;
+    box-shadow: 0 0 0 4px rgba($electric, if($dark, 0.4, 0.22));
+
+    @if $dark {
+      background-color: $field-bg;
+      color: $heading;
+    }
   }
 
   &::placeholder {
     color: $text-muted;
     opacity: 1;
   }
+
+  @if $dark {
+    &:disabled,
+    &[readonly] {
+      background-color: $surface;
+      color: $text-muted;
+    }
+  }
+}
+
+@if $dark {
+  .form-select option {
+    background-color: $surface;
+    color: $heading;
+  }
+
+  .input-group-text {
+    border-color: $field-border;
+    background-color: $surface;
+    color: $text;
+  }
+
+  .ts-wrapper .ts-control,
+  .ts-dropdown {
+    border-color: $field-border !important;
+    background-color: $field-bg !important;
+    color: $heading !important;
+
+    input {
+      color: $heading !important;
+    }
+  }
+
+  .ts-dropdown .active {
+    background-color: $tint !important;
+    color: $violet-text-hover !important;
+  }
 }
 
 .form-check-input {
-  border-color: $lavender-strong;
+  border-color: $check-border;
+
+  @if $dark {
+    background-color: $field-bg;
+  }
 
   &:checked {
-    border-color: $violet;
+    // A lilac rim keeps the checked box at 3:1 against the night field.
+    border-color: if($dark, $violet-text, $violet);
     background-color: $violet;
   }
 
   &:focus {
-    border-color: $violet;
-    box-shadow: 0 0 0 4px rgba($electric, 0.22);
+    border-color: $violet-text;
+    box-shadow: 0 0 0 4px rgba($electric, if($dark, 0.4, 0.22));
   }
 }

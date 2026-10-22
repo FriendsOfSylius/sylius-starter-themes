@@ -26,15 +26,15 @@
   // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
   color: var(--bs-btn-color);
 
-  --bs-btn-color: #{$white};
+  --bs-btn-color: #{$on-accent};
   --bs-btn-bg: #{$violet};
   --bs-btn-border-color: #{$violet};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$violet-dark};
-  --bs-btn-hover-border-color: #{$violet-dark};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$violet-dark};
-  --bs-btn-active-border-color: #{$violet-dark};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$violet-hover};
+  --bs-btn-hover-border-color: #{$violet-hover};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$violet-hover};
+  --bs-btn-active-border-color: #{$violet-hover};
   --bs-btn-disabled-bg: #{$violet};
   --bs-btn-disabled-border-color: #{$violet};
 
@@ -43,34 +43,34 @@
   }
 }
 
-// White pill with violet text ("Décrire mon projet", "En savoir plus").
+// White pill with violet text ("Décrire mon projet", "En savoir plus"), a raised night pill in the dark scheme.
 .btn-secondary,
 .btn-outline-primary,
 .btn-outline-gray {
-  --bs-btn-color: #{$violet};
-  --bs-btn-bg: #{$white};
-  --bs-btn-border-color: #{$border};
-  --bs-btn-hover-color: #{$violet-dark};
-  --bs-btn-hover-bg: #{$lavender};
-  --bs-btn-hover-border-color: #{$lavender-strong};
-  --bs-btn-active-color: #{$violet-dark};
-  --bs-btn-active-bg: #{$lavender};
+  --bs-btn-color: #{$violet-text};
+  --bs-btn-bg: #{$surface};
+  --bs-btn-border-color: #{if($dark, $tint-strong, $line)};
+  --bs-btn-hover-color: #{$violet-text-hover};
+  --bs-btn-hover-bg: #{$tint};
+  --bs-btn-hover-border-color: #{$tint-strong};
+  --bs-btn-active-color: #{$violet-text-hover};
+  --bs-btn-active-bg: #{$tint};
   --bs-btn-active-border-color: #{$violet-soft};
 }
 
 .btn-link {
-  color: $electric;
+  color: $link;
 
   &:hover {
-    color: $violet;
+    color: $violet-text;
   }
 }
 
 // Aurora signature: the blue-to-violet gradient pill.
 .aurora-btn-glow {
-  --bs-btn-color: #{$white};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-active-color: #{$white};
+  --bs-btn-color: #{$on-accent};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-active-color: #{$on-accent};
   --bs-btn-border-color: transparent;
   --bs-btn-hover-border-color: transparent;
   --bs-btn-active-border-color: transparent;
@@ -92,15 +92,15 @@
 
 // Ghost pill used on the midnight panels.
 .aurora-btn-ghost {
-  --bs-btn-color: #{$violet};
-  --bs-btn-bg: #{$white};
-  --bs-btn-border-color: #{$white};
-  --bs-btn-hover-color: #{$violet-dark};
-  --bs-btn-hover-bg: #{$lavender};
-  --bs-btn-hover-border-color: #{$lavender};
-  --bs-btn-active-color: #{$violet-dark};
-  --bs-btn-active-bg: #{$lavender};
-  --bs-btn-active-border-color: #{$lavender};
+  --bs-btn-color: #{$violet-text};
+  --bs-btn-bg: #{$surface};
+  --bs-btn-border-color: #{$surface};
+  --bs-btn-hover-color: #{$violet-text-hover};
+  --bs-btn-hover-bg: #{$tint};
+  --bs-btn-hover-border-color: #{$tint};
+  --bs-btn-active-color: #{$violet-text-hover};
+  --bs-btn-active-bg: #{$tint};
+  --bs-btn-active-border-color: #{$tint};
 }
 
 .aurora-btn-arrow::after {
@@ -115,15 +115,15 @@
 }
 
 #add-to-cart-button {
-  --bs-btn-color: #{$white};
+  --bs-btn-color: #{$on-accent};
   --bs-btn-bg: #{$violet};
   --bs-btn-border-color: #{$violet};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$violet-dark};
-  --bs-btn-hover-border-color: #{$violet-dark};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$violet-dark};
-  --bs-btn-active-border-color: #{$violet-dark};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$violet-hover};
+  --bs-btn-hover-border-color: #{$violet-hover};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$violet-hover};
+  --bs-btn-active-border-color: #{$violet-hover};
 
   width: 100%;
   min-height: 3.25rem;

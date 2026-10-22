@@ -1,15 +1,15 @@
-:root {
+@include scheme-root {
   --bs-success: #{$success};
-  --bs-success-rgb: 35, 148, 107;
-  --bs-success-text-emphasis: #17654A;
-  --bs-success-bg-subtle: #E8F6F0;
-  --bs-success-border-subtle: #B8E3D2;
+  --bs-success-rgb: #{channels($success)};
+  --bs-success-text-emphasis: #{$success-text};
+  --bs-success-bg-subtle: #{$success-bg};
+  --bs-success-border-subtle: #{$success-border};
 
   --bs-info: #{$info};
-  --bs-info-rgb: 47, 85, 232;
-  --bs-info-text-emphasis: #{$electric-dark};
-  --bs-info-bg-subtle: #{$lavender};
-  --bs-info-border-subtle: #{$lavender-strong};
+  --bs-info-rgb: #{channels($info)};
+  --bs-info-text-emphasis: #{$info-text};
+  --bs-info-bg-subtle: #{$info-bg};
+  --bs-info-border-subtle: #{$info-border};
 }
 
 .alert {
@@ -28,4 +28,37 @@
   --bs-alert-bg: var(--bs-info-bg-subtle);
   --bs-alert-border-color: var(--bs-info-border-subtle);
   --bs-alert-link-color: var(--bs-info-text-emphasis);
+}
+
+// Warning and danger alerts keep Bootstrap's colors in the light scheme; the dark scheme gives them night tints.
+@if $dark {
+  @include scheme-root {
+    --bs-warning-text-emphasis: #{$warning-text};
+    --bs-warning-bg-subtle: #{$warning-bg};
+    --bs-warning-border-subtle: #{$warning-border};
+    --bs-danger: #{$danger};
+    --bs-danger-rgb: #{channels($danger)};
+    --bs-danger-text-emphasis: #{$danger-text};
+    --bs-danger-bg-subtle: #{$danger-bg};
+    --bs-danger-border-subtle: #{$danger-border};
+  }
+
+  .alert-warning {
+    --bs-alert-color: var(--bs-warning-text-emphasis);
+    --bs-alert-bg: var(--bs-warning-bg-subtle);
+    --bs-alert-border-color: var(--bs-warning-border-subtle);
+    --bs-alert-link-color: var(--bs-warning-text-emphasis);
+  }
+
+  .alert-danger {
+    --bs-alert-color: var(--bs-danger-text-emphasis);
+    --bs-alert-bg: var(--bs-danger-bg-subtle);
+    --bs-alert-border-color: var(--bs-danger-border-subtle);
+    --bs-alert-link-color: var(--bs-danger-text-emphasis);
+  }
+
+  .text-danger,
+  .invalid-feedback {
+    color: $danger-text !important;
+  }
 }

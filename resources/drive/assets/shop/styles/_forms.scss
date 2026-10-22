@@ -1,6 +1,6 @@
 .form-label {
   margin-bottom: 0.45rem;
-  color: $ink;
+  color: $heading;
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -8,9 +8,9 @@
 .form-control,
 .form-select {
   min-height: 2.875rem;
-  border: 1px solid $border-strong;
+  border: 1px solid $field-border;
   border-radius: $radius-sm;
-  background-color: $white;
+  background-color: $field-bg;
   color: $text;
   transition:
     border-color 160ms ease,
@@ -21,18 +21,43 @@
   }
 
   &:focus {
-    border-color: $basil;
-    box-shadow: 0 0 0 4px rgba($basil, 0.18);
+    @if $dark {
+      background-color: $field-bg;
+      color: $heading;
+    }
+
+    border-color: $accent-text;
+    box-shadow: 0 0 0 4px $focus-ring;
   }
 
   &::placeholder {
     color: $text-muted;
     opacity: 1;
   }
+
+  @if $dark {
+    &:disabled,
+    &[readonly] {
+      background-color: $surface;
+      color: $text-muted;
+    }
+  }
+}
+
+// The chevron takes the green accent at night: "#" escaped as "%23" in the data URI.
+@if $dark {
+  .form-select {
+    --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23#{str-slice(inspect($accent-text), 2)}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+
+    option {
+      background-color: $surface;
+      color: $heading;
+    }
+  }
 }
 
 .form-check-input {
-  border-color: $border-strong;
+  border-color: $field-border;
 
   &:checked {
     border-color: $basil;
@@ -40,7 +65,7 @@
   }
 
   &:focus {
-    border-color: $basil;
-    box-shadow: 0 0 0 4px rgba($basil, 0.18);
+    border-color: $accent-text;
+    box-shadow: 0 0 0 4px $focus-ring;
   }
 }

@@ -18,7 +18,7 @@
   color: var(--bs-btn-color);
 
   // Carbon on signal orange (6.2:1); white would only reach 3.1:1. Hover turns it into an orange-lit carbon key.
-  --bs-btn-color: #{$carbon};
+  --bs-btn-color: #{$on-signal};
   --bs-btn-bg: #{$signal};
   --bs-btn-border-color: #{$signal};
   --bs-btn-hover-color: #{$signal};
@@ -27,7 +27,7 @@
   --bs-btn-active-color: #{$signal};
   --bs-btn-active-bg: #{$carbon};
   --bs-btn-active-border-color: #{$signal};
-  --bs-btn-disabled-color: #{$carbon};
+  --bs-btn-disabled-color: #{$on-signal};
   --bs-btn-disabled-bg: #{$signal};
   --bs-btn-disabled-border-color: #{$signal};
 
@@ -40,22 +40,22 @@
 .btn-secondary,
 .btn-outline-primary,
 .btn-outline-gray {
-  --bs-btn-color: #{$ink};
-  --bs-btn-bg: #{$white};
-  --bs-btn-border-color: #{$aluminium-strong};
-  --bs-btn-hover-color: #{$ink};
-  --bs-btn-hover-bg: #{$aluminium};
-  --bs-btn-hover-border-color: #{$ink};
-  --bs-btn-active-color: #{$ink};
-  --bs-btn-active-bg: #{$aluminium};
-  --bs-btn-active-border-color: #{$ink};
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: #{$surface};
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$heading};
+  --bs-btn-hover-bg: #{$tint};
+  --bs-btn-hover-border-color: #{$heading};
+  --bs-btn-active-color: #{$heading};
+  --bs-btn-active-bg: #{$tint};
+  --bs-btn-active-border-color: #{$heading};
 }
 
 .btn-link {
-  color: $ink;
+  color: $heading;
 
   &:hover {
-    color: $signal-dark;
+    color: $accent-text;
   }
 }
 
@@ -85,7 +85,7 @@
 
 #add-to-cart-button {
   // Carbon on signal orange (6.2:1); white would only reach 3.1:1. Hover turns it into an orange-lit carbon key.
-  --bs-btn-color: #{$carbon};
+  --bs-btn-color: #{$on-signal};
   --bs-btn-bg: #{$signal};
   --bs-btn-border-color: #{$signal};
   --bs-btn-hover-color: #{$signal};

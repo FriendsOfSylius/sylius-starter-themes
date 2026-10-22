@@ -8,6 +8,7 @@ use SyliusStarter\Core\App;
 use SyliusStarter\Core\Component\InstallerInterface;
 use SyliusStarter\Core\Component\RemoverInterface;
 use SyliusStarter\Core\Util\Javascript;
+use SyliusStarter\Themes\ColorScheme;
 
 use function Castor\finder;
 use function Castor\fs;
@@ -32,5 +33,6 @@ final class CanvasRemover implements RemoverInterface
             fs()->remove($app->directory() . '/' . $file->getRelativePathname());
         }
         Javascript::removeImport($app, 'assets/shop/entrypoint.js', './styles/app.scss');
+        ColorScheme::remove($app);
     }
 }

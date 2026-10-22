@@ -1,15 +1,15 @@
-:root {
+@include scheme-root {
   --bs-success: #{$success};
-  --bs-success-rgb: 70, 120, 95;
-  --bs-success-text-emphasis: #315C49;
-  --bs-success-bg-subtle: #EAF3ED;
-  --bs-success-border-subtle: #BCD4C4;
+  --bs-success-rgb: #{channels($success)};
+  --bs-success-text-emphasis: #{if($dark, #A9E4C3, #315C49)};
+  --bs-success-bg-subtle: #{if($dark, #13281D, #EAF3ED)};
+  --bs-success-border-subtle: #{if($dark, #2B5240, #BCD4C4)};
 
-  --bs-info: #{$info};
-  --bs-info-rgb: 101, 84, 184;
-  --bs-info-text-emphasis: #453B65;
-  --bs-info-bg-subtle: #F0EDF8;
-  --bs-info-border-subtle: #D4CDEA;
+  --bs-info: #{if($dark, $accent-text, $info)};
+  --bs-info-rgb: #{channels(if($dark, $accent-text, $info))};
+  --bs-info-text-emphasis: #{if($dark, #CFC7FF, #453B65)};
+  --bs-info-bg-subtle: #{if($dark, #1E1A38, #F0EDF8)};
+  --bs-info-border-subtle: #{if($dark, #3D3470, #D4CDEA)};
 }
 
 .alert-success {

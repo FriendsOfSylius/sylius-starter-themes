@@ -25,38 +25,38 @@
   // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
   color: var(--bs-btn-color);
 
-  --bs-btn-color: #{$white};
-  --bs-btn-bg: #{$teal};
-  --bs-btn-border-color: #{$teal};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$abyss};
-  --bs-btn-hover-border-color: #{$abyss};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$abyss};
-  --bs-btn-active-border-color: #{$abyss};
-  --bs-btn-disabled-bg: #{$teal};
-  --bs-btn-disabled-border-color: #{$teal};
+  --bs-btn-color: #{$on-primary};
+  --bs-btn-bg: #{$primary-bg};
+  --bs-btn-border-color: #{$primary-bg};
+  --bs-btn-hover-color: #{$on-primary-hover};
+  --bs-btn-hover-bg: #{$primary-hover-bg};
+  --bs-btn-hover-border-color: #{$primary-hover-bg};
+  --bs-btn-active-color: #{$on-primary-hover};
+  --bs-btn-active-bg: #{$primary-hover-bg};
+  --bs-btn-active-border-color: #{$primary-hover-bg};
+  --bs-btn-disabled-bg: #{$primary-bg};
+  --bs-btn-disabled-border-color: #{$primary-bg};
 }
 
 .btn-secondary,
 .btn-outline-primary,
 .btn-outline-gray {
-  --bs-btn-color: #{$teal};
-  --bs-btn-bg: #{$white};
-  --bs-btn-border-color: #{$foam-strong};
-  --bs-btn-hover-color: #{$abyss};
-  --bs-btn-hover-bg: #{$foam};
+  --bs-btn-color: #{$accent-text};
+  --bs-btn-bg: #{$surface};
+  --bs-btn-border-color: #{if($dark, $field-border, $tint-strong)};
+  --bs-btn-hover-color: #{$accent-text-hover};
+  --bs-btn-hover-bg: #{$tint};
   --bs-btn-hover-border-color: #{$aqua};
-  --bs-btn-active-color: #{$abyss};
-  --bs-btn-active-bg: #{$foam};
+  --bs-btn-active-color: #{$accent-text-hover};
+  --bs-btn-active-bg: #{$tint};
   --bs-btn-active-border-color: #{$aqua};
 }
 
 .btn-link {
-  color: $teal;
+  color: $accent-text;
 
   &:hover {
-    color: $abyss;
+    color: $accent-text-hover;
   }
 }
 
@@ -93,12 +93,12 @@
   --bs-btn-color: #{$ink};
   --bs-btn-bg: #{$aqua};
   --bs-btn-border-color: #{$aqua};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$abyss};
-  --bs-btn-hover-border-color: #{$abyss};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$abyss};
-  --bs-btn-active-border-color: #{$abyss};
+  --bs-btn-hover-color: #{if($dark, $ink, $white)};
+  --bs-btn-hover-bg: #{if($dark, $aqua-soft, $abyss)};
+  --bs-btn-hover-border-color: #{if($dark, $aqua-soft, $abyss)};
+  --bs-btn-active-color: #{if($dark, $ink, $white)};
+  --bs-btn-active-bg: #{if($dark, $aqua-soft, $abyss)};
+  --bs-btn-active-border-color: #{if($dark, $aqua-soft, $abyss)};
 
   width: 100%;
   min-height: 3.25rem;

@@ -25,7 +25,7 @@ header a {
   color: $text;
 
   &:hover {
-    color: $cyan;
+    color: $cyan-text;
   }
 }
 
@@ -38,7 +38,7 @@ header .btn-icon {
   color: $text;
 
   &:hover {
-    color: $cyan;
+    color: $cyan-text;
   }
 }
 
@@ -49,12 +49,12 @@ header .btn-icon {
   width: fit-content;
   align-items: center;
   gap: 0.7rem;
-  color: $white;
+  color: $heading;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $white;
+    color: $heading;
     text-decoration: none;
   }
 }
@@ -97,7 +97,7 @@ header .btn-icon {
 
   span {
     margin-left: 0.4em;
-    color: $cyan;
+    color: $cyan-text;
   }
 }
 
@@ -143,7 +143,7 @@ header .btn-icon {
   &:hover,
   &:focus,
   &[aria-expanded="true"] {
-    color: $cyan;
+    color: $cyan-text;
   }
 
   &[aria-expanded="true"] {
@@ -152,7 +152,7 @@ header .btn-icon {
 
   &::before {
     margin-right: 0.35rem;
-    color: $magenta;
+    color: $magenta-text;
     content: "▶";
     opacity: 0;
     transition: opacity 120ms steps(1, end);
@@ -186,7 +186,7 @@ header .btn-icon {
   &:hover,
   &:focus {
     background-color: $panel-raised;
-    color: $cyan;
+    color: $cyan-text;
   }
 }
 
@@ -196,9 +196,9 @@ header .btn-icon {
   --bs-btn-color: #{$ink};
   --bs-btn-bg: #{$gold};
   --bs-btn-hover-color: #{$ink};
-  --bs-btn-hover-bg: #FFD86B;
+  --bs-btn-hover-bg: #{$gold-soft};
   --bs-btn-active-color: #{$ink};
-  --bs-btn-active-bg: #FFD86B;
+  --bs-btn-active-bg: #{$gold-soft};
 
   display: inline-flex;
   min-height: 2.5rem;
@@ -207,20 +207,20 @@ header .btn-icon {
   padding: 0.6rem 1rem;
   font-size: 0.9375rem;
   box-shadow:
-    inset 0 (-$pixel) 0 0 #D69E12,
+    inset 0 (-$pixel) 0 0 $gold-dark,
     0 (-$pixel) 0 0 var(--bs-btn-bg),
     0 $pixel 0 0 var(--bs-btn-bg),
     (-$pixel) 0 0 0 var(--bs-btn-bg),
     $pixel 0 0 0 var(--bs-btn-bg);
 
   &:hover {
-    background-color: #FFD86B;
+    background-color: $gold-soft;
     box-shadow:
-      inset 0 (-$pixel) 0 0 #D69E12,
-      0 (-$pixel) 0 0 #FFD86B,
-      0 $pixel 0 0 #FFD86B,
-      (-$pixel) 0 0 0 #FFD86B,
-      $pixel 0 0 0 #FFD86B;
+      inset 0 (-$pixel) 0 0 $gold-dark,
+      0 (-$pixel) 0 0 $gold-soft,
+      0 $pixel 0 0 $gold-soft,
+      (-$pixel) 0 0 0 $gold-soft,
+      $pixel 0 0 0 $gold-soft;
     filter: drop-shadow(0 0 10px rgba($gold, 0.5));
   }
 }
@@ -261,7 +261,7 @@ header .dropdown-item {
   &:hover,
   &:focus {
     background-color: $panel-raised;
-    color: $cyan;
+    color: $cyan-text;
   }
 }
 
@@ -291,7 +291,7 @@ header .dropdown-item {
   .rg-category-nav__menu .offcanvas-title {
     @include pixel-label;
 
-    color: $cyan;
+    color: $cyan-text;
   }
 
   .rg-category-nav__menu .offcanvas-body {
@@ -312,7 +312,7 @@ header .dropdown-item {
     white-space: normal;
     justify-content: space-between;
     padding: 0.85rem !important;
-    color: $white;
+    color: $heading;
   }
 
   .rg-category-nav__menu .dropdown-menu {

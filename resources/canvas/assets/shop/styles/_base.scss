@@ -1,12 +1,50 @@
-html {
-  scroll-behavior: smooth;
-}
-
-// WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
-// shipping and payment descriptions) with these Bootstrap utilities, too light by default.
-:root {
+// scheme-root targets the <html> element of the active color scheme, with the weight of ":root" (see app.scss).
+@include scheme-root {
+  // WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
+  // shipping and payment descriptions) with these Bootstrap utilities, too light by default.
   --bs-secondary-color: #{$text-muted};
   --bs-tertiary-color: #{$text-muted};
+
+  // The Sylius shop is compiled in light mode: in the dark scheme, remap Bootstrap's runtime variables to the
+  // Canvas palette, so that every native component (tables, dropdowns, offcanvas, modals...) follows it.
+  @if $dark {
+    --bs-body-bg: #{$surface};
+    --bs-body-bg-rgb: #{channels($surface)};
+    --bs-body-color: #{$text};
+    --bs-body-color-rgb: #{channels($text)};
+    --bs-emphasis-color: #{$ink};
+    --bs-emphasis-color-rgb: #{channels($ink)};
+    --bs-heading-color: #{$text};
+    --bs-secondary-color-rgb: #{channels($text-muted)};
+    --bs-secondary-bg: #{$surface-soft};
+    --bs-secondary-bg-rgb: #{channels($surface-soft)};
+    --bs-tertiary-color-rgb: #{channels($text-muted)};
+    --bs-tertiary-bg: #{$card-bg};
+    --bs-tertiary-bg-rgb: #{channels($card-bg)};
+    --bs-border-color: #{$border};
+    --bs-border-color-translucent: #{rgba($ink, 0.12)};
+    --bs-link-color: #{$text};
+    --bs-link-color-rgb: #{channels($text)};
+    --bs-link-hover-color: #{$ink-hover};
+    --bs-link-hover-color-rgb: #{channels($ink-hover)};
+    --bs-code-color: #{$accent-text};
+    --bs-highlight-bg: #{rgba($terracotta, 0.35)};
+    --bs-highlight-color: #{$text};
+    --bs-light: #{$card-bg};
+    --bs-light-rgb: #{channels($card-bg)};
+    --bs-dark: #{$ink};
+    --bs-dark-rgb: #{channels($ink)};
+    --bs-gray-400: #{$field-border};
+    --bs-gray-500: #{$text-muted};
+    --bs-navbar-color: #{$text};
+    --bs-navbar-hover-color: #{$ink};
+    --bs-navbar-active-color: #{$ink};
+    --bs-navbar-brand-color: #{$ink};
+    --bs-navbar-brand-hover-color: #{$ink-hover};
+  }
+
+  color-scheme: $color-mode;
+  scroll-behavior: smooth;
 }
 
 .text-black-50 {
@@ -31,7 +69,7 @@ a {
   transition: color 150ms ease;
 
   &:hover {
-    color: $black-hover;
+    color: $ink-hover;
   }
 }
 
@@ -65,6 +103,126 @@ img {
 }
 
 ::selection {
-  background-color: $black;
-  color: $white;
+  background-color: $ink;
+  color: $on-ink;
+}
+
+// Light utilities and components printed by the Sylius templates, which only exist in the light scheme of the
+// shop: the dark scheme aligns them on the Canvas surfaces.
+@if $dark {
+  .bg-white,
+  .bg-body {
+    background-color: $surface !important;
+    color: $text !important;
+  }
+
+  .bg-light,
+  .bg-body-tertiary,
+  .text-bg-light {
+    background-color: $card-bg !important;
+    color: $text !important;
+  }
+
+  .text-black,
+  .text-dark,
+  .text-body {
+    color: $text !important;
+  }
+
+  .text-muted {
+    color: $text-muted !important;
+  }
+
+  hr {
+    border-color: $border;
+  }
+
+  .btn-close {
+    filter: invert(1) grayscale(1) brightness(2);
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{$surface};
+    --bs-dropdown-color: #{$text};
+    --bs-dropdown-border-color: #{$border};
+    --bs-dropdown-link-color: #{$text};
+    --bs-dropdown-link-hover-color: #{$ink};
+    --bs-dropdown-link-hover-bg: #{$surface-soft};
+    --bs-dropdown-link-active-color: #{$on-ink};
+    --bs-dropdown-link-active-bg: #{$ink};
+    --bs-dropdown-divider-bg: #{$border};
+  }
+
+  .pagination {
+    --bs-pagination-color: #{$text};
+    --bs-pagination-bg: transparent;
+    --bs-pagination-border-color: #{$border};
+    --bs-pagination-hover-color: #{$accent-text};
+    --bs-pagination-hover-bg: #{$surface-soft};
+    --bs-pagination-hover-border-color: #{$border};
+    --bs-pagination-focus-color: #{$ink};
+    --bs-pagination-focus-bg: #{$surface-soft};
+    --bs-pagination-active-color: #{$accent-text};
+    --bs-pagination-active-bg: transparent;
+    --bs-pagination-active-border-color: #{$border};
+    --bs-pagination-disabled-color: #{$text-muted};
+    --bs-pagination-disabled-bg: transparent;
+    --bs-pagination-disabled-border-color: #{$border};
+  }
+
+  .list-group {
+    --bs-list-group-bg: #{$card-bg};
+    --bs-list-group-color: #{$text};
+    --bs-list-group-border-color: #{$border};
+    --bs-list-group-action-color: #{$text};
+    --bs-list-group-action-hover-color: #{$ink};
+    --bs-list-group-action-hover-bg: #{$surface-soft};
+    --bs-list-group-active-color: #{$on-ink};
+    --bs-list-group-active-bg: #{$ink};
+    --bs-list-group-active-border-color: #{$ink};
+  }
+
+  .table {
+    --bs-table-color: #{$text};
+    --bs-table-bg: transparent;
+    --bs-table-border-color: #{$border};
+    --bs-table-striped-color: #{$text};
+    --bs-table-striped-bg: #{rgba($ink, 0.04)};
+    --bs-table-hover-color: #{$ink};
+    --bs-table-hover-bg: #{rgba($ink, 0.06)};
+  }
+
+  .modal {
+    --bs-modal-bg: #{$surface};
+    --bs-modal-color: #{$text};
+    --bs-modal-border-color: #{$border};
+    --bs-modal-header-border-color: #{$border};
+    --bs-modal-footer-border-color: #{$border};
+  }
+
+  .offcanvas {
+    --bs-offcanvas-bg: #{$surface};
+    --bs-offcanvas-color: #{$text};
+    --bs-offcanvas-border-color: #{$border};
+  }
+
+  .accordion {
+    --bs-accordion-color: #{$text};
+    --bs-accordion-border-color: #{$border};
+    --bs-accordion-btn-color: #{$text};
+    --bs-accordion-active-color: #{$ink};
+  }
+
+  .accordion-flat .accordion-item .accordion-button:active {
+    background: $surface-soft;
+  }
+
+  // Checkout: the summary column is drawn by a light pseudo-element in the Sylius shop.
+  .checkout-sidebar::before {
+    background: $background;
+  }
+
+  .sylius-shop-loader {
+    background: rgba($surface, 0.9);
+  }
 }

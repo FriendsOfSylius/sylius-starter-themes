@@ -1,16 +1,169 @@
-html {
-  scroll-behavior: smooth;
-}
-
+// scheme-root targets the <html> element of the active color scheme, with the weight of ":root" (see app.scss).
 // WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
 // shipping and payment descriptions) with these Bootstrap utilities, too light by default.
-:root {
+@include scheme-root {
   --bs-secondary-color: #{$text-muted};
   --bs-tertiary-color: #{$text-muted};
+
+  // The Sylius shop is compiled in light mode: at night, remap Bootstrap's runtime variables to the palette, so that
+  // every native component (tables, dropdowns, offcanvas, modals...) follows it.
+  @if $dark {
+    --bs-body-bg: #{$shelf};
+    --bs-body-bg-rgb: #{channels($shelf)};
+    --bs-body-color: #{$text};
+    --bs-body-color-rgb: #{channels($text)};
+    --bs-emphasis-color: #{$heading};
+    --bs-emphasis-color-rgb: #{channels($heading)};
+    --bs-heading-color: #{$heading};
+    --bs-secondary-color-rgb: #{channels($text-muted)};
+    --bs-secondary-bg: #{$surface};
+    --bs-secondary-bg-rgb: #{channels($surface)};
+    --bs-tertiary-color-rgb: #{channels($text-muted)};
+    --bs-tertiary-bg: #{$surface};
+    --bs-tertiary-bg-rgb: #{channels($surface)};
+    --bs-border-color: #{$border};
+    --bs-border-color-translucent: #{rgba($white, 0.1)};
+    --bs-link-color: #{$link};
+    --bs-link-color-rgb: #{channels($link)};
+    --bs-link-hover-color: #{$link-hover};
+    --bs-link-hover-color-rgb: #{channels($link-hover)};
+    --bs-primary: #{$basil};
+    --bs-primary-rgb: #{channels($basil)};
+    --bs-primary-text-emphasis: #{$accent-text-strong};
+    --bs-primary-bg-subtle: #{$mint};
+    --bs-primary-border-subtle: #{$mint-strong};
+    --bs-danger-text-emphasis: #{$tomato-text};
+    --bs-danger-bg-subtle: #{$tomato-soft};
+    --bs-danger-border-subtle: #{rgba($tomato, 0.45)};
+    --bs-warning-text-emphasis: #{$lemon-text};
+    --bs-warning-bg-subtle: #{$lemon-soft};
+    --bs-warning-border-subtle: #{rgba($lemon, 0.35)};
+    --bs-light: #{$surface};
+    --bs-light-rgb: #{channels($surface)};
+    --bs-dark: #{$heading};
+    --bs-dark-rgb: #{channels($heading)};
+    --bs-gray-500: #{$text-muted};
+    --bs-code-color: #{$tomato-text};
+    --bs-highlight-bg: #{rgba($lemon, 0.3)};
+    --bs-highlight-color: #{$heading};
+    --bs-form-valid-color: #{$accent-text};
+    --bs-form-valid-border-color: #{$accent-text};
+    --bs-form-invalid-color: #{$tomato-text};
+    --bs-form-invalid-border-color: #{$tomato-text};
+  }
+
+  color-scheme: $color-mode;
+  scroll-behavior: smooth;
 }
 
 .text-black-50 {
   color: $text-muted !important;
+}
+
+// Light utilities used by Sylius templates, aligned on the night shelves.
+@if $dark {
+  .bg-white,
+  .bg-body,
+  .text-bg-light {
+    background-color: $surface !important;
+    color: $text !important;
+  }
+
+  .text-black,
+  .text-dark,
+  .text-body {
+    color: $text !important;
+  }
+
+  .text-muted,
+  .text-body-secondary,
+  .text-body-tertiary,
+  .text-secondary {
+    color: $text-muted !important;
+  }
+
+  .text-primary,
+  .text-success {
+    color: $accent-text !important;
+  }
+
+  .text-danger,
+  .invalid-feedback {
+    color: $tomato-text !important;
+  }
+
+  .border,
+  .border-top,
+  .border-bottom,
+  .border-start,
+  .border-end {
+    border-color: $border !important;
+  }
+
+  .btn-close {
+    filter: invert(1) grayscale(1) brightness(2);
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{$surface};
+    --bs-dropdown-color: #{$text};
+    --bs-dropdown-border-color: #{$border};
+    --bs-dropdown-link-color: #{$heading};
+    --bs-dropdown-link-hover-color: #{$heading};
+    --bs-dropdown-link-hover-bg: #{$mint};
+    --bs-dropdown-link-active-color: #{$white};
+    --bs-dropdown-link-active-bg: #{$basil};
+    --bs-dropdown-divider-bg: #{$border};
+  }
+
+  .pagination {
+    --bs-pagination-color: #{$link};
+    --bs-pagination-bg: #{$surface};
+    --bs-pagination-border-color: #{$border};
+    --bs-pagination-hover-color: #{$link-hover};
+    --bs-pagination-hover-bg: #{$mint};
+    --bs-pagination-hover-border-color: #{$border};
+    --bs-pagination-focus-color: #{$link-hover};
+    --bs-pagination-focus-bg: #{$mint};
+    --bs-pagination-active-color: #{$white};
+    --bs-pagination-active-bg: #{$basil};
+    --bs-pagination-active-border-color: #{$basil};
+    --bs-pagination-disabled-color: #{$text-muted};
+    --bs-pagination-disabled-bg: #{$surface};
+    --bs-pagination-disabled-border-color: #{$border};
+  }
+
+  .list-group {
+    --bs-list-group-bg: #{$surface};
+    --bs-list-group-color: #{$text};
+    --bs-list-group-border-color: #{$border};
+    --bs-list-group-action-hover-bg: #{$mint};
+    --bs-list-group-action-hover-color: #{$heading};
+    --bs-list-group-active-bg: #{$basil};
+    --bs-list-group-active-border-color: #{$basil};
+    --bs-list-group-active-color: #{$white};
+  }
+
+  .modal {
+    --bs-modal-bg: #{$surface};
+    --bs-modal-color: #{$text};
+    --bs-modal-border-color: #{$border};
+    --bs-modal-header-border-color: #{$border};
+    --bs-modal-footer-border-color: #{$border};
+  }
+
+  .offcanvas {
+    --bs-offcanvas-bg: #{$surface};
+    --bs-offcanvas-color: #{$text};
+  }
+
+  .table {
+    --bs-table-color: #{$text};
+    --bs-table-bg: transparent;
+    --bs-table-striped-color: #{$text};
+    --bs-table-active-color: #{$heading};
+    --bs-table-hover-color: #{$heading};
+  }
 }
 
 body {
@@ -24,14 +177,14 @@ body {
 }
 
 a {
-  color: $basil-dark;
+  color: $link;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
   transition: color 140ms ease;
 
   &:hover,
   &.link-reset:hover {
-    color: $basil;
+    color: $link-hover;
   }
 }
 
@@ -44,7 +197,7 @@ h6,
 .h1,
 .h2,
 .h3 {
-  color: $ink;
+  color: $heading;
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   letter-spacing: -0.03em;
@@ -94,7 +247,7 @@ h6,
   align-items: center;
   gap: 0.45rem;
   margin-bottom: 0.6rem;
-  color: $basil;
+  color: $accent-text;
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -162,7 +315,7 @@ h6,
   padding: 0.35rem 0.85rem;
   border-radius: $radius-pill;
   background-color: $mint;
-  color: $basil-dark;
+  color: $accent-text-strong;
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -173,22 +326,22 @@ h6,
 
 .drive-checkout-brand,
 .drive-checkout-account {
-  color: $ink;
+  color: $heading;
 }
 
 .drive-checkout-account a,
 .drive-checkout-account .btn {
-  color: $basil-dark;
+  color: $link;
   font-weight: 600;
 }
 
 .drive-checkout-account a:hover,
 .drive-checkout-account .btn:hover {
-  color: $basil;
+  color: $link-hover;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  @include scheme-root {
     scroll-behavior: auto;
   }
 

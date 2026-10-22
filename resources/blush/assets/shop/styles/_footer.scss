@@ -1,20 +1,21 @@
 footer {
   margin-top: auto;
   padding-block: $spacing-12 $spacing-6;
-  border-top: 0;
-  background-color: $plum;
+  // Dark in both schemes: on the dark page, a hairline marks where the footer starts.
+  border-top: if($dark, 1px solid rgba($white, 0.08), 0);
+  background-color: $footer-bg;
   color: rgba($white, 0.78);
 
-  --bs-body-color: rgba(255, 255, 255, 0.78);
-  --bs-body-color-rgb: 255, 255, 255;
+  --bs-body-color: #{rgba($white, 0.78)};
+  --bs-body-color-rgb: #{channels($white)};
   --bs-emphasis-color: #{$white};
-  --bs-emphasis-color-rgb: 255, 255, 255;
-  --bs-secondary-color: rgba(255, 255, 255, 0.78);
-  --bs-tertiary-color: rgba(255, 255, 255, 0.78);
+  --bs-emphasis-color-rgb: #{channels($white)};
+  --bs-secondary-color: #{rgba($white, 0.78)};
+  --bs-tertiary-color: #{rgba($white, 0.78)};
   --bs-link-color: #{$white};
-  --bs-link-color-rgb: 255, 255, 255;
-  --bs-link-hover-color: #{$pink-bright};
-  --bs-link-hover-color-rgb: 222, 88, 148;
+  --bs-link-color-rgb: #{channels($white)};
+  --bs-link-hover-color: #{$footer-link-hover};
+  --bs-link-hover-color-rgb: #{channels($footer-link-hover)};
 
   h1,
   h2,
@@ -54,7 +55,7 @@ footer a:active {
 }
 
 footer a:hover {
-  color: $pink-bright !important;
+  color: $footer-link-hover !important;
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }

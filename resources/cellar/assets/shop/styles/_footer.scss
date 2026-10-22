@@ -3,7 +3,8 @@
 footer.cellar-footer {
   margin-top: auto;
   padding: 0;
-  border-top: 0;
+  // Dark scheme: a gold hairline parts the night-bordeaux footer from the page.
+  border-top: if($dark, 1px solid $border-dark, 0);
   background-color: $wine-night;
   color: $text-on-dark;
   font-size: 0.9rem;

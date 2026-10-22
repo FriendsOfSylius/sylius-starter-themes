@@ -1,0 +1,39 @@
+// Canvas, dark scheme — the gallery after hours: warm umber neutrals, ivory ink and the same terracotta accent.
+$color-mode: dark;
+
+// Ivory ink: the charcoal of the light scheme turned to paper (15:1 on the page).
+$ink: #EFE9E1;
+$ink-hover: #FFF8F0;
+$on-ink: #161311;
+
+// Warm umber surfaces, a step lighter for each level: page, products band, cover, cards, soft fills.
+$background: #1E1A17;
+$off-white: #1A1715;
+$surface: #161311;
+$surface-soft: #2D2825;
+$card-bg: #24201D;
+
+$text: #EFE9E1;
+// Muted text: at least 5.9:1 on every dark surface, soft fills included.
+$text-muted: #ADA49B;
+
+$border: #3A3330;
+// Fields sit a step below the page; their outline keeps 3:1 on every surface (WCAG 1.4.11).
+$field-bg: #110F0D;
+$field-border: #857A71;
+
+$terracotta: #B75D17;
+// Accent used as text on the dark surfaces: a lighter terracotta of the same hue (5.8:1 on the cards).
+$accent-text: #DB8650;
+$on-accent: #FFF;
+
+// The footer keeps the charcoal of the light scheme: a lighter band than the page, with a hairline on top.
+$inverse-bg: #211D1B;
+$inverse-text: #EFE9E1;
+
+$logo-tile: #FFF;
+
+$shadow-color: rgba(#000, 0.45);
+// Focus ring of the buttons: 7.9:1 on the page.
+$focus-ring: rgba($ink, 0.7);
+$field-focus-ring: rgba($ink, 0.12);

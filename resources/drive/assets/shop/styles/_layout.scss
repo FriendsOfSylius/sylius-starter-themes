@@ -25,5 +25,5 @@ main,
 // Light Bootstrap panels (cart summary, coupon, checkout boxes) become white shelves on the grey background.
 .bg-body-tertiary,
 .bg-light:not(.rounded-3):not(.rounded-circle) {
-  background-color: $white !important;
+  background-color: $surface !important;
 }

@@ -1,9 +1,9 @@
 header {
   position: relative;
   z-index: 2;
-  background-color: $white;
+  background-color: $surface;
   border-bottom: 1px solid $border;
-  box-shadow: 0 4px 18px rgba($ink, 0.035);
+  box-shadow: 0 4px 18px rgba($shadow-color, 0.035);
 }
 
 header .container {
@@ -11,10 +11,10 @@ header .container {
 }
 
 header a {
-  color: $ink;
+  color: $heading;
 
   &:hover {
-    color: $electric;
+    color: $accent-text;
   }
 }
 
@@ -25,7 +25,7 @@ header .navbar {
 header .navbar-brand {
   display: inline-flex;
   align-items: center;
-  color: $electric;
+  color: $accent-text;
 }
 
 .volt-logo {
@@ -33,12 +33,12 @@ header .navbar-brand {
   width: fit-content;
   align-items: center;
   gap: 0.7rem;
-  color: $electric;
+  color: $accent-text;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $electric;
+    color: $accent-text;
     text-decoration: none;
   }
 }
@@ -92,7 +92,7 @@ header .nav-link {
   margin-inline: 0.1rem;
   padding: 0.65rem 0.9rem !important;
   border-radius: 50rem;
-  color: $ink;
+  color: $heading;
   font-size: 0.9rem;
   font-weight: 600;
   transition:
@@ -101,14 +101,14 @@ header .nav-link {
 
   &:hover,
   &:focus {
-    background-color: $paper;
-    color: $electric;
+    background-color: $surface-hover;
+    color: $accent-text;
   }
 
   &.active,
   &[aria-current="page"] {
-    background-color: $paper;
-    color: $electric;
+    background-color: $surface-hover;
+    color: $accent-text;
     font-weight: 700;
   }
 }
@@ -142,7 +142,7 @@ header .nav-link {
   flex: 0 0 auto;
   padding: 0.55rem 0.9rem !important;
   border-radius: 50rem;
-  color: $ink;
+  color: $heading;
   font-size: 0.96rem;
   font-weight: 600;
   white-space: nowrap;
@@ -150,8 +150,8 @@ header .nav-link {
   &:hover,
   &:focus,
   &[aria-expanded="true"] {
-    background-color: $lavender;
-    color: $electric;
+    background-color: $soft;
+    color: $accent-text;
   }
 }
 
@@ -161,8 +161,8 @@ header .nav-link {
   padding: 0.5rem;
   border: 1px solid $border;
   border-radius: 0.85rem;
-  background-color: $white;
-  box-shadow: 0 12px 30px rgba($ink, 0.12);
+  background-color: $surface;
+  box-shadow: 0 12px 30px rgba($shadow-color, 0.12);
 }
 
 .volt-category-nav__menu .dropdown-menu .nav-link {
@@ -176,8 +176,8 @@ header .nav-link {
 
   &:hover,
   &:focus {
-    background-color: $paper;
-    color: $electric;
+    background-color: $surface-hover;
+    color: $accent-text;
   }
 }
 
@@ -190,10 +190,10 @@ header .nav-link {
   height: 1.25rem;
   place-items: center;
   padding: 0 0.3rem;
-  border: 2px solid $white;
+  border: 2px solid $surface;
   border-radius: 50rem;
-  background: $electric !important;
-  color: $white !important;
+  background: $accent !important;
+  color: $on-accent !important;
   font-size: 0.68rem;
   font-weight: 700;
   line-height: 1;
@@ -202,18 +202,18 @@ header .nav-link {
 header .dropdown-menu {
   border: 1px solid $border;
   border-radius: 1rem;
-  background-color: $white;
-  box-shadow: 0 16px 40px rgba($ink, 0.12);
+  background-color: $surface;
+  box-shadow: 0 16px 40px rgba($shadow-color, 0.12);
 }
 
 header .dropdown-item {
   border-radius: 0.5rem;
-  color: $ink;
+  color: $heading;
 
   &:hover,
   &:focus {
-    background-color: $paper;
-    color: $electric;
+    background-color: $surface-hover;
+    color: $accent-text;
   }
 }
 
@@ -259,7 +259,7 @@ header .dropdown-item {
     justify-content: space-between;
     padding: 0.75rem 0.85rem !important;
     border-radius: 0.75rem;
-    color: $ink;
+    color: $heading;
     font-size: 0.95rem;
   }
 
@@ -268,7 +268,7 @@ header .dropdown-item {
     width: 100%;
     margin-top: 0.25rem;
     border: 0;
-    background: $paper;
+    background: $surface-hover;
     box-shadow: none;
     transform: none !important;
   }

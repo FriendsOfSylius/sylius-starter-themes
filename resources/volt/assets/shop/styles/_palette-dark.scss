@@ -1,0 +1,39 @@
+// Volt, dark scheme — the same store after dark: violet-black page, plum cards, lavender type and the electric violet lit up.
+$color-mode: dark;
+
+// Brand colors, the same in both schemes.
+$ink: #302B43;
+$electric: #6554B8;
+$lavender: #E9E5F4;
+$white: #FFF;
+
+$page: #13111C;
+$surface: #1D1A2A;
+$surface-hover: #272339;
+$border: #332E47;
+// Form field outlines: at least 3:1 against the page and the cards (WCAG 1.4.11).
+$field-border: #7D7698;
+$card-border: rgba($white, 0.06);
+$heading: #F4F1FC;
+$text: #D9D5E6;
+// Muted text keeps 4.5:1 on every dark surface, the lavender cards included (5.6:1).
+$text-muted: #A7A1BC;
+
+// The electric violet stays the accent fill (white on it: 6:1); as text or outline it is lifted to a light violet
+// (7.8:1 on the cards).
+$accent: $electric;
+$accent-text: #B0A5F7;
+$on-accent: $white;
+$soft: #2C2650;
+$on-soft: #ECE8F8;
+
+// The brand blocks stay a deep ink, lifted above the page so that they still read as blocks.
+$night: #2A2342;
+$on-night: $white;
+// The hero ring is dimmed: a full lavender disc would glare on the dark page.
+$hero-ring: #3A3168;
+$disc-gradient: linear-gradient(145deg, #686BFF, $electric 65%, #292CC5);
+
+$shadow-color: #000;
+
+$success: #6CC596;

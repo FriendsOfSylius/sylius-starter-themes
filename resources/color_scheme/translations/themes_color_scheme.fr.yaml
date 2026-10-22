@@ -1,0 +1,6 @@
+color_scheme:
+    label: 'Apparence'
+    mode:
+        auto: 'Auto (système)'
+        light: 'Clair'
+        dark: 'Sombre'

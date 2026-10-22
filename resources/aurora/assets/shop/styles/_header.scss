@@ -1,8 +1,8 @@
 header {
   position: relative;
   z-index: 2;
-  border-bottom: 1px solid $border;
-  background-color: rgba($white, 0.92);
+  border-bottom: 1px solid $line;
+  background-color: rgba($surface, 0.92);
   backdrop-filter: saturate(1.4) blur(10px);
 }
 
@@ -11,10 +11,10 @@ header .container {
 }
 
 header a {
-  color: $ink;
+  color: $heading;
 
   &:hover {
-    color: $violet;
+    color: $violet-text;
   }
 }
 
@@ -29,12 +29,12 @@ header .navbar {
   width: fit-content;
   align-items: center;
   gap: 0.55rem;
-  color: $ink;
+  color: $heading;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $ink;
+    color: $heading;
     text-decoration: none;
   }
 }
@@ -52,7 +52,7 @@ header .navbar {
   flex: 0 0 auto;
   margin-top: 0.15rem;
   border-radius: 50%;
-  background-color: $violet;
+  background-color: $violet-text;
   box-shadow: 0 0 0 0 rgba($violet, 0.6);
   transition: box-shadow 400ms ease;
 }
@@ -103,11 +103,11 @@ header .navbar {
   &:hover,
   &:focus,
   &[aria-expanded="true"] {
-    color: $ink;
+    color: $heading;
   }
 
   &[aria-expanded="true"] {
-    background-color: $lavender;
+    background-color: $tint;
   }
 }
 
@@ -115,9 +115,9 @@ header .navbar {
   z-index: 1060;
   min-width: 13rem;
   padding: 0.5rem;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius-sm;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
@@ -131,23 +131,23 @@ header .navbar {
 
   &:hover,
   &:focus {
-    background-color: $lavender;
-    color: $violet-dark;
+    background-color: $tint;
+    color: $violet-text-hover;
   }
 }
 
 // Cart: the violet pill of the mockup's "Accompagnement" call to action.
 
 .aurora-cart__button {
-  --bs-btn-color: #{$white};
+  --bs-btn-color: #{$on-accent};
   --bs-btn-bg: #{$violet};
   --bs-btn-border-color: #{$violet};
-  --bs-btn-hover-color: #{$white};
-  --bs-btn-hover-bg: #{$violet-dark};
-  --bs-btn-hover-border-color: #{$violet-dark};
-  --bs-btn-active-color: #{$white};
-  --bs-btn-active-bg: #{$violet-dark};
-  --bs-btn-active-border-color: #{$violet-dark};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$violet-hover};
+  --bs-btn-hover-border-color: #{$violet-hover};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$violet-hover};
+  --bs-btn-active-border-color: #{$violet-hover};
 
   position: relative;
   display: inline-flex;
@@ -172,30 +172,30 @@ header .navbar {
   height: 1.35rem;
   place-items: center;
   padding: 0 0.3rem;
-  border: 2px solid $white;
+  border: 2px solid $surface;
   border-radius: 50rem;
   background-color: $electric;
-  color: $white;
+  color: $on-accent;
   font-size: 0.7rem;
   font-weight: 700;
   line-height: 1;
 }
 
 header .dropdown-menu {
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: $radius-sm;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
 header .dropdown-item {
   border-radius: 0.5rem;
-  color: $ink;
+  color: $heading;
 
   &:hover,
   &:focus {
-    background-color: $lavender;
-    color: $violet-dark;
+    background-color: $tint;
+    color: $violet-text-hover;
   }
 }
 
@@ -218,7 +218,7 @@ header .dropdown-item {
   }
 
   .aurora-category-nav__menu .offcanvas-header {
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $line;
   }
 
   .aurora-category-nav__menu .offcanvas-body {
@@ -240,7 +240,7 @@ header .dropdown-item {
     justify-content: space-between;
     padding: 0.75rem 0.85rem !important;
     border-radius: $radius-sm;
-    color: $ink;
+    color: $heading;
   }
 
   .aurora-category-nav__menu .dropdown-menu {
@@ -248,7 +248,7 @@ header .dropdown-item {
     width: 100%;
     margin-top: 0.25rem;
     border: 0;
-    background: $lavender;
+    background: $tint;
     box-shadow: none;
     transform: none !important;
   }

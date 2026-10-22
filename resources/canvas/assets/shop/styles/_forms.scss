@@ -10,15 +10,15 @@
   min-height: 2.75rem;
 
   border-radius: 0;
-  border-color: $border;
+  border-color: $field-border;
 
-  background-color: $white;
+  background-color: $field-bg;
   color: $text;
 
   &:focus {
-    border-color: $black;
+    border-color: $ink;
 
-    box-shadow: 0 0 0 3px rgba($black, 0.08);
+    box-shadow: 0 0 0 3px $field-focus-ring;
   }
 
   &::placeholder {
@@ -29,15 +29,81 @@
 
 .form-check-input {
   border-radius: 0;
-  border-color: $border;
+  border-color: $field-border;
 
   &:checked {
-    border-color: $black;
-    background-color: $black;
+    border-color: $ink;
+    background-color: $ink;
   }
 
   &:focus {
-    border-color: $black;
-    box-shadow: 0 0 0 3px rgba($black, 0.08);
+    border-color: $ink;
+    box-shadow: 0 0 0 3px $field-focus-ring;
+  }
+}
+
+// Native parts with light-mode colors: the check marks are drawn in the page color on the ivory fill,
+// the select chevron takes the text color ("#" escaped as "%23" in the data URIs).
+@if $dark {
+  .form-control,
+  .form-select {
+    &:focus {
+      background-color: $field-bg;
+      color: $text;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: $surface-soft;
+      color: $text-muted;
+    }
+  }
+
+  .form-select {
+    --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23#{str-slice(inspect($text), 2)}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+
+    option {
+      background-color: $surface;
+      color: $text;
+    }
+  }
+
+  .form-check-input {
+    background-color: $field-bg;
+
+    &:checked {
+      background-color: $ink;
+    }
+
+    &:checked[type="checkbox"] {
+      --bs-form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23#{str-slice(inspect($on-ink), 2)}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E");
+    }
+
+    &:checked[type="radio"] {
+      --bs-form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='2' fill='%23#{str-slice(inspect($on-ink), 2)}'/%3E%3C/svg%3E");
+    }
+  }
+
+  .input-group-text {
+    border-color: $field-border;
+    background-color: $surface-soft;
+    color: $text;
+  }
+
+  // Tom Select (country and province fields) hard-codes white backgrounds.
+  .ts-wrapper .ts-control,
+  .ts-dropdown {
+    border-color: $field-border !important;
+    background: $field-bg !important;
+    color: $text !important;
+
+    input {
+      color: $text !important;
+    }
+  }
+
+  .ts-dropdown .active {
+    background-color: $surface-soft !important;
+    color: $ink !important;
   }
 }

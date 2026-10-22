@@ -1,15 +1,15 @@
-:root {
+@include scheme-root {
   --bs-success: #{$success};
-  --bs-success-rgb: 31, 138, 106;
-  --bs-success-text-emphasis: #135C47;
-  --bs-success-bg-subtle: #E6F6F0;
-  --bs-success-border-subtle: #B5E2D3;
+  --bs-success-rgb: #{channels($success)};
+  --bs-success-text-emphasis: #{$success-text};
+  --bs-success-bg-subtle: #{$success-bg};
+  --bs-success-border-subtle: #{$success-border};
 
   --bs-info: #{$info};
-  --bs-info-rgb: 14, 124, 134;
-  --bs-info-text-emphasis: #{$abyss};
-  --bs-info-bg-subtle: #{$foam};
-  --bs-info-border-subtle: #{$foam-strong};
+  --bs-info-rgb: #{channels($info)};
+  --bs-info-text-emphasis: #{$info-text};
+  --bs-info-bg-subtle: #{$info-bg};
+  --bs-info-border-subtle: #{$info-border};
 }
 
 .alert {
@@ -28,4 +28,20 @@
   --bs-alert-bg: var(--bs-info-bg-subtle);
   --bs-alert-border-color: var(--bs-info-border-subtle);
   --bs-alert-link-color: var(--bs-info-text-emphasis);
+}
+
+@if $dark {
+  .alert-danger {
+    --bs-alert-color: var(--bs-danger-text-emphasis);
+    --bs-alert-bg: var(--bs-danger-bg-subtle);
+    --bs-alert-border-color: var(--bs-danger-border-subtle);
+    --bs-alert-link-color: var(--bs-danger-text-emphasis);
+  }
+
+  .alert-warning {
+    --bs-alert-color: var(--bs-warning-text-emphasis);
+    --bs-alert-bg: var(--bs-warning-bg-subtle);
+    --bs-alert-border-color: var(--bs-warning-border-subtle);
+    --bs-alert-link-color: var(--bs-warning-text-emphasis);
+  }
 }

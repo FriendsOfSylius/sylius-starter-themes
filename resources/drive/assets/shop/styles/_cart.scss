@@ -15,12 +15,12 @@
   }
 
   .table .link-reset {
-    color: $ink;
+    color: $heading;
     font-weight: 700;
     text-decoration: none;
 
     &:hover {
-      color: $basil;
+      color: $accent-text;
     }
   }
 
@@ -29,7 +29,7 @@
 
     &:hover,
     &:focus-visible {
-      color: $tomato;
+      color: if($dark, $tomato-text, $tomato);
     }
   }
 
@@ -61,12 +61,12 @@
 }
 
 #offcanvasCart .offcanvas-body .link-reset {
-  color: $ink;
+  color: $heading;
   font-weight: 700;
   text-decoration: none;
 
   &:hover {
-    color: $basil;
+    color: $accent-text;
   }
 }
 

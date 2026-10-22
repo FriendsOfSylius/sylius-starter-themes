@@ -2,7 +2,7 @@
   overflow: hidden;
   border: 1px solid $border;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-soft;
 }
 
@@ -12,7 +12,7 @@
 
 .card-title {
   margin-bottom: 0.5rem;
-  color: $ink;
+  color: $heading;
   font-weight: 800;
 }
 
@@ -22,7 +22,7 @@
 
 .card-footer {
   border-top-color: $border;
-  background-color: $white;
+  background-color: $surface;
 }
 
 // Product tiles: dense grocery tiles on the shelf grey, square image, big price and a round
@@ -42,7 +42,7 @@
   flex-direction: column;
   border: 1px solid $border;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   transition:
     border-color 160ms ease,
     box-shadow 160ms ease,
@@ -50,14 +50,14 @@
 
   &:hover,
   &:focus-within {
-    border-color: $basil;
+    border-color: $accent-text;
     box-shadow: $shadow-float;
     transform: translateY(-2px);
   }
 
   > a.link-reset {
     display: block;
-    color: $ink;
+    color: $heading;
     text-decoration: none;
 
     // Stretched link: the price and basket button below are part of the clickable tile too.
@@ -102,7 +102,7 @@
     overflow: hidden;
     margin: 0;
     padding: 0.75rem 0.9rem 0.35rem;
-    color: $ink;
+    color: $heading;
     font-size: 0.92rem;
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -121,7 +121,7 @@
     min-height: 3.6rem;
     margin-top: auto;
     padding: 0.35rem 3.6rem 0.9rem 0.9rem;
-    color: $ink;
+    color: $heading;
     font-size: 1.3rem;
     font-weight: 850;
     letter-spacing: -0.03em;
@@ -181,7 +181,7 @@
     }
 
     > div:last-child {
-      color: $tomato-dark;
+      color: $tomato-text;
     }
   }
 }

@@ -7,7 +7,7 @@
     margin-bottom: 0.75rem;
     border: 1px solid $border;
     border-radius: $radius-sm;
-    background-color: $white;
+    background-color: $surface;
   }
 
   .accordion-header {
@@ -17,8 +17,8 @@
   .accordion-item .accordion-button {
     gap: 1rem;
     padding: 0.85rem 1.25rem;
-    background-color: $white;
-    color: $ink;
+    background-color: $surface;
+    color: $heading;
     font-family: $font-family-base;
     font-size: 1rem;
     font-weight: 700;
@@ -39,13 +39,13 @@
     &:focus-visible {
       position: relative;
       z-index: 1;
-      outline: 2px solid $basil;
+      outline: 2px solid $accent-text;
       outline-offset: -2px;
     }
 
     &:not(.collapsed) {
       background-color: $mint;
-      color: $basil-dark;
+      color: $accent-text-strong;
       box-shadow: none;
     }
 
@@ -54,7 +54,7 @@
       height: 1rem;
       flex: 0 0 auto;
       margin-left: auto;
-      background-color: $basil;
+      background-color: $accent-text;
       background-image: none;
       mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") no-repeat center / contain;
       -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") no-repeat center / contain;

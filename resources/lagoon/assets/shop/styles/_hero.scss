@@ -14,7 +14,7 @@
 
 .lagoon-hero__kicker {
   margin-bottom: 1.5rem;
-  color: $ink;
+  color: $heading;
   font-size: clamp(1.1rem, 1.6vw, 1.45rem);
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -29,7 +29,7 @@
   text-wrap: initial;
 
   em {
-    background: linear-gradient(100deg, $teal 10%, $iris 90%);
+    background: linear-gradient(100deg, $accent-text 10%, $iris-text 90%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -45,7 +45,7 @@
   line-height: 1.6;
 
   strong {
-    color: $ink;
+    color: $heading;
     font-weight: 600;
   }
 }
@@ -64,14 +64,14 @@
 }
 
 .lagoon-hero__link {
-  color: $ink;
+  color: $heading;
   font-weight: 600;
   text-decoration: underline;
   text-decoration-color: $aqua;
   text-decoration-thickness: 2px;
 
   &:hover {
-    color: $teal;
+    color: $accent-text;
   }
 }
 
@@ -94,7 +94,7 @@
     height: 1.9rem;
     flex: 0 0 auto;
     fill: none;
-    stroke: $iris;
+    stroke: $iris-text;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 1.5;
@@ -109,7 +109,7 @@
   }
 
   strong {
-    color: $ink;
+    color: $heading;
     font-size: 0.95rem;
     font-weight: 500;
   }
@@ -121,18 +121,15 @@
   position: relative;
   padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3.5vw, 3rem);
   border-radius: $radius-lg;
-  background:
-    radial-gradient(circle at 105% -5%, rgba(#8F8CFF, 0.9), transparent 42%),
-    radial-gradient(circle at -10% 110%, rgba($aqua, 0.35), transparent 45%),
-    linear-gradient(160deg, #C7E4F6 0%, #F6F8FD 55%, #E3F8F9 100%);
+  background: $hero-visual-bg;
 }
 
 .lagoon-window {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba($white, 0.8);
+  border: 1px solid $window-border;
   border-radius: $radius;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
 }
 
@@ -141,7 +138,7 @@
   gap: 0.4rem;
   align-items: center;
   padding: 0.8rem 1rem;
-  border-bottom: 1px solid $border;
+  border-bottom: 1px solid $line;
 }
 
 .lagoon-window__dot {
@@ -151,7 +148,7 @@
   background-color: $aqua;
 
   &:nth-child(3) {
-    background-color: $foam-strong;
+    background-color: $tint-strong;
   }
 }
 
@@ -168,11 +165,11 @@
   gap: 1.25rem;
   align-items: end;
   padding: 1.25rem;
-  color: $ink;
+  color: $heading;
   text-decoration: none;
 
   &:hover {
-    color: $ink;
+    color: $heading;
   }
 }
 
@@ -180,7 +177,7 @@
   overflow: hidden;
   aspect-ratio: 4 / 5;
   border-radius: $radius-sm;
-  background-color: $foam;
+  background-color: $tint;
 
   img {
     transition: transform 800ms $ease;
@@ -199,7 +196,7 @@
 }
 
 .lagoon-window__label {
-  color: $teal;
+  color: $accent-text;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -243,7 +240,7 @@
 
   span {
     border-radius: $radius-sm;
-    background: linear-gradient(135deg, $foam, $iris-soft);
+    background: linear-gradient(135deg, $tint, $iris-soft);
 
     &:first-child {
       grid-row: span 2;
@@ -261,9 +258,9 @@
   flex-direction: column;
   gap: 0.2rem;
   padding: 1rem 1.25rem;
-  border: 1px solid $border;
+  border: 1px solid $line;
   border-radius: 1rem;
-  background-color: $white;
+  background-color: $surface;
   box-shadow: $shadow-float;
   animation: lagoon-drift 7s ease-in-out infinite;
 }
@@ -282,7 +279,7 @@
 }
 
 .lagoon-float__value {
-  color: $iris;
+  color: $iris-text;
   font-size: 2.4rem;
   font-weight: 800;
   letter-spacing: -0.05em;
@@ -290,14 +287,14 @@
 }
 
 .lagoon-float__title {
-  color: $iris;
+  color: $iris-text;
   font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.045em;
 }
 
 .lagoon-float__text {
-  color: $ink;
+  color: $heading;
   font-size: 0.85rem;
   line-height: 1.35;
 }

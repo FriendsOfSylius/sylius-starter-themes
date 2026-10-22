@@ -34,7 +34,7 @@
   text-wrap: balance;
 
   em {
-    color: $terracotta;
+    color: $accent-text;
     font-style: italic;
     font-weight: 400;
   }
@@ -50,7 +50,7 @@
   &::first-letter {
     float: left;
     margin: 0.35rem 0.75rem 0 0;
-    color: $terracotta;
+    color: $accent-text;
     font-family: $headings-font-family;
     font-size: 4.6rem;
     font-weight: 500;
@@ -120,8 +120,8 @@
   }
 
   &:hover {
-    color: $terracotta;
-    border-bottom-color: $terracotta;
+    color: $accent-text;
+    border-bottom-color: $accent-text;
 
     span {
       transform: translateX(4px);
@@ -136,7 +136,7 @@ a.canvas-cover__note {
   text-underline-offset: 0.25em;
 
   &:hover {
-    color: $terracotta;
+    color: $accent-text;
   }
 }
 

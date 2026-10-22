@@ -8,19 +8,19 @@
 
 .product .text-bg-light,
 .product .bg-light {
-  background-color: $foam !important;
+  background-color: $tint !important;
 }
 
 .offcanvas {
-  --bs-offcanvas-border-color: #{$border};
+  --bs-offcanvas-border-color: #{$line};
 }
 
 .offcanvas-header {
-  border-bottom: 1px solid $border;
+  border-bottom: 1px solid $line;
 }
 
 .table {
-  --bs-table-border-color: #{$border};
+  --bs-table-border-color: #{$line};
 }
 
 .badge.bg-primary,

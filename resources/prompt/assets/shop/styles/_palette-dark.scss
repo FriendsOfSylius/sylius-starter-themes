@@ -1,0 +1,27 @@
+// Prompt, dark scheme — a night terminal: green-black surfaces, pale text and a sage green prompt.
+$color-mode: dark;
+
+$black: #101510;
+$white: #F0F4EC;
+$background: #101510;
+$surface: #171F18;
+$surface-raised: #1D281F;
+$green: #83A978;
+$green-soft: #23351F;
+$light: #E4ECDF;
+$light-text: #101510;
+$light-muted: #53624F;
+$light-link: #355B28;
+$text: #DCE5D8;
+// Headings, names and other emphasized text.
+$text-strong: $white;
+$text-muted: #96A493;
+$link-hover: $white;
+$border: #344236;
+$footer-text: $text-muted;
+$footer-link: $green;
+$danger: #E28B80;
+$warning: #E4BF70;
+$info: #91C9D4;
+// Info color used as text.
+$info-text: $info;

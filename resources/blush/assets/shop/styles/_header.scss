@@ -2,7 +2,7 @@ header {
   position: relative;
   z-index: 2;
   border-bottom: 1px solid $border;
-  background-color: $white;
+  background-color: $surface;
 }
 
 header .container {
@@ -13,7 +13,7 @@ header a {
   color: $ink;
 
   &:hover {
-    color: $pink;
+    color: $accent-text;
   }
 }
 
@@ -31,7 +31,7 @@ header .navbar {
 
   &:hover,
   &:focus {
-    color: $pink;
+    color: $accent-text;
     text-decoration: none;
   }
 }
@@ -103,7 +103,7 @@ header .navbar {
   &:focus,
   &[aria-expanded="true"] {
     background-color: $rose;
-    color: $pink;
+    color: $accent-text;
   }
 }
 
@@ -111,8 +111,8 @@ header .navbar {
 header .dropdown-menu {
   border: 1px solid $border;
   border-radius: 0.75rem;
-  background-color: $white;
-  box-shadow: 0 0.75rem 1.75rem rgba($plum, 0.1);
+  background-color: $surface;
+  box-shadow: 0 0.75rem 1.75rem rgba($shadow-color, if($dark, 0.45, 0.1));
 }
 
 .blush-category-nav__menu .dropdown-menu .nav-link,
@@ -122,12 +122,12 @@ header .dropdown-item {
   &:hover,
   &:focus {
     background-color: $rose;
-    color: $pink;
+    color: $accent-text;
   }
 }
 
 header .navbar-brand {
-  color: $pink;
+  color: $accent-text;
 }
 
 .btn-icon .badge {
@@ -140,7 +140,7 @@ header .navbar-brand {
 
   &:hover,
   &:focus-visible {
-    color: $pink !important;
+    color: $accent-text !important;
   }
 
   svg,
@@ -165,7 +165,7 @@ header .navbar-brand {
 @media (max-width: 991.98px) {
   .blush-category-nav__menu {
     position: fixed;
-    background-color: $white;
+    background-color: $surface;
   }
 
   .blush-category-nav__menu .offcanvas-header {

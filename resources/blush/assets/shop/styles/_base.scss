@@ -1,12 +1,50 @@
-html {
-  scroll-behavior: smooth;
-}
-
+// scheme-root targets the <html> element of the active color scheme, with the weight of ":root" (see app.scss).
 // WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
 // shipping and payment descriptions) with these Bootstrap utilities, too light by default.
-:root {
+@include scheme-root {
   --bs-secondary-color: #{$muted};
   --bs-tertiary-color: #{$muted};
+
+  // The Sylius shop is compiled in light mode: in the dark scheme, remap Bootstrap's runtime variables to the
+  // palette, so that every native component (tables, dropdowns, offcanvas, modals...) follows it.
+  @if $dark {
+    --bs-body-bg: #{$paper};
+    --bs-body-bg-rgb: #{channels($paper)};
+    --bs-body-color: #{$ink};
+    --bs-body-color-rgb: #{channels($ink)};
+    --bs-emphasis-color: #{$ink};
+    --bs-emphasis-color-rgb: #{channels($ink)};
+    --bs-heading-color: #{$ink};
+    --bs-secondary-color-rgb: #{channels($muted)};
+    --bs-secondary-bg: #{$rose-soft};
+    --bs-secondary-bg-rgb: #{channels($rose-soft)};
+    --bs-tertiary-color-rgb: #{channels($muted)};
+    --bs-tertiary-bg: #{$rose};
+    --bs-tertiary-bg-rgb: #{channels($rose)};
+    --bs-border-color: #{$border};
+    --bs-border-color-translucent: #{rgba($ink, 0.12)};
+    --bs-link-color: #{$accent-text};
+    --bs-link-color-rgb: #{channels($accent-text)};
+    --bs-link-hover-color: #{$accent-text-hover};
+    --bs-link-hover-color-rgb: #{channels($accent-text-hover)};
+    --bs-primary: #{$pink};
+    --bs-primary-rgb: #{channels($pink)};
+    --bs-primary-text-emphasis: #{$accent-text};
+    --bs-light: #{$rose};
+    --bs-light-rgb: #{channels($rose)};
+    --bs-dark: #{$ink};
+    --bs-dark-rgb: #{channels($ink)};
+    --bs-code-color: #{$accent-text};
+    --bs-highlight-bg: #{rgba($pink-bright, 0.3)};
+    --bs-highlight-color: #{$ink};
+    --bs-form-valid-color: #{$success-text};
+    --bs-form-valid-border-color: #{$success-text};
+    --bs-form-invalid-color: #{$danger-text};
+    --bs-form-invalid-border-color: #{$danger-text};
+  }
+
+  color-scheme: $color-mode;
+  scroll-behavior: smooth;
 }
 
 .text-black-50 {
@@ -23,13 +61,13 @@ body {
 }
 
 a {
-  color: $pink;
+  color: $accent-text;
   text-underline-offset: 0.2em;
   transition: color 160ms ease;
 
   &:hover,
   &.link-reset:hover {
-    color: $plum;
+    color: $accent-text-hover;
   }
 }
 
@@ -72,9 +110,9 @@ h2 {
 
 .bg-light {
   --bs-body-color: #{$ink};
-  --bs-body-color-rgb: 42, 32, 36;
+  --bs-body-color-rgb: #{channels($ink)};
   --bs-emphasis-color: #{$ink};
-  --bs-emphasis-color-rgb: 42, 32, 36;
+  --bs-emphasis-color-rgb: #{channels($ink)};
   background-color: $rose !important;
   color: $ink !important;
 }
@@ -85,14 +123,52 @@ h2 {
 
 .bg-white {
   --bs-body-color: #{$ink};
-  --bs-body-color-rgb: 42, 32, 36;
+  --bs-body-color-rgb: #{channels($ink)};
   --bs-emphasis-color: #{$ink};
-  --bs-emphasis-color-rgb: 42, 32, 36;
+  --bs-emphasis-color-rgb: #{channels($ink)};
   color: $ink !important;
+
+  @if $dark {
+    background-color: $surface !important;
+  }
 }
 
 .bg-white :is(.text-muted, .text-body-secondary) {
   color: $muted !important;
+}
+
+// Light-only utilities printed by Sylius templates (header separators, variant badges, status text),
+// aligned on the dark palette.
+@if $dark {
+  .text-black,
+  .text-dark,
+  .text-body {
+    color: $ink !important;
+  }
+
+  .text-bg-light {
+    background-color: $rose-soft !important;
+    color: $ink !important;
+  }
+
+  // --bs-primary stays the raspberry fill (badges, buttons): as text, it takes the light raspberry.
+  .text-primary {
+    color: $accent-text !important;
+  }
+
+  .text-success {
+    color: $success-text !important;
+  }
+
+  .text-danger,
+  .invalid-feedback {
+    color: $danger-text !important;
+  }
+
+  hr {
+    border-color: $border;
+    opacity: 1;
+  }
 }
 
 .blush-checkout-brand,
@@ -103,11 +179,11 @@ h2 {
 .blush-checkout-brand a,
 .blush-checkout-account a,
 .blush-checkout-account .btn {
-  color: $pink !important;
+  color: $accent-text !important;
 }
 
 .blush-checkout-brand a:hover,
 .blush-checkout-account a:hover,
 .blush-checkout-account .btn:hover {
-  color: $plum !important;
+  color: $accent-text-hover !important;
 }

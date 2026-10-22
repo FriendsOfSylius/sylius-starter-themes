@@ -1,15 +1,15 @@
-:root {
+@include scheme-root {
   --bs-success: #{$basil};
-  --bs-success-rgb: 14, 124, 58;
-  --bs-success-text-emphasis: #{$basil-dark};
+  --bs-success-rgb: #{channels($basil)};
+  --bs-success-text-emphasis: #{$accent-text-strong};
   --bs-success-bg-subtle: #{$mint};
   --bs-success-border-subtle: #{$mint-strong};
 
   --bs-info: #{$info};
-  --bs-info-rgb: 35, 105, 196;
-  --bs-info-text-emphasis: #1A4F94;
-  --bs-info-bg-subtle: #EAF3FC;
-  --bs-info-border-subtle: #C6DDF4;
+  --bs-info-rgb: #{channels($info)};
+  --bs-info-text-emphasis: #{$info-text};
+  --bs-info-bg-subtle: #{$info-soft};
+  --bs-info-border-subtle: #{$info-border};
 }
 
 .alert {

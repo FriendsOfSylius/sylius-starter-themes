@@ -1,0 +1,36 @@
+// Volt, light scheme — a sporty daylight store: paper-white page, white cards, ink type and one electric violet.
+$color-mode: light;
+
+// Brand colors, the same in both schemes.
+$ink: #302B43;
+$electric: #6554B8;
+$lavender: #E9E5F4;
+$white: #FFF;
+
+$page: #FBFAFD;
+$surface: $white;
+$surface-hover: $page;
+$border: #E7E3EF;
+$field-border: $border;
+$card-border: rgba($ink, 0.04);
+$heading: $ink;
+$text: #39354B;
+$text-muted: #696477;
+
+// Electric is both the accent fill and the accent text on the light page.
+$accent: $electric;
+$accent-text: $electric;
+$on-accent: $white;
+// Soft fills: product image wells, open accordions, hovered menu links, secondary buttons.
+$soft: $lavender;
+$on-soft: $ink;
+
+// The dark brand blocks: hero, promise statement, footer.
+$night: $ink;
+$on-night: $white;
+$hero-ring: $lavender;
+$disc-gradient: linear-gradient(145deg, #686BFF, $electric 65%, #292CC5);
+
+$shadow-color: $ink;
+
+$success: #46785F;

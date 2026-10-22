@@ -12,6 +12,7 @@ use SyliusStarter\Core\Util\Assets;
 use SyliusStarter\Core\Util\Javascript;
 use SyliusStarter\Core\Util\Symfony;
 use SyliusStarter\Core\Util\Yaml;
+use SyliusStarter\Themes\ColorScheme;
 
 use function Castor\finder;
 use function Castor\fs;
@@ -33,6 +34,7 @@ final class AuroraInstaller implements InstallerInterface
         Yaml::import($app, 'config/packages/_sylius.yaml', '../sylius/twig_hooks/**/**.php');
         Hero::install($app);
         Brand::install($app);
+        ColorScheme::install($app);
 
         $resourcesDir = \dirname(__DIR__, 2) . '/resources/aurora';
 

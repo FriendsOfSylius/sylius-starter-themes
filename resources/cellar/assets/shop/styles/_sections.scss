@@ -6,8 +6,8 @@
 
 .cellar-promise {
   padding-block: clamp(4.5rem, 9vw, 8rem);
-  border-block: 1px solid $border;
-  background-color: $ivory;
+  border-block: 1px solid $line;
+  background-color: $surface;
 }
 
 .cellar-promise__grid {
@@ -32,10 +32,10 @@
   grid-template-columns: 4rem minmax(0, 1fr);
   gap: 1.25rem;
   padding-block: 1.6rem;
-  border-top: 1px solid $border;
+  border-top: 1px solid $line;
 
   &:last-child {
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $line;
   }
 
   p {
@@ -53,7 +53,7 @@
 
 .cellar-steps__title {
   margin-bottom: 0.4rem !important;
-  color: $ink;
+  color: $heading;
   font-family: $font-family-serif;
   font-size: 1.45rem;
   font-weight: 500;
@@ -80,7 +80,7 @@
   border: 1px solid $gold;
   outline: 1px solid rgba($gold, 0.55);
   outline-offset: -6px;
-  background-color: $paper;
+  background-color: $page;
   text-align: center;
 
   p {
@@ -89,7 +89,7 @@
 }
 
 .cellar-tasting__kicker {
-  color: $gold-dark;
+  color: $gold-text;
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.26em;
@@ -98,7 +98,7 @@
 
 .cellar-tasting__title {
   margin-top: 0.85rem !important;
-  color: $wine;
+  color: $accent-text;
   font-family: $font-family-serif;
   font-size: clamp(1.6rem, 2.4vw, 2rem);
   font-weight: 500;
@@ -130,11 +130,11 @@
     grid-template-columns: 6.5rem minmax(0, 1fr);
     gap: 1rem;
     padding-block: 0.7rem;
-    border-bottom: 1px dotted $border-strong;
+    border-bottom: 1px dotted $line-strong;
   }
 
   dt {
-    color: $gold-dark;
+    color: $gold-text;
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.16em;
@@ -144,7 +144,7 @@
 
   dd {
     margin: 0;
-    color: $ink;
+    color: $heading;
     font-size: 0.93rem;
   }
 }
@@ -153,7 +153,7 @@
   margin: 1.75rem 0 0;
 
   p {
-    color: $wine;
+    color: $accent-text;
     font-family: $font-family-serif;
     font-size: 1.15rem;
     font-style: italic;
@@ -193,8 +193,8 @@
   border: 1px solid $gold;
   outline: 1px solid rgba($gold, 0.4);
   outline-offset: 4px;
-  background-color: $ivory !important;
-  color: $wine !important;
+  background-color: $surface !important;
+  color: $accent-text !important;
   font-family: $font-family-serif;
   font-size: 1.6rem;
   font-weight: 500 !important;
@@ -202,7 +202,7 @@
 }
 
 .cellar-hero ~ .container a:hover .rounded-circle.bg-light {
-  background-color: $parchment !important;
+  background-color: $surface-raised !important;
 }
 
 .cellar-hero + .container {
@@ -211,7 +211,7 @@
 
 .cellar-hero ~ .container a:has(> .rounded-circle) span {
   margin-top: 0.9rem !important;
-  color: $ink;
+  color: $heading;
   font-size: 0.68rem !important;
   font-weight: 600 !important;
   letter-spacing: 0.18em;

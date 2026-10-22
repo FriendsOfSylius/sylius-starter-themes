@@ -1,0 +1,46 @@
+// Cellar, dark scheme — a candlelit cellar: oak-black stone, cream type, rosé bordeaux and the same gold leaf.
+$color-mode: dark;
+
+// House colours. The night-bordeaux bands are a shade richer than the page, and ruled in gold, to stand out from it.
+$wine-night: #2A0B14;
+$wine-deep: #3A0D19;
+$wine: #5E1626;
+$claret: #7A1C30;
+// Brighter gold leaf: fillets and focus outlines keep 6.5:1 on every dark surface.
+$gold: #C4A16A;
+$gold-light: #D8C08F;
+$ivory: #FFFCF6;
+$text-on-dark: #CDBDB2;
+$border-dark: rgba($gold, 0.28);
+
+// Stone, label and candlelight.
+$page: #151011;
+$surface: #1E1718;
+$surface-raised: #2A2022;
+$line: #3A2D2F;
+$line-strong: #574547;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #8A7570;
+$heading: #F4ECE1;
+$text: #D9CCC2;
+$text-muted: #AE9E93;
+
+// A lifted bordeaux fills the calls to action (cream on it: 8.3:1); as text, bordeaux turns rosé (8.7:1 on the page).
+$accent: #8E2539;
+$accent-hover: #A3304A;
+$on-accent: $ivory;
+$accent-text: #E49DAB;
+$accent-text-hover: #F2C0C9;
+$gold-text: #D4B781;
+$focus-ring: rgba($accent-text, 0.25);
+
+$success: #8FC086;
+$info: #93B3D8;
+
+// The bottle label of the hero illustration is printed on cream paper in every scheme.
+$label-ink: #24161A;
+$label-wine: $wine;
+$label-gold: #7D5E2E;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 22px 48px -18px rgba(#000, 0.75);
