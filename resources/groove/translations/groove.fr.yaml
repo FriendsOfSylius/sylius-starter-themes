@@ -1,27 +1,28 @@
 groove:
     brand:
-        tagline: 'Disquaire'
+        tagline: 'Disques rares & hi-fi'
     top_bar:
-        delivery: 'Livraison offerte dès 60 € · expédié à plat en carton rigide'
-        fridays: 'Nouveautés <strong>tous les vendredis</strong>'
+        delivery: 'Livraison assurée dans le monde entier · disques expédiés en double carton'
+        fridays: 'Salon d’écoute <strong>sur rendez-vous</strong>'
     hero:
         eyebrow: 'Disquaire indépendant'
-        title: 'La musique, <em>en grand format.</em>'
-        lead: 'Nouveautés chaque vendredi, rééditions, pressages rares et les platines pour les écouter, choisis par des diggers et expédiés en carton rigide.'
-        cta: 'Fouiller les nouveautés'
-        secondary_cta: 'Éditions limitées'
-        illustration: 'Une pochette graphique bleu électrique, rose vif et jaune acide, son disque noir à moitié sorti, avec un sticker « édition limitée ».'
-        sticker: '<strong>500</strong> exemplaires'
-        ticker:
-            fridays: 'Nouveautés chaque vendredi'
-            reissues: 'Rééditions'
-            rare: 'Pressages rares'
-            turntables: 'Platines'
-            accessories: 'Accessoires'
+        title: 'Le disque, <em>tel que l’artiste l’a entendu.</em>'
+        lead: 'Pressages audiophiles, premières éditions rares et rééditions numérotées, choisis un à un et gradés à la main, avec les platines et l’électronique qui leur rendent justice.'
+        cta: 'Découvrir les arrivages'
+        secondary_cta: 'Le pressage du mois'
+        illustration: 'Une pochette graphique bleu électrique, rose et jaune, son disque noir à moitié sorti.'
+        caption:
+            title: 'Groove Sessions, Vol. 3'
+            ref: 'GRV-003 · 180 g · gravé à demi-vitesse'
+        formats:
+            half_speed: 'Gravure demi-vitesse'
+            one_step: 'One-step'
+            first_pressings: 'Premiers pressages'
+            hifi: 'Hi-fi'
     genres:
-        eyebrow: 'Fouiller les bacs'
-        title: 'Par <em>genre</em>'
-        cta: 'Toutes les nouveautés'
+        eyebrow: 'Les bacs'
+        title: 'Parcourir par <em>genre</em>'
+        cta: 'Tous les arrivages'
         jazz:
             name: 'Jazz'
             styles: 'Bebop · modal · spiritual'
@@ -41,106 +42,115 @@ groove:
             name: 'Musiques du monde'
             styles: 'Afrobeat · tropical · bossa'
     products:
-        eyebrow: 'Les sorties du vendredi'
-        title: 'Tout juste <em>pressés</em>'
-        lead: 'Les disques arrivés en boutique cette semaine, des premiers pressages aux rééditions tant attendues.'
-        cta: 'Éditions limitées'
+        eyebrow: 'Arrivages'
+        title: 'Tout juste arrivés, <em>gradés et protégés</em>'
+        lead: 'Rééditions, premiers pressages et nouveautés entrés en boutique cette semaine, chacun inspecté avant de rejoindre les bacs.'
+        cta: 'Le pressage du mois'
     promise:
         title: 'Notre promesse'
-        checked:
-            title: 'Chaque disque contrôlé'
-            text: 'Voile, rayure : chaque exemplaire est inspecté avant de quitter la boutique.'
-        mailers:
-            title: 'Carton rigide'
-            text: 'Expédié à plat, coins protégés, offert dès 60 €.'
-        fridays:
-            title: 'Sorties du vendredi'
-            text: 'Les nouveautés arrivent dans les bacs chaque vendredi matin.'
-        preorders:
-            title: 'Précommandes sans frais'
-            text: 'Réservez les éditions limitées, payez à l’expédition.'
+        graded:
+            title: 'Gradés à la main'
+            text: 'Chaque disque d’occasion est écouté et gradé selon la norme Goldmine, et vendu VG+ ou mieux.'
+        cleaned:
+            title: 'Nettoyés et protégés'
+            text: 'Nettoyage aux ultrasons, sous-pochette antistatique et pochette de protection extérieure.'
+        shipping:
+            title: 'Assurés, double carton'
+            text: 'Expédiés à plat en double carton, assurés à leur pleine valeur, dans le monde entier.'
+        listening:
+            title: 'Salon d’écoute'
+            text: 'Écoutez n’importe quel pressage sur notre système de référence, sur rendez-vous.'
     release:
-        eyebrow: 'Édition limitée'
-        title: 'Neon Tides, <em>Night Swim</em>'
-        lead: 'Chaque fiche disque indique l’artiste, le label, le pressage et la tracklist, une déclinaison par couleur de vinyle et le matériel qui le sublime.'
-        illustration: 'La pochette de Night Swim mandarine et rose vif, son vinyle rouge translucide à moitié sorti, avec un sticker numéroté.'
-        number: '<strong>137</strong>/500'
-        runout: 'Matrice : LTR-042-A · gravé à demi-vitesse'
+        eyebrow: 'Le pressage du mois'
+        title: 'The Marlowe Quartet, <em>Blue Hours</em>'
+        lead: 'Une session de 1961 regravée depuis les bandes analogiques originales, en 45 tours sur deux disques. Chaque fiche disque se lit comme celle-ci : les références de pressage en attributs, une déclinaison par édition, et le matériel pour l’écouter.'
+        illustration: 'La pochette de Blue Hours bleu électrique et menthe, son vinyle bleu translucide à moitié sorti.'
+        caption: 'Édition bleu translucide'
+        number: 'N° 0412 / 3000'
         specs:
-            artist:
-                label: 'Artiste'
-                value: 'Neon Tides'
             label:
                 label: 'Label'
-                value: 'Lowtide Records'
+                value: 'Lowtide Records, série Archive'
             catalogue:
-                label: 'Réf.'
-                value: 'LTR-042'
+                label: 'Référence'
+                value: 'LTA-1961-45'
+            matrix:
+                label: 'Matrice'
+                value: 'LTA-1961-A1 · KG'
+            mastering:
+                label: 'Mastering'
+                value: 'Demi-vitesse, depuis les bandes analogiques originales'
+            plant:
+                label: 'Pressé chez'
+                value: 'Optimal Media, Allemagne'
             format:
                 label: 'Format'
-                value: '2 × LP, 180 g, pochette ouvrante'
-            pressing:
-                label: 'Pressage'
-                value: '500 exemplaires numérotés, sortie vendredi'
+                value: '2 × LP, 45 tours, 180 g, pochette ouvrante tip-on'
+            edition:
+                label: 'Tirage'
+                value: '3 000 exemplaires numérotés'
+            condition:
+                label: 'État'
+                value: 'Neuf, scellé'
         side_a: 'Face A'
         side_b: 'Face B'
         tracks:
             a1:
-                title: 'Low Tide'
-                time: '4:12'
+                title: 'Blue Hours'
+                time: '7:12'
             a2:
-                title: 'Chlorine Dreams'
-                time: '5:03'
+                title: 'Lantern Street'
+                time: '5:48'
             a3:
-                title: 'Lifeguard Off Duty'
-                time: '3:47'
-            a4:
-                title: 'Deep End'
-                time: '6:20'
+                title: 'A Quiet Room'
+                time: '6:05'
             b1:
-                title: 'Night Swim'
-                time: '4:58'
+                title: 'Half Past Midnight'
+                time: '8:21'
             b2:
-                title: 'Neon Lido'
-                time: '3:31'
+                title: 'Marlowe’s Waltz'
+                time: '4:57'
             b3:
-                title: 'Undertow'
-                time: '5:44'
-            b4:
-                title: 'Dawn, Wet Hair'
-                time: '7:02'
-        colours: 'Couleur du vinyle'
-        colour:
-            black: 'Noir 180 g'
-            red: 'Rouge translucide'
-            splatter: 'Splatter'
-        pairs: 'À écouter avec'
+                title: 'The Last Set'
+                time: '6:40'
+        editions: 'Éditions'
+        edition:
+            black:
+                name: 'Noir, 180 g'
+                meta: 'En stock'
+            clear:
+                name: 'Clarity UHQR, 200 g'
+                meta: 'Plus que 2 exemplaires'
+            blue:
+                name: 'Bleu translucide'
+                meta: 'Numéroté, en stock'
+        pairs: 'Pour l’écouter'
         pair:
             turntable:
                 name: 'Platine à courroie'
-                meta: 'Préampli phono intégré'
-            cartridge:
-                name: 'Cellule à aimant mobile'
-                meta: 'Diamant elliptique'
-            sleeves:
-                name: 'Sous-pochettes antistatiques'
-                meta: 'Lot de 50'
-        cta: 'Précommander'
+                meta: 'Plateau acrylique, bras carbone'
+            phono:
+                name: 'Préampli phono MC'
+                meta: 'Faible bruit, charge réglable'
+            cleaning:
+                name: 'Kit d’entretien'
+                meta: 'Brosse carbone et nettoyant diamant'
+        cta: 'Réserver un exemplaire'
     footer:
-        tagline: 'Disquaire indépendant : nouveautés, rééditions, pressages rares et le matériel pour les écouter.'
-        notice: 'Prix TTC. Les disques sont expédiés à plat en carton rigide, et les précommandes ne sont débitées qu’à l’expédition.'
+        tagline: 'Disquaire indépendant : pressages audiophiles, premières éditions rares et la hi-fi pour les écouter.'
+        notice: 'Prix TTC. Les disques sont gradés à la main et expédiés en double carton, assurés à leur pleine valeur.'
         services:
             eyebrow: 'À la boutique'
-            title: 'Venu pour un disque, <em>reparti avec trois.</em>'
+            title: 'Un disquaire, <em>au rythme de l’écoute.</em>'
             booth:
-                title: 'Cabine d’écoute'
-                text: 'Écoutez avant d’acheter : deux platines et un casque vous attendent au comptoir.'
-                cta: 'Trouver la boutique'
+                title: 'Salon d’écoute'
+                text: 'Réservez une heure sur notre système de référence pour écouter un pressage ou comparer deux éditions.'
+                cta: 'Réserver une séance'
             finder:
                 title: 'Recherche de disques'
-                text: 'Un premier pressage, un 45 tours introuvable ? Envoyez votre liste, nos diggers le dénichent.'
+                text: 'Un premier pressage, une matrice précise, un exemplaire scellé : envoyez votre liste, nous interrogeons notre réseau.'
                 cta: 'Envoyer ma liste'
             buyback:
-                title: 'Rachat de collections'
-                text: 'Déménagement, grenier, tri : nous estimons et rachetons les collections de disques.'
-                cta: 'Demander une estimation'
+                title: 'Expertise & rachat'
+                text: 'Nous gradons, estimons et rachetons les collections entières, et vous conseillons sur les disques à garder.'
+                cta: 'Demander une expertise'

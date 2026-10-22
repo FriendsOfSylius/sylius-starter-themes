@@ -1,46 +1,47 @@
-// Groove, dark scheme — the record shop after closing time: black wax, warm paper type and the same neon sleeves.
+// Groove, dark scheme — the listening room at night: deep black, warm ivory type and brass; the saturated colours stay
+// in the sleeves.
 $color-mode: dark;
 
-// House colours. The black bands are ruled in hot pink, to stand out from a page just as black.
-$vinyl: #050506;
-$vinyl-deep: #111114;
-$vinyl-raised: #1C1C22;
+// House colours. The black bands are ruled in brass, to stand out from a page just as dark.
+$vinyl: #0B0A09;
+$vinyl-deep: #070606;
+$vinyl-raised: #1A1815;
+$brass: #C9A46A;
+$brass-light: #D9B77F;
+$ivory: #F4EFE5;
+$text-on-dark: #D9D1C3;
+$border-dark: rgba(#F4EFE5, 0.12);
+
+// Sleeve colours: cover art, coloured vinyl and limited editions only, never the interface.
 $hot: #FF3D8B;
-$hot-light: #FF7DB6;
 $acid: #FFE14D;
 $electric: #4D68FF;
 $tangerine: #FF7A2E;
 $mint: #22DDA8;
-$snow: #FFFFFF;
-$text-on-dark: #D9D6CE;
-$border-dark: rgba(#FFF, 0.14);
 
-// Black wax and graphite.
-$page: #0B0B0D;
-$surface: #151518;
-$surface-raised: #1F1F24;
-$line: #2E2E35;
-$line-strong: #4A4A54;
+// Deep black and warm graphite.
+$page: #0F0E0C;
+$surface: #171513;
+$surface-raised: #201D1A;
+$line: #302C27;
+$line-strong: #4D463E;
 // Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
-$field-border: #85858F;
-$heading: #F7F4EC;
-$text: #D9D6CE;
-$text-muted: #A9A6B0;
+$field-border: #8A8174;
+$heading: #F2EBDD;
+$text: #D9D1C3;
+$text-muted: #A99F90;
 
-// Hot pink fills the calls to action, with ink on it, and turns acid yellow on hover; as text, the accent lightens to
-// a neon pink, and the second accent turns acid yellow.
-$accent: $hot;
-$accent-hover: $acid;
-$on-accent: #0B0B0D;
-$accent-text: #FF7DB6;
-$accent-text-hover: #FFB0D3;
-$pop-text: $acid;
-$focus: $acid;
-$focus-ring: rgba($hot, 0.4);
-$shadow-ink: $hot;
+// The call to action is brass with black type, lighter on hover; links are pale brass.
+$accent: $brass;
+$accent-hover: #E0C08A;
+$on-accent: #0F0E0C;
+$accent-text: #D9B77F;
+$accent-text-hover: #EED3A3;
+$focus: #D9B77F;
+$focus-ring: rgba($brass, 0.4);
 
-$success: #5FE3B8;
-$info: #A3B2FF;
+$success: #8FD0A6;
+$info: #9DB6E6;
 
 $shadow-soft: 0 1px 2px rgba(#000, 0.5);
-$shadow-float: 0 22px 44px -20px rgba(#000, 0.85);
+$shadow-float: 0 28px 50px -28px rgba(#000, 0.9);

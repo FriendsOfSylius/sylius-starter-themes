@@ -1,17 +1,17 @@
-// Groove — an independent record store: black, saturated sleeve colours and expressive type.
+// Groove — a fine record store: deep black, warm ivory and brass, with the saturated colours kept for the sleeves.
 // Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
 $dark: $color-mode == dark;
 
 $font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
-// The display face: Bricolage Grotesque, narrowed and heavy for the headings, like the type of a sleeve.
-$font-family-display: "Bricolage Grotesque", "Helvetica Neue", "Arial", sans-serif;
+// The display face: Instrument Serif, tall and narrow, like the title on the spine of a record.
+$font-family-display: "Instrument Serif", "Didot", "Bodoni 72", "Times New Roman", serif;
 $font-family-serif: $font-family-display;
 $font-family-base: $font-family-sans-serif;
-// Catalogue numbers, matrix runouts and track timings.
+// Catalogue numbers, matrix runouts and track timings, set like the references of a collector's sheet.
 $font-family-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
 
 $headings-font-family: $font-family-display;
-$headings-font-weight: 800;
+$headings-font-weight: 400;
 
 $body-bg: $page;
 $body-color: $text;
@@ -23,14 +23,10 @@ $link-color: $accent-text;
 $link-hover-color: $accent-text-hover;
 $border-color: $line;
 
-// Square sleeves and round records: sharp tiles, pill buttons.
-$radius-sm: 3px;
-$radius: 4px;
-$radius-lg: 8px;
-$radius-pill: 999px;
-
-// Poster shadow: a hard offset, like a sleeve pinned on the shop wall.
-$shadow-hard: 6px 6px 0 $shadow-ink;
+// Square sleeves and quiet corners.
+$radius-sm: 2px;
+$radius: 3px;
+$radius-lg: 4px;
 
 $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 

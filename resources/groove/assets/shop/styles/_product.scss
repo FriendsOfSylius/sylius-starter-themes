@@ -16,10 +16,10 @@
   th,
   td:first-child {
     color: $heading;
-    font-family: $font-family-display;
-    font-size: 1rem;
-    font-weight: 700;
-    font-stretch: 85%;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
   }
 }
 
@@ -67,9 +67,8 @@ a:has(> #main-image) {
 
 .offcanvas-title {
   font-family: $font-family-display;
-  font-size: 1.6rem;
-  font-stretch: 78%;
-  font-weight: 800;
+  font-size: 1.9rem;
+  font-weight: 400;
 }
 
 .table {

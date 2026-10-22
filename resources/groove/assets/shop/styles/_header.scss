@@ -1,4 +1,4 @@
-// Top bar: a black band with the shipping promise, the Friday release day and the locale / currency switchers.
+// Top bar: a black band with the insured shipping, the listening room and the locale / currency switchers.
 
 // The top bar sits above <header>, in the page wrapper.
 .bg-black:has(.groove-topbar) {
@@ -13,19 +13,19 @@
   }
 
   a {
-    color: $snow;
+    color: $ivory;
   }
 
   .btn-dark {
     --bs-btn-bg: transparent;
     --bs-btn-border-color: #{$border-dark};
-    --bs-btn-color: #{$snow};
+    --bs-btn-color: #{$ivory};
     --bs-btn-hover-bg: #{$vinyl-raised};
-    --bs-btn-hover-border-color: #{$hot};
-    --bs-btn-hover-color: #{$snow};
+    --bs-btn-hover-border-color: #{$brass};
+    --bs-btn-hover-color: #{$ivory};
     --bs-btn-active-bg: #{$vinyl-raised};
-    --bs-btn-active-border-color: #{$hot};
-    --bs-btn-active-color: #{$snow};
+    --bs-btn-active-border-color: #{$brass};
+    --bs-btn-active-color: #{$ivory};
 
     min-height: 1.9rem;
     padding: 0.2rem 0.75rem;
@@ -42,7 +42,7 @@
   }
 
   :focus-visible {
-    outline-color: $acid;
+    outline-color: $brass-light;
   }
 }
 
@@ -54,15 +54,15 @@
 
 .groove-topbar__item + .groove-topbar__item::before {
   margin-right: 1.25rem;
-  color: $hot;
-  content: "●";
-  font-size: 0.6rem;
-  vertical-align: 0.15em;
+  color: $brass;
+  content: "◆";
+  font-size: 0.5rem;
+  vertical-align: 0.2em;
 }
 
 .groove-topbar__item strong {
-  color: $acid;
-  font-weight: 700;
+  color: $brass-light;
+  font-weight: 600;
 }
 
 header {
@@ -73,7 +73,7 @@ header {
 
 header > .border-bottom,
 header .border-bottom {
-  border-bottom: 2px solid $heading !important;
+  border-bottom: 1px solid $line !important;
 }
 
 header .container {
@@ -92,13 +92,13 @@ header .navbar {
   background-color: transparent;
 }
 
-// Wordmark: a record with a hot pink label, next to the squeezed name over a spaced tagline.
+// Wordmark: a record with a brass label, next to the serif name over a spaced tagline.
 
 .groove-logo {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.75rem;
   color: $heading;
   text-decoration: none;
 
@@ -110,10 +110,10 @@ header .navbar {
 }
 
 .groove-logo__seal {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.6rem;
+  height: 2.6rem;
   flex: 0 0 auto;
-  transition: transform 600ms $ease;
+  transition: transform 900ms $ease;
 }
 
 .groove-logo__disc {
@@ -123,11 +123,11 @@ header .navbar {
 .groove-logo__grooves {
   fill: none;
   stroke: $page;
-  stroke-opacity: 0.28;
+  stroke-opacity: 0.22;
 }
 
 .groove-logo__label {
-  fill: $hot;
+  fill: $brass;
 }
 
 .groove-logo__hole {
@@ -141,30 +141,29 @@ header .navbar {
 .groove-logo__text {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.3rem;
   line-height: 1;
 }
 
 .groove-logo__name {
   color: $heading;
   font-family: $font-family-display;
-  font-size: 2.1rem;
-  font-stretch: 75%;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 0.85;
+  font-size: 2.15rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.8;
 }
 
 .groove-logo__tagline {
   color: $accent-text;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.26em;
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
-// Category navigation: bold display links, highlighted in acid yellow like a marker on a record sleeve.
+// Category navigation: spaced small capitals, underlined by a brass hairline on hover.
 
 .groove-category-nav {
   display: flex;
@@ -182,7 +181,7 @@ header .navbar {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.25rem 0.75rem;
+  gap: 0.25rem 1.5rem;
   overflow: visible;
 }
 
@@ -193,54 +192,35 @@ header .navbar {
 .groove-category-nav__links > .nav-link,
 .groove-category-nav__links > .nav-item > .nav-link {
   position: relative;
-  z-index: 0;
   flex: 0 0 auto;
-  padding: 0.55rem 0.6rem !important;
+  padding: 0.6rem 0.1rem !important;
   color: $heading;
-  font-family: $font-family-display;
-  font-size: 1.12rem;
-  font-stretch: 85%;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   white-space: nowrap;
   transition: color 160ms ease;
 
-  // The marker stroke, behind the link text: ink stays on it in both schemes.
   &::before {
     position: absolute;
-    z-index: -1;
-    right: 0.2rem;
-    bottom: 0.45rem;
-    left: 0.2rem;
-    height: 0.55em;
-    background-color: $acid;
+    right: 0.1rem;
+    bottom: 0.25rem;
+    left: 0.1rem;
+    height: 1px;
+    background-color: $brass;
     content: "";
     transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 240ms $ease;
+    transition: transform 280ms $ease;
   }
 
   &:hover,
   &:focus,
   &[aria-expanded="true"] {
-    color: $heading;
+    color: $accent-text;
 
     &::before {
       transform: scaleX(1);
-    }
-  }
-
-  @if $dark {
-    &:hover,
-    &:focus,
-    &[aria-expanded="true"] {
-      color: $acid;
-
-      &::before {
-        height: 3px;
-        bottom: 0.2rem;
-        background-color: $hot;
-      }
     }
   }
 }
@@ -249,10 +229,11 @@ header .navbar {
   z-index: 1060;
   min-width: 14rem;
   padding: 0.5rem;
-  border: 2px solid $heading;
-  border-radius: $radius-sm;
+  border: 1px solid $line;
+  border-top: 1px solid $brass;
+  border-radius: 0;
   background-color: $surface;
-  box-shadow: $shadow-hard;
+  box-shadow: $shadow-float;
 }
 
 .groove-category-nav__menu .dropdown-menu .nav-link {
@@ -268,18 +249,18 @@ header .navbar {
   }
 }
 
-// Cart: an ink pill with a hot pink counter.
+// Cart: a black button with a brass counter.
 
 .groove-cart__button {
   --bs-btn-color: #{$page};
   --bs-btn-bg: #{$heading};
   --bs-btn-border-color: #{$heading};
   --bs-btn-hover-color: #{$on-accent};
-  --bs-btn-hover-bg: #{$accent};
-  --bs-btn-hover-border-color: #{$accent};
+  --bs-btn-hover-bg: #{$accent-hover};
+  --bs-btn-hover-border-color: #{$accent-hover};
   --bs-btn-active-color: #{$on-accent};
-  --bs-btn-active-bg: #{$accent};
-  --bs-btn-active-border-color: #{$accent};
+  --bs-btn-active-bg: #{$accent-hover};
+  --bs-btn-active-border-color: #{$accent-hover};
 
   position: relative;
   display: inline-flex;
@@ -288,9 +269,11 @@ header .navbar {
   gap: 0.6rem;
   padding: 0.45rem 1.1rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 
 .groove-cart__icon {
@@ -301,7 +284,7 @@ header .navbar {
 .groove-cart__count {
   position: absolute;
   top: -0.5rem;
-  right: -0.4rem;
+  right: -0.45rem;
   display: grid;
   min-width: 1.35rem;
   height: 1.35rem;
@@ -309,18 +292,19 @@ header .navbar {
   padding: 0 0.3rem;
   border: 2px solid $page;
   border-radius: 999px;
-  background-color: $acid;
+  background-color: $brass;
   color: $vinyl;
   font-size: 0.66rem;
   font-weight: 700;
+  letter-spacing: 0;
   line-height: 1;
 }
 
 header .dropdown-menu {
-  border: 2px solid $heading;
-  border-radius: $radius-sm;
+  border: 1px solid $line;
+  border-radius: 0;
   background-color: $surface;
-  box-shadow: $shadow-hard;
+  box-shadow: $shadow-float;
 }
 
 header .dropdown-item {
@@ -353,14 +337,13 @@ header .dropdown-item {
   }
 
   .groove-category-nav__menu .offcanvas-header {
-    border-bottom: 2px solid $heading;
+    border-bottom: 1px solid $line;
   }
 
   .groove-category-nav__menu .offcanvas-title {
     font-family: $font-family-display;
-    font-size: 1.8rem !important;
-    font-stretch: 78%;
-    font-weight: 800;
+    font-size: 2rem !important;
+    font-weight: 400;
   }
 
   .groove-category-nav__menu .offcanvas-body {
@@ -379,9 +362,8 @@ header .dropdown-item {
   .groove-category-nav__links > .nav-item > .nav-link {
     width: 100%;
     justify-content: space-between;
-    padding: 0.95rem 0.5rem !important;
+    padding: 1rem 0.5rem !important;
     border-bottom: 1px solid $line;
-    font-size: 1.3rem;
     white-space: normal;
 
     &::before {
@@ -410,12 +392,12 @@ header .dropdown-item {
   }
 
   .groove-logo__seal {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.2rem;
+    height: 2.2rem;
   }
 
   .groove-logo__name {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
   }
 }
 

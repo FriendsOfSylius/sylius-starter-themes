@@ -1,27 +1,28 @@
 groove:
     brand:
-        tagline: 'Record store'
+        tagline: 'Fine records & hi-fi'
     top_bar:
-        delivery: 'Free shipping from €60 · shipped flat in rigid mailers'
-        fridays: 'New releases <strong>every Friday</strong>'
+        delivery: 'Insured delivery worldwide · records shipped double-boxed'
+        fridays: 'Listening room <strong>by appointment</strong>'
     hero:
         eyebrow: 'Independent record store'
-        title: 'Music you can <em>hold.</em>'
-        lead: 'New releases every Friday, reissues, rare pressings and the turntables to play them — picked by diggers, shipped in rigid mailers.'
-        cta: 'Dig the new releases'
-        secondary_cta: 'Limited editions'
-        illustration: 'A graphic record sleeve in electric blue, hot pink and acid yellow, its black record pulled out, with a “limited edition” sticker.'
-        sticker: '<strong>500</strong> copies only'
-        ticker:
-            fridays: 'New releases every Friday'
-            reissues: 'Reissues'
-            rare: 'Rare pressings'
-            turntables: 'Turntables'
-            accessories: 'Accessories'
+        title: 'The record, <em>as the artist heard it.</em>'
+        lead: 'Audiophile pressings, rare first editions and numbered reissues, chosen one by one and graded by hand — with the turntables and electronics worthy of them.'
+        cta: 'Discover the new arrivals'
+        secondary_cta: 'Pressing of the month'
+        illustration: 'A graphic record sleeve in electric blue, pink and yellow, its black record pulled out.'
+        caption:
+            title: 'Groove Sessions, Vol. 3'
+            ref: 'GRV-003 · 180 g · half-speed master'
+        formats:
+            half_speed: 'Half-speed masters'
+            one_step: 'One-step'
+            first_pressings: 'First pressings'
+            hifi: 'Hi-fi'
     genres:
-        eyebrow: 'Dig the crates'
-        title: 'Shop by <em>genre</em>'
-        cta: 'All the new releases'
+        eyebrow: 'The crates'
+        title: 'Browse by <em>genre</em>'
+        cta: 'All the new arrivals'
         jazz:
             name: 'Jazz'
             styles: 'Bebop · modal · spiritual'
@@ -41,106 +42,115 @@ groove:
             name: 'World'
             styles: 'Afrobeat · tropical · bossa'
     products:
-        eyebrow: 'Friday drops'
-        title: 'Fresh <em>off the press</em>'
-        lead: 'The records that landed in the shop this week, from first pressings to long-awaited reissues.'
-        cta: 'Limited editions'
+        eyebrow: 'New arrivals'
+        title: 'Just in, <em>graded and sleeved</em>'
+        lead: 'Reissues, first pressings and new releases that entered the shop this week, each one inspected before it reaches the crates.'
+        cta: 'Pressing of the month'
     promise:
         title: 'Our promise'
-        checked:
-            title: 'Every record checked'
-            text: 'Each copy is inspected for warps and scuffs before it leaves the shop.'
-        mailers:
-            title: 'Rigid mailers'
-            text: 'Shipped flat, corners protected, free from €60.'
-        fridays:
-            title: 'Friday releases'
-            text: 'New records hit the crates every Friday morning.'
-        preorders:
-            title: 'Fair pre-orders'
-            text: 'Reserve limited editions, pay only when they ship.'
+        graded:
+            title: 'Graded by hand'
+            text: 'Every second-hand record is play-graded to the Goldmine standard, and sold VG+ or better.'
+        cleaned:
+            title: 'Cleaned and resleeved'
+            text: 'Ultrasonic cleaning, then an anti-static inner sleeve and an outer protective sleeve.'
+        shipping:
+            title: 'Insured, double-boxed'
+            text: 'Shipped flat in a double box, insured to its full value, worldwide.'
+        listening:
+            title: 'Listening room'
+            text: 'Audition any pressing on our reference system, by appointment.'
     release:
-        eyebrow: 'Limited edition'
-        title: 'Neon Tides, <em>Night Swim</em>'
-        lead: 'Every record page carries the artist, the label, the pressing and the tracklist, a variant for each vinyl colour and the gear that plays it best.'
-        illustration: 'The Night Swim sleeve in tangerine and hot pink, its translucent red record pulled out, with a numbered sticker.'
-        number: '<strong>137</strong>/500'
-        runout: 'Matrix runout: LTR-042-A · cut at half speed'
+        eyebrow: 'Pressing of the month'
+        title: 'The Marlowe Quartet, <em>Blue Hours</em>'
+        lead: 'A 1961 session cut again from the original analogue tapes, at 45 rpm on two records. Every record page reads like this sheet: the pressing references as attributes, one variant per edition, and what to play it on.'
+        illustration: 'The Blue Hours sleeve in electric blue and mint, its translucent blue record pulled out.'
+        caption: 'Translucent blue edition'
+        number: 'No. 0412 / 3000'
         specs:
-            artist:
-                label: 'Artist'
-                value: 'Neon Tides'
             label:
                 label: 'Label'
-                value: 'Lowtide Records'
+                value: 'Lowtide Records, Archive series'
             catalogue:
-                label: 'Cat. no.'
-                value: 'LTR-042'
+                label: 'Catalogue no.'
+                value: 'LTA-1961-45'
+            matrix:
+                label: 'Matrix'
+                value: 'LTA-1961-A1 · KG'
+            mastering:
+                label: 'Mastering'
+                value: 'Half-speed, from the original analogue tapes'
+            plant:
+                label: 'Pressed at'
+                value: 'Optimal Media, Germany'
             format:
                 label: 'Format'
-                value: '2 × LP, 180 g, gatefold sleeve'
-            pressing:
-                label: 'Pressing'
-                value: '500 numbered copies, out Friday'
+                value: '2 × LP, 45 rpm, 180 g, tip-on gatefold'
+            edition:
+                label: 'Edition'
+                value: '3,000 numbered copies'
+            condition:
+                label: 'Condition'
+                value: 'New, sealed'
         side_a: 'Side A'
         side_b: 'Side B'
         tracks:
             a1:
-                title: 'Low Tide'
-                time: '4:12'
+                title: 'Blue Hours'
+                time: '7:12'
             a2:
-                title: 'Chlorine Dreams'
-                time: '5:03'
+                title: 'Lantern Street'
+                time: '5:48'
             a3:
-                title: 'Lifeguard Off Duty'
-                time: '3:47'
-            a4:
-                title: 'Deep End'
-                time: '6:20'
+                title: 'A Quiet Room'
+                time: '6:05'
             b1:
-                title: 'Night Swim'
-                time: '4:58'
+                title: 'Half Past Midnight'
+                time: '8:21'
             b2:
-                title: 'Neon Lido'
-                time: '3:31'
+                title: 'Marlowe’s Waltz'
+                time: '4:57'
             b3:
-                title: 'Undertow'
-                time: '5:44'
-            b4:
-                title: 'Dawn, Wet Hair'
-                time: '7:02'
-        colours: 'Vinyl colour'
-        colour:
-            black: 'Black 180 g'
-            red: 'Translucent red'
-            splatter: 'Splatter'
-        pairs: 'Plays best with'
+                title: 'The Last Set'
+                time: '6:40'
+        editions: 'Editions'
+        edition:
+            black:
+                name: 'Black, 180 g'
+                meta: 'In stock'
+            clear:
+                name: 'Clarity UHQR, 200 g'
+                meta: '2 copies left'
+            blue:
+                name: 'Translucent blue'
+                meta: 'Numbered, in stock'
+        pairs: 'To play it on'
         pair:
             turntable:
                 name: 'Belt-drive turntable'
-                meta: 'Built-in phono preamp'
-            cartridge:
-                name: 'Moving magnet cartridge'
-                meta: 'Elliptical stylus'
-            sleeves:
-                name: 'Anti-static inner sleeves'
-                meta: 'Pack of 50'
-        cta: 'Pre-order'
+                meta: 'Acrylic platter, carbon arm'
+            phono:
+                name: 'MC phono stage'
+                meta: 'Low-noise, adjustable loading'
+            cleaning:
+                name: 'Record care kit'
+                meta: 'Carbon brush and stylus cleaner'
+        cta: 'Reserve a copy'
     footer:
-        tagline: 'Independent record store: new releases, reissues, rare pressings and the gear to play them.'
-        notice: 'Prices include VAT. Records ship flat in rigid mailers, and pre-orders are charged only when they ship.'
+        tagline: 'Independent record store: audiophile pressings, rare first editions and the hi-fi to play them.'
+        notice: 'Prices include VAT. Records are graded by hand and shipped double-boxed, insured to their full value.'
         services:
             eyebrow: 'At the shop'
-            title: 'Come for one record, <em>leave with three.</em>'
+            title: 'A record store, <em>at the pace of listening.</em>'
             booth:
-                title: 'Listening booth'
-                text: 'Listen before you buy: two turntables and headphones wait for you at the counter.'
-                cta: 'Find the shop'
+                title: 'Listening room'
+                text: 'Book an hour on our reference system to audition a pressing or compare two editions side by side.'
+                cta: 'Book a session'
             finder:
-                title: 'Record finder'
-                text: 'Hunting for a first pressing or a lost single? Send us your want list and our diggers track it down.'
+                title: 'Record sourcing'
+                text: 'A first pressing, a specific matrix, a sealed copy: send us your want list and we search our network of dealers.'
                 cta: 'Send a want list'
             buyback:
-                title: 'Collection buy-back'
-                text: 'Moving, downsizing or clearing an attic: we value and buy whole record collections.'
-                cta: 'Get a quote'
+                title: 'Appraisal & buy-back'
+                text: 'We grade, value and buy whole collections, and advise on the records worth keeping.'
+                cta: 'Request an appraisal'

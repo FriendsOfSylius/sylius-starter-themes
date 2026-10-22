@@ -14,8 +14,8 @@
   margin-bottom: 0.5rem;
   color: $heading;
   font-family: $font-family-display;
-  font-stretch: 78%;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .card-text {
@@ -28,7 +28,7 @@
 }
 
 // Product cards, built like records in a crate: a square sleeve with a black record tucked behind it, which slides
-// out of the top and turns on hover while the sleeve takes a hard poster shadow; the title below, the price in bold.
+// out of the top and turns on hover while the sleeve lifts; the title in the serif, the price in small figures.
 // The card root is the element holding the details link: it is a direct grid item on category
 // pages and wrapped in a <div> in the homepage / association lists.
 
@@ -81,7 +81,7 @@
       aspect-ratio: 1;
       border-radius: 50%;
       background:
-        radial-gradient(circle, $page 0 2%, $hot 2.5% 15%, $vinyl 15.5% 17%, transparent 17.5%),
+        radial-gradient(circle, $page 0 2%, $brass 2.5% 15%, $vinyl 15.5% 17%, transparent 17.5%),
         repeating-radial-gradient(circle, $vinyl 0 3px, #2B2B32 3px 4px),
         $vinyl;
       content: "";
@@ -110,8 +110,8 @@
   }
 
   &:hover .rounded-3 {
-    box-shadow: $shadow-hard;
-    transform: translate(-3px, -3px);
+    box-shadow: $shadow-float;
+    transform: translateY(-4px);
   }
 
   .h6 {
@@ -119,11 +119,10 @@
     padding: 1rem 0 0.35rem;
     color: $heading;
     font-family: $font-family-display;
-    font-size: 1.28rem;
-    font-stretch: 85%;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.1;
+    font-size: 1.45rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.12;
     transition: color 200ms ease;
   }
 
@@ -138,14 +137,20 @@
     gap: 0.25rem 0.6rem;
     align-items: baseline;
     margin-top: auto;
-    color: $heading;
-    font-size: 1rem;
-    font-weight: 700;
+    color: $text;
+    font-size: 0.9rem;
+    font-weight: 500;
     font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
 
     > * {
       margin: 0 !important;
       padding: 0 !important;
+    }
+
+    // The applied promotions block is printed even without promotion: empty, it would still take a gap.
+    > [data-applied-promotions-locale]:not(:has(*)) {
+      display: none;
     }
 
     del {

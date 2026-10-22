@@ -1,56 +1,45 @@
-// Hero: a black band ringed with record grooves, a huge squeezed headline and a graphic sleeve with its record pulled
-// out, which turns while the pointer rests on it. A static ticker of what the shop sells closes the band.
-// The band stays black in both schemes; the dark scheme rules it in hot pink, to part it from the page.
+// Hero: a deep black band with a lot of air, a tall serif headline and, on the right, a sleeve with its record pulled
+// out (the record turns while the pointer rests on it), captioned like a catalogue entry. The colours stay in the sleeve.
+// The band stays black in both schemes; the dark scheme rules it in brass, to part it from the page.
 
 .groove-hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  border-bottom: 1px solid if($dark, rgba($brass, 0.45), $vinyl);
   background-color: $vinyl;
-  background-image:
-    radial-gradient(circle at 78% 46%, rgba($hot, 0.22) 0, rgba($hot, 0) 34%),
-    repeating-radial-gradient(circle at 78% 46%, transparent 0 22px, rgba(#FFF, 0.045) 22px 23px);
+  // A faint warm light falling on the record.
+  background-image: radial-gradient(ellipse 60% 70% at 76% 45%, rgba($brass, 0.12), rgba($brass, 0) 70%);
   color: $text-on-dark;
-
-  @if $dark {
-    border-bottom: 1px solid $border-dark;
-  }
 }
 
 .groove-hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
   align-items: center;
-  min-height: clamp(30rem, 66vh, 42rem);
-  padding-block: clamp(3.5rem, 7vw, 6rem);
+  min-height: clamp(32rem, 72vh, 46rem);
+  padding-block: clamp(4rem, 9vw, 7.5rem);
 }
 
 .groove-hero h1 {
-  margin: 0 0 1.5rem;
-  color: $snow;
-  font-size: clamp(3.6rem, 8.6vw, 8.2rem);
-  font-stretch: 75%;
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 0.84;
+  margin: 0 0 1.75rem;
+  color: $ivory;
+  font-size: clamp(3.4rem, 6.6vw, 6.4rem);
+  letter-spacing: -0.015em;
+  line-height: 0.98;
 
   em {
-    color: $hot;
+    color: $brass-light;
   }
 }
 
 .groove-hero__lead {
   max-width: 30rem;
-  margin-bottom: 2.25rem;
-  color: #EEEBE3;
-  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
-  line-height: 1.6;
-
-  strong {
-    color: $acid;
-    font-weight: 600;
-  }
+  margin-bottom: 2.5rem;
+  color: $text-on-dark;
+  font-size: clamp(1.02rem, 1.3vw, 1.12rem);
+  line-height: 1.75;
 }
 
 .groove-hero__actions {
@@ -59,32 +48,42 @@
   gap: 0.75rem;
 }
 
-// On the black band, the poster shadow of the call to action is white.
-.groove-hero .btn-primary:hover {
-  box-shadow: 3px 3px 0 $snow;
+// The formats the shop is known for, in small capitals between brass diamonds.
+.groove-hero__formats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 3rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid $border-dark;
+  color: $text-on-dark;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  list-style: none;
+  text-transform: uppercase;
+
+  li + li::before {
+    margin-right: 1.25rem;
+    color: $brass;
+    content: "◆";
+    font-size: 0.5rem;
+    vertical-align: 0.2em;
+  }
 }
 
-// Arrow closing the hero call to action.
-.groove-btn-arrow::after {
-  margin-left: 0.75rem;
-  content: "→";
-  font-family: $font-family-sans-serif;
-  transition: transform 220ms $ease;
-}
+// The stage: the sleeve on the left, its record pulled out to the right.
 
-.groove-btn-arrow:hover::after {
-  display: inline-block;
-  transform: translateX(4px);
+.groove-hero__visual {
+  margin: 0;
 }
-
-// The stage: the sleeve on the left, its record pulled out to the right and a round sticker on the corner.
 
 .groove-hero__stage {
   position: relative;
   width: 100%;
   max-width: 34rem;
   margin-inline: auto;
-  aspect-ratio: 1.3;
+  aspect-ratio: 1.32;
 }
 
 .groove-hero__sleeve,
@@ -97,7 +96,7 @@
   width: 76%;
   height: auto;
   aspect-ratio: 1;
-  box-shadow: 0 30px 60px -24px rgba(#000, 0.9);
+  box-shadow: 0 34px 60px -26px rgba(#000, 0.95);
   object-fit: cover;
 }
 
@@ -109,12 +108,12 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-    radial-gradient(circle, $vinyl 0 2.2%, $acid 2.6% 17%, $vinyl 17.4% 19%, transparent 19.4%),
-    repeating-radial-gradient(circle, #121216 0 3px, #34343D 3px 4px);
+    radial-gradient(circle, $vinyl 0 2.2%, $brass 2.6% 17%, $vinyl 17.4% 19%, transparent 19.4%),
+    repeating-radial-gradient(circle, #121212 0 3px, #2E2E33 3px 4px);
   // A thin rim, so that the black record stands out from the black band.
   box-shadow:
-    0 0 0 1px rgba(#FFF, 0.22),
-    0 24px 50px -20px rgba(#000, 0.9);
+    0 0 0 1px rgba($ivory, 0.18),
+    0 30px 56px -24px rgba(#000, 0.95);
   animation: groove-spin 2.4s linear infinite;
   animation-play-state: paused;
 
@@ -123,7 +122,7 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: conic-gradient(from 20deg, transparent 0 10%, rgba(#FFF, 0.16) 14%, transparent 20% 60%, rgba(#FFF, 0.1) 64%, transparent 70%);
+    background: conic-gradient(from 20deg, transparent 0 10%, rgba(#FFF, 0.14) 14%, transparent 20% 60%, rgba(#FFF, 0.09) 64%, transparent 70%);
     content: "";
   }
 }
@@ -132,32 +131,23 @@
   animation-play-state: running;
 }
 
-.groove-hero__sticker {
-  position: absolute;
-  z-index: 2;
-  top: 64%;
-  left: 60%;
-  display: grid;
-  width: clamp(6rem, 11vw, 8rem);
-  aspect-ratio: 1;
-  place-items: center;
-  padding: 0.75rem;
-  border-radius: 50%;
-  background-color: $acid;
-  color: $vinyl;
-  font-family: $font-family-display;
-  font-size: clamp(0.85rem, 1.2vw, 1rem);
-  font-stretch: 80%;
-  font-weight: 800;
-  line-height: 1;
-  text-align: center;
-  transform: rotate(-12deg);
+.groove-hero__caption {
+  display: flex;
+  max-width: 34rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin: 1.75rem auto 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid $border-dark;
+  color: $text-on-dark;
+}
 
-  strong {
-    display: block;
-    font-size: 1.9em;
-    letter-spacing: -0.03em;
-  }
+.groove-hero__caption-title {
+  color: $ivory;
+  font-family: $font-family-display;
+  font-size: 1.2rem;
+  font-style: italic;
 }
 
 @keyframes groove-spin {
@@ -166,68 +156,38 @@
   }
 }
 
-// Cover art shared by the hero, the crates and the limited edition: flat shapes in the sleeve colours.
+// Cover art shared by the hero, the crates and the pressing of the month: flat shapes in the sleeve colours, the only
+// place where they appear.
 
 .groove-cover__electric { fill: $electric; }
 .groove-cover__hot { fill: $hot; }
 .groove-cover__acid { fill: $acid; }
 .groove-cover__tangerine { fill: $tangerine; }
 .groove-cover__mint { fill: $mint; }
-.groove-cover__ink { fill: $vinyl; }
-.groove-cover__paper { fill: #F4F1E9; }
+.groove-cover__ink { fill: #121110; }
+.groove-cover__paper { fill: #F4EFE5; }
 
 .groove-cover__title,
 .groove-cover__subtitle {
-  fill: $vinyl;
-  font-family: $font-family-display;
-  font-stretch: 75%;
+  fill: #121110;
+}
+
+.groove-cover__title.groove-cover__title--paper,
+.groove-cover__subtitle.groove-cover__title--paper {
+  fill: #F4EFE5;
 }
 
 .groove-cover__title {
-  font-size: 56px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
+  font-family: $font-family-display;
+  font-size: 60px;
+  letter-spacing: 1px;
 }
 
 .groove-cover__subtitle {
   font-family: $font-family-mono;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
-}
-
-// Ticker: what the shop sells, on a tilted acid yellow band.
-
-.groove-hero__ticker {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  margin: 0 -1rem -0.25rem;
-  padding: 0.7rem 0;
-  background-color: $acid;
-  color: $vinyl;
-  transform: rotate(-1.2deg) translateY(-0.6rem);
-
-  p {
-    display: flex;
-    width: max-content;
-    margin: 0;
-    font-family: $font-family-display;
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-    font-stretch: 78%;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    line-height: 1;
-    white-space: nowrap;
-  }
-
-  span::after {
-    margin-inline: 1.1rem;
-    color: $hot;
-    content: "●";
-    font-size: 0.6em;
-    vertical-align: 0.25em;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -249,10 +209,10 @@
 
 @media (max-width: 575.98px) {
   .groove-hero__inner {
-    padding-block: 3rem 3.5rem;
+    padding-block: 3.5rem 4rem;
   }
 
   .groove-hero h1 {
-    font-size: clamp(3.4rem, 17vw, 4.6rem);
+    font-size: clamp(3rem, 14vw, 4rem);
   }
 }

@@ -17,7 +17,7 @@
     box-shadow 160ms ease;
 
   &:hover {
-    border-color: $hot;
+    border-color: $brass;
   }
 
   &:focus {
@@ -47,9 +47,9 @@
   }
 }
 
-// Checkout steps: the current step is ruled in hot pink.
+// Checkout steps: the current step is ruled in brass.
 .steps .steps-item-active a::before {
   height: 3px;
   border-radius: 0;
-  background-color: $hot;
+  background-color: $brass;
 }

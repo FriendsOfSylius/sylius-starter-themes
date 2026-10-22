@@ -1,6 +1,6 @@
 {# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback.
-   The default visual is a graphic sleeve with its record pulled out, drawn in SVG and CSS (see _hero.scss). #}
-<section class="groove-hero" aria-labelledby="groove-hero-title">
+   The default visual is a sleeve with its record pulled out, drawn in SVG and CSS (see _hero.scss). #}
+<section class="groove-hero groove-band" aria-labelledby="groove-hero-title">
     <div class="container groove-hero__inner">
         <div class="groove-hero__copy">
             <p class="groove-eyebrow groove-eyebrow--light">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'groove.hero.eyebrow'|trans({}, 'groove') }}{% endif %}</p>
@@ -8,45 +8,46 @@
             <p class="groove-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'groove.hero.lead'|trans({}, 'groove')|raw }}{% endif %}</p>
 
             <div class="groove-hero__actions">
-                <a class="btn btn-primary groove-btn-arrow" href="{{ hero.ctaUrl ?? '#groove-latest-products' }}">
+                <a class="btn btn-primary" href="{{ hero.ctaUrl ?? '#groove-latest-products' }}">
                     {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'groove.hero.cta'|trans({}, 'groove') }}{% endif %}
                 </a>
                 <a class="btn groove-btn-ghost" href="#groove-release">{{ 'groove.hero.secondary_cta'|trans({}, 'groove') }}</a>
             </div>
+
+            <ul class="groove-hero__formats" role="list">
+                {% for format in ['half_speed', 'one_step', 'first_pressings', 'hifi'] %}
+                    <li>{{ ('groove.hero.formats.' ~ format)|trans({}, 'groove') }}</li>
+                {% endfor %}
+            </ul>
         </div>
 
-        {% if hero.image %}
-            <div class="groove-hero__stage groove-hero__stage--photo">
-                <img class="groove-hero__photo" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
-                <div class="groove-hero__record" aria-hidden="true"></div>
-            </div>
-        {% else %}
-            <div class="groove-hero__stage" role="img" aria-label="{{ 'groove.hero.illustration'|trans({}, 'groove') }}">
-                <div class="groove-hero__record"></div>
-                <svg class="groove-hero__sleeve groove-cover" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
-                    <rect class="groove-cover__electric" width="400" height="400"/>
-                    <circle class="groove-cover__hot" cx="270" cy="150" r="150"/>
-                    <rect class="groove-cover__acid" y="268" width="400" height="132"/>
-                    <circle class="groove-cover__ink" cx="118" cy="268" r="78"/>
-                    <circle class="groove-cover__acid" cx="118" cy="268" r="26"/>
-                    {% for y in [300, 318, 336, 354, 372] %}
-                        <rect class="groove-cover__ink" x="214" y="{{ y }}" width="160" height="7"/>
-                    {% endfor %}
-                    <text class="groove-cover__title" x="28" y="62">GROOVE</text>
-                    <text class="groove-cover__subtitle" x="30" y="88">SESSIONS · VOL. 3</text>
-                </svg>
-                <span class="groove-hero__sticker">{{ 'groove.hero.sticker'|trans({}, 'groove')|raw }}</span>
-            </div>
-        {% endif %}
-    </div>
-
-    <div class="groove-hero__ticker" aria-hidden="true">
-        <p>
-            {% for i in 1..3 %}
-                {% for item in ['fridays', 'reissues', 'rare', 'turntables', 'accessories'] %}
-                    <span>{{ ('groove.hero.ticker.' ~ item)|trans({}, 'groove') }}</span>
-                {% endfor %}
-            {% endfor %}
-        </p>
+        <figure class="groove-hero__visual">
+            {% if hero.image %}
+                <div class="groove-hero__stage">
+                    <div class="groove-hero__record" aria-hidden="true"></div>
+                    <img class="groove-hero__photo" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                </div>
+            {% else %}
+                <div class="groove-hero__stage" role="img" aria-label="{{ 'groove.hero.illustration'|trans({}, 'groove') }}">
+                    <div class="groove-hero__record"></div>
+                    <svg class="groove-hero__sleeve groove-cover" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+                        <rect class="groove-cover__electric" width="400" height="400"/>
+                        <circle class="groove-cover__hot" cx="270" cy="150" r="150"/>
+                        <rect class="groove-cover__acid" y="268" width="400" height="132"/>
+                        <circle class="groove-cover__ink" cx="118" cy="268" r="78"/>
+                        <circle class="groove-cover__acid" cx="118" cy="268" r="26"/>
+                        {% for y in [300, 318, 336, 354, 372] %}
+                            <rect class="groove-cover__ink" x="214" y="{{ y }}" width="160" height="7"/>
+                        {% endfor %}
+                        <text class="groove-cover__title" x="28" y="62">GROOVE</text>
+                        <text class="groove-cover__subtitle" x="30" y="88">SESSIONS · VOL. 3</text>
+                    </svg>
+                </div>
+                <figcaption class="groove-hero__caption">
+                    <span class="groove-hero__caption-title">{{ 'groove.hero.caption.title'|trans({}, 'groove') }}</span>
+                    <span class="groove-ref">{{ 'groove.hero.caption.ref'|trans({}, 'groove') }}</span>
+                </figcaption>
+            {% endif %}
+        </figure>
     </div>
 </section>

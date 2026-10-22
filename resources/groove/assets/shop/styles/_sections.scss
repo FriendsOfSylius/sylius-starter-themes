@@ -1,21 +1,22 @@
-// Homepage sections: the crates by genre, the promise band, the Friday drops and the limited edition (release sheet,
-// tracklist, vinyl colours, what to play it on).
+// Homepage sections: the crates by genre, the promise, the new arrivals and the pressing of the month (a collector's
+// sheet: pressing references, tracklist, editions, what to play it on). The interface stays black, ivory and brass;
+// only the sleeves and the coloured records carry the saturated colours.
 
 .groove-genres,
 .groove-products {
-  padding-block: clamp(3.5rem, 7vw, 6rem);
+  padding-block: clamp(4.5rem, 9vw, 8rem);
 }
 
-.groove-products {
-  border-top: 2px solid $heading;
+.groove-section-head h2 {
+  max-width: 18ch;
 }
 
-// Crates: six sleeves with flat cover art, a record tucked behind each one, and the genre under it.
+// Crates: six sleeves with flat cover art, a record tucked behind each one, sliding out and turning on hover.
 
 .groove-crates {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(1.5rem, 2.5vw, 2rem) clamp(0.9rem, 1.8vw, 1.5rem);
+  gap: clamp(2rem, 3vw, 2.75rem) clamp(1rem, 2vw, 1.75rem);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -36,16 +37,12 @@
     }
 
     .groove-crate__art {
-      box-shadow: $shadow-hard;
-      transform: translate(-3px, -3px);
+      box-shadow: $shadow-float;
+      transform: translateY(-4px);
     }
 
     .groove-crate__name {
       color: $accent-text;
-    }
-
-    .groove-crate__name::after {
-      transform: translateX(4px);
     }
   }
 }
@@ -56,15 +53,15 @@
   isolation: isolate;
   aspect-ratio: 1;
 
-  // The record tucked behind the sleeve.
+  // The record tucked behind the sleeve, its label in the colour of the sleeve.
   &::before {
     position: absolute;
     z-index: -1;
     inset: 3%;
     border-radius: 50%;
     background:
-      radial-gradient(circle, $page 0 2%, var(--groove-label, #{$hot}) 2.5% 16%, $vinyl 16.5% 18%, transparent 18.5%),
-      repeating-radial-gradient(circle, $vinyl 0 3px, #2B2B32 3px 4px);
+      radial-gradient(circle, $page 0 2%, var(--groove-label, #{$brass}) 2.5% 16%, #121110 16.5% 18%, transparent 18.5%),
+      repeating-radial-gradient(circle, #121110 0 3px, #2B2A2E 3px 4px);
     content: "";
     transition: transform 500ms $ease;
   }
@@ -75,9 +72,9 @@
   width: 100%;
   height: 100%;
   border-radius: $radius-sm;
-  background-color: $vinyl;
-  box-shadow: 0 0 0 1px rgba($vinyl, if($dark, 0, 0.08));
-  transition: box-shadow 220ms ease, transform 220ms $ease;
+  background-color: #121110;
+  box-shadow: $shadow-soft;
+  transition: box-shadow 260ms ease, transform 260ms $ease;
 }
 
 // Cover art: flat shapes in the sleeve colours, the same in both schemes.
@@ -87,7 +84,7 @@
   .groove-crate__art {
     background:
       radial-gradient(circle at 32% 68%, $acid 0 26%, transparent 26.5%),
-      linear-gradient(90deg, transparent 64%, $vinyl 64% 76%, transparent 76%),
+      linear-gradient(90deg, transparent 64%, #121110 64% 76%, transparent 76%),
       $electric;
   }
 }
@@ -101,8 +98,10 @@
 }
 
 .groove-crate--rock {
+  --groove-label: #{$hot};
+
   .groove-crate__art {
-    background: repeating-linear-gradient(-45deg, $vinyl 0 14%, $hot 14% 34%);
+    background: repeating-linear-gradient(-45deg, #121110 0 14%, $hot 14% 34%);
   }
 }
 
@@ -114,7 +113,7 @@
       radial-gradient(circle at 70% 30%, $hot 0 18%, transparent 18.5%),
       linear-gradient($mint 2px, transparent 2px) 0 0 / 14% 14%,
       linear-gradient(90deg, $mint 2px, transparent 2px) 0 0 / 14% 14%,
-      $vinyl;
+      #121110;
   }
 }
 
@@ -123,8 +122,8 @@
 
   .groove-crate__art {
     background:
-      linear-gradient(0deg, $vinyl 0 22%, transparent 22%),
-      radial-gradient(circle, $vinyl 0 26%, transparent 28%) 0 0 / 16% 16%,
+      linear-gradient(0deg, #121110 0 22%, transparent 22%),
+      radial-gradient(circle, #121110 0 26%, transparent 28%) 0 0 / 16% 16%,
       $acid;
   }
 }
@@ -141,120 +140,93 @@
 }
 
 .groove-crate__name {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.9rem;
+  margin-top: 1.1rem;
   font-family: $font-family-display;
-  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
-  font-stretch: 78%;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  font-size: clamp(1.4rem, 1.9vw, 1.7rem);
+  line-height: 1.05;
   transition: color 200ms ease;
-
-  &::after {
-    content: "→";
-    font-family: $font-family-sans-serif;
-    font-size: 0.7em;
-    font-weight: 400;
-    transition: transform 220ms $ease;
-  }
 }
 
 .groove-crate__styles {
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
   color: $text-muted;
-  font-size: 0.8rem;
-  line-height: 1.4;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  text-transform: uppercase;
 }
 
-// Promise: four commitments on a black band.
-
-.groove-promise {
-  border-block: 2px solid $vinyl;
-  background-color: $vinyl;
-  color: $text-on-dark;
-
-  @if $dark {
-    border-color: $border-dark;
-    background-color: $vinyl-deep;
-  }
-}
+// Promise: four numbered commitments between two hairlines.
 
 .groove-promise__items {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
   padding: 0;
+  border-block: 1px solid $line-strong;
   list-style: none;
 }
 
 .groove-promise__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
-  padding: 1.75rem clamp(0.75rem, 1.5vw, 1.5rem);
+  padding: 2.25rem clamp(1rem, 2vw, 2rem) 2.5rem;
 
   + .groove-promise__item {
-    border-left: 1px solid $border-dark;
+    border-left: 1px solid $line;
   }
 
   p {
     margin: 0;
   }
+}
 
-  svg {
-    width: 1.9rem;
-    height: 1.9rem;
-    flex: 0 0 auto;
-    fill: none;
-    stroke: $hot;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.6;
-  }
+.groove-promise__number {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: $accent-text;
+  font-family: $font-family-mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
 }
 
 .groove-promise__name {
-  color: $snow;
+  color: $heading;
   font-family: $font-family-display;
-  font-size: 1.25rem;
-  font-stretch: 80%;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-size: 1.6rem;
   line-height: 1.1;
 }
 
 .groove-promise__text {
-  margin-top: 0.3rem !important;
-  color: $text-on-dark;
-  font-size: 0.86rem;
-  line-height: 1.5;
+  margin-top: 0.6rem !important;
+  color: $text-muted;
+  font-size: 0.88rem;
+  line-height: 1.65;
 }
 
-// The Friday drops.
+// New arrivals.
 
 .groove-products .products-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-// Limited edition.
+// Pressing of the month: the collector's sheet.
 
 .groove-release {
-  padding-block: clamp(4.5rem, 9vw, 7.5rem);
-  border-top: 2px solid $heading;
+  padding-block: clamp(5rem, 10vw, 8.5rem);
+  border-top: 1px solid $line;
   background-color: $surface;
 }
 
 .groove-release__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(2.5rem, 6vw, 5.5rem);
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: start;
 }
 
 .groove-release__visual {
+  position: sticky;
+  top: 2rem;
   margin: 0;
 }
 
@@ -263,7 +235,7 @@
   width: 100%;
   max-width: 34rem;
   margin-inline: auto;
-  aspect-ratio: 1.3;
+  aspect-ratio: 1.32;
 }
 
 .groove-release__sleeve {
@@ -274,10 +246,10 @@
   display: block;
   width: 76%;
   height: auto;
-  box-shadow: $shadow-hard;
+  box-shadow: $shadow-float;
 }
 
-// Translucent red wax: the light shows through the grooves.
+// Translucent blue wax: the light shows through the grooves.
 .groove-release__record {
   position: absolute;
   top: 3%;
@@ -286,93 +258,79 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-    radial-gradient(circle, $surface 0 2.2%, #F4F1E9 2.6% 17%, rgba(#8A0F2E, 0.9) 17.4% 19%, transparent 19.4%),
-    repeating-radial-gradient(circle, rgba(#D0103F, 0.88) 0 3px, rgba(#A30D33, 0.92) 3px 4px);
-  box-shadow: 0 24px 50px -24px rgba(#000, 0.6);
+    radial-gradient(circle, $surface 0 2.2%, #F4EFE5 2.6% 17%, rgba(#1C2C9E, 0.9) 17.4% 19%, transparent 19.4%),
+    repeating-radial-gradient(circle, rgba(#3D5AFE, 0.82) 0 3px, rgba(#2C45D8, 0.9) 3px 4px);
+  box-shadow: 0 26px 50px -26px rgba(#000, 0.6);
 
   &::after {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: conic-gradient(from 200deg, transparent 0 10%, rgba(#FFF, 0.28) 14%, transparent 20% 60%, rgba(#FFF, 0.18) 64%, transparent 70%);
+    background: conic-gradient(from 200deg, transparent 0 10%, rgba(#FFF, 0.3) 14%, transparent 20% 60%, rgba(#FFF, 0.18) 64%, transparent 70%);
     content: "";
   }
 }
 
-.groove-cover__title--paper,
-.groove-cover__subtitle--paper {
-  fill: #F4F1E9;
-}
+.groove-release__caption {
+  display: flex;
+  max-width: 34rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin: 1.75rem auto 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid $line;
+  color: $text-muted;
+  font-family: $font-family-display;
+  font-size: 1.15rem;
+  font-style: italic;
 
-.groove-release__number {
-  position: absolute;
-  z-index: 2;
-  top: 66%;
-  left: 62%;
-  display: grid;
-  width: clamp(5.5rem, 10vw, 7rem);
-  aspect-ratio: 1;
-  place-items: center;
-  border-radius: 50%;
-  background-color: $acid;
-  color: $vinyl;
-  font-family: $font-family-mono;
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1.15;
-  text-align: center;
-  transform: rotate(10deg);
-
-  strong {
-    display: block;
-    font-family: $font-family-display;
-    font-size: 2em;
-    font-stretch: 78%;
-    font-weight: 800;
+  .groove-ref {
+    color: $heading;
+    font-size: 0.74rem;
+    font-style: normal;
   }
 }
 
-.groove-release__runout {
-  margin-top: 1.5rem;
-  color: $text-muted;
-  font-family: $font-family-mono;
-  font-size: 0.76rem;
-  letter-spacing: 0.06em;
-  text-align: center;
-}
-
 .groove-release__lead {
-  margin: 1.1rem 0 1.75rem;
+  max-width: 34rem;
+  margin: 1.25rem 0 2.25rem;
   color: $text-muted;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1.02rem;
+  line-height: 1.75;
 }
 
+// Pressing references, in two columns of small capitals and values.
 .groove-specs {
-  margin: 0 0 1.75rem;
-  border-top: 2px solid $heading;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+  margin: 0 0 2.25rem;
+  border-top: 1px solid $heading;
 
   div {
-    display: grid;
-    grid-template-columns: 8.5rem minmax(0, 1fr);
-    gap: 1rem;
-    padding-block: 0.55rem;
+    padding-block: 0.75rem;
     border-bottom: 1px solid $line;
   }
 
   dt {
-    color: $heading;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    line-height: 1.9;
+    margin-bottom: 0.2rem;
+    color: $text-muted;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
   }
 
   dd {
     margin: 0;
     color: $heading;
-    font-weight: 500;
+    font-size: 0.94rem;
+    line-height: 1.45;
+
+    &.groove-ref {
+      font-size: 0.82rem;
+    }
   }
 }
 
@@ -380,7 +338,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem 2rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.25rem;
 
   ol {
     margin: 0;
@@ -392,9 +350,9 @@
     display: grid;
     grid-template-columns: 2rem minmax(0, 1fr) auto;
     gap: 0.5rem;
-    padding-block: 0.3rem;
-    border-bottom: 1px dashed $line-strong;
-    font-size: 0.88rem;
+    align-items: baseline;
+    padding-block: 0.45rem;
+    border-bottom: 1px solid $line;
   }
 }
 
@@ -402,108 +360,121 @@
 .groove-tracklist__time {
   color: $text-muted;
   font-family: $font-family-mono;
-  font-size: 0.78rem;
-  line-height: 1.9;
+  font-size: 0.74rem;
 }
 
 .groove-tracklist__title {
   color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.15rem;
+  line-height: 1.2;
 }
 
 .groove-variants {
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.25rem;
 }
 
 .groove-variants__label {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
   color: $heading;
-  font-family: $font-family-display;
-  font-size: 1.1rem;
-  font-stretch: 80%;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .groove-pressings {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .groove-pressing {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.7rem;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.9rem 0.35rem 0.4rem;
-  border: 1px solid $field-border;
-  border-radius: $radius-pill;
-  color: $heading;
-  font-size: 0.86rem;
-  font-weight: 500;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  background-color: $page;
 
   &.is-selected {
     border-color: $heading;
     box-shadow: inset 0 0 0 1px $heading;
-    font-weight: 700;
   }
 }
 
 .groove-pressing__disc {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  grid-row: span 2;
   border-radius: 50%;
-  background: radial-gradient(circle, #F4F1E9 0 14%, transparent 15%), $vinyl;
+  background: radial-gradient(circle, #F4EFE5 0 12%, #B48A4F 13% 30%, transparent 31%), #121110;
   box-shadow: 0 0 0 1px $line-strong;
 }
 
-.groove-pressing--red .groove-pressing__disc {
-  background: radial-gradient(circle, #F4F1E9 0 14%, transparent 15%), #D0103F;
+.groove-pressing--clear .groove-pressing__disc {
+  background: radial-gradient(circle, #F4EFE5 0 12%, #B48A4F 13% 30%, transparent 31%), linear-gradient(135deg, rgba(#FFF, 0.7), rgba(#C9CED6, 0.6));
 }
 
-.groove-pressing--splatter .groove-pressing__disc {
-  background:
-    radial-gradient(circle, #F4F1E9 0 14%, transparent 15%),
-    radial-gradient(circle at 30% 30%, $hot 0 12%, transparent 13%),
-    radial-gradient(circle at 70% 64%, $electric 0 14%, transparent 15%),
-    radial-gradient(circle at 36% 76%, $vinyl 0 10%, transparent 11%),
-    $acid;
+.groove-pressing--blue .groove-pressing__disc {
+  background: radial-gradient(circle, #F4EFE5 0 12%, #F4EFE5 13% 30%, transparent 31%), $electric;
+}
+
+.groove-pressing__name {
+  color: $heading;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.groove-pressing__meta {
+  color: $text-muted;
+  font-size: 0.74rem;
+  line-height: 1.3;
 }
 
 .groove-pairs {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 
   ul {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.6rem;
+    gap: 0;
     margin: 0;
     padding: 0;
+    border-top: 1px solid $line;
     list-style: none;
   }
 
   li {
     display: flex;
     flex-direction: column;
-    padding: 0.75rem 0.85rem;
-    border: 1px solid $line;
-    border-left: 4px solid $hot;
-    border-radius: $radius-sm;
-    background-color: $page;
+    padding: 0.85rem 1rem 0.85rem 0;
+    border-bottom: 1px solid $line;
+
+    + li {
+      padding-left: 1rem;
+      border-left: 1px solid $line;
+    }
   }
 }
 
 .groove-pairs__name {
   color: $heading;
-  font-weight: 600;
-  line-height: 1.3;
+  font-family: $font-family-display;
+  font-size: 1.15rem;
+  line-height: 1.2;
 }
 
 .groove-pairs__meta {
+  margin-top: 0.2rem;
   color: $text-muted;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
 }
 
 @media (max-width: 1199.98px) {
@@ -522,7 +493,7 @@
   }
 
   .groove-promise__item:nth-child(n + 3) {
-    border-top: 1px solid $border-dark;
+    border-top: 1px solid $line;
   }
 
   .groove-products .products-grid {
@@ -531,6 +502,10 @@
 
   .groove-release__grid {
     grid-template-columns: 1fr;
+  }
+
+  .groove-release__visual {
+    position: static;
   }
 }
 
@@ -541,8 +516,17 @@
   }
 
   .groove-tracklist,
+  .groove-pressings {
+    grid-template-columns: 1fr;
+  }
+
   .groove-pairs ul {
     grid-template-columns: 1fr;
+  }
+
+  .groove-pairs li + li {
+    padding-left: 0;
+    border-left: 0;
   }
 }
 
@@ -555,26 +539,25 @@
     border-left: 0 !important;
 
     + .groove-promise__item {
-      border-top: 1px solid $border-dark;
+      border-top: 1px solid $line;
     }
   }
 
-  .groove-specs div {
+  .groove-specs {
     grid-template-columns: 1fr;
-    gap: 0;
   }
 }
 
-// Category roundels rendered after the hero (import collections): small records with the initial on the label.
+// Category roundels rendered after the hero (import collections): small records with the initial on a brass label.
 .groove-hero ~ .container .rounded-circle.bg-light {
   border: 0;
-  background: radial-gradient(circle, $acid 0 34%, $vinyl 35% 38%, transparent 38.5%), repeating-radial-gradient(circle, $vinyl 0 3px, #2B2B32 3px 4px) !important;
+  background: radial-gradient(circle, $brass 0 34%, #121110 35% 38%, transparent 38.5%), repeating-radial-gradient(circle, #121110 0 3px, #2B2A2E 3px 4px) !important;
   box-shadow: 0 0 0 1px if($dark, $line-strong, transparent);
-  color: $vinyl !important;
+  color: #121110 !important;
   font-family: $font-family-display;
-  font-size: 1.5rem;
-  font-weight: 800 !important;
-  transition: transform 500ms $ease;
+  font-size: 1.6rem;
+  font-weight: 400 !important;
+  transition: transform 600ms $ease;
 }
 
 .groove-hero ~ .container a:hover .rounded-circle.bg-light {
@@ -588,8 +571,8 @@
 .groove-hero ~ .container a:has(> .rounded-circle) span {
   margin-top: 0.8rem !important;
   color: $heading;
-  font-family: $font-family-display;
-  font-size: 1.1rem !important;
-  font-stretch: 80%;
-  font-weight: 800 !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
