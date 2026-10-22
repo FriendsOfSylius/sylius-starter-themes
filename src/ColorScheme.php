@@ -19,9 +19,10 @@ use function Castor\fs;
  */
 final readonly class ColorScheme
 {
+    /** Outside resources/, which only holds themes (one directory each). */
     public static function resourcesDir(): string
     {
-        return \dirname(__DIR__) . '/resources/color_scheme';
+        return \dirname(__DIR__) . '/color_scheme';
     }
 
     public static function install(App $app): void
