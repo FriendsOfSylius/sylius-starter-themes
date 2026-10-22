@@ -1,34 +1,37 @@
-// Top bar: a signal orange band, like the tape on a trail sign, with the delivery promise and the locale / currency
-// switchers in ink.
+// Top bar: a thin forest band with the delivery and returns promises and the locale / currency switchers.
 
 // The top bar sits above <header>, in the page wrapper.
 .bg-black:has(.summit-topbar) {
-  background-color: $signal !important;
-  color: $forest-night;
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  background-color: $forest-night !important;
+  color: #E3EBE5;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  @if $dark {
+    border-bottom: 1px solid $border-dark;
+  }
 
   a {
-    color: $forest-night;
+    color: $snow;
   }
 
   .btn-dark {
     --bs-btn-bg: transparent;
-    --bs-btn-border-color: #{rgba($forest-night, 0.45)};
-    --bs-btn-color: #{$forest-night};
-    --bs-btn-hover-bg: #{$forest-night};
-    --bs-btn-hover-border-color: #{$forest-night};
+    --bs-btn-border-color: #{$border-dark};
+    --bs-btn-color: #{$snow};
+    --bs-btn-hover-bg: #{$forest};
+    --bs-btn-hover-border-color: #{$signal};
     --bs-btn-hover-color: #{$snow};
-    --bs-btn-active-bg: #{$forest-night};
-    --bs-btn-active-border-color: #{$forest-night};
+    --bs-btn-active-bg: #{$forest};
+    --bs-btn-active-border-color: #{$signal};
     --bs-btn-active-color: #{$snow};
 
     min-height: 1.9rem;
     padding: 0.2rem 0.75rem;
     font-family: $font-family-sans-serif;
     font-size: 0.7rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
   }
 
   .dropdown-menu-dark {
@@ -38,7 +41,7 @@
   }
 
   :focus-visible {
-    outline-color: $forest-night;
+    outline-color: $signal-light;
   }
 }
 
@@ -50,6 +53,7 @@
 
 .summit-topbar__item + .summit-topbar__item::before {
   margin-right: 1.5rem;
+  color: $signal-light;
   content: "▲";
   font-size: 0.55rem;
   vertical-align: 0.15em;

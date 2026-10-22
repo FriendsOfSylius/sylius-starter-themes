@@ -4,26 +4,17 @@
   padding-block: clamp(3.5rem, 7vw, 6rem);
 }
 
-// Activities: six dark tiles with a pictogram, the terrain level, the name in big capitals and the gear families.
+// Activities: four photo tiles right under the hero, the name in big capitals over a shaded foot.
+// Photographs on Unsplash (Unsplash License): Alex Gruber, Brian Erickson, Patrick Hendry, Frank Zinsli.
 
 .summit-activities {
-  padding-block: clamp(4rem, 8vw, 6.5rem) clamp(2rem, 4vw, 3rem);
-}
-
-.summit-activities .summit-section-head__lead {
-  max-width: 26rem;
-  margin: 0;
+  padding-top: clamp(1rem, 2vw, 1.5rem);
 }
 
 .summit-activities__items {
   display: grid;
-
-  > li {
-    container-type: inline-size;
-  }
-
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -32,27 +23,34 @@
 .summit-activity__link {
   position: relative;
   display: flex;
-  height: 100%;
-  min-height: 15rem;
+  min-height: clamp(11rem, 16vw, 15rem);
   flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
-  padding: 1.25rem;
-  border-radius: $radius;
+  isolation: isolate;
+  padding: 1.25rem 1.4rem;
+  border-radius: $radius-sm;
   background-color: $forest;
-  background-image:
-    repeating-radial-gradient(circle at 110% 110%, transparent 0 18px, rgba(#FFF, 0.07) 18px 19px),
-    linear-gradient(160deg, $moss, $forest-night);
+  background-position: center;
+  background-size: cover;
   color: $snow;
   text-decoration: none;
-  transition: transform 250ms $ease, box-shadow 250ms $ease;
 
-  // Orange bar rising from the bottom on hover.
+  // Shaded foot, so the name reads on any photograph, and a slow zoom of the picture on hover.
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(0deg, rgba($forest-night, 0.88) 0%, rgba($forest-night, 0.35) 45%, rgba($forest-night, 0) 70%);
+    content: "";
+  }
+
   &::after {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
-    height: 5px;
+    height: 4px;
     background-color: $signal;
     content: "";
     transform: scaleX(0);
@@ -62,57 +60,81 @@
 
   &:hover,
   &:focus-visible {
-    box-shadow: $shadow-float;
     color: $snow;
-    transform: translateY(-4px);
 
     &::after {
       transform: scaleX(1);
     }
+
+    .summit-activity__name::after {
+      transform: translateX(6px);
+    }
   }
 }
 
-.summit-activity:nth-child(even) .summit-activity__link {
-  background-image:
-    repeating-radial-gradient(circle at -10% 110%, transparent 0 18px, rgba(#FFF, 0.07) 18px 19px),
-    linear-gradient(160deg, #4A5650, #1A2420);
-}
-
-.summit-activity__icon {
-  width: 2.6rem;
-  height: 2.6rem;
-  margin-bottom: auto;
-  fill: none;
-  stroke: $signal-light;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.6;
-}
+.summit-activity--hiking .summit-activity__link { background-image: url("../images/hiking.webp"); }
+.summit-activity--trail .summit-activity__link { background-image: url("../images/trail-running.webp"); background-position: 60% 50%; }
+.summit-activity--climbing .summit-activity__link { background-image: url("../images/climbing.webp"); background-position: 30% 50%; }
+.summit-activity--bivouac .summit-activity__link { background-image: url("../images/bivouac.webp"); }
 
 .summit-activity__level {
-  margin-top: 1.5rem;
-  color: #D5E0D8;
-  font-size: 0.7rem;
+  color: #E3EBE5;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.1em;
+  text-shadow: 0 1px 2px rgba(#000, 0.5);
   text-transform: uppercase;
 }
 
 .summit-activity__name {
-  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-family: $font-family-display;
-  // Sized on the tile, so the longest name ("Mountaineering") holds on one line.
-  font-size: min(1.85rem, 11cqi);
-  font-weight: 800;
-  line-height: 0.95;
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(#000, 0.45);
   text-transform: uppercase;
+
+  &::after {
+    content: "→";
+    font-family: $font-family-sans-serif;
+    font-size: 0.7em;
+    font-weight: 400;
+    transition: transform 220ms $ease;
+  }
 }
 
-.summit-activity__gear {
-  margin-top: 0.6rem;
-  color: #D5E0D8;
-  font-size: 0.82rem;
-  line-height: 1.45;
+// Featured gear: an editorial intro next to the latest products.
+
+.summit-products__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 16rem) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.summit-products__intro {
+  position: sticky;
+  top: 2rem;
+
+  h2 {
+    margin: 0;
+    font-size: clamp(2.2rem, 3.4vw, 3rem);
+  }
+}
+
+.summit-products__lead {
+  margin: 1.1rem 0 1.75rem;
+  color: $text-muted;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.summit-products .products-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 // Gear spotlight.
@@ -352,25 +374,30 @@
   font-size: 0.8rem;
 }
 
-@media (max-width: 1199.98px) {
-  .summit-activities__items {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 991.98px) {
-  .summit-gear__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 575.98px) {
   .summit-activities__items {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .summit-products__layout,
+  .summit-gear__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summit-products__intro {
+    position: static;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .summit-products .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
   .summit-activity__link {
-    min-height: 12rem;
+    min-height: 9.5rem;
     padding: 1rem;
   }
 
@@ -387,9 +414,9 @@
 
 // Category roundels rendered after the hero (import collections): forest badges with a condensed initial.
 .summit-hero ~ .container .rounded-circle.bg-light {
-  border: 0;
-  background-color: $heading !important;
-  color: $page !important;
+  border: 1px solid $line-strong;
+  background-color: $surface !important;
+  color: $heading !important;
   font-family: $font-family-display;
   font-size: 1.8rem;
   font-weight: 800 !important;
@@ -397,7 +424,8 @@
 }
 
 .summit-hero ~ .container a:hover .rounded-circle.bg-light {
-  background-color: $accent-text !important;
+  border-color: $signal;
+  color: $signal-text !important;
 }
 
 .summit-hero + .container {

@@ -1,31 +1,14 @@
-{# Summit activities: shop by activity, six tiles with a pictogram, a terrain line and the gear families. #}
-{% set summit_activities = [
-    {key: 'hiking', icon: 'M8 4.5a1.5 1.5 0 1 0 0 .01M7 21l2.5-7 2.5 2v5M9.5 14l1-5 3 2.5 2.5 1M10.5 9l-3 2-1 3M16 9l2 12'},
-    {key: 'trail', icon: 'M14 4.5a1.5 1.5 0 1 0 0 .01M5 21l4-5 3 1 1-5 3 3h3M13 12l-2-3-3 1-2 3M17 6l1.5 1.5'},
-    {key: 'mountaineering', icon: 'M3 20l6-11 3 5 2-3 7 9zM9 9l1.6 3H7.4zM17 4v6M17 4l3 1.5-3 1.5'},
-    {key: 'climbing', icon: 'M13 4.5a1.5 1.5 0 1 0 0 .01M6 21l3-6 2 1V10l3 3h4M11 10l-3-2-2 3M16 4l3 2M19 3v18'},
-    {key: 'bivouac', icon: 'M2 20h20M4 20L12 6l8 14M12 6v14M9 20l3-5 3 5M18 4.5a1.5 1.5 0 1 0 0 .01'},
-    {key: 'snow', icon: 'M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M10 4.5l2 2 2-2M10 19.5l2-2 2 2'},
-] %}
-
+{# Summit activities: shop by activity, four photo tiles (photographs set by _sections.scss). #}
 <section id="summit-activities" class="summit-activities" aria-labelledby="summit-activities-title">
     <div class="container">
-        <div class="summit-section-head summit-section-head--split">
-            <div>
-                <p class="summit-eyebrow">{{ 'summit.activities.eyebrow'|trans({}, 'summit') }}</p>
-                <h2 id="summit-activities-title">{{ 'summit.activities.title'|trans({}, 'summit')|raw }}</h2>
-            </div>
-            <p class="summit-section-head__lead">{{ 'summit.activities.lead'|trans({}, 'summit') }}</p>
-        </div>
+        <h2 id="summit-activities-title" class="visually-hidden">{{ 'summit.activities.title'|trans({}, 'summit') }}</h2>
 
         <ul class="summit-activities__items" role="list">
-            {% for activity in summit_activities %}
-                <li class="summit-activity summit-activity--{{ activity.key }}">
+            {% for activity in ['hiking', 'trail', 'climbing', 'bivouac'] %}
+                <li class="summit-activity summit-activity--{{ activity }}">
                     <a class="summit-activity__link" href="#summit-latest-products">
-                        <svg class="summit-activity__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ activity.icon }}"/></svg>
-                        <span class="summit-activity__level">{{ ('summit.activities.' ~ activity.key ~ '.level')|trans({}, 'summit') }}</span>
-                        <span class="summit-activity__name">{{ ('summit.activities.' ~ activity.key ~ '.name')|trans({}, 'summit') }}</span>
-                        <span class="summit-activity__gear">{{ ('summit.activities.' ~ activity.key ~ '.gear')|trans({}, 'summit') }}</span>
+                        <span class="summit-activity__level">{{ ('summit.activities.' ~ activity ~ '.level')|trans({}, 'summit') }}</span>
+                        <span class="summit-activity__name">{{ ('summit.activities.' ~ activity ~ '.name')|trans({}, 'summit') }}</span>
                     </a>
                 </li>
             {% endfor %}

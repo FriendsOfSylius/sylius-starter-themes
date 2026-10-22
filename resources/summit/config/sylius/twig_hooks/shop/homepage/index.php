@@ -16,7 +16,7 @@ return App::config([
                 ],
                 'theme_activities' => [
                     'template' => 'shop/homepage/activities.html.twig',
-                    'priority' => 150,
+                    'priority' => 280,
                 ],
                 'theme_gear' => [
                     'template' => 'shop/homepage/gear.html.twig',
@@ -24,7 +24,7 @@ return App::config([
                 ],
                 'latest_products' => [
                     'props' => [
-                        'limit' => 8,
+                        'limit' => 6,
                         'template' => 'shop/product/common/list.html.twig',
                     ],
                 ],

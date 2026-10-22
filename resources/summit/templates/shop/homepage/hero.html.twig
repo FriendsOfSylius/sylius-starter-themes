@@ -1,12 +1,9 @@
-{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback.
+   The default photograph (a hiker on a ridge at sunset) is set by _hero.scss. #}
 <section class="summit-hero" aria-labelledby="summit-hero-title">
-    <div class="summit-hero__backdrop">
-        {% if hero.image %}
-            <img class="summit-hero__photo" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
-        {% else %}
-            {% include 'shop/homepage/hero/landscape.html.twig' %}
-        {% endif %}
-    </div>
+    {% if hero.image %}
+        <img class="summit-hero__photo" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+    {% endif %}
 
     <div class="container summit-hero__inner">
         <div class="summit-hero__copy">
@@ -14,45 +11,9 @@
             <h1 id="summit-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'summit.hero.title'|trans({}, 'summit')|raw }}{% endif %}</h1>
             <p class="summit-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'summit.hero.lead'|trans({}, 'summit')|raw }}{% endif %}</p>
 
-            <div class="summit-hero__actions">
-                <a class="btn btn-primary" href="{{ hero.ctaUrl ?? '#summit-latest-products' }}">
-                    {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'summit.hero.cta'|trans({}, 'summit') }}{% endif %}
-                </a>
-                <a class="btn summit-btn-ghost" href="#summit-activities">{{ 'summit.hero.secondary_cta'|trans({}, 'summit') }}</a>
-            </div>
-        </div>
-
-        {# Trail report: the conditions of the day, like the board at a trailhead. #}
-        <aside class="summit-report" aria-labelledby="summit-report-title">
-            <p class="summit-report__kicker">{{ 'summit.report.kicker'|trans({}, 'summit') }}</p>
-            <p id="summit-report-title" class="summit-report__title">{{ 'summit.report.title'|trans({}, 'summit') }}</p>
-            <dl class="summit-report__items">
-                {% for item in ['altitude', 'temperature', 'wind', 'daylight'] %}
-                    <div>
-                        <dt>{{ ('summit.report.' ~ item ~ '.label')|trans({}, 'summit') }}</dt>
-                        <dd>{{ ('summit.report.' ~ item ~ '.value')|trans({}, 'summit') }}</dd>
-                    </div>
-                {% endfor %}
-            </dl>
-            <p class="summit-report__advice">{{ 'summit.report.advice'|trans({}, 'summit') }}</p>
-        </aside>
-    </div>
-
-    {# Elevation profile of the route, with its figures. #}
-    <div class="summit-profile">
-        <svg class="summit-profile__line" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-            <path class="summit-profile__area" d="M0 60V52C80 50 140 44 210 40S330 22 400 26 520 12 600 8 700 18 760 24 880 14 940 20 1060 40 1200 46V60Z"/>
-            <path class="summit-profile__stroke" d="M0 52C80 50 140 44 210 40S330 22 400 26 520 12 600 8 700 18 760 24 880 14 940 20 1060 40 1200 46"/>
-        </svg>
-        <div class="container">
-            <ul class="summit-profile__items" role="list">
-                {% for item in 1..4 %}
-                    <li>
-                        <span class="summit-profile__value">{{ ('summit.figures.item_' ~ item ~ '.value')|trans({}, 'summit') }}</span>
-                        <span class="summit-profile__text">{{ ('summit.figures.item_' ~ item ~ '.text')|trans({}, 'summit') }}</span>
-                    </li>
-                {% endfor %}
-            </ul>
+            <a class="btn btn-primary summit-btn-arrow" href="{{ hero.ctaUrl ?? '#summit-latest-products' }}">
+                {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'summit.hero.cta'|trans({}, 'summit') }}{% endif %}
+            </a>
         </div>
     </div>
 </section>

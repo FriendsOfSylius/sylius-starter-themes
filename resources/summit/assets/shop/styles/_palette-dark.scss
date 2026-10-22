@@ -1,4 +1,4 @@
-// Summit, dark scheme — a night bivouac: pine-black ground, mineral grey type and the same signal orange.
+// Summit, dark scheme — an outdoor store at dusk: dark pine and slate, warm mineral type and the same signal orange.
 $color-mode: dark;
 
 // House colours. The forest bands are a shade greener than the page, and ruled in orange, to stand out from it.
@@ -12,22 +12,22 @@ $snow: #FFFFFF;
 $text-on-dark: #C9D6CD;
 $border-dark: rgba(#FFF, 0.14);
 
-// Pine-black ground and slate.
-$page: #0C120F;
-$surface: #141C17;
-$surface-raised: #1E2822;
-$line: #2C3830;
-$line-strong: #46534A;
+// Dark pine and slate, with warm mineral type.
+$page: #121613;
+$surface: #1A1F1B;
+$surface-raised: #242A25;
+$line: #333A34;
+$line-strong: #4E5750;
 // Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
 $field-border: #7F8C83;
-$heading: #EEF3EF;
-$text: #CED7D1;
-$text-muted: #9EAAA2;
+$heading: #F1EFE8;
+$text: #D6D6CE;
+$text-muted: #A8ABA2;
 
 // Signal orange fills the calls to action, with ink on it; as text, the accent turns to a lichen green.
 $accent: $signal;
 $accent-hover: #FF925A;
-$on-accent: #0C120F;
+$on-accent: #121613;
 $accent-text: #8FD6A3;
 $accent-text-hover: #B5E8C3;
 $signal-text: #FF9A5E;

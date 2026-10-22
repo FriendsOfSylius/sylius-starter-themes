@@ -1,277 +1,100 @@
-// Full-bleed mountain hero: a range at first light (a starry night in the dark scheme) behind condensed capitals,
-// a trail report card, and the elevation profile of the route with its figures as a closing band.
+// Photographic hero: a hiker on a ridge at sunset, full bleed, with condensed capitals and a single orange call to
+// action on the shaded side. The photograph stays the same in both schemes; the dark scheme only deepens the shade.
 
 .summit-hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   background-color: $forest-night;
+  // Photograph by Adrià Sánchez Roqué on Unsplash (Unsplash License).
+  background-image: url("../images/hero-1280.webp");
+  background-position: 62% 60%;
+  background-size: cover;
   color: $text-on-dark;
-}
 
-.summit-hero__backdrop {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
+  @media (min-width: 1281px), (min-resolution: 1.5dppx) {
+    background-image: url("../images/hero-2560.webp");
+  }
 
-  // The copy side is shaded, so the white type keeps its contrast on any sky.
-  &::after {
+  // The copy side is shaded, so the white type keeps its contrast on the bright sky.
+  &::before {
     position: absolute;
+    z-index: -1;
     inset: 0;
     background:
-      linear-gradient(90deg, rgba($forest-night, 0.92) 0%, rgba($forest-night, 0.7) 38%, rgba($forest-night, 0) 68%),
-      linear-gradient(0deg, rgba($forest-night, 0.85) 0%, rgba($forest-night, 0) 30%);
+      linear-gradient(90deg, rgba($forest-night, if($dark, 0.92, 0.86)) 0%, rgba($forest-night, if($dark, 0.7, 0.55)) 40%, rgba($forest-night, if($dark, 0.35, 0)) 72%),
+      linear-gradient(0deg, rgba($forest-night, if($dark, 0.6, 0.35)) 0%, rgba($forest-night, 0) 35%);
     content: "";
   }
 }
 
-.summit-hero__landscape,
+// A photograph contributed through the hero slot replaces the default one.
 .summit-hero__photo {
-  display: block;
+  position: absolute;
+  z-index: -2;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-// Landscape colours: first light, or the same range under the stars.
-.summit-sky__top { stop-color: if($dark, #050B12, #23405A); }
-.summit-sky__mid { stop-color: if($dark, #0D1C26, #6E8C99); }
-.summit-sky__low { stop-color: if($dark, #1A2F33, #E9B38A); }
-.summit-glow__core { stop-color: if($dark, #DDE8F0, #FFD7A8); stop-opacity: if($dark, 0.18, 0.75); }
-.summit-glow__edge { stop-color: if($dark, #DDE8F0, #FFD7A8); stop-opacity: 0; }
-
-.summit-hero__sun {
-  fill: if($dark, #E9EEF2, #FFE4BF);
-}
-
-.summit-hero__stars {
-  fill: #FFF;
-  opacity: if($dark, 1, 0);
-}
-
-.summit-hero__range--far { fill: if($dark, #1B2C35, #8197A0); }
-.summit-hero__range--main { fill: if($dark, #22333A, #5E737B); }
-.summit-hero__snow { fill: if($dark, #9FB2BC, #F4F6F7); }
-.summit-hero__facets { fill: #000; opacity: 0.16; }
-.summit-hero__range--mid { fill: if($dark, #10261B, #2C5138); }
-.summit-hero__pines--far { fill: if($dark, #0C2016, #23452F); }
-.summit-hero__range--near { fill: if($dark, #08160F, #173322); }
-.summit-hero__pines--near { fill: if($dark, #06110B, #11281A); }
-
-.summit-hero__trail {
-  fill: none;
-  stroke: $signal;
-  stroke-dasharray: 2 9;
-  stroke-linecap: round;
-  stroke-width: 4;
-}
-
-.summit-hero__blaze rect { fill: $signal; }
-.summit-hero__blaze .summit-hero__blaze-white { fill: #FFF; }
-
-.summit-hero__contours {
-  fill: none;
-  stroke: #FFF;
-  stroke-opacity: 0.07;
-}
-
 .summit-hero__inner {
-  display: grid;
-  min-height: clamp(34rem, 72vh, 46rem);
-  grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
-  gap: 2.5rem;
-  align-items: end;
-  padding-block: clamp(4rem, 9vw, 7rem) clamp(5.5rem, 9vw, 7rem);
+  display: flex;
+  min-height: clamp(30rem, 68vh, 42rem);
+  align-items: center;
+  padding-block: clamp(4rem, 8vw, 6.5rem);
 }
 
 .summit-hero__copy {
-  max-width: 44rem;
+  max-width: 40rem;
 }
 
 .summit-hero h1 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.4rem;
   color: $snow;
-  font-size: clamp(3.4rem, 8.4vw, 7.5rem);
-  font-weight: 800;
-  letter-spacing: -0.005em;
-  line-height: 0.88;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 0.9;
 
   em {
-    display: block;
-    color: $signal-light;
+    color: $snow;
+    font-style: normal;
   }
 }
 
 .summit-hero__lead {
-  max-width: 34rem;
+  max-width: 26rem;
   margin-bottom: 2.25rem;
-  color: #E3EBE5;
-  font-size: clamp(1.02rem, 1.4vw, 1.15rem);
-  line-height: 1.7;
-
-  strong {
-    color: $snow;
-  }
+  color: #EEF2EF;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.55;
 }
 
-.summit-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem;
+// Arrow closing the hero call to action.
+.summit-btn-arrow::after {
+  margin-left: 0.85rem;
+  content: "→";
+  font-family: $font-family-sans-serif;
+  transition: transform 220ms $ease;
 }
 
-// Trail report card, frosted on the landscape.
-.summit-report {
-  padding: 1.4rem 1.5rem;
-  border: 1px solid rgba(#FFF, 0.2);
-  border-top: 4px solid $signal;
-  border-radius: $radius;
-  background-color: rgba($forest-night, 0.78);
-  backdrop-filter: blur(10px);
-  color: #E3EBE5;
-
-  p {
-    margin: 0;
-  }
+.summit-btn-arrow:hover::after {
+  display: inline-block;
+  transform: translateX(4px);
 }
 
-.summit-report__kicker {
-  color: $signal-light;
-  font-family: $font-family-display;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
+@media (max-width: 767.98px) {
+  .summit-hero {
+    background-position: 58% 60%;
 
-.summit-report__title {
-  margin-top: 0.3rem !important;
-  color: $snow;
-  font-family: $font-family-display;
-  font-size: 1.7rem;
-  font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.summit-report__items {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 1.25rem 0;
-
-  div {
-    padding-top: 0.6rem;
-    border-top: 1px solid rgba(#FFF, 0.16);
-  }
-
-  dt {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  dd {
-    margin: 0.15rem 0 0;
-    color: $snow;
-    font-family: $font-family-display;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-  }
-}
-
-.summit-report__advice {
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-// Elevation profile band.
-
-.summit-profile {
-  position: relative;
-  background-color: $forest-night;
-}
-
-.summit-profile__line {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 3.5rem;
-}
-
-.summit-profile__area {
-  fill: $forest-night;
-}
-
-.summit-profile__stroke {
-  fill: none;
-  stroke: $signal;
-  stroke-width: 2.5;
-  vector-effect: non-scaling-stroke;
-}
-
-.summit-profile__items {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    padding: 1.1rem 1.25rem 1.5rem;
-
-    + li {
-      border-left: 1px solid $border-dark;
+    &::before {
+      background: linear-gradient(0deg, rgba($forest-night, 0.92) 0%, rgba($forest-night, 0.6) 55%, rgba($forest-night, 0.3) 100%);
     }
   }
-}
 
-.summit-profile__value {
-  color: $snow;
-  font-family: $font-family-display;
-  font-size: clamp(1.9rem, 3vw, 2.6rem);
-  font-weight: 800;
-  line-height: 1;
-}
-
-.summit-profile__text {
-  color: $text-on-dark;
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 991.98px) {
   .summit-hero__inner {
-    min-height: 0;
-    grid-template-columns: 1fr;
-  }
-
-  .summit-hero__backdrop::after {
-    background: linear-gradient(0deg, rgba($forest-night, 0.94) 0%, rgba($forest-night, 0.72) 55%, rgba($forest-night, 0.35) 100%);
-  }
-
-  .summit-report {
-    max-width: 26rem;
-  }
-
-  .summit-profile__items {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    li:nth-child(3) {
-      border-left: 0;
-    }
-
-    li:nth-child(n + 3) {
-      border-top: 1px solid $border-dark;
-    }
+    min-height: 34rem;
+    align-items: flex-end;
   }
 }

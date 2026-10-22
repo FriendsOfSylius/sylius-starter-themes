@@ -5,80 +5,38 @@ summit:
         delivery: 'Free delivery from €60 · shipped within 24 h'
         returns: '60-day returns · free repairs on our gear'
     hero:
-        eyebrow: 'Hiking · trail · mountaineering'
-        title: 'Go higher, <em>carry lighter.</em>'
-        lead: 'Technical gear chosen and field-tested by mountain guides: packs, layers, footwear and the kit that goes with them, from the first trail to the summit ridge.'
-        cta: 'Shop the gear'
-        secondary_cta: 'Shop by activity'
-    report:
-        kicker: 'Trail report'
-        title: 'Col de la Croix'
-        altitude:
-            label: 'Altitude'
-            value: '2,381 m'
-        temperature:
-            label: 'At the col'
-            value: '6 °C'
-        wind:
-            label: 'Wind'
-            value: '25 km/h'
-        daylight:
-            label: 'Daylight'
-            value: '11 h 40'
-        advice: 'Dry trail, snow above 2,600 m: pack a windproof layer and poles.'
-    figures:
-        item_1:
-            value: '1,200+'
-            text: 'products tested in the field'
-        item_2:
-            value: '24 h'
-            text: 'dispatch, Monday to Saturday'
-        item_3:
-            value: '60 days'
-            text: 'to try and return'
-        item_4:
-            value: '2 years'
-            text: 'warranty, repairs for life'
+        eyebrow: 'Outdoor gear'
+        title: 'Go further.'
+        lead: 'Equipment for the places that stay with you.'
+        cta: 'Explore the collection'
     products:
-        eyebrow:
-            latest: 'New in store'
+        eyebrow: 'Featured gear'
+        title: 'Trusted by explorers'
+        lead: 'Premium gear for your next adventure, tested in the field by mountain guides. Built to perform, made to last.'
+        cta: 'See the spec sheet'
     activities:
-        eyebrow: 'Shop by activity'
-        title: 'Pick your terrain, <em>we kit you out.</em>'
-        lead: 'Each activity gathers the packs, layers, footwear and accessories our guides would take with them.'
+        title: 'Shop by activity'
         hiking:
             name: 'Hiking'
             level: 'Trails · day hikes'
-            gear: 'Day packs, boots, poles'
         trail:
             name: 'Trail running'
             level: 'Fast · light'
-            gear: 'Vests, shoes, flasks'
-        mountaineering:
-            name: 'Mountaineering'
-            level: 'Glaciers · ridges'
-            gear: 'Harnesses, crampons, shells'
         climbing:
             name: 'Climbing'
             level: 'Crag · multi-pitch'
-            gear: 'Ropes, shoes, quickdraws'
         bivouac:
-            name: 'Bivouac'
+            name: 'Camping'
             level: 'Nights out'
-            gear: 'Tents, sleeping bags, stoves'
-        snow:
-            name: 'Snow'
-            level: 'Snowshoes · ski touring'
-            gear: 'Snowshoes, probes, gloves'
     gear:
-        eyebrow: 'Gear spotlight'
+        eyebrow: 'Spec sheet'
         title: 'Ridge 38, <em>built for the long day.</em>'
         lead: 'Every product page lists the technical specs, the colours and sizes in stock and the gear that goes with it.'
         illustration: 'The Ridge 38 technical backpack, in forest green with orange zips, with four numbered call-outs.'
         callout_1: 'Roll-top lid, 20,000 mm waterproof'
         callout_2: 'Load lifters and adjustable back length'
         callout_3: 'Stretch front pocket for a shell'
-        callout_4: 'Side pocket for a 1 L bottle'
+        callout_4: 'Side pocket for a 1 L water bottle'
         specs:
             volume:
                 label: 'Volume'
