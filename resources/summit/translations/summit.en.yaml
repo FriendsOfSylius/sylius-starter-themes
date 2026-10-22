@@ -14,6 +14,20 @@ summit:
         title: 'Trusted by explorers'
         lead: 'Premium gear for your next adventure, tested in the field by mountain guides. Built to perform, made to last.'
         cta: 'See the spec sheet'
+    promise:
+        title: 'Our promise'
+        tested:
+            title: 'Tested in the field'
+            text: 'Every product is worn on the trail by our mountain guides before it reaches the store.'
+        dispatch:
+            title: 'Shipped within 24 h'
+            text: 'Monday to Saturday, free delivery from €60.'
+        returns:
+            title: '60-day returns'
+            text: 'Try your gear outside, not only in the living room.'
+        repair:
+            title: 'Repairs for life'
+            text: 'Our workshop mends the gear we sell, two-year warranty included.'
     activities:
         title: 'Shop by activity'
         hiking:

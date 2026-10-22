@@ -14,6 +14,20 @@ summit:
         title: 'Approuvé par les explorateurs'
         lead: 'Un équipement haut de gamme pour votre prochaine aventure, testé sur le terrain par des guides de montagne. Conçu pour performer, fait pour durer.'
         cta: 'Voir la fiche technique'
+    promise:
+        title: 'Notre engagement'
+        tested:
+            title: 'Testé sur le terrain'
+            text: 'Chaque produit est porté sur le sentier par nos guides de montagne avant d’entrer en boutique.'
+        dispatch:
+            title: 'Expédié sous 24 h'
+            text: 'Du lundi au samedi, livraison offerte dès 60 €.'
+        returns:
+            title: 'Retours 60 jours'
+            text: 'Essayez votre équipement dehors, pas seulement au salon.'
+        repair:
+            title: 'Réparation à vie'
+            text: 'Notre atelier répare le matériel que nous vendons, garantie deux ans incluse.'
     activities:
         title: 'Par activité'
         hiking:

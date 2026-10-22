@@ -18,6 +18,10 @@ return App::config([
                     'template' => 'shop/homepage/activities.html.twig',
                     'priority' => 280,
                 ],
+                'theme_promise' => [
+                    'template' => 'shop/homepage/promise.html.twig',
+                    'priority' => 150,
+                ],
                 'theme_gear' => [
                     'template' => 'shop/homepage/gear.html.twig',
                     'priority' => -50,
