@@ -1,0 +1,8 @@
+# Groove demo catalog: the genres the records are sorted by (see products.yaml).
+collections:
+    -   name: Jazz
+    -   name: Soul & Funk
+    -   name: Rock
+    -   name: Electronic
+    -   name: Hip-Hop
+    -   name: World

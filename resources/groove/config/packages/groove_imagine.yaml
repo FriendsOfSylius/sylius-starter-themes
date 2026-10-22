@@ -1,0 +1,6 @@
+# Groove: record sleeves are square, so the product card thumbnail is cropped square instead of the shop's 3:4 portrait.
+liip_imagine:
+    filter_sets:
+        sylius_shop_product_thumbnail:
+            filters:
+                thumbnail: { size: [600, 600], mode: outbound }

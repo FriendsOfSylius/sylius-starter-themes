@@ -67,8 +67,9 @@ a:has(> #main-image) {
 
 .offcanvas-title {
   font-family: $font-family-display;
-  font-size: 1.9rem;
-  font-weight: 400;
+  font-size: 1.8rem;
+  font-stretch: 80%;
+  font-weight: 800;
 }
 
 .table {

@@ -1,6 +1,6 @@
 // Homepage sections: the crates by genre, the promise, the new arrivals and the pressing of the month (a collector's
-// sheet: pressing references, tracklist, editions, what to play it on). The interface stays black, ivory and brass;
-// only the sleeves and the coloured records carry the saturated colours.
+// sheet: pressing references, tracklist, editions, what to play it on). The sleeves are large and carry the colour,
+// the interface echoes it in its accents.
 
 .groove-genres,
 .groove-products {
@@ -8,15 +8,15 @@
 }
 
 .groove-section-head h2 {
-  max-width: 18ch;
+  max-width: 16ch;
 }
 
 // Crates: six sleeves with flat cover art, a record tucked behind each one, sliding out and turning on hover.
 
 .groove-crates {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(2rem, 3vw, 2.75rem) clamp(1rem, 2vw, 1.75rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(3rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -33,7 +33,7 @@
     color: $heading;
 
     .groove-crate__sleeve::before {
-      transform: translateY(-16%) rotate(160deg);
+      transform: translateY(-17%) rotate(220deg);
     }
 
     .groove-crate__art {
@@ -60,10 +60,11 @@
     inset: 3%;
     border-radius: 50%;
     background:
-      radial-gradient(circle, $page 0 2%, var(--groove-label, #{$brass}) 2.5% 16%, #121110 16.5% 18%, transparent 18.5%),
-      repeating-radial-gradient(circle, #121110 0 3px, #2B2A2E 3px 4px);
+      radial-gradient(circle, $page 0 2%, var(--groove-label, #{$hot}) 2.5% 16%, #0E0D10 16.5% 18%, transparent 18.5%),
+      repeating-radial-gradient(circle, #0E0D10 0 3px, #2B2A2E 3px 4px);
     content: "";
-    transition: transform 500ms $ease;
+    transform: translateY(-4%);
+    transition: transform 700ms $ease;
   }
 }
 
@@ -72,7 +73,7 @@
   width: 100%;
   height: 100%;
   border-radius: $radius-sm;
-  background-color: #121110;
+  background-color: #0E0D10;
   box-shadow: $shadow-soft;
   transition: box-shadow 260ms ease, transform 260ms $ease;
 }
@@ -84,7 +85,7 @@
   .groove-crate__art {
     background:
       radial-gradient(circle at 32% 68%, $acid 0 26%, transparent 26.5%),
-      linear-gradient(90deg, transparent 64%, #121110 64% 76%, transparent 76%),
+      linear-gradient(90deg, transparent 64%, #0E0D10 64% 76%, transparent 76%),
       $electric;
   }
 }
@@ -101,7 +102,7 @@
   --groove-label: #{$hot};
 
   .groove-crate__art {
-    background: repeating-linear-gradient(-45deg, #121110 0 14%, $hot 14% 34%);
+    background: repeating-linear-gradient(-45deg, #0E0D10 0 14%, $hot 14% 34%);
   }
 }
 
@@ -113,7 +114,7 @@
       radial-gradient(circle at 70% 30%, $hot 0 18%, transparent 18.5%),
       linear-gradient($mint 2px, transparent 2px) 0 0 / 14% 14%,
       linear-gradient(90deg, $mint 2px, transparent 2px) 0 0 / 14% 14%,
-      #121110;
+      #0E0D10;
   }
 }
 
@@ -122,8 +123,8 @@
 
   .groove-crate__art {
     background:
-      linear-gradient(0deg, #121110 0 22%, transparent 22%),
-      radial-gradient(circle, #121110 0 26%, transparent 28%) 0 0 / 16% 16%,
+      linear-gradient(0deg, #0E0D10 0 22%, transparent 22%),
+      radial-gradient(circle, #0E0D10 0 26%, transparent 28%) 0 0 / 16% 16%,
       $acid;
   }
 }
@@ -139,16 +140,35 @@
   }
 }
 
+.groove-crate__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid $line;
+}
+
+.groove-crate__index {
+  color: $accent-text;
+  font-family: $font-family-mono;
+  font-size: 0.74rem;
+}
+
 .groove-crate__name {
-  margin-top: 1.1rem;
+  display: block;
   font-family: $font-family-display;
-  font-size: clamp(1.4rem, 1.9vw, 1.7rem);
-  line-height: 1.05;
+  font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+  font-stretch: 78%;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
   transition: color 200ms ease;
 }
 
 .groove-crate__styles {
-  margin-top: 0.4rem;
+  display: block;
+  margin-top: 0.5rem;
   color: $text-muted;
   font-size: 0.66rem;
   font-weight: 600;
@@ -164,7 +184,8 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
   padding: 0;
-  border-block: 1px solid $line-strong;
+  border-top: 3px solid $heading;
+  border-bottom: 1px solid $line-strong;
   list-style: none;
 }
 
@@ -182,17 +203,21 @@
 
 .groove-promise__number {
   display: block;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   color: $accent-text;
-  font-family: $font-family-mono;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-family: $font-family-accent;
+  font-size: 2.6rem;
+  font-style: italic;
+  line-height: 1;
 }
 
 .groove-promise__name {
   color: $heading;
   font-family: $font-family-display;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  font-stretch: 82%;
+  font-weight: 800;
+  letter-spacing: -0.015em;
   line-height: 1.1;
 }
 
@@ -224,10 +249,47 @@
   align-items: start;
 }
 
+// The visual stands on a large acid yellow panel, like a record displayed on the shop wall.
 .groove-release__visual {
   position: sticky;
   top: 2rem;
   margin: 0;
+}
+
+.groove-release__panel {
+  position: relative;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  border-radius: $radius-lg;
+  background-color: $acid;
+}
+
+.groove-release__sticker {
+  position: absolute;
+  z-index: 2;
+  right: 6%;
+  bottom: 7%;
+  display: grid;
+  width: clamp(5.5rem, 9vw, 7rem);
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: $hot;
+  color: #0E0D10;
+  font-family: $font-family-mono;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transform: rotate(10deg);
+
+  strong {
+    display: block;
+    font-family: $font-family-display;
+    font-size: 2.4em;
+    font-stretch: 78%;
+    font-weight: 800;
+  }
 }
 
 .groove-release__stage {
@@ -246,7 +308,7 @@
   display: block;
   width: 76%;
   height: auto;
-  box-shadow: $shadow-float;
+  box-shadow: 0 30px 50px -26px rgba(#0E0D10, 0.6);
 }
 
 // Translucent blue wax: the light shows through the grooves.
@@ -258,9 +320,10 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-    radial-gradient(circle, $surface 0 2.2%, #F4EFE5 2.6% 17%, rgba(#1C2C9E, 0.9) 17.4% 19%, transparent 19.4%),
+    radial-gradient(circle, $surface 0 2.2%, #F6F2EA 2.6% 17%, rgba(#1C2C9E, 0.9) 17.4% 19%, transparent 19.4%),
     repeating-radial-gradient(circle, rgba(#3D5AFE, 0.82) 0 3px, rgba(#2C45D8, 0.9) 3px 4px);
   box-shadow: 0 26px 50px -26px rgba(#000, 0.6);
+  transition: transform 700ms $ease;
 
   &::after {
     position: absolute;
@@ -269,6 +332,11 @@
     background: conic-gradient(from 200deg, transparent 0 10%, rgba(#FFF, 0.3) 14%, transparent 20% 60%, rgba(#FFF, 0.18) 64%, transparent 70%);
     content: "";
   }
+}
+
+// The coloured record slides a little further out and turns on hover.
+.groove-release__stage:hover .groove-release__record {
+  transform: translateX(6%) rotate(120deg);
 }
 
 .groove-release__caption {
@@ -281,8 +349,8 @@
   padding-top: 0.9rem;
   border-top: 1px solid $line;
   color: $text-muted;
-  font-family: $font-family-display;
-  font-size: 1.15rem;
+  font-family: $font-family-accent;
+  font-size: 1.25rem;
   font-style: italic;
 
   .groove-ref {
@@ -365,9 +433,8 @@
 
 .groove-tracklist__title {
   color: $heading;
-  font-family: $font-family-display;
-  font-size: 1.15rem;
-  line-height: 1.2;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
 .groove-variants {
@@ -403,8 +470,8 @@
   background-color: $page;
 
   &.is-selected {
-    border-color: $heading;
-    box-shadow: inset 0 0 0 1px $heading;
+    border-color: $hot;
+    box-shadow: inset 0 0 0 1px $hot;
   }
 }
 
@@ -413,16 +480,16 @@
   height: 1.9rem;
   grid-row: span 2;
   border-radius: 50%;
-  background: radial-gradient(circle, #F4EFE5 0 12%, #B48A4F 13% 30%, transparent 31%), #121110;
+  background: radial-gradient(circle, #F6F2EA 0 12%, $hot 13% 30%, transparent 31%), #0E0D10;
   box-shadow: 0 0 0 1px $line-strong;
 }
 
 .groove-pressing--clear .groove-pressing__disc {
-  background: radial-gradient(circle, #F4EFE5 0 12%, #B48A4F 13% 30%, transparent 31%), linear-gradient(135deg, rgba(#FFF, 0.7), rgba(#C9CED6, 0.6));
+  background: radial-gradient(circle, #F6F2EA 0 12%, $hot 13% 30%, transparent 31%), linear-gradient(135deg, rgba(#FFF, 0.7), rgba(#C9CED6, 0.6));
 }
 
 .groove-pressing--blue .groove-pressing__disc {
-  background: radial-gradient(circle, #F4EFE5 0 12%, #F4EFE5 13% 30%, transparent 31%), $electric;
+  background: radial-gradient(circle, #F6F2EA 0 12%, #F6F2EA 13% 30%, transparent 31%), $electric;
 }
 
 .groove-pressing__name {
@@ -461,13 +528,23 @@
       padding-left: 1rem;
       border-left: 1px solid $line;
     }
+
+    &::before {
+      width: 1.25rem;
+      height: 3px;
+      margin-bottom: 0.6rem;
+      background-color: $hot;
+      content: "";
+    }
   }
 }
 
 .groove-pairs__name {
   color: $heading;
   font-family: $font-family-display;
-  font-size: 1.15rem;
+  font-size: 1.12rem;
+  font-stretch: 85%;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -475,12 +552,6 @@
   margin-top: 0.2rem;
   color: $text-muted;
   font-size: 0.78rem;
-}
-
-@media (max-width: 1199.98px) {
-  .groove-crates {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 991.98px) {
@@ -548,15 +619,15 @@
   }
 }
 
-// Category roundels rendered after the hero (import collections): small records with the initial on a brass label.
+// Category roundels rendered after the hero (import collections): small records with the initial on an acid label.
 .groove-hero ~ .container .rounded-circle.bg-light {
   border: 0;
-  background: radial-gradient(circle, $brass 0 34%, #121110 35% 38%, transparent 38.5%), repeating-radial-gradient(circle, #121110 0 3px, #2B2A2E 3px 4px) !important;
+  background: radial-gradient(circle, $acid 0 34%, #0E0D10 35% 38%, transparent 38.5%), repeating-radial-gradient(circle, #0E0D10 0 3px, #2B2A2E 3px 4px) !important;
   box-shadow: 0 0 0 1px if($dark, $line-strong, transparent);
-  color: #121110 !important;
+  color: #0E0D10 !important;
   font-family: $font-family-display;
-  font-size: 1.6rem;
-  font-weight: 400 !important;
+  font-size: 1.5rem;
+  font-weight: 800 !important;
   transition: transform 600ms $ease;
 }
 

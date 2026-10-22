@@ -1,10 +1,11 @@
-// Deep black footer under a brass hairline: three shop services, then the store links and the notice.
+// Ink footer ringed with record grooves, under a hot pink rule: three shop services, then the store links and the notice.
 
 footer.groove-footer {
   margin-top: auto;
   padding: 0;
-  border-top: 1px solid $brass;
+  border-top: 4px solid $hot;
   background-color: $vinyl;
+  background-image: repeating-radial-gradient(circle at 100% 0%, transparent 0 26px, rgba(#FFF, 0.04) 26px 27px);
   color: $text-on-dark;
   font-size: 0.9rem;
 }
@@ -22,17 +23,22 @@ footer.groove-footer {
 
 .groove-services__title {
   margin: 0;
-  color: $ivory;
+  color: $paper;
   font-family: $font-family-display;
-  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.02;
+  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+  font-stretch: 75%;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
   text-wrap: balance;
 
   em {
-    color: $brass-light;
+    color: $hot;
+    font-family: $font-family-accent;
+    font-size: 1.08em;
     font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -61,7 +67,7 @@ footer.groove-footer {
     height: 2.2rem;
     margin-bottom: 1.25rem;
     fill: none;
-    stroke: $brass;
+    stroke: $acid;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 1.6;
@@ -69,10 +75,12 @@ footer.groove-footer {
 }
 
 .groove-services__name {
-  color: $ivory;
+  color: $paper;
   font-family: $font-family-display;
-  font-size: 1.75rem;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-stretch: 80%;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1.05;
 }
 
@@ -101,7 +109,7 @@ footer.groove-footer {
 
     &:hover,
     &:focus {
-      color: $brass-light;
+      color: $acid;
     }
   }
 
@@ -109,7 +117,7 @@ footer.groove-footer {
   h2,
   h3,
   h4 {
-    color: $brass-light;
+    color: $hot-light;
     font-family: $font-family-base;
     font-size: 0.7rem;
     font-weight: 600 !important;
@@ -118,7 +126,7 @@ footer.groove-footer {
   }
 
   :focus-visible {
-    outline-color: $brass-light;
+    outline-color: $acid;
   }
 }
 
@@ -141,19 +149,19 @@ footer.groove-footer {
 
   .groove-logo,
   .groove-logo:hover {
-    color: $ivory;
+    color: $paper;
   }
 
   .groove-logo__name {
-    color: $ivory;
+    color: $paper;
   }
 
   .groove-logo__tagline {
-    color: $brass-light;
+    color: $hot-light;
   }
 
   .groove-logo__disc {
-    fill: $ivory;
+    fill: $paper;
   }
 
   .groove-logo__grooves {
@@ -167,12 +175,12 @@ footer.groove-footer {
 
 // Payment partner logos keep their brand colours on light chips (Mollie's is black).
 .groove-footer__main .ratio.border {
-  border-color: $ivory !important;
-  background-color: $ivory;
+  border-color: $paper !important;
+  background-color: $paper;
 }
 
 .groove-footer__copy a {
-  color: $brass-light !important;
+  color: $acid !important;
   text-decoration: underline !important;
 }
 

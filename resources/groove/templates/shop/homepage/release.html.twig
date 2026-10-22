@@ -6,22 +6,25 @@
     <div class="container">
         <div class="groove-release__grid">
             <figure class="groove-release__visual">
-                <div class="groove-release__stage" role="img" aria-label="{{ 'groove.release.illustration'|trans({}, 'groove') }}">
-                    <div class="groove-release__record"></div>
-                    <svg class="groove-release__sleeve groove-cover" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
-                        <rect class="groove-cover__paper" width="400" height="400"/>
-                        {% for r in [300, 236, 172, 108] %}
-                            <circle class="{{ loop.index is odd ? 'groove-cover__electric' : 'groove-cover__mint' }}" cx="400" cy="400" r="{{ r }}"/>
-                        {% endfor %}
-                        <circle class="groove-cover__acid" cx="400" cy="400" r="54"/>
-                        <rect class="groove-cover__ink" x="28" y="28" width="290" height="96"/>
-                        <text class="groove-cover__title groove-cover__title--paper" x="42" y="78">Blue Hours</text>
-                        <text class="groove-cover__subtitle groove-cover__title--paper" x="44" y="104">MARLOWE QUARTET</text>
-                    </svg>
+                <div class="groove-release__panel">
+                    <div class="groove-release__stage" role="img" aria-label="{{ 'groove.release.illustration'|trans({}, 'groove') }}">
+                        <div class="groove-release__record"></div>
+                        <svg class="groove-release__sleeve groove-cover" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+                            <rect class="groove-cover__paper" width="400" height="400"/>
+                            {% for r in [300, 236, 172, 108] %}
+                                <circle class="{{ loop.index is odd ? 'groove-cover__electric' : 'groove-cover__mint' }}" cx="400" cy="400" r="{{ r }}"/>
+                            {% endfor %}
+                            <circle class="groove-cover__acid" cx="400" cy="400" r="54"/>
+                            <rect class="groove-cover__ink" x="28" y="28" width="290" height="96"/>
+                            <text class="groove-cover__title groove-cover__title--paper" x="42" y="78">Blue Hours</text>
+                            <text class="groove-cover__subtitle groove-cover__title--paper" x="44" y="104">MARLOWE QUARTET</text>
+                        </svg>
+                    </div>
+                    <span class="groove-release__sticker">{{ 'groove.release.number'|trans({}, 'groove')|raw }}</span>
                 </div>
                 <figcaption class="groove-release__caption">
                     <span>{{ 'groove.release.caption'|trans({}, 'groove') }}</span>
-                    <span class="groove-ref">{{ 'groove.release.number'|trans({}, 'groove') }}</span>
+                    <span class="groove-ref">{{ 'groove.release.specs.catalogue.value'|trans({}, 'groove') }}</span>
                 </figcaption>
             </figure>
 

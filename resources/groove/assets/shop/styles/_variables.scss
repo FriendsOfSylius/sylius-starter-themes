@@ -1,17 +1,20 @@
-// Groove — a fine record store: deep black, warm ivory and brass, with the saturated colours kept for the sleeves.
+// Groove — a premium independent record store: ink and warm paper, the saturated colours of the sleeves on the brand
+// and the calls to action, a heavy grotesque answered by a serif italic.
 // Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
 $dark: $color-mode == dark;
 
 $font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
-// The display face: Instrument Serif, tall and narrow, like the title on the spine of a record.
-$font-family-display: "Instrument Serif", "Didot", "Bodoni 72", "Times New Roman", serif;
-$font-family-serif: $font-family-display;
+// The display face: Bricolage Grotesque, narrowed and heavy, like the title on a sleeve.
+$font-family-display: "Bricolage Grotesque", "Helvetica Neue", "Arial", sans-serif;
+// The accent face: Instrument Serif italic, for the emphasis inside the headings, like handwritten liner notes.
+$font-family-accent: "Instrument Serif", "Georgia", "Times New Roman", serif;
+$font-family-serif: $font-family-accent;
 $font-family-base: $font-family-sans-serif;
 // Catalogue numbers, matrix runouts and track timings, set like the references of a collector's sheet.
 $font-family-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
 
 $headings-font-family: $font-family-display;
-$headings-font-weight: 400;
+$headings-font-weight: 800;
 
 $body-bg: $page;
 $body-color: $text;
@@ -23,10 +26,11 @@ $link-color: $accent-text;
 $link-hover-color: $accent-text-hover;
 $border-color: $line;
 
-// Square sleeves and quiet corners.
+// Square sleeves and round records: sharp tiles, pill buttons.
 $radius-sm: 2px;
 $radius: 3px;
-$radius-lg: 4px;
+$radius-lg: 6px;
+$radius-pill: 999px;
 
 $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 

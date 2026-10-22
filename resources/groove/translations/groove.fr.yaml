@@ -1,27 +1,34 @@
 groove:
     brand:
-        tagline: 'Disques rares & hi-fi'
+        tagline: 'Disques & hi-fi'
     top_bar:
         delivery: 'Livraison assurée dans le monde entier · disques expédiés en double carton'
         fridays: 'Salon d’écoute <strong>sur rendez-vous</strong>'
     hero:
         eyebrow: 'Disquaire indépendant'
-        title: 'Le disque, <em>tel que l’artiste l’a entendu.</em>'
-        lead: 'Pressages audiophiles, premières éditions rares et rééditions numérotées, choisis un à un et gradés à la main, avec les platines et l’électronique qui leur rendent justice.'
+        title: 'La musique, <em>en grand format.</em>'
+        lead: 'Nouveautés chaque vendredi, pressages audiophiles, vinyles couleur et premières éditions rares, choisis un à un et gradés à la main, avec les platines qui leur rendent justice.'
         cta: 'Découvrir les arrivages'
         secondary_cta: 'Le pressage du mois'
-        illustration: 'Une pochette graphique bleu électrique, rose et jaune, son disque noir à moitié sorti.'
+        illustration: 'Deux pochettes graphiques en éventail, bleu électrique, rose vif, jaune acide et mandarine, la première avec son disque à moitié sorti et un sticker « 500 exemplaires ».'
         caption:
             title: 'Groove Sessions, Vol. 3'
             ref: 'GRV-003 · 180 g · gravé à demi-vitesse'
+        sticker: 'Édition<strong>500</strong>exemplaires'
+        ticker:
+            arrivals: 'Arrivages chaque vendredi'
+            half_speed: 'Gravure demi-vitesse'
+            first_pressings: 'Premiers pressages'
+            coloured: 'Vinyles couleur'
+            hifi: 'Platines & hi-fi'
         formats:
             half_speed: 'Gravure demi-vitesse'
             one_step: 'One-step'
             first_pressings: 'Premiers pressages'
             hifi: 'Hi-fi'
     genres:
-        eyebrow: 'Les bacs'
-        title: 'Parcourir par <em>genre</em>'
+        eyebrow: 'Par genre'
+        title: 'Fouiller <em>les bacs</em>'
         cta: 'Tous les arrivages'
         jazz:
             name: 'Jazz'
@@ -43,7 +50,7 @@ groove:
             styles: 'Afrobeat · tropical · bossa'
     products:
         eyebrow: 'Arrivages'
-        title: 'Tout juste arrivés, <em>gradés et protégés</em>'
+        title: 'Tout juste <em>pressés</em>'
         lead: 'Rééditions, premiers pressages et nouveautés entrés en boutique cette semaine, chacun inspecté avant de rejoindre les bacs.'
         cta: 'Le pressage du mois'
     promise:
@@ -66,7 +73,7 @@ groove:
         lead: 'Une session de 1961 regravée depuis les bandes analogiques originales, en 45 tours sur deux disques. Chaque fiche disque se lit comme celle-ci : les références de pressage en attributs, une déclinaison par édition, et le matériel pour l’écouter.'
         illustration: 'La pochette de Blue Hours bleu électrique et menthe, son vinyle bleu translucide à moitié sorti.'
         caption: 'Édition bleu translucide'
-        number: 'N° 0412 / 3000'
+        number: 'N°<strong>0412</strong>sur 3 000'
         specs:
             label:
                 label: 'Label'
@@ -141,7 +148,7 @@ groove:
         notice: 'Prix TTC. Les disques sont gradés à la main et expédiés en double carton, assurés à leur pleine valeur.'
         services:
             eyebrow: 'À la boutique'
-            title: 'Un disquaire, <em>au rythme de l’écoute.</em>'
+            title: 'Venu pour un disque, <em>reparti avec trois.</em>'
             booth:
                 title: 'Salon d’écoute'
                 text: 'Réservez une heure sur notre système de référence pour écouter un pressage ou comparer deux éditions.'

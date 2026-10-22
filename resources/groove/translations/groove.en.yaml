@@ -1,27 +1,34 @@
 groove:
     brand:
-        tagline: 'Fine records & hi-fi'
+        tagline: 'Records & hi-fi'
     top_bar:
         delivery: 'Insured delivery worldwide · records shipped double-boxed'
         fridays: 'Listening room <strong>by appointment</strong>'
     hero:
         eyebrow: 'Independent record store'
-        title: 'The record, <em>as the artist heard it.</em>'
-        lead: 'Audiophile pressings, rare first editions and numbered reissues, chosen one by one and graded by hand — with the turntables and electronics worthy of them.'
+        title: 'Music you can <em>hold.</em>'
+        lead: 'New releases every Friday, audiophile pressings, coloured vinyl and rare first editions, picked one by one and graded by hand — with the turntables worthy of them.'
         cta: 'Discover the new arrivals'
         secondary_cta: 'Pressing of the month'
-        illustration: 'A graphic record sleeve in electric blue, pink and yellow, its black record pulled out.'
+        illustration: 'Two graphic record sleeves fanned out, in electric blue, hot pink, acid yellow and tangerine, the front one with its record pulled out and a “500 copies” sticker.'
         caption:
             title: 'Groove Sessions, Vol. 3'
             ref: 'GRV-003 · 180 g · half-speed master'
+        sticker: 'Limited<strong>500</strong>copies'
+        ticker:
+            arrivals: 'New arrivals every Friday'
+            half_speed: 'Half-speed masters'
+            first_pressings: 'First pressings'
+            coloured: 'Coloured vinyl'
+            hifi: 'Turntables & hi-fi'
         formats:
             half_speed: 'Half-speed masters'
             one_step: 'One-step'
             first_pressings: 'First pressings'
             hifi: 'Hi-fi'
     genres:
-        eyebrow: 'The crates'
-        title: 'Browse by <em>genre</em>'
+        eyebrow: 'Shop by genre'
+        title: 'Dig the <em>crates</em>'
         cta: 'All the new arrivals'
         jazz:
             name: 'Jazz'
@@ -43,7 +50,7 @@ groove:
             styles: 'Afrobeat · tropical · bossa'
     products:
         eyebrow: 'New arrivals'
-        title: 'Just in, <em>graded and sleeved</em>'
+        title: 'Fresh off <em>the press</em>'
         lead: 'Reissues, first pressings and new releases that entered the shop this week, each one inspected before it reaches the crates.'
         cta: 'Pressing of the month'
     promise:
@@ -66,7 +73,7 @@ groove:
         lead: 'A 1961 session cut again from the original analogue tapes, at 45 rpm on two records. Every record page reads like this sheet: the pressing references as attributes, one variant per edition, and what to play it on.'
         illustration: 'The Blue Hours sleeve in electric blue and mint, its translucent blue record pulled out.'
         caption: 'Translucent blue edition'
-        number: 'No. 0412 / 3000'
+        number: 'No.<strong>0412</strong>of 3,000'
         specs:
             label:
                 label: 'Label'
@@ -141,7 +148,7 @@ groove:
         notice: 'Prices include VAT. Records are graded by hand and shipped double-boxed, insured to their full value.'
         services:
             eyebrow: 'At the shop'
-            title: 'A record store, <em>at the pace of listening.</em>'
+            title: 'Come for one record, <em>leave with three.</em>'
             booth:
                 title: 'Listening room'
                 text: 'Book an hour on our reference system to audition a pressing or compare two editions side by side.'

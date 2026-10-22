@@ -13,19 +13,19 @@
   }
 
   a {
-    color: $ivory;
+    color: $paper;
   }
 
   .btn-dark {
     --bs-btn-bg: transparent;
     --bs-btn-border-color: #{$border-dark};
-    --bs-btn-color: #{$ivory};
+    --bs-btn-color: #{$paper};
     --bs-btn-hover-bg: #{$vinyl-raised};
-    --bs-btn-hover-border-color: #{$brass};
-    --bs-btn-hover-color: #{$ivory};
+    --bs-btn-hover-border-color: #{$hot};
+    --bs-btn-hover-color: #{$paper};
     --bs-btn-active-bg: #{$vinyl-raised};
-    --bs-btn-active-border-color: #{$brass};
-    --bs-btn-active-color: #{$ivory};
+    --bs-btn-active-border-color: #{$hot};
+    --bs-btn-active-color: #{$paper};
 
     min-height: 1.9rem;
     padding: 0.2rem 0.75rem;
@@ -42,7 +42,7 @@
   }
 
   :focus-visible {
-    outline-color: $brass-light;
+    outline-color: $acid;
   }
 }
 
@@ -54,14 +54,14 @@
 
 .groove-topbar__item + .groove-topbar__item::before {
   margin-right: 1.25rem;
-  color: $brass;
-  content: "◆";
+  color: $hot;
+  content: "●";
   font-size: 0.5rem;
   vertical-align: 0.2em;
 }
 
 .groove-topbar__item strong {
-  color: $brass-light;
+  color: $acid;
   font-weight: 600;
 }
 
@@ -92,7 +92,7 @@ header .navbar {
   background-color: transparent;
 }
 
-// Wordmark: a record with a brass label, next to the serif name over a spaced tagline.
+// Wordmark: a record with a hot pink label, next to the narrowed name over a spaced tagline.
 
 .groove-logo {
   display: inline-flex;
@@ -127,7 +127,7 @@ header .navbar {
 }
 
 .groove-logo__label {
-  fill: $brass;
+  fill: $hot;
 }
 
 .groove-logo__hole {
@@ -148,22 +148,23 @@ header .navbar {
 .groove-logo__name {
   color: $heading;
   font-family: $font-family-display;
-  font-size: 2.15rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 0.8;
+  font-size: 2.05rem;
+  font-stretch: 75%;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.82;
 }
 
 .groove-logo__tagline {
   color: $accent-text;
   font-size: 0.56rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
-// Category navigation: spaced small capitals, underlined by a brass hairline on hover.
+// Category navigation: spaced small capitals, underlined by a hot pink bar on hover.
 
 .groove-category-nav {
   display: flex;
@@ -196,8 +197,8 @@ header .navbar {
   padding: 0.6rem 0.1rem !important;
   color: $heading;
   font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
   transition: color 160ms ease;
@@ -207,8 +208,8 @@ header .navbar {
     right: 0.1rem;
     bottom: 0.25rem;
     left: 0.1rem;
-    height: 1px;
-    background-color: $brass;
+    height: 2px;
+    background-color: $hot;
     content: "";
     transform: scaleX(0);
     transition: transform 280ms $ease;
@@ -230,7 +231,7 @@ header .navbar {
   min-width: 14rem;
   padding: 0.5rem;
   border: 1px solid $line;
-  border-top: 1px solid $brass;
+  border-top: 2px solid $hot;
   border-radius: 0;
   background-color: $surface;
   box-shadow: $shadow-float;
@@ -249,7 +250,7 @@ header .navbar {
   }
 }
 
-// Cart: a black button with a brass counter.
+// Cart: an ink pill with an acid yellow counter.
 
 .groove-cart__button {
   --bs-btn-color: #{$page};
@@ -292,7 +293,7 @@ header .navbar {
   padding: 0 0.3rem;
   border: 2px solid $page;
   border-radius: 999px;
-  background-color: $brass;
+  background-color: $acid;
   color: $vinyl;
   font-size: 0.66rem;
   font-weight: 700;
@@ -342,8 +343,9 @@ header .dropdown-item {
 
   .groove-category-nav__menu .offcanvas-title {
     font-family: $font-family-display;
-    font-size: 2rem !important;
-    font-weight: 400;
+    font-size: 1.9rem !important;
+    font-stretch: 80%;
+    font-weight: 800;
   }
 
   .groove-category-nav__menu .offcanvas-body {
@@ -397,7 +399,7 @@ header .dropdown-item {
   }
 
   .groove-logo__name {
-    font-size: 1.85rem;
+    font-size: 1.75rem;
   }
 }
 

@@ -1,0 +1,86 @@
+# Groove demo catalog: sixteen fictional records for the import package (castor sylius:import:fixtures:*).
+# The covers are shipped in media/ under the code of each product; the image URLs below are placeholders that the
+# import never downloads, since a cover with that code is already there. See docs/themes/groove.md.
+mode: ai
+name: Groove Records
+products:
+    -   title: 'The Marlowe Quartet — Blue Hours'
+        collection_name: Jazz
+        price_eur: 59.9
+        image: 'https://example.com/groove/the-marlowe-quartet-blue-hours.webp'
+        description: 'A 1961 session cut again from the original analogue tapes, at 45 rpm on two records. Archive series, LTA-1961-45. Half-speed mastered, pressed at Optimal Media on 180 g translucent blue vinyl, tip-on gatefold. 3,000 numbered copies.'
+    -   title: 'Ada Okoro Trio — Lagos After Dark'
+        collection_name: Jazz
+        price_eur: 32
+        image: 'https://example.com/groove/ada-okoro-trio-lagos-after-dark.webp'
+        description: 'Piano trio recorded live in one night, between Lagos highlife and modal jazz. Lowtide Records, LOW-112. 180 g black vinyl, printed inner sleeve with liner notes.'
+    -   title: 'Hollis Grant — Spiral Staircase'
+        collection_name: Jazz
+        price_eur: 145
+        image: 'https://example.com/groove/hollis-grant-spiral-staircase.webp'
+        description: 'Original 1967 first pressing, mono. Matrix A1 / B1, deep groove labels. Graded VG+ / VG+: light sleeve wear, plays with a quiet surface. Ultrasonic cleaned and resleeved.'
+    -   title: 'The Velvet Strangers — Satin Hours'
+        collection_name: Soul & Funk
+        price_eur: 27.9
+        image: 'https://example.com/groove/the-velvet-strangers-satin-hours.webp'
+        description: 'Sweet soul ballads with strings and a horn section, first ever reissue. VS-002, 180 g violet vinyl, obi strip.'
+    -   title: 'Dolores Kane — Northern Lights'
+        collection_name: Soul & Funk
+        price_eur: 85
+        image: 'https://example.com/groove/dolores-kane-northern-lights.webp'
+        description: 'The 1971 northern soul 7" single, original pressing. Graded VG+, small writing on the label. A dancefloor rarity, in a period company sleeve.'
+    -   title: 'Funk Assembly — Brass Tacks'
+        collection_name: Soul & Funk
+        price_eur: 29.9
+        image: 'https://example.com/groove/funk-assembly-brass-tacks.webp'
+        description: 'Ten-piece funk band, tight horns and a heavy rhythm section. Limited orange vinyl, 1,000 copies, with a download code.'
+    -   title: 'Paper Moths — Static Bloom'
+        collection_name: Rock
+        price_eur: 26.5
+        image: 'https://example.com/groove/paper-moths-static-bloom.webp'
+        description: 'Second album of the indie quartet, fuzzed guitars and choruses that stick. PM-07, red and white splatter vinyl, poster included.'
+    -   title: 'Kraut Motor — Autobahn Zwei'
+        collection_name: Rock
+        price_eur: 31
+        image: 'https://example.com/groove/kraut-motor-autobahn-zwei.webp'
+        description: 'Motorik krautrock in four long tracks, recorded to tape. KM-2, 2 × LP at 45 rpm, mint green vinyl, gatefold.'
+    -   title: 'Neon Tides — Night Swim'
+        collection_name: Electronic
+        price_eur: 34.9
+        image: 'https://example.com/groove/neon-tides-night-swim.webp'
+        description: 'Balearic house for long summer nights. Lowtide Records, LTR-042. 2 × LP, 180 g hot pink vinyl, 500 numbered copies.'
+    -   title: 'Modular Hearts — Pulse Width'
+        collection_name: Electronic
+        price_eur: 28
+        image: 'https://example.com/groove/modular-hearts-pulse-width.webp'
+        description: 'Acid techno played live on modular synthesizers. MH-303, 12" at 45 rpm, cut loud for the club.'
+    -   title: 'Lumen Field — Ambient Works Vol. 2'
+        collection_name: Electronic
+        price_eur: 79
+        image: 'https://example.com/groove/lumen-field-ambient-works-vol-2.webp'
+        description: 'Three hours of slow ambient music. 3 × LP box set, clear vinyl, 24-page booklet of photographs, numbered.'
+    -   title: 'MC Tempo & Dusty Crates — Boom Bap Forever'
+        collection_name: Hip-Hop
+        price_eur: 27.5
+        image: 'https://example.com/groove/mc-tempo-dusty-crates-boom-bap-forever.webp'
+        description: 'Golden-era boom bap, dusty samples and scratched hooks. Includes the instrumentals on a bonus 12". Black vinyl, yellow labels.'
+    -   title: 'Jazzmatic — Loops From The Basement'
+        collection_name: Hip-Hop
+        price_eur: 24.9
+        image: 'https://example.com/groove/jazzmatic-loops-from-the-basement.webp'
+        description: 'Instrumental jazz rap beat tape, eighteen short loops. Pink vinyl, hand-stamped labels, 300 copies.'
+    -   title: 'Kofi Mensah & The Highlife Band — Accra Nights'
+        collection_name: World
+        price_eur: 29
+        image: 'https://example.com/groove/kofi-mensah-the-highlife-band-accra-nights.webp'
+        description: 'Ghanaian highlife from 1974, restored from the original master tapes. Remastered reissue, 180 g black vinyl, liner notes in English and Twi.'
+    -   title: 'Bossa Azul — Ipanema Blue'
+        collection_name: World
+        price_eur: 26
+        image: 'https://example.com/groove/bossa-azul-ipanema-blue.webp'
+        description: 'Bossa nova standards for voice and nylon guitar. BA-64, half-speed mastered, 180 g blue vinyl.'
+    -   title: 'Tropical Ritual — Cumbia del Sol'
+        collection_name: World
+        price_eur: 25.5
+        image: 'https://example.com/groove/tropical-ritual-cumbia-del-sol.webp'
+        description: 'Psychedelic cumbia from Lima, with surf guitars and an accordion. Yellow, pink and green splatter vinyl.'

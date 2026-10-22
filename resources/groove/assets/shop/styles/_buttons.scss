@@ -1,17 +1,19 @@
 .btn {
   min-height: 3rem;
   padding: 0.85rem 1.9rem;
-  border-radius: $radius-sm;
+  border-radius: $radius-pill;
   font-family: $font-family-base;
   font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   line-height: 1.2;
   text-transform: uppercase;
   transition:
     background-color 220ms ease,
     border-color 220ms ease,
-    color 220ms ease;
+    color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms $ease;
 }
 
 .btn-sm {
@@ -20,7 +22,7 @@
   font-size: 0.7rem;
 }
 
-// Black call to action with ivory type (brass with black type in the dark scheme).
+// Hot pink call to action, round like a record label; acid yellow on hover, lifted by a small offset shadow.
 .btn-primary {
   // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
   color: var(--bs-btn-color);
@@ -37,6 +39,16 @@
   --bs-btn-disabled-color: #{$on-accent};
   --bs-btn-disabled-bg: #{$accent};
   --bs-btn-disabled-border-color: #{$accent};
+
+  &:hover {
+    box-shadow: 3px 3px 0 $heading;
+    transform: translate(-2px, -2px);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: none;
+  }
 }
 
 // Outlined in ink, for secondary actions.
@@ -64,29 +76,22 @@
   }
 }
 
-// On the black bands: brass call to action, ivory outline for the second one.
-.groove-band .btn-primary {
-  --bs-btn-color: #{$vinyl};
-  --bs-btn-bg: #{$brass};
-  --bs-btn-border-color: #{$brass};
-  --bs-btn-hover-color: #{$vinyl};
-  --bs-btn-hover-bg: #{$brass-light};
-  --bs-btn-hover-border-color: #{$brass-light};
-  --bs-btn-active-color: #{$vinyl};
-  --bs-btn-active-bg: #{$brass-light};
-  --bs-btn-active-border-color: #{$brass-light};
+// On the ink bands, the offset shadow of the call to action is paper.
+.groove-band .btn-primary:hover {
+  box-shadow: 3px 3px 0 $paper;
 }
 
+// Outlined in paper on the ink bands.
 .groove-btn-ghost {
-  --bs-btn-color: #{$ivory};
+  --bs-btn-color: #{$paper};
   --bs-btn-bg: transparent;
-  --bs-btn-border-color: #{rgba($ivory, 0.5)};
+  --bs-btn-border-color: #{rgba($paper, 0.5)};
   --bs-btn-hover-color: #{$vinyl};
-  --bs-btn-hover-bg: #{$ivory};
-  --bs-btn-hover-border-color: #{$ivory};
+  --bs-btn-hover-bg: #{$paper};
+  --bs-btn-hover-border-color: #{$paper};
   --bs-btn-active-color: #{$vinyl};
-  --bs-btn-active-bg: #{$ivory};
-  --bs-btn-active-border-color: #{$ivory};
+  --bs-btn-active-bg: #{$paper};
+  --bs-btn-active-border-color: #{$paper};
 }
 
 // Text link in spaced small capitals, closed by a long arrow.
@@ -95,10 +100,10 @@
   align-items: center;
   gap: 0.6rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid currentColor;
+  border-bottom: 2px solid $hot;
   color: $accent-text;
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-decoration: none;
   text-transform: uppercase;
@@ -120,7 +125,8 @@
 
 .groove-link-arrow--light,
 .groove-link-arrow--light:hover {
-  color: $brass-light;
+  border-bottom-color: $acid;
+  color: $acid;
 }
 
 #add-to-cart-button {

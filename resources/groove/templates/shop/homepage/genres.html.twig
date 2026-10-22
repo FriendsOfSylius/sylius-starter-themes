@@ -1,4 +1,4 @@
-{# Groove crates: shop by genre, six sleeves with flat cover art (drawn by _sections.scss) and a record tucked behind
+{# Groove crates: shop by genre, six large sleeves with flat cover art (drawn by _sections.scss) and a record tucked behind
    each one — the taxons a record store sorts its catalogue by. #}
 <section id="groove-genres" class="groove-genres" aria-labelledby="groove-genres-title">
     <div class="container">
@@ -17,8 +17,13 @@
                         <span class="groove-crate__sleeve" aria-hidden="true">
                             <span class="groove-crate__art"></span>
                         </span>
-                        <span class="groove-crate__name">{{ ('groove.genres.' ~ genre ~ '.name')|trans({}, 'groove') }}</span>
-                        <span class="groove-crate__styles">{{ ('groove.genres.' ~ genre ~ '.styles')|trans({}, 'groove') }}</span>
+                        <span class="groove-crate__meta">
+                            <span class="groove-crate__index" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span>
+                            <span>
+                                <span class="groove-crate__name">{{ ('groove.genres.' ~ genre ~ '.name')|trans({}, 'groove') }}</span>
+                                <span class="groove-crate__styles">{{ ('groove.genres.' ~ genre ~ '.styles')|trans({}, 'groove') }}</span>
+                            </span>
+                        </span>
                     </a>
                 </li>
             {% endfor %}
