@@ -1,0 +1,15 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="summit-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# A peak with its snow cap in a rounded badge, next to a condensed wordmark. #}
+    <svg class="summit-logo__seal" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <rect class="summit-logo__badge" width="40" height="40" rx="6"/>
+        <path class="summit-logo__peak" d="M5 31l11-17 5 7 4-5 10 15z"/>
+        <path class="summit-logo__cap" d="M16 14l3.6 5.5-1.8-0.9-1.8 1.6-1.8-1.6-1.7 0.9z"/>
+    </svg>
+    <span class="summit-logo__text">
+        <span class="summit-logo__name">Summit</span>
+        <span class="summit-logo__tagline">{{ 'summit.brand.tagline'|trans({}, 'summit') }}</span>
+    </span>
+{% endif %}

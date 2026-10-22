@@ -1,0 +1,415 @@
+// Homepage sections: shop by activity, the product wall and the gear spotlight (spec sheet, variants, paired gear).
+
+.summit-products {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+// Activities: six dark tiles with a pictogram, the terrain level, the name in big capitals and the gear families.
+
+.summit-activities {
+  padding-block: clamp(4rem, 8vw, 6.5rem) clamp(2rem, 4vw, 3rem);
+}
+
+.summit-activities .summit-section-head__lead {
+  max-width: 26rem;
+  margin: 0;
+}
+
+.summit-activities__items {
+  display: grid;
+
+  > li {
+    container-type: inline-size;
+  }
+
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.summit-activity__link {
+  position: relative;
+  display: flex;
+  height: 100%;
+  min-height: 15rem;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.25rem;
+  border-radius: $radius;
+  background-color: $forest;
+  background-image:
+    repeating-radial-gradient(circle at 110% 110%, transparent 0 18px, rgba(#FFF, 0.07) 18px 19px),
+    linear-gradient(160deg, $moss, $forest-night);
+  color: $snow;
+  text-decoration: none;
+  transition: transform 250ms $ease, box-shadow 250ms $ease;
+
+  // Orange bar rising from the bottom on hover.
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background-color: $signal;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms $ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: $shadow-float;
+    color: $snow;
+    transform: translateY(-4px);
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.summit-activity:nth-child(even) .summit-activity__link {
+  background-image:
+    repeating-radial-gradient(circle at -10% 110%, transparent 0 18px, rgba(#FFF, 0.07) 18px 19px),
+    linear-gradient(160deg, #4A5650, #1A2420);
+}
+
+.summit-activity__icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: auto;
+  fill: none;
+  stroke: $signal-light;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.summit-activity__level {
+  margin-top: 1.5rem;
+  color: #D5E0D8;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.summit-activity__name {
+  margin-top: 0.2rem;
+  font-family: $font-family-display;
+  // Sized on the tile, so the longest name ("Mountaineering") holds on one line.
+  font-size: min(1.85rem, 11cqi);
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.summit-activity__gear {
+  margin-top: 0.6rem;
+  color: #D5E0D8;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+// Gear spotlight.
+
+.summit-gear {
+  padding-block: clamp(4.5rem, 9vw, 7.5rem);
+  border-top: 1px solid $line;
+  background-color: $surface;
+}
+
+.summit-gear__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: center;
+}
+
+.summit-gear__visual {
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: $radius-lg;
+  background-color: $surface-raised;
+}
+
+.summit-pack {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
+  margin-inline: auto;
+}
+
+.summit-pack__contours {
+  fill: none;
+  stroke: $line-strong;
+  stroke-dasharray: 3 5;
+}
+
+.summit-pack__strap {
+  fill: none;
+  stroke: if($dark, #0A0F0C, #1A2420);
+  stroke-linecap: round;
+  stroke-width: 16;
+}
+
+.summit-pack__body { fill: $forest; }
+.summit-pack__lid { fill: $moss; }
+.summit-pack__pocket { fill: if($dark, #2D5A3C, #2A5539); }
+.summit-pack__side { fill: #4A5650; }
+.summit-pack__logo { fill: $signal; }
+
+.summit-pack__zip,
+.summit-pack__webbing,
+.summit-pack__loop {
+  fill: none;
+  stroke: #0E1F16;
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.summit-pack__zip {
+  stroke: $signal;
+  stroke-width: 2.5;
+}
+
+.summit-pack__buckle { fill: #0E1F16; }
+
+.summit-pack__spot {
+  circle {
+    fill: $heading;
+    stroke: $signal;
+    stroke-width: 3;
+  }
+
+  text {
+    fill: $page;
+    font-family: $font-family-display;
+    font-size: 15px;
+    font-weight: 800;
+  }
+}
+
+.summit-gear__callouts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1.25rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.86rem;
+  line-height: 1.4;
+
+  li {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  span {
+    display: grid;
+    width: 1.4rem;
+    height: 1.4rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 50%;
+    background-color: $heading;
+    color: $page;
+    font-family: $font-family-display;
+    font-weight: 800;
+  }
+}
+
+.summit-gear__lead {
+  margin: 1.1rem 0 1.75rem;
+  color: $text-muted;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.summit-specs {
+  margin: 0 0 1.75rem;
+  border-top: 2px solid $heading;
+
+  div {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 0.6rem;
+    border-bottom: 1px solid $line;
+  }
+
+  dt {
+    color: $heading;
+    font-family: $font-family-display;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.summit-variants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-bottom: 1.75rem;
+
+  ul {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.summit-variants__label {
+  margin-bottom: 0.5rem;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.summit-swatch {
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 2px solid $page;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px $field-border;
+
+  &:first-child {
+    box-shadow: 0 0 0 2px $heading;
+  }
+}
+
+.summit-swatch--forest { background-color: #1F4630; }
+.summit-swatch--granite { background-color: #5A6560; }
+.summit-swatch--signal { background-color: #F2661C; }
+
+.summit-sizes li {
+  display: grid;
+  min-width: 2.6rem;
+  height: 2.1rem;
+  place-items: center;
+  border: 1px solid $field-border;
+  border-radius: $radius-sm;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.05rem;
+  font-weight: 700;
+
+  &:nth-child(2) {
+    border-color: $heading;
+    background-color: $heading;
+    color: $page;
+  }
+}
+
+.summit-pairs {
+  margin-bottom: 1.75rem;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid $line;
+    border-left: 3px solid $signal;
+    border-radius: $radius-sm;
+    background-color: $page;
+  }
+}
+
+.summit-pairs__name {
+  color: $heading;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.summit-pairs__meta {
+  color: $text-muted;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1199.98px) {
+  .summit-activities__items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991.98px) {
+  .summit-gear__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .summit-activities__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .summit-activity__link {
+    min-height: 12rem;
+    padding: 1rem;
+  }
+
+  .summit-specs div {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+
+  .summit-pairs ul,
+  .summit-gear__callouts {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Category roundels rendered after the hero (import collections): forest badges with a condensed initial.
+.summit-hero ~ .container .rounded-circle.bg-light {
+  border: 0;
+  background-color: $heading !important;
+  color: $page !important;
+  font-family: $font-family-display;
+  font-size: 1.8rem;
+  font-weight: 800 !important;
+  transition: background-color 200ms ease;
+}
+
+.summit-hero ~ .container a:hover .rounded-circle.bg-light {
+  background-color: $accent-text !important;
+}
+
+.summit-hero + .container {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.summit-hero ~ .container a:has(> .rounded-circle) span {
+  margin-top: 0.8rem !important;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

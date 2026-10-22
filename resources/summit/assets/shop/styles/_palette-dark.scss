@@ -1,0 +1,40 @@
+// Summit, dark scheme — a night bivouac: pine-black ground, mineral grey type and the same signal orange.
+$color-mode: dark;
+
+// House colours. The forest bands are a shade greener than the page, and ruled in orange, to stand out from it.
+$forest-night: #0F2318;
+$forest-deep: #163121;
+$forest: #1F4630;
+$moss: #3C6B47;
+$signal: #FF7A33;
+$signal-light: #FF9A5E;
+$snow: #FFFFFF;
+$text-on-dark: #C9D6CD;
+$border-dark: rgba(#FFF, 0.14);
+
+// Pine-black ground and slate.
+$page: #0C120F;
+$surface: #141C17;
+$surface-raised: #1E2822;
+$line: #2C3830;
+$line-strong: #46534A;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #7F8C83;
+$heading: #EEF3EF;
+$text: #CED7D1;
+$text-muted: #9EAAA2;
+
+// Signal orange fills the calls to action, with ink on it; as text, the accent turns to a lichen green.
+$accent: $signal;
+$accent-hover: #FF925A;
+$on-accent: #0C120F;
+$accent-text: #8FD6A3;
+$accent-text-hover: #B5E8C3;
+$signal-text: #FF9A5E;
+$focus-ring: rgba($signal, 0.35);
+
+$success: #8FD6A3;
+$info: #93B8E0;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.45);
+$shadow-float: 0 22px 44px -20px rgba(#000, 0.8);

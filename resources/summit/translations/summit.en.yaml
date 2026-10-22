@@ -1,0 +1,133 @@
+summit:
+    brand:
+        tagline: 'Outdoor gear'
+    top_bar:
+        delivery: 'Free delivery from €60 · shipped within 24 h'
+        returns: '60-day returns · free repairs on our gear'
+    hero:
+        eyebrow: 'Hiking · trail · mountaineering'
+        title: 'Go higher, <em>carry lighter.</em>'
+        lead: 'Technical gear chosen and field-tested by mountain guides: packs, layers, footwear and the kit that goes with them, from the first trail to the summit ridge.'
+        cta: 'Shop the gear'
+        secondary_cta: 'Shop by activity'
+    report:
+        kicker: 'Trail report'
+        title: 'Col de la Croix'
+        altitude:
+            label: 'Altitude'
+            value: '2,381 m'
+        temperature:
+            label: 'At the col'
+            value: '6 °C'
+        wind:
+            label: 'Wind'
+            value: '25 km/h'
+        daylight:
+            label: 'Daylight'
+            value: '11 h 40'
+        advice: 'Dry trail, snow above 2,600 m: pack a windproof layer and poles.'
+    figures:
+        item_1:
+            value: '1,200+'
+            text: 'products tested in the field'
+        item_2:
+            value: '24 h'
+            text: 'dispatch, Monday to Saturday'
+        item_3:
+            value: '60 days'
+            text: 'to try and return'
+        item_4:
+            value: '2 years'
+            text: 'warranty, repairs for life'
+    products:
+        eyebrow:
+            latest: 'New in store'
+    activities:
+        eyebrow: 'Shop by activity'
+        title: 'Pick your terrain, <em>we kit you out.</em>'
+        lead: 'Each activity gathers the packs, layers, footwear and accessories our guides would take with them.'
+        hiking:
+            name: 'Hiking'
+            level: 'Trails · day hikes'
+            gear: 'Day packs, boots, poles'
+        trail:
+            name: 'Trail running'
+            level: 'Fast · light'
+            gear: 'Vests, shoes, flasks'
+        mountaineering:
+            name: 'Mountaineering'
+            level: 'Glaciers · ridges'
+            gear: 'Harnesses, crampons, shells'
+        climbing:
+            name: 'Climbing'
+            level: 'Crag · multi-pitch'
+            gear: 'Ropes, shoes, quickdraws'
+        bivouac:
+            name: 'Bivouac'
+            level: 'Nights out'
+            gear: 'Tents, sleeping bags, stoves'
+        snow:
+            name: 'Snow'
+            level: 'Snowshoes · ski touring'
+            gear: 'Snowshoes, probes, gloves'
+    gear:
+        eyebrow: 'Gear spotlight'
+        title: 'Ridge 38, <em>built for the long day.</em>'
+        lead: 'Every product page lists the technical specs, the colours and sizes in stock and the gear that goes with it.'
+        illustration: 'The Ridge 38 technical backpack, in forest green with orange zips, with four numbered call-outs.'
+        callout_1: 'Roll-top lid, 20,000 mm waterproof'
+        callout_2: 'Load lifters and adjustable back length'
+        callout_3: 'Stretch front pocket for a shell'
+        callout_4: 'Side pocket for a 1 L bottle'
+        specs:
+            volume:
+                label: 'Volume'
+                value: '38 L + 4 L lid extension'
+            weight:
+                label: 'Weight'
+                value: '1.18 kg (size M)'
+            fabric:
+                label: 'Fabric'
+                value: '210D recycled ripstop nylon'
+            waterproof:
+                label: 'Waterproofing'
+                value: 'PU coating, 3,000 mm'
+            back:
+                label: 'Back length'
+                value: '42 to 52 cm, three sizes'
+        colours: 'Colours'
+        colour:
+            forest: 'Forest green, selected'
+            granite: 'Granite grey'
+            signal: 'Signal orange'
+        sizes: 'Sizes'
+        pairs: 'Goes well with'
+        pair:
+            cover:
+                name: 'Rain cover 30–40 L'
+                meta: 'Packs into its pocket'
+            bladder:
+                name: 'Hydration bladder 2 L'
+                meta: 'Fits the inner sleeve'
+            poles:
+                name: 'Carbon poles'
+                meta: 'Folding, 290 g a pair'
+        cta: 'See all packs'
+    footer:
+        tagline: 'Technical outdoor gear, tested in the field by mountain guides.'
+        notice: 'Prices include VAT. Every product carries a two-year warranty, and our workshop repairs the gear we sell for life.'
+        services:
+            eyebrow: 'Out there with you'
+            title: 'Gear that goes <em>the distance.</em>'
+            advice:
+                title: 'Field advice'
+                text: 'A route to prepare, a size to choose, a layering system to build: our guides answer you personally.'
+                cta: 'Ask a guide'
+            returns:
+                title: '60-day returns'
+                text: 'Try your gear on the trail, not only in the living room: returns are free for sixty days.'
+                cta: 'My orders'
+            repair:
+                title: 'Repair workshop'
+                text: 'A torn shell, a broken buckle, a worn zip: our workshop repairs the gear we sell, for life.'
+                cta: 'Request a repair'

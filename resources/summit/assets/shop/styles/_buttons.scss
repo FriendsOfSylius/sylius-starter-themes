@@ -1,0 +1,120 @@
+.btn {
+  min-height: 2.875rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: $radius-sm;
+  font-family: $font-family-display;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    color 200ms ease;
+}
+
+.btn-sm {
+  min-height: 2.25rem;
+  padding: 0.45rem 1rem;
+  letter-spacing: 0.1em;
+}
+
+// Signal orange call to action, with a cut corner like a trail tag.
+.btn-primary {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$cut}), calc(100% - #{$cut}) 100%, 0 100%);
+
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
+  --bs-btn-color: #{$on-accent};
+  --bs-btn-bg: #{$accent};
+  --bs-btn-border-color: #{$accent};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$accent-hover};
+  --bs-btn-hover-border-color: #{$accent-hover};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$accent-hover};
+  --bs-btn-active-border-color: #{$accent-hover};
+  --bs-btn-disabled-color: #{$on-accent};
+  --bs-btn-disabled-bg: #{$accent};
+  --bs-btn-disabled-border-color: #{$accent};
+}
+
+// Outlined in ink, for secondary actions.
+.btn-secondary,
+.btn-light,
+.btn-outline-primary,
+.btn-outline-gray {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$field-border};
+  --bs-btn-hover-color: #{$page};
+  --bs-btn-hover-bg: #{$heading};
+  --bs-btn-hover-border-color: #{$heading};
+  --bs-btn-active-color: #{$page};
+  --bs-btn-active-bg: #{$heading};
+  --bs-btn-active-border-color: #{$heading};
+}
+
+.btn-link {
+  color: $accent-text;
+  letter-spacing: 0.04em;
+  text-transform: none;
+
+  &:hover {
+    color: $accent-text-hover;
+  }
+}
+
+// Outlined in white on the forest panels.
+.summit-btn-ghost {
+  --bs-btn-color: #{$snow};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{rgba($snow, 0.6)};
+  --bs-btn-hover-color: #{$forest-night};
+  --bs-btn-hover-bg: #{$snow};
+  --bs-btn-hover-border-color: #{$snow};
+  --bs-btn-active-color: #{$forest-night};
+  --bs-btn-active-bg: #{$snow};
+  --bs-btn-active-border-color: #{$snow};
+}
+
+// Text link closed by a chevron arrow.
+.summit-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $accent-text;
+  font-family: $font-family-display;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &::after {
+    content: "→";
+    transition: transform 220ms $ease;
+  }
+
+  &:hover {
+    color: $accent-text-hover;
+
+    &::after {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.summit-link-arrow--light,
+.summit-link-arrow--light:hover {
+  color: $snow;
+}
+
+#add-to-cart-button {
+  width: 100%;
+  min-height: 3.4rem;
+  font-size: 1.15rem;
+}

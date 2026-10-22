@@ -25,6 +25,7 @@ use SyliusStarter\Themes\Installer\LagoonInstaller;
 use SyliusStarter\Themes\Installer\PromptInstaller;
 use SyliusStarter\Themes\Installer\RetroGamingInstaller;
 use SyliusStarter\Themes\Installer\RoasteryInstaller;
+use SyliusStarter\Themes\Installer\SummitInstaller;
 use SyliusStarter\Themes\Installer\TechInstaller;
 use SyliusStarter\Themes\Installer\ThemeInstallerDescriptor;
 use SyliusStarter\Themes\Installer\ThemesSyliusInstallerExtension;
@@ -39,6 +40,7 @@ use SyliusStarter\Themes\Remover\LagoonRemover;
 use SyliusStarter\Themes\Remover\PromptRemover;
 use SyliusStarter\Themes\Remover\RetroGamingRemover;
 use SyliusStarter\Themes\Remover\RoasteryRemover;
+use SyliusStarter\Themes\Remover\SummitRemover;
 use SyliusStarter\Themes\Remover\TechRemover;
 use SyliusStarter\Themes\Remover\ThemeRemoverDescriptor;
 use SyliusStarter\Themes\Remover\VoltRemover;
@@ -65,6 +67,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addInstaller(new DriveInstaller());
     Themes::addInstaller(new CellarInstaller());
     Themes::addInstaller(new RoasteryInstaller());
+    Themes::addInstaller(new SummitInstaller());
     Themes::addInstaller(new ArenaInstaller());
 
     Themes::addRemover(new CanvasRemover());
@@ -78,6 +81,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addRemover(new DriveRemover());
     Themes::addRemover(new CellarRemover());
     Themes::addRemover(new RoasteryRemover());
+    Themes::addRemover(new SummitRemover());
     Themes::addRemover(new ArenaRemover());
 
     foreach (ComponentResolver::candidates() as $reflection) {

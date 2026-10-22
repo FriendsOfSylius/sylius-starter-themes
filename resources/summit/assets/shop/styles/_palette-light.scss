@@ -1,0 +1,39 @@
+// Summit, light scheme — forest green and mineral grey, with a signal orange for the trail markers.
+$color-mode: light;
+
+// House colours: the forest bands (top bar, hero, footer) and the signal orange keep them in both schemes.
+$forest-night: #0E1F16;
+$forest-deep: #15301F;
+$forest: #1F4630;
+$moss: #3C6B47;
+$signal: #F2661C;
+$signal-light: #FF8A47;
+$snow: #FFFFFF;
+$text-on-dark: #C9D6CD;
+$border-dark: rgba(#FFF, 0.14);
+
+// Mineral greys.
+$page: #F1F2EF;
+$surface: #FFFFFF;
+$surface-raised: #E4E7E2;
+$line: #D7DBD4;
+$line-strong: #B5BCB2;
+$field-border: #7C867E;
+$heading: #111A15;
+$text: #343E38;
+$text-muted: #5D6861;
+
+// Signal orange fills the calls to action, with ink on it (6.2:1); as text, the accent is a deep forest green.
+$accent: $signal;
+$accent-hover: #FF7B33;
+$on-accent: #111A15;
+$accent-text: #1F6A3A;
+$accent-text-hover: #14482A;
+$signal-text: #B4440B;
+$focus-ring: rgba($signal, 0.3);
+
+$success: #2F7A45;
+$info: #2F5C86;
+
+$shadow-soft: 0 1px 2px rgba($forest-night, 0.08);
+$shadow-float: 0 22px 44px -20px rgba($forest-night, 0.4);

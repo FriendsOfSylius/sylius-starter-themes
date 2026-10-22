@@ -1,0 +1,19 @@
+// Barlow Condensed (SIL Open Font License 1.1, see ../fonts/BarlowCondensed-OFL.txt), latin subset: the condensed
+// grotesque of road and trail signs, for headings, figures and labels.
+@each $weight, $style in (600: normal, 700: normal, 800: normal) {
+  @font-face {
+    font-family: "Barlow Condensed";
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src: url("../fonts/barlow-condensed-#{$weight}-#{$style}.woff2") format("woff2");
+  }
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/barlow-condensed-700-italic.woff2") format("woff2");
+}

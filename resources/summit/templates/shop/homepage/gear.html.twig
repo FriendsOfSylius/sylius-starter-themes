@@ -1,0 +1,96 @@
+{# Summit gear spotlight: a technical backpack with numbered call-outs, its spec sheet, the variants (colours and sizes)
+   and the gear that goes with it — what a Sylius product page carries through attributes, variants and associations. #}
+<section id="summit-gear" class="summit-gear" aria-labelledby="summit-gear-title">
+    <div class="container">
+        <div class="summit-gear__grid">
+            <figure class="summit-gear__visual">
+                <svg class="summit-pack" viewBox="0 0 360 440" role="img" aria-labelledby="summit-pack-title" focusable="false">
+                    <title id="summit-pack-title">{{ 'summit.gear.illustration'|trans({}, 'summit') }}</title>
+                    <g class="summit-pack__contours">
+                        {% for r in [60, 100, 140, 180, 220] %}
+                            <ellipse cx="180" cy="230" rx="{{ r * 1.2 }}" ry="{{ r }}"/>
+                        {% endfor %}
+                    </g>
+                    {# Shoulder straps, behind the body. #}
+                    <path class="summit-pack__strap" d="M118 96c-26 30-34 96-24 170M242 96c26 30 34 96 24 170"/>
+                    {# Body, lid and front pocket. #}
+                    <path class="summit-pack__body" d="M110 120c0-38 30-60 70-60s70 22 70 60v236c0 18-14 30-32 30h-76c-18 0-32-12-32-30z"/>
+                    <path class="summit-pack__lid" d="M108 112c0-34 32-56 72-56s72 22 72 56c0 14-10 22-24 22h-96c-14 0-24-8-24-22z"/>
+                    <path class="summit-pack__zip" d="M124 112h112"/>
+                    <path class="summit-pack__pocket" d="M128 232h104v96c0 14-10 24-24 24h-56c-14 0-24-10-24-24z"/>
+                    <path class="summit-pack__zip" d="M136 250h88"/>
+                    <path class="summit-pack__webbing" d="M132 170h96M132 196h96"/>
+                    <rect class="summit-pack__buckle" x="170" y="164" width="20" height="12" rx="2"/>
+                    <rect class="summit-pack__buckle" x="170" y="190" width="20" height="12" rx="2"/>
+                    {# Ice axe loop and side bottle pocket. #}
+                    <path class="summit-pack__loop" d="M168 360c0 12 24 12 24 0"/>
+                    <path class="summit-pack__side" d="M250 268h18c6 0 10 4 10 10v62c0 8-6 14-14 14h-14z"/>
+                    <rect class="summit-pack__logo" x="166" y="284" width="28" height="10" rx="2"/>
+
+                    {# Numbered call-outs. #}
+                    {% for spot in [{n: 1, x: 180, y: 84}, {n: 2, x: 124, y: 196}, {n: 3, x: 180, y: 300}, {n: 4, x: 266, y: 312}] %}
+                        <g class="summit-pack__spot" transform="translate({{ spot.x }} {{ spot.y }})">
+                            <circle r="13"/>
+                            <text y="5" text-anchor="middle">{{ spot.n }}</text>
+                        </g>
+                    {% endfor %}
+                </svg>
+                <figcaption>
+                    <ol class="summit-gear__callouts" role="list">
+                        {% for n in 1..4 %}
+                            <li><span aria-hidden="true">{{ n }}</span>{{ ('summit.gear.callout_' ~ n)|trans({}, 'summit') }}</li>
+                        {% endfor %}
+                    </ol>
+                </figcaption>
+            </figure>
+
+            <div class="summit-gear__sheet">
+                <p class="summit-eyebrow">{{ 'summit.gear.eyebrow'|trans({}, 'summit') }}</p>
+                <h2 id="summit-gear-title">{{ 'summit.gear.title'|trans({}, 'summit')|raw }}</h2>
+                <p class="summit-gear__lead">{{ 'summit.gear.lead'|trans({}, 'summit') }}</p>
+
+                <dl class="summit-specs">
+                    {% for spec in ['volume', 'weight', 'fabric', 'waterproof', 'back'] %}
+                        <div>
+                            <dt>{{ ('summit.gear.specs.' ~ spec ~ '.label')|trans({}, 'summit') }}</dt>
+                            <dd>{{ ('summit.gear.specs.' ~ spec ~ '.value')|trans({}, 'summit') }}</dd>
+                        </div>
+                    {% endfor %}
+                </dl>
+
+                <div class="summit-variants">
+                    <div>
+                        <p class="summit-variants__label">{{ 'summit.gear.colours'|trans({}, 'summit') }}</p>
+                        <ul class="summit-swatches" role="list">
+                            {% for colour in ['forest', 'granite', 'signal'] %}
+                                <li class="summit-swatch summit-swatch--{{ colour }}"><span class="visually-hidden">{{ ('summit.gear.colour.' ~ colour)|trans({}, 'summit') }}</span></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="summit-variants__label">{{ 'summit.gear.sizes'|trans({}, 'summit') }}</p>
+                        <ul class="summit-sizes" role="list">
+                            {% for size in ['S', 'M', 'L'] %}
+                                <li>{{ size }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="summit-pairs">
+                    <p class="summit-variants__label">{{ 'summit.gear.pairs'|trans({}, 'summit') }}</p>
+                    <ul role="list">
+                        {% for item in ['cover', 'bladder', 'poles'] %}
+                            <li>
+                                <span class="summit-pairs__name">{{ ('summit.gear.pair.' ~ item ~ '.name')|trans({}, 'summit') }}</span>
+                                <span class="summit-pairs__meta">{{ ('summit.gear.pair.' ~ item ~ '.meta')|trans({}, 'summit') }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <a class="summit-link-arrow" href="#summit-latest-products">{{ 'summit.gear.cta'|trans({}, 'summit') }}</a>
+            </div>
+        </div>
+    </div>
+</section>

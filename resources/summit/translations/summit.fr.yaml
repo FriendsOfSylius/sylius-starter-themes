@@ -1,0 +1,133 @@
+summit:
+    brand:
+        tagline: 'Équipement outdoor'
+    top_bar:
+        delivery: 'Livraison offerte dès 60 € · expédition sous 24 h'
+        returns: 'Retours 60 jours · réparation offerte sur notre matériel'
+    hero:
+        eyebrow: 'Randonnée · trail · alpinisme'
+        title: 'Montez plus haut, <em>portez plus léger.</em>'
+        lead: 'Un équipement technique choisi et testé sur le terrain par des guides de montagne : sacs, couches, chaussures et tout ce qui va avec, du premier sentier à l’arête sommitale.'
+        cta: 'Voir l’équipement'
+        secondary_cta: 'Par activité'
+    report:
+        kicker: 'Bulletin sentier'
+        title: 'Col de la Croix'
+        altitude:
+            label: 'Altitude'
+            value: '2 381 m'
+        temperature:
+            label: 'Au col'
+            value: '6 °C'
+        wind:
+            label: 'Vent'
+            value: '25 km/h'
+        daylight:
+            label: 'Jour'
+            value: '11 h 40'
+        advice: 'Sentier sec, neige au-dessus de 2 600 m : prévoyez une couche coupe-vent et des bâtons.'
+    figures:
+        item_1:
+            value: '1 200+'
+            text: 'produits testés sur le terrain'
+        item_2:
+            value: '24 h'
+            text: 'expédition, du lundi au samedi'
+        item_3:
+            value: '60 jours'
+            text: 'pour essayer et retourner'
+        item_4:
+            value: '2 ans'
+            text: 'de garantie, réparation à vie'
+    products:
+        eyebrow:
+            latest: 'Nouveautés'
+    activities:
+        eyebrow: 'Par activité'
+        title: 'Choisissez votre terrain, <em>on vous équipe.</em>'
+        lead: 'Chaque activité rassemble les sacs, couches, chaussures et accessoires que nos guides emporteraient.'
+        hiking:
+            name: 'Randonnée'
+            level: 'Sentiers · à la journée'
+            gear: 'Sacs de jour, chaussures, bâtons'
+        trail:
+            name: 'Trail'
+            level: 'Rapide · léger'
+            gear: 'Gilets, chaussures, flasques'
+        mountaineering:
+            name: 'Alpinisme'
+            level: 'Glaciers · arêtes'
+            gear: 'Baudriers, crampons, vestes'
+        climbing:
+            name: 'Escalade'
+            level: 'Falaise · grandes voies'
+            gear: 'Cordes, chaussons, dégaines'
+        bivouac:
+            name: 'Bivouac'
+            level: 'Nuits dehors'
+            gear: 'Tentes, duvets, réchauds'
+        snow:
+            name: 'Neige'
+            level: 'Raquettes · ski de rando'
+            gear: 'Raquettes, sondes, gants'
+    gear:
+        eyebrow: 'Équipement à la une'
+        title: 'Ridge 38, <em>taillé pour les grandes journées.</em>'
+        lead: 'Chaque fiche produit détaille les caractéristiques techniques, les couleurs et tailles en stock et l’équipement qui va avec.'
+        illustration: 'Le sac à dos technique Ridge 38, vert forêt avec zips orange, avec quatre repères numérotés.'
+        callout_1: 'Rabat enroulable, imperméable 20 000 mm'
+        callout_2: 'Rappels de charge et dos réglable'
+        callout_3: 'Poche avant extensible pour une veste'
+        callout_4: 'Poche latérale pour une gourde de 1 L'
+        specs:
+            volume:
+                label: 'Volume'
+                value: '38 L + 4 L d’extension'
+            weight:
+                label: 'Poids'
+                value: '1,18 kg (taille M)'
+            fabric:
+                label: 'Tissu'
+                value: 'Nylon ripstop recyclé 210D'
+            waterproof:
+                label: 'Imperméabilité'
+                value: 'Enduction PU, 3 000 mm'
+            back:
+                label: 'Longueur de dos'
+                value: '42 à 52 cm, trois tailles'
+        colours: 'Couleurs'
+        colour:
+            forest: 'Vert forêt, sélectionné'
+            granite: 'Gris granite'
+            signal: 'Orange balisage'
+        sizes: 'Tailles'
+        pairs: 'Va bien avec'
+        pair:
+            cover:
+                name: 'Housse pluie 30–40 L'
+                meta: 'Se range dans sa poche'
+            bladder:
+                name: 'Poche à eau 2 L'
+                meta: 'Se glisse dans le fourreau'
+            poles:
+                name: 'Bâtons carbone'
+                meta: 'Pliants, 290 g la paire'
+        cta: 'Voir tous les sacs'
+    footer:
+        tagline: 'Équipement outdoor technique, testé sur le terrain par des guides de montagne.'
+        notice: 'Prix TTC. Chaque produit est garanti deux ans, et notre atelier répare à vie le matériel que nous vendons.'
+        services:
+            eyebrow: 'Avec vous dehors'
+            title: 'Du matériel qui <em>tient la distance.</em>'
+            advice:
+                title: 'Conseil terrain'
+                text: 'Un itinéraire à préparer, une taille à choisir, un système de couches à construire : nos guides vous répondent personnellement.'
+                cta: 'Demander à un guide'
+            returns:
+                title: 'Retours 60 jours'
+                text: 'Essayez votre équipement sur le sentier, pas seulement au salon : les retours sont gratuits pendant soixante jours.'
+                cta: 'Mes commandes'
+            repair:
+                title: 'Atelier réparation'
+                text: 'Une veste déchirée, une boucle cassée, un zip usé : notre atelier répare à vie le matériel que nous vendons.'
+                cta: 'Demander une réparation'

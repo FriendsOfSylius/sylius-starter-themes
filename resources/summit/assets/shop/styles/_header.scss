@@ -1,0 +1,395 @@
+// Top bar: a signal orange band, like the tape on a trail sign, with the delivery promise and the locale / currency
+// switchers in ink.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.summit-topbar) {
+  background-color: $signal !important;
+  color: $forest-night;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  a {
+    color: $forest-night;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{rgba($forest-night, 0.45)};
+    --bs-btn-color: #{$forest-night};
+    --bs-btn-hover-bg: #{$forest-night};
+    --bs-btn-hover-border-color: #{$forest-night};
+    --bs-btn-hover-color: #{$snow};
+    --bs-btn-active-bg: #{$forest-night};
+    --bs-btn-active-border-color: #{$forest-night};
+    --bs-btn-active-color: #{$snow};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-family: $font-family-sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$forest-deep};
+    --bs-dropdown-link-hover-bg: #{$forest};
+    --bs-dropdown-border-color: #{$border-dark};
+  }
+
+  :focus-visible {
+    outline-color: $forest-night;
+  }
+}
+
+.summit-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.summit-topbar__item + .summit-topbar__item::before {
+  margin-right: 1.5rem;
+  content: "▲";
+  font-size: 0.55rem;
+  vertical-align: 0.15em;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $page;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $line !important;
+}
+
+header .container {
+  padding-block: 0.25rem;
+}
+
+header a {
+  color: $heading;
+
+  &:hover {
+    color: $accent-text;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: a peak with its snow cap, next to a condensed name over a spaced tagline.
+
+.summit-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.75rem;
+  color: $accent-text;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $accent-text;
+    text-decoration: none;
+  }
+}
+
+.summit-logo__seal {
+  width: 2.7rem;
+  height: 2.7rem;
+  flex: 0 0 auto;
+}
+
+.summit-logo__badge {
+  fill: $forest;
+}
+
+.summit-logo__peak {
+  fill: $snow;
+}
+
+.summit-logo__cap {
+  fill: $signal;
+}
+
+.summit-logo:hover .summit-logo__badge {
+  fill: $moss;
+}
+
+.summit-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  line-height: 1;
+}
+
+.summit-logo__name {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.summit-logo__tagline {
+  color: $signal-text;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+// Category navigation: condensed capitals over a thick signal orange bar.
+
+.summit-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.summit-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.summit-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  overflow: visible;
+}
+
+.summit-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.summit-category-nav__links > .nav-link,
+.summit-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.6rem 0.35rem !important;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  &::before {
+    position: absolute;
+    right: 0.35rem;
+    bottom: 0.15rem;
+    left: 0.35rem;
+    height: 3px;
+    background-color: $signal;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 240ms $ease;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $accent-text;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.summit-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $line;
+  border-top: 2px solid $signal;
+  border-radius: 0 0 $radius $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.summit-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Cart: an ink button with an orange counter.
+
+.summit-cart__button {
+  --bs-btn-color: #{$page};
+  --bs-btn-bg: #{$heading};
+  --bs-btn-border-color: #{$heading};
+  --bs-btn-hover-color: #{$page};
+  --bs-btn-hover-bg: #{$accent-text};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$page};
+  --bs-btn-active-bg: #{$accent-text};
+  --bs-btn-active-border-color: #{$accent-text};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.summit-cart__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.summit-cart__count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $page;
+  border-radius: 999px;
+  background-color: $accent;
+  color: $on-accent;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $heading;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+@media (min-width: 992px) {
+  .summit-category-nav__menu {
+    width: 100%;
+  }
+
+  .summit-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .summit-category-nav__menu {
+    position: fixed;
+    background-color: $page;
+  }
+
+  .summit-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $line;
+  }
+
+  .summit-category-nav__menu .offcanvas-title {
+    font-family: $font-family-display;
+    font-size: 1.6rem !important;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .summit-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .summit-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .summit-category-nav__links > .nav-link,
+  .summit-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .summit-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface-raised;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .summit-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .summit-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .summit-logo__seal {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .summit-logo__name {
+    font-size: 1.6rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.summit-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}

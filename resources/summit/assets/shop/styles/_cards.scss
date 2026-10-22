@@ -1,0 +1,157 @@
+.card {
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-soft;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  color: $heading;
+  font-family: $font-family-display;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card-text {
+  color: $text-muted;
+}
+
+.card-footer {
+  border-top-color: $line;
+  background-color: $surface;
+}
+
+// Product cards, built like gear on a shop wall: the photo fills its tile edge to edge, zooms in on hover and
+// gets an orange trail-tag corner; the name below in condensed capitals, the price in bold figures.
+// The card root is the element holding the details link: it is a direct grid item on category
+// pages and wrapped in a <div> in the homepage / association lists.
+
+.products-grid {
+  column-gap: clamp(1rem, 2vw, 1.5rem);
+  row-gap: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.products-grid div:has(> a.link-reset) {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border-bottom: 2px solid $line;
+  transition: border-color 220ms ease;
+
+  > a.link-reset {
+    display: block;
+    color: $heading;
+    text-decoration: none;
+
+    // Stretched link: the price below is part of the clickable card too.
+    &::after {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      content: "";
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  &:has(> a.link-reset:focus-visible) {
+    outline: 2px solid $signal-text;
+    outline-offset: 4px;
+  }
+
+  &:hover {
+    border-bottom-color: $signal;
+  }
+
+  .mb-4 {
+    margin-bottom: 0 !important;
+  }
+
+  .rounded-3 {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    border-radius: $radius !important;
+    background-color: $surface-raised !important;
+
+    img {
+      object-fit: cover !important;
+      transition: transform 700ms $ease;
+    }
+
+    // Trail tag folded over the top right corner.
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2.4rem;
+      height: 2.4rem;
+      background: linear-gradient(225deg, $signal 0 50%, transparent 50%);
+      content: "";
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(0.6rem, -0.6rem);
+      transition: opacity 220ms ease, transform 220ms $ease;
+    }
+  }
+
+  &:hover .rounded-3 img {
+    transform: scale(1.06);
+  }
+
+  &:hover .rounded-3::after {
+    opacity: 1;
+    transform: none;
+  }
+
+  .h6 {
+    margin: 0;
+    padding: 1rem 0 0.35rem;
+    color: $heading;
+    font-family: $font-family-display;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    text-transform: uppercase;
+    transition: color 200ms ease;
+  }
+
+  &:hover .h6 {
+    color: $accent-text;
+  }
+
+  // Prices
+  > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+    align-items: baseline;
+    margin-top: auto;
+    padding-bottom: 0.9rem;
+    color: $heading;
+    font-size: 1rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+
+    > * {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    del {
+      color: $text-muted;
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+  }
+}
