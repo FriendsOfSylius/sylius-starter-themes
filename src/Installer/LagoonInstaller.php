@@ -26,7 +26,7 @@ final class LagoonInstaller implements InstallerInterface
 
     public function description(): ?string
     {
-        return 'https://github.com/sylius-starter/sylius-starter/blob/main/docs/themes/lagoon.md';
+        return 'https://github.com/FriendsOfSylius/sylius-starter/blob/main/docs/themes/lagoon.md';
     }
 
     public function __invoke(App $app): void

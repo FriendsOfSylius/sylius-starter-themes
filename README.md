@@ -12,10 +12,10 @@ castor composer require sylius-starter/themes
 
 Or install every Sylius Starter package at once with `sylius-starter/sylius-starter`.
 
-Read the [documentation](https://github.com/sylius-starter/sylius-starter/blob/main/docs/commands/themes.md) for usage.
+Read the [documentation](https://github.com/FriendsOfSylius/sylius-starter/blob/main/docs/commands/themes.md) for usage.
 
 ## Contributing
 
 This repository is a **read-only split** of the
-[sylius-starter/sylius-starter](https://github.com/sylius-starter/sylius-starter) monorepo.
+[FriendsOfSylius/sylius-starter](https://github.com/FriendsOfSylius/sylius-starter) monorepo.
 Please open issues and pull requests there.

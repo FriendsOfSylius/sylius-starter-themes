@@ -26,7 +26,7 @@ final class TechInstaller implements InstallerInterface
 
     public function description(): ?string
     {
-        return 'https://github.com/sylius-starter/sylius-starter/blob/main/docs/themes/tech.md';
+        return 'https://github.com/FriendsOfSylius/sylius-starter/blob/main/docs/themes/tech.md';
     }
 
     public function __invoke(App $app): void
