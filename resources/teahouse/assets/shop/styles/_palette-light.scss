@@ -1,0 +1,48 @@
+// Teahouse, light scheme — rice paper and jade night, a matcha green and a vermilion seal.
+$color-mode: light;
+
+// House colours: the jade bands (top bar, hero, footer), the matcha and the seal keep them in both schemes.
+$jade-night: #0F2219;
+$jade-deep: #173325;
+$jade: #24503A;
+$moss: #3F6B4C;
+// Fillets, hairlines and focus outlines on the paper surfaces (3:1 at least).
+$leaf: #3F6B4C;
+$matcha: #9CC46B;
+$matcha-light: #C4DE97;
+$seal: #C8432B;
+$seal-light: #F29072;
+$ivory: #FBF8EE;
+$text-on-dark: #CBD8CB;
+$border-dark: rgba($matcha, 0.28);
+
+// Rice paper, porcelain and ink.
+$page: #F5F2E7;
+$surface: #FFFDF6;
+$surface-raised: #EAE7D6;
+$line: #DEDAC7;
+$line-strong: #BDB79E;
+$field-border: #868069;
+$heading: #14231B;
+$text: #36443B;
+$text-muted: #5C665D;
+
+// Jade fills the calls to action; as text, the accent is a deep sencha green, the seal a vermilion.
+$accent: $jade;
+$accent-hover: $jade-night;
+$on-accent: $ivory;
+$accent-text: #2C6642;
+$accent-text-hover: #1A4A2C;
+$seal-text: #B03A23;
+$focus-ring: rgba($moss, 0.25);
+
+$success: #3F6B3A;
+$info: #36597A;
+
+// The tin label of the hero illustration is printed on rice paper in every scheme.
+$label-ink: $heading;
+$label-jade: #24503A;
+$label-seal: #B03A23;
+
+$shadow-soft: 0 1px 2px rgba($jade-night, 0.06);
+$shadow-float: 0 24px 50px -20px rgba($jade-night, 0.3);

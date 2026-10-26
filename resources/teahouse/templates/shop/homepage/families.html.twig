@@ -1,0 +1,29 @@
+{# Teahouse families: the six colours of tea, each with its cup, its oxidation and its steeping. #}
+<section id="teahouse-families" class="teahouse-families" aria-labelledby="teahouse-families-title">
+    <div class="container">
+        <div class="teahouse-section-head teahouse-section-head--center">
+            <p class="teahouse-eyebrow">{{ 'teahouse.families.eyebrow'|trans({}, 'teahouse') }}</p>
+            <h2 id="teahouse-families-title">{{ 'teahouse.families.title'|trans({}, 'teahouse')|raw }}</h2>
+            <p class="teahouse-section-head__lead">{{ 'teahouse.families.lead'|trans({}, 'teahouse') }}</p>
+        </div>
+
+        <ul class="teahouse-families__items" role="list">
+            {% for family in [{key: 'white', level: 2}, {key: 'green', level: 1}, {key: 'yellow', level: 2}, {key: 'oolong', level: 3}, {key: 'black', level: 5}, {key: 'dark', level: 4}] %}
+                <li class="teahouse-family teahouse-family--{{ family.key }}">
+                    <svg class="teahouse-family__cup" viewBox="0 0 96 64" aria-hidden="true" focusable="false">
+                        <ellipse class="teahouse-family__saucer" cx="48" cy="58" rx="40" ry="5"/>
+                        <path class="teahouse-family__bowl" d="M12 18h72c-2 24-17 38-36 38S14 42 12 18z"/>
+                        <ellipse class="teahouse-family__rim" cx="48" cy="18" rx="36" ry="7"/>
+                        <ellipse class="teahouse-family__liquor" cx="48" cy="19" rx="31" ry="5"/>
+                        <path class="teahouse-family__steam" d="M40 10c-4-5 4-7 0-12M54 10c-4-5 4-7 0-12"/>
+                    </svg>
+                    <p class="teahouse-family__name">{{ ('teahouse.families.' ~ family.key ~ '.name')|trans({}, 'teahouse') }}</p>
+                    <p class="teahouse-family__origin">{{ ('teahouse.families.' ~ family.key ~ '.origin')|trans({}, 'teahouse') }}</p>
+                    <p class="teahouse-family__cup-notes">{{ ('teahouse.families.' ~ family.key ~ '.cup')|trans({}, 'teahouse') }}</p>
+                    <p class="teahouse-family__steep">{{ ('teahouse.families.' ~ family.key ~ '.steep')|trans({}, 'teahouse') }}</p>
+                    {% include 'shop/homepage/oxidation_scale.html.twig' with {level: family.level} %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,127 @@
+teahouse:
+    brand:
+        tagline: 'Maison de thé'
+    top_bar:
+        delivery: 'Livraison offerte dès 2 boîtes · préparées le jour de la commande'
+        fresh: 'Les thés de la saison, la date de cueillette sur chaque boîte'
+    hero:
+        eyebrow: 'Maison de thé · du jardin à votre tasse'
+        title: 'Le thé cueilli à son apogée, <em>infusé avec soin.</em>'
+        lead: 'Thés verts, blancs, oolongs et noirs achetés directement aux jardins et scellés dans de petites boîtes la saison de leur cueillette. Chaque thé est livré avec son <strong>guide d’infusion</strong> : eau, temps et nombre d’infusions.'
+        cta: 'Découvrir les thés'
+        secondary_cta: 'Du jardin à la tasse'
+        signature: 'Goûtés tasse après tasse, récolte après récolte.'
+        illustration: 'Par la porte de lune ronde d’un mur de maison de thé vermillon, des jardins de thé en terrasses à l’aube sous un soleil doré. Une lanterne de papier brille dans un coin. Sur la table à thé, une théière céladon verse un thé ambré dans une tasse en porcelaine, à côté d’une boîte jade de first flush et d’un brin de deux feuilles et un bourgeon.'
+        label: 'First flush'
+        label_origin: 'Darjeeling · Inde'
+    figures:
+        item_1:
+            value: '38'
+            text: 'jardins partenaires en direct'
+        item_2:
+            value: '2 + 1'
+            text: 'deux feuilles et un bourgeon, cueillis à la main'
+        item_3:
+            value: '1 sur 12'
+            text: 'lots retenus après dégustation'
+        item_4:
+            value: '72 h'
+            text: 'de notre salon de thé à chez vous'
+    products:
+        eyebrow:
+            latest: 'La récolte de la saison'
+    oxidation:
+        label: 'Oxydation'
+        level: 'Oxydation %level% sur 5 : %name%'
+        level_1: 'Nulle'
+        level_2: 'Légère'
+        level_3: 'Partielle'
+        level_4: 'Vieillie'
+        level_5: 'Complète'
+    promise:
+        eyebrow: 'Du jardin à la tasse'
+        title: 'Un métier de négociant, <em>une récolte à la fois.</em>'
+        lead: 'Nous goûtons chaque lot au jardin, l’achetons la saison de sa cueillette et le scellons à l’abri de la lumière et de l’air, pour qu’il arrive dans votre théière aussi parfumé qu’au jour de sa fabrication.'
+        step_1:
+            numeral: 'I'
+            title: 'Cueillir'
+            text: 'Deux feuilles et un bourgeon, cueillis à la main à l’aube dans de petits jardins, au meilleur de chaque récolte. Moins d’un lot sur douze entre dans notre sélection.'
+        step_2:
+            numeral: 'II'
+            title: 'Façonner'
+            text: 'Flétries, roulées, oxydées ou non, puis séchées : chaque famille a ses gestes, suivis par des artisans avec qui nous travaillons depuis des années.'
+        step_3:
+            numeral: 'III'
+            title: 'Sceller et envoyer'
+            text: 'Scellés en boîtes hermétiques ou en sachets recharges, la date de cueillette sur l’étiquette, et envoyés avec un guide d’infusion écrit pour chaque thé.'
+        guide:
+            kicker: 'Guide d’infusion'
+            title: 'Darjeeling First Flush'
+            lot: 'Jardin de Castleton · récolte de printemps'
+            dial: 'Cadran d’infusion : trois minutes sur cinq, pour une tasse d’un ambre doré.'
+            time: '3′'
+            unit: 'minutes'
+            water:
+                label: 'Eau'
+                value: '85 °C, douce et fraîchement tirée'
+            leaf:
+                label: 'Feuilles'
+                value: '2,5 g pour 20 cl, une cuillère bombée'
+            infusions:
+                label: 'Infusions'
+                value: 'Deux, la seconde une minute de plus'
+            notes:
+                label: 'En tasse'
+                value: 'Raisin muscat, fleurs blanches, amande'
+    families:
+        eyebrow: 'Les six couleurs du thé'
+        title: 'Une feuille, <em>six familles.</em>'
+        lead: 'Tous les thés viennent de la même plante, Camellia sinensis : la façon dont ses feuilles sont travaillées, et leur degré d’oxydation, donnent à chaque famille sa couleur.'
+        white:
+            name: 'Blanc'
+            origin: 'Fujian · Silver Needle'
+            cup: 'Bourgeons duveteux, miel et foin, une tasse d’or pâle.'
+            steep: '80 °C · 4 min'
+        green:
+            name: 'Vert'
+            origin: 'Shizuoka · Sencha'
+            cup: 'Herbe fraîche, air marin et une finale umami toute douce.'
+            steep: '70 °C · 1 min 30'
+        yellow:
+            name: 'Jaune'
+            origin: 'Hunan · Junshan Yinzhen'
+            cup: 'Rare et tout en rondeur, riz grillé et maïs doux.'
+            steep: '80 °C · 3 min'
+        oolong:
+            name: 'Oolong'
+            origin: 'Taïwan · Alishan'
+            cup: 'Orchidée et beurre, des feuilles roulées qui s’ouvrent tasse après tasse.'
+            steep: '95 °C · 3 min'
+        black:
+            name: 'Noir'
+            origin: 'Assam · Second flush'
+            cup: 'Malté et corsé, une pointe de cacao, parfait avec un nuage de lait.'
+            steep: '95 °C · 4 min'
+        dark:
+            name: 'Sombre'
+            origin: 'Yunnan · Pu-erh'
+            cup: 'Vieilli des années en galettes, boisé, terreux et profond.'
+            steep: '100 °C · 30 s'
+    footer:
+        tagline: 'Des thés d’exception venus des jardins, scellés la saison de leur cueillette et livrés chez vous.'
+        notice: 'Préparés à la commande chaque jour de semaine. La date de cueillette est imprimée sur chaque boîte : conservez-la à l’abri de la lumière, de la chaleur et des odeurs.'
+        services:
+            eyebrow: 'À votre service'
+            title: 'De notre salon de thé <em>à votre théière.</em>'
+            advice:
+                title: 'Conseil de sommelier'
+                text: 'Un thé à choisir, une eau à adoucir, un cadeau à faire : nos sommeliers du thé vous répondent personnellement.'
+                cta: 'Demander conseil'
+            delivery:
+                title: 'Scellé frais'
+                text: 'Boîtes hermétiques et sachets recharges, expédiés sous 72 heures, livraison offerte dès deux boîtes.'
+                cta: 'Suivre ma commande'
+            subscription:
+                title: 'Votre thé, en toute simplicité'
+                text: 'Retrouvez vos commandes et vos thés préférés dans votre compte, et recommandez en quelques clics.'
+                cta: 'Mon compte'

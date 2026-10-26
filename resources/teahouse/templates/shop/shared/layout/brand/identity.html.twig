@@ -1,0 +1,11 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="teahouse-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# The vermilion house seal, two leaves and a bud, next to a Petrona wordmark. #}
+    {% include 'shop/homepage/seal.html.twig' with {class: 'teahouse-logo__seal'} %}
+    <span class="teahouse-logo__text">
+        <span class="teahouse-logo__name">Teahouse</span>
+        <span class="teahouse-logo__tagline">{{ 'teahouse.brand.tagline'|trans({}, 'teahouse') }}</span>
+    </span>
+{% endif %}

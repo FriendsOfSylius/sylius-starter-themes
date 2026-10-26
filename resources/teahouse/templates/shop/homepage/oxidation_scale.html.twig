@@ -1,0 +1,13 @@
+{# Oxidation from 1 (none, a green tea) to 5 (full, a black tea), drawn as five leaves turning from green to copper. #}
+<div class="teahouse-scale">
+    <span class="teahouse-scale__label">{{ 'teahouse.oxidation.label'|trans({}, 'teahouse') }}</span>
+    <span class="teahouse-scale__leaves" role="img" aria-label="{{ 'teahouse.oxidation.level'|trans({'%level%': level, '%name%': ('teahouse.oxidation.level_' ~ level)|trans({}, 'teahouse')}, 'teahouse') }}">
+        {% for step in 1..5 %}
+            <svg class="teahouse-scale__leaf teahouse-scale__leaf--{{ step }}{{ step <= level ? ' is-on' : '' }}" viewBox="0 0 16 8" aria-hidden="true" focusable="false">
+                <path d="M.5 4C4-.2 11.2-.4 15.5 4 11.2 8.4 4 8.2.5 4z"/>
+                <path class="teahouse-scale__rib" d="M1.5 4H14"/>
+            </svg>
+        {% endfor %}
+    </span>
+    <span class="teahouse-scale__name">{{ ('teahouse.oxidation.level_' ~ level)|trans({}, 'teahouse') }}</span>
+</div>

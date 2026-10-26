@@ -1,0 +1,403 @@
+// Top bar: a thin jade band with the delivery promise and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.teahouse-topbar) {
+  background-color: $jade-night !important;
+  color: $text-on-dark;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+
+  // Dark scheme: a matcha hairline parts the jade band from the header.
+  @if $dark {
+    border-bottom: 1px solid $border-dark;
+  }
+
+  a {
+    color: $matcha-light;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$border-dark};
+    --bs-btn-color: #{$matcha-light};
+    --bs-btn-hover-bg: #{$jade-deep};
+    --bs-btn-hover-border-color: #{$leaf};
+    --bs-btn-hover-color: #{$ivory};
+    --bs-btn-active-bg: #{$jade-deep};
+    --bs-btn-active-border-color: #{$leaf};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.68rem;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$jade-deep};
+    --bs-dropdown-link-hover-bg: #{$jade};
+    --bs-dropdown-border-color: #{$border-dark};
+  }
+}
+
+.teahouse-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.teahouse-topbar__item + .teahouse-topbar__item::before {
+  margin-right: 1.5rem;
+  color: $matcha;
+  content: "❦";
+  font-size: 0.8rem;
+  line-height: 1;
+  vertical-align: -0.05em;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $page;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $line !important;
+}
+
+header .container {
+  padding-block: 0.25rem;
+}
+
+header a {
+  color: $heading;
+
+  &:hover {
+    color: $accent-text;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: the vermilion house seal and a Petrona name over a spaced tagline.
+
+.teahouse-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.75rem;
+  color: $accent-text;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $accent-text;
+    text-decoration: none;
+  }
+}
+
+.teahouse-logo__seal {
+  width: 2.7rem;
+  height: 2.7rem;
+  flex: 0 0 auto;
+  transition: transform 400ms $ease;
+}
+
+.teahouse-logo:hover .teahouse-logo__seal {
+  transform: rotate(-12deg);
+}
+
+.teahouse-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  line-height: 1;
+}
+
+.teahouse-logo__name {
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: 1.75rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.teahouse-logo__tagline {
+  color: $seal-text;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+// Category navigation: spaced small capitals underlined in leaf green.
+
+.teahouse-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.teahouse-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.teahouse-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  overflow: visible;
+}
+
+.teahouse-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.teahouse-category-nav__links > .nav-link,
+.teahouse-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.6rem 0.35rem !important;
+  color: $heading;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  &::before {
+    position: absolute;
+    right: 0.35rem;
+    bottom: 0.3rem;
+    left: 0.35rem;
+    height: 1px;
+    background-color: $leaf;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 240ms $ease;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $accent-text;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.teahouse-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $line;
+  border-top: 2px solid $leaf;
+  border-radius: 0 0 $radius $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.teahouse-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Cart: an outlined label with a vermilion seal counter.
+
+.teahouse-cart__button {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.teahouse-cart__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.teahouse-cart__count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $page;
+  border-radius: 999px;
+  background-color: $seal;
+  color: if($dark, $page, $ivory);
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $heading;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+@media (min-width: 992px) {
+  .teahouse-category-nav__menu {
+    width: 100%;
+  }
+
+  .teahouse-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .teahouse-category-nav__menu {
+    position: fixed;
+    background-color: $page;
+  }
+
+  .teahouse-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $line;
+  }
+
+  .teahouse-category-nav__menu .offcanvas-title {
+    font-family: $font-family-serif;
+    font-size: 1.4rem !important;
+    font-weight: 500;
+  }
+
+  .teahouse-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .teahouse-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .teahouse-category-nav__links > .nav-link,
+  .teahouse-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .teahouse-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface-raised;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .teahouse-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .teahouse-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .teahouse-logo__seal {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .teahouse-logo__name {
+    font-size: 1.45rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.teahouse-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+
+// The house seal, shared by the logo, the hero signature and the steeping guide.
+
+.teahouse-seal__stamp {
+  fill: $seal;
+}
+
+.teahouse-seal__ring {
+  fill: none;
+  stroke: $ivory;
+  stroke-opacity: 0.55;
+  stroke-width: 0.8;
+}
+
+.teahouse-seal__sprig path {
+  fill: $ivory;
+}
+
+.teahouse-seal__sprig .teahouse-seal__stem {
+  fill: none;
+  stroke: $ivory;
+  stroke-linecap: round;
+  stroke-width: 1.3;
+}

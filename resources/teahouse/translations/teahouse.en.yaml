@@ -1,0 +1,127 @@
+teahouse:
+    brand:
+        tagline: 'Tea merchants'
+    top_bar:
+        delivery: 'Free delivery from 2 tins · packed the day you order'
+        fresh: 'This season’s harvest, the plucking date on every tin'
+    hero:
+        eyebrow: 'Tea merchants · from the garden to your cup'
+        title: 'Tea picked at its peak, <em>steeped with care.</em>'
+        lead: 'Green, white, oolong and black teas bought directly from the gardens and sealed in small tins the season they are plucked. Every tea comes with its <strong>steeping guide</strong>: water, time and number of infusions.'
+        cta: 'Discover the teas'
+        secondary_cta: 'From garden to cup'
+        signature: 'Tasted cup after cup, harvest after harvest.'
+        illustration: 'Through the round moon gate of a vermilion tea house wall, terraced tea gardens at dawn under a golden sun. A paper lantern glows in the corner. On the tea table, a celadon teapot pours amber tea into a porcelain cup, next to a jade tin of first flush and a sprig of two leaves and a bud.'
+        label: 'First flush'
+        label_origin: 'Darjeeling · India'
+    figures:
+        item_1:
+            value: '38'
+            text: 'gardens we buy from directly'
+        item_2:
+            value: '2 + 1'
+            text: 'two leaves and a bud, plucked by hand'
+        item_3:
+            value: '1 in 12'
+            text: 'lots pass our tasting'
+        item_4:
+            value: '72 h'
+            text: 'from our tea room to your door'
+    products:
+        eyebrow:
+            latest: 'This season’s harvest'
+    oxidation:
+        label: 'Oxidation'
+        level: 'Oxidation %level% out of 5: %name%'
+        level_1: 'None'
+        level_2: 'Light'
+        level_3: 'Partial'
+        level_4: 'Aged'
+        level_5: 'Full'
+    promise:
+        eyebrow: 'From garden to cup'
+        title: 'A tea merchant’s craft, <em>one harvest at a time.</em>'
+        lead: 'We taste every lot at the garden, buy it the season it is plucked and seal it away from light and air, so that it reaches your pot as fragrant as the day it was made.'
+        step_1:
+            numeral: 'I'
+            title: 'Pluck'
+            text: 'Two leaves and a bud, picked by hand at dawn in small gardens, at the peak of each flush. Fewer than one lot in twelve makes our list.'
+        step_2:
+            numeral: 'II'
+            title: 'Craft'
+            text: 'Withered, rolled, oxidised or not, then fired: each family has its own gestures, followed by the tea makers we have worked with for years.'
+        step_3:
+            numeral: 'III'
+            title: 'Seal & send'
+            text: 'Sealed in airtight tins or refill pouches, the plucking date on the label, and sent with a steeping guide written for each tea.'
+        guide:
+            kicker: 'Steeping guide'
+            title: 'Darjeeling First Flush'
+            lot: 'Castleton garden · spring harvest'
+            dial: 'Steeping dial: three minutes out of five, for a golden amber cup.'
+            time: '3′'
+            unit: 'minutes'
+            water:
+                label: 'Water'
+                value: '85 °C, soft and freshly drawn'
+            leaf:
+                label: 'Leaf'
+                value: '2.5 g for 200 ml, a heaped teaspoon'
+            infusions:
+                label: 'Infusions'
+                value: 'Two, the second one minute longer'
+            notes:
+                label: 'In the cup'
+                value: 'Muscat grape, white flowers, almond'
+    families:
+        eyebrow: 'The six colours of tea'
+        title: 'One leaf, <em>six families.</em>'
+        lead: 'Every tea comes from the same plant, Camellia sinensis: the way its leaves are crafted, and how far they oxidise, gives each family its colour.'
+        white:
+            name: 'White'
+            origin: 'Fujian · Silver Needle'
+            cup: 'Downy buds, honey and hay, a pale golden cup.'
+            steep: '80 °C · 4 min'
+        green:
+            name: 'Green'
+            origin: 'Shizuoka · Sencha'
+            cup: 'Fresh grass, sea air and a sweet umami finish.'
+            steep: '70 °C · 1 min 30'
+        yellow:
+            name: 'Yellow'
+            origin: 'Hunan · Junshan Yinzhen'
+            cup: 'Mellow and rare, toasted rice and sweet corn.'
+            steep: '80 °C · 3 min'
+        oolong:
+            name: 'Oolong'
+            origin: 'Taiwan · Alishan'
+            cup: 'Orchid and butter, rolled leaves that open cup after cup.'
+            steep: '95 °C · 3 min'
+        black:
+            name: 'Black'
+            origin: 'Assam · Second flush'
+            cup: 'Malty and bold, with a hint of cocoa, lovely with milk.'
+            steep: '95 °C · 4 min'
+        dark:
+            name: 'Dark'
+            origin: 'Yunnan · Pu-erh'
+            cup: 'Aged in cakes for years, earthy, woody and deep.'
+            steep: '100 °C · 30 s'
+    footer:
+        tagline: 'Fine teas from the gardens, sealed the season they are plucked and delivered to your door.'
+        notice: 'Packed to order every weekday. The plucking date is printed on every tin: keep it away from light, heat and strong smells.'
+        services:
+            eyebrow: 'At your service'
+            title: 'From our tea room <em>to your teapot.</em>'
+            advice:
+                title: 'Tea sommelier advice'
+                text: 'A tea to choose, a water to soften, a gift to make: our tea sommeliers answer you personally.'
+                cta: 'Ask a sommelier'
+            delivery:
+                title: 'Sealed fresh'
+                text: 'Airtight tins and refill pouches, sent within 72 hours, free delivery from two tins.'
+                cta: 'Follow my order'
+            subscription:
+                title: 'Your tea, on repeat'
+                text: 'Find your orders and your favourite teas in your account, and reorder in a few clicks.'
+                cta: 'My account'

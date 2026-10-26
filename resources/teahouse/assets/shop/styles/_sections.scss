@@ -1,0 +1,508 @@
+// Homepage sections: the product shelf, the promise (the tea merchant's craft and a steeping guide) and the six
+// families of tea.
+
+.teahouse-products {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.teahouse-promise {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+  border-block: 1px solid $line;
+  background-color: $surface;
+}
+
+.teahouse-promise__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+// Three steps numbered in Roman numerals, like the chapters of a tea book.
+
+.teahouse-steps {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.teahouse-steps__item {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding-block: 1.6rem;
+  border-top: 1px solid $line;
+
+  &:last-child {
+    border-bottom: 1px solid $line;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.teahouse-steps__numeral {
+  display: grid;
+  width: 3.1rem;
+  height: 3.1rem;
+  place-items: center;
+  border: 1px solid $seal-text;
+  border-radius: 50%;
+  color: $seal-text;
+  font-family: $font-family-serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.teahouse-steps__title {
+  margin-bottom: 0.4rem !important;
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.teahouse-steps__text {
+  max-width: 34rem;
+  color: $text-muted;
+  line-height: 1.7;
+}
+
+// Steeping guide: a rice paper tin label on a jade lacquer board, stamped with the house seal.
+
+.teahouse-guide {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border-radius: $radius-lg;
+  background-color: $jade-deep;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba($moss, 0.8), transparent 75%),
+    radial-gradient(circle at 1px 1px, rgba($matcha-light, 0.12) 1px, transparent 1.5px);
+  background-size: auto, 14px 14px;
+  box-shadow: $shadow-float;
+}
+
+.teahouse-guide__label {
+  position: relative;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border: 1px solid $leaf;
+  border-radius: $radius;
+  outline: 1px solid rgba($leaf, 0.45);
+  outline-offset: -6px;
+  background-color: $page;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.teahouse-guide__seal {
+  position: absolute;
+  top: -1.1rem;
+  right: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  transform: rotate(12deg);
+}
+
+.teahouse-guide__kicker {
+  color: $seal-text;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.teahouse-guide__title {
+  margin-top: 0.85rem !important;
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: clamp(1.7rem, 2.6vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.teahouse-guide__lot {
+  margin-top: 0.45rem !important;
+  color: $text-muted;
+  font-family: $font-family-serif;
+  font-style: italic;
+}
+
+.teahouse-dial {
+  width: min(11rem, 70%);
+  margin: 1.5rem auto 0.75rem;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.teahouse-dial__track {
+  fill: none;
+  stroke: $line;
+  stroke-width: 6;
+}
+
+.teahouse-dial__time {
+  fill: none;
+  stroke: $accent-text;
+  stroke-linecap: round;
+  stroke-width: 6;
+}
+
+.teahouse-dial__tick {
+  fill: $line-strong;
+
+  &:first-of-type {
+    fill: $seal-text;
+  }
+}
+
+// The liquor stays amber in both schemes, like the tea in the cup.
+.teahouse-dial__liquor {
+  fill: #D9A441;
+}
+
+.teahouse-dial__rim {
+  fill: none;
+  stroke: $surface;
+  stroke-width: 3;
+}
+
+.teahouse-dial__value {
+  fill: #14231B;
+  font-family: $font-family-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.teahouse-dial__unit {
+  fill: #14231B;
+  font-family: $font-family-sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.teahouse-guide__notes {
+  margin: 0.75rem 0 1.25rem;
+  text-align: left;
+
+  div {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 0.65rem;
+    border-bottom: 1px dotted $line-strong;
+  }
+
+  dt {
+    color: $seal-text;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1.9;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: $heading;
+    font-size: 0.93rem;
+  }
+}
+
+// Oxidation: five leaves, from a fresh green to a deep amber brown.
+
+.teahouse-scale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.75rem;
+}
+
+.teahouse-scale__label,
+.teahouse-scale__name {
+  color: $text-muted;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.teahouse-scale__name {
+  color: $heading;
+}
+
+.teahouse-scale__leaves {
+  display: inline-flex;
+  gap: 0.2rem;
+}
+
+.teahouse-scale__leaf {
+  width: 1.25rem;
+  height: auto;
+  transform: rotate(-30deg);
+
+  path {
+    fill: none;
+    stroke: $line-strong;
+    stroke-width: 1;
+  }
+
+  &.is-on path:first-child {
+    stroke: none;
+  }
+
+  &.is-on .teahouse-scale__rib {
+    stroke: rgba($ivory, 0.6);
+    stroke-linecap: round;
+  }
+}
+
+$oxidation-levels: (1: #5E9440, 2: #93A23C, 3: #C08A35, 4: #9A5428, 5: #5E2812);
+
+@each $level, $color in $oxidation-levels {
+  .teahouse-scale__leaf--#{$level}.is-on path:first-child {
+    fill: if($dark, mix($color, #FFF, 80%), $color);
+  }
+}
+
+// Families: the six colours of tea, each cup filled with its own liquor.
+
+.teahouse-families {
+  position: relative;
+  padding-block: clamp(4.5rem, 9vw, 7.5rem);
+  border-top: 1px solid $line;
+  background-color: $surface;
+  background-image: radial-gradient(circle at 1px 1px, rgba($leaf, 0.14) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+
+  .teahouse-section-head {
+    max-width: 46rem;
+  }
+}
+
+.teahouse-families__items {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.5vw, 1.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+$liquors: (
+  white: #E8D59A,
+  green: #B4C760,
+  yellow: #E2BC4C,
+  oolong: #D69A3A,
+  black: #A2481D,
+  dark: #4F2412,
+);
+
+.teahouse-family {
+  --teahouse-liquor: #D69A3A;
+
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.15rem 1.25rem;
+  border: 1px solid $line;
+  border-top: 4px solid var(--teahouse-liquor);
+  border-radius: $radius;
+  // The cup stands in a pool of its own liquor colour; the text below stays on the plain page.
+  background:
+    linear-gradient(to bottom, color-mix(in srgb, var(--teahouse-liquor) #{if($dark, 26%, 30%)}, #{$page}) 0 7.25rem, $page 7.25rem);
+  box-shadow: $shadow-soft;
+  text-align: center;
+  transition:
+    transform 250ms $ease,
+    box-shadow 250ms $ease;
+
+  &:hover {
+    box-shadow: $shadow-float;
+    transform: translateY(-4px);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .teahouse-scale {
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px dotted $line-strong;
+  }
+
+  .teahouse-scale__label {
+    display: none;
+  }
+}
+
+@each $family, $color in $liquors {
+  .teahouse-family--#{$family} {
+    --teahouse-liquor: #{$color};
+  }
+}
+
+.teahouse-family__cup {
+  width: 6.25rem;
+  height: auto;
+  margin: 0 auto 1.6rem;
+  overflow: visible;
+}
+
+// The porcelain cup stays white in both schemes.
+.teahouse-family__saucer {
+  fill: rgba($heading, 0.16);
+}
+
+.teahouse-family__bowl,
+.teahouse-family__rim {
+  fill: #F7F3E8;
+  stroke: #CFC8B3;
+  stroke-width: 1;
+}
+
+.teahouse-family__liquor {
+  fill: var(--teahouse-liquor);
+}
+
+.teahouse-family__steam {
+  fill: none;
+  stroke: $line-strong;
+  stroke-linecap: round;
+  stroke-width: 1.5;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.teahouse-family:hover .teahouse-family__steam {
+  opacity: 1;
+}
+
+.teahouse-family:hover .teahouse-family__cup {
+  animation: teahouse-cup 600ms $ease;
+}
+
+@keyframes teahouse-cup {
+  40% {
+    transform: rotate(-6deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+}
+
+.teahouse-family__name {
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.teahouse-family__origin {
+  margin-top: 0.35rem !important;
+  color: $seal-text;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.teahouse-family__cup-notes {
+  margin-block: 0.9rem 0.75rem !important;
+  color: $text;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.teahouse-family__steep {
+  margin-bottom: 1rem !important;
+  color: $accent-text;
+  font-family: $font-family-serif;
+  font-size: 0.98rem;
+  font-style: italic;
+}
+
+@media (max-width: 1399.98px) {
+  .teahouse-families__items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991.98px) {
+  .teahouse-promise__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .teahouse-families__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .teahouse-steps__item {
+    grid-template-columns: 3.1rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .teahouse-guide__notes div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .teahouse-family {
+    padding-inline: 0.75rem;
+  }
+}
+
+// Category roundels rendered after the hero (import collections): leaf-ringed roundels with a Petrona initial.
+.teahouse-hero ~ .container .rounded-circle.bg-light {
+  border: 1px solid $leaf;
+  outline: 1px solid rgba($leaf, 0.4);
+  outline-offset: 4px;
+  background-color: $surface !important;
+  color: $accent-text !important;
+  font-family: $font-family-serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 500 !important;
+  transition: background-color 200ms ease;
+}
+
+.teahouse-hero ~ .container a:hover .rounded-circle.bg-light {
+  background-color: $surface-raised !important;
+}
+
+.teahouse-hero + .container {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.teahouse-hero ~ .container a:has(> .rounded-circle) span {
+  margin-top: 0.9rem !important;
+  color: $heading;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}

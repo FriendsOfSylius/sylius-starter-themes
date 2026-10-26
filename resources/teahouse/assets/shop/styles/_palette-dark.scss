@@ -1,0 +1,49 @@
+// Teahouse, dark scheme — the tea room at night: lacquer black, rice paper type, glowing matcha and lantern red.
+$color-mode: dark;
+
+// House colours. The jade bands are a shade greener than the page, and ruled in matcha, to stand out from it.
+$jade-night: #10241A;
+$jade-deep: #183526;
+$jade: #24503A;
+$moss: #3F6B4C;
+$matcha: #A8CF76;
+// Fillets, hairlines and focus outlines on the lacquer surfaces (3:1 at least).
+$leaf: #8DB565;
+$matcha-light: #C4DE97;
+$seal: #E0573C;
+$seal-light: #F29072;
+$ivory: #FBF8EE;
+$text-on-dark: #CBD8CB;
+$border-dark: rgba($matcha, 0.26);
+
+// Lacquer, steeped leaves and lantern light.
+$page: #0C1310;
+$surface: #131C17;
+$surface-raised: #1C2821;
+$line: #2B3A31;
+$line-strong: #46574C;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #7A8E80;
+$heading: #EEF2E6;
+$text: #D2DACE;
+$text-muted: #A5B1A6;
+
+// A garden green fills the calls to action (ivory on it: above 6:1); as text, the accent turns to a pale matcha.
+$accent: #2E6343;
+$accent-hover: #387552;
+$on-accent: $ivory;
+$accent-text: #B7D98C;
+$accent-text-hover: #D3EBB3;
+$seal-text: #F59A80;
+$focus-ring: rgba($accent-text, 0.25);
+
+$success: #8FC086;
+$info: #93B3D8;
+
+// The tin label of the hero illustration is printed on rice paper in every scheme.
+$label-ink: #14231B;
+$label-jade: #24503A;
+$label-seal: #B03A23;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 24px 50px -20px rgba(#000, 0.75);

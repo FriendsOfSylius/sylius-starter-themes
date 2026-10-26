@@ -1,0 +1,37 @@
+{% set teahouse_services = [
+    {key: 'advice', url: path('sylius_shop_contact_request'), icon: 'M3 11h15v1a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7zM18 12.5h.5a2.5 2.5 0 0 1 0 5h-2M7 21h8M9 3.5c-1 1.3 1 2.4 0 3.8M13 3.5c-1 1.3 1 2.4 0 3.8'},
+    {key: 'delivery', url: path('sylius_shop_account_dashboard'), icon: 'M6 7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM5 3.5h14V7H5zM9 11h6v5H9z'},
+    {key: 'subscription', url: path('sylius_shop_account_dashboard'), icon: 'M20 11a8 8 0 0 0-14.6-4.5M4 4v3.5h3.5M4 13a8 8 0 0 0 14.6 4.5M20 20v-3.5h-3.5'},
+] %}
+
+<footer class="teahouse-footer">
+    <div id="teahouse-services" class="teahouse-services">
+        <div class="container">
+            <div class="teahouse-services__head">
+                <p class="teahouse-eyebrow teahouse-eyebrow--light">{{ 'teahouse.footer.services.eyebrow'|trans({}, 'teahouse') }}</p>
+                <p class="teahouse-services__title">{{ 'teahouse.footer.services.title'|trans({}, 'teahouse')|raw }}</p>
+            </div>
+
+            <ul class="teahouse-services__items" role="list">
+                {% for service in teahouse_services %}
+                    <li class="teahouse-services__item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ service.icon }}"/></svg>
+                        <p class="teahouse-services__name">{{ ('teahouse.footer.services.' ~ service.key ~ '.title')|trans({}, 'teahouse') }}</p>
+                        <p class="teahouse-services__text">{{ ('teahouse.footer.services.' ~ service.key ~ '.text')|trans({}, 'teahouse') }}</p>
+                        <a class="teahouse-link-arrow teahouse-link-arrow--light" href="{{ service.url }}">{{ ('teahouse.footer.services.' ~ service.key ~ '.cta')|trans({}, 'teahouse') }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container teahouse-footer__main">
+        <div class="teahouse-footer__brand">
+            {% include 'shop/shared/layout/brand/logo.html.twig' with {variant: 'footer'} %}
+            <p>{{ 'teahouse.footer.tagline'|trans({}, 'teahouse') }}</p>
+        </div>
+        <div class="row">
+            {% hook 'content' %}
+        </div>
+        <p class="teahouse-footer__notice">{{ 'teahouse.footer.notice'|trans({}, 'teahouse') }}</p>
+    </div>
+</footer>

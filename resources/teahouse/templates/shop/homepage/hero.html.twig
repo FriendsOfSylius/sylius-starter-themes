@@ -1,0 +1,47 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="teahouse-hero" aria-labelledby="teahouse-hero-title">
+    <div class="container">
+        <div class="teahouse-hero__grid">
+            <div class="teahouse-hero__copy">
+                <p class="teahouse-eyebrow teahouse-eyebrow--light">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'teahouse.hero.eyebrow'|trans({}, 'teahouse') }}{% endif %}</p>
+                <h1 id="teahouse-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'teahouse.hero.title'|trans({}, 'teahouse')|raw }}{% endif %}</h1>
+                <p class="teahouse-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'teahouse.hero.lead'|trans({}, 'teahouse')|raw }}{% endif %}</p>
+
+                <div class="teahouse-hero__actions">
+                    <a class="btn btn-primary teahouse-btn-matcha" href="{{ hero.ctaUrl ?? '#teahouse-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'teahouse.hero.cta'|trans({}, 'teahouse') }}{% endif %}
+                    </a>
+                    <a class="teahouse-link-arrow teahouse-link-arrow--light" href="#teahouse-promise">
+                        {{ 'teahouse.hero.secondary_cta'|trans({}, 'teahouse') }}
+                    </a>
+                </div>
+
+                <p class="teahouse-hero__signature">
+                    {% include 'shop/homepage/seal.html.twig' with {class: 'teahouse-hero__seal'} %}
+                    {{ 'teahouse.hero.signature'|trans({}, 'teahouse') }}
+                </p>
+            </div>
+
+            <div class="teahouse-hero__visual">
+                {% if hero.image %}
+                    <img class="teahouse-hero__panel teahouse-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                {% else %}
+                    {% include 'shop/homepage/hero/tea_table.html.twig' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="teahouse-figures">
+        <div class="container">
+            <ul class="teahouse-figures__items" role="list">
+                {% for item in 1..4 %}
+                    <li>
+                        <span class="teahouse-figures__value">{{ ('teahouse.figures.item_' ~ item ~ '.value')|trans({}, 'teahouse') }}</span>
+                        <span class="teahouse-figures__text">{{ ('teahouse.figures.item_' ~ item ~ '.text')|trans({}, 'teahouse') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

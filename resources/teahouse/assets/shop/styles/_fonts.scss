@@ -1,0 +1,17 @@
+// Petrona (SIL Open Font License 1.1, see ../fonts/Petrona-OFL.txt), variable weight 100–900, latin subset:
+// a calligraphic book serif, with a brushed italic for the tea names and the headline accents.
+@font-face {
+  font-family: "Petrona";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/petrona-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Petrona";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/petrona-italic.woff2") format("woff2");
+}

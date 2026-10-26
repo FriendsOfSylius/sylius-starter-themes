@@ -1,0 +1,62 @@
+{# Teahouse promise: the craft in three numbered steps, next to a steeping guide printed like a tin label. #}
+<section id="teahouse-promise" class="teahouse-promise" aria-labelledby="teahouse-promise-title">
+    <div class="container">
+        <div class="teahouse-promise__grid">
+            <div class="teahouse-promise__craft">
+                <div class="teahouse-section-head">
+                    <p class="teahouse-eyebrow">{{ 'teahouse.promise.eyebrow'|trans({}, 'teahouse') }}</p>
+                    <h2 id="teahouse-promise-title">{{ 'teahouse.promise.title'|trans({}, 'teahouse')|raw }}</h2>
+                    <p class="teahouse-section-head__lead">{{ 'teahouse.promise.lead'|trans({}, 'teahouse')|raw }}</p>
+                </div>
+
+                <ol class="teahouse-steps" role="list">
+                    {% for step in 1..3 %}
+                        <li class="teahouse-steps__item">
+                            <span class="teahouse-steps__numeral" aria-hidden="true">{{ ('teahouse.promise.step_' ~ step ~ '.numeral')|trans({}, 'teahouse') }}</span>
+                            <div>
+                                <p class="teahouse-steps__title">{{ ('teahouse.promise.step_' ~ step ~ '.title')|trans({}, 'teahouse') }}</p>
+                                <p class="teahouse-steps__text">{{ ('teahouse.promise.step_' ~ step ~ '.text')|trans({}, 'teahouse') }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            <aside class="teahouse-guide" aria-labelledby="teahouse-guide-title">
+                <div class="teahouse-guide__label">
+                    {% include 'shop/homepage/seal.html.twig' with {class: 'teahouse-guide__seal'} %}
+                    <p class="teahouse-guide__kicker">{{ 'teahouse.promise.guide.kicker'|trans({}, 'teahouse') }}</p>
+                    <p id="teahouse-guide-title" class="teahouse-guide__title">{{ 'teahouse.promise.guide.title'|trans({}, 'teahouse') }}</p>
+                    <p class="teahouse-guide__lot">{{ 'teahouse.promise.guide.lot'|trans({}, 'teahouse') }}</p>
+
+                    {# Steeping dial: three minutes of a five minute round, and the liquor colour in the middle. #}
+                    <figure class="teahouse-dial">
+                        <svg viewBox="0 0 160 160" role="img" aria-labelledby="teahouse-dial-title" focusable="false">
+                            <title id="teahouse-dial-title">{{ 'teahouse.promise.guide.dial'|trans({}, 'teahouse') }}</title>
+                            <circle class="teahouse-dial__track" cx="80" cy="80" r="62"/>
+                            <circle class="teahouse-dial__time" cx="80" cy="80" r="62" pathLength="5" stroke-dasharray="3 5" transform="rotate(-90 80 80)"/>
+                            {% for tick in [[80, 6], [150.4, 57.1], [123.5, 139.9], [36.5, 139.9], [9.6, 57.1]] %}
+                                <circle class="teahouse-dial__tick" cx="{{ tick[0] }}" cy="{{ tick[1] }}" r="2"/>
+                            {% endfor %}
+                            <circle class="teahouse-dial__liquor" cx="80" cy="80" r="44"/>
+                            <circle class="teahouse-dial__rim" cx="80" cy="80" r="44"/>
+                            <text class="teahouse-dial__value" x="80" y="86" text-anchor="middle">{{ 'teahouse.promise.guide.time'|trans({}, 'teahouse') }}</text>
+                            <text class="teahouse-dial__unit" x="80" y="104" text-anchor="middle">{{ 'teahouse.promise.guide.unit'|trans({}, 'teahouse') }}</text>
+                        </svg>
+                    </figure>
+
+                    <dl class="teahouse-guide__notes">
+                        {% for note in ['water', 'leaf', 'infusions', 'notes'] %}
+                            <div>
+                                <dt>{{ ('teahouse.promise.guide.' ~ note ~ '.label')|trans({}, 'teahouse') }}</dt>
+                                <dd>{{ ('teahouse.promise.guide.' ~ note ~ '.value')|trans({}, 'teahouse') }}</dd>
+                            </div>
+                        {% endfor %}
+                    </dl>
+
+                    {% include 'shop/homepage/oxidation_scale.html.twig' with {level: 2} %}
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

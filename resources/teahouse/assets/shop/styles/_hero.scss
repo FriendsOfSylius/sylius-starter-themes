@@ -1,0 +1,244 @@
+// Jade hero: a Petrona headline closed by a matcha italic, and the tea house moon gate in a matcha-ruled panel,
+// a round opening in a vermilion wall onto terraced gardens at dawn. A band of house figures closes it, like the foot of a tea tray.
+
+.teahouse-hero {
+  position: relative;
+  // Clipped sideways only, so that the tea hedge of the figures band hangs over the page below.
+  overflow-x: clip;
+  padding-top: clamp(3.5rem, 7vw, 6rem);
+  background-color: $jade-night;
+  background-image:
+    radial-gradient(ellipse 55% 70% at 78% 45%, rgba($moss, 0.45), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 6% 100%, rgba($seal, 0.14), transparent 70%),
+    radial-gradient(circle at 1px 1px, rgba($matcha-light, 0.07) 1px, transparent 1.5px);
+  background-size: auto, auto, 16px 16px;
+  color: $text-on-dark;
+}
+
+.teahouse-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: end;
+}
+
+.teahouse-hero__copy {
+  max-width: 38rem;
+  padding-bottom: clamp(3rem, 6vw, 5.5rem);
+}
+
+.teahouse-hero h1 {
+  margin: 0 0 1.75rem;
+  color: $ivory;
+  font-size: clamp(2.75rem, 5.6vw, 5.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+
+  em {
+    display: block;
+    color: $matcha-light;
+    font-weight: 300;
+  }
+}
+
+.teahouse-hero__lead {
+  max-width: 33rem;
+  margin-bottom: 2.5rem;
+  font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+
+  strong {
+    color: $ivory;
+    font-weight: 500;
+  }
+}
+
+.teahouse-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+}
+
+.teahouse-hero__signature {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border-dark;
+  color: rgba($text-on-dark, 0.85);
+  font-family: $font-family-serif;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.teahouse-hero__seal {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  transform: rotate(-8deg);
+}
+
+// The panel stands on the bottom of the hero, so the figures band reads as the edge of the tea table.
+.teahouse-hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.teahouse-hero__panel {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+  aspect-ratio: 420 / 520;
+  filter: drop-shadow(0 30px 40px rgba(#000, 0.35));
+}
+
+.teahouse-hero__image {
+  border-radius: 18px 18px 0 0;
+  box-shadow: inset 0 0 0 1px $matcha;
+  object-fit: cover;
+}
+
+.teahouse-tea-table__label-name {
+  fill: $label-jade;
+  font-family: $font-family-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+}
+
+.teahouse-tea-table__label-text {
+  fill: $label-ink;
+  font-family: $font-family-serif;
+  font-size: 7.5px;
+  font-style: italic;
+}
+
+.teahouse-tea-table__label-origin {
+  fill: $label-seal;
+  font-family: $font-family-sans-serif;
+  font-size: 3.9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+// Steam rising from the cup.
+@keyframes teahouse-steam {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+}
+
+.teahouse-tea-table__steam path {
+  transform-box: fill-box;
+  animation: teahouse-steam 5s ease-in-out infinite;
+
+  + path {
+    animation-delay: -2.5s;
+  }
+}
+
+// The paper lantern sways in the breeze.
+@keyframes teahouse-lantern {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.teahouse-tea-table__lantern {
+  transform-box: view-box;
+  transform-origin: 48px 0;
+  animation: teahouse-lantern 6s ease-in-out infinite;
+}
+
+// House figures, closed by a row of clipped tea bushes hanging over the page.
+
+.teahouse-figures {
+  position: relative;
+  border-top: 1px solid $matcha;
+  background-color: $jade-deep;
+
+  &::after {
+    @include teahouse-hedge($jade-deep, down);
+  }
+}
+
+.teahouse-figures__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: clamp(1.4rem, 2.5vw, 2rem) clamp(1rem, 2vw, 1.75rem);
+    text-align: center;
+
+    + li {
+      border-left: 1px solid $border-dark;
+    }
+  }
+}
+
+.teahouse-figures__value {
+  color: $matcha-light;
+  font-family: $font-family-serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.teahouse-figures__text {
+  color: $text-on-dark;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .teahouse-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .teahouse-hero__copy {
+    max-width: none;
+    padding-bottom: 3rem;
+  }
+
+  .teahouse-hero__panel {
+    max-width: 20rem;
+  }
+
+  .teahouse-figures__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    li:nth-child(3) {
+      border-left: 0;
+    }
+
+    li:nth-child(n + 3) {
+      border-top: 1px solid $border-dark;
+    }
+  }
+}

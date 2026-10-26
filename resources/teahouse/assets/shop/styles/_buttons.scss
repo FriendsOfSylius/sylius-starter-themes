@@ -1,0 +1,123 @@
+.btn {
+  min-height: 2.875rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    color 200ms ease;
+}
+
+.btn-sm {
+  min-height: 2.25rem;
+  padding: 0.45rem 1rem;
+  letter-spacing: 0.1em;
+}
+
+// Jade call to action.
+.btn-primary {
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
+  --bs-btn-color: #{$on-accent};
+  --bs-btn-bg: #{$accent};
+  --bs-btn-border-color: #{$accent};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$accent-hover};
+  --bs-btn-hover-border-color: #{$accent-hover};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$accent-hover};
+  --bs-btn-active-border-color: #{$accent-hover};
+  --bs-btn-disabled-color: #{$on-accent};
+  --bs-btn-disabled-bg: #{$accent};
+  --bs-btn-disabled-border-color: #{$accent};
+}
+
+// Outlined in ink, for secondary actions.
+.btn-secondary,
+.btn-light,
+.btn-outline-primary,
+.btn-outline-gray {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
+}
+
+.btn-link {
+  color: $accent-text;
+  letter-spacing: 0.04em;
+  text-transform: none;
+
+  &:hover {
+    color: $accent-text-hover;
+  }
+}
+
+// Matcha button on the jade panels.
+.teahouse-btn-matcha {
+  --bs-btn-color: #{$jade-night};
+  --bs-btn-bg: #{$matcha-light};
+  --bs-btn-border-color: #{$matcha-light};
+  --bs-btn-hover-color: #{$jade-night};
+  --bs-btn-hover-bg: #{$ivory};
+  --bs-btn-hover-border-color: #{$ivory};
+  --bs-btn-active-color: #{$jade-night};
+  --bs-btn-active-bg: #{$ivory};
+  --bs-btn-active-border-color: #{$ivory};
+}
+
+// Text link closed by a fine arrow.
+.teahouse-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: $accent-text;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &::after {
+    width: 1.75rem;
+    height: 1px;
+    background-color: currentColor;
+    content: "";
+    transition: width 220ms $ease;
+  }
+
+  &:hover {
+    color: $accent-text-hover;
+
+    &::after {
+      width: 2.5rem;
+    }
+  }
+}
+
+.teahouse-link-arrow--light,
+.teahouse-link-arrow--light:hover {
+  color: $matcha-light;
+}
+
+#add-to-cart-button {
+  width: 100%;
+  min-height: 3.25rem;
+  font-size: 0.78rem;
+}
+
+// A button joined to a field (coupon code) keeps the field corners instead of the pill.
+.input-group > .btn {
+  border-radius: 0 $radius-sm $radius-sm 0;
+}

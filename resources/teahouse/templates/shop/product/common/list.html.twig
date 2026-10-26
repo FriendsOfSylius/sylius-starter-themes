@@ -1,0 +1,21 @@
+{% set teahouse_list_key = hookable_metadata.configuration['test_attribute']|default('latest-products') %}
+{% set teahouse_eyebrows = {'latest-products': 'teahouse.products.eyebrow.latest'} %}
+
+<section id="teahouse-{{ teahouse_list_key }}" class="teahouse-products teahouse-products--{{ teahouse_list_key }}">
+    <div class="container" role="region" aria-labelledby="{{ teahouse_list_key ~ '-heading' }}">
+        <div class="teahouse-section-head teahouse-section-head--center">
+            {% if teahouse_eyebrows[teahouse_list_key] is defined %}
+                <p class="teahouse-eyebrow">{{ teahouse_eyebrows[teahouse_list_key]|trans({}, 'teahouse') }}</p>
+            {% endif %}
+            <h2 id="{{ teahouse_list_key ~ '-heading' }}">{{ hookable_metadata.configuration.title|default('sylius.ui.latest_products')|trans }}</h2>
+        </div>
+
+        <div {{ sylius_test_html_attribute(hookable_metadata.configuration.test_attribute|default('latest-products')) }}>
+            <div class="products-grid">
+                {% for product in latest_products %}
+                    <div>{{ component('sylius_shop:product:card', {product: product, template: hookable_metadata.configuration.product_template|default('@SyliusShop/product/common/card.html.twig'), hookableMetadata: hookable_metadata}) }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
