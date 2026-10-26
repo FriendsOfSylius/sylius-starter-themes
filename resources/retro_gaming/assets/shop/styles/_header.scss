@@ -131,8 +131,9 @@ header .btn-icon {
 .rg-category-nav__links > .nav-item > .nav-link {
   @include pixel-label;
 
+  position: relative;
   flex: 0 0 auto;
-  padding: 0.6rem 0.8rem !important;
+  padding: 0.6rem 0.8rem 0.6rem 1.1rem !important;
   color: $text;
   font-size: 0.875rem;
   white-space: nowrap;
@@ -150,8 +151,10 @@ header .btn-icon {
     background-color: $panel;
   }
 
+  // Drawn in the left padding, so the hidden arrow takes no room and six categories fit on one line.
   &::before {
-    margin-right: 0.35rem;
+    position: absolute;
+    left: 0.35rem;
     color: $magenta-text;
     content: "▶";
     opacity: 0;
@@ -311,7 +314,7 @@ header .dropdown-item {
     width: 100%;
     white-space: normal;
     justify-content: space-between;
-    padding: 0.85rem !important;
+    padding: 0.85rem 0.85rem 0.85rem 1.25rem !important;
     color: $heading;
   }
 
