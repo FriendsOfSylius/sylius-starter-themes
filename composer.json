@@ -18,6 +18,7 @@
     "require": {
         "php": ">=8.3",
         "sylius-starter/core": "self.version",
+        "nikic/php-parser": "^5.0",
         "castor-php/docker": "^0.10"
     },
     "autoload": {

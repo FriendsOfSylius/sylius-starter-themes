@@ -1,6 +1,10 @@
 # Groove: record sleeves are square, so the product card thumbnail is cropped square instead of the shop's 3:4 portrait.
+# A filter of its own (used by shop/shared/product/card/details/image.html.twig) rather than an override of
+# "sylius_shop_product_thumbnail", so the channels using another theme keep their portrait thumbnails.
 liip_imagine:
     filter_sets:
-        sylius_shop_product_thumbnail:
+        groove_product_thumbnail:
+            format: webp
+            quality: 80
             filters:
                 thumbnail: { size: [600, 600], mode: outbound }
