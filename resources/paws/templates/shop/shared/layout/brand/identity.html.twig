@@ -1,0 +1,11 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="paws-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# The house paw, four ink toes around a tangerine pad, next to a Bricolage wordmark. #}
+    {% include 'shop/shared/layout/brand/print.html.twig' with {class: 'paws-logo__print'} %}
+    <span class="paws-logo__text">
+        <span class="paws-logo__name">Paws</span>
+        <span class="paws-logo__tagline">{{ 'paws.brand.tagline'|trans({}, 'paws') }}</span>
+    </span>
+{% endif %}

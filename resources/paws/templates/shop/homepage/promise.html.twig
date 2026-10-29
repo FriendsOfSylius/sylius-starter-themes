@@ -1,0 +1,69 @@
+{# Paws promise, presented as the subscription: the food delivered in three steps, next to the pet passport of a
+   house dog with its daily portion, counted in bowls. #}
+<section id="paws-passport" class="paws-passport" aria-labelledby="paws-passport-title">
+    <div class="container">
+        <div class="paws-passport__grid">
+            <div class="paws-passport__steps">
+                <div class="paws-section-head">
+                    <p class="paws-eyebrow">{{ 'paws.passport.eyebrow'|trans({}, 'paws') }}</p>
+                    <h2 id="paws-passport-title">{{ 'paws.passport.title'|trans({}, 'paws')|raw }}</h2>
+                    <p class="paws-section-head__lead">{{ 'paws.passport.lead'|trans({}, 'paws')|raw }}</p>
+                </div>
+
+                <ol class="paws-steps" role="list">
+                    {% for step in 1..3 %}
+                        <li class="paws-steps__item paws-steps__item--{{ step }}">
+                            <span class="paws-steps__numeral" aria-hidden="true">{{ step }}</span>
+                            <div>
+                                <p class="paws-steps__title">{{ ('paws.passport.step_' ~ step ~ '.title')|trans({}, 'paws') }}</p>
+                                <p class="paws-steps__text">{{ ('paws.passport.step_' ~ step ~ '.text')|trans({}, 'paws') }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            <aside class="paws-card" aria-labelledby="paws-card-title">
+                <div class="paws-card__head">
+                    <p class="paws-card__kicker">{{ 'paws.passport.card.kicker'|trans({}, 'paws') }}</p>
+                    {% include 'shop/shared/layout/brand/print.html.twig' with {class: 'paws-card__print'} %}
+                </div>
+
+                <div class="paws-card__body">
+                    {# The portrait of the pet, a photo of Biscuit in its tangerine collar. #}
+                    <div class="paws-card__portrait" aria-hidden="true"></div>
+                    <div>
+                        <p id="paws-card-title" class="paws-card__title">{{ 'paws.passport.card.name'|trans({}, 'paws') }}</p>
+                        <p class="paws-card__breed">{{ 'paws.passport.card.breed'|trans({}, 'paws') }}</p>
+                    </div>
+                </div>
+
+                <dl class="paws-card__notes">
+                    {% for note in ['age', 'weight', 'diet', 'delivery'] %}
+                        <div>
+                            <dt>{{ ('paws.passport.card.' ~ note ~ '.label')|trans({}, 'paws') }}</dt>
+                            <dd>{{ ('paws.passport.card.' ~ note ~ '.value')|trans({}, 'paws') }}</dd>
+                        </div>
+                    {% endfor %}
+                </dl>
+
+                {# The daily portion, from one bowl to five, filled up to the level. #}
+                {% set level = 3 %}
+                <div class="paws-portion">
+                    <span class="paws-portion__label">{{ 'paws.portion.label'|trans({}, 'paws') }}</span>
+                    <span class="paws-portion__bowls" role="img" aria-label="{{ 'paws.portion.level'|trans({'%level%': level, '%grams%': 'paws.passport.card.grams'|trans({}, 'paws')}, 'paws') }}">
+                        {% for step in 1..5 %}
+                            <svg class="paws-portion__bowl{{ step <= level ? ' is-on' : '' }}" viewBox="0 0 32 22" aria-hidden="true" focusable="false">
+                                <path class="paws-portion__kibble" d="M7 9c1-4 5-6 9-6s8 2 9 6z"/>
+                                <path class="paws-portion__dish" d="M2 9h28l-3 9a3 3 0 0 1-3 2H8a3 3 0 0 1-3-2z"/>
+                            </svg>
+                        {% endfor %}
+                    </span>
+                    <span class="paws-portion__name">{{ 'paws.passport.card.grams'|trans({}, 'paws') }}</span>
+                </div>
+
+                <p class="paws-card__stamp" aria-hidden="true">{{ 'paws.passport.card.stamp'|trans({}, 'paws') }}</p>
+            </aside>
+        </div>
+    </div>
+</section>

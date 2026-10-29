@@ -1,0 +1,168 @@
+.card {
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-soft;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  color: $heading;
+  font-family: $font-family-display;
+  font-weight: 700;
+}
+
+.card-text {
+  color: $text-muted;
+}
+
+.card-footer {
+  border-top-color: $line;
+  background-color: $surface;
+}
+
+// Product cards: the picture stands whole (never cropped or stretched) in a softly rounded niche, the name below
+// in Bricolage, the price on a biscuit pill. On hover the card lifts and the house paw is stamped on the corner of
+// the picture in tangerine ink.
+// The card root is the element holding the details link: it is a direct grid item on category
+// pages and wrapped in a <div> in the homepage / association lists.
+
+.products-grid {
+  column-gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  row-gap: clamp(2rem, 3.5vw, 3rem);
+}
+
+.products-grid div:has(> a.link-reset) {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+
+  > a.link-reset {
+    display: block;
+    color: $heading;
+    text-decoration: none;
+
+    // Stretched link: the price below is part of the clickable card too.
+    &::after {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      content: "";
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  &:has(> a.link-reset:focus-visible) {
+    outline: 2px solid $paw-line;
+    outline-offset: 6px;
+    border-radius: $radius-lg;
+  }
+
+  .mb-4 {
+    margin-bottom: 0 !important;
+  }
+
+  // The picture niche keeps the 3:4 portrait ratio; the image is contained, so a tall product stays whole.
+  .rounded-3 {
+    position: relative;
+    margin: 0;
+    border-radius: $radius-lg !important;
+    background-color: $surface-raised !important;
+    transition:
+      box-shadow 300ms $ease,
+      transform 400ms $ease;
+
+    img {
+      object-fit: contain !important;
+      transition: transform 700ms $ease;
+    }
+  }
+
+  &:hover .rounded-3 {
+    box-shadow: $shadow-float;
+    transform: translateY(-4px);
+  }
+
+  &:hover .rounded-3 img {
+    transform: scale(1.04);
+  }
+
+  // The house paw is stamped on the corner of the picture when the card is hovered, like an ink stamp.
+  .rounded-3::before {
+    position: absolute;
+    z-index: 1;
+    top: 0.9rem;
+    right: 0.9rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    background: $paws-print-image no-repeat center / contain;
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.7) rotate(-30deg);
+    transition:
+      opacity 160ms ease,
+      transform 380ms $ease-pop;
+  }
+
+  &:hover .rounded-3::before {
+    opacity: 0.92;
+    transform: scale(1) rotate(14deg);
+  }
+
+  .h6 {
+    margin: 0;
+    padding: 1.3rem 0.5rem 0.55rem;
+    color: $heading;
+    font-family: $font-family-display;
+    font-size: 1.12rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    transition: color 200ms ease;
+  }
+
+  &:hover .h6 {
+    color: $accent-text;
+  }
+
+  // Prices, on a biscuit pill.
+  > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+    align-items: baseline;
+    justify-content: center;
+    width: fit-content;
+    margin: auto auto 0;
+    padding: 0.25rem 0.85rem;
+    border-radius: 999px;
+    background-color: $surface-raised;
+    color: $heading;
+    font-family: $font-family-display;
+    font-size: 0.98rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+
+    > * {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    del {
+      color: $text-muted;
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+  }
+}

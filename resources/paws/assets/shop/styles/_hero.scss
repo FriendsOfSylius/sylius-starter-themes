@@ -1,0 +1,293 @@
+// Paws hero: a Bricolage headline ending in tangerine, next to a round-topped shop window onto the living room of
+// Biscuit the corgi and Miso the cat, with two stickers on the glass. A navy band of house figures closes it,
+// ending in a soft wave.
+
+.paws-hero {
+  position: relative;
+  // Clipped sideways only, so that the wave edge of the figures band hangs over the page below.
+  overflow-x: clip;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  background-color: $hero-bg;
+  background-image:
+    radial-gradient(ellipse 50% 65% at 82% 40%, rgba($hero-glow, 0.95), transparent 70%),
+    radial-gradient(ellipse 45% 55% at 0% 100%, rgba($hero-glow-2, 0.9), transparent 70%);
+  color: $hero-text;
+}
+
+.paws-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: end;
+}
+
+.paws-hero__copy {
+  max-width: 38rem;
+  align-self: center;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.paws-hero h1 {
+  margin: 0 0 1.75rem;
+  color: $hero-heading;
+  font-size: clamp(2.8rem, 5.6vw, 5.2rem);
+  line-height: 1;
+}
+
+.paws-hero__lead {
+  max-width: 33rem;
+  margin-bottom: 2.5rem;
+  font-size: clamp(1.04rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+
+  strong {
+    color: $hero-heading;
+    font-weight: 600;
+  }
+}
+
+.paws-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+}
+
+.paws-hero__signature {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid $line-strong;
+  color: $hero-heading;
+  font-family: $font-family-display;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.paws-hero__print {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  transform: rotate(-14deg);
+  transition: transform 420ms $ease-pop;
+}
+
+.paws-hero__signature:hover .paws-hero__print {
+  transform: rotate(6deg);
+}
+
+// The window stands on the bottom of the hero, so the figures band reads as the sill.
+.paws-hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.paws-window {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  margin: 0;
+}
+
+.paws-hero__panel {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  border-radius: 999px 999px 0 0;
+  box-shadow: 0 30px 60px -30px $hero-shadow;
+}
+
+.paws-hero__image {
+  object-fit: cover;
+}
+
+// The living room: morning sun or lamplight, after the color scheme.
+.paws-window__photo {
+  background: $surface-raised $hero-photo center 30% / cover no-repeat;
+}
+
+// Stickers on the shop window: a round cream seal and a small card, slightly lifted.
+
+.paws-stickers {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.paws-sticker {
+  position: absolute;
+  color: #1E2A4A;
+  transition: transform 500ms $ease-pop;
+}
+
+.paws-sticker--vet {
+  top: 14%;
+  right: -4%;
+  display: grid;
+  width: 6.4rem;
+  height: 6.4rem;
+  place-items: center;
+  padding: 0.6rem;
+  border-radius: 50%;
+  background-color: $cream;
+  // A fine tangerine ring inside the seal.
+  box-shadow:
+    inset 0 0 0 4px $cream,
+    inset 0 0 0 5.5px $tangerine,
+    0 14px 30px -14px rgba(#1E2A4A, 0.5);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(10deg);
+
+  em {
+    display: block;
+    color: #A8410A;
+    font-family: $font-family-display;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: none;
+  }
+}
+
+.paws-sticker--subscription {
+  bottom: 9%;
+  left: -7%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.1rem 0.7rem 0.8rem;
+  border-radius: $radius;
+  background-color: #FFFFFF;
+  box-shadow: 0 18px 36px -16px rgba(#1E2A4A, 0.45);
+  font-family: $font-family-display;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  // Inside the white card, the paw keeps its navy toes in both schemes.
+  .paws-print__toe {
+    fill: #1E2A4A;
+  }
+}
+
+.paws-sticker__print {
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 auto;
+  transform: rotate(-12deg);
+}
+
+.paws-window:hover .paws-sticker--vet {
+  transform: rotate(18deg);
+}
+
+.paws-window:hover .paws-sticker--subscription {
+  transform: translateY(-4px);
+}
+
+// House figures in a navy band, closed by a soft wave hanging over the page.
+
+.paws-figures {
+  position: relative;
+  background-color: $collar-night;
+
+  &::after {
+    @include paws-wave($collar-night, down);
+  }
+}
+
+.paws-figures__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: clamp(1.4rem, 2.5vw, 2rem) clamp(1rem, 2vw, 1.75rem);
+    text-align: center;
+
+    + li {
+      border-left: 1px solid $border-dark;
+    }
+  }
+}
+
+.paws-figures__value {
+  color: $tangerine-light;
+  font-family: $font-family-display;
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.paws-figures__text {
+  color: $text-on-dark;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .paws-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .paws-hero__copy {
+    max-width: none;
+    padding-bottom: 3rem;
+  }
+
+  .paws-window {
+    max-width: 23rem;
+  }
+
+  .paws-figures__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    li:nth-child(3) {
+      border-left: 0;
+    }
+
+    li:nth-child(n + 3) {
+      border-top: 1px solid $border-dark;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .paws-sticker--vet {
+    right: -2%;
+    width: 5.4rem;
+    height: 5.4rem;
+    font-size: 0.52rem;
+
+    em {
+      font-size: 1.05rem;
+    }
+  }
+
+  .paws-sticker--subscription {
+    left: -3%;
+    font-size: 0.85rem;
+  }
+}

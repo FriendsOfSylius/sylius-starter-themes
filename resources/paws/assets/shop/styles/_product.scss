@@ -1,0 +1,69 @@
+// Product page refinements.
+
+.product h1,
+.product .h1 {
+  font-size: clamp(2.1rem, 3.6vw, 3rem);
+}
+
+.product .text-bg-light,
+.product .bg-light {
+  background-color: $surface-raised !important;
+}
+
+// The main picture stands whole on a biscuit niche, at a height that fits the screen:
+// a tall product is never cropped, stretched or blown up on wide screens.
+a:has(> #main-image) {
+  display: flex !important;
+  justify-content: center;
+  border-radius: $radius-lg !important;
+  background-color: $surface-raised !important;
+}
+
+#main-image {
+  width: auto !important;
+  max-width: 100%;
+  height: auto !important;
+  max-height: min(78vh, 46rem);
+  aspect-ratio: auto;
+  object-fit: contain !important;
+}
+
+.spotlight-group .rounded-3,
+.spotlight-group img {
+  border-radius: $radius !important;
+}
+
+.spotlight-group img:not(#main-image) {
+  object-fit: contain !important;
+  background-color: $surface-raised;
+}
+
+.offcanvas {
+  --bs-offcanvas-bg: #{$page};
+  --bs-offcanvas-border-color: #{$line};
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid $line;
+}
+
+.offcanvas-title {
+  font-family: $font-family-display;
+  font-weight: 700;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-border-color: #{$line};
+}
+
+.badge.bg-primary,
+.badge.text-bg-primary {
+  background-color: $accent !important;
+  color: $on-accent !important;
+}
+
+.bg-light,
+.text-bg-light {
+  background-color: $surface-raised !important;
+}

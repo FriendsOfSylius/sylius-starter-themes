@@ -1,0 +1,414 @@
+// Top bar: a thin collar navy band with the delivery promise and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.paws-topbar) {
+  background-color: $collar-night !important;
+  color: $text-on-dark;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+
+  // Dark scheme: a tangerine hairline parts the navy band from the header.
+  @if $dark {
+    border-bottom: 1px solid $border-dark;
+  }
+
+  a {
+    color: $tangerine-light;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$border-dark};
+    --bs-btn-color: #{$tangerine-light};
+    --bs-btn-hover-bg: #{$collar-deep};
+    --bs-btn-hover-border-color: #{$paw-line};
+    --bs-btn-hover-color: #{$cream};
+    --bs-btn-active-bg: #{$collar-deep};
+    --bs-btn-active-border-color: #{$paw-line};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.68rem;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$collar-deep};
+    --bs-dropdown-link-hover-bg: #{$collar};
+    --bs-dropdown-border-color: #{$border-dark};
+  }
+}
+
+.paws-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.paws-topbar__item + .paws-topbar__item::before {
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-right: 1.5rem;
+  background: $paws-print-image no-repeat center / contain;
+  content: "";
+  vertical-align: -0.12em;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $page;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $line !important;
+}
+
+header .container {
+  padding-block: 0.25rem;
+}
+
+header a {
+  color: $heading;
+
+  &:hover {
+    color: $accent-text;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: the house paw and a heavy Bricolage name over a spaced tagline.
+
+.paws-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.75rem;
+  color: $accent-text;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $accent-text;
+    text-decoration: none;
+  }
+}
+
+.paws-logo__print {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  transform: rotate(-12deg);
+  transition: transform 420ms $ease-pop;
+}
+
+.paws-logo:hover .paws-logo__print {
+  transform: rotate(4deg);
+}
+
+.paws-logo:hover .paws-print__toe {
+  animation: paws-wiggle 600ms $ease-pop;
+}
+
+@keyframes paws-wiggle {
+  40% {
+    transform: translateY(-2px);
+  }
+}
+
+.paws-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  line-height: 1;
+}
+
+.paws-logo__name {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.paws-logo__tagline {
+  color: $eyebrow-text;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+// Category navigation: Bricolage labels, with a biscuit pill behind the hovered link.
+
+.paws-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.paws-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.paws-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  overflow: visible;
+}
+
+.paws-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.paws-category-nav__links > .nav-link,
+.paws-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  z-index: 0;
+  padding: 0.5rem 0.85rem !important;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 0.98rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0.15rem 0;
+    border-radius: 999px;
+    background-color: $surface-raised;
+    content: "";
+    transform: scale(0.85);
+    opacity: 0;
+    transition:
+      opacity 160ms ease,
+      transform 300ms $ease-pop;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $accent-text;
+
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.paws-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $line;
+  border: 1px solid $line;
+  border-top: 3px solid $accent;
+  border-radius: 0 0 $radius $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.paws-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Cart: an outlined pill with a tangerine counter.
+
+.paws-cart__button {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.paws-cart__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.paws-cart__count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $page;
+  border-radius: 999px;
+  background-color: $accent;
+  color: $on-accent;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $heading;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+@media (min-width: 992px) {
+  .paws-category-nav__menu {
+    width: 100%;
+  }
+
+  .paws-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .paws-category-nav__menu {
+    position: fixed;
+    background-color: $page;
+  }
+
+  .paws-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $line;
+  }
+
+  .paws-category-nav__menu .offcanvas-title {
+    font-family: $font-family-display;
+    font-size: 1.5rem !important;
+    font-weight: 700;
+  }
+
+  .paws-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .paws-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .paws-category-nav__links > .nav-link,
+  .paws-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .paws-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface-raised;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .paws-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .paws-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .paws-logo__print {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .paws-logo__name {
+    font-size: 1.6rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.paws-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+
+// The house paw, shared by the logo, the hero signature and the pet passport: four toes in the ink of the page
+// around a tangerine pad.
+
+.paws-print__toe {
+  fill: $heading;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.paws-print__toe--2 { animation-delay: 60ms !important; }
+.paws-print__toe--3 { animation-delay: 120ms !important; }
+.paws-print__toe--4 { animation-delay: 180ms !important; }
+.paws-print__pad { fill: $tangerine; }
+
+// On the navy bands (footer), the toes take the cream of the band.
+.paws-footer .paws-print__toe,
+.paws-card__head .paws-print__toe {
+  fill: $cream;
+}

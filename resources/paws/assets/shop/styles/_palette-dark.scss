@@ -1,0 +1,59 @@
+// Paws, dark scheme — the evening walk: night navy, cream type, glowing tangerine and the same pastels.
+$color-mode: dark;
+
+// House colours. The collar bands are a shade lighter than the page, and ruled in tangerine, to stand out from it.
+$collar-night: #182143;
+$collar-deep: #222D57;
+$collar: #33437A;
+// Fillets, hairlines and focus outlines on the night surfaces (3:1 at least).
+$paw-line: #FF9A5C;
+$tangerine: #FF8A3D;
+$tangerine-light: #FFB27A;
+$cream: #FFF7EC;
+$text-on-dark: #E9ECF7;
+$border-dark: rgba($tangerine-light, 0.26);
+
+// Soft pastels, one per aisle (and the passport and the stickers), the same in both schemes. Navy ink on all of them.
+$butter: #F4E0A6;
+$peach: #F3CDB5;
+$bubblegum: #EFC9CF;
+$sky: #C9DCEE;
+$lilac: #D8D0EA;
+$mint: #C6DECD;
+
+// Night navy, denim and street lamps.
+$page: #0F1426;
+$surface: #161D35;
+$surface-raised: #1E2744;
+$line: #2C3657;
+$line-strong: #44507A;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #8792B8;
+$heading: #FFF4E6;
+$text: #E3E6F2;
+$text-muted: #AEB5CE;
+
+// Tangerine still fills the calls to action, with night ink on it; as text, the accent turns to a pale apricot.
+$accent: $tangerine;
+$accent-hover: #FFA466;
+$on-accent: #0F1426;
+$accent-text: #FFB27A;
+$accent-text-hover: #FFD0A8;
+$eyebrow-text: #FFB27A;
+$focus-ring: rgba($accent-text, 0.25);
+
+$success: #8FD4B4;
+$info: #A9D1FF;
+
+// The hero: the living room of Biscuit and Miso by lamplight, seen through the shop window.
+$hero-bg: #141B33;
+$hero-glow: #2A2F5E;
+$hero-glow-2: #3A2A4E;
+$hero-heading: $heading;
+$hero-text: $text;
+$hero-em: $accent-text;
+$hero-photo: url("../images/hero-night.webp");
+$hero-shadow: rgba(#000, 0.55);
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 24px 50px -20px rgba(#000, 0.75);

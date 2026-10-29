@@ -1,0 +1,13 @@
+{# Paws window: a round-topped shop window onto the living room of Biscuit the corgi and Miso the cat, in the morning
+   sun in the light scheme and by lamplight in the dark one (photos generated with Ollama), with two stickers. #}
+<div class="paws-window">
+    <div class="paws-hero__panel paws-window__photo" role="img" aria-label="{{ 'paws.hero.illustration'|trans({}, 'paws') }}"></div>
+
+    <ul class="paws-stickers" role="list">
+        <li class="paws-sticker paws-sticker--vet">{{ 'paws.hero.stickers.vet'|trans({}, 'paws')|raw }}</li>
+        <li class="paws-sticker paws-sticker--subscription">
+            {% include 'shop/shared/layout/brand/print.html.twig' with {class: 'paws-sticker__print'} %}
+            <span>{{ 'paws.hero.stickers.subscription'|trans({}, 'paws')|raw }}</span>
+        </li>
+    </ul>
+</div>

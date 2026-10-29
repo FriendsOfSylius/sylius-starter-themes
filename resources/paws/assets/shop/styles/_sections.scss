@@ -1,0 +1,440 @@
+// Homepage sections: the product shelf, the subscription (the delivery in three steps and a pet passport) and the
+// six aisles of the shop.
+
+// Navy ink of the pastel blocks (passport, aisles, roundels), which keep their pastel in both schemes.
+$ink: #1E2A4A;
+$ink-muted: #3A4157;
+
+.paws-products {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.paws-passport {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+  border-block: 1px solid $line;
+  background-color: $surface;
+}
+
+.paws-passport__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+// Three steps, numbered on soft pastel toe beans.
+
+$step-colors: (1: $butter, 2: $bubblegum, 3: $mint);
+
+.paws-steps {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paws-steps__item {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding-block: 1.6rem;
+  border-top: 1px solid $line;
+
+  &:last-child {
+    border-bottom: 1px solid $line;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.paws-steps__numeral {
+  display: grid;
+  width: 3.3rem;
+  height: 3.3rem;
+  place-items: center;
+  // A toe bean: an egg, wider at the bottom.
+  border-radius: 50% 50% 46% 46% / 58% 58% 42% 42%;
+  color: $ink;
+  font-family: $font-family-display;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 400ms $ease-pop;
+}
+
+@each $step, $color in $step-colors {
+  .paws-steps__item--#{$step} .paws-steps__numeral {
+    background-color: $color;
+  }
+}
+
+.paws-steps__item:hover .paws-steps__numeral {
+  transform: rotate(-10deg);
+}
+
+.paws-steps__title {
+  margin-bottom: 0.4rem !important;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.paws-steps__text {
+  max-width: 34rem;
+  color: $text-muted;
+  line-height: 1.7;
+}
+
+// Pet passport: a soft sky card with a navy header stamped by the subscription, the portrait of the dog, its notes
+// and its daily portion.
+
+.paws-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius-lg;
+  background-color: $sky;
+  box-shadow: $shadow-float;
+  color: $ink;
+
+  p {
+    margin: 0;
+  }
+}
+
+.paws-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  background-color: $ink;
+}
+
+.paws-card__kicker {
+  color: #FFF7EC;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.paws-card__print {
+  width: 2rem;
+  height: 2rem;
+  transform: rotate(14deg);
+}
+
+.paws-card__body {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.paws-card__portrait {
+  width: 6rem;
+  height: 6rem;
+  flex: 0 0 auto;
+  border: 3px solid #FFFFFF;
+  border-radius: 50%;
+  background: $butter url("../images/portrait.webp") center / cover;
+  box-shadow: 0 6px 16px -8px rgba($ink, 0.5);
+}
+
+.paws-card__title {
+  font-family: $font-family-display;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.paws-card__breed {
+  margin-top: 0.35rem !important;
+  color: $ink-muted;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.paws-card__notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0 1.5rem 1.25rem;
+
+  div {
+    padding: 0.6rem 0.8rem;
+    border-radius: $radius-sm;
+    background-color: rgba(#FFFFFF, 0.7);
+  }
+
+  dt {
+    color: $ink-muted;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0.15rem 0 0;
+    font-family: $font-family-display;
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+}
+
+// Daily portion: five bowls, filled with kibble up to the level.
+.paws-portion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  margin: 0 1.5rem 1.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: $radius-sm;
+  background-color: rgba(#FFFFFF, 0.7);
+}
+
+.paws-portion__label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.paws-portion__bowls {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.paws-portion__bowl {
+  width: 1.9rem;
+  height: 1.3rem;
+}
+
+.paws-portion__dish {
+  fill: #FFFFFF;
+  stroke: $ink;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.paws-portion__kibble {
+  fill: #B46A2C;
+  stroke: $ink;
+  stroke-width: 1.2;
+  opacity: 0;
+}
+
+.is-on .paws-portion__dish {
+  fill: #FF7A2F;
+}
+
+.is-on .paws-portion__kibble {
+  opacity: 1;
+}
+
+.paws-portion__name {
+  margin-left: auto;
+  font-family: $font-family-display;
+  font-weight: 700;
+}
+
+.paws-card__stamp {
+  position: absolute;
+  top: 0.65rem;
+  right: 3.9rem;
+  padding: 0.15rem 0.7rem;
+  border: 1.5px solid $tangerine-light;
+  border-radius: 999px;
+  color: $tangerine-light;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+}
+
+// Aisles: six pastel tiles, each with its drawing, its promise and its bestseller.
+
+.paws-aisles {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+}
+
+.paws-aisles__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+$aisles: (
+  food: $butter,
+  treats: $peach,
+  toys: $bubblegum,
+  accessories: $sky,
+  beds: $lilac,
+  care: $mint,
+);
+
+// The tiles keep their soft pastel in both schemes, so their text stays in navy ink.
+.paws-aisle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 2.5vw, 2.1rem);
+  border-radius: $radius-lg;
+  color: $ink;
+  transition:
+    box-shadow 300ms $ease,
+    transform 400ms $ease;
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    box-shadow: $shadow-float;
+    transform: translateY(-4px);
+  }
+}
+
+@each $aisle, $color in $aisles {
+  .paws-aisle--#{$aisle} {
+    background-color: $color;
+  }
+}
+
+.paws-aisle__icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  margin-bottom: 1.1rem;
+  fill: none;
+  stroke: $ink;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transition: transform 420ms $ease-pop;
+}
+
+.paws-aisle:hover .paws-aisle__icon {
+  transform: rotate(-8deg);
+}
+
+.paws-aisle__name {
+  font-family: $font-family-display;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.paws-aisle__promise {
+  margin-top: 0.3rem !important;
+  font-weight: 700;
+}
+
+.paws-aisle__text {
+  margin-block: 0.8rem 1.4rem !important;
+  color: $ink-muted;
+  line-height: 1.65;
+}
+
+.paws-aisle__bestseller {
+  margin-top: auto !important;
+  padding-top: 1rem;
+  border-top: 1px solid rgba($ink, 0.25);
+  font-family: $font-family-display;
+  font-weight: 600;
+
+  span {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: $ink-muted;
+    font-family: $font-family-base;
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .paws-passport__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paws-card {
+    max-width: 30rem;
+  }
+
+  .paws-aisles__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .paws-steps__item {
+    grid-template-columns: 3.4rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .paws-aisles__items {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Category roundels rendered after the hero (import collections): soft pastel roundels with a Bricolage initial.
+.paws-hero ~ .container .rounded-circle.bg-light {
+  background-color: $butter !important;
+  color: $ink !important;
+  font-family: $font-family-display;
+  font-size: 1.6rem;
+  font-weight: 600 !important;
+  transition: transform 300ms $ease-pop;
+}
+
+.paws-hero ~ .container a:nth-of-type(6n + 2) .rounded-circle.bg-light {
+  background-color: $peach !important;
+}
+
+.paws-hero ~ .container a:nth-of-type(6n + 3) .rounded-circle.bg-light {
+  background-color: $bubblegum !important;
+}
+
+.paws-hero ~ .container a:nth-of-type(6n + 4) .rounded-circle.bg-light {
+  background-color: $sky !important;
+}
+
+.paws-hero ~ .container a:nth-of-type(6n + 5) .rounded-circle.bg-light {
+  background-color: $lilac !important;
+}
+
+.paws-hero ~ .container a:nth-of-type(6n) .rounded-circle.bg-light {
+  background-color: $mint !important;
+}
+
+.paws-hero ~ .container a:hover .rounded-circle.bg-light {
+  transform: translateY(-3px);
+}
+
+.paws-hero + .container {
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+}
+
+.paws-hero ~ .container a:has(> .rounded-circle) span {
+  margin-top: 0.9rem !important;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 0.98rem !important;
+  font-weight: 600 !important;
+}

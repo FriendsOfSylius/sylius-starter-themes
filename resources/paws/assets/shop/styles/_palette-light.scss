@@ -1,0 +1,58 @@
+// Paws, light scheme — an oat morning: collar navy ink, tangerine and soft pastels.
+$color-mode: light;
+
+// House colours: the collar navy bands (top bar, figures, footer) keep them in both schemes.
+$collar-night: #1A2440;
+$collar-deep: #24305A;
+$collar: #33437A;
+// Fillets, hairlines and focus outlines on the oat surfaces (3:1 at least).
+$paw-line: #C9531A;
+$tangerine: #FF7A2F;
+$tangerine-light: #FFB27A;
+$cream: #FFF7EC;
+$text-on-dark: #E9ECF7;
+$border-dark: rgba($tangerine-light, 0.28);
+
+// Soft pastels, one per aisle (and the passport and the stickers), the same in both schemes. Navy ink on all of them.
+$butter: #F4E0A6;
+$peach: #F3CDB5;
+$bubblegum: #EFC9CF;
+$sky: #C9DCEE;
+$lilac: #D8D0EA;
+$mint: #C6DECD;
+
+// Oat, biscuit and collar navy ink.
+$page: #FFF7EC;
+$surface: #FFFFFF;
+$surface-raised: #FDEEDB;
+$line: #F0DFC8;
+$line-strong: #DCC3A3;
+$field-border: #8A7560;
+$heading: #1E2A4A;
+$text: #3A4157;
+$text-muted: #5E6478;
+
+// Tangerine fills the calls to action, with navy ink on it; as text, the accent turns to a burnt orange.
+$accent: $tangerine;
+$accent-hover: #FF9254;
+$on-accent: $heading;
+$accent-text: #A8410A;
+$accent-text-hover: #7E2F05;
+$eyebrow-text: #A8410A;
+$focus-ring: rgba($paw-line, 0.25);
+
+$success: #2F6B4F;
+$info: #2F5A8A;
+
+// The hero: the living room of Biscuit and Miso in the morning sun, seen through the shop window.
+$hero-bg: #FFEFD9;
+$hero-glow: #FFD9B8;
+$hero-glow-2: #FFE9A8;
+$hero-heading: $heading;
+$hero-text: $text;
+$hero-em: $accent-text;
+$hero-photo: url("../images/hero-day.webp");
+$hero-shadow: rgba($collar-night, 0.22);
+
+$shadow-soft: 0 1px 2px rgba($collar-night, 0.06);
+$shadow-float: 0 24px 50px -20px rgba($collar-night, 0.3);

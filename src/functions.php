@@ -25,6 +25,7 @@ use SyliusStarter\Themes\Installer\DriveInstaller;
 use SyliusStarter\Themes\Installer\GrooveInstaller;
 use SyliusStarter\Themes\Installer\HearthInstaller;
 use SyliusStarter\Themes\Installer\LagoonInstaller;
+use SyliusStarter\Themes\Installer\PawsInstaller;
 use SyliusStarter\Themes\Installer\PromptInstaller;
 use SyliusStarter\Themes\Installer\RetroGamingInstaller;
 use SyliusStarter\Themes\Installer\RoasteryInstaller;
@@ -44,6 +45,7 @@ use SyliusStarter\Themes\Remover\DriveRemover;
 use SyliusStarter\Themes\Remover\GrooveRemover;
 use SyliusStarter\Themes\Remover\HearthRemover;
 use SyliusStarter\Themes\Remover\LagoonRemover;
+use SyliusStarter\Themes\Remover\PawsRemover;
 use SyliusStarter\Themes\Remover\PromptRemover;
 use SyliusStarter\Themes\Remover\RetroGamingRemover;
 use SyliusStarter\Themes\Remover\RoasteryRemover;
@@ -81,6 +83,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addInstaller(new ArenaInstaller());
     Themes::addInstaller(new HearthInstaller());
     Themes::addInstaller(new BloomInstaller());
+    Themes::addInstaller(new PawsInstaller());
 
     Themes::addRemover(new CanvasRemover());
     Themes::addRemover(new PromptRemover());
@@ -99,6 +102,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addRemover(new ArenaRemover());
     Themes::addRemover(new HearthRemover());
     Themes::addRemover(new BloomRemover());
+    Themes::addRemover(new PawsRemover());
 
     foreach (ComponentResolver::candidates() as $reflection) {
         $descriptor = resolve_theme_installer($reflection);

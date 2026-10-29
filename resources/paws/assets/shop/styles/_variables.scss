@@ -1,0 +1,65 @@
+// Paws — oat and collar navy, tangerine and a box of pastel toys.
+// Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
+$dark: $color-mode == dark;
+
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-family-display: "Bricolage Grotesque", "Avenir Next", "Helvetica Neue", "Arial", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: $font-family-display;
+$headings-font-weight: 700;
+
+$body-bg: $page;
+$body-color: $text;
+
+$primary: $accent;
+$secondary: $surface-raised;
+
+$link-color: $accent-text;
+$link-hover-color: $accent-text-hover;
+$border-color: $line;
+
+// Soft, rounded corners, like a cushion.
+$radius-sm: 10px;
+$radius: 18px;
+$radius-lg: 28px;
+
+// One paw print, for the eyebrows (used as a mask).
+$paws-trail: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cellipse cx='7.6' cy='17' rx='4.6' ry='5.6' transform='rotate(-24 7.6 17)'/%3E%3Cellipse cx='15' cy='8.6' rx='4.6' ry='5.8' transform='rotate(-8 15 8.6)'/%3E%3Cellipse cx='25' cy='8.6' rx='4.6' ry='5.8' transform='rotate(8 25 8.6)'/%3E%3Cellipse cx='32.4' cy='17' rx='4.6' ry='5.6' transform='rotate(24 32.4 17)'/%3E%3Cpath d='M20 18.5c5.6 0 11.4 7.4 11.4 12.2 0 4-3.2 5.6-6 5.6-2.4 0-3.4-1.2-5.4-1.2s-3 1.2-5.4 1.2c-2.8 0-6-1.6-6-5.6 0-4.8 5.8-12.2 11.4-12.2z'/%3E%3C/svg%3E");
+
+
+// The house paw, as a tangerine ink stamp: four toes around a pad. Same color in both schemes.
+$paws-print-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='%23FF7A2F'%3E%3Cellipse cx='7.6' cy='17' rx='4.6' ry='5.6' transform='rotate(-24 7.6 17)'/%3E%3Cellipse cx='15' cy='8.6' rx='4.6' ry='5.8' transform='rotate(-8 15 8.6)'/%3E%3Cellipse cx='25' cy='8.6' rx='4.6' ry='5.8' transform='rotate(8 25 8.6)'/%3E%3Cellipse cx='32.4' cy='17' rx='4.6' ry='5.6' transform='rotate(24 32.4 17)'/%3E%3Cpath d='M20 18.5c5.6 0 11.4 7.4 11.4 12.2 0 4-3.2 5.6-6 5.6-2.4 0-3.4-1.2-5.4-1.2s-3 1.2-5.4 1.2c-2.8 0-6-1.6-6-5.6 0-4.8 5.8-12.2 11.4-12.2z'/%3E%3C/svg%3E");
+
+// A soft wave, the edge of the navy bands (used as a mask): filled below the wave line.
+$paws-wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 14' preserveAspectRatio='none'%3E%3Cpath d='M0 14V8C10 8 10 1 20 1S30 8 40 8 50 1 60 1V14z'/%3E%3C/svg%3E");
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+$ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// The house motif: the navy bands end in a soft wave, hanging below them (down) or rising above them (up),
+// like the edge of a dog blanket.
+@mixin paws-wave($color, $direction: down) {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  height: 14px;
+  background-color: $color;
+  content: "";
+  mask: $paws-wave repeat-x 0 0 / 60px 14px;
+  -webkit-mask: $paws-wave repeat-x 0 0 / 60px 14px;
+  pointer-events: none;
+
+  @if $direction == down {
+    top: calc(100% - 1px);
+    transform: scaleY(-1);
+  } @else {
+    bottom: calc(100% - 1px);
+  }
+}
+
+// "r, g, b" channels of a color, for Bootstrap's --bs-*-rgb variables.
+@function channels($color) {
+  @return red($color), green($color), blue($color);
+}

@@ -1,0 +1,120 @@
+paws:
+    brand:
+        tagline: 'Pet supply co.'
+    top_bar:
+        delivery: 'Free delivery from €39 · a treat in every parcel'
+        vet: 'Free advice from our vets, seven days a week'
+    hero:
+        eyebrow: 'Food · treats · toys · beds · care'
+        title: 'Everything for <em>happy tails.</em>'
+        lead: 'Honest food, toys that last and beds they will not leave, for dogs and cats of every size. Every recipe is <strong>checked by our vets</strong>, and the food can come to your door before the bag runs out.'
+        cta: 'Shop the new in'
+        secondary_cta: 'Set up a subscription'
+        signature: 'Tested by Biscuit, Miso and the 40 pets of our team.'
+        illustration: 'Biscuit, a smiling corgi in a tangerine collar, sits on a woven rug in a sunlit living room, next to Miso the tabby cat curled up in a grey felt cave and a speckled mint bowl.'
+        stickers:
+            vet: '<em>Vet</em> approved recipes'
+            subscription: '−10 % on subscriptions'
+    figures:
+        item_1:
+            value: '4.9 / 5'
+            text: 'from 18,000 pet parents'
+        item_2:
+            value: '48 h'
+            text: 'delivery, free from €39'
+        item_3:
+            value: '7 / 7'
+            text: 'free advice from our vets'
+        item_4:
+            value: '−10 %'
+            text: 'on every subscription'
+    products:
+        eyebrow:
+            latest: 'New this week'
+    portion:
+        label: 'Daily portion'
+        level: 'Daily portion: %level% bowls out of 5, %grams%'
+    passport:
+        eyebrow: 'The subscription'
+        title: 'Never run out <em>of kibble.</em>'
+        lead: 'Tell us who shares your sofa, we work out the right portion and the food comes to your door just before the bag is empty. Pause, skip or change the recipe whenever you like, and <strong>save 10 % on every delivery</strong>.'
+        step_1:
+            title: 'Tell us about your pet'
+            text: 'Species, breed, age, weight and how active it is: two minutes to fill in its pet passport, the fussy eaters included.'
+        step_2:
+            title: 'Get the right portion'
+            text: 'Our vets match a recipe and a daily portion to it, and adjust them as your puppy grows or your cat gets older.'
+        step_3:
+            title: 'Delivered before it runs out'
+            text: 'The food arrives on schedule with a treat for the road. Change the date or the recipe in one click, no strings attached.'
+        card:
+            kicker: 'Pet passport'
+            name: 'Biscuit'
+            breed: 'Pembroke Welsh Corgi · very good boy'
+            stamp: 'Subscribed ✓'
+            grams: '180 g a day'
+            age:
+                label: 'Age'
+                value: '4 years'
+            weight:
+                label: 'Weight'
+                value: '12 kg'
+            diet:
+                label: 'Recipe'
+                value: 'Grain-free salmon'
+            delivery:
+                label: 'Next bag'
+                value: 'Every 5 weeks'
+    aisles:
+        eyebrow: 'The aisles'
+        title: 'Six aisles, <em>for every moment of their day.</em>'
+        lead: 'From the morning bowl to the evening cuddle, each aisle has its colour and its bestseller, chosen and tested by the pets of the team.'
+        bestseller: 'Bestseller'
+        food:
+            name: 'Food'
+            promise: 'Honest recipes, checked by vets'
+            text: 'Kibbles and wet food made with real meat and fish, for puppies, kittens, adults and seniors.'
+            bestseller: 'Grain-Free Salmon Kibble'
+        treats:
+            name: 'Treats'
+            promise: 'Rewards with nothing added'
+            text: 'Training bites, chews and freeze-dried treats with one or two ingredients, baked or dried in France.'
+            bestseller: 'Peanut Butter Training Bites'
+        toys:
+            name: 'Toys'
+            promise: 'Play, chase, sniff'
+            text: 'Teasers, plushes and snuffle mats to wear them out indoors and keep their minds busy.'
+            bestseller: 'Snuffle Mat — Meadow'
+        accessories:
+            name: 'Accessories'
+            promise: 'Made for every walk'
+            text: 'Collars, leashes and bowls in sturdy natural materials, that age well walk after walk.'
+            bestseller: 'Waxed Canvas Dog Collar'
+        beds:
+            name: 'Beds'
+            promise: 'The best spot in the house'
+            text: 'Donut beds, cat caves and orthopedic mattresses, all with covers that go in the washing machine.'
+            bestseller: 'Donut Cuddler Bed'
+        care:
+            name: 'Grooming & Care'
+            promise: 'Soft coat, happy paws'
+            text: 'Gentle shampoos, brushes and balms for the coat, the skin and the pads, safe if licked.'
+            bestseller: 'Shea Paw Balm'
+    footer:
+        tagline: 'Honest food, sturdy toys and cosy beds for dogs and cats, chosen by vets and tested by our own pets.'
+        notice: 'Packed with care every weekday. Change your pet’s food gradually over a week, and ask your vet before any change of diet for a pet with a health condition.'
+        services:
+            eyebrow: 'At your service'
+            title: 'From our team of pets <em>to yours.</em>'
+            vet:
+                title: 'Free vet advice'
+                text: 'A recipe to choose, an itchy skin, a new puppy: our vets answer you personally, seven days a week.'
+                cta: 'Ask a vet'
+            subscription:
+                title: 'Subscribe & save'
+                text: 'The food comes on schedule with 10 % off; pause, skip or change the recipe whenever you like.'
+                cta: 'My account'
+            returns:
+                title: 'Happy paws guarantee'
+                text: 'Not a fan of the new recipe? Return the opened bag within 30 days and we refund it in full.'
+                cta: 'Contact us'

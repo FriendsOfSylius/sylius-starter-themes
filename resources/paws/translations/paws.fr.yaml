@@ -1,0 +1,120 @@
+paws:
+    brand:
+        tagline: 'Animalerie'
+    top_bar:
+        delivery: 'Livraison offerte dès 39 € · une friandise dans chaque colis'
+        vet: 'Conseils gratuits de nos vétérinaires, 7 jours sur 7'
+    hero:
+        eyebrow: 'Alimentation · friandises · jouets · couchages · soins'
+        title: 'Tout pour des <em>queues qui frétillent.</em>'
+        lead: 'Des croquettes honnêtes, des jouets qui durent et des paniers qu’ils ne quittent plus, pour les chiens et les chats de toutes tailles. Chaque recette est <strong>validée par nos vétérinaires</strong>, et l’alimentation peut arriver chez vous avant que le sac soit vide.'
+        cta: 'Voir les nouveautés'
+        secondary_cta: 'Créer un abonnement'
+        signature: 'Testé par Biscuit, Miso et les 40 animaux de l’équipe.'
+        illustration: 'Biscuit, un corgi souriant au collier mandarine, assis sur un tapis tressé dans un salon ensoleillé, à côté de Miso, le chat tigré lové dans une grotte en feutre gris, et d’une gamelle menthe mouchetée.'
+        stickers:
+            vet: 'Recettes <em>vétos</em> approuvées'
+            subscription: '−10 % en abonnement'
+    figures:
+        item_1:
+            value: '4,9 / 5'
+            text: 'par 18 000 maîtres'
+        item_2:
+            value: '48 h'
+            text: 'livraison offerte dès 39 €'
+        item_3:
+            value: '7 / 7'
+            text: 'conseils vétos gratuits'
+        item_4:
+            value: '−10 %'
+            text: 'sur chaque abonnement'
+    products:
+        eyebrow:
+            latest: 'Nouveautés de la semaine'
+    portion:
+        label: 'Ration du jour'
+        level: 'Ration du jour : %level% gamelles sur 5, %grams%'
+    passport:
+        eyebrow: 'L’abonnement'
+        title: 'Plus jamais à court <em>de croquettes.</em>'
+        lead: 'Présentez-nous celui qui partage votre canapé : nous calculons la bonne ration et l’alimentation arrive chez vous juste avant la fin du sac. Mettez en pause, sautez une livraison ou changez de recette quand vous voulez, et <strong>économisez 10 % à chaque livraison</strong>.'
+        step_1:
+            title: 'Présentez votre animal'
+            text: 'Espèce, race, âge, poids et activité : deux minutes pour remplir son passeport, difficiles compris.'
+        step_2:
+            title: 'Recevez la bonne ration'
+            text: 'Nos vétérinaires lui associent une recette et une ration quotidienne, et les ajustent quand votre chiot grandit ou que votre chat prend de l’âge.'
+        step_3:
+            title: 'Livré avant la fin du sac'
+            text: 'L’alimentation arrive à la date prévue avec une friandise pour la route. Changez la date ou la recette en un clic, sans engagement.'
+        card:
+            kicker: 'Passeport'
+            name: 'Biscuit'
+            breed: 'Welsh Corgi Pembroke · très bon chien'
+            stamp: 'Abonné ✓'
+            grams: '180 g par jour'
+            age:
+                label: 'Âge'
+                value: '4 ans'
+            weight:
+                label: 'Poids'
+                value: '12 kg'
+            diet:
+                label: 'Recette'
+                value: 'Saumon sans céréales'
+            delivery:
+                label: 'Prochain sac'
+                value: 'Toutes les 5 semaines'
+    aisles:
+        eyebrow: 'Les rayons'
+        title: 'Six rayons, <em>pour chaque moment de leur journée.</em>'
+        lead: 'De la gamelle du matin au câlin du soir, chaque rayon a sa couleur et son best-seller, choisi et testé par les animaux de l’équipe.'
+        bestseller: 'Best-seller'
+        food:
+            name: 'Alimentation'
+            promise: 'Des recettes honnêtes, validées par des vétos'
+            text: 'Croquettes et pâtées à base de vraie viande et de poisson, pour chiots, chatons, adultes et seniors.'
+            bestseller: 'Croquettes sans céréales au saumon'
+        treats:
+            name: 'Friandises'
+            promise: 'Des récompenses sans rien d’ajouté'
+            text: 'Bouchées d’éducation, os à mâcher et friandises lyophilisées à un ou deux ingrédients, cuites ou séchées en France.'
+            bestseller: 'Bouchées d’éducation au beurre de cacahuète'
+        toys:
+            name: 'Jouets'
+            promise: 'Jouer, chasser, renifler'
+            text: 'Cannes à plumes, peluches et tapis de fouille pour les dépenser à l’intérieur et occuper leur esprit.'
+            bestseller: 'Tapis de fouille Prairie'
+        accessories:
+            name: 'Accessoires'
+            promise: 'Faits pour toutes les balades'
+            text: 'Colliers, laisses et gamelles en matières naturelles robustes, qui se patinent balade après balade.'
+            bestseller: 'Collier en toile cirée'
+        beds:
+            name: 'Couchages'
+            promise: 'La meilleure place de la maison'
+            text: 'Paniers ronds, grottes pour chats et matelas orthopédiques, tous avec des housses lavables en machine.'
+            bestseller: 'Panier rond Donut'
+        care:
+            name: 'Hygiène & soins'
+            promise: 'Poil doux, coussinets heureux'
+            text: 'Shampooings doux, brosses et baumes pour le pelage, la peau et les coussinets, sans danger s’ils sont léchés.'
+            bestseller: 'Baume coussinets au karité'
+    footer:
+        tagline: 'Des croquettes honnêtes, des jouets solides et des paniers douillets pour chiens et chats, choisis par des vétérinaires et testés par nos propres animaux.'
+        notice: 'Colis préparés avec soin chaque jour de la semaine. Changez l’alimentation de votre animal progressivement sur une semaine, et demandez l’avis de votre vétérinaire avant tout changement pour un animal malade.'
+        services:
+            eyebrow: 'À votre service'
+            title: 'De nos animaux <em>aux vôtres.</em>'
+            vet:
+                title: 'Conseils vétos gratuits'
+                text: 'Une recette à choisir, une peau qui gratte, un nouveau chiot : nos vétérinaires vous répondent personnellement, 7 jours sur 7.'
+                cta: 'Demander à un véto'
+            subscription:
+                title: 'Abonnez-vous et économisez'
+                text: 'L’alimentation arrive à la date prévue avec 10 % de remise ; mettez en pause, sautez ou changez de recette quand vous voulez.'
+                cta: 'Mon compte'
+            returns:
+                title: 'Garantie pattes heureuses'
+                text: 'La nouvelle recette ne plaît pas ? Renvoyez le sac entamé sous 30 jours, nous vous remboursons intégralement.'
+                cta: 'Nous contacter'

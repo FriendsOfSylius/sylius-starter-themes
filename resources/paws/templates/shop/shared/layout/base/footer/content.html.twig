@@ -1,0 +1,37 @@
+{% set paws_services = [
+    {key: 'vet', url: path('sylius_shop_contact_request'), icon: 'M9 3h6v5h5v6h-5v5H9v-5H4V8h5z'},
+    {key: 'subscription', url: path('sylius_shop_account_dashboard'), icon: 'M20 11a8 8 0 0 0-14.7-4.4M4 4v3h3M4 13a8 8 0 0 0 14.7 4.4M20 20v-3h-3M9.5 12.5l2 2 3.5-4'},
+    {key: 'returns', url: path('sylius_shop_contact_request'), icon: 'M7.5 9.5a1.6 2 0 1 0 0 .1M11 6.5a1.6 2 0 1 0 0 .1M15 6.5a1.6 2 0 1 0 0 .1M18.5 9.5a1.6 2 0 1 0 0 .1M13 12c3 0 6 4 6 6.5 0 2-1.6 2.8-3 2.8-1.2 0-1.8-.6-3-.6s-1.8.6-3 .6c-1.4 0-3-.8-3-2.8C7 16 10 12 13 12z'},
+] %}
+
+<footer class="paws-footer">
+    <div id="paws-services" class="paws-services">
+        <div class="container">
+            <div class="paws-services__head">
+                <p class="paws-eyebrow paws-eyebrow--light">{{ 'paws.footer.services.eyebrow'|trans({}, 'paws') }}</p>
+                <p class="paws-services__title">{{ 'paws.footer.services.title'|trans({}, 'paws')|raw }}</p>
+            </div>
+
+            <ul class="paws-services__items" role="list">
+                {% for service in paws_services %}
+                    <li class="paws-services__item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ service.icon }}"/></svg>
+                        <p class="paws-services__name">{{ ('paws.footer.services.' ~ service.key ~ '.title')|trans({}, 'paws') }}</p>
+                        <p class="paws-services__text">{{ ('paws.footer.services.' ~ service.key ~ '.text')|trans({}, 'paws') }}</p>
+                        <a class="paws-link-arrow paws-link-arrow--light" href="{{ service.url }}">{{ ('paws.footer.services.' ~ service.key ~ '.cta')|trans({}, 'paws') }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container paws-footer__main">
+        <div class="paws-footer__brand">
+            {% include 'shop/shared/layout/brand/logo.html.twig' with {variant: 'footer'} %}
+            <p>{{ 'paws.footer.tagline'|trans({}, 'paws') }}</p>
+        </div>
+        <div class="row">
+            {% hook 'content' %}
+        </div>
+        <p class="paws-footer__notice">{{ 'paws.footer.notice'|trans({}, 'paws') }}</p>
+    </div>
+</footer>

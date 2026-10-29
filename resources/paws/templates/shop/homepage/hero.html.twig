@@ -1,0 +1,47 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="paws-hero" aria-labelledby="paws-hero-title">
+    <div class="container">
+        <div class="paws-hero__grid">
+            <div class="paws-hero__copy">
+                <p class="paws-eyebrow">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'paws.hero.eyebrow'|trans({}, 'paws') }}{% endif %}</p>
+                <h1 id="paws-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'paws.hero.title'|trans({}, 'paws')|raw }}{% endif %}</h1>
+                <p class="paws-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'paws.hero.lead'|trans({}, 'paws')|raw }}{% endif %}</p>
+
+                <div class="paws-hero__actions">
+                    <a class="btn btn-primary" href="{{ hero.ctaUrl ?? '#paws-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'paws.hero.cta'|trans({}, 'paws') }}{% endif %}
+                    </a>
+                    <a class="paws-link-arrow" href="#paws-passport">
+                        {{ 'paws.hero.secondary_cta'|trans({}, 'paws') }}
+                    </a>
+                </div>
+
+                <p class="paws-hero__signature">
+                    {% include 'shop/shared/layout/brand/print.html.twig' with {class: 'paws-hero__print'} %}
+                    {{ 'paws.hero.signature'|trans({}, 'paws') }}
+                </p>
+            </div>
+
+            <div class="paws-hero__visual">
+                {% if hero.image %}
+                    <img class="paws-hero__panel paws-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                {% else %}
+                    {% include 'shop/homepage/hero/window.html.twig' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="paws-figures">
+        <div class="container">
+            <ul class="paws-figures__items" role="list">
+                {% for item in 1..4 %}
+                    <li>
+                        <span class="paws-figures__value">{{ ('paws.figures.item_' ~ item ~ '.value')|trans({}, 'paws') }}</span>
+                        <span class="paws-figures__text">{{ ('paws.figures.item_' ~ item ~ '.text')|trans({}, 'paws') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
