@@ -14,8 +14,8 @@ return App::config([
                 'new_collection' => [
                     'enabled' => false,
                 ],
-                'theme_ritual' => [
-                    'template' => 'shop/homepage/ritual.html.twig',
+                'theme_promise' => [
+                    'template' => 'shop/homepage/promise.html.twig',
                     'priority' => 150,
                 ],
                 'theme_shelves' => [
