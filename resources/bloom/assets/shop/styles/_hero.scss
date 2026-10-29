@@ -1,0 +1,437 @@
+// Bloom hero: a DM Serif headline closed by a peony italic, next to the Bloom vanity, an arched mirror onto a garden
+// at sunrise with pastel pedestals and stickers. A fig band of house figures closes it, edged with petals.
+
+.bloom-hero {
+  position: relative;
+  // Clipped sideways only, so that the petal edge of the figures band hangs over the page below.
+  overflow-x: clip;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  background-color: $hero-bg;
+  background-image:
+    radial-gradient(ellipse 50% 65% at 80% 40%, rgba($hero-glow, 0.95), transparent 70%),
+    radial-gradient(ellipse 45% 55% at 0% 100%, rgba($hero-glow-2, 0.9), transparent 70%),
+    radial-gradient(circle at 1px 1px, rgba($petal, 0.12) 1px, transparent 1.5px);
+  background-size: auto, auto, 18px 18px;
+  color: $hero-text;
+}
+
+.bloom-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: end;
+}
+
+.bloom-hero__copy {
+  max-width: 38rem;
+  align-self: center;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.bloom-hero h1 {
+  margin: 0 0 1.75rem;
+  color: $hero-heading;
+  font-size: clamp(2.8rem, 5.8vw, 5.4rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+
+  em {
+    display: block;
+    color: $hero-em;
+  }
+}
+
+.bloom-hero__lead {
+  max-width: 33rem;
+  margin-bottom: 2.5rem;
+  font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+
+  strong {
+    color: $hero-heading;
+    font-weight: 600;
+  }
+}
+
+.bloom-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+}
+
+.bloom-hero__signature {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid $line-strong;
+  color: $hero-text;
+  font-family: $font-family-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.bloom-hero__flower {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+}
+
+.bloom-hero__signature:hover .bloom-flower__petals {
+  transform: rotate(72deg);
+}
+
+// The vanity stands on the bottom of the hero, so the figures band reads as the edge of the marble.
+.bloom-hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.bloom-vanity {
+  position: relative;
+  width: 100%;
+  max-width: 29rem;
+  margin: 0;
+}
+
+.bloom-hero__panel {
+  display: block;
+  width: 100%;
+  max-width: 29rem;
+  height: auto;
+  aspect-ratio: 440 / 540;
+  filter: drop-shadow(0 30px 40px $vanity-shadow);
+}
+
+.bloom-hero__image {
+  border-radius: 999px 999px 0 0;
+  object-fit: cover;
+}
+
+// Scheme colours of the illustration: the sky, the mirror frame and the marble.
+.bloom-vanity__sky-top {
+  stop-color: $sky-top;
+}
+
+.bloom-vanity__sky-bottom {
+  stop-color: $sky-bottom;
+}
+
+.bloom-vanity__halo-stop {
+  stop-color: $sun;
+}
+
+.bloom-vanity__sun {
+  fill: $sun;
+}
+
+.bloom-vanity__hill {
+  fill: $vanity-hill;
+}
+
+.bloom-vanity__hill--far {
+  fill: $vanity-hill-far;
+}
+
+.bloom-vanity__birds {
+  stroke: $vanity-birds;
+}
+
+.bloom-vanity__frame {
+  fill: $vanity-frame;
+}
+
+.bloom-vanity__frame-line {
+  fill: none;
+  stroke: $vanity-frame-line;
+  stroke-width: 1.5;
+}
+
+.bloom-vanity__marble {
+  fill: $vanity-marble;
+}
+
+.bloom-vanity__marble-edge {
+  fill: $vanity-marble-edge;
+}
+
+.bloom-vanity__vein {
+  stroke: $vanity-vein;
+}
+
+.bloom-vanity__sparkles {
+  fill: $vanity-sparkle;
+}
+
+// Sparkles twinkle, petals drift down from the peonies, the bouquet sways.
+@keyframes bloom-twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.6) rotate(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+.bloom-vanity__sparkles use {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bloom-twinkle 3.2s ease-in-out infinite;
+
+  &:nth-child(2) {
+    animation-delay: -0.8s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: -1.6s;
+  }
+
+  &:nth-child(4) {
+    animation-delay: -2.4s;
+  }
+}
+
+@keyframes bloom-fall {
+  0% {
+    opacity: 0;
+    transform: translate(0, -20px) rotate(0);
+  }
+
+  15%,
+  80% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-40px, 260px) rotate(320deg);
+  }
+}
+
+.bloom-vanity__falling use {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bloom-fall 11s linear infinite;
+
+  &:nth-child(2) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: -8s;
+    animation-duration: 10s;
+  }
+}
+
+@keyframes bloom-sway {
+  0%,
+  100% {
+    transform: rotate(-1.5deg);
+  }
+
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+.bloom-vanity__bouquet {
+  transform-box: view-box;
+  transform-origin: 120px 470px;
+  animation: bloom-sway 7s ease-in-out infinite;
+}
+
+// Stickers on the mirror, like on a gift box: tilted, pastel, slightly lifted.
+
+.bloom-stickers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bloom-sticker {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 20px -10px rgba($fig-night, 0.45);
+  color: #2A1024;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+  transition: transform 400ms $ease-pop;
+
+  em {
+    display: block;
+    font-family: $font-family-serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
+.bloom-sticker--vegan {
+  top: 9%;
+  right: -2%;
+  width: 6.4rem;
+  height: 6.4rem;
+  padding: 0.5rem;
+  border: 2px dashed rgba(#2A1024, 0.35);
+  outline: 4px solid $lilac;
+  background-color: $lilac;
+  transform: rotate(12deg);
+}
+
+.bloom-sticker--ingredient {
+  top: 64%;
+  left: -4%;
+  width: 6rem;
+  height: 6rem;
+  padding: 0.5rem;
+  background-color: $butter;
+  transform: rotate(-10deg);
+}
+
+.bloom-sticker--refill {
+  top: 37%;
+  left: 50%;
+  background-color: $sage;
+  transform: rotate(-7deg);
+}
+
+.bloom-vanity:hover .bloom-sticker--vegan {
+  transform: rotate(20deg) scale(1.05);
+}
+
+.bloom-vanity:hover .bloom-sticker--ingredient {
+  transform: rotate(-2deg) scale(1.05);
+}
+
+.bloom-vanity:hover .bloom-sticker--refill {
+  transform: rotate(-12deg) scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bloom-vanity__sparkles use,
+  .bloom-vanity__falling use,
+  .bloom-vanity__bouquet {
+    animation: none;
+  }
+
+  .bloom-vanity__falling {
+    display: none;
+  }
+}
+
+// House figures in a fig band, closed by a row of petals hanging over the page.
+
+.bloom-figures {
+  position: relative;
+  background-color: $fig-night;
+
+  &::after {
+    @include bloom-scallop($fig-night, down);
+  }
+}
+
+.bloom-figures__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: clamp(1.4rem, 2.5vw, 2rem) clamp(1rem, 2vw, 1.75rem);
+    text-align: center;
+
+    + li {
+      border-left: 1px solid $border-dark;
+    }
+  }
+}
+
+.bloom-figures__value {
+  color: $peony-light;
+  font-family: $font-family-serif;
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.bloom-figures__text {
+  color: $text-on-dark;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .bloom-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .bloom-hero__copy {
+    max-width: none;
+    padding-bottom: 3rem;
+  }
+
+  .bloom-vanity {
+    max-width: 22rem;
+  }
+
+  .bloom-figures__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    li:nth-child(3) {
+      border-left: 0;
+    }
+
+    li:nth-child(n + 3) {
+      border-top: 1px solid $border-dark;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .bloom-sticker {
+    font-size: 0.58rem;
+  }
+
+  .bloom-sticker--vegan,
+  .bloom-sticker--ingredient {
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+
+  .bloom-sticker--vegan {
+    right: 0;
+  }
+
+  .bloom-sticker--ingredient {
+    left: -2%;
+  }
+
+  .bloom-sticker em {
+    font-size: 0.95rem;
+  }
+}

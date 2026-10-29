@@ -1,0 +1,123 @@
+bloom:
+    brand:
+        tagline: 'Beauté & bien-être'
+    top_bar:
+        delivery: 'Livraison offerte dès 35 € · deux échantillons dans chaque colis'
+        fresh: 'Formules vegan, non testées sur les animaux, en flacons rechargeables'
+    hero:
+        eyebrow: 'Soins · maquillage · parfums · bien-être'
+        title: 'Une beauté qui pousse <em>comme un jardin.</em>'
+        lead: 'Des formules douces aux fleurs, aux huiles et aux plantes, dans des flacons pastel que vous rechargez. Chaque produit a son <strong>rituel</strong> : la texture, la peau à laquelle il convient et la façon de l’utiliser.'
+        cta: 'Découvrir les nouveautés'
+        secondary_cta: 'Trouver mon rituel'
+        signature: 'Formulé dans notre laboratoire-jardin, testé sur notre propre peau.'
+        illustration: 'Un miroir en arche ouvert sur un jardin au lever du soleil, où se penchent des pivoines roses. Sur une coiffeuse en marbre, des socles pastel portent un parfum au bouchon pivoine, un pot de crème rose et un sérum compte-gouttes ambré ; un rouge à lèvres et des pétales sont posés sur le marbre.'
+        sticker_vegan: '<em>Vegan</em> sans cruauté'
+        sticker_ingredient: '<em>Pivoine</em> + hyaluronique'
+        sticker_refill: 'Rechargeable ✿'
+    figures:
+        item_1:
+            value: '97 %'
+            text: 'd’ingrédients d’origine naturelle'
+        item_2:
+            value: '0'
+            text: 'test sur les animaux, jamais'
+        item_3:
+            value: '9'
+            text: 'produits rechargeables'
+        item_4:
+            value: '4,8 / 5'
+            text: 'sur 12 000 avis'
+    products:
+        eyebrow:
+            latest: 'Fraîchement éclos'
+    texture:
+        label: 'Texture'
+        level: 'Texture %level% sur 5 : %name%'
+        level_1: 'Aqueuse'
+        level_2: 'Légère'
+        level_3: 'Soyeuse'
+        level_4: 'Crémeuse'
+        level_5: 'Riche'
+    ritual:
+        eyebrow: 'Votre rituel'
+        title: 'Trois gestes, <em>quatre minutes par jour.</em>'
+        lead: 'Pas de routine en douze étapes : une peau propre, un soin pour ce dont elle a besoin et une texture qu’elle aime. Nos conseillères beauté composent votre rituel avec vous, puis vous <strong>restez simple</strong>.'
+        step_1:
+            title: 'Nettoyer'
+            text: 'Un lait ou un gel qui emporte le maquillage, la crème solaire et la journée sans décaper la peau. Matin et soir, à l’eau tiède.'
+        step_2:
+            title: 'Traiter'
+            text: 'Quelques gouttes de sérum ou d’huile pour ce que votre peau demande aujourd’hui : éclat, hydratation ou confort. Appliquées en pressions, jamais frottées.'
+        step_3:
+            title: 'Sublimer'
+            text: 'Une crème pour tout sceller, puis la couleur : un teint, une touche de baume sur les joues et un rouge à lèvres. C’est fait.'
+        card:
+            kicker: 'Fiche rituel'
+            title: 'Peau mixte'
+            time: 'Matin et soir · 4 minutes'
+            gel: 'Gel'
+            serum: 'Sérum'
+            cream: 'Crème'
+            skin:
+                label: 'Peau'
+                value: 'Brillante sur la zone T, assoiffée sur les joues'
+            ingredients:
+                label: 'Actifs'
+                value: 'Pivoine, acide hyaluronique, vitamine C'
+            finish:
+                label: 'Fini'
+                value: 'Lumineux, jamais collant'
+    shelves:
+        eyebrow: 'Les rayons de la maison'
+        title: 'Six rayons, <em>un seul jardin.</em>'
+        lead: 'Du nettoyant du matin à la brume d’oreiller, chaque rayon a sa couleur et son best-seller. Mélangez-les : tout ici est fait pour se superposer.'
+        bestseller: 'Best-seller'
+        skincare:
+            name: 'Soins'
+            promise: 'Une peau fraîche, chaque jour'
+            text: 'Nettoyants, sérums, huiles et crèmes aux extraits de fleurs et aux actifs doux, pour tous les types de peau.'
+            bestseller: 'Gel-crème Rosée de Pivoine'
+        makeup:
+            name: 'Maquillage'
+            promise: 'Une couleur qui vous ressemble'
+            text: 'Teints, baumes et poudres aux teintes chaudes et faciles à porter, enrichis en huiles pour soigner en colorant.'
+            bestseller: 'Rouge à lèvres Velours Mat — Pétale de Figue'
+        fragrance:
+            name: 'Parfums'
+            promise: 'Un jardin sur la peau'
+            text: 'Eaux de parfum, eaux de toilette et parfums solides composés autour d’une fleur ou d’un fruit.'
+            bestseller: 'Feuille de Figuier & Cèdre'
+        hair:
+            name: 'Cheveux'
+            promise: 'Longueurs douces, cuir chevelu apaisé'
+            text: 'Shampooings doux et masques riches aux huiles végétales, sans sulfates ni silicones.'
+            bestseller: 'Masque réparateur au Camélia'
+        body:
+            name: 'Corps & bien-être'
+            promise: 'Ralentir, respirer'
+            text: 'Beurres corporels, sels de bain et brumes pour une pause dans le bain ou un sommeil plus profond.'
+            bestseller: 'Brume d’oreiller Lavande & Camomille'
+        tools:
+            name: 'Accessoires'
+            promise: 'Faits pour durer'
+            text: 'Pierres gua sha, brosses et éponges en matières naturelles, pour que chaque geste compte.'
+            bestseller: 'Gua sha en quartz rose'
+    footer:
+        tagline: 'Soins, maquillage et parfums doux aux fleurs et aux plantes, en flacons que vous rechargez.'
+        notice: 'Préparé avec soin chaque jour de la semaine. Testez tout nouveau produit à l’intérieur du poignet, et conservez vos produits à l’abri de la chaleur et du soleil.'
+        services:
+            eyebrow: 'À votre service'
+            title: 'De notre laboratoire-jardin <em>à votre coiffeuse.</em>'
+            samples:
+                title: 'Deux échantillons, toujours'
+                text: 'Choisissez deux échantillons à chaque commande, pour essayer une texture ou un parfum avant le grand format.'
+                cta: 'Suivre ma commande'
+            advice:
+                title: 'Conseillère beauté'
+                text: 'Une peau à comprendre, une teinte à trouver, un cadeau à faire : nos conseillères beauté vous répondent personnellement.'
+                cta: 'Demander conseil'
+            refill:
+                title: 'Rechargez, ne rachetez pas'
+                text: 'Neuf de nos flacons se rechargent avec une recharge souple, et nous reprenons gratuitement chaque pot vide.'
+                cta: 'Mon compte'

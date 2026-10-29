@@ -17,6 +17,7 @@ use SyliusStarter\Themes\Attribute\AsThemeInstaller;
 use SyliusStarter\Themes\Attribute\AsThemeRemover;
 use SyliusStarter\Themes\Installer\ArenaInstaller;
 use SyliusStarter\Themes\Installer\AuroraInstaller;
+use SyliusStarter\Themes\Installer\BloomInstaller;
 use SyliusStarter\Themes\Installer\BlushInstaller;
 use SyliusStarter\Themes\Installer\CanvasInstaller;
 use SyliusStarter\Themes\Installer\CellarInstaller;
@@ -35,6 +36,7 @@ use SyliusStarter\Themes\Installer\ThemesSyliusInstallerExtension;
 use SyliusStarter\Themes\Installer\VoltInstaller;
 use SyliusStarter\Themes\Remover\ArenaRemover;
 use SyliusStarter\Themes\Remover\AuroraRemover;
+use SyliusStarter\Themes\Remover\BloomRemover;
 use SyliusStarter\Themes\Remover\BlushRemover;
 use SyliusStarter\Themes\Remover\CanvasRemover;
 use SyliusStarter\Themes\Remover\CellarRemover;
@@ -78,6 +80,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addInstaller(new GrooveInstaller());
     Themes::addInstaller(new ArenaInstaller());
     Themes::addInstaller(new HearthInstaller());
+    Themes::addInstaller(new BloomInstaller());
 
     Themes::addRemover(new CanvasRemover());
     Themes::addRemover(new PromptRemover());
@@ -95,6 +98,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addRemover(new GrooveRemover());
     Themes::addRemover(new ArenaRemover());
     Themes::addRemover(new HearthRemover());
+    Themes::addRemover(new BloomRemover());
 
     foreach (ComponentResolver::candidates() as $reflection) {
         $descriptor = resolve_theme_installer($reflection);

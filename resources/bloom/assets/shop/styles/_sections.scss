@@ -1,0 +1,498 @@
+// Homepage sections: the product shelf, the ritual (the routine in three steps and a ritual card) and the six
+// shelves of the house.
+
+.bloom-products {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.bloom-ritual {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+  border-block: 1px solid $line;
+  background-color: $surface;
+}
+
+.bloom-ritual__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+// Three steps, numbered on round petals in the colours of the routine.
+
+$step-colors: (1: $peony-light, 2: $apricot, 3: $sage);
+
+.bloom-steps {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bloom-steps__item {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding-block: 1.6rem;
+  border-top: 1px solid $line;
+
+  &:last-child {
+    border-bottom: 1px solid $line;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.bloom-steps__numeral {
+  display: grid;
+  width: 3.2rem;
+  height: 3.2rem;
+  place-items: center;
+  // A petal: round on three corners, pointed on the fourth.
+  border-radius: 50% 50% 50% 8%;
+  color: #2A1024;
+  font-family: $font-family-serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1;
+  transition: transform 400ms $ease-pop;
+}
+
+@each $step, $color in $step-colors {
+  .bloom-steps__item--#{$step} .bloom-steps__numeral {
+    background-color: $color;
+  }
+}
+
+.bloom-steps__item:hover .bloom-steps__numeral {
+  transform: rotate(-20deg) scale(1.08);
+}
+
+.bloom-steps__title {
+  margin-bottom: 0.4rem !important;
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+
+.bloom-steps__text {
+  max-width: 34rem;
+  color: $text-muted;
+  line-height: 1.7;
+}
+
+// Ritual card: a milk card on a pastel board, like a prescription from the house beauty advisor.
+
+.bloom-card {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border-radius: $radius-lg;
+  background-color: $lilac;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 100% 0%, rgba($peony-light, 0.95), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 0% 100%, rgba($butter, 0.9), transparent 70%);
+  box-shadow: $shadow-float;
+}
+
+.bloom-card__label {
+  position: relative;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border-radius: $radius;
+  background-color: $page;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.bloom-card__flower {
+  position: absolute;
+  top: -1.4rem;
+  right: 1.25rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  filter: drop-shadow(0 6px 8px rgba($fig-night, 0.2));
+  transform: rotate(12deg);
+}
+
+.bloom-card:hover .bloom-flower__petals {
+  transform: rotate(72deg);
+}
+
+.bloom-card__kicker {
+  color: $rose-text;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.bloom-card__title {
+  margin-top: 0.85rem !important;
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+  line-height: 1.1;
+}
+
+.bloom-card__time {
+  margin-top: 0.45rem !important;
+  color: $text-muted;
+  font-family: $font-family-serif;
+  font-style: italic;
+}
+
+// Swatches of each texture, as if dabbed on the back of a hand. Same colours in both schemes.
+
+.bloom-swatches {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.bloom-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+
+  svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    overflow: visible;
+    transition: transform 400ms $ease-pop;
+  }
+
+  &:hover svg {
+    transform: scale(1.12) rotate(-6deg);
+  }
+}
+
+.bloom-swatch--gel .bloom-swatch__fill {
+  fill: #F8C6D3;
+}
+
+.bloom-swatch--serum .bloom-swatch__fill {
+  fill: #F2B05E;
+}
+
+.bloom-swatch--cream .bloom-swatch__fill {
+  fill: #FBEFE6;
+  stroke: #E4CFC4;
+  stroke-width: 1.2;
+}
+
+.bloom-swatch__shine {
+  fill: #FFF9F5;
+  opacity: 0.7;
+}
+
+.bloom-swatch__swirl {
+  fill: none;
+  stroke: #E4CFC4;
+  stroke-linecap: round;
+  stroke-width: 1.6;
+}
+
+.bloom-swatch__name {
+  color: $heading;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.bloom-card__notes {
+  margin: 0.75rem 0 1.25rem;
+  text-align: left;
+
+  div {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 0.65rem;
+    border-bottom: 1px dotted $line-strong;
+  }
+
+  dt {
+    color: $rose-text;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1.9;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: $heading;
+    font-size: 0.93rem;
+  }
+}
+
+// Texture: five drops growing from a bead to a dollop, filled in peony up to the level.
+
+.bloom-scale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.75rem;
+}
+
+.bloom-scale__label,
+.bloom-scale__name {
+  color: $text-muted;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.bloom-scale__name {
+  color: $heading;
+}
+
+.bloom-scale__drops {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.bloom-scale__drop {
+  border: 1.5px solid $petal;
+  border-radius: 50% 0 50% 50%;
+  transform: rotate(-45deg);
+
+  &.is-on {
+    background-color: $petal;
+  }
+}
+
+@for $step from 1 through 5 {
+  .bloom-scale__drop--#{$step} {
+    width: 0.4rem + 0.12rem * $step;
+    height: 0.4rem + 0.12rem * $step;
+  }
+}
+
+// Shelves: six pastel tiles, each with its drawing, its promise and its bestseller.
+
+.bloom-shelves {
+  position: relative;
+  padding-block: clamp(4.5rem, 9vw, 7.5rem);
+
+  .bloom-section-head {
+    max-width: 46rem;
+  }
+}
+
+.bloom-shelves__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+$shelves: (
+  skincare: $peony-light,
+  makeup: $apricot,
+  fragrance: $butter,
+  hair: $sage,
+  body: $lilac,
+  tools: $sky,
+);
+
+// The tiles keep their pastel in both schemes, so their text stays in fig ink.
+.bloom-shelf {
+  --bloom-shelf: #{$peony-light};
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  border-radius: $radius-lg;
+  background-color: var(--bloom-shelf);
+  color: #4A3040;
+  transition:
+    transform 300ms $ease,
+    box-shadow 300ms $ease;
+
+  // A large soft petal peeking round from the corner of the tile.
+  &::before {
+    position: absolute;
+    top: -4.5rem;
+    right: -4.5rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: #FFF9F5;
+    content: "";
+    opacity: 0.4;
+    transition: transform 500ms $ease-pop;
+  }
+
+  &:hover {
+    box-shadow: $shadow-float;
+    transform: translateY(-4px);
+  }
+
+  &:hover::before {
+    transform: rotate(-30deg) scale(1.15);
+  }
+
+  p {
+    position: relative;
+    margin: 0;
+  }
+}
+
+@each $shelf, $color in $shelves {
+  .bloom-shelf--#{$shelf} {
+    --bloom-shelf: #{$color};
+  }
+}
+
+.bloom-shelf__icon {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 1.25rem;
+  fill: rgba(#FFF9F5, 0.55);
+  stroke: #2A1024;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  transition: transform 400ms $ease-pop;
+}
+
+.bloom-shelf:hover .bloom-shelf__icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.bloom-shelf__name {
+  color: #2A1024;
+  font-family: $font-family-serif;
+  font-size: 1.85rem;
+  line-height: 1.1;
+}
+
+.bloom-shelf__promise {
+  margin-top: 0.4rem !important;
+  color: #2A1024;
+  font-family: $font-family-serif;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.bloom-shelf__text {
+  margin-top: 0.85rem !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.65;
+}
+
+.bloom-shelf__bestseller {
+  margin-top: auto !important;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(#2A1024, 0.25);
+  color: #2A1024;
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  span {
+    display: block;
+    margin-bottom: 0.15rem;
+    color: #4A3040;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .bloom-ritual__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bloom-shelves__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .bloom-steps__item {
+    grid-template-columns: 3.2rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .bloom-card__notes div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .bloom-shelves__items {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Category roundels rendered after the hero (import collections): pastel roundels with a DM Serif initial.
+.bloom-hero ~ .container .rounded-circle.bg-light {
+  border: 2px solid $surface;
+  outline: 1.5px solid $petal;
+  outline-offset: 3px;
+  background-color: $peony-light !important;
+  color: #2A1024 !important;
+  font-family: $font-family-serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 400 !important;
+  transition: transform 300ms $ease-pop;
+}
+
+.bloom-hero ~ .container a:nth-of-type(6n + 2) .rounded-circle.bg-light {
+  background-color: $apricot !important;
+}
+
+.bloom-hero ~ .container a:nth-of-type(6n + 3) .rounded-circle.bg-light {
+  background-color: $butter !important;
+}
+
+.bloom-hero ~ .container a:nth-of-type(6n + 4) .rounded-circle.bg-light {
+  background-color: $sage !important;
+}
+
+.bloom-hero ~ .container a:nth-of-type(6n + 5) .rounded-circle.bg-light {
+  background-color: $lilac !important;
+}
+
+.bloom-hero ~ .container a:nth-of-type(6n) .rounded-circle.bg-light {
+  background-color: $sky !important;
+}
+
+.bloom-hero ~ .container a:hover .rounded-circle.bg-light {
+  transform: rotate(-10deg) scale(1.06);
+}
+
+.bloom-hero + .container {
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+}
+
+.bloom-hero ~ .container a:has(> .rounded-circle) span {
+  margin-top: 0.9rem !important;
+  color: $heading;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}

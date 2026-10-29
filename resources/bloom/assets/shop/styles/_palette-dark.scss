@@ -1,0 +1,71 @@
+// Bloom, dark scheme — the bathroom by candlelight: night fig, milk type, glowing peony and pastels.
+$color-mode: dark;
+
+// House colours. The fig bands are a shade lighter than the page, and ruled in peony, to stand out from it.
+$fig-night: #26101F;
+$fig-deep: #34182D;
+$fig: #5C2A50;
+// Fillets, hairlines and focus outlines on the night surfaces (3:1 at least).
+$petal: #E77FA2;
+$peony: #EA6A91;
+$peony-light: #F8B4C8;
+$milk: #FFF9F5;
+$text-on-dark: #EEDDE6;
+$border-dark: rgba($peony-light, 0.24);
+
+// The garden of pastels: the logo petals, the shelves and the hero pedestals, the same in both schemes.
+$apricot: #F7B58E;
+$butter: #F6DF97;
+$sage: #A9C6A2;
+$lilac: #CDB8EC;
+$sky: #B9D3F0;
+
+// Night fig, plum velvet and candlelight.
+$page: #170B14;
+$surface: #20111C;
+$surface-raised: #2B1726;
+$line: #3D2537;
+$line-strong: #5B3D53;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #9D7F91;
+$heading: #FCEFF4;
+$text: #E7D5DE;
+$text-muted: #BCA2B1;
+
+// A deep peony fills the calls to action (milk on it: above 5:1); as text, the accent turns to a pale pink.
+$accent: #B32C5E;
+$accent-hover: #C63C6E;
+$on-accent: $milk;
+$accent-text: #F8B4C8;
+$accent-text-hover: #FCD3DF;
+$rose-text: #F6A5BD;
+$focus-ring: rgba($accent-text, 0.25);
+
+$success: #93C496;
+$info: #9DB8DE;
+
+// The hero: dusk in the garden, the arch opening onto a lilac evening sky and a rising moon.
+$hero-bg: #1E0E1A;
+$hero-glow: #4A1D3E;
+$hero-glow-2: #2E1A3E;
+$hero-heading: $heading;
+$hero-text: $text;
+$hero-em: $accent-text;
+$sky-top: #3A2150;
+$sky-bottom: #8A4E6E;
+$sun: #FCE7C6;
+
+// The vanity of the hero: the garden hills at dusk, the mirror frame and the marble.
+$vanity-hill: #4F5E59;
+$vanity-hill-far: #3D3550;
+$vanity-birds: rgba($milk, 0.5);
+$vanity-frame: $fig-deep;
+$vanity-frame-line: rgba($peony-light, 0.45);
+$vanity-marble: #3A2234;
+$vanity-marble-edge: #4D2E46;
+$vanity-vein: rgba($milk, 0.12);
+$vanity-sparkle: $butter;
+$vanity-shadow: rgba($fig-night, 0.6);
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 24px 50px -20px rgba(#000, 0.75);

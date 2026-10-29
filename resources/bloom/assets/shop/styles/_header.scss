@@ -1,0 +1,401 @@
+// Top bar: a thin fig band with the delivery promise and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.bloom-topbar) {
+  background-color: $fig-night !important;
+  color: $text-on-dark;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+
+  // Dark scheme: a peony hairline parts the fig band from the header.
+  @if $dark {
+    border-bottom: 1px solid $border-dark;
+  }
+
+  a {
+    color: $peony-light;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$border-dark};
+    --bs-btn-color: #{$peony-light};
+    --bs-btn-hover-bg: #{$fig-deep};
+    --bs-btn-hover-border-color: #{$petal};
+    --bs-btn-hover-color: #{$milk};
+    --bs-btn-active-bg: #{$fig-deep};
+    --bs-btn-active-border-color: #{$petal};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.68rem;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$fig-deep};
+    --bs-dropdown-link-hover-bg: #{$fig};
+    --bs-dropdown-border-color: #{$border-dark};
+  }
+}
+
+.bloom-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.bloom-topbar__item + .bloom-topbar__item::before {
+  margin-right: 1.5rem;
+  color: $peony;
+  content: "✿";
+  font-size: 0.8rem;
+  line-height: 1;
+  vertical-align: -0.05em;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $page;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $line !important;
+}
+
+header .container {
+  padding-block: 0.25rem;
+}
+
+header a {
+  color: $heading;
+
+  &:hover {
+    color: $accent-text;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: the house flower and an italic DM Serif name over a spaced tagline.
+
+.bloom-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.75rem;
+  color: $accent-text;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $accent-text;
+    text-decoration: none;
+  }
+}
+
+.bloom-logo__flower {
+  width: 2.7rem;
+  height: 2.7rem;
+  flex: 0 0 auto;
+}
+
+.bloom-logo:hover .bloom-flower__petals {
+  transform: rotate(72deg);
+}
+
+.bloom-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  line-height: 1;
+}
+
+.bloom-logo__name {
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: 1.95rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.bloom-logo__tagline {
+  color: $rose-text;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+// Category navigation: spaced small capitals, with a peony dot that blooms under the hovered link.
+
+.bloom-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.bloom-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.bloom-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  overflow: visible;
+}
+
+.bloom-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.bloom-category-nav__links > .nav-link,
+.bloom-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.6rem 0.35rem !important;
+  color: $heading;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  &::before {
+    position: absolute;
+    bottom: 0.05rem;
+    left: 50%;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-left: -0.2rem;
+    border-radius: 50%;
+    background-color: $petal;
+    content: "";
+    transform: scale(0);
+    transition: transform 280ms $ease-pop;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $accent-text;
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+}
+
+.bloom-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $line;
+  border-top: 3px solid $petal;
+  border-radius: 0 0 $radius $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.bloom-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Cart: an outlined pill with a peony counter.
+
+.bloom-cart__button {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.bloom-cart__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.bloom-cart__count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $page;
+  border-radius: 999px;
+  background-color: $accent;
+  color: $on-accent;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $heading;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+@media (min-width: 992px) {
+  .bloom-category-nav__menu {
+    width: 100%;
+  }
+
+  .bloom-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .bloom-category-nav__menu {
+    position: fixed;
+    background-color: $page;
+  }
+
+  .bloom-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $line;
+  }
+
+  .bloom-category-nav__menu .offcanvas-title {
+    font-family: $font-family-serif;
+    font-size: 1.5rem !important;
+    font-weight: 400;
+  }
+
+  .bloom-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .bloom-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .bloom-category-nav__links > .nav-link,
+  .bloom-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .bloom-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface-raised;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .bloom-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .bloom-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .bloom-logo__flower {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .bloom-logo__name {
+    font-size: 1.6rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.bloom-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+
+// The house flower, shared by the logo, the hero signature and the ritual card: five pastel petals around a fig
+// heart, the same in both schemes.
+
+.bloom-flower__petal--1 { fill: #E2557F; }
+.bloom-flower__petal--2 { fill: #F7B58E; }
+.bloom-flower__petal--3 { fill: #F6DF97; }
+.bloom-flower__petal--4 { fill: #A9C6A2; }
+.bloom-flower__petal--5 { fill: #CDB8EC; }
+
+.bloom-flower__heart {
+  fill: #2A1024;
+  stroke: #FFF9F5;
+  stroke-width: 1.4;
+}
+
+.bloom-flower__petals {
+  transform-box: view-box;
+  transform-origin: 20px 20px;
+  transition: transform 700ms $ease-pop;
+}

@@ -1,0 +1,114 @@
+.btn {
+  min-height: 2.875rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    color 200ms ease;
+}
+
+.btn-sm {
+  min-height: 2.25rem;
+  padding: 0.45rem 1rem;
+  letter-spacing: 0.1em;
+}
+
+// Peony call to action, lifted by a soft glow on hover.
+.btn-primary {
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
+  --bs-btn-color: #{$on-accent};
+  --bs-btn-bg: #{$accent};
+  --bs-btn-border-color: #{$accent};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$accent-hover};
+  --bs-btn-hover-border-color: #{$accent-hover};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$accent-hover};
+  --bs-btn-active-border-color: #{$accent-hover};
+  --bs-btn-disabled-color: #{$on-accent};
+  --bs-btn-disabled-bg: #{$accent};
+  --bs-btn-disabled-border-color: #{$accent};
+
+  &:hover {
+    box-shadow: 0 10px 24px -12px rgba($accent, 0.85);
+  }
+}
+
+// Outlined in ink, for secondary actions.
+.btn-secondary,
+.btn-light,
+.btn-outline-primary,
+.btn-outline-gray {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
+}
+
+.btn-link {
+  color: $accent-text;
+  letter-spacing: 0.04em;
+  text-transform: none;
+
+  &:hover {
+    color: $accent-text-hover;
+  }
+}
+
+// Text link closed by a fine arrow.
+.bloom-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: $accent-text;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &::after {
+    width: 1.75rem;
+    height: 1px;
+    background-color: currentColor;
+    content: "";
+    transition: width 220ms $ease;
+  }
+
+  &:hover {
+    color: $accent-text-hover;
+
+    &::after {
+      width: 2.5rem;
+    }
+  }
+}
+
+.bloom-link-arrow--light,
+.bloom-link-arrow--light:hover {
+  color: $peony-light;
+}
+
+#add-to-cart-button {
+  width: 100%;
+  min-height: 3.25rem;
+  font-size: 0.78rem;
+}
+
+// A button joined to a field (coupon code) keeps the field corners instead of the pill.
+.input-group > .btn {
+  border-radius: 0 $radius-sm $radius-sm 0;
+}

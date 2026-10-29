@@ -1,0 +1,47 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="bloom-hero" aria-labelledby="bloom-hero-title">
+    <div class="container">
+        <div class="bloom-hero__grid">
+            <div class="bloom-hero__copy">
+                <p class="bloom-eyebrow">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'bloom.hero.eyebrow'|trans({}, 'bloom') }}{% endif %}</p>
+                <h1 id="bloom-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'bloom.hero.title'|trans({}, 'bloom')|raw }}{% endif %}</h1>
+                <p class="bloom-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'bloom.hero.lead'|trans({}, 'bloom')|raw }}{% endif %}</p>
+
+                <div class="bloom-hero__actions">
+                    <a class="btn btn-primary" href="{{ hero.ctaUrl ?? '#bloom-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'bloom.hero.cta'|trans({}, 'bloom') }}{% endif %}
+                    </a>
+                    <a class="bloom-link-arrow" href="#bloom-ritual">
+                        {{ 'bloom.hero.secondary_cta'|trans({}, 'bloom') }}
+                    </a>
+                </div>
+
+                <p class="bloom-hero__signature">
+                    {% include 'shop/homepage/flower.html.twig' with {class: 'bloom-hero__flower'} %}
+                    {{ 'bloom.hero.signature'|trans({}, 'bloom') }}
+                </p>
+            </div>
+
+            <div class="bloom-hero__visual">
+                {% if hero.image %}
+                    <img class="bloom-hero__panel bloom-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                {% else %}
+                    {% include 'shop/homepage/hero/vanity.html.twig' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="bloom-figures">
+        <div class="container">
+            <ul class="bloom-figures__items" role="list">
+                {% for item in 1..4 %}
+                    <li>
+                        <span class="bloom-figures__value">{{ ('bloom.figures.item_' ~ item ~ '.value')|trans({}, 'bloom') }}</span>
+                        <span class="bloom-figures__text">{{ ('bloom.figures.item_' ~ item ~ '.text')|trans({}, 'bloom') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

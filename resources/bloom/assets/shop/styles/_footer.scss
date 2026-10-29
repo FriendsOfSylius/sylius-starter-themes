@@ -1,0 +1,207 @@
+// Fig footer: three house services, then the store links and the legal notice.
+
+footer.bloom-footer {
+  position: relative;
+  margin-top: auto;
+  padding: 0;
+  // Dark scheme: a peony hairline parts the fig footer from the page.
+  border-top: if($dark, 1px solid $border-dark, 0);
+  background-color: $fig-night;
+  color: $text-on-dark;
+  font-size: 0.9rem;
+}
+
+// A row of petals rises above the footer.
+footer.bloom-footer::before {
+  @include bloom-scallop($fig-night, up);
+}
+
+.bloom-services {
+  padding-block: clamp(4rem, 7vw, 6rem);
+  border-bottom: 1px solid $border-dark;
+  scroll-margin-top: 1.5rem;
+}
+
+.bloom-services__head {
+  max-width: 40rem;
+  margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
+  text-align: center;
+
+  .bloom-eyebrow::after {
+    width: 2.6rem;
+    height: 0.85rem;
+    flex: 0 0 auto;
+    background-color: currentColor;
+    content: "";
+    mask: $bloom-stem-rule no-repeat center / contain;
+    -webkit-mask: $bloom-stem-rule no-repeat center / contain;
+    transform: scaleX(-1);
+  }
+}
+
+.bloom-services__title {
+  margin: 0;
+  color: $milk;
+  font-family: $font-family-serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.12;
+  text-wrap: balance;
+
+  em {
+    color: $peony-light;
+    font-weight: 400;
+  }
+}
+
+.bloom-services__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bloom-services__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem clamp(1.25rem, 3vw, 2.75rem);
+  text-align: center;
+
+  + .bloom-services__item {
+    border-left: 1px solid $border-dark;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 1.4rem;
+    fill: none;
+    stroke: $peony-light;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.2;
+  }
+}
+
+.bloom-services__name {
+  color: $milk;
+  font-family: $font-family-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.bloom-services__text {
+  max-width: 21rem;
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.7;
+}
+
+.bloom-services__item .bloom-link-arrow {
+  margin-top: auto;
+}
+
+.bloom-footer__main {
+  padding-top: clamp(3rem, 5vw, 4rem);
+  padding-bottom: 1.5rem;
+
+  > .row {
+    padding-top: 2.5rem;
+  }
+
+  a,
+  .nav-link {
+    color: $text-on-dark;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $peony-light;
+    }
+  }
+
+  .fw-medium,
+  h2,
+  h3,
+  h4 {
+    color: $peony-light;
+    font-family: $font-family-base;
+    font-size: 0.7rem;
+    font-weight: 600 !important;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
+
+.bloom-footer__brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid $border-dark;
+
+  p {
+    max-width: 26rem;
+    margin: 0;
+    color: rgba($text-on-dark, 0.85);
+    font-family: $font-family-serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .bloom-logo,
+  .bloom-logo:hover {
+    color: $peony-light;
+  }
+
+  .bloom-logo__name {
+    color: $milk;
+  }
+
+  .bloom-logo__tagline {
+    color: $peony-light;
+  }
+}
+
+// Payment partner logos keep their brand colours on light chips (Mollie's is black).
+.bloom-footer__main .ratio.border {
+  border-color: $milk !important;
+  background-color: $milk;
+}
+
+.bloom-footer__copy a {
+  color: $peony-light !important;
+  text-decoration: underline !important;
+}
+
+.bloom-footer__notice {
+  margin: 1rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border-dark;
+  color: rgba($text-on-dark, 0.75);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .bloom-services__items {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .bloom-services__item + .bloom-services__item {
+    padding-top: 2.5rem;
+    border-top: 1px solid $border-dark;
+    border-left: 0;
+  }
+}

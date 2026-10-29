@@ -1,0 +1,123 @@
+bloom:
+    brand:
+        tagline: 'Beauty & wellness'
+    top_bar:
+        delivery: 'Free delivery from €35 · two samples in every parcel'
+        fresh: 'Vegan, cruelty-free formulas, in refillable bottles'
+    hero:
+        eyebrow: 'Skincare · makeup · fragrance · wellness'
+        title: 'Beauty that grows <em>like a garden.</em>'
+        lead: 'Gentle formulas made with flowers, oils and plants, in pastel bottles you refill. Every product comes with its <strong>ritual</strong>: the texture, the skin it suits and how to use it.'
+        cta: 'Discover the new in'
+        secondary_cta: 'Find your ritual'
+        signature: 'Formulated in our garden lab, tested on our own skin.'
+        illustration: 'An arched mirror opening onto a garden at sunrise, with pink peonies leaning in. On a marble vanity, pastel pedestals hold a perfume with a peony cap, a pot of pink cream and an amber dropper serum; a lipstick and petals lie on the marble.'
+        sticker_vegan: '<em>Vegan</em> cruelty free'
+        sticker_ingredient: '<em>Peony</em> + hyaluronic'
+        sticker_refill: 'Refillable ✿'
+    figures:
+        item_1:
+            value: '97 %'
+            text: 'ingredients of natural origin'
+        item_2:
+            value: '0'
+            text: 'tests on animals, ever'
+        item_3:
+            value: '9'
+            text: 'products you can refill'
+        item_4:
+            value: '4.8 / 5'
+            text: 'from 12,000 reviews'
+    products:
+        eyebrow:
+            latest: 'Just bloomed'
+    texture:
+        label: 'Texture'
+        level: 'Texture %level% out of 5: %name%'
+        level_1: 'Water-light'
+        level_2: 'Light'
+        level_3: 'Silky'
+        level_4: 'Creamy'
+        level_5: 'Rich'
+    ritual:
+        eyebrow: 'Your ritual'
+        title: 'Three gestures, <em>four minutes a day.</em>'
+        lead: 'No twelve-step routine: a clean skin, one treatment for what it needs and a texture it loves. Our beauty advisors build your ritual with you, then you <strong>keep it simple</strong>.'
+        step_1:
+            title: 'Cleanse'
+            text: 'A milk or a gel that lifts makeup, sunscreen and the day without stripping the skin. Morning and evening, with lukewarm water.'
+        step_2:
+            title: 'Treat'
+            text: 'A few drops of serum or oil for what your skin asks today: radiance, hydration or comfort. Pressed in, never rubbed.'
+        step_3:
+            title: 'Glow'
+            text: 'A cream to seal it all in, then your colour: a tint, a flush of balm on the cheeks and a lipstick. Done.'
+        card:
+            kicker: 'Ritual card'
+            title: 'Combination skin'
+            time: 'Morning and evening · 4 minutes'
+            gel: 'Gel'
+            serum: 'Serum'
+            cream: 'Cream'
+            skin:
+                label: 'Skin'
+                value: 'Shiny on the T-zone, thirsty on the cheeks'
+            ingredients:
+                label: 'Hero'
+                value: 'Peony, hyaluronic acid, vitamin C'
+            finish:
+                label: 'Finish'
+                value: 'Dewy, never sticky'
+    shelves:
+        eyebrow: 'The house shelves'
+        title: 'Six shelves, <em>one garden.</em>'
+        lead: 'From the morning cleanser to the pillow mist, each shelf has its colour and its bestseller. Mix them: everything in the house is made to be layered.'
+        bestseller: 'Bestseller'
+        skincare:
+            name: 'Skincare'
+            promise: 'Fresh skin, every day'
+            text: 'Cleansers, serums, oils and creams with flower extracts and gentle actives, for every skin type.'
+            bestseller: 'Peony Dew Gel Cream'
+        makeup:
+            name: 'Makeup'
+            promise: 'Colour that looks like you'
+            text: 'Skin tints, balms and powders in warm, wearable shades, enriched with oils to care while they colour.'
+            bestseller: 'Velvet Matte Lipstick — Fig Petal'
+        fragrance:
+            name: 'Fragrance'
+            promise: 'A garden on the skin'
+            text: 'Eaux de parfum, eaux de toilette and solid perfumes composed around one flower or one fruit.'
+            bestseller: 'Fig Leaf & Cedar'
+        hair:
+            name: 'Hair Care'
+            promise: 'Soft lengths, calm scalp'
+            text: 'Gentle shampoos and rich masks with plant oils, without sulfates or silicones.'
+            bestseller: 'Camellia Repair Hair Mask'
+        body:
+            name: 'Body & Wellness'
+            promise: 'Slow down, breathe'
+            text: 'Body butters, bath salts and mists for a pause in the bath or a deeper sleep.'
+            bestseller: 'Lavender & Chamomile Pillow Mist'
+        tools:
+            name: 'Beauty Tools'
+            promise: 'Made to last'
+            text: 'Gua sha stones, brushes and sponges in natural materials, to make every gesture count.'
+            bestseller: 'Rose Quartz Gua Sha'
+    footer:
+        tagline: 'Gentle skincare, makeup and fragrance made with flowers and plants, in bottles you refill.'
+        notice: 'Packed with care every weekday. Patch test any new product on the inside of your wrist, and keep your products away from heat and sunlight.'
+        services:
+            eyebrow: 'At your service'
+            title: 'From our garden lab <em>to your vanity.</em>'
+            samples:
+                title: 'Two samples, always'
+                text: 'Choose two samples with every order, to try a texture or a scent before buying it in full size.'
+                cta: 'Follow my order'
+            advice:
+                title: 'Beauty advisor'
+                text: 'A skin to understand, a shade to match, a gift to make: our beauty advisors answer you personally.'
+                cta: 'Ask an advisor'
+            refill:
+                title: 'Refill, don’t rebuy'
+                text: 'Nine of our bottles refill from a pouch, and we take back every empty jar for free.'
+                cta: 'My account'

@@ -1,0 +1,39 @@
+{# Bloom shelves: the six shelves of the house, each on its pastel, with a drawing, its promise and its bestseller. #}
+<section id="bloom-shelves" class="bloom-shelves" aria-labelledby="bloom-shelves-title">
+    <div class="container">
+        <div class="bloom-section-head bloom-section-head--center">
+            <p class="bloom-eyebrow">{{ 'bloom.shelves.eyebrow'|trans({}, 'bloom') }}</p>
+            <h2 id="bloom-shelves-title">{{ 'bloom.shelves.title'|trans({}, 'bloom')|raw }}</h2>
+            <p class="bloom-section-head__lead">{{ 'bloom.shelves.lead'|trans({}, 'bloom') }}</p>
+        </div>
+
+        <ul class="bloom-shelves__items" role="list">
+            {% for shelf in ['skincare', 'makeup', 'fragrance', 'hair', 'body', 'tools'] %}
+                <li class="bloom-shelf bloom-shelf--{{ shelf }}">
+                    <svg class="bloom-shelf__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                        {% if shelf == 'skincare' %}
+                            <rect x="14" y="30" width="36" height="24" rx="8"/><rect x="11" y="22" width="42" height="10" rx="4"/><path d="M20 42h24"/>
+                        {% elseif shelf == 'makeup' %}
+                            <rect x="22" y="34" width="20" height="22" rx="3"/><path d="M24 34V22l12-8h4v20"/><path d="M22 42h20"/>
+                        {% elseif shelf == 'fragrance' %}
+                            <rect x="16" y="26" width="32" height="30" rx="8"/><rect x="27" y="18" width="10" height="8" rx="1.5"/><circle cx="32" cy="12" r="6"/><path d="M24 40h16"/>
+                        {% elseif shelf == 'hair' %}
+                            <path d="M22 56V30c0-4 3-7 7-7h6c4 0 7 3 7 7v26z"/><path d="M28 23v-7h8v7M36 16h8"/><path d="M22 40h20"/>
+                        {% elseif shelf == 'body' %}
+                            <path d="M10 34h44v4a16 16 0 0 1-16 16H26a16 16 0 0 1-16-16z"/><path d="M24 26c-3-4 3-6 0-10M32 26c-3-4 3-6 0-10M40 26c-3-4 3-6 0-10"/>
+                        {% else %}
+                            <path d="M32 8c14 0 22 10 22 20 0 14-12 28-22 28S10 42 10 28C10 18 18 8 32 8z"/><path d="M22 26c2-6 6-9 10-9"/>
+                        {% endif %}
+                    </svg>
+                    <p class="bloom-shelf__name">{{ ('bloom.shelves.' ~ shelf ~ '.name')|trans({}, 'bloom') }}</p>
+                    <p class="bloom-shelf__promise">{{ ('bloom.shelves.' ~ shelf ~ '.promise')|trans({}, 'bloom') }}</p>
+                    <p class="bloom-shelf__text">{{ ('bloom.shelves.' ~ shelf ~ '.text')|trans({}, 'bloom') }}</p>
+                    <p class="bloom-shelf__bestseller">
+                        <span>{{ 'bloom.shelves.bestseller'|trans({}, 'bloom') }}</span>
+                        {{ ('bloom.shelves.' ~ shelf ~ '.bestseller')|trans({}, 'bloom') }}
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="bloom-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# The house flower, five pastel petals around a fig heart, next to an italic DM Serif wordmark. #}
+    {% include 'shop/homepage/flower.html.twig' with {class: 'bloom-logo__flower'} %}
+    <span class="bloom-logo__text">
+        <span class="bloom-logo__name">Bloom</span>
+        <span class="bloom-logo__tagline">{{ 'bloom.brand.tagline'|trans({}, 'bloom') }}</span>
+    </span>
+{% endif %}

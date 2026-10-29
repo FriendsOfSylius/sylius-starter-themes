@@ -1,0 +1,70 @@
+// Bloom, light scheme — milk and peony, a fig ink and a garden of pastels.
+$color-mode: light;
+
+// House colours: the fig bands (top bar, figures, footer) keep them in both schemes.
+$fig-night: #2A1024;
+$fig-deep: #3B1733;
+$fig: #5C2A50;
+// Fillets, hairlines and focus outlines on the milk surfaces (3:1 at least).
+$petal: #B8426E;
+$peony: #E2557F;
+$peony-light: #F8B4C8;
+$milk: #FFF9F5;
+$text-on-dark: #EEDDE6;
+$border-dark: rgba($peony-light, 0.26);
+
+// The garden of pastels: the logo petals, the shelves and the hero pedestals, the same in both schemes.
+$apricot: #F7B58E;
+$butter: #F6DF97;
+$sage: #A9C6A2;
+$lilac: #CDB8EC;
+$sky: #B9D3F0;
+
+// Milk, rose powder and fig ink.
+$page: #FFF8F4;
+$surface: #FFFFFF;
+$surface-raised: #FCEDE8;
+$line: #F1DED8;
+$line-strong: #DDBDB5;
+$field-border: #8F6F78;
+$heading: #2A1024;
+$text: #4A3040;
+$text-muted: #6D5261;
+
+// Peony fills the calls to action; as text, the accent is a deeper raspberry.
+$accent: #B02A5B;
+$accent-hover: #8A1C45;
+$on-accent: $milk;
+$accent-text: #A6275A;
+$accent-text-hover: #7A1840;
+$rose-text: #A6275A;
+$focus-ring: rgba($petal, 0.25);
+
+$success: #3D6A44;
+$info: #3E5C86;
+
+// The hero: a blush morning, the arch opening onto a sunrise sky.
+$hero-bg: #FDE9E3;
+$hero-glow: #FBD3DC;
+$hero-glow-2: #FBE7C2;
+$hero-heading: $heading;
+$hero-text: $text;
+$hero-em: $accent-text;
+$sky-top: #FBD9E3;
+$sky-bottom: #FDEBC9;
+$sun: #FFF4DA;
+
+// The vanity of the hero: the garden hills, the mirror frame and the marble.
+$vanity-hill: #BCD5B3;
+$vanity-hill-far: #D7E6CF;
+$vanity-birds: rgba($fig-night, 0.35);
+$vanity-frame: $surface;
+$vanity-frame-line: rgba($petal, 0.35);
+$vanity-marble: #F6E9E4;
+$vanity-marble-edge: #FFFFFF;
+$vanity-vein: rgba($fig, 0.14);
+$vanity-sparkle: $milk;
+$vanity-shadow: rgba($fig-night, 0.18);
+
+$shadow-soft: 0 1px 2px rgba($fig-night, 0.06);
+$shadow-float: 0 24px 50px -20px rgba($fig-night, 0.28);

@@ -1,0 +1,27 @@
+.breadcrumb {
+  --bs-breadcrumb-divider: "·";
+  --bs-breadcrumb-divider-color: #{$petal};
+  --bs-breadcrumb-margin-bottom: 1.75rem;
+  --bs-breadcrumb-item-padding-x: 0.7rem;
+
+  padding: 0;
+  background: none;
+  color: $text-muted;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  .breadcrumb-item a {
+    color: $text-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-text;
+    }
+  }
+
+  .breadcrumb-item.active {
+    color: $heading;
+  }
+}

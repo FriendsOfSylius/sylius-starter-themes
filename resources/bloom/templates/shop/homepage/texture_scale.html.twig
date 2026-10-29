@@ -1,0 +1,10 @@
+{# Texture from 1 (water-light) to 5 (rich), drawn as five drops growing from a bead to a full dollop. #}
+<div class="bloom-scale">
+    <span class="bloom-scale__label">{{ 'bloom.texture.label'|trans({}, 'bloom') }}</span>
+    <span class="bloom-scale__drops" role="img" aria-label="{{ 'bloom.texture.level'|trans({'%level%': level, '%name%': ('bloom.texture.level_' ~ level)|trans({}, 'bloom')}, 'bloom') }}">
+        {% for step in 1..5 %}
+            <span class="bloom-scale__drop bloom-scale__drop--{{ step }}{{ step <= level ? ' is-on' : '' }}"></span>
+        {% endfor %}
+    </span>
+    <span class="bloom-scale__name">{{ ('bloom.texture.level_' ~ level)|trans({}, 'bloom') }}</span>
+</div>

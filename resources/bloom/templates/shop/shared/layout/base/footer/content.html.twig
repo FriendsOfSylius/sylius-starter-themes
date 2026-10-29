@@ -1,0 +1,37 @@
+{% set bloom_services = [
+    {key: 'samples', url: path('sylius_shop_account_dashboard'), icon: 'M4 10h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zM3 6h18v4H3zM12 6v15M12 6c-2-4-7-4-6-1 1 2 6 1 6 1zm0 0c2-4 7-4 6-1-1 2-6 1-6 1z'},
+    {key: 'advice', url: path('sylius_shop_contact_request'), icon: 'M4 5h16v11H9l-5 4zM8 9h8M8 12h5'},
+    {key: 'refill', url: path('sylius_shop_account_dashboard'), icon: 'M9 3h6v3H9zM7 6h10l1 3v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9zM9.5 14.5a2.5 2.5 0 0 0 4.6 1.3M14.5 13.5a2.5 2.5 0 0 0-4.6-1.3M14.4 16.4l-.3-.6.7-.2M9.6 11.6l.3.6-.7.2'},
+] %}
+
+<footer class="bloom-footer">
+    <div id="bloom-services" class="bloom-services">
+        <div class="container">
+            <div class="bloom-services__head">
+                <p class="bloom-eyebrow bloom-eyebrow--light">{{ 'bloom.footer.services.eyebrow'|trans({}, 'bloom') }}</p>
+                <p class="bloom-services__title">{{ 'bloom.footer.services.title'|trans({}, 'bloom')|raw }}</p>
+            </div>
+
+            <ul class="bloom-services__items" role="list">
+                {% for service in bloom_services %}
+                    <li class="bloom-services__item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ service.icon }}"/></svg>
+                        <p class="bloom-services__name">{{ ('bloom.footer.services.' ~ service.key ~ '.title')|trans({}, 'bloom') }}</p>
+                        <p class="bloom-services__text">{{ ('bloom.footer.services.' ~ service.key ~ '.text')|trans({}, 'bloom') }}</p>
+                        <a class="bloom-link-arrow bloom-link-arrow--light" href="{{ service.url }}">{{ ('bloom.footer.services.' ~ service.key ~ '.cta')|trans({}, 'bloom') }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container bloom-footer__main">
+        <div class="bloom-footer__brand">
+            {% include 'shop/shared/layout/brand/logo.html.twig' with {variant: 'footer'} %}
+            <p>{{ 'bloom.footer.tagline'|trans({}, 'bloom') }}</p>
+        </div>
+        <div class="row">
+            {% hook 'content' %}
+        </div>
+        <p class="bloom-footer__notice">{{ 'bloom.footer.notice'|trans({}, 'bloom') }}</p>
+    </div>
+</footer>
