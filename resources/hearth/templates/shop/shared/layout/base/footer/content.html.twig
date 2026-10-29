@@ -1,0 +1,37 @@
+{% set hearth_services = [
+    {key: 'advice', url: path('sylius_shop_contact_request'), icon: 'M4 21h16M6 21v-5h12v5M5 16a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2M12 3v3M8.5 9a3.5 3.5 0 0 1 7 0zM12 9v1.5'},
+    {key: 'delivery', url: path('sylius_shop_account_dashboard'), icon: 'M3 7h11v9H3zM14 10h4l3 3v3h-7M7 18.5a1.5 1.5 0 1 0 0-.01M17 18.5a1.5 1.5 0 1 0 0-.01'},
+    {key: 'returns', url: path('sylius_shop_account_dashboard'), icon: 'M4 20V10l8-6 8 6v10zM9 20v-6h6v6M15 9.5h-4.5l1.5-1.5M10.5 9.5l1.5 1.5'},
+] %}
+
+<footer class="hearth-footer">
+    <div id="hearth-services" class="hearth-services">
+        <div class="container">
+            <div class="hearth-services__head">
+                <p class="hearth-eyebrow hearth-eyebrow--light">{{ 'hearth.footer.services.eyebrow'|trans({}, 'hearth') }}</p>
+                <p class="hearth-services__title">{{ 'hearth.footer.services.title'|trans({}, 'hearth')|raw }}</p>
+            </div>
+
+            <ul class="hearth-services__items" role="list">
+                {% for service in hearth_services %}
+                    <li class="hearth-services__item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ service.icon }}"/></svg>
+                        <p class="hearth-services__name">{{ ('hearth.footer.services.' ~ service.key ~ '.title')|trans({}, 'hearth') }}</p>
+                        <p class="hearth-services__text">{{ ('hearth.footer.services.' ~ service.key ~ '.text')|trans({}, 'hearth') }}</p>
+                        <a class="hearth-link-arrow hearth-link-arrow--light" href="{{ service.url }}">{{ ('hearth.footer.services.' ~ service.key ~ '.cta')|trans({}, 'hearth') }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container hearth-footer__main">
+        <div class="hearth-footer__brand">
+            {% include 'shop/shared/layout/brand/logo.html.twig' with {variant: 'footer'} %}
+            <p>{{ 'hearth.footer.tagline'|trans({}, 'hearth') }}</p>
+        </div>
+        <div class="row">
+            {% hook 'content' %}
+        </div>
+        <p class="hearth-footer__notice">{{ 'hearth.footer.notice'|trans({}, 'hearth') }}</p>
+    </div>
+</footer>

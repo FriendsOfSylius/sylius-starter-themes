@@ -1,0 +1,57 @@
+{# Hearth promise: the studio in three numbered steps, next to the moodboard of the season pinned on the studio wall. #}
+<section id="hearth-promise" class="hearth-promise" aria-labelledby="hearth-promise-title">
+    <div class="container">
+        <div class="hearth-promise__grid">
+            <div class="hearth-promise__craft">
+                <div class="hearth-section-head">
+                    <p class="hearth-eyebrow">{{ 'hearth.promise.eyebrow'|trans({}, 'hearth') }}</p>
+                    <h2 id="hearth-promise-title">{{ 'hearth.promise.title'|trans({}, 'hearth')|raw }}</h2>
+                    <p class="hearth-section-head__lead">{{ 'hearth.promise.lead'|trans({}, 'hearth')|raw }}</p>
+                </div>
+
+                <ol class="hearth-steps" role="list">
+                    {% for step in 1..3 %}
+                        <li class="hearth-steps__item">
+                            <span class="hearth-steps__numeral" aria-hidden="true">{{ ('hearth.promise.step_' ~ step ~ '.numeral')|trans({}, 'hearth') }}</span>
+                            <div>
+                                <p class="hearth-steps__title">{{ ('hearth.promise.step_' ~ step ~ '.title')|trans({}, 'hearth') }}</p>
+                                <p class="hearth-steps__text">{{ ('hearth.promise.step_' ~ step ~ '.text')|trans({}, 'hearth') }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            {# The moodboard: a linen card taped to the wall, five paint chips and the notes of the season. #}
+            <aside class="hearth-moodboard" aria-labelledby="hearth-moodboard-title">
+                <div class="hearth-moodboard__card">
+                    <p class="hearth-moodboard__kicker">{{ 'hearth.promise.moodboard.kicker'|trans({}, 'hearth') }}</p>
+                    <p id="hearth-moodboard-title" class="hearth-moodboard__title">{{ 'hearth.promise.moodboard.title'|trans({}, 'hearth') }}</p>
+
+                    <ul class="hearth-moodboard__swatches" role="list" aria-label="{{ 'hearth.promise.moodboard.swatches_label'|trans({}, 'hearth') }}">
+                        {% for swatch in 1..5 %}
+                            <li class="hearth-swatch hearth-swatch--{{ swatch }}">
+                                <span class="hearth-swatch__chip" aria-hidden="true"></span>
+                                <span class="hearth-swatch__name">{{ ('hearth.promise.moodboard.swatch_' ~ swatch)|trans({}, 'hearth') }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <dl class="hearth-moodboard__notes">
+                        {% for note in ['materials', 'light', 'textures', 'mood'] %}
+                            <div>
+                                <dt>{{ ('hearth.promise.moodboard.' ~ note ~ '.label')|trans({}, 'hearth') }}</dt>
+                                <dd>{{ ('hearth.promise.moodboard.' ~ note ~ '.value')|trans({}, 'hearth') }}</dd>
+                            </div>
+                        {% endfor %}
+                    </dl>
+
+                    <p class="hearth-moodboard__note">
+                        {% include 'shop/homepage/mark.html.twig' with {class: 'hearth-moodboard__mark'} %}
+                        {{ 'hearth.promise.moodboard.note'|trans({}, 'hearth') }}
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

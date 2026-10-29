@@ -1,0 +1,45 @@
+// Hearth, light scheme — limewashed walls and linen in the morning sun, terracotta, sage and ochre.
+$color-mode: light;
+
+// House colours: the walnut bands (top bar, footer) and the clay wall of the hero keep them in both schemes.
+$walnut: #2B1F19;
+$walnut-soft: #3A2A21;
+$clay: #8A3E27;
+$clay-deep: #723019;
+$clay-glow: #C2714F;
+$sage: #9DB08A;
+$sage-light: #CFDCBB;
+$ochre: #E3A33B;
+$ochre-light: #F6D79B;
+$terracotta: #C2583A;
+$linen: #FFF6EA;
+$text-on-dark: #EADDCC;
+$border-dark: rgba($ochre-light, 0.22);
+// Fillets, hairlines and focus outlines on the linen surfaces (3:1 at least).
+$rule: #9A5A3A;
+
+// Linen, plaster and walnut ink.
+$page: #F7F0E6;
+$surface: #FFFBF5;
+$surface-raised: #EFE4D4;
+$line: #E3D6C3;
+$line-strong: #C6B39A;
+$field-border: #8A7762;
+$heading: #2B1F19;
+$text: #4B3B31;
+$text-muted: #6E5D51;
+
+// Clay fills the calls to action; as text, the accent is a deep terracotta, the second voice a garden sage.
+$accent: $clay;
+$accent-hover: $clay-deep;
+$on-accent: $linen;
+$accent-text: #96432A;
+$accent-text-hover: #73301C;
+$sage-text: #55703F;
+$focus-ring: rgba($rule, 0.25);
+
+$success: #4D6B37;
+$info: #3F5F7A;
+
+$shadow-soft: 0 1px 2px rgba($walnut, 0.06);
+$shadow-float: 0 24px 50px -20px rgba($walnut, 0.3);

@@ -1,0 +1,415 @@
+// Top bar: a thin walnut band with the delivery promise and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.hearth-topbar) {
+  background-color: $walnut !important;
+  color: $text-on-dark;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+
+  // Dark scheme: an ochre hairline parts the walnut band from the header.
+  @if $dark {
+    border-bottom: 1px solid $border-dark;
+  }
+
+  a {
+    color: $ochre-light;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$border-dark};
+    --bs-btn-color: #{$ochre-light};
+    --bs-btn-hover-bg: #{$walnut-soft};
+    --bs-btn-hover-border-color: #{$rule};
+    --bs-btn-hover-color: #{$linen};
+    --bs-btn-active-bg: #{$walnut-soft};
+    --bs-btn-active-border-color: #{$rule};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.68rem;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$walnut-soft};
+    --bs-dropdown-link-hover-bg: #{$walnut-soft};
+    --bs-dropdown-border-color: #{$border-dark};
+  }
+}
+
+.hearth-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.hearth-topbar__item + .hearth-topbar__item::before {
+  margin-right: 1.5rem;
+  color: $ochre;
+  content: "✦";
+  font-size: 0.8rem;
+  line-height: 1;
+  vertical-align: -0.05em;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $page;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $line !important;
+}
+
+header .container {
+  padding-block: 0.25rem;
+}
+
+header a {
+  color: $heading;
+
+  &:hover {
+    color: $accent-text;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: the terracotta arch of the house mark and a DM Serif Display name over a spaced tagline.
+
+.hearth-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.75rem;
+  color: $accent-text;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $accent-text;
+    text-decoration: none;
+  }
+}
+
+.hearth-logo__mark {
+  width: 2.1rem;
+  height: 2.6rem;
+  flex: 0 0 auto;
+}
+
+// The flame of the hearth flickers when the logo is hovered.
+@keyframes hearth-flame {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+
+  30% {
+    transform: scale(0.92, 1.08);
+  }
+
+  60% {
+    transform: scale(1.06, 0.95);
+  }
+}
+
+.hearth-logo:hover .hearth-mark__flame {
+  animation: hearth-flame 900ms ease-in-out infinite;
+}
+
+.hearth-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  line-height: 1;
+}
+
+.hearth-logo__name {
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.01em;
+}
+
+.hearth-logo__tagline {
+  color: $accent-text;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+// Category navigation: spaced small capitals underlined in terracotta.
+
+.hearth-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.hearth-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.hearth-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  overflow: visible;
+}
+
+.hearth-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.hearth-category-nav__links > .nav-link,
+.hearth-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.6rem 0.35rem !important;
+  color: $heading;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  &::before {
+    position: absolute;
+    right: 0.35rem;
+    bottom: 0.3rem;
+    left: 0.35rem;
+    height: 1px;
+    background-color: $rule;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 240ms $ease;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $accent-text;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.hearth-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $line;
+  border-top: 2px solid $rule;
+  border-radius: 0 0 $radius $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.hearth-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Cart: an outlined label with a terracotta counter.
+
+.hearth-cart__button {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.hearth-cart__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.hearth-cart__count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $page;
+  border-radius: 999px;
+  background-color: $terracotta;
+  color: if($dark, $page, $linen);
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $heading;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+@media (min-width: 992px) {
+  .hearth-category-nav__menu {
+    width: 100%;
+  }
+
+  .hearth-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hearth-category-nav__menu {
+    position: fixed;
+    background-color: $page;
+  }
+
+  .hearth-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $line;
+  }
+
+  .hearth-category-nav__menu .offcanvas-title {
+    font-family: $font-family-serif;
+    font-size: 1.4rem !important;
+    font-weight: 500;
+  }
+
+  .hearth-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .hearth-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .hearth-category-nav__links > .nav-link,
+  .hearth-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .hearth-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface-raised;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .hearth-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hearth-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .hearth-logo__mark {
+    width: 1.8rem;
+    height: 2.2rem;
+  }
+
+  .hearth-logo__name {
+    font-size: 1.6rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.hearth-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+
+// The house mark, shared by the logo, the hero signature and the moodboard. Same colors in both schemes.
+
+.hearth-mark__arch {
+  fill: #C2583A;
+}
+
+.hearth-mark__door {
+  fill: #7A3520;
+}
+
+.hearth-mark__flame {
+  fill: #F2B544;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.hearth-mark__hearth {
+  fill: none;
+  stroke: #F6D79B;
+  stroke-linecap: round;
+  stroke-width: 2;
+}

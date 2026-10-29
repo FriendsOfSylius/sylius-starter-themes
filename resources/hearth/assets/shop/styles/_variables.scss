@@ -1,0 +1,60 @@
+// Hearth — linen and limewash, terracotta clay, garden sage and a ray of ochre sun.
+// Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
+$dark: $color-mode == dark;
+
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-family-serif: "DM Serif Display", "Iowan Old Style", "Palatino", Georgia, serif;
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 400;
+
+$body-bg: $page;
+$body-color: $text;
+
+$primary: $accent;
+$secondary: $surface-raised;
+
+$link-color: $accent-text;
+$link-hover-color: $accent-text-hover;
+$border-color: $line;
+
+// Soft, plastered corners.
+$radius-sm: 8px;
+$radius: 14px;
+$radius-lg: 22px;
+// The house arch: a full round top on square shoulders, for the product niches, the hero window and the swatches.
+$arch: 999px 999px $radius-sm $radius-sm;
+
+// A small arched window, for the eyebrows (used as a mask).
+$hearth-arch-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 16'%3E%3Cpath fill-rule='evenodd' d='M0 16V6a6 6 0 0 1 12 0v10zm2-2h8V6a4 4 0 0 0-8 0z'/%3E%3Cpath d='M5.4 6h1.2v8H5.4z'/%3E%3C/svg%3E");
+
+// A pendant lamp of woven rattan on its cord, lowered over the product niches on hover. Same colors in both schemes.
+$hearth-pendant-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 64'%3E%3Cpath d='M20 0v34' stroke='%232B1F19' stroke-width='1.4'/%3E%3Cpath d='M17 32h6v4h-6z' fill='%232B1F19'/%3E%3Cpath d='M4 52c0-10 7-17 16-17s16 7 16 17z' fill='%23E3A33B'/%3E%3Cpath d='M8 44h24M6 48h28M11 40h18' stroke='%23B07A26' stroke-width='.8'/%3E%3Cpath d='M4 52h32' stroke='%23B07A26' stroke-width='1.2'/%3E%3Cellipse cx='20' cy='54.5' rx='7' ry='2.5' fill='%23FFF1C9'/%3E%3C/svg%3E");
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+// The house motif: the fringe of a woven rug, on the edge of a band, hanging below it (down) or rising above it (up).
+@mixin hearth-fringe($color, $direction: down) {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  height: 12px;
+  background: repeating-linear-gradient(90deg, $color 0 2px, transparent 2px 7px);
+  content: "";
+  pointer-events: none;
+
+  @if $direction == down {
+    top: 100%;
+    mask: linear-gradient(to bottom, #000 55%, rgba(#000, 0.35));
+  } @else {
+    bottom: 100%;
+    mask: linear-gradient(to top, #000 55%, rgba(#000, 0.35));
+  }
+}
+
+// "r, g, b" channels of a color, for Bootstrap's --bs-*-rgb variables.
+@function channels($color) {
+  @return red($color), green($color), blue($color);
+}

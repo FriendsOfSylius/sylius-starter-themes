@@ -1,0 +1,21 @@
+{# Hearth materials library: the six materials of the collection, each on an arched sample, with its origin and its care. #}
+<section id="hearth-materials" class="hearth-materials" aria-labelledby="hearth-materials-title">
+    <div class="container">
+        <div class="hearth-section-head hearth-section-head--center">
+            <p class="hearth-eyebrow">{{ 'hearth.materials.eyebrow'|trans({}, 'hearth') }}</p>
+            <h2 id="hearth-materials-title">{{ 'hearth.materials.title'|trans({}, 'hearth')|raw }}</h2>
+            <p class="hearth-section-head__lead">{{ 'hearth.materials.lead'|trans({}, 'hearth') }}</p>
+        </div>
+
+        <ul class="hearth-materials__items" role="list">
+            {% for material in ['oak', 'linen', 'rattan', 'stoneware', 'brass', 'wool'] %}
+                <li class="hearth-material hearth-material--{{ material }}">
+                    <span class="hearth-material__sample" aria-hidden="true"></span>
+                    <p class="hearth-material__name">{{ ('hearth.materials.' ~ material ~ '.name')|trans({}, 'hearth') }}</p>
+                    <p class="hearth-material__origin">{{ ('hearth.materials.' ~ material ~ '.origin')|trans({}, 'hearth') }}</p>
+                    <p class="hearth-material__care">{{ ('hearth.materials.' ~ material ~ '.care')|trans({}, 'hearth') }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

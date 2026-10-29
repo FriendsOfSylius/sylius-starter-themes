@@ -1,0 +1,17 @@
+// DM Serif Display (SIL Open Font License 1.1, see ../fonts/DMSerifDisplay-OFL.txt), regular and italic, latin subset:
+// a warm, high-contrast display serif, with a generous italic for the headline accents and the piece names.
+@font-face {
+  font-family: "DM Serif Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/dm-serif-display-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "DM Serif Display";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/dm-serif-display-italic.woff2") format("woff2");
+}

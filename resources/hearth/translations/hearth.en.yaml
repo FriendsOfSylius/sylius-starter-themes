@@ -1,0 +1,114 @@
+hearth:
+    brand:
+        tagline: 'Home & Living'
+    top_bar:
+        delivery: 'Free delivery from €80 · furniture delivered and installed in the room of your choice'
+        returns: '30 days to change your mind, even on furniture'
+    hero:
+        eyebrow: 'Furniture · Lighting · Decoration'
+        title: 'Pieces that make a house <em>feel like home.</em>'
+        lead: 'Furniture, lamps, linen and tableware designed in our studio and made by workshops we know by name, in solid wood, linen, rattan and stoneware. <strong>Made to be lived with</strong>, and to last.'
+        cta: 'Shop the collection'
+        secondary_cta: 'Our studio'
+        signature: 'Designed in our studio, made by hand, built to be handed down.'
+        illustration: 'A sunlit living room seen through a plaster arch: an arched window opens onto a blue sky and an olive branch, a rattan pendant lamp sways above a sage green sofa with an ochre cushion, next to a walnut side table with a terracotta vase of dried grasses, a framed print of arches, a potted plant in a basket and a wool rug with soft dunes.'
+    figures:
+        item_1:
+            value: '30 days'
+            text: 'to change your mind'
+        item_2:
+            value: '24'
+            text: 'partner workshops in Europe'
+        item_3:
+            value: '10 years'
+            text: 'warranty on our solid wood'
+        item_4:
+            value: 'Installed'
+            text: 'in the room of your choice'
+    products:
+        eyebrow:
+            latest: 'New in the house'
+    promise:
+        eyebrow: 'From the studio to your home'
+        title: 'Fewer things, <em>better made.</em>'
+        lead: 'We draw every piece in our studio, have it made in small runs by workshops we visit every season, and deliver it ourselves, so that it arrives whole, in the right room, ready to be lived with.'
+        step_1:
+            numeral: '01'
+            title: 'Drawn in the studio'
+            text: 'Simple, generous shapes and honest materials: every sketch is tested at full scale in our own rooms before it becomes a piece of the collection.'
+        step_2:
+            numeral: '02'
+            title: 'Made by hand'
+            text: 'Cabinet makers in Portugal, weavers in Lithuania, potters in the Alentejo: 24 workshops, chosen for their craft and for how they treat the people who work there.'
+        step_3:
+            numeral: '03'
+            title: 'Delivered and installed'
+            text: 'Our team carries your furniture to the room of your choice, assembles it and takes the packaging away. Small pieces travel in recycled cardboard, without plastic.'
+        moodboard:
+            kicker: 'Moodboard of the season'
+            title: 'The autumn living room'
+            note: 'Pinned in the studio'
+            swatches_label: 'The palette of the season'
+            swatch_1: 'Terracotta'
+            swatch_2: 'Sage'
+            swatch_3: 'Ochre'
+            swatch_4: 'Linen'
+            swatch_5: 'Walnut'
+            materials:
+                label: 'Materials'
+                value: 'Oiled oak, washed linen, rattan'
+            light:
+                label: 'Light'
+                value: 'Warm, low and woven'
+            textures:
+                label: 'Textures'
+                value: 'Bouclé, waffle, raw stoneware'
+            mood:
+                label: 'Mood'
+                value: 'A slow Sunday afternoon'
+    materials:
+        eyebrow: 'Our materials library'
+        title: 'Six materials, <em>chosen to age well.</em>'
+        lead: 'Every piece is made from a few honest materials, natural and repairable. Here is where they come from, and how to look after them so they get better with time.'
+        oak:
+            name: 'Solid oak'
+            origin: 'FSC forests of France and Portugal'
+            care: 'Dust with a dry cloth, oil once a year.'
+        linen:
+            name: 'Washed linen'
+            origin: 'European flax, woven in Lithuania'
+            care: 'Wash at 40 °C, never iron.'
+        rattan:
+            name: 'Rattan'
+            origin: 'Hand-woven in Cirebon, Indonesia'
+            care: 'Brush the dust, keep it out of the rain.'
+        stoneware:
+            name: 'Stoneware'
+            origin: 'Thrown and glazed in the Alentejo'
+            care: 'Dishwasher safe, every piece unique.'
+        brass:
+            name: 'Brushed brass'
+            origin: 'Turned and brushed in northern Italy'
+            care: 'Let it patinate, or polish with lemon.'
+        wool:
+            name: 'Wool bouclé'
+            origin: 'New Zealand wool, spun in Belgium'
+            care: 'Vacuum gently, air it on a dry day.'
+    footer:
+        tagline: 'Furniture, lighting and decoration designed in our studio, made by hand, to be lived with every day.'
+        notice: 'Prices include VAT. Furniture is delivered by our own team, by appointment.'
+        services:
+            eyebrow: 'At home with you'
+            title: 'Your home, <em>with a little help.</em>'
+            advice:
+                title: 'Free decoration advice'
+                text: 'Send us a photo and the size of your room: our interior designers suggest pieces, colours and a layout within 48 hours.'
+                cta: 'Ask our designers'
+            delivery:
+                title: 'Delivered and installed'
+                text: 'Furniture is carried to the room of your choice, assembled, and the packaging taken back, on the day and at the time you pick.'
+                cta: 'Follow my order'
+            returns:
+                title: '30 days to change your mind'
+                text: 'A piece does not fit after all? We pick it up from your home and refund it, furniture included, within 30 days.'
+                cta: 'Return a piece'

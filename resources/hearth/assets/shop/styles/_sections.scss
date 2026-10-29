@@ -1,0 +1,454 @@
+// Homepage sections: the new pieces, the promise (the studio in three steps and the moodboard of the season) and the
+// materials library.
+
+.hearth-products {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.hearth-promise {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+  border-block: 1px solid $line;
+  background-color: $surface;
+}
+
+.hearth-promise__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+// Three steps numbered in arched windows.
+
+.hearth-steps {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hearth-steps__item {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding-block: 1.6rem;
+  border-top: 1px solid $line;
+
+  &:last-child {
+    border-bottom: 1px solid $line;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.hearth-steps__numeral {
+  display: grid;
+  width: 3rem;
+  height: 3.6rem;
+  place-items: end center;
+  padding-bottom: 0.55rem;
+  border: 1px solid $accent-text;
+  border-radius: $arch;
+  color: $accent-text;
+  font-family: $font-family-serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.hearth-steps__item:nth-child(2) .hearth-steps__numeral {
+  border-color: $sage-text;
+  color: $sage-text;
+}
+
+.hearth-steps__title {
+  margin-bottom: 0.4rem !important;
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.hearth-steps__text {
+  max-width: 34rem;
+  color: $text-muted;
+  line-height: 1.7;
+}
+
+// The moodboard of the season: a linen card taped askew to the studio wall, five paint chips and its notes.
+
+.hearth-moodboard {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: $radius-lg;
+  background-color: $surface-raised;
+  background-image:
+    radial-gradient(ellipse 70% 60% at 30% 10%, rgba($linen, if($dark, 0.04, 0.6)), transparent 70%),
+    radial-gradient(circle at 1px 1px, rgba($rule, 0.14) 1px, transparent 1.5px);
+  background-size: auto, 12px 12px;
+}
+
+.hearth-moodboard__card {
+  position: relative;
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid $line;
+  border-radius: 4px;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+  transform: rotate(-1.5deg);
+  transition: transform 500ms $ease;
+
+  &:hover {
+    transform: rotate(0);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  // Two strips of paper tape, ochre and sage, hold it to the wall.
+  &::before,
+  &::after {
+    position: absolute;
+    top: -0.8rem;
+    width: 5.5rem;
+    height: 1.6rem;
+    content: "";
+    opacity: 0.8;
+  }
+
+  &::before {
+    left: 1.25rem;
+    background-color: $ochre;
+    transform: rotate(-8deg);
+  }
+
+  &::after {
+    right: 1.25rem;
+    background-color: $sage;
+    transform: rotate(7deg);
+  }
+}
+
+.hearth-moodboard__kicker {
+  color: $accent-text;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.hearth-moodboard__title {
+  margin-top: 0.6rem !important;
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: clamp(1.75rem, 2.6vw, 2.2rem);
+  line-height: 1.1;
+}
+
+.hearth-moodboard__swatches {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 1.6rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Paint chips in the house colours, the same in both schemes.
+.hearth-swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.hearth-swatch__chip {
+  display: block;
+  aspect-ratio: 3 / 4;
+  border-radius: 999px 999px 3px 3px;
+  box-shadow: inset 0 0 0 1px rgba(#000, 0.08);
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hearth-swatch:hover .hearth-swatch__chip {
+  transform: translateY(-4px);
+}
+
+.hearth-swatch--1 .hearth-swatch__chip {
+  background-color: #C2583A;
+}
+
+.hearth-swatch--2 .hearth-swatch__chip {
+  background-color: #9DB08A;
+}
+
+.hearth-swatch--3 .hearth-swatch__chip {
+  background-color: #E3A33B;
+}
+
+.hearth-swatch--4 .hearth-swatch__chip {
+  background-color: #EFE2CC;
+  box-shadow: inset 0 0 0 1px $line-strong;
+}
+
+.hearth-swatch--5 .hearth-swatch__chip {
+  background-color: #4A3226;
+  box-shadow: inset 0 0 0 1px if($dark, $line-strong, rgba(#000, 0.08));
+}
+
+.hearth-swatch__name {
+  color: $text;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.hearth-moodboard__notes {
+  margin: 0;
+  border-top: 1px solid $line;
+
+  div {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 0.7rem;
+    border-bottom: 1px solid $line;
+  }
+
+  dt {
+    color: $text-muted;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: $heading;
+    font-family: $font-family-serif;
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+}
+
+.hearth-moodboard__note {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.25rem !important;
+  color: $text-muted;
+  font-family: $font-family-serif;
+  font-style: italic;
+}
+
+.hearth-moodboard__mark {
+  width: 1.2rem;
+  height: 1.45rem;
+}
+
+// Materials library: six arched samples drawn in CSS, each with its origin and its care.
+
+.hearth-materials {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+}
+
+.hearth-materials__items {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hearth-material {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.hearth-material__sample {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 11rem;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  border-radius: $arch;
+  box-shadow:
+    inset 0 0 0 1px rgba(#000, 0.08),
+    $shadow-soft;
+  transition: transform 400ms $ease;
+
+  // The light of a window passing over the sample.
+  &::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 35%, rgba(#FFF8EC, 0.35) 50%, transparent 65%);
+    content: "";
+    transform: translateX(-100%);
+    transition: transform 900ms $ease;
+  }
+}
+
+.hearth-material:hover .hearth-material__sample {
+  transform: translateY(-6px);
+
+  &::after {
+    transform: translateX(100%);
+  }
+}
+
+.hearth-material--oak .hearth-material__sample {
+  background:
+    radial-gradient(ellipse 10px 26px at 30% 60%, rgba(#6A3F20, 0.35), transparent 70%),
+    repeating-linear-gradient(94deg, rgba(#7A4E2A, 0.22) 0 2px, transparent 2px 7px, rgba(#7A4E2A, 0.1) 7px 8px, transparent 8px 13px),
+    linear-gradient(180deg, #D3A673, #B9844F);
+}
+
+.hearth-material--linen .hearth-material__sample {
+  background:
+    repeating-linear-gradient(0deg, rgba(#FFFFFF, 0.35) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(#8F7D5F, 0.28) 0 1px, transparent 1px 3px),
+    linear-gradient(180deg, #ECE1CC, #DCCBAE);
+}
+
+.hearth-material--rattan .hearth-material__sample {
+  background:
+    radial-gradient(circle, transparent 3px, #9E7036 3.5px, #9E7036 4.5px, transparent 5px) 0 0 / 14px 14px,
+    repeating-linear-gradient(45deg, rgba(#8C6230, 0.45) 0 2px, transparent 2px 7px),
+    repeating-linear-gradient(-45deg, rgba(#8C6230, 0.45) 0 2px, transparent 2px 7px),
+    linear-gradient(180deg, #E2BE85, #CFA265);
+}
+
+.hearth-material--stoneware .hearth-material__sample {
+  background:
+    radial-gradient(circle, rgba(#6B4A34, 0.55) 0.8px, transparent 1.3px) 0 0 / 9px 11px,
+    radial-gradient(circle, rgba(#6B4A34, 0.4) 0.7px, transparent 1.2px) 4px 6px / 13px 9px,
+    radial-gradient(ellipse 120% 40px at 50% 58%, #EFE3CF 98%, transparent 100%) no-repeat,
+    linear-gradient(180deg, #EFE3CF 55%, #C2583A 55%);
+}
+
+.hearth-material--brass .hearth-material__sample {
+  background:
+    repeating-linear-gradient(90deg, rgba(#FFFFFF, 0.14) 0 1px, transparent 1px 3px),
+    linear-gradient(135deg, #8C6A2A, #E3C27A 35%, #A8843E 55%, #F1D99A 75%, #8C6A2A);
+}
+
+.hearth-material--wool .hearth-material__sample {
+  background:
+    radial-gradient(circle, transparent 2px, rgba(#A8957A, 0.6) 2.5px, transparent 3.6px) 0 0 / 9px 9px,
+    radial-gradient(circle, transparent 2px, rgba(#C2B193, 0.6) 2.5px, transparent 3.6px) 4.5px 4.5px / 9px 9px,
+    linear-gradient(180deg, #F2EADB, #E3D6BF);
+}
+
+.hearth-material__name {
+  color: $heading;
+  font-family: $font-family-serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.hearth-material__origin {
+  margin-top: 0.5rem !important;
+  color: $sage-text;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.hearth-material__care {
+  margin-top: 0.6rem !important;
+  color: $text-muted;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1399.98px) {
+  .hearth-materials__items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 3rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hearth-promise__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hearth-materials__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hearth-steps__item {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .hearth-moodboard__swatches {
+    gap: 0.4rem;
+  }
+
+  .hearth-swatch__name {
+    font-size: 0.62rem;
+    letter-spacing: 0;
+  }
+
+  .hearth-moodboard__notes div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+// Category roundels rendered after the hero (import collections): arched niches with a DM Serif Display initial.
+.hearth-hero ~ .container .rounded-circle.bg-light {
+  border: 1px solid $rule;
+  border-radius: $arch !important;
+  outline: 1px solid rgba($rule, 0.4);
+  outline-offset: 4px;
+  background-color: $surface !important;
+  color: $accent-text !important;
+  font-family: $font-family-serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 400 !important;
+  transition:
+    background-color 200ms ease,
+    transform 300ms $ease;
+}
+
+.hearth-hero ~ .container a:hover .rounded-circle.bg-light {
+  background-color: $surface-raised !important;
+  transform: translateY(-4px);
+}
+
+.hearth-hero + .container {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hearth-hero ~ .container a:has(> .rounded-circle) span {
+  margin-top: 0.9rem !important;
+  color: $heading;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,47 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="hearth-hero" aria-labelledby="hearth-hero-title">
+    <div class="container">
+        <div class="hearth-hero__grid">
+            <div class="hearth-hero__copy">
+                <p class="hearth-eyebrow hearth-eyebrow--light">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'hearth.hero.eyebrow'|trans({}, 'hearth') }}{% endif %}</p>
+                <h1 id="hearth-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'hearth.hero.title'|trans({}, 'hearth')|raw }}{% endif %}</h1>
+                <p class="hearth-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'hearth.hero.lead'|trans({}, 'hearth')|raw }}{% endif %}</p>
+
+                <div class="hearth-hero__actions">
+                    <a class="btn btn-primary hearth-btn-linen" href="{{ hero.ctaUrl ?? '#hearth-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'hearth.hero.cta'|trans({}, 'hearth') }}{% endif %}
+                    </a>
+                    <a class="hearth-link-arrow hearth-link-arrow--light" href="#hearth-promise">
+                        {{ 'hearth.hero.secondary_cta'|trans({}, 'hearth') }}
+                    </a>
+                </div>
+
+                <p class="hearth-hero__signature">
+                    {% include 'shop/homepage/mark.html.twig' with {class: 'hearth-hero__mark'} %}
+                    {{ 'hearth.hero.signature'|trans({}, 'hearth') }}
+                </p>
+            </div>
+
+            <div class="hearth-hero__visual">
+                {% if hero.image %}
+                    <img class="hearth-hero__panel hearth-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+                {% else %}
+                    {% include 'shop/homepage/hero/living_room.html.twig' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="hearth-figures">
+        <div class="container">
+            <ul class="hearth-figures__items" role="list">
+                {% for item in 1..4 %}
+                    <li>
+                        <span class="hearth-figures__value">{{ ('hearth.figures.item_' ~ item ~ '.value')|trans({}, 'hearth') }}</span>
+                        <span class="hearth-figures__text">{{ ('hearth.figures.item_' ~ item ~ '.text')|trans({}, 'hearth') }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

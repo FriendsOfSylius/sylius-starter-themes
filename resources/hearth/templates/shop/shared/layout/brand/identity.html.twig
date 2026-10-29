@@ -1,0 +1,11 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="hearth-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# The terracotta arch with the flame of the hearth, next to a DM Serif Display wordmark. #}
+    {% include 'shop/homepage/mark.html.twig' with {class: 'hearth-logo__mark'} %}
+    <span class="hearth-logo__text">
+        <span class="hearth-logo__name">Hearth</span>
+        <span class="hearth-logo__tagline">{{ 'hearth.brand.tagline'|trans({}, 'hearth') }}</span>
+    </span>
+{% endif %}

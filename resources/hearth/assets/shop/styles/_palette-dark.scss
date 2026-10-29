@@ -1,0 +1,47 @@
+// Hearth, dark scheme — the living room at dusk: walnut shadows, lamp light on linen, embers of terracotta.
+$color-mode: dark;
+
+// House colours. The walnut bands are a shade warmer than the page, and ruled in ochre, to stand out from it;
+// the clay wall of the hero takes the colour of the evening.
+$walnut: #241913;
+$walnut-soft: #33251D;
+$clay: #6B2E1C;
+$clay-deep: #551F11;
+$clay-glow: #A9512F;
+$sage: #A9BC94;
+$sage-light: #CFDCBB;
+$ochre: #E9AE4A;
+$ochre-light: #F6D79B;
+$terracotta: #DD6B49;
+$linen: #FFF6EA;
+$text-on-dark: #EADDCC;
+$border-dark: rgba($ochre-light, 0.2);
+// Fillets, hairlines and focus outlines on the walnut surfaces (3:1 at least).
+$rule: #C98A65;
+
+// Walnut, lamp light and linen.
+$page: #18120F;
+$surface: #211915;
+$surface-raised: #2C221C;
+$line: #3D3129;
+$line-strong: #5A4A3D;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #92806F;
+$heading: #F7EEE3;
+$text: #E0D3C4;
+$text-muted: #B8A797;
+
+// A fired terracotta fills the calls to action (linen on it: above 4.5:1); as text, the accent turns to a warm peach.
+$accent: #A44D2E;
+$accent-hover: #B85A38;
+$on-accent: $linen;
+$accent-text: #F0A783;
+$accent-text-hover: #F7C6AA;
+$sage-text: #BACD9F;
+$focus-ring: rgba($accent-text, 0.25);
+
+$success: #9CC287;
+$info: #93B3D8;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 24px 50px -20px rgba(#000, 0.75);

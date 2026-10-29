@@ -1,0 +1,114 @@
+hearth:
+    brand:
+        tagline: 'Maison & Déco'
+    top_bar:
+        delivery: 'Livraison offerte dès 80 € · meubles livrés et installés dans la pièce de votre choix'
+        returns: '30 jours pour changer d’avis, même sur les meubles'
+    hero:
+        eyebrow: 'Mobilier · Luminaires · Décoration'
+        title: 'Des pièces qui font d’une maison <em>un vrai chez-soi.</em>'
+        lead: 'Meubles, luminaires, linge et arts de la table dessinés dans notre atelier et fabriqués par des ateliers que nous connaissons par leur nom, en bois massif, lin, rotin et grès. <strong>Faits pour être vécus</strong>, et pour durer.'
+        cta: 'Découvrir la collection'
+        secondary_cta: 'Notre atelier'
+        signature: 'Dessiné à l’atelier, fait main, pensé pour se transmettre.'
+        illustration: 'Un salon ensoleillé vu à travers une arche en plâtre : une fenêtre cintrée s’ouvre sur un ciel bleu et une branche d’olivier, une suspension en rotin se balance au-dessus d’un canapé vert sauge et de son coussin ocre, à côté d’une table d’appoint en noyer portant un vase en terre cuite et des herbes séchées, d’une affiche d’arches encadrée, d’une plante dans un panier et d’un tapis de laine aux dunes douces.'
+    figures:
+        item_1:
+            value: '30 jours'
+            text: 'pour changer d’avis'
+        item_2:
+            value: '24'
+            text: 'ateliers partenaires en Europe'
+        item_3:
+            value: '10 ans'
+            text: 'de garantie sur le bois massif'
+        item_4:
+            value: 'Installé'
+            text: 'dans la pièce de votre choix'
+    products:
+        eyebrow:
+            latest: 'Nouveautés de la maison'
+    promise:
+        eyebrow: 'De l’atelier à votre maison'
+        title: 'Moins de choses, <em>mieux faites.</em>'
+        lead: 'Nous dessinons chaque pièce dans notre atelier, la faisons fabriquer en petites séries par des ateliers que nous visitons chaque saison, et la livrons nous-mêmes, pour qu’elle arrive entière, dans la bonne pièce, prête à être vécue.'
+        step_1:
+            numeral: '01'
+            title: 'Dessiné à l’atelier'
+            text: 'Des formes simples et généreuses, des matières franches : chaque croquis est essayé grandeur nature dans nos propres pièces avant de rejoindre la collection.'
+        step_2:
+            numeral: '02'
+            title: 'Fait à la main'
+            text: 'Ébénistes au Portugal, tisserands en Lituanie, potiers de l’Alentejo : 24 ateliers, choisis pour leur savoir-faire et pour la façon dont ils traitent celles et ceux qui y travaillent.'
+        step_3:
+            numeral: '03'
+            title: 'Livré et installé'
+            text: 'Notre équipe porte vos meubles jusqu’à la pièce de votre choix, les monte et repart avec les emballages. Les petites pièces voyagent en carton recyclé, sans plastique.'
+        moodboard:
+            kicker: 'Planche d’ambiance de la saison'
+            title: 'Le salon d’automne'
+            note: 'Épinglée à l’atelier'
+            swatches_label: 'La palette de la saison'
+            swatch_1: 'Terre cuite'
+            swatch_2: 'Sauge'
+            swatch_3: 'Ocre'
+            swatch_4: 'Lin'
+            swatch_5: 'Noyer'
+            materials:
+                label: 'Matières'
+                value: 'Chêne huilé, lin lavé, rotin'
+            light:
+                label: 'Lumière'
+                value: 'Chaude, basse et tressée'
+            textures:
+                label: 'Textures'
+                value: 'Bouclette, nid d’abeille, grès brut'
+            mood:
+                label: 'Ambiance'
+                value: 'Un dimanche après-midi qui s’étire'
+    materials:
+        eyebrow: 'Notre matériauthèque'
+        title: 'Six matières, <em>choisies pour bien vieillir.</em>'
+        lead: 'Chaque pièce naît de quelques matières franches, naturelles et réparables. Voici d’où elles viennent, et comment en prendre soin pour qu’elles embellissent avec le temps.'
+        oak:
+            name: 'Chêne massif'
+            origin: 'Forêts FSC de France et du Portugal'
+            care: 'Dépoussiérer à sec, huiler une fois par an.'
+        linen:
+            name: 'Lin lavé'
+            origin: 'Lin européen, tissé en Lituanie'
+            care: 'Laver à 40 °C, ne jamais repasser.'
+        rattan:
+            name: 'Rotin'
+            origin: 'Tressé à la main à Cirebon, Indonésie'
+            care: 'Brosser la poussière, garder à l’abri de la pluie.'
+        stoneware:
+            name: 'Grès'
+            origin: 'Tourné et émaillé dans l’Alentejo'
+            care: 'Va au lave-vaisselle, chaque pièce est unique.'
+        brass:
+            name: 'Laiton brossé'
+            origin: 'Tourné et brossé en Italie du Nord'
+            care: 'Le laisser se patiner, ou le raviver au citron.'
+        wool:
+            name: 'Laine bouclette'
+            origin: 'Laine de Nouvelle-Zélande, filée en Belgique'
+            care: 'Aspirer en douceur, aérer par temps sec.'
+    footer:
+        tagline: 'Mobilier, luminaires et décoration dessinés dans notre atelier, faits main, pour être vécus chaque jour.'
+        notice: 'Prix TTC. Les meubles sont livrés par notre propre équipe, sur rendez-vous.'
+        services:
+            eyebrow: 'Chez vous, avec vous'
+            title: 'Votre intérieur, <em>avec un coup de main.</em>'
+            advice:
+                title: 'Conseil déco offert'
+                text: 'Envoyez-nous une photo et les dimensions de votre pièce : nos décorateurs vous proposent pièces, couleurs et agencement sous 48 heures.'
+                cta: 'Demander conseil'
+            delivery:
+                title: 'Livré et installé'
+                text: 'Vos meubles sont portés jusqu’à la pièce de votre choix, montés, et les emballages repris, le jour et à l’heure que vous choisissez.'
+                cta: 'Suivre ma commande'
+            returns:
+                title: '30 jours pour changer d’avis'
+                text: 'Une pièce ne trouve finalement pas sa place ? Nous venons la reprendre chez vous et la remboursons, meubles compris, sous 30 jours.'
+                cta: 'Retourner une pièce'
