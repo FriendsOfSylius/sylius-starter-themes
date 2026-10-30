@@ -1,0 +1,34 @@
+{# Offers of the moment: four promotional banners, each leading to a shelf of the store menu (`taxons`, from the
+   taxon menu component), with a photograph on the right, a yellow badge, a title and a "Discover" link. #}
+{% set culture_offers = [
+    {key: 'books', shelf: 0, badge: true},
+    {key: 'video', shelf: 3, badge: false},
+    {key: 'music', shelf: 4, badge: true},
+    {key: 'board', shelf: 2, badge: true},
+] %}
+
+<section id="culture-offers" class="culture-offers" aria-labelledby="culture-offers-title">
+    <div class="container">
+        <div class="culture-section-head">
+            <h2 id="culture-offers-title">{{ 'culture.offers.title'|trans({}, 'culture') }}</h2>
+            <a class="culture-link culture-arrow" href="#culture-latest-products">{{ 'culture.offers.see_all'|trans({}, 'culture') }}</a>
+        </div>
+
+        <ul class="culture-offers__items" role="list">
+            {% for offer in culture_offers %}
+                {% set taxon = taxons[offer.shelf] ?? null %}
+                <li>
+                    <a class="culture-offer culture-offer--{{ offer.key }}" href="{{ taxon ? path('sylius_shop_product_index', {slug: taxon.slug}) : '#culture-latest-products' }}">
+                        <span class="culture-offer__copy">
+                            {% if offer.badge %}
+                                <span class="culture-badge">{{ ('culture.offers.' ~ offer.key ~ '.badge')|trans({}, 'culture') }}</span>
+                            {% endif %}
+                            <span class="culture-offer__title">{{ ('culture.offers.' ~ offer.key ~ '.title')|trans({}, 'culture') }}</span>
+                            <span class="culture-offer__cta culture-arrow">{{ 'culture.discover'|trans({}, 'culture') }}</span>
+                        </span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

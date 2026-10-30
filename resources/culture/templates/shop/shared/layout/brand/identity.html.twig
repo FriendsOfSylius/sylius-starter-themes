@@ -1,0 +1,10 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="culture-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# The house mark, a yellow rounded hexagon like a game tile, next to the bold "Culture & Co" wordmark. #}
+    <svg class="culture-logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M13.5 2.4a5 5 0 0 1 5 0l8.6 5a5 5 0 0 1 2.5 4.3v9.9a5 5 0 0 1-2.5 4.3l-8.6 5a5 5 0 0 1-5 0l-8.6-5a5 5 0 0 1-2.5-4.3v-9.9a5 5 0 0 1 2.5-4.3z"/>
+    </svg>
+    <span class="culture-logo__name">Culture &amp; Co</span>
+{% endif %}

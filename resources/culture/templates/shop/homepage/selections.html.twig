@@ -1,0 +1,33 @@
+{# The booksellers' picks: four dark photo cards, each leading to a shelf of the store menu (`taxons`, from the
+   taxon menu component), with a small tag, a title and a "Discover" link over the photograph. #}
+{% set culture_selections = [
+    {key: 'books', shelf: 0},
+    {key: 'video', shelf: 3},
+    {key: 'music', shelf: 4},
+    {key: 'gifts', shelf: 5},
+] %}
+
+<section id="culture-selections" class="culture-selections" aria-labelledby="culture-selections-title">
+    <div class="container">
+        <div class="culture-section-head">
+            <div>
+                <p class="culture-eyebrow">{{ 'culture.selections.eyebrow'|trans({}, 'culture') }}</p>
+                <h2 id="culture-selections-title">{{ 'culture.selections.title'|trans({}, 'culture') }}</h2>
+            </div>
+            <a class="culture-link culture-arrow" href="#culture-latest-products">{{ 'culture.selections.see_all'|trans({}, 'culture') }}</a>
+        </div>
+
+        <ul class="culture-selections__items" role="list">
+            {% for selection in culture_selections %}
+                {% set taxon = taxons[selection.shelf] ?? null %}
+                <li>
+                    <a class="culture-selection culture-selection--{{ selection.key }}" href="{{ taxon ? path('sylius_shop_product_index', {slug: taxon.slug}) : '#culture-latest-products' }}">
+                        <span class="culture-selection__tag">{{ ('culture.selections.' ~ selection.key ~ '.tag')|trans({}, 'culture') }}</span>
+                        <span class="culture-selection__title">{{ ('culture.selections.' ~ selection.key ~ '.title')|trans({}, 'culture') }}</span>
+                        <span class="culture-selection__cta culture-arrow">{{ 'culture.discover'|trans({}, 'culture') }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

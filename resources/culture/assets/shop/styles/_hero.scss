@@ -1,0 +1,85 @@
+// Culture & Co hero: a banner the width of the container, the photograph of a sunlit living room on the right and
+// the copy on the left, over a veil of the page colour that fades into the picture.
+
+.culture-hero {
+  padding-top: 1.5rem;
+}
+
+.culture-hero__banner {
+  position: relative;
+  display: flex;
+  min-height: clamp(20rem, 30vw, 27rem);
+  align-items: center;
+  overflow: hidden;
+  border-radius: $radius;
+  background-color: $hero-panel;
+}
+
+.culture-hero__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 24%;
+  width: 76%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.culture-hero__image--theme {
+  background: url("../images/hero.webp") right center / cover no-repeat;
+}
+
+// The veil: solid behind the copy, fading out over the left of the photograph.
+.culture-hero__banner::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg, $hero-panel 0%, $hero-panel 26%, rgba($hero-panel, 0.85) 38%, rgba($hero-panel, 0) 58%);
+  content: "";
+  pointer-events: none;
+}
+
+.culture-hero__copy {
+  position: relative;
+  z-index: 2;
+  max-width: 31rem;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.culture-hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.culture-hero__lead {
+  margin-bottom: 1.75rem;
+  color: $text;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 767.98px) {
+  .culture-hero__banner {
+    display: block;
+  }
+
+  .culture-hero__image {
+    position: relative;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .culture-hero__banner::before {
+    display: none;
+  }
+
+  .culture-hero__copy {
+    max-width: none;
+  }
+}

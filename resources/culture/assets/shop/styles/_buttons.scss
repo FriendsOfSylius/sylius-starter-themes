@@ -1,0 +1,108 @@
+.btn {
+  min-height: 2.75rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: $radius-sm;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.btn-sm {
+  min-height: 2.25rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+}
+
+// The house yellow call to action, with ink text, closed by an arrow when it leads somewhere.
+.btn-primary {
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
+  --bs-btn-color: #{$on-sun};
+  --bs-btn-bg: #{$sun};
+  --bs-btn-border-color: #{$sun};
+  --bs-btn-hover-color: #{$on-sun};
+  --bs-btn-hover-bg: #{$sun-hover};
+  --bs-btn-hover-border-color: #{$sun-hover};
+  --bs-btn-active-color: #{$on-sun};
+  --bs-btn-active-bg: #{$sun-hover};
+  --bs-btn-active-border-color: #{$sun-hover};
+  --bs-btn-disabled-color: #{$on-sun};
+  --bs-btn-disabled-bg: #{$sun};
+  --bs-btn-disabled-border-color: #{$sun};
+}
+
+// Outlined in ink, for secondary actions.
+.btn-secondary,
+.btn-light,
+.btn-outline-primary,
+.btn-outline-gray {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$heading};
+  --bs-btn-hover-bg: #{$surface-soft};
+  --bs-btn-hover-border-color: #{$heading};
+  --bs-btn-active-color: #{$heading};
+  --bs-btn-active-bg: #{$surface-soft};
+  --bs-btn-active-border-color: #{$heading};
+}
+
+.btn-link {
+  color: $accent-text;
+  font-weight: 600;
+
+  &:hover {
+    color: $accent-text-hover;
+  }
+}
+
+// An arrow drawn in the current color, after a call to action or a "Discover" link.
+.culture-arrow::after {
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  margin-left: 0.5rem;
+  background-color: currentColor;
+  content: "";
+  vertical-align: -0.2em;
+  mask: $culture-arrow no-repeat center / contain;
+  -webkit-mask: $culture-arrow no-repeat center / contain;
+  transition: transform 200ms $ease;
+}
+
+a:hover > .culture-arrow::after,
+.culture-arrow:hover::after {
+  transform: translateX(0.25rem);
+}
+
+// "Discover" and "See all" links: ink, semibold, underlined.
+.culture-link {
+  color: $accent-text;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  white-space: nowrap;
+
+  &:hover {
+    color: $accent-text-hover;
+  }
+}
+
+#add-to-cart-button {
+  width: 100%;
+  min-height: 3.1rem;
+  font-size: 0.95rem;
+}
+
+// A button joined to a field (coupon code) keeps the field corners.
+.input-group > .btn {
+  border-radius: 0 $radius-sm $radius-sm 0;
+}

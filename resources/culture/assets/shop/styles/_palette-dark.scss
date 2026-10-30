@@ -1,0 +1,42 @@
+// Culture & Co, dark scheme — the store after closing time: charcoal shelves, paper type and the same sunny yellow.
+$color-mode: dark;
+
+// The house yellow, behind dark text only (buttons, badges, the logo mark): the same in both schemes.
+$sun: #F9B43A;
+$sun-hover: #FFC65C;
+$on-sun: #16161A;
+// The deep blue of the video games offer and the dark photo overlays, the same in both schemes.
+$night: #0B1E3D;
+$on-photo: #FFFFFF;
+
+// Charcoal, graphite and paper.
+$page: #121214;
+$surface: #1A1A1E;
+$surface-soft: #202025;
+$surface-raised: #2A2A30;
+$line: #303037;
+$line-strong: #4A4A53;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #8E8C95;
+$heading: #F6F5F1;
+$text: #DEDCD6;
+$text-muted: #AAA8A2;
+
+// Links in paper, underlined; on hover they turn to the house yellow.
+$accent: $sun;
+$accent-hover: $sun-hover;
+$on-accent: $on-sun;
+$accent-text: #F6F5F1;
+$accent-text-hover: #F9B43A;
+$fillet: #F9B43A;
+$focus-ring: rgba(#F9B43A, 0.3);
+
+$success: #8FCBA8;
+$info: #A9B8EC;
+
+// The hero: the copy on a charcoal veil fading into the photograph.
+$hero-veil: #121214;
+$hero-panel: #1A1A1E;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 18px 40px -20px rgba(#000, 0.8);

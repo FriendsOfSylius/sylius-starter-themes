@@ -1,0 +1,58 @@
+culture:
+    discover: 'Découvrir'
+    top_bar:
+        delivery: 'Livraison offerte dès 35 €'
+        returns: 'Retours gratuits sous 30 jours'
+        help: 'Besoin d''aide ?'
+    hero:
+        eyebrow: 'La culture à portée de main'
+        title: 'Des milliers d’univers à explorer'
+        lead: 'Livres, jeux, musique, jeux vidéo… Retrouvez vos coups de cœur et découvrez de nouvelles passions parmi notre sélection.'
+        cta: 'Découvrir nos univers'
+        illustration: 'Un salon baigné de soleil : sur une table basse, une pile de livres, un casque audio, une manette de jeu et une plante, devant une bibliothèque et un canapé moutarde.'
+    offers:
+        title: 'Nos offres du moment'
+        see_all: 'Voir toutes les promotions'
+        books:
+            badge: 'Jusqu’à -30 %'
+            title: 'Sélection romans de la rentrée'
+        video:
+            title: 'Les incontournables jeux vidéo'
+        music:
+            badge: '-20 %'
+            title: 'Instruments à prix doux'
+        board:
+            badge: 'Jusqu’à -25 %'
+            title: 'Jeux de société pour toute la famille'
+    selections:
+        eyebrow: 'Nos sélections'
+        title: 'Les coups de cœur de nos libraires'
+        see_all: 'Voir toute la sélection'
+        books:
+            tag: 'Sélection livres'
+            title: 'Les best-sellers du moment'
+        video:
+            tag: 'Jeux vidéo'
+            title: 'Les sorties à ne pas manquer'
+        music:
+            tag: 'Instruments'
+            title: 'Les instruments de nos musiciens'
+        gifts:
+            tag: 'Idées cadeaux'
+            title: 'Des idées pour tous les goûts'
+    footer:
+        tagline: 'Livres, jeux de société, jeux vidéo, instruments et objets de collection : toute la culture, choisie par des passionnés.'
+        notice: 'Culture & Co est un magasin culturel fictif, créé pour la démo de Sylius Starter.'
+        services:
+            delivery:
+                title: 'Livraison offerte'
+                text: 'dès 35 € d’achat'
+            returns:
+                title: 'Retours gratuits'
+                text: 'sous 30 jours'
+            payment:
+                title: 'Paiement sécurisé'
+                text: 'par carte bancaire'
+            support:
+                title: 'Une équipe à votre écoute'
+                text: 'du lundi au samedi'

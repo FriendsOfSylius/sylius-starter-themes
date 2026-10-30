@@ -1,0 +1,379 @@
+// Top bar: a light grey band with the delivery, returns and help promises and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.culture-topbar) {
+  border-bottom: 1px solid $line;
+  background-color: $surface-soft !important;
+  color: $heading;
+  font-size: 0.78rem;
+
+  a {
+    color: $heading;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$line-strong};
+    --bs-btn-color: #{$heading};
+    --bs-btn-hover-bg: #{$surface};
+    --bs-btn-hover-border-color: #{$heading};
+    --bs-btn-hover-color: #{$heading};
+    --bs-btn-active-bg: #{$surface};
+    --bs-btn-active-color: #{$heading};
+    --bs-btn-active-border-color: #{$heading};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$surface};
+    --bs-dropdown-color: #{$text};
+    --bs-dropdown-link-color: #{$text};
+    --bs-dropdown-link-hover-bg: #{$surface-soft};
+    --bs-dropdown-link-hover-color: #{$heading};
+    --bs-dropdown-link-active-bg: #{$sun};
+    --bs-dropdown-link-active-color: #{$on-sun};
+    --bs-dropdown-border-color: #{$line};
+  }
+}
+
+.culture-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 2.25rem;
+}
+
+.culture-topbar__item:first-child {
+  font-weight: 600;
+}
+
+.culture-topbar a {
+  color: $heading;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $page;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $line !important;
+}
+
+header .container {
+  padding-block: 0.4rem;
+}
+
+header a {
+  color: $heading;
+
+  &:hover {
+    color: $accent-text-hover;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: the yellow house mark, a rounded hexagon like a game tile, next to "Culture & Co" in bold.
+
+.culture-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.6rem;
+  color: $heading;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $heading;
+    text-decoration: none;
+  }
+}
+
+.culture-logo__mark {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  fill: $sun;
+  transition: transform 400ms $ease;
+}
+
+.culture-logo:hover .culture-logo__mark {
+  transform: rotate(60deg);
+}
+
+.culture-logo__name {
+  color: $heading;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+// Category navigation: a row of its own under the logo, in regular weight, underlined in yellow when hovered.
+
+.culture-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.culture-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.culture-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 2rem;
+  overflow: visible;
+}
+
+.culture-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.culture-category-nav__links > .nav-link,
+.culture-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.85rem 0 !important;
+  color: $heading;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+
+  &::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background-color: $sun;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 220ms $ease;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $heading;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.culture-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.culture-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  border-radius: $radius-sm;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-soft;
+    color: $heading;
+  }
+}
+
+// Cart: a basket icon with its total, and a yellow counter.
+
+.culture-cart__button {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: #{$heading};
+  --bs-btn-hover-bg: #{$surface-soft};
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: #{$heading};
+  --bs-btn-active-bg: #{$surface-soft};
+  --bs-btn-active-border-color: transparent;
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.culture-cart__icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.culture-cart__count {
+  position: absolute;
+  top: -0.2rem;
+  left: 1.6rem;
+  display: grid;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background-color: $sun;
+  color: $on-sun;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $heading;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-soft;
+    color: $heading;
+  }
+}
+
+// Desktop: the logo opens the row, the account and the cart close it, and the category menu wraps to a row of its
+// own below them.
+
+@media (min-width: 992px) {
+  .row:has(> .culture-category-nav) {
+    row-gap: 0.75rem;
+  }
+
+  .row:has(> .culture-category-nav) > .col:has(> .culture-logo--header) {
+    flex: 0 0 auto;
+    width: auto;
+    margin-right: auto;
+  }
+
+  .culture-category-nav {
+    order: 10;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .culture-category-nav__menu {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  // The menu opens in an off-canvas panel: its column takes no room, so the menu button stays on the logo row.
+  .culture-category-nav {
+    flex: 0 0 0;
+    width: 0;
+    padding: 0;
+  }
+
+  .culture-category-nav__menu {
+    position: fixed;
+    background-color: $page;
+  }
+
+  .culture-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $line;
+  }
+
+  .culture-category-nav__menu .offcanvas-title {
+    font-size: 1.25rem !important;
+    font-weight: 700;
+  }
+
+  .culture-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .culture-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .culture-category-nav__links > .nav-link,
+  .culture-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .culture-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface-soft;
+    box-shadow: none;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  // Tighter gutters, so that the logo, the account, the scheme switcher, the cart and the menu button share one row.
+  .row:has(> .culture-category-nav) {
+    --bs-gutter-x: 0.25rem;
+  }
+
+  .culture-logo__name {
+    font-size: 1.3rem;
+  }
+
+  .culture-logo__mark {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.culture-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}

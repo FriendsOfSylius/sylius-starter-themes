@@ -1,0 +1,149 @@
+// Footer: the reassurance band on light grey (delivery, returns, payment, support), then the store links.
+
+footer.culture-footer {
+  position: relative;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: 0;
+  background-color: $page;
+  color: $text;
+  font-size: 0.9rem;
+}
+
+.culture-reassurance {
+  background-color: $surface-soft;
+}
+
+.culture-reassurance__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 2rem 0;
+  list-style: none;
+}
+
+.culture-reassurance__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+
+  + .culture-reassurance__item {
+    border-left: 1px solid $line-strong;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: $heading;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.culture-reassurance__title {
+  display: block;
+  color: $heading;
+  font-weight: 700;
+}
+
+.culture-reassurance__text {
+  display: block;
+  color: $text-muted;
+  font-size: 0.82rem;
+}
+
+.culture-footer__main {
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+
+  > .row {
+    padding-top: 2rem;
+  }
+
+  a,
+  .nav-link {
+    color: $text;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $heading;
+      text-decoration: underline;
+    }
+  }
+
+  .fw-medium,
+  h2,
+  h3,
+  h4 {
+    color: $heading;
+    font-size: 0.9rem;
+    font-weight: 700 !important;
+  }
+}
+
+.culture-footer__brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $line;
+
+  p {
+    max-width: 30rem;
+    margin: 0;
+    color: $text-muted;
+    line-height: 1.6;
+  }
+}
+
+// Payment partner logos keep their brand colours on light chips (Mollie's is black).
+.culture-footer__main .ratio.border {
+  border-color: $line !important;
+  background-color: #FFFFFF;
+}
+
+.culture-footer__copy a {
+  color: $heading !important;
+  text-decoration: underline !important;
+}
+
+.culture-footer__notice {
+  margin: 1rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid $line;
+  color: $text-muted;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .culture-reassurance__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.5rem;
+  }
+
+  .culture-reassurance__item {
+    justify-content: flex-start;
+
+    + .culture-reassurance__item {
+      border-left: 0;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .culture-reassurance__items {
+    grid-template-columns: 1fr;
+  }
+}

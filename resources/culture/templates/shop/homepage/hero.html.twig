@@ -1,0 +1,22 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback. #}
+<section class="culture-hero" aria-labelledby="culture-hero-title">
+    <div class="container">
+        <div class="culture-hero__banner">
+            {% if hero.image %}
+                <img class="culture-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
+            {% else %}
+                {# The theme photograph (a living room with books, headphones and a game controller), drawn in CSS. #}
+                <div class="culture-hero__image culture-hero__image--theme" role="img" aria-label="{{ 'culture.hero.illustration'|trans({}, 'culture') }}"></div>
+            {% endif %}
+
+            <div class="culture-hero__copy">
+                <p class="culture-eyebrow">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'culture.hero.eyebrow'|trans({}, 'culture') }}{% endif %}</p>
+                <h1 id="culture-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'culture.hero.title'|trans({}, 'culture')|raw }}{% endif %}</h1>
+                <p class="culture-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'culture.hero.lead'|trans({}, 'culture')|raw }}{% endif %}</p>
+                <a class="btn btn-primary culture-arrow" href="{{ hero.ctaUrl ?? '#culture-latest-products' }}">
+                    {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'culture.hero.cta'|trans({}, 'culture') }}{% endif %}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

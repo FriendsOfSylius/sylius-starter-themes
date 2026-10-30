@@ -1,0 +1,58 @@
+culture:
+    discover: 'Discover'
+    top_bar:
+        delivery: 'Free delivery from €35'
+        returns: 'Free returns within 30 days'
+        help: 'Need help?'
+    hero:
+        eyebrow: 'Culture within reach'
+        title: 'Thousands of worlds to explore'
+        lead: 'Books, games, music, video games… Find your favourites and discover new passions in our selection.'
+        cta: 'Discover our worlds'
+        illustration: 'A sunlit living room: on a coffee table, a stack of books, headphones, a game controller and a plant, in front of a bookcase and a mustard sofa.'
+    offers:
+        title: 'Our current offers'
+        see_all: 'See all offers'
+        books:
+            badge: 'Up to -30%'
+            title: 'New season novels'
+        video:
+            title: 'The must-have video games'
+        music:
+            badge: '-20%'
+            title: 'Instruments at gentle prices'
+        board:
+            badge: 'Up to -25%'
+            title: 'Board games for the whole family'
+    selections:
+        eyebrow: 'Our selections'
+        title: 'Our booksellers’ favourites'
+        see_all: 'See the whole selection'
+        books:
+            tag: 'Book selection'
+            title: 'The bestsellers of the moment'
+        video:
+            tag: 'Video games'
+            title: 'The releases not to miss'
+        music:
+            tag: 'Instruments'
+            title: 'Our musicians’ instruments'
+        gifts:
+            tag: 'Gift ideas'
+            title: 'Ideas for every taste'
+    footer:
+        tagline: 'Books, board games, video games, instruments and collectibles: all of culture, picked by enthusiasts.'
+        notice: 'Culture & Co is a fictional cultural store, made for the Sylius Starter demo.'
+        services:
+            delivery:
+                title: 'Free delivery'
+                text: 'on orders from €35'
+            returns:
+                title: 'Free returns'
+                text: 'within 30 days'
+            payment:
+                title: 'Secure payment'
+                text: 'by credit card'
+            support:
+                title: 'A team at your service'
+                text: 'Monday to Saturday'
