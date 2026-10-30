@@ -1,17 +1,33 @@
-// Clay hero: a DM Serif Display headline closed by an ochre italic, and a photograph of the living room in an arch, in
-// the morning sun in the light scheme and at dusk, under the lit rattan pendant, in the dark one. A band of house figures closes it, edged with the fringe of a rug.
+// Hero: a DM Serif Display headline closed by an ochre italic, and a photograph of the living room in an arch, in the
+// morning sun in the light scheme and at dusk, under the lit rattan pendant, in the dark one. The hero is the wall of
+// that room: an ochre limewash sampled from the photograph, mottled like plaster, where the sun casts the panes of a
+// window above the arch (the pendant casts a pool of lamp light at dusk). A band of house figures closes it, edged
+// with the fringe of a rug.
+
+// Limewash mottling, in grey: blended in soft light, it lightens and darkens the wall in its own colour. One sheet
+// covers the whole hero, since a repeated noise tile shows its seams.
+$hearth-limewash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000'%3E%3Cfilter id='l'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.008' numOctaves='5' seed='11'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='1600' height='1000' filter='url(%23l)'/%3E%3C/svg%3E");
 
 .hearth-hero {
   position: relative;
   // Clipped sideways only, so that the fringe of the figures band hangs over the page below.
   overflow-x: clip;
+  isolation: isolate;
   padding-top: clamp(3.5rem, 7vw, 6rem);
-  background-color: $clay;
-  background-image:
-    radial-gradient(ellipse 50% 65% at 78% 40%, rgba($clay-glow, 0.2), transparent 70%),
-    radial-gradient(ellipse 45% 55% at 0% 100%, rgba($ochre, 0.1), transparent 70%),
-    radial-gradient(ellipse 30% 30% at 30% 10%, rgba($linen, 0.06), transparent 70%);
+  background-color: $wall;
+  background-image: linear-gradient(100deg, $wall-shade, $wall 45%);
   color: $text-on-dark;
+
+  // The plaster of the wall, over the light that falls on it.
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: $hearth-limewash 50% 50% / cover no-repeat;
+    content: "";
+    mix-blend-mode: soft-light;
+    opacity: 0.55;
+  }
 }
 
 .hearth-hero__grid {
@@ -79,8 +95,49 @@
 
 // The arch stands on the bottom of the hero, so the figures band reads as the floor of the room.
 .hearth-hero__visual {
+  position: relative;
   display: flex;
   justify-content: center;
+
+  // The light on the wall follows the arch: a warm glow around it, and the four panes of a window in the sun above it,
+  // or the pool of the pendant at dusk. Under the plaster, so that it stays mottled.
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: -2;
+    left: 50%;
+    content: "";
+    pointer-events: none;
+  }
+
+  &::before {
+    bottom: -4rem;
+    width: 56rem;
+    aspect-ratio: 1;
+    background: radial-gradient(closest-side, rgba($wall-light, 0.9), rgba($wall-light, 0.35) 60%, transparent);
+    translate: -50% 0;
+  }
+
+  &::after {
+    @if $dark {
+      top: -16rem;
+      width: 46rem;
+      aspect-ratio: 1;
+      background: radial-gradient(closest-side, rgba($wall-light-source, 0.3), rgba($wall-light-source, 0.08) 55%, transparent);
+      translate: -50% 0;
+    } @else {
+      top: -11rem;
+      width: 24rem;
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(170deg, rgba($wall-light-source, 0.3), rgba($wall-light-source, 0.1));
+      mask-image:
+        linear-gradient(90deg, #000 46%, transparent 47.5% 52.5%, #000 54%),
+        linear-gradient(#000 46%, transparent 47.5% 52.5%, #000 54%);
+      mask-composite: intersect;
+      transform: skewY(-14deg) rotate(4deg);
+      translate: -42% 0;
+    }
+  }
 }
 
 .hearth-hero__panel {
@@ -101,7 +158,7 @@
 
 // A background image, so that each scheme only downloads its own photograph.
 .hearth-hero__photo {
-  background: $clay-deep url(if($dark, "../images/hero-dusk.webp", "../images/hero-day.webp")) 50% 0 / cover no-repeat;
+  background: $wall-deep url(if($dark, "../images/hero-dusk.webp", "../images/hero-day.webp")) 50% 0 / cover no-repeat;
 }
 
 // House figures, closed by the fringe of a rug hanging over the page.
@@ -109,10 +166,10 @@
 .hearth-figures {
   position: relative;
   border-top: 1px solid rgba($ochre-light, 0.45);
-  background-color: $clay-deep;
+  background-color: $wall-deep;
 
   &::after {
-    @include hearth-fringe($clay-deep, down);
+    @include hearth-fringe($wall-deep, down);
   }
 }
 
@@ -161,6 +218,21 @@
   .hearth-hero__copy {
     max-width: none;
     padding-bottom: 3rem;
+  }
+
+  .hearth-hero {
+    background-image: linear-gradient(180deg, $wall-shade, $wall 50%);
+  }
+
+  // The glow narrows to the screen; the window would fall on the copy, so only the pendant lights the wall at dusk.
+  .hearth-hero__visual::before {
+    width: 36rem;
+  }
+
+  @if not $dark {
+    .hearth-hero__visual::after {
+      display: none;
+    }
   }
 
   .hearth-hero__panel {
