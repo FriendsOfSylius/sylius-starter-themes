@@ -1,0 +1,284 @@
+// scheme-root targets the <html> element of the active color scheme, with the weight of ":root" (see app.scss).
+@include scheme-root {
+  scroll-behavior: smooth;
+}
+
+// WCAG AA: Sylius templates print secondary text (breadcrumbs, product code, cart details, sort and limit toggles,
+// shipping and payment descriptions) with these Bootstrap utilities, too light by default.
+@include scheme-root {
+  --bs-secondary-color: #{$text-muted};
+  --bs-tertiary-color: #{$text-muted};
+
+  // The Sylius shop is compiled in light mode: in the dark scheme, remap Bootstrap's runtime variables to the
+  // depot palette, so that every native component (tables, dropdowns, offcanvas, modals...) follows it.
+  @if $dark {
+    --bs-body-bg: #{$page};
+    --bs-body-bg-rgb: #{channels($page)};
+    --bs-body-color: #{$text};
+    --bs-body-color-rgb: #{channels($text)};
+    --bs-emphasis-color: #{$heading};
+    --bs-emphasis-color-rgb: #{channels($heading)};
+    --bs-heading-color: #{$heading};
+    --bs-secondary-color-rgb: #{channels($text-muted)};
+    --bs-secondary-bg: #{$surface-raised};
+    --bs-secondary-bg-rgb: #{channels($surface-raised)};
+    --bs-tertiary-color-rgb: #{channels($text-muted)};
+    --bs-tertiary-bg: #{$surface};
+    --bs-tertiary-bg-rgb: #{channels($surface)};
+    --bs-border-color: #{$line};
+    --bs-border-color-translucent: #{rgba($heading, 0.12)};
+    --bs-light: #{$surface-raised};
+    --bs-light-rgb: #{channels($surface-raised)};
+    --bs-dark: #{$heading};
+    --bs-dark-rgb: #{channels($heading)};
+    --bs-gray-100: #{$surface-raised};
+    --bs-gray-400: #{$line-strong};
+    --bs-gray-500: #{$text-muted};
+    --bs-code-color: #{$accent-text};
+    --bs-highlight-bg: #{rgba($outline, 0.3)};
+    --bs-highlight-color: #{$heading};
+
+    color-scheme: $color-mode;
+  }
+}
+
+.text-black-50 {
+  color: $text-muted !important;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $page;
+  color: $text;
+  font-family: $font-family-base;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $accent-text;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: color 160ms ease;
+
+  &:hover {
+    color: $accent-text-hover;
+  }
+
+  &.link-reset:hover {
+    color: inherit;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4 {
+  color: $heading;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+h1,
+.h1 {
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+}
+
+h2,
+.h2 {
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+}
+
+h3,
+.h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+}
+
+// Small titles (cart, account, checkout steps) stay in the text face.
+h5,
+h6,
+.h5,
+.h6 {
+  font-family: $font-family-base;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+::selection {
+  background-color: $accent;
+  color: $on-accent;
+}
+
+:focus-visible {
+  outline: 2px solid $outline;
+  outline-offset: 3px;
+}
+
+// Shared helpers: small uppercase eyebrows in navy ink, as on a catalogue tab, and section heads with a link on the right.
+
+.depot-eyebrow {
+  margin-bottom: 0.6rem;
+  color: $text-muted;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.depot-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  margin-bottom: 1.25rem;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.depot-section-head__lead {
+  max-width: 40rem;
+  margin: 1rem 0 0;
+  color: $text-muted;
+  font-size: 1.02rem;
+  line-height: 1.7;
+
+  strong {
+    color: $heading;
+    font-weight: 600;
+  }
+}
+
+[id^="depot-"] {
+  scroll-margin-top: 1.5rem;
+}
+
+.depot-checkout-brand,
+.depot-checkout-account {
+  color: $heading;
+}
+
+.depot-checkout-account a,
+.depot-checkout-account .btn {
+  color: $accent-text;
+}
+
+.depot-checkout-account a:hover,
+.depot-checkout-account .btn:hover {
+  color: $accent-text-hover;
+}
+
+// Dark scheme: the light utilities and native components printed by Sylius templates, aligned on the depot surfaces.
+@if $dark {
+  .bg-white,
+  .bg-body {
+    background-color: $surface !important;
+    color: $text !important;
+  }
+
+  .text-bg-light {
+    color: $text !important;
+  }
+
+  .text-black,
+  .text-dark,
+  .text-body {
+    color: $text !important;
+  }
+
+  .border,
+  .border-top,
+  .border-bottom,
+  .border-start,
+  .border-end {
+    border-color: $line !important;
+  }
+
+  hr {
+    border-color: $line-strong;
+  }
+
+  // The Sylius shop hovers these icon buttons in near-white.
+  .btn-transparent:hover {
+    background-color: $surface-raised;
+    color: $heading;
+  }
+
+  .dropdown-menu:not(.dropdown-menu-dark) {
+    --bs-dropdown-bg: #{$surface};
+    --bs-dropdown-color: #{$text};
+    --bs-dropdown-border-color: #{$line};
+    --bs-dropdown-link-color: #{$text};
+    --bs-dropdown-link-hover-color: #{$accent-text};
+    --bs-dropdown-link-hover-bg: #{$surface-raised};
+    --bs-dropdown-link-active-color: #{$on-accent};
+    --bs-dropdown-link-active-bg: #{$accent};
+    --bs-dropdown-divider-bg: #{$line};
+  }
+
+  .pagination {
+    --bs-pagination-color: #{$text};
+    --bs-pagination-bg: #{$surface};
+    --bs-pagination-border-color: #{$line};
+    --bs-pagination-hover-color: #{$accent-text};
+    --bs-pagination-hover-bg: #{$surface-raised};
+    --bs-pagination-hover-border-color: #{$line-strong};
+    --bs-pagination-focus-color: #{$accent-text};
+    --bs-pagination-focus-bg: #{$surface-raised};
+    --bs-pagination-active-color: #{$on-accent};
+    --bs-pagination-active-bg: #{$accent};
+    --bs-pagination-active-border-color: #{$accent};
+    --bs-pagination-disabled-color: #{$text-muted};
+    --bs-pagination-disabled-bg: #{$page};
+    --bs-pagination-disabled-border-color: #{$line};
+  }
+
+  .list-group {
+    --bs-list-group-bg: #{$surface};
+    --bs-list-group-color: #{$text};
+    --bs-list-group-border-color: #{$line};
+    --bs-list-group-action-hover-bg: #{$surface-raised};
+    --bs-list-group-action-hover-color: #{$heading};
+    --bs-list-group-active-bg: #{$accent};
+    --bs-list-group-active-border-color: #{$accent};
+    --bs-list-group-active-color: #{$on-accent};
+  }
+
+  .modal {
+    --bs-modal-bg: #{$surface};
+    --bs-modal-color: #{$text};
+    --bs-modal-border-color: #{$line};
+    --bs-modal-header-border-color: #{$line};
+    --bs-modal-footer-border-color: #{$line};
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @include scheme-root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+}
+
+.depot-eyebrow--light {
+  color: $teal-light;
+}

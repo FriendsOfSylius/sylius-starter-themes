@@ -1,0 +1,7 @@
+{% set variant = hookable_metadata.context.product.enabledVariants.first|default(null) %}
+{% if variant %}
+    {% set depot_in_stock = not variant.tracked or variant.onHand - variant.onHold > 0 %}
+    <span class="depot-stock{{ depot_in_stock ? '' : ' depot-stock--out' }}">
+        {{ (depot_in_stock ? 'depot.card.in_stock' : 'depot.card.out_of_stock')|trans({}, 'depot') }}
+    </span>
+{% endif %}

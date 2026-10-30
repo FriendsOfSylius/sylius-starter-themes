@@ -1,0 +1,2 @@
+{% set depot_code = hookable_metadata.context.product.code|upper %}
+<span class="depot-reference" title="{{ depot_code }}">{{ 'depot.card.reference'|trans({'%code%': depot_code}, 'depot') }}</span>

@@ -1,0 +1,37 @@
+{% set depot_services = [
+    {key: 'quote', url: path('sylius_shop_contact_request'), icon: 'M7 3h8l4 4v14H7zM15 3v4h4M10 11h6M10 14h6M10 17h4'},
+    {key: 'manager', url: path('sylius_shop_contact_request'), icon: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1M18 4l2 2-2 2'},
+    {key: 'pallet', url: path('sylius_shop_account_dashboard'), icon: 'M2 17h20M3 20h18M4 17v3M12 17v3M20 17v3M5 7h14v10H5zM12 7v4'},
+] %}
+
+<footer class="depot-footer">
+    <div id="depot-services" class="depot-services">
+        <div class="container">
+            <div class="depot-services__head">
+                <p class="depot-eyebrow depot-eyebrow--light">{{ 'depot.footer.services.eyebrow'|trans({}, 'depot') }}</p>
+                <p class="depot-services__title">{{ 'depot.footer.services.title'|trans({}, 'depot')|raw }}</p>
+            </div>
+
+            <ul class="depot-services__items" role="list">
+                {% for service in depot_services %}
+                    <li class="depot-services__item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ service.icon }}"/></svg>
+                        <p class="depot-services__name">{{ ('depot.footer.services.' ~ service.key ~ '.title')|trans({}, 'depot') }}</p>
+                        <p class="depot-services__text">{{ ('depot.footer.services.' ~ service.key ~ '.text')|trans({}, 'depot') }}</p>
+                        <a class="depot-link-arrow depot-link-arrow--light" href="{{ service.url }}">{{ ('depot.footer.services.' ~ service.key ~ '.cta')|trans({}, 'depot') }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container depot-footer__main">
+        <div class="depot-footer__brand">
+            {% include 'shop/shared/layout/brand/logo.html.twig' with {variant: 'footer'} %}
+            <p>{{ 'depot.footer.tagline'|trans({}, 'depot') }}</p>
+        </div>
+        <div class="row">
+            {% hook 'content' %}
+        </div>
+        <p class="depot-footer__notice">{{ 'depot.footer.notice'|trans({}, 'depot') }}</p>
+    </div>
+</footer>

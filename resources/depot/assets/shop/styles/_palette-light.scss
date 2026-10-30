@@ -1,0 +1,54 @@
+// Depot, light scheme — a trade catalogue: white pages, steel blue-grey panels, a navy ink and a teal call to action.
+$color-mode: light;
+
+// House colours: the navy bands (footer) and the navy buttons keep them in both schemes.
+$navy-night: #0A1E31;
+$navy: #0F2A44;
+$navy-hover: #1B3D5E;
+$on-navy: #FFFFFF;
+$text-on-dark: #D5E0EA;
+$border-dark: rgba(#FFFFFF, 0.14);
+$teal-light: #7FD6CF;
+
+// Hairlines, focus outlines and active fillets on the white surfaces (3:1 at least).
+$outline: #0B7A75;
+
+// White pages and steel blue-grey panels.
+$page: #FFFFFF;
+$surface: #FFFFFF;
+$surface-raised: #F2F5F8;
+$panel: #EEF2F6;
+$line: #E1E6EB;
+$line-strong: #C5CED7;
+$field-border: #7A8794;
+$heading: #0F1E2E;
+$text: #2B3A4A;
+$text-muted: #566574;
+
+// Teal fills the calls to action (white on it: 5:1); as text, a shade deeper.
+$accent: #0B7A75;
+$accent-hover: #08625E;
+$on-accent: #FFFFFF;
+$accent-text: #0A6F6A;
+$accent-text-hover: #074F4C;
+$focus-ring: rgba($outline, 0.25);
+
+// The price break band and the stock badges.
+$band: #E8F4F3;
+$band-line: #C4E2DF;
+$band-current: #CBE9E5;
+$stock-bg: #DDF3E4;
+$stock-text: #1B6B3A;
+$order-bg: #FFF1D6;
+$order-text: #7A4B00;
+
+$success: #2F6B45;
+$info: #2F5A86;
+
+// The hero banner: a pale steel panel fading into the warehouse photo.
+$hero-panel: #F1F5F8;
+$hero-heading: $heading;
+$hero-text: $text;
+
+$shadow-soft: 0 1px 2px rgba($navy-night, 0.06);
+$shadow-float: 0 18px 40px -20px rgba($navy-night, 0.3);

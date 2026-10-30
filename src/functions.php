@@ -22,6 +22,7 @@ use SyliusStarter\Themes\Installer\BlushInstaller;
 use SyliusStarter\Themes\Installer\CanvasInstaller;
 use SyliusStarter\Themes\Installer\CellarInstaller;
 use SyliusStarter\Themes\Installer\CultureInstaller;
+use SyliusStarter\Themes\Installer\DepotInstaller;
 use SyliusStarter\Themes\Installer\DriveInstaller;
 use SyliusStarter\Themes\Installer\GrooveInstaller;
 use SyliusStarter\Themes\Installer\HearthInstaller;
@@ -43,6 +44,7 @@ use SyliusStarter\Themes\Remover\BlushRemover;
 use SyliusStarter\Themes\Remover\CanvasRemover;
 use SyliusStarter\Themes\Remover\CellarRemover;
 use SyliusStarter\Themes\Remover\CultureRemover;
+use SyliusStarter\Themes\Remover\DepotRemover;
 use SyliusStarter\Themes\Remover\DriveRemover;
 use SyliusStarter\Themes\Remover\GrooveRemover;
 use SyliusStarter\Themes\Remover\HearthRemover;
@@ -87,6 +89,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addInstaller(new BloomInstaller());
     Themes::addInstaller(new PawsInstaller());
     Themes::addInstaller(new CultureInstaller());
+    Themes::addInstaller(new DepotInstaller());
 
     Themes::addRemover(new CanvasRemover());
     Themes::addRemover(new PromptRemover());
@@ -107,6 +110,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addRemover(new BloomRemover());
     Themes::addRemover(new PawsRemover());
     Themes::addRemover(new CultureRemover());
+    Themes::addRemover(new DepotRemover());
 
     foreach (ComponentResolver::candidates() as $reflection) {
         $descriptor = resolve_theme_installer($reflection);

@@ -1,0 +1,32 @@
+// Depot — a trade catalogue: white and steel blue-grey, a navy ink and a teal call to action.
+// Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
+$dark: $color-mode == dark;
+
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-family-display: "Outfit", "Avenir Next", "Helvetica Neue", "Arial", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: $font-family-display;
+$headings-font-weight: 600;
+
+$body-bg: $page;
+$body-color: $text;
+
+$primary: $accent;
+$secondary: $surface-raised;
+
+$link-color: $accent-text;
+$link-hover-color: $accent-text-hover;
+$border-color: $line;
+
+// Tidy corners, like a catalogue page: square enough to look serious, never sharp.
+$radius-sm: 6px;
+$radius: 10px;
+$radius-lg: 14px;
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+// "r, g, b" channels of a color, for Bootstrap's --bs-*-rgb variables.
+@function channels($color) {
+  @return red($color), green($color), blue($color);
+}

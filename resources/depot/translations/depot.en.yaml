@@ -1,0 +1,110 @@
+depot:
+    brand:
+        tagline: 'Businesses, well equipped'
+    top_bar:
+        delivery: 'Free delivery from €150 excl. VAT'
+        service: 'Customer service Mon–Sat, 8 am to 6 pm'
+        account: 'Price breaks, 30-day invoices'
+    hero:
+        eyebrow: 'Trade supplies & B2B'
+        title: 'All the equipment your business needs'
+        lead: 'Office supplies, packaging, industrial equipment, catering… Everything your teams use, with <strong>price breaks</strong> from the tenth unit.'
+        cta: 'Browse the catalogue'
+        secondary_cta: 'Open a trade account'
+    card:
+        in_stock: 'In stock'
+        out_of_stock: 'On order'
+        reference: 'Ref. %code%'
+        order: 'Choose a quantity'
+    products:
+        title:
+            latest: 'Your essentials'
+        all: 'All the departments'
+    aisles:
+        title: 'Our departments'
+        browse: 'See the products'
+    breaks:
+        title: 'From 10 units: price breaks'
+        lead: 'The more you order, the more you save.'
+        cta: 'How price breaks work'
+        caption: 'Unit price excl. VAT of the copy paper A4, box of 5 reams, by quantity ordered'
+        tier_1:
+            qty: '1–9'
+            price: '€24.90 excl. VAT'
+        tier_2:
+            qty: '10–39'
+            price: '€22.50 excl. VAT'
+        tier_3:
+            qty: '40–99'
+            price: '€19.90 excl. VAT'
+        tier_4:
+            qty: '100+'
+            price: 'On quote'
+    benefits:
+        pricing:
+            title: 'Prices for your business'
+            text: 'Rates negotiated for your trade and your volumes.'
+        volume:
+            title: 'Volume orders'
+            text: 'Order by the carton or the pallet, in a few clicks.'
+        quote:
+            title: 'Online quotes'
+            text: 'A quick answer, with no commitment.'
+        restock:
+            title: 'Fast restocking'
+            text: 'Your essentials always available, delivered next day.'
+    account:
+        eyebrow: 'Trade account'
+        title: 'Buy like a business, not like a shopper'
+        lead: 'One account for the whole company: your price breaks, your purchase order numbers and your invoices in one place. Opening it takes <strong>five minutes</strong> and costs nothing.'
+        step_1:
+            title: 'Open your account'
+            text: 'Your company name and VAT number are enough. We check them within the hour and unlock the trade terms.'
+        step_2:
+            title: 'Order in volume'
+            text: 'Price breaks apply in the cart from the tenth unit. Above one pallet, ask for a quote: we answer within two hours.'
+        step_3:
+            title: 'Pay at 30 days'
+            text: 'One invoice per order or per month, with your PO number, by bank transfer or direct debit.'
+        cta: 'Open a trade account'
+        card:
+            kicker: 'Trade account'
+            title: 'Atelier Martin & Fils'
+            status: 'Verified'
+            payment:
+                label: 'Terms'
+                value: 'Invoice, 30 days end of month'
+            credit:
+                label: 'Credit line'
+                value: '€15,000'
+            users:
+                label: 'Buyers'
+                value: '4, with approval above €2,000'
+            delivery:
+                label: 'Delivery'
+                value: 'Loading dock, tail lift'
+            saving: 'Last order: 120 boxes of gloves, <strong>€300 saved</strong> on the list price.'
+    trade:
+        title: 'Trade terms'
+        breaks: '<strong>Price breaks</strong> from the description apply in the cart.'
+        invoice: '<strong>Pay at 30 days</strong> on invoice with a trade account.'
+        quote: '<strong>Over a pallet?</strong> Get a quote within 2 hours.'
+        cta: 'Ask for a quote'
+    footer:
+        tagline: 'Office supplies, packaging, equipment and consumables for businesses, delivered by the carton or by the pallet.'
+        notice: 'Prices shown excluding VAT. Dispatched every working day from our warehouse; pallets delivered with a tail lift by appointment.'
+        services:
+            eyebrow: 'Trade services'
+            title: 'From our warehouse to your loading dock'
+            quote:
+                title: 'Quote in 2 hours'
+                text: 'A volume order, a tender, a fit-out: send your list and get a priced quote the same morning.'
+                cta: 'Ask for a quote'
+            manager:
+                title: 'An account manager'
+                text: 'From 10 orders a year, one person knows your references, your prices and your delivery slots.'
+                cta: 'Contact us'
+            pallet:
+                title: 'Pallet delivery'
+                text: 'Full pallets delivered with a tail lift, by appointment, and repeat orders scheduled every month.'
+                cta: 'My account'

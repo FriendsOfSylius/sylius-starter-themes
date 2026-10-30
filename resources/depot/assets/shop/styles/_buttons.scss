@@ -1,0 +1,112 @@
+.btn {
+  min-height: 2.75rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: $radius-sm;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.btn-sm {
+  min-height: 2.25rem;
+  padding: 0.4rem 0.9rem;
+}
+
+// Teal call to action.
+.btn-primary {
+  // The Sylius shop CSS sets .btn-primary { color: #fff }, which ignores --bs-btn-color.
+  color: var(--bs-btn-color);
+
+  --bs-btn-color: #{$on-accent};
+  --bs-btn-bg: #{$accent};
+  --bs-btn-border-color: #{$accent};
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #{$accent-hover};
+  --bs-btn-hover-border-color: #{$accent-hover};
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #{$accent-hover};
+  --bs-btn-active-border-color: #{$accent-hover};
+  --bs-btn-disabled-color: #{$on-accent};
+  --bs-btn-disabled-bg: #{$accent};
+  --bs-btn-disabled-border-color: #{$accent};
+}
+
+// Outlined in steel, for secondary actions.
+.btn-secondary,
+.btn-light,
+.btn-outline-primary,
+.btn-outline-gray {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: #{$surface};
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
+}
+
+.btn-link {
+  color: $accent-text;
+
+  &:hover {
+    color: $accent-text-hover;
+  }
+}
+
+// A call to action closed by an arrow that steps forward on hover.
+.depot-btn-arrow::after,
+.depot-link-arrow::after {
+  display: inline-block;
+  margin-left: 0.6rem;
+  content: "→";
+  transition: transform 180ms $ease;
+}
+
+.depot-btn-arrow:hover::after,
+.depot-link-arrow:hover::after {
+  transform: translateX(3px);
+}
+
+.depot-link-arrow {
+  color: $accent-text;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    color: $accent-text-hover;
+    text-decoration: underline;
+  }
+}
+
+.depot-link-arrow--light,
+.depot-link-arrow--light:hover {
+  color: $teal-light;
+}
+
+// The add to cart button is navy, like the order buttons of the catalogue.
+#add-to-cart-button {
+  --bs-btn-color: #{$on-navy};
+  --bs-btn-bg: #{$navy};
+  --bs-btn-border-color: #{$navy};
+  --bs-btn-hover-color: #{$on-navy};
+  --bs-btn-hover-bg: #{$navy-hover};
+  --bs-btn-hover-border-color: #{$navy-hover};
+  --bs-btn-active-color: #{$on-navy};
+  --bs-btn-active-bg: #{$navy-hover};
+  --bs-btn-active-border-color: #{$navy-hover};
+
+  width: 100%;
+  min-height: 3rem;
+}
+
+// A button joined to a field (coupon code) keeps the field corners.
+.input-group > .btn {
+  border-radius: 0 $radius-sm $radius-sm 0;
+}

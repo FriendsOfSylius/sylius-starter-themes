@@ -1,0 +1,83 @@
+// Depot hero: a banner inside the container, the copy on a pale steel panel that fades into a wide photo of the
+// warehouse packing table.
+
+.depot-hero {
+  padding-top: 1rem;
+}
+
+.depot-hero__banner {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  min-height: clamp(18rem, 28vw, 24rem);
+  align-items: center;
+  border-radius: $radius-sm;
+  background-color: $hero-panel;
+  background-image:
+    linear-gradient(90deg, $hero-panel 0%, $hero-panel 34%, rgba($hero-panel, 0.85) 42%, rgba($hero-panel, 0) 60%),
+    url("../images/hero.webp");
+  background-position: center, right center;
+  background-repeat: no-repeat;
+  background-size: cover, cover;
+}
+
+// An image contributed through the hero slot replaces the warehouse photo.
+.depot-hero__banner--contributed {
+  background-image:
+    linear-gradient(90deg, $hero-panel 0%, $hero-panel 34%, rgba($hero-panel, 0.85) 42%, rgba($hero-panel, 0) 60%),
+    var(--depot-hero-image) !important;
+  background-size: cover, cover;
+}
+
+.depot-hero__copy {
+  position: relative;
+  max-width: 34rem;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem) clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
+.depot-hero h1 {
+  margin: 0 0 1rem;
+  color: $hero-heading;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.depot-hero__lead {
+  margin-bottom: 1.75rem;
+  color: $hero-text;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.6;
+
+  strong {
+    color: $hero-heading;
+    font-weight: 600;
+  }
+}
+
+.depot-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+}
+
+// Phones: the photo stands above the copy instead of behind it.
+@media (max-width: 767.98px) {
+  .depot-hero__banner,
+  .depot-hero__banner--contributed {
+    flex-direction: column;
+    align-items: stretch;
+    background-image: none !important;
+  }
+
+  .depot-hero__banner::before {
+    height: 11rem;
+    background: url("../images/hero.webp") 75% center / cover no-repeat;
+    content: "";
+  }
+
+  .depot-hero__banner--contributed::before {
+    background-image: var(--depot-hero-image);
+  }
+}

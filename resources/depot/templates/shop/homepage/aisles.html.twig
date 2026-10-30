@@ -1,0 +1,28 @@
+{# Depot departments: the menu taxons as cards, each with its image (or the house crate), its name and an invitation
+   to browse it. #}
+{% if taxons|length > 0 %}
+    <section id="depot-aisles" class="depot-aisles" aria-labelledby="depot-aisles-title">
+        <div class="container">
+            <h2 id="depot-aisles-title" class="visually-hidden">{{ 'depot.aisles.title'|trans({}, 'depot') }}</h2>
+            <ul class="depot-aisles__items" role="list">
+                {% for taxon in taxons|slice(0, 6) %}
+                    <li class="depot-aisle">
+                        <a class="depot-aisle__link" href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">
+                            <span class="depot-aisle__picture">
+                                {% if taxon.images.first %}
+                                    <img src="{{ asset(taxon.images.first.path|imagine_filter('sylius_shop_product_large_thumbnail')) }}" alt="" loading="lazy">
+                                {% else %}
+                                    {% include 'shop/homepage/crate.html.twig' with {class: 'depot-aisle__crate'} %}
+                                {% endif %}
+                            </span>
+                            <span class="depot-aisle__body">
+                                <span class="depot-aisle__name">{{ taxon.name }}</span>
+                                <span class="depot-aisle__text">{{ 'depot.aisles.browse'|trans({}, 'depot') }}</span>
+                            </span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endif %}

@@ -1,0 +1,48 @@
+{# Depot promise: the quantity price band, the unit price falling at each step for a reference, then the four trade
+   benefits in a row. #}
+<section id="depot-promise" class="depot-promise" aria-labelledby="depot-breaks-title">
+    <div class="container">
+        <div class="depot-breaks">
+            <svg class="depot-breaks__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path d="m24 4 10 5v10l-10 5-10-5V9z"/><path d="m14 9 10 5 10-5M24 14v10"/>
+                <path d="m14 24 10 5v10l-10 5-10-5V29z"/><path d="m4 29 10 5 10-5M14 34v10"/>
+                <path d="m34 24 10 5v10l-10 5-10-5V29z"/><path d="m24 29 10 5 10-5M34 34v10"/>
+            </svg>
+            <h2 id="depot-breaks-title" class="depot-breaks__title">{{ 'depot.breaks.title'|trans({}, 'depot') }}</h2>
+            <p class="depot-breaks__lead">
+                {{ 'depot.breaks.lead'|trans({}, 'depot') }}
+                <a class="depot-link-arrow" href="#depot-account">{{ 'depot.breaks.cta'|trans({}, 'depot') }}</a>
+            </p>
+            <table class="depot-breaks__table">
+                <caption class="visually-hidden">{{ 'depot.breaks.caption'|trans({}, 'depot') }}</caption>
+                <tbody>
+                    <tr>
+                        {% for tier in 1..4 %}
+                            <td class="depot-breaks__tier{{ tier == 2 ? ' is-current' : '' }}"{% if tier == 2 %} aria-current="true"{% endif %}>
+                                <span class="depot-breaks__qty">{{ ('depot.breaks.tier_' ~ tier ~ '.qty')|trans({}, 'depot') }}</span>
+                                <span class="depot-breaks__price">{{ ('depot.breaks.tier_' ~ tier ~ '.price')|trans({}, 'depot') }}</span>
+                            </td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <ul class="depot-benefits" role="list">
+            {% for benefit in [
+                {key: 'pricing', icon: 'M4 21V5l8-3 8 3v16M4 21h16M9 8h1M14 8h1M9 12h1M14 12h1M10 21v-4h4v4'},
+                {key: 'volume', icon: 'm12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9'},
+                {key: 'quote', icon: 'M7 3h7l4 4v14H7zM14 3v4h4M10 11h5M10 14h5M10 17h3'},
+                {key: 'restock', icon: 'M3 7h11v9H3zM14 10h4l3 3v3h-7zM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'},
+            ] %}
+                <li class="depot-benefits__item">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ benefit.icon }}"/></svg>
+                    <div>
+                        <p class="depot-benefits__title">{{ ('depot.benefits.' ~ benefit.key ~ '.title')|trans({}, 'depot') }}</p>
+                        <p class="depot-benefits__text">{{ ('depot.benefits.' ~ benefit.key ~ '.text')|trans({}, 'depot') }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+{# Trade terms under the add to cart button: the price breaks of the description apply by themselves to a trade
+   account, and a volume order gets a quote. #}
+<aside class="depot-trade" aria-labelledby="depot-trade-title">
+    <p id="depot-trade-title" class="depot-trade__title">{{ 'depot.trade.title'|trans({}, 'depot') }}</p>
+    <ul class="depot-trade__items" role="list">
+        {% for item in ['breaks', 'invoice', 'quote'] %}
+            <li class="depot-trade__item depot-trade__item--{{ item }}">{{ ('depot.trade.' ~ item)|trans({}, 'depot')|raw }}</li>
+        {% endfor %}
+    </ul>
+    <a class="depot-link-arrow" href="{{ path('sylius_shop_contact_request') }}">{{ 'depot.trade.cta'|trans({}, 'depot') }}</a>
+</aside>

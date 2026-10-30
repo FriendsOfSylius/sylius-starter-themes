@@ -1,0 +1,472 @@
+// Homepage sections: the six departments, the essentials, the price break band, the trade benefits and the trade
+// account.
+
+.depot-aisles {
+  padding-top: 1rem;
+}
+
+.depot-aisles__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.depot-aisle__link {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  background-color: $surface-raised;
+  color: $heading;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+
+  &:hover {
+    border-color: $line-strong;
+    color: $heading;
+    box-shadow: $shadow-float;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $outline;
+    outline-offset: 3px;
+  }
+}
+
+// The image of each department (product photos are shot on white), or the house crate.
+.depot-aisle__picture {
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 2 / 1;
+  place-items: center;
+  background-color: #FFFFFF;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms $ease;
+  }
+}
+
+.depot-aisle__link:hover .depot-aisle__picture img {
+  transform: scale(1.03);
+}
+
+.depot-aisle__crate {
+  width: 4rem;
+  height: 4rem;
+}
+
+.depot-aisle__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 3rem 1.1rem 1.25rem;
+  border-top: 1px solid $line;
+
+  // An arrow on the right, stepping forward on hover.
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    color: $heading;
+    content: "→";
+    font-size: 1.2rem;
+    transform: translateY(-50%);
+    transition: transform 180ms $ease;
+  }
+}
+
+.depot-aisle__link:hover .depot-aisle__body::after {
+  color: $accent-text;
+  transform: translate(4px, -50%);
+}
+
+.depot-aisle__name {
+  font-family: $font-family-display;
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+.depot-aisle__text {
+  color: $text-muted;
+  font-size: 0.85rem;
+}
+
+// Essentials (latest products).
+
+.depot-products {
+  padding-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+.depot-products .depot-section-head h2 {
+  font-size: clamp(1.4rem, 2vw, 1.65rem);
+}
+
+// The price break band: a pale teal strip with the unit price at each quantity step.
+
+.depot-promise {
+  padding-block: clamp(2rem, 4vw, 2.75rem) 0;
+}
+
+.depot-breaks {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: 1rem 1.75rem;
+  align-items: center;
+  padding: 1.1rem 1.5rem;
+  border: 1px solid $band-line;
+  border-radius: $radius-sm;
+  background-color: $band;
+}
+
+.depot-breaks__icon {
+  width: 3rem;
+  height: 3rem;
+  fill: none;
+  stroke: $accent-text;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.depot-breaks__title {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+}
+
+.depot-breaks__lead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin: 0;
+  color: $text;
+  font-size: 0.88rem;
+}
+
+.depot-breaks__table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+
+  td {
+    width: 25%;
+    padding: 0.6rem 0.5rem;
+    border-left: 1px solid $band-line;
+    text-align: center;
+  }
+}
+
+.depot-breaks__tier.is-current {
+  border-radius: $radius-sm;
+  background-color: $band-current;
+
+  .depot-breaks__qty {
+    color: $accent-text;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+
+.depot-breaks__qty {
+  display: block;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.depot-breaks__price {
+  display: block;
+  color: $text;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+// The four trade benefits, in a steel panel.
+
+.depot-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 1rem 0 0;
+  padding: 1.25rem 0;
+  border-radius: $radius-sm;
+  background-color: $surface-raised;
+  list-style: none;
+}
+
+.depot-benefits__item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0.25rem 1.5rem;
+
+  + .depot-benefits__item {
+    border-left: 1px solid $line-strong;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: $heading;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.4;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.depot-benefits__title {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.depot-benefits__text {
+  margin-top: 0.2rem !important;
+  color: $text-muted;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+// The trade account: three steps, next to the account card of a customer.
+
+.depot-account {
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+
+.depot-account__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.depot-account .depot-section-head {
+  display: block;
+}
+
+.depot-steps {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.depot-steps__item {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+
+  p {
+    margin: 0;
+  }
+}
+
+.depot-steps__numeral {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: $radius-sm;
+  background-color: $navy;
+  color: $on-navy;
+  font-family: $font-family-display;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.depot-steps__title {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.depot-steps__text {
+  margin-top: 0.2rem !important;
+  color: $text-muted;
+  line-height: 1.6;
+}
+
+.depot-card {
+  padding: 1.5rem;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.depot-card__head {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid $line;
+
+  p {
+    margin: 0;
+  }
+}
+
+.depot-card__crate {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+}
+
+.depot-card__kicker {
+  color: $text-muted;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.depot-card__title {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.depot-card__status {
+  margin-left: auto;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background-color: $stock-bg;
+  color: $stock-text;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.depot-card__terms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 1.25rem 0;
+
+  dt {
+    color: $text-muted;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  dd {
+    margin: 0.15rem 0 0;
+    color: $heading;
+    font-weight: 600;
+  }
+}
+
+.depot-card__saving {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border-radius: $radius-sm;
+  background-color: $band;
+  color: $text;
+  font-size: 0.88rem;
+
+  strong {
+    color: $accent-text;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .depot-breaks {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .depot-breaks__lead,
+  .depot-breaks__table {
+    grid-column: 1 / -1;
+  }
+
+  .depot-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.25rem;
+  }
+
+  .depot-benefits__item:nth-child(3) {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .depot-aisles__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .depot-account__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .depot-aisles__items {
+    gap: 0.75rem;
+  }
+
+  .depot-aisle__body {
+    padding: 0.75rem 2rem 0.8rem 0.9rem;
+
+    &::after {
+      right: 0.75rem;
+    }
+  }
+
+  .depot-aisle__name {
+    font-size: 0.98rem;
+  }
+
+  .depot-aisle__text {
+    display: none;
+  }
+
+  .depot-breaks {
+    padding: 1rem;
+  }
+
+  .depot-breaks__table td {
+    padding-inline: 0.2rem;
+  }
+
+  .depot-breaks__price {
+    font-size: 0.72rem;
+    white-space: normal;
+  }
+
+  .depot-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .depot-benefits__item + .depot-benefits__item {
+    padding-top: 1.25rem;
+    border-top: 1px solid $line-strong;
+    border-left: 0;
+  }
+
+  .depot-card__terms {
+    grid-template-columns: 1fr;
+  }
+}

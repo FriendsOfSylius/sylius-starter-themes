@@ -1,0 +1,422 @@
+// Top bar: a pale steel band with the delivery, service and trade promises, and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.depot-topbar) {
+  border-bottom: 1px solid $line;
+  background-color: $surface-raised !important;
+  color: $text;
+  font-size: 0.78rem;
+
+  a {
+    color: $accent-text;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$line-strong};
+    --bs-btn-color: #{$heading};
+    --bs-btn-hover-bg: #{$surface};
+    --bs-btn-hover-border-color: #{$outline};
+    --bs-btn-hover-color: #{$accent-text};
+    --bs-btn-active-bg: #{$surface};
+    --bs-btn-active-color: #{$accent-text};
+    --bs-btn-active-border-color: #{$outline};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+.depot-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 2.5rem;
+}
+
+.depot-topbar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: $heading;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $page;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $line !important;
+}
+
+header .container {
+  padding-block: 0.25rem;
+}
+
+header a {
+  color: $heading;
+
+  &:hover {
+    color: $accent-text;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: the house crate, a bold Outfit name and the tagline set apart by a hairline.
+
+.depot-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.65rem;
+  color: $heading;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $heading;
+    text-decoration: none;
+  }
+}
+
+.depot-logo__crate {
+  width: 2.6rem;
+  height: 2.6rem;
+  flex: 0 0 auto;
+  transition: transform 300ms $ease;
+}
+
+.depot-logo:hover .depot-logo__crate {
+  transform: translateY(-2px) rotate(-4deg);
+}
+
+.depot-logo__text {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  line-height: 1;
+}
+
+.depot-logo__name {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.depot-logo__tagline {
+  max-width: 7.5rem;
+  padding-left: 1.1rem;
+  border-left: 1px solid $line-strong;
+  color: $text-muted;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+// The house crate: a navy carton with a teal top, on a pallet, the same in both schemes except its outline.
+.depot-crate__top { fill: #14A39A; }
+.depot-crate__left { fill: #0F2A44; }
+.depot-crate__right { fill: #1B4468; }
+.depot-crate__tape { fill: #7FD6CF; }
+.depot-crate__arrow { fill: #7FD6CF; }
+.depot-crate__pallet { fill: #0B7A75; }
+
+// Category navigation: spaced small capitals, with a teal dot that depots under the hovered link.
+
+.depot-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.depot-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.depot-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  overflow: visible;
+}
+
+.depot-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.depot-category-nav__links > .nav-link,
+.depot-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.6rem 0.35rem !important;
+  color: $heading;
+  font-size: 0.88rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  &::before {
+    position: absolute;
+    right: 0.35rem;
+    bottom: -0.05rem;
+    left: 0.35rem;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background-color: $outline;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 220ms $ease;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $accent-text;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.depot-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $line;
+  border-top: 3px solid $outline;
+  border-radius: 0 0 $radius $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.depot-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Cart: an outlined pill with a teal counter.
+
+.depot-cart__button {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.9rem;
+  border: 0;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.depot-cart__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.depot-cart__count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $page;
+  border-radius: 999px;
+  background-color: $accent;
+  color: $on-accent;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $heading;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+// Desktop: the logo, the account links and the cart on the first row, then the category navigation on a row of its
+// own, under a hairline, as in a trade catalogue.
+@media (min-width: 992px) {
+  // The header content is not in <header>: it is the bordered block that holds the category navigation.
+  .py-4:has(> .container > .row > .depot-category-nav) {
+    padding-top: 1.1rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  .row:has(> .depot-category-nav) {
+    row-gap: 1rem;
+  }
+
+  .row:has(> .depot-category-nav) > :not(.depot-category-nav):first-child {
+    margin-right: auto;
+  }
+
+  .depot-category-nav {
+    order: 10;
+    flex: 0 0 100%;
+    max-width: 100%;
+    border-top: 1px solid $line;
+  }
+
+  .depot-category-nav__menu {
+    width: 100%;
+  }
+
+  .depot-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: flex-start;
+    padding: 0 !important;
+  }
+
+  .depot-category-nav__links {
+    justify-content: flex-start;
+    gap: 0.25rem 1.75rem;
+  }
+
+  .depot-category-nav__links > .nav-link,
+  .depot-category-nav__links > .nav-item > .nav-link {
+    padding: 0.85rem 0.35rem !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .depot-category-nav__menu {
+    position: fixed;
+    background-color: $page;
+  }
+
+  .depot-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $line;
+  }
+
+  .depot-category-nav__menu .offcanvas-title {
+    font-family: $font-family-display;
+    font-size: 1.4rem !important;
+    font-weight: 600;
+  }
+
+  .depot-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .depot-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .depot-category-nav__links > .nav-link,
+  .depot-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .depot-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface-raised;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .depot-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .depot-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .depot-logo__crate {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .depot-logo__name {
+    font-size: 1.6rem;
+  }
+
+  .depot-logo__tagline {
+    display: none;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.depot-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+

@@ -1,0 +1,20 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback.
+   A banner in the container: the copy on a pale panel that fades into a photo of the warehouse packing table. #}
+<section class="depot-hero" aria-labelledby="depot-hero-title">
+    <div class="container">
+        <div class="depot-hero__banner{{ hero.image ? ' depot-hero__banner--contributed' : '' }}"{% if hero.image %} style="--depot-hero-image: url('{{ hero.image|e('css') }}')"{% endif %}>
+            <div class="depot-hero__copy">
+                <p class="depot-eyebrow">{% if hero.eyebrow %}{{ hero.eyebrow }}{% else %}{{ 'depot.hero.eyebrow'|trans({}, 'depot') }}{% endif %}</p>
+                <h1 id="depot-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'depot.hero.title'|trans({}, 'depot')|raw }}{% endif %}</h1>
+                <p class="depot-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'depot.hero.lead'|trans({}, 'depot')|raw }}{% endif %}</p>
+
+                <div class="depot-hero__actions">
+                    <a class="btn btn-primary depot-btn-arrow" href="{{ hero.ctaUrl ?? '#depot-latest-products' }}">
+                        {% if hero.ctaLabel %}{{ hero.ctaLabel }}{% else %}{{ 'depot.hero.cta'|trans({}, 'depot') }}{% endif %}
+                    </a>
+                    <a class="depot-link-arrow" href="#depot-account">{{ 'depot.hero.secondary_cta'|trans({}, 'depot') }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

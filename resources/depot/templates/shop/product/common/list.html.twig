@@ -1,0 +1,28 @@
+{# The latest products, presented as the essentials of the catalogue, with a link to the departments on the right. #}
+{% set depot_list_key = hookable_metadata.configuration['test_attribute']|default('latest-products') %}
+{% set depot_titles = {'latest-products': 'depot.products.title.latest'} %}
+
+<section id="depot-{{ depot_list_key }}" class="depot-products depot-products--{{ depot_list_key }}">
+    <div class="container" role="region" aria-labelledby="{{ depot_list_key ~ '-heading' }}">
+        <div class="depot-section-head">
+            <h2 id="{{ depot_list_key ~ '-heading' }}">
+                {%- if depot_titles[depot_list_key] is defined -%}
+                    {{ depot_titles[depot_list_key]|trans({}, 'depot') }}
+                {%- else -%}
+                    {{ hookable_metadata.configuration.title|default('sylius.ui.latest_products')|trans }}
+                {%- endif -%}
+            </h2>
+            {% if depot_list_key == 'latest-products' %}
+                <a class="depot-link-arrow" href="#depot-aisles">{{ 'depot.products.all'|trans({}, 'depot') }}</a>
+            {% endif %}
+        </div>
+
+        <div {{ sylius_test_html_attribute(hookable_metadata.configuration.test_attribute|default('latest-products')) }}>
+            <div class="products-grid">
+                {% for product in latest_products %}
+                    <div>{{ component('sylius_shop:product:card', {product: product, template: hookable_metadata.configuration.product_template|default('@SyliusShop/product/common/card.html.twig'), hookableMetadata: hookable_metadata}) }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

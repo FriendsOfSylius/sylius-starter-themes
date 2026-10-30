@@ -1,0 +1,110 @@
+depot:
+    brand:
+        tagline: 'Les professionnels bien équipés'
+    top_bar:
+        delivery: 'Livraison offerte dès 150 € HT'
+        service: 'Service client du lundi au samedi, de 8 h à 18 h'
+        account: 'Tarifs dégressifs, factures à 30 jours'
+    hero:
+        eyebrow: 'Fournitures professionnelles & B2B'
+        title: 'Tout l’équipement pour vos professionnels'
+        lead: 'Bureautique, emballage, matériel industriel, restauration… Tout ce dont vos équipes ont besoin, avec des <strong>tarifs dégressifs</strong> dès la dixième unité.'
+        cta: 'Découvrir le catalogue'
+        secondary_cta: 'Ouvrir un compte pro'
+    card:
+        in_stock: 'En stock'
+        out_of_stock: 'Sur commande'
+        reference: 'Réf. %code%'
+        order: 'Choisir la quantité'
+    products:
+        title:
+            latest: 'Vos essentiels'
+        all: 'Tous les rayons'
+    aisles:
+        title: 'Nos rayons'
+        browse: 'Voir les produits'
+    breaks:
+        title: 'À partir de 10 unités : tarif dégressif'
+        lead: 'Plus vous commandez, plus vous économisez.'
+        cta: 'Voir les tarifs par quantité'
+        caption: 'Prix unitaire HT du papier A4, carton de 5 ramettes, selon la quantité commandée'
+        tier_1:
+            qty: '1–9'
+            price: '24,90 € HT'
+        tier_2:
+            qty: '10–39'
+            price: '22,50 € HT'
+        tier_3:
+            qty: '40–99'
+            price: '19,90 € HT'
+        tier_4:
+            qty: '100+'
+            price: 'Sur devis'
+    benefits:
+        pricing:
+            title: 'Tarifs adaptés à votre entreprise'
+            text: 'Des prix négociés selon votre secteur et votre volume.'
+        volume:
+            title: 'Commandes en volume'
+            text: 'Commandez au carton ou à la palette, en quelques clics.'
+        quote:
+            title: 'Devis en ligne'
+            text: 'Une réponse rapide, sans engagement.'
+        restock:
+            title: 'Réassort rapide'
+            text: 'Vos produits essentiels toujours disponibles, livrés le lendemain.'
+    account:
+        eyebrow: 'Compte pro'
+        title: 'Achetez comme une entreprise, pas comme un particulier'
+        lead: 'Un seul compte pour toute la société : vos tarifs dégressifs, vos numéros de bon de commande et vos factures au même endroit. L’ouvrir prend <strong>cinq minutes</strong> et ne coûte rien.'
+        step_1:
+            title: 'Ouvrez votre compte'
+            text: 'Votre raison sociale et votre numéro de TVA suffisent. Nous les vérifions dans l’heure et débloquons les conditions pro.'
+        step_2:
+            title: 'Commandez en volume'
+            text: 'Les tarifs dégressifs s’appliquent au panier dès la dixième unité. Au-delà d’une palette, demandez un devis : réponse en deux heures.'
+        step_3:
+            title: 'Payez à 30 jours'
+            text: 'Une facture par commande ou par mois, avec votre numéro de bon de commande, par virement ou prélèvement.'
+        cta: 'Ouvrir un compte pro'
+        card:
+            kicker: 'Compte pro'
+            title: 'Atelier Martin & Fils'
+            status: 'Vérifié'
+            payment:
+                label: 'Paiement'
+                value: 'Facture, 30 jours fin de mois'
+            credit:
+                label: 'Encours'
+                value: '15 000 €'
+            users:
+                label: 'Acheteurs'
+                value: '4, validation au-delà de 2 000 €'
+            delivery:
+                label: 'Livraison'
+                value: 'Quai de chargement, hayon'
+            saving: 'Dernière commande : 120 boîtes de gants, <strong>300 € économisés</strong> sur le prix catalogue.'
+    trade:
+        title: 'Conditions pro'
+        breaks: 'Les <strong>tarifs dégressifs</strong> de la description s’appliquent au panier.'
+        invoice: '<strong>Paiement à 30 jours</strong> sur facture avec un compte pro.'
+        quote: '<strong>Plus d’une palette ?</strong> Devis en 2 heures.'
+        cta: 'Demander un devis'
+    footer:
+        tagline: 'Fournitures de bureau, emballages, équipements et consommables pour les entreprises, livrés au carton ou à la palette.'
+        notice: 'Prix affichés hors taxes. Expédition chaque jour ouvré depuis notre entrepôt ; palettes livrées avec hayon, sur rendez-vous.'
+        services:
+            eyebrow: 'Services pro'
+            title: 'De notre entrepôt à votre quai de chargement'
+            quote:
+                title: 'Devis en 2 heures'
+                text: 'Une commande en volume, un appel d’offres, un aménagement : envoyez votre liste, recevez un devis chiffré dans la matinée.'
+                cta: 'Demander un devis'
+            manager:
+                title: 'Un chargé de compte'
+                text: 'Dès 10 commandes par an, un interlocuteur connaît vos références, vos prix et vos créneaux de livraison.'
+                cta: 'Nous contacter'
+            pallet:
+                title: 'Livraison palette'
+                text: 'Palettes complètes livrées avec hayon, sur rendez-vous, et commandes récurrentes planifiées chaque mois.'
+                cta: 'Mon compte'

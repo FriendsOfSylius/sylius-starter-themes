@@ -1,0 +1,56 @@
+// Depot, dark scheme — the warehouse at night: navy surfaces, pale steel type and a bright teal call to action.
+$color-mode: dark;
+
+// House colours. The navy footer is a shade lighter than the page, and ruled, to stand out from it.
+$navy-night: #0C1D2D;
+// In the dark, the navy buttons turn to pale steel with a navy ink.
+$navy: #DCE7F2;
+$navy-hover: #FFFFFF;
+$on-navy: #0B1520;
+$text-on-dark: #D5E0EA;
+$border-dark: rgba(#FFFFFF, 0.14);
+$teal-light: #7FD6CF;
+
+// Hairlines, focus outlines and active fillets on the night surfaces (3:1 at least).
+$outline: #4CC9C0;
+
+// Night navy surfaces.
+$page: #0B1520;
+$surface: #111E2B;
+$surface-raised: #162636;
+$panel: #142433;
+$line: #24384A;
+$line-strong: #3A536B;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #7D93A8;
+$heading: #F1F5F9;
+$text: #D3DDE6;
+$text-muted: #A3B3C2;
+
+// A bright teal fills the calls to action, with a navy ink on it; as text, a paler teal.
+$accent: #2BB3AA;
+$accent-hover: #4CC9C0;
+$on-accent: #04211F;
+$accent-text: #5FD0C7;
+$accent-text-hover: #8DE0D9;
+$focus-ring: rgba($outline, 0.3);
+
+// The price break band and the stock badges.
+$band: #0F2A2C;
+$band-line: #1E4A4B;
+$band-current: #17403F;
+$stock-bg: #12301F;
+$stock-text: #8EDBA8;
+$order-bg: #3A2A0C;
+$order-text: #F5C86A;
+
+$success: #8EDBA8;
+$info: #9DBDE3;
+
+// The hero banner: a night panel fading into the warehouse photo.
+$hero-panel: #111E2B;
+$hero-heading: $heading;
+$hero-text: $text;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 18px 40px -20px rgba(#000, 0.75);

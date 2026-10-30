@@ -1,0 +1,11 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="depot-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# The house crate on its pallet, next to a condensed uppercase wordmark over a stencilled tagline. #}
+    {% include 'shop/homepage/crate.html.twig' with {class: 'depot-logo__crate'} %}
+    <span class="depot-logo__text">
+        <span class="depot-logo__name">Depot</span>
+        <span class="depot-logo__tagline">{{ 'depot.brand.tagline'|trans({}, 'depot') }}</span>
+    </span>
+{% endif %}
