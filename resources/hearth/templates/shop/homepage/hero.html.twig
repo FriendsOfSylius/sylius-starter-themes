@@ -26,7 +26,7 @@
                 {% if hero.image %}
                     <img class="hearth-hero__panel hearth-hero__image" src="{{ hero.image }}" alt="{{ hero.imageAlt ?? '' }}">
                 {% else %}
-                    {% include 'shop/homepage/hero/living_room.html.twig' %}
+                    <div class="hearth-hero__panel hearth-hero__photo" role="img" aria-label="{{ 'hearth.hero.illustration'|trans({}, 'hearth') }}"></div>
                 {% endif %}
             </div>
         </div>
