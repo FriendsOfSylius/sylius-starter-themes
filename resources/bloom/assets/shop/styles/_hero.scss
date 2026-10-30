@@ -1,5 +1,5 @@
-// Bloom hero: a DM Serif headline closed by a peony italic, next to the Bloom vanity, an arched mirror onto a garden
-// at sunrise with pastel pedestals and stickers. A fig band of house figures closes it, edged with petals.
+// Bloom hero: a DM Serif headline closed by a peony italic, next to the Bloom vanity, a photograph in an arched mirror
+// (in the morning sun, or at dusk by candlelight) with stickers. A fig band of house figures closes it, edged with petals.
 
 .bloom-hero {
   position: relative;
@@ -111,141 +111,13 @@
   object-fit: cover;
 }
 
-// Scheme colours of the illustration: the sky, the mirror frame and the marble.
-.bloom-vanity__sky-top {
-  stop-color: $sky-top;
-}
-
-.bloom-vanity__sky-bottom {
-  stop-color: $sky-bottom;
-}
-
-.bloom-vanity__halo-stop {
-  stop-color: $sun;
-}
-
-.bloom-vanity__sun {
-  fill: $sun;
-}
-
-.bloom-vanity__hill {
-  fill: $vanity-hill;
-}
-
-.bloom-vanity__hill--far {
-  fill: $vanity-hill-far;
-}
-
-.bloom-vanity__birds {
-  stroke: $vanity-birds;
-}
-
-.bloom-vanity__frame {
-  fill: $vanity-frame;
-}
-
-.bloom-vanity__frame-line {
-  fill: none;
-  stroke: $vanity-frame-line;
-  stroke-width: 1.5;
-}
-
-.bloom-vanity__marble {
-  fill: $vanity-marble;
-}
-
-.bloom-vanity__marble-edge {
-  fill: $vanity-marble-edge;
-}
-
-.bloom-vanity__vein {
-  stroke: $vanity-vein;
-}
-
-.bloom-vanity__sparkles {
-  fill: $vanity-sparkle;
-}
-
-// Sparkles twinkle, petals drift down from the peonies, the bouquet sways.
-@keyframes bloom-twinkle {
-  0%,
-  100% {
-    opacity: 0.25;
-    transform: scale(0.6) rotate(0);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1) rotate(45deg);
-  }
-}
-
-.bloom-vanity__sparkles use {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: bloom-twinkle 3.2s ease-in-out infinite;
-
-  &:nth-child(2) {
-    animation-delay: -0.8s;
-  }
-
-  &:nth-child(3) {
-    animation-delay: -1.6s;
-  }
-
-  &:nth-child(4) {
-    animation-delay: -2.4s;
-  }
-}
-
-@keyframes bloom-fall {
-  0% {
-    opacity: 0;
-    transform: translate(0, -20px) rotate(0);
-  }
-
-  15%,
-  80% {
-    opacity: 0.9;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(-40px, 260px) rotate(320deg);
-  }
-}
-
-.bloom-vanity__falling use {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: bloom-fall 11s linear infinite;
-
-  &:nth-child(2) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
-
-  &:nth-child(3) {
-    animation-delay: -8s;
-    animation-duration: 10s;
-  }
-}
-
-@keyframes bloom-sway {
-  0%,
-  100% {
-    transform: rotate(-1.5deg);
-  }
-
-  50% {
-    transform: rotate(1.5deg);
-  }
-}
-
-.bloom-vanity__bouquet {
-  transform-box: view-box;
-  transform-origin: 120px 470px;
-  animation: bloom-sway 7s ease-in-out infinite;
+// A background image, so that each scheme only downloads its own photograph. The mirror frame runs around it.
+.bloom-hero__photo {
+  border: 0.55rem solid $vanity-frame;
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+  background: $vanity-frame url(if($dark, "../images/hero-dusk.webp", "../images/hero-day.webp")) 50% 100% / cover no-repeat;
+  box-shadow: inset 0 0 0 1px $vanity-frame-line;
 }
 
 // Stickers on the mirror, like on a gift box: tilted, pastel, slightly lifted.
@@ -322,18 +194,6 @@
 
 .bloom-vanity:hover .bloom-sticker--refill {
   transform: rotate(-12deg) scale(1.05);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .bloom-vanity__sparkles use,
-  .bloom-vanity__falling use,
-  .bloom-vanity__bouquet {
-    animation: none;
-  }
-
-  .bloom-vanity__falling {
-    display: none;
-  }
 }
 
 // House figures in a fig band, closed by a row of petals hanging over the page.
