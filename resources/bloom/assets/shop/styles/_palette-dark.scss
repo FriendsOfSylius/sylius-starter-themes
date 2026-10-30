@@ -44,27 +44,17 @@ $focus-ring: rgba($accent-text, 0.25);
 $success: #93C496;
 $info: #9DB8DE;
 
-// The hero: dusk in the garden, the arch opening onto a lilac evening sky and a rising moon.
+// The hero: a lilac dusk around the photograph of the vanity.
 $hero-bg: #1E0E1A;
-$hero-glow: #4A1D3E;
+$hero-glow: #43295E;
 $hero-glow-2: #2E1A3E;
 $hero-heading: $heading;
 $hero-text: $text;
 $hero-em: $accent-text;
-$sky-top: #3A2150;
-$sky-bottom: #8A4E6E;
-$sun: #FCE7C6;
 
-// The vanity of the hero: the garden hills at dusk, the mirror frame and the marble.
-$vanity-hill: #4F5E59;
-$vanity-hill-far: #3D3550;
-$vanity-birds: rgba($milk, 0.5);
+// The vanity of the hero: the mirror frame and its shadow.
 $vanity-frame: $fig-deep;
 $vanity-frame-line: rgba($peony-light, 0.45);
-$vanity-marble: #3A2234;
-$vanity-marble-edge: #4D2E46;
-$vanity-vein: rgba($milk, 0.12);
-$vanity-sparkle: $butter;
 $vanity-shadow: rgba($fig-night, 0.6);
 
 $shadow-soft: 0 1px 2px rgba(#000, 0.4);
