@@ -1,0 +1,11 @@
+{# Fitting notes under the add to cart button: check the fitment by the registration, the torque values of the
+   fitting guide and the trade prices. #}
+<aside class="torque-trade" aria-labelledby="torque-trade-title">
+    <p id="torque-trade-title" class="torque-trade__title">{{ 'torque.trade.title'|trans({}, 'torque') }}</p>
+    <ul class="torque-trade__items" role="list">
+        {% for item in ['fitment', 'torque', 'trade'] %}
+            <li class="torque-trade__item torque-trade__item--{{ item }}">{{ ('torque.trade.' ~ item)|trans({}, 'torque')|raw }}</li>
+        {% endfor %}
+    </ul>
+    <a class="torque-link-arrow" href="{{ path('sylius_shop_contact_request') }}">{{ 'torque.trade.cta'|trans({}, 'torque') }}</a>
+</aside>

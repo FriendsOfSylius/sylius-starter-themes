@@ -34,6 +34,7 @@ use SyliusStarter\Themes\Installer\RoasteryInstaller;
 use SyliusStarter\Themes\Installer\SummitInstaller;
 use SyliusStarter\Themes\Installer\TeahouseInstaller;
 use SyliusStarter\Themes\Installer\TechInstaller;
+use SyliusStarter\Themes\Installer\TorqueInstaller;
 use SyliusStarter\Themes\Installer\ThemeInstallerDescriptor;
 use SyliusStarter\Themes\Installer\ThemesSyliusInstallerExtension;
 use SyliusStarter\Themes\Installer\VoltInstaller;
@@ -56,6 +57,7 @@ use SyliusStarter\Themes\Remover\RoasteryRemover;
 use SyliusStarter\Themes\Remover\SummitRemover;
 use SyliusStarter\Themes\Remover\TeahouseRemover;
 use SyliusStarter\Themes\Remover\TechRemover;
+use SyliusStarter\Themes\Remover\TorqueRemover;
 use SyliusStarter\Themes\Remover\ThemeRemoverDescriptor;
 use SyliusStarter\Themes\Remover\VoltRemover;
 use SyliusStarter\Themes\Tasks\ThemeTasks;
@@ -90,6 +92,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addInstaller(new PawsInstaller());
     Themes::addInstaller(new CultureInstaller());
     Themes::addInstaller(new DepotInstaller());
+    Themes::addInstaller(new TorqueInstaller());
 
     Themes::addRemover(new CanvasRemover());
     Themes::addRemover(new PromptRemover());
@@ -111,6 +114,7 @@ function initialize(AfterBootEvent $afterBootEvent): void
     Themes::addRemover(new PawsRemover());
     Themes::addRemover(new CultureRemover());
     Themes::addRemover(new DepotRemover());
+    Themes::addRemover(new TorqueRemover());
 
     foreach (ComponentResolver::candidates() as $reflection) {
         $descriptor = resolve_theme_installer($reflection);

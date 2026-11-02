@@ -1,0 +1,28 @@
+{# The latest products, presented as the essentials of the catalogue, with a link to the departments on the right. #}
+{% set torque_list_key = hookable_metadata.configuration['test_attribute']|default('latest-products') %}
+{% set torque_titles = {'latest-products': 'torque.products.title.latest'} %}
+
+<section id="torque-{{ torque_list_key }}" class="torque-products torque-products--{{ torque_list_key }}">
+    <div class="container" role="region" aria-labelledby="{{ torque_list_key ~ '-heading' }}">
+        <div class="torque-section-head">
+            <h2 id="{{ torque_list_key ~ '-heading' }}">
+                {%- if torque_titles[torque_list_key] is defined -%}
+                    {{ torque_titles[torque_list_key]|trans({}, 'torque') }}
+                {%- else -%}
+                    {{ hookable_metadata.configuration.title|default('sylius.ui.latest_products')|trans }}
+                {%- endif -%}
+            </h2>
+            {% if torque_list_key == 'latest-products' %}
+                <a class="torque-link-arrow" href="#torque-aisles">{{ 'torque.products.all'|trans({}, 'torque') }}</a>
+            {% endif %}
+        </div>
+
+        <div {{ sylius_test_html_attribute(hookable_metadata.configuration.test_attribute|default('latest-products')) }}>
+            <div class="products-grid">
+                {% for product in latest_products %}
+                    <div>{{ component('sylius_shop:product:card', {product: product, template: hookable_metadata.configuration.product_template|default('@SyliusShop/product/common/card.html.twig'), hookableMetadata: hookable_metadata}) }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

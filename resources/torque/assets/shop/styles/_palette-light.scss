@@ -1,0 +1,66 @@
+// Torque, light scheme — a parts counter: white pages, cool grey tiles, a midnight navy and a signal orange.
+$color-mode: light;
+
+// House colours: the navy bands (top bar, quality banner, footer) keep them in both schemes.
+$navy-night: #13203A;
+$navy: #13203A;
+$navy-hover: #23365C;
+// Text on the navy bands (top bar, footer), the same in both schemes.
+$on-navy-band: #FFFFFF;
+$on-navy: #FFFFFF;
+$text-on-dark: #D8E0EC;
+$border-dark: rgba(#FFFFFF, 0.16);
+// Orange on the navy bands: text and icons (above 6:1 on the navy).
+$orange-light: #FFA347;
+
+// The signal orange of the house: the slashes of the logo, the buttons (navy ink on it: 6.5:1), the badges.
+$orange: #F28A1A;
+// The orange of the wordmark on white (large bold text: 3.5:1).
+$logo-orange: #D96A0B;
+
+// Hairlines, focus outlines and active fillets on the white surfaces (3:1 at least).
+$outline: #B4500A;
+
+// White pages and cool grey tiles.
+$page: #FFFFFF;
+$surface: #FFFFFF;
+$surface-raised: #F3F5F8;
+$panel: #EEF1F5;
+$line: #E2E7EE;
+$line-strong: #C5CEDA;
+$field-border: #7A8696;
+$heading: #13203A;
+$text: #2C3A50;
+$text-muted: #5A6575;
+
+// Orange fills the calls to action, with a navy ink; as text, the orange turns to a burnt orange (5:1 on white).
+$accent: $orange;
+$accent-hover: #FFA347;
+$on-accent: #13203A;
+$accent-text: #B4500A;
+$accent-text-hover: #8C3D06;
+// Links that read like the navigation ("See all categories"): navy, orange on hover.
+$link-quiet: #1E3A6E;
+$focus-ring: rgba($outline, 0.25);
+
+// The price breaks, the stock badges and the light offer banner.
+$band: #FFF3E6;
+$band-line: #F6D3AE;
+$breaks-current-text: #8C3D06;
+$band-current: #FFE2C2;
+$stock-bg: #DDF3E4;
+$stock-text: #1B6B3A;
+$order-bg: #FFF1D6;
+$order-text: #7A4B00;
+$offer-light: #EDF1F6;
+
+$success: #2F6B45;
+$info: #2F5A86;
+
+// The hero banner: a hazy morning sky fading into the photo of the car.
+$hero-panel: #E9EEF4;
+$hero-heading: $heading;
+$hero-text: $text;
+
+$shadow-soft: 0 1px 2px rgba($navy-night, 0.06);
+$shadow-float: 0 18px 40px -20px rgba($navy-night, 0.3);

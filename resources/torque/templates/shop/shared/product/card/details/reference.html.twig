@@ -1,0 +1,5 @@
+{# The part reference: the end of the product name after a dash ("Ceramic Brake Pads — TQ-BP4021C"), the product code
+   otherwise. #}
+{% set torque_name = hookable_metadata.context.product.name %}
+{% set torque_reference = ' — ' in torque_name ? torque_name|split(' — ')|last : hookable_metadata.context.product.code|upper %}
+<span class="torque-reference" title="{{ torque_reference }}">{{ 'torque.card.reference'|trans({'%code%': torque_reference}, 'torque') }}</span>

@@ -1,0 +1,495 @@
+// Top bar: a navy band with the delivery, payment and service promises, and the locale / currency switchers.
+
+// The top bar sits above <header>, in the page wrapper.
+.bg-black:has(.torque-topbar) {
+  // Dark scheme: a hairline parts the navy band from the header.
+  border-bottom: if($dark, 1px solid $border-dark, 0);
+  background-color: $navy-night !important;
+  color: $on-navy-band;
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  a {
+    color: $orange-light;
+  }
+
+  .btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #{$border-dark};
+    --bs-btn-color: #{$on-navy-band};
+    --bs-btn-hover-bg: #{rgba(#FFFFFF, 0.08)};
+    --bs-btn-hover-border-color: #{$orange-light};
+    --bs-btn-hover-color: #{$orange-light};
+    --bs-btn-active-bg: #{rgba(#FFFFFF, 0.08)};
+    --bs-btn-active-color: #{$orange-light};
+    --bs-btn-active-border-color: #{$orange-light};
+
+    min-height: 1.9rem;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #{$navy-night};
+    --bs-dropdown-border-color: #{$border-dark};
+    --bs-dropdown-link-hover-bg: #{rgba(#FFFFFF, 0.08)};
+  }
+}
+
+.torque-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 2.5rem;
+}
+
+// Each promise is parted from the next by a hairline, as in a row of dashboard warning lights.
+.torque-topbar__item + .torque-topbar__item {
+  padding-left: 2.5rem;
+  border-left: 1px solid $border-dark;
+  margin-left: -1.25rem;
+}
+
+.torque-topbar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: $orange-light;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  background-color: $page;
+}
+
+header > .border-bottom,
+header .border-bottom {
+  border-bottom-color: $line !important;
+}
+
+header .container {
+  padding-block: 0.25rem;
+}
+
+header a {
+  color: $heading;
+
+  &:hover {
+    color: $accent-text;
+  }
+}
+
+header .navbar {
+  background-color: transparent;
+}
+
+// Wordmark: two slanted orange strokes before a wide, heavy Saira name, TORQUE in ink and PARTS in orange.
+
+.torque-logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.35rem;
+  color: $heading;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $heading;
+    text-decoration: none;
+  }
+}
+
+.torque-logo__slashes {
+  width: 2.3rem;
+  height: 1.9rem;
+  flex: 0 0 auto;
+  background: $torque-slashes no-repeat center / contain;
+  transition: transform 260ms $ease;
+}
+
+.torque-logo:hover .torque-logo__slashes {
+  transform: translateX(3px);
+}
+
+.torque-logo__name {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.95rem;
+  font-stretch: 112%;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+// The orange half of the wordmark: a shade deeper on white, to stay above 3:1 as large text.
+.torque-logo__accent {
+  color: $logo-orange;
+}
+
+// The house mark: a signal-orange wheel nut with a navy bore turned by an orange torque arrow, the same in both schemes.
+.torque-mark__nut { fill: #F28A1A; }
+.torque-mark__bore { fill: #13203A; }
+.torque-mark__arrow { fill: #F28A1A; stroke: #F28A1A; }
+
+// Search: a wide field closed by a navy button with a magnifier, between the logo and the account links.
+
+.torque-header-search {
+  max-width: 44rem;
+}
+
+.torque-search {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid $field-border;
+  border-radius: $radius-sm;
+  background-color: $surface;
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+
+  &:focus-within {
+    border-color: $outline;
+    box-shadow: 0 0 0 3px $focus-ring;
+  }
+}
+
+.torque-search__input,
+.torque-search__input:focus {
+  min-height: 2.75rem;
+  flex: 1 1 auto;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.torque-search .btn {
+  display: inline-flex;
+  min-height: 0;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.25rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: $radius-sm;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 2.2;
+  }
+}
+
+.torque-search__button {
+  --bs-btn-color: #{$on-navy};
+  --bs-btn-bg: #{$navy};
+  --bs-btn-border-color: #{$navy};
+  --bs-btn-hover-color: #{$on-navy};
+  --bs-btn-hover-bg: #{$navy-hover};
+  --bs-btn-hover-border-color: #{$navy-hover};
+  --bs-btn-active-color: #{$on-navy};
+  --bs-btn-active-bg: #{$navy-hover};
+  --bs-btn-active-border-color: #{$navy-hover};
+}
+
+// Category navigation: bold links, with an orange bar that slides in under the hovered one.
+
+.torque-category-nav {
+  display: flex;
+  align-items: center;
+}
+
+.torque-category-nav__menu .offcanvas-body {
+  display: flex;
+  align-items: center;
+}
+
+.torque-category-nav__links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  overflow: visible;
+}
+
+.torque-category-nav__links > .nav-item.dropdown {
+  position: relative;
+}
+
+.torque-category-nav__links > .nav-link,
+.torque-category-nav__links > .nav-item > .nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.6rem 0.35rem !important;
+  color: $heading;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 160ms ease;
+
+  &::before {
+    position: absolute;
+    right: 0.35rem;
+    bottom: -0.05rem;
+    left: 0.35rem;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background-color: $orange;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 220ms $ease;
+  }
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    color: $accent-text;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.torque-category-nav__menu .dropdown-menu {
+  z-index: 1060;
+  min-width: 14rem;
+  padding: 0.5rem;
+  border: 1px solid $line;
+  border-top: 3px solid $orange;
+  border-radius: 0 0 $radius $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.torque-category-nav__menu .dropdown-menu .nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: $text;
+  font-size: 0.9rem;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Cart: an icon button with an orange counter.
+
+.torque-cart__button {
+  --bs-btn-color: #{$heading};
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #{$line-strong};
+  --bs-btn-hover-color: #{$accent-text};
+  --bs-btn-hover-bg: #{$surface};
+  --bs-btn-hover-border-color: #{$accent-text};
+  --bs-btn-active-color: #{$accent-text};
+  --bs-btn-active-bg: #{$surface};
+  --bs-btn-active-border-color: #{$accent-text};
+
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.9rem;
+  border: 0;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.torque-cart__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.torque-cart__count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  padding: 0 0.3rem;
+  border: 2px solid $page;
+  border-radius: 999px;
+  background-color: $accent;
+  color: $on-accent;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+header .dropdown-menu {
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+header .dropdown-item {
+  color: $heading;
+
+  &:hover,
+  &:focus {
+    background-color: $surface-raised;
+    color: $accent-text;
+  }
+}
+
+// Desktop: the menu fills the space between the logo and the account links and is centered in it.
+
+// Desktop: the logo, the account links and the cart on the first row, then the category navigation on a row of its
+// own, under a hairline, as in a trade catalogue.
+@media (min-width: 992px) {
+  // The header content is not in <header>: it is the bordered block that holds the category navigation.
+  .py-4:has(> .container > .row > .torque-category-nav) {
+    padding-top: 1.1rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  .row:has(> .torque-category-nav) {
+    row-gap: 1rem;
+  }
+
+  .row:has(> .torque-category-nav) > :not(.torque-category-nav):first-child {
+    margin-right: 2rem;
+  }
+
+  .torque-header-search {
+    margin-right: auto;
+  }
+
+  .torque-category-nav {
+    order: 10;
+    flex: 0 0 100%;
+    max-width: 100%;
+    border-top: 1px solid $line;
+  }
+
+  .torque-category-nav__menu {
+    width: 100%;
+  }
+
+  .torque-category-nav__menu .offcanvas-body {
+    flex-grow: 1;
+    justify-content: flex-start;
+    padding: 0 !important;
+  }
+
+  .torque-category-nav__links {
+    justify-content: flex-start;
+    gap: 0.25rem 1.75rem;
+  }
+
+  .torque-category-nav__links > .nav-link,
+  .torque-category-nav__links > .nav-item > .nav-link {
+    padding: 0.85rem 0.35rem !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .torque-category-nav__menu {
+    position: fixed;
+    background-color: $page;
+  }
+
+  .torque-category-nav__menu .offcanvas-header {
+    border-bottom: 1px solid $line;
+  }
+
+  .torque-category-nav__menu .offcanvas-title {
+    font-family: $font-family-display;
+    font-size: 1.4rem !important;
+    font-weight: 600;
+  }
+
+  .torque-category-nav__menu .offcanvas-body {
+    align-items: flex-start;
+    padding: 1rem !important;
+  }
+
+  .torque-category-nav__links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .torque-category-nav__links > .nav-link,
+  .torque-category-nav__links > .nav-item > .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.95rem 0.5rem !important;
+    border-bottom: 1px solid $line;
+    white-space: normal;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .torque-category-nav__menu .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    border: 0;
+    background: $surface-raised;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .torque-category-nav__menu .dropdown-menu .nav-link {
+    padding-left: 1.25rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .torque-cart__button {
+    padding-inline: 0.75rem;
+  }
+
+  .torque-logo__slashes {
+    width: 1.9rem;
+  }
+
+  .torque-logo__name {
+    font-size: 1.55rem;
+  }
+}
+
+// Shop logo contributed through the storefront brand slot (replaces the wordmark).
+
+.torque-logo__image {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+
+
+// Phones and tablets: the search takes a row of its own under the logo, the account links and the cart.
+@media (max-width: 991.98px) {
+  .torque-header-search {
+    order: 20;
+    max-width: none;
+    margin-top: 0.75rem;
+  }
+}

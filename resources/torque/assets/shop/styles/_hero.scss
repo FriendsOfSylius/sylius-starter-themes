@@ -1,0 +1,163 @@
+// Torque hero: a banner inside the container, the copy on a hazy sky that fades into the photo of a car on the road at
+// sunset, and the parts finder, a white card that searches the catalogue.
+
+.torque-hero {
+  padding-top: 1rem;
+}
+
+.torque-hero__banner {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  min-height: clamp(20rem, 30vw, 27rem);
+  align-items: center;
+  border-radius: $radius-sm;
+  background-color: $hero-panel;
+  background-image:
+    linear-gradient(90deg, $hero-panel 0%, rgba($hero-panel, 0.92) 32%, rgba($hero-panel, 0.55) 46%, rgba($hero-panel, 0) 62%),
+    url("../images/hero.webp");
+  background-position: center, right center;
+  background-repeat: no-repeat;
+  background-size: cover, cover;
+}
+
+// An image contributed through the hero slot replaces the photo of the car.
+.torque-hero__banner--contributed {
+  background-image:
+    linear-gradient(90deg, $hero-panel 0%, rgba($hero-panel, 0.92) 32%, rgba($hero-panel, 0.55) 46%, rgba($hero-panel, 0) 62%),
+    var(--torque-hero-image) !important;
+  background-size: cover, cover;
+}
+
+.torque-hero__copy {
+  position: relative;
+  width: min(100%, 50rem);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem) clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
+.torque-hero h1 {
+  max-width: 30rem;
+  margin: 0 0 0.75rem;
+  color: $hero-heading;
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.torque-hero__lead {
+  max-width: 30rem;
+  margin-bottom: 1.5rem;
+  color: $hero-text;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+// The parts finder: a white card with a car icon, the search field and its orange button, then three examples.
+
+.torque-finder {
+  padding: 1.1rem 1.25rem 1rem;
+  border-radius: $radius-sm;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.torque-finder__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.85rem;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.15rem;
+  font-weight: 700;
+
+  svg {
+    width: 1.7rem;
+    height: 1.7rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+  }
+}
+
+.torque-search--finder {
+  .torque-search__input {
+    min-height: 3rem;
+  }
+
+  .btn-primary {
+    padding-inline: 1.4rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+}
+
+.torque-finder__examples {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.5rem;
+  margin: 0.75rem 0 0;
+  color: $text-muted;
+  font-size: 0.82rem;
+
+  a {
+    padding: 0.15rem 0.55rem;
+    border: 1px solid $line-strong;
+    border-radius: 999px;
+    color: $heading;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      border-color: $outline;
+      color: $accent-text;
+    }
+  }
+}
+
+// Phones: the photo stands above the copy instead of behind it, and the search button goes under the field.
+@media (max-width: 767.98px) {
+  .torque-hero__banner,
+  .torque-hero__banner--contributed {
+    flex-direction: column;
+    align-items: stretch;
+    background-image: none !important;
+  }
+
+  .torque-hero__banner::before {
+    height: 11rem;
+    background: url("../images/hero.webp") 70% center / cover no-repeat;
+    content: "";
+  }
+
+  .torque-hero__banner--contributed::before {
+    background-image: var(--torque-hero-image);
+  }
+
+  .torque-hero__copy {
+    padding: 1.5rem 1.1rem;
+  }
+
+  .torque-finder {
+    padding: 1rem;
+  }
+
+  .torque-search--finder {
+    flex-wrap: wrap;
+
+    .torque-search__input {
+      flex-basis: 100%;
+    }
+
+    .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

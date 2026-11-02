@@ -1,0 +1,122 @@
+torque:
+    top_bar:
+        delivery: 'Livraison offerte dès 50 €'
+        payment: 'Paiement sécurisé'
+        hotline: 'Une équipe technique à votre écoute'
+    search:
+        label: 'Rechercher dans le catalogue'
+        placeholder: 'Rechercher une pièce, une référence ou une dimension…'
+        submit: 'Rechercher'
+    hero:
+        title: 'Toutes les pièces pour votre véhicule'
+        lead: 'Les bonnes pièces au meilleur prix : 48 000 références vérifiées sur leur numéro d’origine, livrées demain, chez vous ou au garage.'
+    finder:
+        title: 'Trouvez vos pièces'
+        placeholder: 'Pièce, référence ou dimension : TQ-BD288V, 205/55 R16…'
+        submit: 'Trouver mes pièces'
+        examples: 'Par exemple'
+    aisles:
+        title: 'Nos catégories'
+        all: 'Voir toutes les catégories'
+    offers:
+        label: 'Nos offres'
+        quality:
+            title: 'Qualité garantie'
+            text: 'Des pièces d’origine ou équivalentes, testées et homologuées, garanties 3 ans.'
+            cta: 'En savoir plus'
+        trade:
+            title: 'Jusqu’à −20 %'
+            text: 'sur toutes les références pour les garages, dès 20 unités.'
+            cta: 'Voir les prix pro'
+    card:
+        reference: 'Réf. %code%'
+        order: 'Commander'
+    products:
+        title:
+            latest: 'Les pièces les plus recherchées'
+        all: 'Voir toutes les catégories'
+    breaks:
+        title: 'Prix pro dès 5 unités'
+        lead: 'Garages et flottes paient moins à mesure qu’ils commandent plus.'
+        cta: 'Ouvrir un compte pro'
+        caption: 'Prix unitaire HT du jeu de plaquettes céramique essieu avant (TQ-BP4021C), selon la quantité commandée'
+        tier_1:
+            qty: '1 à 4'
+            price: '33,25 € HT'
+        tier_2:
+            qty: '5 à 19'
+            price: '29,90 € HT'
+        tier_3:
+            qty: '20 à 99'
+            price: '26,60 € HT'
+        tier_4:
+            qty: '100 et +'
+            price: 'Sur devis'
+    benefits:
+        quality:
+            title: 'Qualité d’origine'
+            text: 'Chaque pièce rapprochée de son numéro de première monte.'
+        fitment:
+            title: 'La bonne compatibilité'
+            text: 'Vérifiée par immatriculation ou VIN avant l’envoi.'
+        delivery:
+            title: 'Livré demain'
+            text: 'Commandé avant 21 h, les garages livrés avant 8 h.'
+        warranty:
+            title: 'Garantie 3 ans'
+            text: 'Et 60 jours pour retourner une pièce non montée.'
+    account:
+        eyebrow: 'Compte pro'
+        title: 'Pensé pour les garages, ouvert à tous'
+        lead: 'Garages, flottes et mécaniciens amateurs commandent au même comptoir. Un compte pro ajoute <strong>des remises par quantité, le paiement à 30 jours</strong> et un conseiller pièces qui connaît vos véhicules.'
+        step_1:
+            title: 'Identifier le véhicule'
+            text: 'Donnez l’immatriculation ou le numéro VIN : nous lisons le code moteur, la taille des freins et la monte pneumatique, et ne gardons que les pièces compatibles.'
+        step_2:
+            title: 'Retrouver la référence'
+            text: 'Cherchez par notre numéro TQ ou par le numéro d’origine inscrit sur l’ancienne pièce. Chaque fiche donne les cotes, les homologations et les couples de serrage.'
+        step_3:
+            title: 'Montée demain'
+            text: 'Commandez avant 21 h : livré chez vous le lendemain, et à l’atelier avant 8 h par nos propres camionnettes.'
+        cta: 'Ouvrir un compte pro'
+        card:
+            kicker: 'Compte pro'
+            title: 'Garage Martin & Fils'
+            status: 'Vérifié'
+            payment:
+                label: 'Conditions'
+                value: 'Facture, 30 jours fin de mois'
+            credit:
+                label: 'Encours'
+                value: '8 000 €'
+            users:
+                label: 'Atelier'
+                value: '4 ponts, 2 techniciens'
+            delivery:
+                label: 'Livraison'
+                value: 'Avant 8 h, à l’atelier'
+            saving: 'Dernière commande : 20 jeux de plaquettes, <strong>133 € économisés</strong> sur le prix public.'
+    trade:
+        title: 'Avant le montage'
+        fitment: '<strong>Vérifiez la compatibilité</strong> par l’immatriculation ou le numéro d’origine de l’ancienne pièce.'
+        torque: '<strong>Couples de serrage</strong> et étapes de montage dans la notice fournie.'
+        trade: '<strong>Garage ?</strong> Prix pro dès 5 unités, facturés à 30 jours.'
+        cta: 'Demander à un technicien'
+    footer:
+        tagline: 'Pièces auto, pneus, accessoires, outillage et équipement d’atelier, vérifiés sur leur numéro d’origine et livrés demain.'
+        notice: 'Prix TTC pour les particuliers, HT pour les comptes pro. Serrez les écrous de roue au couple du constructeur et contrôlez-les à nouveau après 50 km.'
+        services:
+            eyebrow: 'Derrière le comptoir'
+            title: 'De notre dépôt à votre pont élévateur'
+            delivery:
+                title: 'Avant 8 h'
+                text: 'Commandez avant 21 h : nos camionnettes livrent les garages avant l’ouverture, et tous les autres le lendemain.'
+                cta: 'Suivre ma commande'
+            hotline:
+                title: 'Hotline technique'
+                text: 'D’anciens mécaniciens vérifient avec vous une compatibilité, un couple de serrage ou une correspondance d’origine, six jours sur sept.'
+                cta: 'Demander à un technicien'
+            returns:
+                title: 'Retours et consignes'
+                text: '60 jours pour retourner une pièce non montée, et nous reprenons gratuitement vos vieilles batteries, étriers et pièces consignées.'
+                cta: 'Mon compte'

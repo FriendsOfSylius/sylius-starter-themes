@@ -1,0 +1,63 @@
+// Torque, dark scheme — the workshop at night: midnight surfaces, pale steel type and the same signal orange.
+$color-mode: dark;
+
+// House colours. The navy bands are a shade lighter than the page, and ruled, to stand out from it.
+$navy-night: #182A4A;
+$navy: #DCE5F2;
+$navy-hover: #FFFFFF;
+// Text on the navy bands (top bar, footer), the same in both schemes.
+$on-navy-band: #FFFFFF;
+$on-navy: #0D1626;
+$text-on-dark: #D8E0EC;
+$border-dark: rgba(#FFFFFF, 0.16);
+$orange-light: #FFA347;
+
+$orange: #F28A1A;
+$logo-orange: $orange;
+
+// Hairlines, focus outlines and active fillets on the night surfaces (3:1 at least).
+$outline: #FFA347;
+
+// Midnight surfaces.
+$page: #0D1626;
+$surface: #121C2D;
+$surface-raised: #18243A;
+$panel: #16223A;
+$line: #26344C;
+$line-strong: #3B4D69;
+// Form field outlines: at least 3:1 against every dark surface (WCAG 1.4.11).
+$field-border: #7D8BA0;
+$heading: #F2F5F9;
+$text: #D3DBE6;
+$text-muted: #A9B4C2;
+
+// The same orange fills the calls to action, with a midnight ink; as text, a paler orange.
+$accent: $orange;
+$accent-hover: #FFA347;
+$on-accent: #13203A;
+$accent-text: #FFA347;
+$accent-text-hover: #FFC285;
+$link-quiet: #C9D4E3;
+$focus-ring: rgba($outline, 0.3);
+
+// The price breaks, the stock badges and the light offer banner.
+$band: #2A1D0E;
+$band-line: #5A3A16;
+$breaks-current-text: $accent-text;
+$band-current: #3D2912;
+$stock-bg: #12301F;
+$stock-text: #8EDBA8;
+$order-bg: #3A2A0C;
+$order-text: #F5C86A;
+$offer-light: #16223A;
+
+$success: #8EDBA8;
+$info: #9DBDE3;
+
+// The hero banner: a night panel fading into the photo of the car.
+$hero-panel: #121C2D;
+$hero-heading: $heading;
+$hero-text: $text;
+
+$shadow-soft: 0 1px 2px rgba(#000, 0.4);
+$shadow-float: 0 18px 40px -20px rgba(#000, 0.75);

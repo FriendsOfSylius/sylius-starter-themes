@@ -1,0 +1,5 @@
+{# The product name without its part reference, which is printed under it (see reference.html.twig). #}
+{% set product = hookable_metadata.context.product %}
+<div class="h6 text-break" {{ sylius_test_html_attribute('product-name', product.name) }}>
+    {{ ' — ' in product.name ? product.name|split(' — ')|slice(0, -1)|join(' — ') : product.name }}
+</div>

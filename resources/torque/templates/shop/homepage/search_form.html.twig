@@ -1,0 +1,13 @@
+{# A product search on the whole catalogue: the listing of the menu taxon includes its descendants and filters on
+   the product names, which carry the part references and the dimensions. #}
+{% set torque_menu_taxon = sylius.channel.menuTaxon|default(null) %}
+{% if torque_menu_taxon is not null and torque_menu_taxon.slug %}
+    <form class="torque-search {{ class|default('') }}" action="{{ path('sylius_shop_product_index', {'slug': torque_menu_taxon.slug}) }}" method="get" role="search" aria-label="{{ (aria_label|default('torque.search.label'))|trans({}, 'torque') }}">
+        <label class="visually-hidden" for="{{ id }}">{{ 'torque.search.label'|trans({}, 'torque') }}</label>
+        <input class="form-control torque-search__input" type="search" id="{{ id }}" name="criteria[search][value]" placeholder="{{ (placeholder|default('torque.search.placeholder'))|trans({}, 'torque') }}" autocomplete="off">
+        <button class="btn {{ button_class|default('torque-search__button') }}" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+            <span class="{{ label_class ?? 'visually-hidden' }}">{{ (submit|default('torque.search.submit'))|trans({}, 'torque') }}</span>
+        </button>
+    </form>
+{% endif %}

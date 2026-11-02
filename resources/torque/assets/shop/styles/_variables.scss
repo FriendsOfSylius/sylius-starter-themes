@@ -1,0 +1,35 @@
+// Torque — a parts counter: white pages, cool grey tiles, a midnight navy and a signal orange.
+// Colors come from _palette-light.scss or _palette-dark.scss, imported just before this file.
+$dark: $color-mode == dark;
+
+$font-family-sans-serif: "InterVariable", "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-family-display: "Saira", "Helvetica Neue", "Arial", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: $font-family-display;
+$headings-font-weight: 700;
+
+$body-bg: $page;
+$body-color: $text;
+
+$primary: $accent;
+$secondary: $surface-raised;
+
+$link-color: $accent-text;
+$link-hover-color: $accent-text-hover;
+$border-color: $line;
+
+// Tidy corners, like a parts catalogue: square enough to look technical, never sharp.
+$radius-sm: 6px;
+$radius: 10px;
+$radius-lg: 14px;
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+// The house motif: the two slanted orange strokes of the logo, as a speed mark (used as a background).
+$torque-slashes: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20'%3E%3Cpath fill='%23F28A1A' d='M8 0h6L6 20H0zM18 0h6l-8 20h-6z'/%3E%3C/svg%3E");
+
+// "r, g, b" channels of a color, for Bootstrap's --bs-*-rgb variables.
+@function channels($color) {
+  @return red($color), green($color), blue($color);
+}

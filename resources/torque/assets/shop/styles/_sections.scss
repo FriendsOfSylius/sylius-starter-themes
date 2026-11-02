@@ -1,0 +1,559 @@
+// Homepage sections: the departments, the two offer banners, the most searched parts, the trade price band, the four
+// promises of the counter and the trade account.
+
+// Departments: one row of tiles on desktops, each with its picture on a cool grey panel over its name.
+
+.torque-aisles {
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.torque-aisles__items {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.torque-aisle__link {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 0.75rem 1rem;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  background-color: $surface-raised;
+  color: $heading;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms $ease;
+
+  &:hover {
+    border-color: $line-strong;
+    color: $heading;
+    box-shadow: $shadow-float;
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $outline;
+    outline-offset: 3px;
+  }
+}
+
+// The image of each department (photos are shot on a pale grey), or the house nut.
+.torque-aisle__picture {
+  display: grid;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  place-items: center;
+  border-radius: $radius-sm;
+  background-color: #F3F5F8;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms $ease;
+  }
+}
+
+.torque-aisle__link:hover .torque-aisle__picture img {
+  transform: scale(1.05);
+}
+
+.torque-aisle__mark {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.torque-aisle__name {
+  font-family: $font-family-display;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+// Offer banners: the quality promise on the navy band, with a brake disc, and the trade prices on a pale panel, with a
+// stack of tyres crossed by the house slashes.
+
+.torque-offers {
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.torque-offers__items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.torque-offer {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  min-height: 8.5rem;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: $radius-sm;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+
+  p {
+    margin: 0;
+  }
+}
+
+// The copy keeps clear of the photo on the right of the banner.
+.torque-offer__body {
+  position: relative;
+  max-width: 52%;
+}
+
+.torque-offer__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 auto;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.4;
+}
+
+.torque-offer__title {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: 800;
+}
+
+.torque-offer__text {
+  margin-bottom: 0.6rem !important;
+  font-size: 0.95rem;
+}
+
+// The navy band keeps its colours in both schemes; the disc photo is shot on the same navy.
+.torque-offer--quality {
+  border: if($dark, 1px solid $border-dark, 0);
+  background-color: #13203A;
+  background-image:
+    linear-gradient(90deg, #13203A 40%, rgba(#13203A, 0) 70%),
+    url("../images/offer-quality.webp");
+  background-size: cover, auto 100%;
+  color: $on-navy-band;
+
+  .torque-offer__icon {
+    stroke: #FFFFFF;
+  }
+
+  .torque-offer__title {
+    color: #FFFFFF;
+  }
+}
+
+.torque-offer--trade {
+  border: 1px solid $line;
+  background-color: $offer-light;
+  background-image:
+    linear-gradient(90deg, $offer-light 45%, rgba($offer-light, 0) 68%),
+    $torque-slashes,
+    url("../images/offer-tyres.webp");
+  background-position: center, right 1.5rem center, right 3.5rem center;
+  background-size: cover, auto 70%, auto 100%;
+  color: $text;
+
+  .torque-offer__icon {
+    stroke: $outline;
+  }
+
+  .torque-offer__title {
+    color: $heading;
+  }
+}
+
+// The most searched parts (latest products).
+
+.torque-products {
+  padding-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+.torque-products .torque-section-head h2 {
+  font-size: clamp(1.4rem, 2vw, 1.65rem);
+}
+
+// The trade price band: a pale orange strip with the unit price at each quantity step.
+
+.torque-promise {
+  padding-block: clamp(2rem, 4vw, 2.75rem) 0;
+}
+
+.torque-breaks {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: 1rem 1.75rem;
+  align-items: center;
+  padding: 1.1rem 1.5rem;
+  border: 1px solid $band-line;
+  border-radius: $radius-sm;
+  background-color: $band;
+}
+
+.torque-breaks__icon {
+  width: 3rem;
+  height: 3rem;
+  fill: none;
+  stroke: $accent-text;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.torque-breaks__title {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+}
+
+.torque-breaks__lead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin: 0;
+  color: $text;
+  font-size: 0.88rem;
+}
+
+.torque-breaks__table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+
+  td {
+    width: 25%;
+    padding: 0.6rem 0.5rem;
+    border-left: 1px solid $band-line;
+    text-align: center;
+  }
+}
+
+.torque-breaks__tier.is-current {
+  border-radius: $radius-sm;
+  background-color: $band-current;
+
+  // A shade deeper than the accent text, to stay above 4.5:1 on the orange tint.
+  .torque-breaks__qty {
+    color: $breaks-current-text;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+
+.torque-breaks__qty {
+  display: block;
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.torque-breaks__price {
+  display: block;
+  color: $text;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+// The four promises of the counter, in a cool grey panel.
+
+.torque-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 1rem 0 0;
+  padding: 1.25rem 0;
+  border-radius: $radius-sm;
+  background-color: $surface-raised;
+  list-style: none;
+}
+
+.torque-benefits__item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0.25rem 1.5rem;
+
+  + .torque-benefits__item {
+    border-left: 1px solid $line-strong;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: $heading;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.4;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.torque-benefits__title {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.torque-benefits__text {
+  margin-top: 0.2rem !important;
+  color: $text-muted;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+// The trade account: three steps, next to the account card of a customer.
+
+.torque-account {
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+
+.torque-account__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.torque-account .torque-section-head {
+  display: block;
+}
+
+.torque-steps {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.torque-steps__item {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+
+  p {
+    margin: 0;
+  }
+}
+
+.torque-steps__numeral {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: $radius-sm;
+  background-color: $navy;
+  color: $on-navy;
+  font-family: $font-family-display;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.torque-steps__title {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.torque-steps__text {
+  margin-top: 0.2rem !important;
+  color: $text-muted;
+  line-height: 1.6;
+}
+
+.torque-card {
+  padding: 1.5rem;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background-color: $surface;
+  box-shadow: $shadow-float;
+}
+
+.torque-card__head {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid $line;
+
+  p {
+    margin: 0;
+  }
+}
+
+.torque-card__mark {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+}
+
+.torque-card__kicker {
+  color: $text-muted;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.torque-card__title {
+  color: $heading;
+  font-family: $font-family-display;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.torque-card__status {
+  margin-left: auto;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background-color: $stock-bg;
+  color: $stock-text;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.torque-card__terms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 1.25rem 0;
+
+  dt {
+    color: $text-muted;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  dd {
+    margin: 0.15rem 0 0;
+    color: $heading;
+    font-weight: 600;
+  }
+}
+
+.torque-card__saving {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border-radius: $radius-sm;
+  background-color: $band;
+  color: $text;
+  font-size: 0.88rem;
+
+  strong {
+    color: $accent-text;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .torque-breaks {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .torque-breaks__lead,
+  .torque-breaks__table {
+    grid-column: 1 / -1;
+  }
+
+  .torque-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.25rem;
+  }
+
+  .torque-benefits__item:nth-child(3) {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .torque-aisles__items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991.98px) {
+  .torque-offers__items {
+    grid-template-columns: 1fr;
+  }
+
+  .torque-account__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .torque-aisles__items {
+    gap: 0.75rem;
+  }
+
+  .torque-aisles__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .torque-aisle__name {
+    font-size: 0.95rem;
+  }
+
+  .torque-offer {
+    padding: 1.25rem;
+  }
+
+  .torque-offer__body {
+    max-width: 72%;
+  }
+
+  .torque-offer__icon {
+    display: none;
+  }
+
+  .torque-breaks {
+    padding: 1rem;
+  }
+
+  .torque-breaks__table td {
+    padding-inline: 0.2rem;
+  }
+
+  .torque-breaks__price {
+    font-size: 0.72rem;
+    white-space: normal;
+  }
+
+  .torque-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .torque-benefits__item + .torque-benefits__item {
+    padding-top: 1.25rem;
+    border-top: 1px solid $line-strong;
+    border-left: 0;
+  }
+
+  .torque-card__terms {
+    grid-template-columns: 1fr;
+  }
+}

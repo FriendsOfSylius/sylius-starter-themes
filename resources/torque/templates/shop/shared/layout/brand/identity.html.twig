@@ -1,0 +1,8 @@
+{% set brand = storefront_brand() %}
+{% if brand.logo %}
+    <img class="torque-logo__image" src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}">
+{% else %}
+    {# Two slanted orange strokes, like a speed mark, before a wide Saira wordmark: TORQUE in ink, PARTS in orange. #}
+    <span class="torque-logo__slashes" aria-hidden="true"></span>
+    <span class="torque-logo__name">Torque<span class="torque-logo__accent">Parts</span></span>
+{% endif %}

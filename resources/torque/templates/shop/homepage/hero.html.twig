@@ -1,0 +1,38 @@
+{# Theme markup for the core hero slot (StorefrontHero). `hero` holds contributed data (import...); theme copy is the fallback.
+   A banner in the container: the copy on a hazy sky that fades into the photo of a car at sunset, and the parts
+   finder, a white card that searches the catalogue by reference or dimension. #}
+<section class="torque-hero" aria-labelledby="torque-hero-title">
+    <div class="container">
+        <div class="torque-hero__banner{{ hero.image ? ' torque-hero__banner--contributed' : '' }}"{% if hero.image %} style="--torque-hero-image: url('{{ hero.image|e('css') }}')"{% endif %}>
+            <div class="torque-hero__copy">
+                <h1 id="torque-hero-title">{% if hero.title %}{{ hero.title }}{% else %}{{ 'torque.hero.title'|trans({}, 'torque')|raw }}{% endif %}</h1>
+                <p class="torque-hero__lead">{% if hero.lead %}{{ hero.lead }}{% else %}{{ 'torque.hero.lead'|trans({}, 'torque')|raw }}{% endif %}</p>
+
+                <div class="torque-finder">
+                    <p class="torque-finder__title">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11l1.6-4.2A2 2 0 0 1 8.5 5.5h7a2 2 0 0 1 1.9 1.3L19 11M3.5 11h17v5.5h-17zM5.5 16.5V19M18.5 16.5V19"/><circle cx="7.5" cy="13.8" r="1"/><circle cx="16.5" cy="13.8" r="1"/></svg>
+                        {{ 'torque.finder.title'|trans({}, 'torque') }}
+                    </p>
+                    {% include 'shop/homepage/search_form.html.twig' with {
+                        id: 'torque-finder-search',
+                        aria_label: 'torque.finder.title',
+                        class: 'torque-search--finder',
+                        placeholder: 'torque.finder.placeholder',
+                        submit: hero.ctaLabel ? hero.ctaLabel : 'torque.finder.submit',
+                        button_class: 'btn-primary',
+                        label_class: '',
+                    } %}
+                    {% set torque_menu_taxon = sylius.channel.menuTaxon|default(null) %}
+                    {% if torque_menu_taxon is not null and torque_menu_taxon.slug %}
+                        <p class="torque-finder__examples">
+                            <span>{{ 'torque.finder.examples'|trans({}, 'torque') }}</span>
+                            {% for example in ['205/55 R16', '5W-30', 'TQ-BD288V'] %}
+                                <a href="{{ path('sylius_shop_product_index', {'slug': torque_menu_taxon.slug, 'criteria': {'search': {'value': example}}}) }}">{{ example }}</a>
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

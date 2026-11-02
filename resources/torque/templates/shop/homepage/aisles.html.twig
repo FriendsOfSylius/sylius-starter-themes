@@ -1,0 +1,31 @@
+{# Torque departments: the menu taxons as tiles, each with its image (or the house nut) over its name, as on the
+   shelves of a parts counter. #}
+{% if taxons|length > 0 %}
+    {% set torque_menu_taxon = sylius.channel.menuTaxon|default(null) %}
+    <section id="torque-aisles" class="torque-aisles" aria-labelledby="torque-aisles-title">
+        <div class="container">
+            <div class="torque-section-head">
+                <h2 id="torque-aisles-title">{{ 'torque.aisles.title'|trans({}, 'torque') }}</h2>
+                {% if torque_menu_taxon is not null and torque_menu_taxon.slug %}
+                    <a class="torque-link-arrow" href="{{ path('sylius_shop_product_index', {'slug': torque_menu_taxon.slug}) }}">{{ 'torque.aisles.all'|trans({}, 'torque') }}</a>
+                {% endif %}
+            </div>
+            <ul class="torque-aisles__items" role="list">
+                {% for taxon in taxons|slice(0, 8) %}
+                    <li class="torque-aisle">
+                        <a class="torque-aisle__link" href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">
+                            <span class="torque-aisle__picture">
+                                {% if taxon.images.first %}
+                                    <img src="{{ asset(taxon.images.first.path|imagine_filter('sylius_shop_product_large_thumbnail')) }}" alt="" loading="lazy">
+                                {% else %}
+                                    {% include 'shop/homepage/mark.html.twig' with {class: 'torque-aisle__mark'} %}
+                                {% endif %}
+                            </span>
+                            <span class="torque-aisle__name">{{ taxon.name }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endif %}
